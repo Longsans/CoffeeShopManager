@@ -23,14 +23,15 @@ namespace BUS
             //dtb = dalEmployee.searchByID(id);
             foreach (DataRow dr in dtb.Rows)// chua dung dc
             {
-                dtoEmployee._Employee_ID = Int32.Parse(dr["EmployeeId"].ToString());
-                dtoEmployee._Employee_Name = (dr["EmployeeName"].ToString());
-                dtoEmployee._Employee_Phone = Int32.Parse(dr["EmployeePhone"].ToString());
-                dtoEmployee._Employee_Gender = dr["EmployeeGender"].ToString();
-                dtoEmployee._Employee_Address = dr["EmployeeAddress"].ToString();
-                dtoEmployee._Employee_Email = dr["EmployeeEmail"].ToString();
-                dtoEmployee._Employee_DateOfJoin = dr["EmployeeDateOfJoin"].ToString();
-                dtoEmployee._Employee_Salary = Int32.Parse(dr["EmployeeSalary"].ToString());
+                dtoEmployee.ID = Int32.Parse(dr["Id"].ToString());
+                dtoEmployee.Name = (dr["Name"].ToString());
+                dtoEmployee.Phone = Int32.Parse(dr["Phone"].ToString());
+                dtoEmployee.Gender = dr["Gender"].ToString();
+                dtoEmployee.Address = dr["Address"].ToString();
+                dtoEmployee.Email = dr["Email"].ToString();
+                dtoEmployee.DateOfJoin = dr["DateOfJoin"].ToString();
+                dtoEmployee.Salary = Int32.Parse(dr["Salary"].ToString());
+               
             }
             return dtoEmployee;
         }
