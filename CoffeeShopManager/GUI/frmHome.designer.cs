@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopManager
+﻿namespace GUI
 {
     partial class frmHome
     {
@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlTitleBar = new System.Windows.Forms.Panel();
-            this.pnlShow = new System.Windows.Forms.Panel();
             this.imgListMenuButton = new System.Windows.Forms.ImageList(this.components);
+            this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.imgListWindowButton = new System.Windows.Forms.ImageList(this.components);
             this.lblLogo = new System.Windows.Forms.Label();
+            this.pnlShow = new System.Windows.Forms.Panel();
+            this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
             this.btnUser = new System.Windows.Forms.Button();
             this.btnNoti = new System.Windows.Forms.Button();
             this.btnEvent = new System.Windows.Forms.Button();
@@ -50,10 +51,8 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.ucOrderHistorycs1 = new CoffeeShopManager.ucOrderHistorycs();
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
-            this.pnlShow.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -75,6 +74,21 @@
             this.pnlMenu.Size = new System.Drawing.Size(221, 592);
             this.pnlMenu.TabIndex = 0;
             // 
+            // imgListMenuButton
+            // 
+            this.imgListMenuButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListMenuButton.ImageStream")));
+            this.imgListMenuButton.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListMenuButton.Images.SetKeyName(0, "Employee.png");
+            this.imgListMenuButton.Images.SetKeyName(1, "Coffee.png");
+            this.imgListMenuButton.Images.SetKeyName(2, "Stockpng.png");
+            this.imgListMenuButton.Images.SetKeyName(3, "supplier.png");
+            this.imgListMenuButton.Images.SetKeyName(4, "order_history.png");
+            this.imgListMenuButton.Images.SetKeyName(5, "customer.png");
+            this.imgListMenuButton.Images.SetKeyName(6, "statistics.png");
+            this.imgListMenuButton.Images.SetKeyName(7, "event.png");
+            this.imgListMenuButton.Images.SetKeyName(8, "notification_50px.png");
+            this.imgListMenuButton.Images.SetKeyName(9, "user_account_50px.png");
+            // 
             // pnlTitleBar
             // 
             this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(138)))), ((int)(((byte)(93)))));
@@ -91,31 +105,6 @@
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.pnlTitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
-            // 
-            // pnlShow
-            // 
-            this.pnlShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
-            this.pnlShow.Controls.Add(this.ucOrderHistorycs1);
-            this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlShow.Location = new System.Drawing.Point(221, 37);
-            this.pnlShow.Name = "pnlShow";
-            this.pnlShow.Size = new System.Drawing.Size(763, 592);
-            this.pnlShow.TabIndex = 2;
-            // 
-            // imgListMenuButton
-            // 
-            this.imgListMenuButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListMenuButton.ImageStream")));
-            this.imgListMenuButton.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListMenuButton.Images.SetKeyName(0, "Employee.png");
-            this.imgListMenuButton.Images.SetKeyName(1, "Coffee.png");
-            this.imgListMenuButton.Images.SetKeyName(2, "Stockpng.png");
-            this.imgListMenuButton.Images.SetKeyName(3, "supplier.png");
-            this.imgListMenuButton.Images.SetKeyName(4, "order_history.png");
-            this.imgListMenuButton.Images.SetKeyName(5, "customer.png");
-            this.imgListMenuButton.Images.SetKeyName(6, "statistics.png");
-            this.imgListMenuButton.Images.SetKeyName(7, "event.png");
-            this.imgListMenuButton.Images.SetKeyName(8, "notification_50px.png");
-            this.imgListMenuButton.Images.SetKeyName(9, "user_account_50px.png");
             // 
             // imgListWindowButton
             // 
@@ -137,6 +126,23 @@
             this.lblLogo.TabIndex = 3;
             this.lblLogo.Text = "CoffeeShopManager";
             this.lblLogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlShow
+            // 
+            this.pnlShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
+            this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlShow.Location = new System.Drawing.Point(221, 37);
+            this.pnlShow.Name = "pnlShow";
+            this.pnlShow.Size = new System.Drawing.Size(763, 592);
+            this.pnlShow.TabIndex = 2;
+            // 
+            // ucOrderHistorycs1
+            // 
+            this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucOrderHistorycs1.Location = new System.Drawing.Point(221, 37);
+            this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
+            this.ucOrderHistorycs1.Size = new System.Drawing.Size(763, 592);
+            this.ucOrderHistorycs1.TabIndex = 0;
             // 
             // btnUser
             // 
@@ -345,21 +351,13 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // ucOrderHistorycs1
-            // 
-            this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucOrderHistorycs1.Location = new System.Drawing.Point(0, 0);
-            this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
-            this.ucOrderHistorycs1.Size = new System.Drawing.Size(763, 592);
-            this.ucOrderHistorycs1.TabIndex = 0;
-            this.ucOrderHistorycs1.Visible = false;
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(984, 629);
+            this.Controls.Add(this.ucOrderHistorycs1);
             this.Controls.Add(this.pnlShow);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlTitleBar);
@@ -369,7 +367,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHome_FormClosed);
             this.pnlMenu.ResumeLayout(false);
             this.pnlTitleBar.ResumeLayout(false);
-            this.pnlShow.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -397,5 +394,6 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label lblLogo;
         private ucOrderHistorycs ucOrderHistorycs1;
+        // private ucOrderHistorycs ucOrderHistorycs1;
     }
 }

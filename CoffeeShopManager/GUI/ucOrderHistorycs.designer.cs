@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopManager
+﻿namespace GUI
 {
     partial class ucOrderHistorycs
     {

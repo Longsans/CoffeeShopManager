@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopManager
+﻿namespace GUI
 {
     partial class frmRegister
     {
@@ -49,7 +49,7 @@
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = global::CoffeeShopManager.Properties.Resources.close_window_24px1;
+            this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
             this.btnExit.Location = new System.Drawing.Point(251, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(31, 30);

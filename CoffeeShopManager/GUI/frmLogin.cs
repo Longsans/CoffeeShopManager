@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CoffeeShopManager
+namespace GUI
 {
     public partial class frmLogin : Form
     {

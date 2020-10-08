@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopManager
+﻿namespace GUI
 {
     partial class frmLogin
     {
@@ -164,7 +164,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::CoffeeShopManager.Properties.Resources.coffee;
+            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.coffee;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(166, 31);
             this.pictureBox1.Name = "pictureBox1";
@@ -175,7 +175,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
-            this.panel2.BackgroundImage = global::CoffeeShopManager.Properties.Resources.it_s_always_coffee_time_quote_slogan_typography_7201_31;
+            this.panel2.BackgroundImage = global::GUI.Properties.Resources.it_s_always_coffee_time_quote_slogan_typography_7201_31;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 30);
@@ -188,7 +188,7 @@
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = global::CoffeeShopManager.Properties.Resources.close_window_24px1;
+            this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
             this.btnExit.Location = new System.Drawing.Point(768, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(31, 30);
