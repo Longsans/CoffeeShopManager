@@ -12,14 +12,12 @@ namespace DTO
         public DateTime DateOfJoin { get; set; }
         public double Salary { get; set; }
         public DTO_Employee() { }
-        public DTO_Employee(int id, string firstname, string lastname, long phone, string gender, string address, string email, DateTime dataofjoin, double salary)
+        public DTO_Employee(string firstname, string lastname, long phone, string gender, string address, string email, DateTime dataofjoin, double salary)
         {
-            this.Id = id;
             this.Firstname = firstname;
             this.Lastname = lastname;
             this.Phone = phone;
             this.Gender = gender;
-            this.Address = address;
             this.Account.Email = email;
             this.DateOfJoin = dataofjoin;
             this.Salary = salary;
