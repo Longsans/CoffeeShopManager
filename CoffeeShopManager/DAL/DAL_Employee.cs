@@ -37,6 +37,8 @@ namespace DAL
             reader.Read();
             //
 
+            CloseConnection();
+
             return emp;
         }
 
@@ -54,6 +56,8 @@ namespace DAL
                 new SqlCommandBuilder(adapter);
                 row = dtinfo.NewRow();
                 //
+
+                CloseConnection();
 
                 return true;
             }
@@ -83,6 +87,7 @@ namespace DAL
                     }
                 }
                 adapter.Update(dtinfo);
+                CloseConnection();
 
                 return true;
             }
@@ -99,7 +104,11 @@ namespace DAL
             {
                 var row = dtinfo.Rows.Find(empUpdated);
 
+                OpenConnection();
                 //
+
+                CloseConnection();
+
                 return true;
             }
             catch
