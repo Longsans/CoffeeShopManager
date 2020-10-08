@@ -6,30 +6,23 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class DTO_Employee
+    public class DTO_Employee : DTO_Worker
     {
-        public int _Employee_ID { get; set; }
-        public string _Employee_Name { get; set; }
-        public long _Employee_Phone { get; set; }
-        public string _Employee_Gender { get; set; }
-        public string _Employee_Address { get; set; }
-        public string _Employee_Email { get; set; }
-        public string _Employee_DateOfJoin { get; set; }
-        public double _Employee_Salary { get; set; }
+
+        public DateTime DateOfJoin { get; set; }
+        public double Salary { get; set; }
         public DTO_Employee() { }
-        public DTO_Employee(int id, string name, long phone, string gender, string address, string email, string dataofjoin, double salary)
+        public string Address { get; set; }
+        public DTO_Employee(string firstname, string lastname, long phone, string gender, string address, string email, DateTime dataofjoin,double salary)
         {
-            this._Employee_ID = id;
-            this._Employee_Name = name;
-            this._Employee_Phone = phone;
-            this._Employee_Gender = gender;
-            this._Employee_Address = address;
-            this._Employee_Email = email;
-            this._Employee_DateOfJoin = dataofjoin;
-            this._Employee_Salary = salary;
+            this.Firstname = firstname;
+            this.Lastname = lastname;
+            this.Phone = phone;
+            this.Gender = gender;
+            this.Account.Email = email;
+            this.DateOfJoin = dataofjoin;
+            this.Salary = salary;
+            this.Address = address;
         }
-
-
-    
     }
 }
