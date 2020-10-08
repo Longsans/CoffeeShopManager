@@ -15,29 +15,17 @@ namespace DAL
     {
         public DataTable GetAllEmployees()
         {
-            var dtinfo = new DataTable();
+            DataTable dt = new DataTable();
+            DAL_Workers dalWr = new DAL_Workers();
             string qry = "SELECT * FROM [EMPLOYEES]";
-            var adapter = new SqlDataAdapter(qry, this.conn);
-            
-            OpenConnection();
-            adapter.Fill(dtinfo);
-            CloseConnection();
 
-            return dtinfo;
+            return dt;
         }
 
         public DTO_Employee GetById(int id)
         {
-            var emp = new DTO_Employee();
-            string qry = "SELECT * FROM [EMPLOYEES] WHERE Id = @id";
-            var cmd = new SqlCommand(qry, this.conn);
-            var reader = cmd.ExecuteReader();
-
-            OpenConnection();
-            reader.Read();
+            DTO_Employee emp = null;
             //
-
-            CloseConnection();
 
             return emp;
         }

@@ -10,19 +10,20 @@ namespace DTO
     {
 
         public DateTime DateOfJoin { get; set; }
-        public double Salary { get; set; }
-        public DTO_Employee() { }
         public string Address { get; set; }
-        public DTO_Employee(string firstname, string lastname, long phone, string gender, string address, string email, DateTime dataofjoin,double salary)
+        public double Salary { get; set; }
+        public DTO_Manager Manager { get; set; }
+        public DTO_Employee() { }
+        public DTO_Employee(DTO_Worker dtoWr)
         {
-            this.Firstname = firstname;
-            this.Lastname = lastname;
-            this.Phone = phone;
-            this.Gender = gender;
-            this.Account.Email = email;
-            this.DateOfJoin = dataofjoin;
-            this.Salary = salary;
-            this.Address = address;
+            this.Id = dtoWr.Id;
+            this.Firstname = dtoWr.Firstname;
+            this.Lastname = dtoWr.Lastname;
+            this.Gender = dtoWr.Gender;
+            this.Position = dtoWr.Position;
+            this.Phone = dtoWr.Phone;
+            this.Account.Email = dtoWr.Account.Email;
+            this.Birthdate = dtoWr.Birthdate;
         }
     }
 }
