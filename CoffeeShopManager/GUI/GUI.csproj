@@ -7,7 +7,7 @@
     <ProjectGuid>{DE32FD45-F77E-4850-BA9C-7E83195004E6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>GUI</RootNamespace>
-    <AssemblyName>CoffeeShopManager</AssemblyName>
+    <AssemblyName>GUI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -190,6 +190,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FreeVector-3D-Charts-Graphics.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{29ca2918-8749-4472-b3ac-a30c31a5e7c2}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{e0d9c117-a4fe-42cc-9877-d3c98f802143}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
