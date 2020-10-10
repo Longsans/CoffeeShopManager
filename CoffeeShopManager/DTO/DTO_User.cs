@@ -8,7 +8,7 @@ namespace DTO
 {
     public class DTO_User
     {
-        public int ID { get;}
+        public int ID { get; set; }
         public string Email { get; set; }
         public string PassWord { get; set; }
         public DTO_User() { }
