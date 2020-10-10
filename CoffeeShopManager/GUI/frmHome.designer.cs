@@ -37,6 +37,7 @@
             this.lblLogo = new System.Windows.Forms.Label();
             this.pnlShow = new System.Windows.Forms.Panel();
             this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
+            this.ucEmployeeTab = new GUI.UserControlEmployeesTab();
             this.btnUser = new System.Windows.Forms.Button();
             this.btnNoti = new System.Windows.Forms.Button();
             this.btnEvent = new System.Windows.Forms.Button();
@@ -53,11 +54,12 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
+            this.pnlShow.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(105)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.White;
             this.pnlMenu.Controls.Add(this.btnUser);
             this.pnlMenu.Controls.Add(this.btnNoti);
             this.pnlMenu.Controls.Add(this.btnEvent);
@@ -130,6 +132,8 @@
             // pnlShow
             // 
             this.pnlShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
+            this.pnlShow.Controls.Add(this.ucOrderHistorycs1);
+            this.pnlShow.Controls.Add(this.ucEmployeeTab);
             this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlShow.Location = new System.Drawing.Point(221, 37);
             this.pnlShow.Name = "pnlShow";
@@ -139,10 +143,20 @@
             // ucOrderHistorycs1
             // 
             this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucOrderHistorycs1.Location = new System.Drawing.Point(221, 37);
+            this.ucOrderHistorycs1.Location = new System.Drawing.Point(0, 0);
             this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
             this.ucOrderHistorycs1.Size = new System.Drawing.Size(763, 592);
             this.ucOrderHistorycs1.TabIndex = 0;
+            this.ucOrderHistorycs1.Visible = false;
+            // 
+            // ucEmployeeTab
+            // 
+            this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucEmployeeTab.Location = new System.Drawing.Point(0, 0);
+            this.ucEmployeeTab.Name = "ucEmployeeTab";
+            this.ucEmployeeTab.Size = new System.Drawing.Size(763, 592);
+            this.ucEmployeeTab.TabIndex = 0;
+            this.ucEmployeeTab.Visible = false;
             // 
             // btnUser
             // 
@@ -294,6 +308,7 @@
             this.btnEmployee.TabIndex = 0;
             this.btnEmployee.Text = "Employee";
             this.btnEmployee.UseVisualStyleBackColor = true;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnMenu
             // 
@@ -357,7 +372,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(984, 629);
-            this.Controls.Add(this.ucOrderHistorycs1);
             this.Controls.Add(this.pnlShow);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlTitleBar);
@@ -367,6 +381,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHome_FormClosed);
             this.pnlMenu.ResumeLayout(false);
             this.pnlTitleBar.ResumeLayout(false);
+            this.pnlShow.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -394,6 +409,7 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label lblLogo;
         private ucOrderHistorycs ucOrderHistorycs1;
+        private UserControlEmployeesTab ucEmployeeTab;
         // private ucOrderHistorycs ucOrderHistorycs1;
     }
 }

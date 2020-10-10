@@ -117,26 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="coffee_to_go_80px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coffee_to_go_80px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="employee_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employee_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="coffee_to_go_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coffee_to_go_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="it-s-always-coffee-time-quote-slogan-typography_7201-31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\it-s-always-coffee-time-quote-slogan-typography_7201-31.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close_window_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_window_24px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="coffee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coffee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

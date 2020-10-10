@@ -90,12 +90,19 @@ namespace GUI
         private void btnOrderhistory_Click(object sender, EventArgs e)
         {
             ucOrderHistorycs1.Show();
+            ucOrderHistorycs1.BringToFront();
         }
 
         private void frmHome_FormClosed(object sender, FormClosedEventArgs e)
         {
             _frmLogin.Show();
 
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            ucEmployeeTab.Show();
+            ucEmployeeTab.BringToFront();
         }
     }
 
