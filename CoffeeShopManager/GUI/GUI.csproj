@@ -67,6 +67,12 @@
     <Compile Include="frmAddEmployee.Designer.cs">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditEmployees.Designer.cs">
+      <DependentUpon>frmEditEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,8 +105,17 @@
     <Compile Include="UserControlEmployeesTab.Designer.cs">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlProductTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlProductTab.Designer.cs">
+      <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditEmployees.resx">
+      <DependentUpon>frmEditEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -127,6 +142,9 @@
     <EmbeddedResource Include="UserControlEmployeesTab.resx">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlProductTab.resx">
+      <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -140,7 +158,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\view_details_26px.png" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
@@ -155,6 +175,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coffee-Shop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GuysDrinkingBeer_Preview_02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FreeVector-3D-Charts-Graphics.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

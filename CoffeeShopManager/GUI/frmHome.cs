@@ -104,6 +104,23 @@ namespace GUI
             ucEmployeeTab.Show();
             ucEmployeeTab.BringToFront();
         }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            ucProductTab.Show();
+            ucProductTab.BringToFront();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Close();
+            _frmLogin.Show();
+        }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

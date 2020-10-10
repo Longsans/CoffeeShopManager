@@ -22,5 +22,14 @@ namespace GUI
             frmAddEmployee frmAddEmployee = new frmAddEmployee();
             frmAddEmployee.ShowDialog();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows != null)
+            {
+                frmEditEmployees frmEditEmployees = new frmEditEmployees();
+                frmEditEmployees.ShowDialog();
+            }
+        }
     }
 }
