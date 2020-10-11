@@ -159,39 +159,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\view_details_26px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user_40px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Customer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Employes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Coffee-Shop.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\GuysDrinkingBeer_Preview_02.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FreeVector-3D-Charts-Graphics.jpg" />
-  </ItemGroup>
-  <ItemGroup>
+
     <ProjectReference Include="..\BUS\BUS.csproj">
       <Project>{29ca2918-8749-4472-b3ac-a30c31a5e7c2}</Project>
       <Name>BUS</Name>

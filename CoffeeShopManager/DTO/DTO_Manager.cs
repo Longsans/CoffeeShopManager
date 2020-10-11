@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class DTO_Employee : DTO_Worker
+    public class DTO_Manager : DTO_Worker
     {
+        public List<DTO_Employee> ls = new List<DTO_Employee> ();
 
-        public DateTime DateOfJoin { get; set; }
-        public string Address { get; set; }
-        public double Salary { get; set; }
-        public DTO_Manager Manager { get; set; }
-        public DTO_Employee() { }
-        public DTO_Employee(DTO_Worker dtoWr)
+        public DTO_Manager()
+        {
+
+        }
+
+        public DTO_Manager(DTO_Worker dtoWr)
         {
             this.Id = dtoWr.Id;
             this.Firstname = dtoWr.Firstname;
