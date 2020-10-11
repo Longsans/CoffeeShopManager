@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_Employee.cs" />
+    <Compile Include="DAL_Manager.cs" />
     <Compile Include="DAL_UserInfo.cs" />
+    <Compile Include="DAL_Workers.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
