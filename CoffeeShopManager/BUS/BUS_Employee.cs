@@ -33,19 +33,19 @@ namespace BUS
         }
         public DTO_Employee GetById(int id)
         {
-            return dalEmployee.GetById(id);
+            return dalEmployee.GetEmployeeInfoAndManagerId(id);
         }
-        public bool AddEmployee(DTO_Employee emp)
+        public void AddEmployee(DTO_Employee emp)
         {
-            return dalEmployee.Insert(emp);
+            dalEmployee.Insert(emp);
         }
-        public bool DeleteEmployee(int ID)
+        public void DeleteEmployee(DTO_Employee emp)
         {
-            return dalEmployee.Delete(ID);
+            dalEmployee.Delete(emp);
         }
-        public bool EditEmployee(DTO_Employee emp)
+        public void EditEmployee(DTO_Employee emp)
         {
-            return dalEmployee.Update(emp);
+            dalEmployee.Update(emp);
         }
 
     }

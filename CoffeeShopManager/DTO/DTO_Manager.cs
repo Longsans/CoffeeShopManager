@@ -8,7 +8,7 @@ namespace DTO
 {
     public class DTO_Manager : DTO_Worker
     {
-        public List<DTO_Employee> ls = new List<DTO_Employee> ();
+        public List<DTO_Employee> ls = new List<DTO_Employee>();
 
         public DTO_Manager()
         {
