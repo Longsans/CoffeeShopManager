@@ -18,7 +18,6 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@Id", id);
 
-            OpenConnection();
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
@@ -26,7 +25,6 @@ namespace DAL
                 dtoUser.Email = reader.GetString(reader.GetOrdinal("EmailAddress"));
                 dtoUser.PassWord = reader.GetString(reader.GetOrdinal("Password"));
             }
-            CloseConnection();
 
             return dtoUser;
         }
@@ -38,13 +36,11 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@email", email);
 
-            OpenConnection();
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 dtoUser = GetById(reader.GetInt32(reader.GetOrdinal("Id")));
             }
-            CloseConnection();
 
             return dtoUser;
         }
@@ -56,9 +52,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@email", dtoUser.Email);
             cmd.Parameters.AddWithValue("@password", dtoUser.PassWord);
 
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
         }
 
         public void Delete(DTO_User dtoUser)
@@ -67,9 +61,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", dtoUser.ID);
 
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
         }
 
         /// <summary>
@@ -86,9 +78,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@passwd", dtoUserUpdated.PassWord);
             cmd.Parameters.AddWithValue("@id", dtoUserUpdated.ID);
 
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
         }
     }
 }
