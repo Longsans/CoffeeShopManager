@@ -8,7 +8,7 @@ using DAL;
 using DTO;
 namespace BUS
 {
-    class BUS_Employee
+    public class BUS_Employee
     {
         DAL_Employee dalEmployee = new DAL_Employee();
 

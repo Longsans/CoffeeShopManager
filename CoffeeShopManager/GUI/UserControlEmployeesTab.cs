@@ -31,5 +31,10 @@ namespace GUI
                 frmEditEmployees.ShowDialog();
             }
         }
+
+        private void UserControlEmployeesTab_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
