@@ -105,6 +105,12 @@
     <Compile Include="UserControlEmployeesTab.Designer.cs">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlHome.Designer.cs">
+      <DependentUpon>UserControlHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlProductTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     <EmbeddedResource Include="UserControlEmployeesTab.resx">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlHome.resx">
+      <DependentUpon>UserControlHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlProductTab.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,7 +168,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-
     <ProjectReference Include="..\BUS\BUS.csproj">
       <Project>{29ca2918-8749-4472-b3ac-a30c31a5e7c2}</Project>
       <Name>BUS</Name>
@@ -168,6 +176,12 @@
       <Project>{e0d9c117-a4fe-42cc-9877-d3c98f802143}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20394156-coffee-time-seamless-background-for-your-design.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

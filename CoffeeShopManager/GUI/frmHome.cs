@@ -75,20 +75,19 @@ namespace GUI
         {
             if (pnlMenu.Width == 221)
             {
-                pnlMenu.Width = 45;
-                lblLogo.Hide();
-                //btnMenu.Location = lblLogo.Location;
+                pnlMenu.Width = 64;
             }
             else
             {
                 pnlMenu.Width = 221;
-                lblLogo.Show();
             }
         }
 
 
         private void btnOrderhistory_Click(object sender, EventArgs e)
         {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnOrderhistory.Location;
             ucOrderHistorycs1.Show();
             ucOrderHistorycs1.BringToFront();
         }
@@ -101,12 +100,16 @@ namespace GUI
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnEmployee.Location;
             ucEmployeeTab.Show();
             ucEmployeeTab.BringToFront();
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnProduct.Location;
             ucProductTab.Show();
             ucProductTab.BringToFront();
         }
@@ -121,6 +124,61 @@ namespace GUI
         {
 
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Hide();
+            ucHome.Show();
+            ucHome.BringToFront();
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnStock.Location;
+        }
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnSupplier.Location;
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnCustomer.Location;
+        }
+
+        private void btnStatistic_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnStatistic.Location;
+        }
+
+        private void btnEvent_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnEvent.Location;
+        }
+
+        private void btnNoti_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnNoti.Location;
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnUser.Location;
+        }
+
+        private void ucHome_Load(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 
 }
