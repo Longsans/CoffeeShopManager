@@ -20,15 +20,17 @@ namespace DAL
             string qry = "SELECT * FROM [EMPLOYEES]";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             
-            OpenConnection();
             ada.Fill(dtEmp);
-            CloseConnection();
-
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             var dtWorkers = dalWr.GetAllEmployeeWorkers();
             var dtMerged = dtWorkers.Clone();
             for (int i = 1; i < dtEmp.Columns.Count; ++i)
             {
-                dtMerged.Columns.Add(dtEmp.Columns[i]);
+                dtMerged.Columns.Add(dtEmp.Columns[i].ColumnName);
             }
 
             var workerTab = dtWorkers.AsEnumerable();
@@ -37,6 +39,10 @@ namespace DAL
             foreach (object[] row in mergedRows)
             {
                 dtMerged.Rows.Add(row);
+            }
+            if (!connState)
+            {
+                CloseConnection();
             }
 
             return dtMerged;
@@ -52,11 +58,18 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@Id", id);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                emp = new DTO_Employee(dalWorkers.GetInfoById(reader.GetInt32(reader.GetOrdinal("Id"))));
-                emp.Address = reader.GetString(reader.GetOrdinal("Address"));
+                emp = new DTO_Employee(dalWorkers.GetInfoById(reader.GetInt32(reader.GetOrdinal("Id"))))
+                {
+                    Address = reader.GetString(reader.GetOrdinal("Address"))
+                };
 
                 var dateofjoin = reader.GetDateTime(reader.GetOrdinal("DateOfJoin"));
                 emp.DateOfJoin = new DateTime(dateofjoin.Year, dateofjoin.Month, dateofjoin.Day);
@@ -65,6 +78,10 @@ namespace DAL
                 var empAccount = dalWorkers.GetUserInfoById(emp.Id);
                 emp.Account.ID = empAccount.ID;
                 emp.Manager.Id = reader.GetInt32(reader.GetOrdinal("ManagerId"));
+            }
+            if (!connState)
+            {
+                CloseConnection();
             }
 
             return emp;
@@ -77,30 +94,53 @@ namespace DAL
         /// <returns></returns>
         public List<DTO_Employee> GetEmployeesThroughManagerId(int managerId)
         {
-            List<DTO_Employee> empList = null;
+            List<DTO_Employee> empList = new List<DTO_Employee>();
             string qry = "SELECT * FROM [EMPLOYEES] WHERE ManagerId = @manId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@manId", managerId);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 var emp = GetEmployeeInfoAndManagerId(reader.GetInt32(reader.GetOrdinal("Id")));
                 empList.Add(emp);
             }
+            if (!connState)
+            {
+                CloseConnection();
+            }
 
-            return empList;
+            if (empList.Count > 0) return empList;
+            return null;
         }
 
         public DTO_Manager GetManagerInfo(DTO_Employee emp)
         {
             DAL_Manager dalMan = new DAL_Manager();
-            return dalMan.GetById(emp.Manager.Id);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var dtoMan = dalMan.GetById(emp.Manager.Id);
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return dtoMan;
         }
 
         public void Insert(DTO_Employee emp)
         {
             DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Manager dalMan = new DAL_Manager();
             string qry = "INSERT INTO [EMPLOYEES] VALUES (@workerId, @address, @dateofjoin, @salary, @managerId)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             int workerId = dalWorkers.Insert(emp);
@@ -110,7 +150,16 @@ namespace DAL
             cmd.Parameters.AddWithValue("@salary", emp.Salary);
             cmd.Parameters.AddWithValue("@managerId", emp.Manager.Id);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
         }
 
         public void Delete(DTO_Employee emp)
@@ -120,8 +169,17 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", emp.Id);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             dalWorkers.Delete(emp);
             cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
         }
 
         /// <summary>
@@ -140,8 +198,17 @@ namespace DAL
             cmd.Parameters.AddWithValue("@salary", empUpdated.Salary);
             cmd.Parameters.AddWithValue("@manId", empUpdated.Manager.Id);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             dalWorkers.Update(empUpdated);
             cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
         }
     }
 }
