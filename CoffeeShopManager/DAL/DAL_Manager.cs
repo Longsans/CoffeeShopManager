@@ -49,9 +49,7 @@ namespace DAL
             int workerId = dalWorkers.Insert(dtoMan);
             cmd.Parameters.AddWithValue("@workerId", workerId);
 
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
         }
 
         public void Delete(DTO_Manager dtoMan)
@@ -62,9 +60,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@id", dtoMan.Id);
 
             dalWorkers.Delete(dtoMan);
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
         }
 
         /// <summary>

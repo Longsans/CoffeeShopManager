@@ -19,6 +19,7 @@ namespace GUI
         {
             InitializeComponent();
         }
+
         public frmAddEmployee(UserControlEmployeesTab ucEmp)
         {
             ucEmp = _ucEmp;
@@ -43,7 +44,8 @@ namespace GUI
             //BUS_Employee bUS_Employee = new BUS_Employee();
             //bUS_Employee.AddEmployee(dtoEmp);
             //_ucEmp.
-                
         }
+
+
     }
 }

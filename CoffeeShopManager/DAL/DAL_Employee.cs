@@ -52,7 +52,6 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@Id", id);
 
-            OpenConnection();
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
@@ -67,7 +66,6 @@ namespace DAL
                 emp.Account.ID = empAccount.ID;
                 emp.Manager.Id = reader.GetInt32(reader.GetOrdinal("ManagerId"));
             }
-            CloseConnection();
 
             return emp;
         }
@@ -84,14 +82,12 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@manId", managerId);
 
-            OpenConnection();
             var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 var emp = GetEmployeeInfoAndManagerId(reader.GetInt32(reader.GetOrdinal("Id")));
                 empList.Add(emp);
             }
-            CloseConnection();
 
             return empList;
         }
@@ -114,9 +110,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@salary", emp.Salary);
             cmd.Parameters.AddWithValue("@managerId", emp.Manager.Id);
 
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
         }
 
         public void Delete(DTO_Employee emp)
@@ -127,9 +121,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@id", emp.Id);
 
             dalWorkers.Delete(emp);
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
         }
 
         /// <summary>
@@ -149,9 +141,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@manId", empUpdated.Manager.Id);
 
             dalWorkers.Update(empUpdated);
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
         }
     }
 }

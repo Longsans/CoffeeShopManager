@@ -22,7 +22,6 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@Id", id);
 
-            OpenConnection();
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
@@ -37,7 +36,6 @@ namespace DAL
                 var bdate = reader.GetDateTime(reader.GetOrdinal("Birthdate"));
                 dtoWorker.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
             }
-            CloseConnection();
 
             return dtoWorker;
         }
@@ -49,13 +47,11 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@email", email);
 
-            OpenConnection();
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 dtoWorker = GetInfoById(reader.GetInt32(reader.GetOrdinal("Id")));
             }
-            CloseConnection();
 
             return dtoWorker;
         }
@@ -89,9 +85,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@position", position);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
 
-            OpenConnection();
             ada.Fill(dtPos);
-            CloseConnection();
 
             return dtPos;
         }
@@ -121,9 +115,7 @@ namespace DAL
             int accountId = dalUserInfo.GetByEmail(dtoWorker.Account.Email).ID;
             cmd.Parameters.AddWithValue("@accountId", accountId);
 
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
 
             return GetInfoByEmail(dtoWorker.Account.Email).Id;
         }
@@ -136,9 +128,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@id", dtoWorker.Id);
 
             dalUserInfo.Delete(dtoWorker.Account);
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
         }
 
         /// <summary>
@@ -164,9 +154,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@id", dtoWorkerUpdated.Id);
 
             dalUserInfo.Update(dtoWorkerUpdated.Account);
-            OpenConnection();
             cmd.ExecuteNonQuery();
-            CloseConnection();
         }
     }
 }
