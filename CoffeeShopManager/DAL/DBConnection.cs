@@ -14,7 +14,7 @@ namespace DAL
             "Persist Security Info=False;" +
             "User ID=Longsans;" +
             "Password=OneBigServer123;" +
-            "MultipleActiveResultSets=False;" +
+            "MultipleActiveResultSets=True;" +
             "Encrypt=True;" +
             "TrustServerCertificate=False;" +
             "Connection Timeout=30;";
