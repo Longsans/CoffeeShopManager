@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace GUI
 {
     public partial class frmLogin : Form
     {
+        BUS_UserInfo busUser = new BUS_UserInfo();
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
         public frmLogin()
@@ -58,9 +61,21 @@ namespace GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            frmHome frmHome = new frmHome(this);
-            this.Hide();
-            frmHome.Show();
+            if (txtPassword.Text == "" || txtUsername.Text == "") MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            else
+            {
+                DTO_User dtoUser = new DTO_User() { Email = txtUsername.Text, PassWord = txtPassword.Text };
+                if (busUser.CheckLogin(dtoUser))
+                {
+                    frmHome frmHome = new frmHome(this);
+                    this.Hide();
+                    frmHome.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin đăng nhập không chính xác");
+                }
+            }
         }
     }
 }
