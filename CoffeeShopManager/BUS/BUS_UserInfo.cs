@@ -97,13 +97,18 @@ namespace BUS
                 throw ex;
             }
         }
-        public void Insert(DTO_User account)
+        public bool Insert(DTO_User account)
         {
             try
             {
-                //mã hóa trước khi insert;
-                account.PassWord=ComputeSha256Hash(account.PassWord);
-                dalUserInfo.Insert(account);
+                if (CheckUsername(account.Email))
+                {
+                    //mã hóa trước khi insert;
+                    account.PassWord = ComputeSha256Hash(account.PassWord);
+                    dalUserInfo.Insert(account);
+                    return true;
+                }
+                return false;
             }
             catch(Exception ex)
             {
