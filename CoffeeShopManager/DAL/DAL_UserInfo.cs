@@ -28,7 +28,6 @@ namespace DAL
 
             return dtoUser;
         }
-
         public DTO_User GetByEmail(string email)
         {
             DTO_User dtoUser = null;

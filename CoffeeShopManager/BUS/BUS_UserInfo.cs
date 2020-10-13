@@ -8,7 +8,7 @@ using DAL;
 using DTO;
 namespace BUS
 {
-    class BUS_UserInfo
+    public class BUS_UserInfo
     {
         DAL_UserInfo dalUserInfo = new DAL_UserInfo();
         public string EncryptionPassword(string password)//mã hóa mật khẩu
@@ -28,8 +28,13 @@ namespace BUS
             try
             {
                 // account.Password = Encrypt(account.Password, "123");
-               // return dalUserInfo.CheckLogin(account);
-                return true;
+                // return dalUserInfo.CheckLogin(account);
+                DTO_User accountnew1=  dalUserInfo.GetByEmail(account.Email);
+                account.PassWord = EncryptionPassword(account.PassWord);
+                if (accountnew1.PassWord == account.PassWord)
+                    return true;
+                else
+                    return false;
             }
             catch (Exception ex)
             {
