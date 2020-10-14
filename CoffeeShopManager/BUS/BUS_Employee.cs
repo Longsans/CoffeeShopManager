@@ -22,7 +22,7 @@ namespace BUS
             catch(Exception ex)
             {
                 throw ex;
-            }
+            }   
         }
         public DTO_Employee GetEmployeeInfoAndManagerId(int id)
         {

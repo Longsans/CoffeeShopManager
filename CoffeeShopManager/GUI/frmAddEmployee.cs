@@ -29,7 +29,7 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
+            if (txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
                 txtPosition.Text == "" || txtPhone.Text == "" || txtEmail.Text == "" || txtDayBD.Text == "" ||
                 txtMonthBD.Text == "" || txtYearBD.Text == "" || txtSalary.Text == "" || txtPassword.Text == "" ||
                 txtDayJoin.Text == "" || txtMonthJoin.Text == "" || txtYearJoin.Text == "" || (radFemale.Checked == false &&
@@ -38,6 +38,7 @@ namespace GUI
 
             else
             {
+                DateTime tmp = new DateTime();
                 errorProvider1.SetError(txtYearBD, "");
                 errorProvider1.SetError(txtYearJoin, "");
                 DTO_Employee dtoEmp = new DTO_Employee();
@@ -46,18 +47,18 @@ namespace GUI
                 dtoEmp.Lastname = txtLastName.Text;
                 dtoEmp.Address = txtAddress.Text;
                 dtoEmp.Position = txtPosition.Text;
-                if (BUS_Employee.IsDate(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text))
+                if (DateTime.TryParse(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text, out tmp))
                 {
-                    dtoEmp.Birthdate = DateTime.Now;
+                    dtoEmp.Birthdate = tmp;
                 }
                 else errorProvider1.SetError(txtYearBD, "Date is invalid");
                 dtoEmp.Phone = txtPhone.Text;
                 dtoEmp.Account.Email = txtEmail.Text;
                 dtoEmp.Account.PassWord = txtPassword.Text;
                 dtoEmp.Salary = double.Parse(txtSalary.Text);
-                if (BUS_Employee.IsDate(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text))
+                if (DateTime.TryParse(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text, out tmp))
                 {
-                    dtoEmp.Birthdate = DateTime.Now;
+                    dtoEmp.Birthdate = tmp;
                 }
                 else errorProvider1.SetError(txtYearJoin, "Date is invalid");
                 dtoEmp.Phone = txtPhone.Text;

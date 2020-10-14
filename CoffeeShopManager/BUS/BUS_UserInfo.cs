@@ -1,12 +1,9 @@
-
 using System;
-﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-
 using DAL;
 using DTO;
 
@@ -42,7 +39,7 @@ namespace BUS
             try
             {
                 DTO_User accountnew1=  dalUserInfo.GetByEmail(account.Email);
-                //account.PassWord = ComputeSha256Hash(account.PassWord);
+                account.PassWord = ComputeSha256Hash(account.PassWord);
                 if (accountnew1 == null) return false;
                 if (accountnew1.PassWord == account.PassWord)
                     return true;

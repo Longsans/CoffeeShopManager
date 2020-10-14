@@ -35,7 +35,7 @@ namespace GUI
         }
         public void Reload()
         {
-            dataGridView1.DataSource = busEmp.GetAllEmployees();
+            dataGridView1.DataSource = busEmp.GetAllEmployee();
             txtSearch.Text = "";
             cboSearch.Text = "";
         }
