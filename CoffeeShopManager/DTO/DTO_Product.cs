@@ -14,7 +14,13 @@ namespace DTO
         public byte [] Image { get; set; }
         public double Price { get; set; }
         public string Detail { get; set; }
-        DTO_Product (int Id,string name,string type,double money,string detail)
+        
+        public DTO_Product()
+        {
+
+        }
+
+        public DTO_Product (int Id,string name,string type,double money,string detail)
         {
             this.Id = Id;
             this.Name = name;
@@ -22,7 +28,7 @@ namespace DTO
             this.Price = money;
             this.Detail = detail;
         }
-        DTO_Product(byte[] image)
+        public DTO_Product(byte[] image)
         {
             this.Image = image;
         }
