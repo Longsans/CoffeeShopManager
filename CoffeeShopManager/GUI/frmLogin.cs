@@ -70,6 +70,8 @@ namespace GUI
                     frmHome frmHome = new frmHome(this);
                     this.Hide();
                     frmHome.Show();
+                    txtPassword.Text = "";
+                    txtUsername.Text = "";
                 }
                 else
                 {

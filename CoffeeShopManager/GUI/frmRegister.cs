@@ -35,8 +35,17 @@ namespace GUI
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            //DTO_User dtoUser = new DTO_User() { Email = txtEmail.Text, PassWord = txtPass.Text };
-            //busUser.Insert(dtoUser);
+            errorProvider1.SetError(txtConfirm, "");
+            if (txtEmail.Text == "" || txtPass.Text == "" || txtConfirm.Text == "") MessageBox.Show("Vui lòng nhập đủ thông tin");
+            else if (txtPass.Text != txtConfirm.Text) errorProvider1.SetError(txtConfirm, "Xác nhận mật khẩu không đúng");
+            else
+            {
+
+                DTO_User dtoUser = new DTO_User() { Email = txtEmail.Text, PassWord = txtPass.Text };
+                if (busUser.Insert(dtoUser))
+                    MessageBox.Show("Bạn đã đăng ký thành công");
+                else MessageBox.Show("Tên đăng nhập đã tồn tại");
+            }
             
         }
     }
