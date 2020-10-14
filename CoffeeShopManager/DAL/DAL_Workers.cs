@@ -22,19 +22,31 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@Id", id);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                dtoWorker.Id = reader.GetInt32(reader.GetOrdinal("Id"));
-                dtoWorker.Firstname = reader.GetString(reader.GetOrdinal("FirstName"));
-                dtoWorker.Lastname = reader.GetString(reader.GetOrdinal("LastName"));
-                dtoWorker.Gender = reader.GetString(reader.GetOrdinal("Gender"));
-                dtoWorker.Position = reader.GetString(reader.GetOrdinal("Position"));
-                dtoWorker.Phone = reader.GetString(reader.GetOrdinal("PhoneNumber"));
+                dtoWorker = new DTO_Worker
+                {
+                    Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                    Firstname = reader.GetString(reader.GetOrdinal("FirstName")),
+                    Lastname = reader.GetString(reader.GetOrdinal("LastName")),
+                    Gender = reader.GetString(reader.GetOrdinal("Gender")),
+                    Position = reader.GetString(reader.GetOrdinal("Position")),
+                    Phone = reader.GetString(reader.GetOrdinal("PhoneNumber"))
+                };
                 dtoWorker.Account.Email = reader.GetString(reader.GetOrdinal("EmailAddress"));
 
                 var bdate = reader.GetDateTime(reader.GetOrdinal("Birthdate"));
                 dtoWorker.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
+            }
+            if (!connState)
+            {
+                CloseConnection();
             }
 
             return dtoWorker;
@@ -47,10 +59,19 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@email", email);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 dtoWorker = GetInfoById(reader.GetInt32(reader.GetOrdinal("Id")));
+            }
+            if (!connState)
+            {
+                CloseConnection();
             }
 
             return dtoWorker;
@@ -111,11 +132,20 @@ namespace DAL
             cmd.Parameters.AddWithValue("@email", dtoWorker.Account.Email);
             cmd.Parameters.AddWithValue("@birthdate", dtoWorker.Birthdate);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             dalUserInfo.Insert(dtoWorker.Account);
             int accountId = dalUserInfo.GetByEmail(dtoWorker.Account.Email).ID;
             cmd.Parameters.AddWithValue("@accountId", accountId);
 
             cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
 
             return GetInfoByEmail(dtoWorker.Account.Email).Id;
         }
@@ -127,8 +157,17 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", dtoWorker.Id);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             dalUserInfo.Delete(dtoWorker.Account);
             cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
         }
 
         /// <summary>
@@ -153,8 +192,17 @@ namespace DAL
             cmd.Parameters.AddWithValue("@bdate", dtoWorkerUpdated.Birthdate);
             cmd.Parameters.AddWithValue("@id", dtoWorkerUpdated.Id);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             dalUserInfo.Update(dtoWorkerUpdated.Account);
             cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
         }
     }
 }

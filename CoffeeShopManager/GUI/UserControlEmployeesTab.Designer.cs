@@ -83,7 +83,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(2, 140);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(743, 173);
+            this.panel1.Size = new System.Drawing.Size(834, 208);
             this.panel1.TabIndex = 4;
             // 
             // dataGridView1
@@ -97,14 +97,14 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(743, 173);
+            this.dataGridView1.Size = new System.Drawing.Size(834, 208);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnAdd
             // 
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(375, 371);
+            this.btnAdd.Location = new System.Drawing.Point(472, 371);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 37);
             this.btnAdd.TabIndex = 10;
@@ -116,7 +116,7 @@
             // 
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(496, 371);
+            this.btnEdit.Location = new System.Drawing.Point(598, 371);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(90, 37);
             this.btnEdit.TabIndex = 11;
@@ -128,7 +128,7 @@
             // 
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(630, 371);
+            this.btnDelete.Location = new System.Drawing.Point(723, 371);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 37);
             this.btnDelete.TabIndex = 12;
@@ -148,7 +148,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UserControlEmployeesTab";
-            this.Size = new System.Drawing.Size(773, 445);
+            this.Size = new System.Drawing.Size(839, 445);
             this.Load += new System.EventHandler(this.UserControlEmployeesTab_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

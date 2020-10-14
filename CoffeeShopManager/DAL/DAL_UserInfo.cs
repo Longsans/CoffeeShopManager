@@ -18,17 +18,28 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@Id", id);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                dtoUser.ID = reader.GetInt32(reader.GetOrdinal("Id"));
-                dtoUser.Email = reader.GetString(reader.GetOrdinal("EmailAddress"));
-                dtoUser.PassWord = reader.GetString(reader.GetOrdinal("Password"));
+                dtoUser = new DTO_User
+                {
+                    ID = reader.GetInt32(reader.GetOrdinal("Id")),
+                    Email = reader.GetString(reader.GetOrdinal("EmailAddress")),
+                    PassWord = reader.GetString(reader.GetOrdinal("Password"))
+                };
+            }
+            if (!connState)
+            {
+                CloseConnection();
             }
 
             return dtoUser;
         }
-
         public DTO_User GetByEmail(string email)
         {
             DTO_User dtoUser = null;
@@ -36,10 +47,19 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@email", email);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 dtoUser = GetById(reader.GetInt32(reader.GetOrdinal("Id")));
+            }
+            if (!connState)
+            {
+                CloseConnection();
             }
 
             return dtoUser;
@@ -52,7 +72,16 @@ namespace DAL
             cmd.Parameters.AddWithValue("@email", dtoUser.Email);
             cmd.Parameters.AddWithValue("@password", dtoUser.PassWord);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
         }
 
         public void Delete(DTO_User dtoUser)
@@ -61,7 +90,16 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", dtoUser.ID);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
         }
 
         /// <summary>
@@ -78,7 +116,16 @@ namespace DAL
             cmd.Parameters.AddWithValue("@passwd", dtoUserUpdated.PassWord);
             cmd.Parameters.AddWithValue("@id", dtoUserUpdated.ID);
 
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
         }
     }
 }
