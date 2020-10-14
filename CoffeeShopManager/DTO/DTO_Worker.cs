@@ -20,16 +20,20 @@ namespace DTO
         public DTO_User Account = new DTO_User();
         public DTO_Worker() { }
 
-        public DTO_Worker(string lastname, string firstname, string gender, string position, string phone, DateTime bir, string email, string password)
+        public DTO_Worker(string lastname, string firstname, string gender, string position, string phone, string email, string password)
         {
             this.Lastname = lastname;
             this.Firstname = firstname;
             this.Gender = gender;
             this.Position = position;
             this.Phone = phone;
-            this.Birthdate = bir;
             Account.Email = email;
             Account.PassWord = password;
+        }
+        public DTO_Worker(int year,int month,int day)
+        {
+            this.Birthdate = new DateTime(year, month, day);
+            //cachs goi toi Birthdate.Day hoac .Month .Year
         }
     }
 }
