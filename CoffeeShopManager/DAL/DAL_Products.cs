@@ -51,7 +51,7 @@ namespace DAL
                     Id = id,
                     Name = reader.GetString(reader.GetOrdinal("Name")),
                     Type = reader.GetString(reader.GetOrdinal("Type")),
-                    Price = reader.GetDouble(reader.GetOrdinal("Price")),
+                    Price = reader.GetDecimal(reader.GetOrdinal("Price")),
                     Detail = reader.GetString(reader.GetOrdinal("Details"))
                     // image
                 };
@@ -84,7 +84,7 @@ namespace DAL
                     Id = reader.GetInt32(reader.GetOrdinal("Id")),
                     Name = name,
                     Type = reader.GetString(reader.GetOrdinal("Type")),
-                    Price = reader.GetDouble(reader.GetOrdinal("Price")),
+                    Price = reader.GetDecimal(reader.GetOrdinal("Price")),
                     Detail = reader.GetString(reader.GetOrdinal("Details"))
                     // image
                 };

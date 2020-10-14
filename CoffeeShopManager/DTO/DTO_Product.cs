@@ -12,7 +12,7 @@ namespace DTO
         public string Name { get; set; }
         public string Type { get; set; }
         public byte [] Image { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public string Detail { get; set; }
         
         public DTO_Product()
@@ -20,7 +20,7 @@ namespace DTO
 
         }
 
-        public DTO_Product (int Id,string name,string type,double money,string detail)
+        public DTO_Product (int Id,string name,string type,decimal money,string detail)
         {
             this.Id = Id;
             this.Name = name;
