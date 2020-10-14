@@ -49,6 +49,16 @@ namespace DAL
             return dtoMan;
         }
 
+        public DTO_Manager GetByEmail(string email)
+        {
+            DTO_Manager man = null;
+            DAL_Workers dalWorkers = new DAL_Workers();
+            int id = dalWorkers.GetInfoByEmail(email).Id;
+            man = new DTO_Manager(GetById(id));
+
+            return man;
+        }
+
         public List<DTO_Employee> GetEmployeeList(DTO_Manager manager)
         {
             DAL_Employee dalEmp = new DAL_Employee();

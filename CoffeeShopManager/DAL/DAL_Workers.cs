@@ -52,7 +52,7 @@ namespace DAL
             return dtoWorker;
         }
 
-        private DTO_Worker GetInfoByEmail(string email)
+        public DTO_Worker GetInfoByEmail(string email)
         {
             DTO_Worker dtoWorker = null;
             string qry = "SELECT * FROM [WORKERS] WHERE EmailAddress = @email";
@@ -90,20 +90,23 @@ namespace DAL
 
         public DataTable GetAllManagerWorkers()
         {
-            return GetAllWorkerOfPosition("Manager");
+            DataTable dtPos = new DataTable();
+            string qry = "SELECT * FROM [WORKERS] WHERE Position = @position";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@position", "Manager");
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtPos);
+
+            return dtPos;
         }
 
         public DataTable GetAllEmployeeWorkers()
         {
-            return GetAllWorkerOfPosition("Employee");
-        }
-
-        private DataTable GetAllWorkerOfPosition(string position)
-        {
             DataTable dtPos = new DataTable();
-            string qry = "SELECT * FROM [WORKERS] WHERE Position = @position";
+            string qry = "SELECT * FROM [WORKERS] WHERE Position <> @position";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@position", position);
+            cmd.Parameters.AddWithValue("@position", "Manager");
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
 
             ada.Fill(dtPos);
@@ -203,6 +206,26 @@ namespace DAL
             {
                 CloseConnection();
             }
+        }
+
+        public int GetNextWorkerId()
+        {
+            string qry = "SELECT max(Id) FROM [WORKERS]";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var reader = cmd.ExecuteReader();
+            int res = reader.GetInt32(0) + 1;
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return res;
         }
     }
 }
