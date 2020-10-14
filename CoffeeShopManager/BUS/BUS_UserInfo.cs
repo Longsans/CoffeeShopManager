@@ -47,7 +47,7 @@ namespace BUS
                 // account.Password = Encrypt(account.Password, "123");
                 // return dalUserInfo.CheckLogin(account);
                 DTO_User accountnew1=  dalUserInfo.GetByEmail(account.Email);
-                account.PassWord = ComputeSha256Hash(account.PassWord);
+                //account.PassWord = ComputeSha256Hash(account.PassWord);
                 if (accountnew1 == null) return false;
                 if (accountnew1.PassWord == account.PassWord)
                     return true;

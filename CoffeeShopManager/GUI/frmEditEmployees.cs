@@ -12,8 +12,14 @@ namespace GUI
 {
     public partial class frmEditEmployees : Form
     {
+        UserControlEmployeesTab _ucEmp = new UserControlEmployeesTab();
         public frmEditEmployees()
         {
+            InitializeComponent();
+        }
+        public frmEditEmployees(UserControlEmployeesTab ucEmp)
+        {
+            _ucEmp = ucEmp;
             InitializeComponent();
         }
     }

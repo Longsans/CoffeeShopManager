@@ -125,6 +125,7 @@
             this.btnExit2.TabIndex = 7;
             this.btnExit2.Text = "Exit";
             this.btnExit2.UseVisualStyleBackColor = false;
+            this.btnExit2.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSignUp
             // 
@@ -149,6 +150,7 @@
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(145, 23);
             this.txtConfirm.TabIndex = 5;
+            this.txtConfirm.UseSystemPasswordChar = true;
             // 
             // txtPass
             // 
@@ -157,6 +159,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(145, 23);
             this.txtPass.TabIndex = 3;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 

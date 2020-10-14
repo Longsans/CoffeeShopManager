@@ -31,19 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.imgListMenuButton = new System.Windows.Forms.ImageList(this.components);
-            this.pnlTitleBar = new System.Windows.Forms.Panel();
-            this.imgListWindowButton = new System.Windows.Forms.ImageList(this.components);
             this.pnlChangeTab = new System.Windows.Forms.Panel();
-            this.pnlShow = new System.Windows.Forms.Panel();
-            this.ucHome = new GUI.UserControlHome();
-            this.ucProductTab = new GUI.UserControlProductTab();
-            this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
-            this.ucEmployeeTab = new GUI.UserControlEmployeesTab();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnUser = new System.Windows.Forms.Button();
+            this.imgListMenuButton = new System.Windows.Forms.ImageList(this.components);
             this.btnNoti = new System.Windows.Forms.Button();
             this.btnEvent = new System.Windows.Forms.Button();
             this.btnStatistic = new System.Windows.Forms.Button();
@@ -53,11 +43,21 @@
             this.btnStock = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
+            this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
+            this.imgListWindowButton = new System.Windows.Forms.ImageList(this.components);
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.pnlShow = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.ucHome = new GUI.UserControlHome();
+            this.ucProductTab = new GUI.UserControlProductTab();
+            this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
+            this.ucEmployeeTab = new GUI.UserControlEmployeesTab();
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlShow.SuspendLayout();
@@ -81,51 +81,8 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 37);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(221, 592);
+            this.pnlMenu.Size = new System.Drawing.Size(221, 597);
             this.pnlMenu.TabIndex = 0;
-            // 
-            // imgListMenuButton
-            // 
-            this.imgListMenuButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListMenuButton.ImageStream")));
-            this.imgListMenuButton.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListMenuButton.Images.SetKeyName(0, "Employee.png");
-            this.imgListMenuButton.Images.SetKeyName(1, "Coffee.png");
-            this.imgListMenuButton.Images.SetKeyName(2, "Stockpng.png");
-            this.imgListMenuButton.Images.SetKeyName(3, "supplier.png");
-            this.imgListMenuButton.Images.SetKeyName(4, "order_history.png");
-            this.imgListMenuButton.Images.SetKeyName(5, "customer.png");
-            this.imgListMenuButton.Images.SetKeyName(6, "statistics.png");
-            this.imgListMenuButton.Images.SetKeyName(7, "event.png");
-            this.imgListMenuButton.Images.SetKeyName(8, "notification_50px.png");
-            this.imgListMenuButton.Images.SetKeyName(9, "user_account_50px.png");
-            // 
-            // pnlTitleBar
-            // 
-            this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(138)))), ((int)(((byte)(93)))));
-            this.pnlTitleBar.Controls.Add(this.btnHome);
-            this.pnlTitleBar.Controls.Add(this.btnMenu);
-            this.pnlTitleBar.Controls.Add(this.btnMinimize);
-            this.pnlTitleBar.Controls.Add(this.btnMaximize);
-            this.pnlTitleBar.Controls.Add(this.btnCancel);
-            this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitleBar.Name = "pnlTitleBar";
-            this.pnlTitleBar.Size = new System.Drawing.Size(984, 37);
-            this.pnlTitleBar.TabIndex = 1;
-            this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
-            this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
-            this.pnlTitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
-            // 
-            // imgListWindowButton
-            // 
-            this.imgListWindowButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListWindowButton.ImageStream")));
-            this.imgListWindowButton.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListWindowButton.Images.SetKeyName(0, "close_window.png");
-            this.imgListWindowButton.Images.SetKeyName(1, "maximize.png");
-            this.imgListWindowButton.Images.SetKeyName(2, "minimize.png");
-            this.imgListWindowButton.Images.SetKeyName(3, "restore.png");
-            this.imgListWindowButton.Images.SetKeyName(4, "menu_50px.png");
-            this.imgListWindowButton.Images.SetKeyName(5, "tea_cup_100px.png");
             // 
             // pnlChangeTab
             // 
@@ -135,95 +92,6 @@
             this.pnlChangeTab.Size = new System.Drawing.Size(7, 50);
             this.pnlChangeTab.TabIndex = 4;
             this.pnlChangeTab.Visible = false;
-            // 
-            // pnlShow
-            // 
-            this.pnlShow.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlShow.Controls.Add(this.ucHome);
-            this.pnlShow.Controls.Add(this.ucProductTab);
-            this.pnlShow.Controls.Add(this.ucOrderHistorycs1);
-            this.pnlShow.Controls.Add(this.ucEmployeeTab);
-            this.pnlShow.Controls.Add(this.panel1);
-            this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlShow.Location = new System.Drawing.Point(221, 37);
-            this.pnlShow.Name = "pnlShow";
-            this.pnlShow.Size = new System.Drawing.Size(763, 592);
-            this.pnlShow.TabIndex = 2;
-            // 
-            // ucHome
-            // 
-            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ucHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucHome.Location = new System.Drawing.Point(0, 34);
-            this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(763, 558);
-            this.ucHome.TabIndex = 3;
-            this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
-            // 
-            // ucProductTab
-            // 
-            this.ucProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucProductTab.Location = new System.Drawing.Point(0, 34);
-            this.ucProductTab.Name = "ucProductTab";
-            this.ucProductTab.Size = new System.Drawing.Size(763, 558);
-            this.ucProductTab.TabIndex = 1;
-            this.ucProductTab.Visible = false;
-            // 
-            // ucOrderHistorycs1
-            // 
-            this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucOrderHistorycs1.Location = new System.Drawing.Point(0, 34);
-            this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
-            this.ucOrderHistorycs1.Size = new System.Drawing.Size(763, 558);
-            this.ucOrderHistorycs1.TabIndex = 0;
-            this.ucOrderHistorycs1.Visible = false;
-            // 
-            // ucEmployeeTab
-            // 
-            this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucEmployeeTab.Location = new System.Drawing.Point(0, 34);
-            this.ucEmployeeTab.Name = "ucEmployeeTab";
-            this.ucEmployeeTab.Size = new System.Drawing.Size(763, 558);
-            this.ucEmployeeTab.TabIndex = 0;
-            this.ucEmployeeTab.Visible = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(763, 34);
-            this.panel1.TabIndex = 2;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(610, 0);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(89, 32);
-            this.btnLogout.TabIndex = 1;
-            this.btnLogout.Text = "Log out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(455, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome, Admin";
             // 
             // btnUser
             // 
@@ -244,6 +112,21 @@
             this.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUser.UseVisualStyleBackColor = true;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
+            // 
+            // imgListMenuButton
+            // 
+            this.imgListMenuButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListMenuButton.ImageStream")));
+            this.imgListMenuButton.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListMenuButton.Images.SetKeyName(0, "Employee.png");
+            this.imgListMenuButton.Images.SetKeyName(1, "Coffee.png");
+            this.imgListMenuButton.Images.SetKeyName(2, "Stockpng.png");
+            this.imgListMenuButton.Images.SetKeyName(3, "supplier.png");
+            this.imgListMenuButton.Images.SetKeyName(4, "order_history.png");
+            this.imgListMenuButton.Images.SetKeyName(5, "customer.png");
+            this.imgListMenuButton.Images.SetKeyName(6, "statistics.png");
+            this.imgListMenuButton.Images.SetKeyName(7, "event.png");
+            this.imgListMenuButton.Images.SetKeyName(8, "notification_50px.png");
+            this.imgListMenuButton.Images.SetKeyName(9, "user_account_50px.png");
             // 
             // btnNoti
             // 
@@ -425,6 +308,23 @@
             this.btnEmployee.UseVisualStyleBackColor = true;
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
+            // pnlTitleBar
+            // 
+            this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(138)))), ((int)(((byte)(93)))));
+            this.pnlTitleBar.Controls.Add(this.btnHome);
+            this.pnlTitleBar.Controls.Add(this.btnMenu);
+            this.pnlTitleBar.Controls.Add(this.btnMinimize);
+            this.pnlTitleBar.Controls.Add(this.btnMaximize);
+            this.pnlTitleBar.Controls.Add(this.btnCancel);
+            this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitleBar.Name = "pnlTitleBar";
+            this.pnlTitleBar.Size = new System.Drawing.Size(1079, 37);
+            this.pnlTitleBar.TabIndex = 1;
+            this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
+            this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
+            this.pnlTitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
+            // 
             // btnHome
             // 
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -443,6 +343,17 @@
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // imgListWindowButton
+            // 
+            this.imgListWindowButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListWindowButton.ImageStream")));
+            this.imgListWindowButton.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListWindowButton.Images.SetKeyName(0, "close_window.png");
+            this.imgListWindowButton.Images.SetKeyName(1, "maximize.png");
+            this.imgListWindowButton.Images.SetKeyName(2, "minimize.png");
+            this.imgListWindowButton.Images.SetKeyName(3, "restore.png");
+            this.imgListWindowButton.Images.SetKeyName(4, "menu_50px.png");
+            this.imgListWindowButton.Images.SetKeyName(5, "tea_cup_100px.png");
             // 
             // btnMenu
             // 
@@ -466,7 +377,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ImageIndex = 2;
             this.btnMinimize.ImageList = this.imgListWindowButton;
-            this.btnMinimize.Location = new System.Drawing.Point(861, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(956, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(41, 37);
             this.btnMinimize.TabIndex = 2;
@@ -480,7 +391,7 @@
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.ImageIndex = 1;
             this.btnMaximize.ImageList = this.imgListWindowButton;
-            this.btnMaximize.Location = new System.Drawing.Point(902, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(997, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(41, 37);
             this.btnMaximize.TabIndex = 1;
@@ -494,19 +405,108 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ImageIndex = 0;
             this.btnCancel.ImageList = this.imgListWindowButton;
-            this.btnCancel.Location = new System.Drawing.Point(943, 0);
+            this.btnCancel.Location = new System.Drawing.Point(1038, 0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(41, 37);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // pnlShow
+            // 
+            this.pnlShow.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlShow.Controls.Add(this.ucHome);
+            this.pnlShow.Controls.Add(this.ucProductTab);
+            this.pnlShow.Controls.Add(this.ucOrderHistorycs1);
+            this.pnlShow.Controls.Add(this.ucEmployeeTab);
+            this.pnlShow.Controls.Add(this.panel1);
+            this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlShow.Location = new System.Drawing.Point(221, 37);
+            this.pnlShow.Name = "pnlShow";
+            this.pnlShow.Size = new System.Drawing.Size(858, 597);
+            this.pnlShow.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Controls.Add(this.lblWelcome);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(858, 34);
+            this.panel1.TabIndex = 2;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(705, 0);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(89, 32);
+            this.btnLogout.TabIndex = 1;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(550, 8);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(128, 19);
+            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.Text = "Welcome, Admin";
+            // 
+            // ucHome
+            // 
+            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucHome.Location = new System.Drawing.Point(0, 34);
+            this.ucHome.Name = "ucHome";
+            this.ucHome.Size = new System.Drawing.Size(858, 563);
+            this.ucHome.TabIndex = 3;
+            this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
+            // 
+            // ucProductTab
+            // 
+            this.ucProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucProductTab.Location = new System.Drawing.Point(0, 34);
+            this.ucProductTab.Name = "ucProductTab";
+            this.ucProductTab.Size = new System.Drawing.Size(858, 563);
+            this.ucProductTab.TabIndex = 1;
+            this.ucProductTab.Visible = false;
+            // 
+            // ucOrderHistorycs1
+            // 
+            this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucOrderHistorycs1.Location = new System.Drawing.Point(0, 34);
+            this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
+            this.ucOrderHistorycs1.Size = new System.Drawing.Size(858, 563);
+            this.ucOrderHistorycs1.TabIndex = 0;
+            this.ucOrderHistorycs1.Visible = false;
+            // 
+            // ucEmployeeTab
+            // 
+            this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucEmployeeTab.Location = new System.Drawing.Point(0, 34);
+            this.ucEmployeeTab.Name = "ucEmployeeTab";
+            this.ucEmployeeTab.Size = new System.Drawing.Size(858, 563);
+            this.ucEmployeeTab.TabIndex = 0;
+            this.ucEmployeeTab.Visible = false;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(984, 629);
+            this.ClientSize = new System.Drawing.Size(1079, 634);
             this.Controls.Add(this.pnlShow);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlTitleBar);
@@ -550,7 +550,7 @@
         private UserControlProductTab ucProductTab;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnHome;
         private UserControlHome ucHome;
         private System.Windows.Forms.Panel pnlChangeTab;

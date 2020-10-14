@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DTO;
+using BUS;
 namespace GUI
 {
+
     public partial class frmHome : Form
     {
+        public static DTO_Manager dtoMan = new DTO_Manager();
         private bool dragging = false;
         Point startPoint = new Point(0, 0);
         frmLogin _frmLogin = new frmLogin();
@@ -122,7 +125,7 @@ namespace GUI
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-
+            lblWelcome.Text = "Welcome, " + dtoMan.Firstname; 
         }
 
         private void btnHome_Click(object sender, EventArgs e)

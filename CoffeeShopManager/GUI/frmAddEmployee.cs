@@ -14,6 +14,7 @@ namespace GUI
 {
     public partial class frmAddEmployee : Form
     {
+        BUS_Employee busEmp = new BUS_Employee();
         UserControlEmployeesTab _ucEmp = new UserControlEmployeesTab();
         public frmAddEmployee()
         {
@@ -28,24 +29,67 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //DTO_Employee dtoEmp = new DTO_Employee();
-            //dtoEmp.Address = "Ho Chi Minh";
-            //dtoEmp.Birthdate = DateTime.Today;
-            //dtoEmp.DateOfJoin = DateTime.Today;
-            //dtoEmp.Firstname = "Nguyen";
-            //dtoEmp.Gender = "Male";
-            //dtoEmp.Id = 1;
-            ////dtoEmp.Manager = ";
-            //dtoEmp.Phone = "123456";
-            //dtoEmp.Position = "Bartender";
-            //dtoEmp.Salary = 1000000;
-            //dtoEmp.Account.Email = "ncuoong";
-            //dtoEmp.Account.PassWord = "123456";
-            //BUS_Employee bUS_Employee = new BUS_Employee();
-            //bUS_Employee.AddEmployee(dtoEmp);
-            //_ucEmp.
+            if (txtID.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
+                txtPosition.Text == "" || txtPhone.Text == "" || txtEmail.Text == "" || txtDayBD.Text == "" ||
+                txtMonthBD.Text == "" || txtYearBD.Text == "" || txtSalary.Text == "" || txtPassword.Text == "" ||
+                txtDayJoin.Text == "" || txtMonthJoin.Text == "" || txtYearJoin.Text == "" || (radFemale.Checked == false &&
+                radMale.Checked == false))
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+
+            else
+            {
+                errorProvider1.SetError(txtYearBD, "");
+                errorProvider1.SetError(txtYearJoin, "");
+                DTO_Employee dtoEmp = new DTO_Employee();
+                dtoEmp.Id = int.Parse(txtID.Text);
+                dtoEmp.Firstname = txtFirstName.Text;
+                dtoEmp.Lastname = txtLastName.Text;
+                dtoEmp.Address = txtAddress.Text;
+                dtoEmp.Position = txtPosition.Text;
+                if (BUS_Employee.IsDate(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text))
+                {
+                    dtoEmp.Birthdate = DateTime.Now;
+                }
+                else errorProvider1.SetError(txtYearBD, "Date is invalid");
+                dtoEmp.Phone = txtPhone.Text;
+                dtoEmp.Account.Email = txtEmail.Text;
+                dtoEmp.Account.PassWord = txtPassword.Text;
+                dtoEmp.Salary = double.Parse(txtSalary.Text);
+                if (BUS_Employee.IsDate(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text))
+                {
+                    dtoEmp.Birthdate = DateTime.Now;
+                }
+                else errorProvider1.SetError(txtYearJoin, "Date is invalid");
+                dtoEmp.Phone = txtPhone.Text;
+                if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
+                else dtoEmp.Gender = radFemale.Text;
+                dtoEmp.Manager = frmHome.dtoMan;
+                busEmp.AddEmployee(dtoEmp);
+                Reload();
+            }
+
         }
 
-
+        private void Reload()
+        {
+            txtID.Text = "";
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtAddress.Text = "";
+            txtPosition.Text = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            txtDayBD.Text = ""; 
+            txtMonthBD.Text = "";
+            txtYearBD.Text = "";
+            txtSalary.Text = "";
+            txtPassword.Text = "";
+            txtDayJoin.Text = "";
+            txtMonthJoin.Text = "";
+            txtYearJoin.Text = ""; 
+            radFemale.Checked = false;
+            radMale.Checked = false;
+            _ucEmp.Reload();
+        }
     }
 }

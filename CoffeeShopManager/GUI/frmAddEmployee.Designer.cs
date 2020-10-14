@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -42,11 +43,11 @@
             this.txtYearJoin = new System.Windows.Forms.TextBox();
             this.txtMonthJoin = new System.Windows.Forms.TextBox();
             this.txtDayJoin = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtContact = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -64,7 +65,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -83,11 +86,11 @@
             this.panel2.Controls.Add(this.txtYearJoin);
             this.panel2.Controls.Add(this.txtMonthJoin);
             this.panel2.Controls.Add(this.txtDayJoin);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtPhone);
             this.panel2.Controls.Add(this.txtAddress);
-            this.panel2.Controls.Add(this.txtContact);
-            this.panel2.Controls.Add(this.txtName);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtLastName);
+            this.panel2.Controls.Add(this.txtFirstName);
+            this.panel2.Controls.Add(this.txtPosition);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.txtSalary);
             this.panel2.Controls.Add(this.txtEmail);
@@ -233,13 +236,13 @@
             this.txtDayJoin.Size = new System.Drawing.Size(33, 23);
             this.txtDayJoin.TabIndex = 25;
             // 
-            // textBox1
+            // txtPhone
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(138, 265);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 23);
-            this.textBox1.TabIndex = 13;
+            this.txtPhone.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(138, 265);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(113, 23);
+            this.txtPhone.TabIndex = 13;
             // 
             // txtAddress
             // 
@@ -249,29 +252,29 @@
             this.txtAddress.Size = new System.Drawing.Size(113, 23);
             this.txtAddress.TabIndex = 23;
             // 
-            // txtContact
+            // txtLastName
             // 
-            this.txtContact.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContact.Location = new System.Drawing.Point(138, 137);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(113, 23);
-            this.txtContact.TabIndex = 6;
+            this.txtLastName.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(138, 137);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(113, 23);
+            this.txtLastName.TabIndex = 6;
             // 
-            // txtName
+            // txtFirstName
             // 
-            this.txtName.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(138, 91);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(113, 23);
-            this.txtName.TabIndex = 4;
+            this.txtFirstName.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Location = new System.Drawing.Point(138, 91);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(113, 23);
+            this.txtFirstName.TabIndex = 4;
             // 
-            // textBox3
+            // txtPosition
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(138, 219);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(113, 23);
-            this.textBox3.TabIndex = 11;
+            this.txtPosition.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosition.Location = new System.Drawing.Point(138, 219);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(113, 23);
+            this.txtPosition.TabIndex = 11;
             // 
             // txtPassword
             // 
@@ -436,6 +439,10 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Add employee";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,6 +453,7 @@
             this.Text = "frmAddEmployee";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -460,8 +468,8 @@
         private System.Windows.Forms.TextBox txtMonthJoin;
         private System.Windows.Forms.TextBox txtDayJoin;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtContact;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.TextBox txtEmail;
@@ -480,13 +488,14 @@
         private System.Windows.Forms.RadioButton radMale;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtYearBD;
         private System.Windows.Forms.TextBox txtMonthBD;
         private System.Windows.Forms.TextBox txtDayBD;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
