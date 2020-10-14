@@ -14,8 +14,9 @@ namespace DTO
         public byte [] Image { get; set; }
         public double Price { get; set; }
         public string Detail { get; set; }
-        DTO_Product (string name,string type,double money,string detail)
+        DTO_Product (int Id,string name,string type,double money,string detail)
         {
+            this.Id = Id;
             this.Name = name;
             this.Type = type;
             this.Price = money;
