@@ -2,87 +2,96 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using DTO;
 namespace BUS
 {
-    public class BUS_Employee
+    public class BUS_Manager
     {
-        DAL_Employee dalEmployee = new DAL_Employee();
-        public DataTable GetAllEmployee()
+        DAL_Manager dalManager = new DAL_Manager();
+        public DataTable GetAllManagers()
         {
             try
             {
                 DataTable dtb = new DataTable();
-                dtb = dalEmployee.GetAllEmployees();
+                dtb = dalManager.GetAllManagers();
                 return dtb;
             }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public DTO_Employee GetEmployeeInfoAndManagerId(int id)
-        {
-            return dalEmployee.GetEmployeeInfoAndManagerId(id);
-        }
-        public DTO_Manager GetManagerInfo(DTO_Employee emp)
-        {
-            try
-            {
-               return  dalEmployee.GetManagerInfo(emp);
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public List<DTO_Employee> GetEmployeesThroughManagerId(int managerId)
-        {
-            try
-            {
-                return dalEmployee.GetEmployeesThroughManagerId(managerId);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        } 
-        public void AddEmployee(DTO_Employee emp)
-        {
-            try
-            {
-                dalEmployee.Insert(emp);
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public void DeleteEmployee(DTO_Employee emp)
-        {
-            try
-            {
-                dalEmployee.Delete(emp);
-            }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public void EditEmployee(DTO_Employee emp)
+        public DTO_Manager GetById(int id)
         {
             try
             {
-                dalEmployee.Update(emp);
+                return dalManager.GetById(id);
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
+        public List<DTO_Employee> GetEmployeeList(DTO_Manager manager)
+        {
+            try
+            {
+                return dalManager.GetEmployeeList(manager);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DTO_User GetUserInfoById(int id)
+        {
+            try
+            {
+                return dalManager.GetUserInfoById(id);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int Insert(DTO_Manager dtoMan)
+        {
+            try
+            {
+                return dalManager.Insert(dtoMan);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void Delete(DTO_Manager dtoMan)
+        {
+            try
+            {
+                dalManager.Delete(dtoMan);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public void Update(DTO_Manager dtoman)
+        {
+            try
+            {
+                dalManager.Update(dtoman);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
     }
 }

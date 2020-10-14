@@ -25,5 +25,9 @@ namespace DTO
             this.Account.Email = dtoWr.Account.Email;
             this.Birthdate = dtoWr.Birthdate;
         }
+        public DTO_Employee(int year,int month,int day)
+        {
+            DateOfJoin = new DateTime(year, month, day);
+        }
     }
 }
