@@ -87,6 +87,16 @@ namespace DAL
             return emp;
         }
 
+        public DTO_Employee GetEmployeeInfoByEmail(string email)
+        {
+            DTO_Employee emp = null;
+            DAL_Workers dalWorkers = new DAL_Workers();
+            int id = dalWorkers.GetInfoByEmail(email).Id;
+            emp = new DTO_Employee(GetEmployeeInfoAndManagerId(id));
+
+            return emp;
+        }
+
         /// <summary>
         /// Gets list of employees managed by the manager with the specified <c>Id</c>
         /// </summary>
