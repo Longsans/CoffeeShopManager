@@ -17,7 +17,6 @@ namespace DTO
 
         public DTO_Manager(DTO_Worker dtoWr)
         {
-            this.Id = dtoWr.Id;
             this.Firstname = dtoWr.Firstname;
             this.Lastname = dtoWr.Lastname;
             this.Gender = dtoWr.Gender;

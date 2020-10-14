@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DTO_Employee.cs" />
     <Compile Include="DTO_Manager.cs" />
+    <Compile Include="DTO_Product.cs" />
     <Compile Include="DTO_User.cs" />
     <Compile Include="DTO_Worker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

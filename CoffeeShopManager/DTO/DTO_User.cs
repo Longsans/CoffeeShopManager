@@ -19,9 +19,8 @@ namespace DTO
             this.Email = email;
             this.PassWord = password;
         }
-        public DTO_User(int id,string email,string password,string typeid)
+        public DTO_User(string email,string password,string typeid)
         {
-            this.ID = id;
             this.Email = email;
             this.PassWord = password;
             this.TypeId = typeid;
