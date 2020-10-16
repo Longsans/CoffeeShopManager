@@ -15,6 +15,7 @@ namespace GUI
     public partial class frmAddEmployee : Form
     {
         BUS_Employee busEmp = new BUS_Employee();
+        BUS_UserInfo busUser = new BUS_UserInfo();
         UserControlEmployeesTab _ucEmp = new UserControlEmployeesTab();
         public frmAddEmployee()
         {
@@ -42,7 +43,7 @@ namespace GUI
                 errorProvider1.SetError(txtYearBD, "");
                 errorProvider1.SetError(txtYearJoin, "");
                 DTO_Employee dtoEmp = new DTO_Employee();
-                dtoEmp.Id = int.Parse(txtID.Text);
+                //dtoEmp.Id = int.Parse(txtID.Text);
                 dtoEmp.Firstname = txtFirstName.Text;
                 dtoEmp.Lastname = txtLastName.Text;
                 dtoEmp.Address = txtAddress.Text;
@@ -51,20 +52,33 @@ namespace GUI
                 {
                     dtoEmp.Birthdate = tmp;
                 }
-                else errorProvider1.SetError(txtYearBD, "Date is invalid");
+                else
+                {
+                    errorProvider1.SetError(txtYearBD, "Date is invalid");
+                    return;
+                }
                 dtoEmp.Phone = txtPhone.Text;
                 dtoEmp.Account.Email = txtEmail.Text;
                 dtoEmp.Account.PassWord = txtPassword.Text;
                 dtoEmp.Salary = double.Parse(txtSalary.Text);
                 if (DateTime.TryParse(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text, out tmp))
                 {
-                    dtoEmp.Birthdate = tmp;
+                    dtoEmp.DateOfJoin = tmp;
                 }
-                else errorProvider1.SetError(txtYearJoin, "Date is invalid");
+                else
+                {
+                    errorProvider1.SetError(txtYearJoin, "Date is invalid");
+                    return;
+                }
                 dtoEmp.Phone = txtPhone.Text;
                 if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
                 else dtoEmp.Gender = radFemale.Text;
                 dtoEmp.Manager = frmHome.dtoMan;
+                if (busUser.Insert(dtoEmp.Account) == false)
+                {
+                    MessageBox.Show("Email đã tồn tại");
+                    return;
+                }
                 busEmp.AddEmployee(dtoEmp);
                 Reload();
             }

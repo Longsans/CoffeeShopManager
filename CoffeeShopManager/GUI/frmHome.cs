@@ -14,6 +14,7 @@ namespace GUI
 
     public partial class frmHome : Form
     {
+        BUS_Manager busMan = new BUS_Manager();
         public static DTO_Manager dtoMan = new DTO_Manager();
         private bool dragging = false;
         Point startPoint = new Point(0, 0);
@@ -179,7 +180,7 @@ namespace GUI
 
         private void ucHome_Load(object sender, EventArgs e)
         {
-            
+            dtoMan = busMan.GetByEmail(_frmLogin.GetEmail());
         }
 
     }

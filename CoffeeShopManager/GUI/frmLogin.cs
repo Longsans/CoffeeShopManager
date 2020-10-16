@@ -26,6 +26,10 @@ namespace GUI
         {
             Close();
         }
+        public string GetEmail()
+        {
+            return txtUsername.Text;
+        }
 
         private void TitleBar_MouseUp(object sender, MouseEventArgs e)
         {
