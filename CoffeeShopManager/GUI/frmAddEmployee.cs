@@ -49,19 +49,7 @@ namespace GUI
                 dtoEmp.Lastname = txtLastName.Text;
                 dtoEmp.Address = txtAddress.Text;
                 dtoEmp.Position = txtPosition.Text;
-
                 string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
-
-                if (DateTime.TryParse(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text, out tmp))
-                {
-                    dtoEmp.Birthdate = tmp;
-                }
-                else
-                {
-                    errorProvider1.SetError(txtYearBD, "Date is invalid");
-                    return;
-                }
-
                 dtoEmp.Phone = txtPhone.Text;
                 dtoEmp.Account.Email = txtEmail.Text;
                 dtoEmp.Account.PassWord = txtPassword.Text;
