@@ -11,10 +11,14 @@ namespace DAL
 {
     public class DAL_Products : DBConnection
     {
+        /// <summary>
+        /// Gets Id, Name, Type and Price regarding all products; Image and details are shown in the Details tab
+        /// </summary>
+        /// <returns></returns>
         public DataTable GetAllProducts()
         {
             DataTable dt = new DataTable();
-            string qry = "SELECT * FROM [PRODUCTS]";
+            string qry = "SELECT Id, Name, Type, Price FROM [PRODUCTS]";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
 
             var connState = (this.conn.State == ConnectionState.Open);
@@ -52,8 +56,8 @@ namespace DAL
                     Name = reader.GetString(reader.GetOrdinal("Name")),
                     Type = reader.GetString(reader.GetOrdinal("Type")),
                     Price = reader.GetDecimal(reader.GetOrdinal("Price")),
-                    Detail = reader.GetString(reader.GetOrdinal("Details"))
-                    // image
+                    Detail = reader.GetString(reader.GetOrdinal("Details")),
+                    Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[]
                 };
             }
             if (!connState)
@@ -85,8 +89,8 @@ namespace DAL
                     Name = name,
                     Type = reader.GetString(reader.GetOrdinal("Type")),
                     Price = reader.GetDecimal(reader.GetOrdinal("Price")),
-                    Detail = reader.GetString(reader.GetOrdinal("Details"))
-                    // image
+                    Detail = reader.GetString(reader.GetOrdinal("Details")),
+                    Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[]
                 };
             }
             if (!connState)
@@ -100,7 +104,7 @@ namespace DAL
         private DataTable GetAllProductsOfType(string type)
         {
             DataTable dt = new DataTable();
-            string qry = "SELECT * FROM [PRODUCTS] WHERE Type = @type";
+            string qry = "SELECT Id, Name, Type, Price FROM [PRODUCTS] WHERE Type = @type";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@type", type);
 
@@ -157,7 +161,25 @@ namespace DAL
 
         public void InsertWithImage(DTO_Product dtoPro)
         {
-            //
+            string qry = "INSERT INTO [PRODUCTS] " +
+                "VALUES (@name, @type, @image, @price, @details)"; // Chờ image
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@name", dtoPro.Name);
+            cmd.Parameters.AddWithValue("@type", dtoPro.Type);
+            cmd.Parameters.AddWithValue("@image", dtoPro.Image);
+            cmd.Parameters.AddWithValue("@price", dtoPro.Price);
+            cmd.Parameters.AddWithValue("@details", dtoPro.Detail);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
         }
 
         public void Delete(DTO_Product dtoPro)

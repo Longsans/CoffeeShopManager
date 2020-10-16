@@ -60,7 +60,7 @@ namespace GUI
                 dtoEmp.Phone = txtPhone.Text;
                 dtoEmp.Account.Email = txtEmail.Text;
                 dtoEmp.Account.PassWord = txtPassword.Text;
-                dtoEmp.Salary = double.Parse(txtSalary.Text);
+                dtoEmp.Salary = decimal.Parse(txtSalary.Text);
                 if (DateTime.TryParse(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text, out tmp))
                 {
                     dtoEmp.DateOfJoin = tmp;

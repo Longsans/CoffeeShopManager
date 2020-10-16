@@ -25,6 +25,7 @@ namespace DTO
             this.Phone = dtoWr.Phone;
             this.Account.Email = dtoWr.Account.Email;
             this.Birthdate = dtoWr.Birthdate;
+            this.Image = dtoWr.Image;
         }
     }
 }

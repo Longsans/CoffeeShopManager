@@ -53,8 +53,8 @@ namespace DAL
         {
             DTO_Manager man = null;
             DAL_Workers dalWorkers = new DAL_Workers();
-            int id = dalWorkers.GetInfoByEmail(email).Id;
-            man = new DTO_Manager(GetById(id));
+            DTO_Worker dtoWorker = dalWorkers.GetInfoByEmail(email);
+            man = new DTO_Manager(dtoWorker);
 
             return man;
         }
@@ -99,22 +99,35 @@ namespace DAL
         {
             DAL_Workers dalWorkers = new DAL_Workers();
             string qry = "INSERT INTO [MANAGERS] VALUES (@workerId)";
+            bool workerInserted = false;
             SqlCommand cmd = new SqlCommand(qry, this.conn);
 
-            int workerId = dalWorkers.Insert(dtoMan);
-            cmd.Parameters.AddWithValue("@workerId", workerId);
-            var connState = (this.conn.State == ConnectionState.Open);
-            if (!connState)
+            try
             {
-                OpenConnection();
-            }
-            cmd.ExecuteNonQuery();
-            if (!connState)
-            {
-                CloseConnection();
-            }
+                int workerId = dalWorkers.Insert(dtoMan);
+                workerInserted = true;
+                cmd.Parameters.AddWithValue("@workerId", workerId);
+                var connState = (this.conn.State == ConnectionState.Open);
+                if (!connState)
+                {
+                    OpenConnection();
+                }
+                cmd.ExecuteNonQuery();
+                if (!connState)
+                {
+                    CloseConnection();
+                }
 
-            return workerId;
+                return workerId;
+            }
+            catch (Exception e)
+            {
+                if (workerInserted)
+                {
+                    dalWorkers.Delete(dtoMan);
+                }
+                throw e;
+            }
         }
 
         public void Delete(DTO_Manager dtoMan)

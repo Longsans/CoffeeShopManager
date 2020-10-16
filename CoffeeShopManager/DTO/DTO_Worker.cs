@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime;
+using System.Drawing;
 
 namespace DTO
 {
@@ -18,6 +19,7 @@ namespace DTO
         public DateTime Birthdate { get; set; }
 
         public DTO_User Account = new DTO_User();
+        public byte[] Image { get; set; }
         public DTO_Worker() { }
 
         public DTO_Worker(string lastname, string firstname, string gender, string position, string phone, string email, string password)
