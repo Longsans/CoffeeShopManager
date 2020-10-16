@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DTO;
 
 using BUS;
+using System.Globalization;
+
 namespace GUI
 {
     public partial class frmAddEmployee : Form
@@ -25,6 +27,7 @@ namespace GUI
         {
             ucEmp = _ucEmp;
             InitializeComponent();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -35,38 +38,47 @@ namespace GUI
                 txtDayJoin.Text == "" || txtMonthJoin.Text == "" || txtYearJoin.Text == "" || (radFemale.Checked == false &&
                 radMale.Checked == false))
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-
             else
             {
                 DateTime tmp = new DateTime();
                 errorProvider1.SetError(txtYearBD, "");
                 errorProvider1.SetError(txtYearJoin, "");
                 DTO_Employee dtoEmp = new DTO_Employee();
-                dtoEmp.Id = int.Parse(txtID.Text);
+           //     dtoEmp.Id = int.Parse(txtID.Text);
                 dtoEmp.Firstname = txtFirstName.Text;
                 dtoEmp.Lastname = txtLastName.Text;
                 dtoEmp.Address = txtAddress.Text;
                 dtoEmp.Position = txtPosition.Text;
-                if (DateTime.TryParse(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text, out tmp))
-                {
-                    dtoEmp.Birthdate = tmp;
-                }
-                else errorProvider1.SetError(txtYearBD, "Date is invalid");
+                string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
                 dtoEmp.Phone = txtPhone.Text;
                 dtoEmp.Account.Email = txtEmail.Text;
                 dtoEmp.Account.PassWord = txtPassword.Text;
                 dtoEmp.Salary = double.Parse(txtSalary.Text);
-                if (DateTime.TryParse(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text, out tmp))
-                {
-                    dtoEmp.Birthdate = tmp;
-                }
-                else errorProvider1.SetError(txtYearJoin, "Date is invalid");
                 dtoEmp.Phone = txtPhone.Text;
                 if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
                 else dtoEmp.Gender = radFemale.Text;
-                dtoEmp.Manager = frmHome.dtoMan;
-                busEmp.AddEmployee(dtoEmp);
-                Reload();
+                if (DateTime.TryParseExact(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out tmp)==true && DateTime.TryParseExact(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out tmp))
+                //   if (DateTime.TryParse(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text, out tmp))
+                {
+                    dtoEmp.Birthdate = new DateTime(tmp.Year, tmp.Month, tmp.Day);
+                    dtoEmp.DateOfJoin = new DateTime(tmp.Year, tmp.Month, tmp.Day);
+                    MessageBox.Show("" + dtoEmp.Birthdate.Day + dtoEmp.Birthdate.Month + dtoEmp.Birthdate.Year);
+                    MessageBox.Show("" + dtoEmp.DateOfJoin.Day + dtoEmp.DateOfJoin.Month + dtoEmp.DateOfJoin.Year);
+                    dtoEmp.Manager = frmHome.dtoMan;
+                    busEmp.AddEmployee(dtoEmp);
+                    Reload();
+                }
+                else
+                {
+                    MessageBox.Show("Nhap date sai");
+                    txtDayBD.ResetText();
+                    txtMonthBD.ResetText();
+                    txtYearBD.ResetText();
+                    txtDayJoin.ResetText();
+                    txtMonthJoin.ResetText();
+                    txtYearJoin.ResetText();
+
+                }
             }
 
         }
@@ -91,6 +103,31 @@ namespace GUI
             radFemale.Checked = false;
             radMale.Checked = false;
             _ucEmp.Reload();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmAddEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDayBD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtYearBD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -113,6 +113,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(674, 348);
             this.panel2.TabIndex = 7;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label16
             // 
@@ -141,6 +142,7 @@
             this.txtYearBD.Name = "txtYearBD";
             this.txtYearBD.Size = new System.Drawing.Size(33, 23);
             this.txtYearBD.TabIndex = 21;
+            this.txtYearBD.TextChanged += new System.EventHandler(this.txtYearBD_TextChanged);
             // 
             // txtMonthBD
             // 
@@ -157,6 +159,7 @@
             this.txtDayBD.Name = "txtDayBD";
             this.txtDayBD.Size = new System.Drawing.Size(33, 23);
             this.txtDayBD.TabIndex = 17;
+            this.txtDayBD.TextChanged += new System.EventHandler(this.txtDayBD_TextChanged);
             // 
             // radFemale
             // 
@@ -251,6 +254,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(113, 23);
             this.txtAddress.TabIndex = 23;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // txtLastName
             // 
@@ -452,6 +456,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "frmAddEmployee";
             this.Text = "frmAddEmployee";
+            this.Load += new System.EventHandler(this.frmAddEmployee_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

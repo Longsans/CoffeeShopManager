@@ -58,7 +58,9 @@ namespace BUS
             }
             catch(Exception ex)
             {
-                throw ex;
+                
+                throw  ex;
+                
             }
         }
         public void DeleteEmployee(DTO_Employee emp)

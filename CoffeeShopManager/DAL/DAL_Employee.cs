@@ -45,7 +45,8 @@ namespace DAL
                 CloseConnection();
             }
 
-            return dtMerged;
+           return dtMerged;
+            //return dtEmp;
         }
 
         /// <summary>Gets the employee with the specified <c>Id</c> and only the <c>Id</c> of the <c>Manager</c> property; returns <returns>null</returns> if no employee with such <c>Id</c> exists</summary>
