@@ -17,6 +17,7 @@ namespace GUI
     public partial class frmAddEmployee : Form
     {
         BUS_Employee busEmp = new BUS_Employee();
+        BUS_UserInfo busUser = new BUS_UserInfo();
         UserControlEmployeesTab _ucEmp = new UserControlEmployeesTab();
         public frmAddEmployee()
         {
@@ -44,16 +45,33 @@ namespace GUI
                 errorProvider1.SetError(txtYearBD, "");
                 errorProvider1.SetError(txtYearJoin, "");
                 DTO_Employee dtoEmp = new DTO_Employee();
+<<<<<<< HEAD
            //     dtoEmp.Id = int.Parse(txtID.Text);
+=======
+                //dtoEmp.Id = int.Parse(txtID.Text);
+>>>>>>> 69600a0ffd056414619aac29027725f77b01a30f
                 dtoEmp.Firstname = txtFirstName.Text;
                 dtoEmp.Lastname = txtLastName.Text;
                 dtoEmp.Address = txtAddress.Text;
                 dtoEmp.Position = txtPosition.Text;
+<<<<<<< HEAD
                 string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
+=======
+                if (DateTime.TryParse(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text, out tmp))
+                {
+                    dtoEmp.Birthdate = tmp;
+                }
+                else
+                {
+                    errorProvider1.SetError(txtYearBD, "Date is invalid");
+                    return;
+                }
+>>>>>>> 69600a0ffd056414619aac29027725f77b01a30f
                 dtoEmp.Phone = txtPhone.Text;
                 dtoEmp.Account.Email = txtEmail.Text;
                 dtoEmp.Account.PassWord = txtPassword.Text;
                 dtoEmp.Salary = double.Parse(txtSalary.Text);
+<<<<<<< HEAD
                 dtoEmp.Phone = txtPhone.Text;
                 if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
                 else dtoEmp.Gender = radFemale.Text;
@@ -79,6 +97,28 @@ namespace GUI
                     txtYearJoin.ResetText();
 
                 }
+=======
+                if (DateTime.TryParse(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text, out tmp))
+                {
+                    dtoEmp.DateOfJoin = tmp;
+                }
+                else
+                {
+                    errorProvider1.SetError(txtYearJoin, "Date is invalid");
+                    return;
+                }
+                dtoEmp.Phone = txtPhone.Text;
+                if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
+                else dtoEmp.Gender = radFemale.Text;
+                dtoEmp.Manager = frmHome.dtoMan;
+                if (busUser.Insert(dtoEmp.Account) == false)
+                {
+                    MessageBox.Show("Email đã tồn tại");
+                    return;
+                }
+                busEmp.AddEmployee(dtoEmp);
+                Reload();
+>>>>>>> 69600a0ffd056414619aac29027725f77b01a30f
             }
 
         }

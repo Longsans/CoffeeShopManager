@@ -127,5 +127,10 @@ namespace BUS
                 throw ex;
             }
         }
+        public DTO_User EncodePass(DTO_Manager dtoMan)
+        {
+            dtoMan.Account.PassWord = ComputeSha256Hash(dtoMan.Account.PassWord);
+            return dtoMan.Account;
+        }
     }
 }

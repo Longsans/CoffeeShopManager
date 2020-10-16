@@ -36,6 +36,17 @@ namespace BUS
                 throw ex;
             }
         }
+        public DTO_Manager GetByEmail(string email)
+        {
+            try
+            {
+                return dalManager.GetByEmail(email);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<DTO_Employee> GetEmployeeList(DTO_Manager manager)
         {
             try
