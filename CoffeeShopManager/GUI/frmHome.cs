@@ -126,7 +126,9 @@ namespace GUI
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome, " + dtoMan.Firstname; 
+            lblWelcome.Text = "Welcome, " + dtoMan.Lastname;
+            dtoMan = busMan.GetByEmail(_frmLogin.GetEmail());
+
         }
 
         private void btnHome_Click(object sender, EventArgs e)

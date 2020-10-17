@@ -243,7 +243,11 @@ namespace DAL
                 OpenConnection();
             }
             var reader = cmd.ExecuteReader();
-            int currId = reader.GetInt32(0);
+            int currId = -1;
+            if (reader.Read())
+            {
+                currId = reader.GetInt32(0);
+            }
             if (!connState)
             {
                 CloseConnection();

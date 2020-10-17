@@ -54,7 +54,7 @@ namespace GUI
                 dtoEmp.Account.PassWord = txtPassword.Text;
                 dtoEmp.Salary = decimal.Parse(txtSalary.Text);
                 dtoEmp.Manager = frmHome.dtoMan;
-                if (busUser.Insert(dtoEmp.Account) == false)
+                if (!busUser.CheckUsername(dtoEmp.Account.Email))
                 {
                     MessageBox.Show("Email đã tồn tại");
                     txtEmail.ResetText();
@@ -117,7 +117,7 @@ namespace GUI
 
         private void frmAddEmployee_Load(object sender, EventArgs e)
         {
-
+            txtID.Text = busEmp.GetNextEmployeeID().ToString();
         }
 
         private void txtDayBD_TextChanged(object sender, EventArgs e)
@@ -133,6 +133,11 @@ namespace GUI
         private void txtAddress_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnChooseImage_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
         }
     }
 }
