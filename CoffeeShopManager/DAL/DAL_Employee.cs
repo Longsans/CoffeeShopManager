@@ -21,7 +21,7 @@ namespace DAL
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             
             ada.Fill(dtEmp);
-            /*  var connState = (this.conn.State == ConnectionState.Open);
+              var connState = (this.conn.State == ConnectionState.Open);
               if (!connState)
               {
                   OpenConnection();
@@ -44,9 +44,7 @@ namespace DAL
               {
                   CloseConnection();
               }
-
-              return dtMerged;*/
-            return dtEmp;
+              return dtMerged;
         }
 
         /// <summary>Gets the employee with the specified <c>Id</c> and only the <c>Id</c> of the <c>Manager</c> property; returns <returns>null</returns> if no employee with such <c>Id</c> exists</summary>
