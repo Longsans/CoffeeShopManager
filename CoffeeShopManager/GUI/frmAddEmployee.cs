@@ -30,7 +30,6 @@ namespace GUI
             InitializeComponent();
 
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
@@ -54,7 +53,13 @@ namespace GUI
                 dtoEmp.Account.Email = txtEmail.Text;
                 dtoEmp.Account.PassWord = txtPassword.Text;
                 dtoEmp.Salary = decimal.Parse(txtSalary.Text);
-
+                dtoEmp.Manager = frmHome.dtoMan;
+                if (busUser.Insert(dtoEmp.Account) == false)
+                {
+                    MessageBox.Show("Email đã tồn tại");
+                    txtEmail.ResetText();
+                    return;
+                }
                 dtoEmp.Phone = txtPhone.Text;
                 if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
                 else dtoEmp.Gender = radFemale.Text;
@@ -65,7 +70,6 @@ namespace GUI
                     dtoEmp.DateOfJoin = new DateTime(tmp.Year, tmp.Month, tmp.Day);
                     MessageBox.Show("" + dtoEmp.Birthdate.Day + dtoEmp.Birthdate.Month + dtoEmp.Birthdate.Year);
                     MessageBox.Show("" + dtoEmp.DateOfJoin.Day + dtoEmp.DateOfJoin.Month + dtoEmp.DateOfJoin.Year);
-                    dtoEmp.Manager = frmHome.dtoMan;
                     busEmp.AddEmployee(dtoEmp);
                     Reload();
                 }

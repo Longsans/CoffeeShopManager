@@ -21,31 +21,32 @@ namespace DAL
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             
             ada.Fill(dtEmp);
-            var connState = (this.conn.State == ConnectionState.Open);
-            if (!connState)
-            {
-                OpenConnection();
-            }
-            var dtWorkers = dalWr.GetAllEmployeeWorkers();
-            var dtMerged = dtWorkers.Clone();
-            for (int i = 0; i < dtEmp.Columns.Count; ++i)
-            {
-                dtMerged.Columns.Add(dtEmp.Columns[i].ColumnName);
-            }
+            /*  var connState = (this.conn.State == ConnectionState.Open);
+              if (!connState)
+              {
+                  OpenConnection();
+              }
+              var dtWorkers = dalWr.GetAllEmployeeWorkers();
+              var dtMerged = dtWorkers.Clone();
+              for (int i = 0; i < dtEmp.Columns.Count; ++i)
+              {
+                  dtMerged.Columns.Add(dtEmp.Columns[i].ColumnName);
+              }
 
-            var workerTab = dtWorkers.AsEnumerable();
-            var empTab = dtEmp.AsEnumerable();
-            var mergedRows = workerTab.Zip(empTab, (r1, r2) => r1.ItemArray.Concat(r2.ItemArray).ToArray());
-            foreach (object[] row in mergedRows)
-            {
-                dtMerged.Rows.Add(row);
-            }
-            if (!connState)
-            {
-                CloseConnection();
-            }
+              var workerTab = dtWorkers.AsEnumerable();
+              var empTab = dtEmp.AsEnumerable();
+              var mergedRows = workerTab.Zip(empTab, (r1, r2) => r1.ItemArray.Concat(r2.ItemArray).ToArray());
+              foreach (object[] row in mergedRows)
+              {
+                  dtMerged.Rows.Add(row);
+              }
+              if (!connState)
+              {
+                  CloseConnection();
+              }
 
-            return dtMerged;
+              return dtMerged;*/
+            return dtEmp;
         }
 
         /// <summary>Gets the employee with the specified <c>Id</c> and only the <c>Id</c> of the <c>Manager</c> property; returns <returns>null</returns> if no employee with such <c>Id</c> exists</summary>

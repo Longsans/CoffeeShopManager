@@ -101,7 +101,7 @@ namespace DAL
             return dtoPro;
         }
 
-        private DataTable GetAllProductsOfType(string type)
+        public DataTable GetAllProductsOfType(string type)
         {
             DataTable dt = new DataTable();
             string qry = "SELECT Id, Name, Type, Price FROM [PRODUCTS] WHERE Type = @type";
