@@ -235,6 +235,7 @@ namespace DAL
         public int GetNextWorkerId()
         {
             string qry = "SELECT max(Id) FROM [WORKERS]";
+            int currId = -1;
             SqlCommand cmd = new SqlCommand(qry, this.conn);
 
             var connState = (this.conn.State == ConnectionState.Open);
@@ -243,7 +244,10 @@ namespace DAL
                 OpenConnection();
             }
             var reader = cmd.ExecuteReader();
-            int currId = reader.GetInt32(0);
+            if (reader.Read())
+            {
+                currId = reader.GetInt32(0);
+            }
             if (!connState)
             {
                 CloseConnection();
