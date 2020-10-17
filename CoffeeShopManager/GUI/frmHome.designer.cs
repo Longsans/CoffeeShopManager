@@ -418,7 +418,7 @@
             this.pnlShow.Controls.Add(this.ucHome);
             this.pnlShow.Controls.Add(this.ucProductTab);
             this.pnlShow.Controls.Add(this.ucOrderHistorycs1);
-            this.pnlShow.Controls.Add(this.ucEmployeeTab);
+            this.pnlShow.Controls.Add(ucEmployeeTab);
             this.pnlShow.Controls.Add(this.panel1);
             this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlShow.Location = new System.Drawing.Point(221, 37);

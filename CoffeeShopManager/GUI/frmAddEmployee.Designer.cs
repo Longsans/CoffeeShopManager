@@ -66,6 +66,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnChooseImage = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -76,6 +78,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
             this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.btnChooseImage);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.txtYearBD);
@@ -114,7 +117,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(674, 348);
+            this.panel2.Size = new System.Drawing.Size(953, 403);
             this.panel2.TabIndex = 7;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -190,7 +193,7 @@
             // 
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(269, 295);
+            this.btnAdd.Location = new System.Drawing.Point(289, 341);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 37);
             this.btnAdd.TabIndex = 34;
@@ -310,6 +313,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(138, 52);
             this.txtID.Name = "txtID";
@@ -451,19 +455,33 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnChooseImage
+            // 
+            this.btnChooseImage.Location = new System.Drawing.Point(763, 261);
+            this.btnChooseImage.Name = "btnChooseImage";
+            this.btnChooseImage.Size = new System.Drawing.Size(80, 31);
+            this.btnChooseImage.TabIndex = 35;
+            this.btnChooseImage.Text = "Browse";
+            this.btnChooseImage.UseVisualStyleBackColor = true;
+            this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(269, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(718, 72);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.Size = new System.Drawing.Size(171, 172);
+            this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
             // frmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 348);
+            this.ClientSize = new System.Drawing.Size(953, 403);
             this.Controls.Add(this.panel2);
             this.Name = "frmAddEmployee";
             this.Text = "frmAddEmployee";
@@ -515,6 +533,8 @@
         private System.Windows.Forms.TextBox txtMonthBD;
         private System.Windows.Forms.TextBox txtDayBD;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnChooseImage;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -83,6 +83,30 @@ namespace BUS
                 throw ex;
             }
         }
+        public DTO_Employee GetEmployeeInfoByEmail(string email)
+        {
+            try
+            {
+                return dalEmployee.GetEmployeeInfoByEmail(email);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int GetNextEmployeeID()
+        {
+            
+            try
+            {
+                DAL_Workers dalWor = new DAL_Workers();
+                return dalWor.GetNextWorkerId();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 }
