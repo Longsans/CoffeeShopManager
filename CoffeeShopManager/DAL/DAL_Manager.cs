@@ -104,9 +104,9 @@ namespace DAL
 
             try
             {
-                int workerId = dalWorkers.Insert(dtoMan);
+                dtoMan.Id = dalWorkers.Insert(dtoMan);
                 workerInserted = true;
-                cmd.Parameters.AddWithValue("@workerId", workerId);
+                cmd.Parameters.AddWithValue("@workerId", dtoMan.Id);
                 var connState = (this.conn.State == ConnectionState.Open);
                 if (!connState)
                 {
@@ -118,7 +118,7 @@ namespace DAL
                     CloseConnection();
                 }
 
-                return workerId;
+                return dtoMan.Id;
             }
             catch (Exception e)
             {
@@ -137,13 +137,13 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", dtoMan.Id);
 
-            dalWorkers.Delete(dtoMan);
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
             {
                 OpenConnection();
             }
             cmd.ExecuteNonQuery();
+            dalWorkers.Delete(dtoMan);
             if (!connState)
             {
                 CloseConnection();

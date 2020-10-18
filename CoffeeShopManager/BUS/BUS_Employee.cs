@@ -108,5 +108,39 @@ namespace BUS
             }
         }
 
+        public DataTable GetEmployeesSearchIDFiltered(int id)
+        {
+            return dalEmployee.GetEmployeesSearchIDFiltered(id);
+        }
+
+        public DataTable GetEmployeesSearchNameFiltered(string nameSubstr)
+        {
+            return dalEmployee.GetEmployeesSearchNameFiltered(nameSubstr);
+        }
+
+        public DataTable GetEmployeesSearchGenderFiltered(string gender)
+        {
+            return dalEmployee.GetEmployeesSearchGenderFiltered(gender);
+        }
+
+        public DataTable GetEmployeesSearchPositionFiltered(string position)
+        {
+            return dalEmployee.GetEmployeesSearchPositionFiltered(position);
+        }
+
+        public DataTable GetEmployeesSearchPhoneFiltered(string phone)
+        {
+            return dalEmployee.GetEmployeesSearchPhoneFiltered(phone);
+        }
+
+        public DataTable GetEmployeesSearchEmailFiltered(string email)
+        {
+            return dalEmployee.GetEmployeesSearchEmailFiltered(email);
+        }
+
+        public DataTable GetEmployeesSearchManIDFiltered(int manId)
+        {
+            return dalEmployee.GetEmployeesSearchManIDFiltered(manId);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -119,6 +120,96 @@ namespace DAL
 
             return dtPos;
         }
+        public DataTable GetWorkersSearchIDFiltered(int id)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT Id, FirstName, LastName, " +
+               "Gender, Position, PhoneNumber, EmailAddress " +
+               " FROM [WORKERS] WHERE Id = @id";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+        public DataTable GetWorkersSearchNameFiltered(string nameSubstr)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT Id, FirstName, LastName, " +
+                "Gender, Position, PhoneNumber, EmailAddress " +
+                " FROM [WORKERS] WHERE CONCAT(FirstName, ' ', LastName) LIKE '%@name%'";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@name", nameSubstr);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+        public DataTable GetWorkersSearchGenderFiltered(string gender)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT Id, FirstName, LastName, " +
+                "Gender, Position, PhoneNumber, EmailAddress " +
+                " FROM [WORKERS] WHERE Gender = @gender";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@gender", gender);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+        public DataTable GetWorkersSearchPositionFiltered(string position)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT Id, FirstName, LastName, " +
+                "Gender, Position, PhoneNumber, EmailAddress " +
+                " FROM [WORKERS] WHERE Position = @position";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@position", position);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+        public DataTable GetWorkersSearchPhoneNumberFiltered(string phone)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT Id, FirstName, LastName, " +
+                "Gender, Position, PhoneNumber, EmailAddress " +
+                " FROM [WORKERS] WHERE PhoneNumber = @phone";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@phone", phone);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+        public DataTable GetWorkersSearchEmailFiltered(string email)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT Id, FirstName, LastName, " +
+                "Gender, Position, PhoneNumber, EmailAddress " +
+                " FROM [WORKERS] WHERE EmailAddress = @email";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@email", email);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
 
         /// <summary>
         /// Inserts worker and returns their <c>Id</c>, which mainly serves as a foreign key for tables [EMPLOYEES] and [MANAGERS]
@@ -153,8 +244,8 @@ namespace DAL
                 }
                 dalUserInfo.Insert(dtoWorker.Account);
                 userInserted = true;
-                int accountId = dalUserInfo.GetByEmail(dtoWorker.Account.Email).ID;
-                cmd.Parameters.AddWithValue("@accountId", accountId);
+                dtoWorker.Account.ID = dalUserInfo.GetByEmail(dtoWorker.Account.Email).ID;
+                cmd.Parameters.AddWithValue("@accountId", dtoWorker.Account.ID);
 
                 cmd.ExecuteNonQuery();
                 if (!connState)
@@ -188,8 +279,8 @@ namespace DAL
             {
                 OpenConnection();
             }
-            dalUserInfo.Delete(dtoWorker.Account);
             cmd.ExecuteNonQuery();
+            dalUserInfo.Delete(dtoWorker.Account);
             if (!connState)
             {
                 CloseConnection();

@@ -10,7 +10,7 @@ namespace DAL
 {
     public class DBConnection
     {
-        protected string connectionString = ConfigurationManager.ConnectionStrings["OneDB"].ConnectionString;
+        protected string connectionString = "Server=tcp:one-server.database.windows.net,1433;Initial Catalog=OneDB;Persist Security Info=False;User ID=Longsans;Password=OneBigServer123;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         protected SqlConnection conn = null;
 
         public DBConnection()

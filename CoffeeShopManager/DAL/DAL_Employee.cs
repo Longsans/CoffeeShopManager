@@ -76,7 +76,10 @@ namespace DAL
 
                 var empAccount = dalWorkers.GetUserInfoById(emp.Id);
                 emp.Account.ID = empAccount.ID;
-                emp.Manager.Id = reader.GetInt32(reader.GetOrdinal("ManagerId"));
+                emp.Manager = new DTO_Manager
+                {
+                    Id = reader.GetInt32(reader.GetOrdinal("ManagerId"))
+                };
             }
             if (!connState)
             {
@@ -111,7 +114,10 @@ namespace DAL
 
                 var empAccount = dalWorkers.GetUserInfoById(emp.Id);
                 emp.Account.ID = empAccount.ID;
-                emp.Manager.Id = reader.GetInt32(reader.GetOrdinal("ManagerId"));
+                emp.Manager = new DTO_Manager
+                {
+                    Id = reader.GetInt32(reader.GetOrdinal("ManagerId"))
+                };
             }
             if (!connState)
             {
@@ -171,6 +177,125 @@ namespace DAL
             return dtoMan;
         }
 
+        public DataTable GetEmployeesSearchIDFiltered(int id)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
+               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+               "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
+               "ON [EMPLOYEES].Id = [WORKERS].Id " +
+               "WHERE [EMPLOYEES].Id = @id";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+        public DataTable GetEmployeesSearchNameFiltered(string nameSubstr)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
+               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+               "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
+               "ON [EMPLOYEES].Id = [WORKERS].Id " +
+               "WHERE CONCAT(FirstName, ' ', LastName) LIKE '%' + @nameSubstr + '%'";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@nameSubstr", nameSubstr);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+        public DataTable GetEmployeesSearchGenderFiltered(string gender)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
+               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+               "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
+               "ON [EMPLOYEES].Id = [WORKERS].Id " +
+               "WHERE Gender = @gender";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@gender", gender);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+        public DataTable GetEmployeesSearchPositionFiltered(string position)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
+               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+               "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
+               "ON [EMPLOYEES].Id = [WORKERS].Id " +
+               "WHERE Position = @position";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@position", position);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+        public DataTable GetEmployeesSearchPhoneFiltered(string phone)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
+               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+               "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
+               "ON [EMPLOYEES].Id = [WORKERS].Id " +
+               "WHERE PhoneNumber = @phone";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@phone", phone);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+        public DataTable GetEmployeesSearchEmailFiltered(string email)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
+               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+               "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
+               "ON [EMPLOYEES].Id = [WORKERS].Id " +
+               "WHERE EmailAddress = @email";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@email", email);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+        public DataTable GetEmployeesSearchManIDFiltered(int manId)
+        {
+            DataTable dtEmpFiltered = new DataTable();
+            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
+               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+               " FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
+               "ON [EMPLOYEES].Id = [WORKERS].Id " +
+               "WHERE ManagerId = @manId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@manId", manId);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtEmpFiltered);
+
+            return dtEmpFiltered;
+        }
+
+
         public void Insert(DTO_Employee emp)
         {
             DAL_Workers dalWorkers = new DAL_Workers();
@@ -181,9 +306,9 @@ namespace DAL
 
             try
             {
-                int workerId = dalWorkers.Insert(emp);
+                emp.Id = dalWorkers.Insert(emp);
                 workerInserted = true;
-                cmd.Parameters.AddWithValue("@workerId", workerId);
+                cmd.Parameters.AddWithValue("@workerId", emp.Id);
                 cmd.Parameters.AddWithValue("@address", emp.Address);
                 cmd.Parameters.AddWithValue("@dateofjoin", emp.DateOfJoin);
                 cmd.Parameters.AddWithValue("@salary", emp.Salary);
@@ -204,11 +329,7 @@ namespace DAL
             {
                 if (workerInserted)
                 {
-                    DTO_Worker dtoWorker = new DTO_Worker
-                    {
-                        Id = emp.Id
-                    };
-                    dalWorkers.Delete(dtoWorker);
+                    dalWorkers.Delete(emp);
                 }
                 throw e;
             }
@@ -226,8 +347,8 @@ namespace DAL
             {
                 OpenConnection();
             }
-            dalWorkers.Delete(emp);
             cmd.ExecuteNonQuery();
+            dalWorkers.Delete(emp);
             if (!connState)
             {
                 CloseConnection();

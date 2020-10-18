@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.cbboxPosition = new System.Windows.Forms.ComboBox();
+            this.picboxEmpImg = new System.Windows.Forms.PictureBox();
+            this.btnChooseImage = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtYearBD = new System.Windows.Forms.TextBox();
@@ -47,7 +51,6 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -67,17 +70,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnChooseImage = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Controls.Add(this.cbboxPosition);
+            this.panel2.Controls.Add(this.picboxEmpImg);
             this.panel2.Controls.Add(this.btnChooseImage);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label17);
@@ -96,7 +99,6 @@
             this.panel2.Controls.Add(this.txtAddress);
             this.panel2.Controls.Add(this.txtLastName);
             this.panel2.Controls.Add(this.txtFirstName);
-            this.panel2.Controls.Add(this.txtPosition);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.txtSalary);
             this.panel2.Controls.Add(this.txtEmail);
@@ -119,7 +121,51 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(953, 403);
             this.panel2.TabIndex = 7;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(519, 332);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(90, 37);
+            this.btnCancel.TabIndex = 38;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // cbboxPosition
+            // 
+            this.cbboxPosition.FormattingEnabled = true;
+            this.cbboxPosition.Items.AddRange(new object[] {
+            "Waiter",
+            "Barista",
+            "Cook",
+            "Utility",
+            "Janitor",
+            "Security"});
+            this.cbboxPosition.Location = new System.Drawing.Point(138, 219);
+            this.cbboxPosition.Name = "cbboxPosition";
+            this.cbboxPosition.Size = new System.Drawing.Size(113, 24);
+            this.cbboxPosition.TabIndex = 37;
+            // 
+            // picboxEmpImg
+            // 
+            this.picboxEmpImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picboxEmpImg.Location = new System.Drawing.Point(718, 72);
+            this.picboxEmpImg.Name = "picboxEmpImg";
+            this.picboxEmpImg.Size = new System.Drawing.Size(171, 172);
+            this.picboxEmpImg.TabIndex = 36;
+            this.picboxEmpImg.TabStop = false;
+            // 
+            // btnChooseImage
+            // 
+            this.btnChooseImage.Location = new System.Drawing.Point(760, 255);
+            this.btnChooseImage.Name = "btnChooseImage";
+            this.btnChooseImage.Size = new System.Drawing.Size(90, 37);
+            this.btnChooseImage.TabIndex = 35;
+            this.btnChooseImage.Text = "Browse";
+            this.btnChooseImage.UseVisualStyleBackColor = true;
+            this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
             // 
             // label16
             // 
@@ -146,7 +192,7 @@
             this.txtYearBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearBD.Location = new System.Drawing.Point(618, 92);
             this.txtYearBD.Name = "txtYearBD";
-            this.txtYearBD.Size = new System.Drawing.Size(33, 23);
+            this.txtYearBD.Size = new System.Drawing.Size(51, 23);
             this.txtYearBD.TabIndex = 21;
             this.txtYearBD.TextChanged += new System.EventHandler(this.txtYearBD_TextChanged);
             // 
@@ -193,7 +239,7 @@
             // 
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(289, 341);
+            this.btnAdd.Location = new System.Drawing.Point(276, 332);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 37);
             this.btnAdd.TabIndex = 34;
@@ -226,7 +272,7 @@
             this.txtYearJoin.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearJoin.Location = new System.Drawing.Point(618, 175);
             this.txtYearJoin.Name = "txtYearJoin";
-            this.txtYearJoin.Size = new System.Drawing.Size(33, 23);
+            this.txtYearJoin.Size = new System.Drawing.Size(51, 23);
             this.txtYearJoin.TabIndex = 29;
             // 
             // txtMonthJoin
@@ -278,14 +324,6 @@
             this.txtFirstName.Size = new System.Drawing.Size(113, 23);
             this.txtFirstName.TabIndex = 4;
             // 
-            // txtPosition
-            // 
-            this.txtPosition.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosition.Location = new System.Drawing.Point(138, 219);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(113, 23);
-            this.txtPosition.TabIndex = 11;
-            // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -320,6 +358,7 @@
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(113, 23);
             this.txtID.TabIndex = 2;
+            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -349,7 +388,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 16;
-            this.label2.Text = "BirthDate";
+            this.label2.Text = "Birthdate";
             // 
             // label1
             // 
@@ -357,9 +396,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(24, 265);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 19);
+            this.label1.Size = new System.Drawing.Size(53, 19);
             this.label1.TabIndex = 12;
-            this.label1.Text = "PhoneNumber";
+            this.label1.Text = "Phone";
             // 
             // label14
             // 
@@ -405,7 +444,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 179);
+            this.label6.Location = new System.Drawing.Point(24, 179);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 19);
             this.label6.TabIndex = 7;
@@ -459,24 +498,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btnChooseImage
-            // 
-            this.btnChooseImage.Location = new System.Drawing.Point(763, 261);
-            this.btnChooseImage.Name = "btnChooseImage";
-            this.btnChooseImage.Size = new System.Drawing.Size(80, 31);
-            this.btnChooseImage.TabIndex = 35;
-            this.btnChooseImage.Text = "Browse";
-            this.btnChooseImage.UseVisualStyleBackColor = true;
-            this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(718, 72);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 172);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -488,8 +509,8 @@
             this.Load += new System.EventHandler(this.frmAddEmployee_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -525,7 +546,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -535,6 +555,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnChooseImage;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picboxEmpImg;
+        private System.Windows.Forms.ComboBox cbboxPosition;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

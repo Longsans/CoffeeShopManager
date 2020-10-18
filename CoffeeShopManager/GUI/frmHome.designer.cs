@@ -51,13 +51,13 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.ucEmployeeTab = new GUI.UserControlEmployeesTab();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.ucHome = new GUI.UserControlHome();
-            this.ucProductTab = new GUI.UserControlProductTab();
             this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
-            this.ucEmployeeTab = new GUI.UserControlEmployeesTab();
+            this.ucProductTab = new GUI.UserControlProductTab();
+            this.ucHome = new GUI.UserControlHome();
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlShow.SuspendLayout();
@@ -319,7 +319,7 @@
             this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTitleBar.Name = "pnlTitleBar";
-            this.pnlTitleBar.Size = new System.Drawing.Size(1079, 37);
+            this.pnlTitleBar.Size = new System.Drawing.Size(1105, 37);
             this.pnlTitleBar.TabIndex = 1;
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
@@ -377,7 +377,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ImageIndex = 2;
             this.btnMinimize.ImageList = this.imgListWindowButton;
-            this.btnMinimize.Location = new System.Drawing.Point(956, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(982, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(41, 37);
             this.btnMinimize.TabIndex = 2;
@@ -391,7 +391,7 @@
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.ImageIndex = 1;
             this.btnMaximize.ImageList = this.imgListWindowButton;
-            this.btnMaximize.Location = new System.Drawing.Point(997, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1023, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(41, 37);
             this.btnMaximize.TabIndex = 1;
@@ -405,7 +405,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ImageIndex = 0;
             this.btnCancel.ImageList = this.imgListWindowButton;
-            this.btnCancel.Location = new System.Drawing.Point(1038, 0);
+            this.btnCancel.Location = new System.Drawing.Point(1064, 0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(41, 37);
             this.btnCancel.TabIndex = 0;
@@ -418,13 +418,22 @@
             this.pnlShow.Controls.Add(this.ucHome);
             this.pnlShow.Controls.Add(this.ucProductTab);
             this.pnlShow.Controls.Add(this.ucOrderHistorycs1);
-            this.pnlShow.Controls.Add(ucEmployeeTab);
+            this.pnlShow.Controls.Add(this.ucEmployeeTab);
             this.pnlShow.Controls.Add(this.panel1);
             this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlShow.Location = new System.Drawing.Point(221, 37);
             this.pnlShow.Name = "pnlShow";
-            this.pnlShow.Size = new System.Drawing.Size(858, 597);
+            this.pnlShow.Size = new System.Drawing.Size(884, 597);
             this.pnlShow.TabIndex = 2;
+            // 
+            // ucEmployeeTab
+            // 
+            this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucEmployeeTab.Location = new System.Drawing.Point(0, 34);
+            this.ucEmployeeTab.Name = "ucEmployeeTab";
+            this.ucEmployeeTab.Size = new System.Drawing.Size(884, 563);
+            this.ucEmployeeTab.TabIndex = 0;
+            this.ucEmployeeTab.Visible = false;
             // 
             // panel1
             // 
@@ -434,7 +443,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(858, 34);
+            this.panel1.Size = new System.Drawing.Size(884, 34);
             this.panel1.TabIndex = 2;
             // 
             // btnLogout
@@ -444,7 +453,7 @@
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(705, 0);
+            this.btnLogout.Location = new System.Drawing.Point(731, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(89, 32);
             this.btnLogout.TabIndex = 1;
@@ -457,11 +466,29 @@
             this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(550, 8);
+            this.lblWelcome.Location = new System.Drawing.Point(576, 8);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(128, 19);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome, Admin";
+            // 
+            // ucOrderHistorycs1
+            // 
+            this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucOrderHistorycs1.Location = new System.Drawing.Point(0, 34);
+            this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
+            this.ucOrderHistorycs1.Size = new System.Drawing.Size(884, 563);
+            this.ucOrderHistorycs1.TabIndex = 0;
+            this.ucOrderHistorycs1.Visible = false;
+            // 
+            // ucProductTab
+            // 
+            this.ucProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucProductTab.Location = new System.Drawing.Point(0, 34);
+            this.ucProductTab.Name = "ucProductTab";
+            this.ucProductTab.Size = new System.Drawing.Size(884, 563);
+            this.ucProductTab.TabIndex = 1;
+            this.ucProductTab.Visible = false;
             // 
             // ucHome
             // 
@@ -470,43 +497,16 @@
             this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucHome.Location = new System.Drawing.Point(0, 34);
             this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(858, 563);
+            this.ucHome.Size = new System.Drawing.Size(884, 563);
             this.ucHome.TabIndex = 3;
             this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
-            // 
-            // ucProductTab
-            // 
-            this.ucProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucProductTab.Location = new System.Drawing.Point(0, 34);
-            this.ucProductTab.Name = "ucProductTab";
-            this.ucProductTab.Size = new System.Drawing.Size(858, 563);
-            this.ucProductTab.TabIndex = 1;
-            this.ucProductTab.Visible = false;
-            // 
-            // ucOrderHistorycs1
-            // 
-            this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucOrderHistorycs1.Location = new System.Drawing.Point(0, 34);
-            this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
-            this.ucOrderHistorycs1.Size = new System.Drawing.Size(858, 563);
-            this.ucOrderHistorycs1.TabIndex = 0;
-            this.ucOrderHistorycs1.Visible = false;
-            // 
-            // ucEmployeeTab
-            // 
-            this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucEmployeeTab.Location = new System.Drawing.Point(0, 34);
-            this.ucEmployeeTab.Name = "ucEmployeeTab";
-            this.ucEmployeeTab.Size = new System.Drawing.Size(858, 563);
-            this.ucEmployeeTab.TabIndex = 0;
-            this.ucEmployeeTab.Visible = false;
             // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1079, 634);
+            this.ClientSize = new System.Drawing.Size(1105, 634);
             this.Controls.Add(this.pnlShow);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlTitleBar);
@@ -545,15 +545,15 @@
         private System.Windows.Forms.ImageList imgListWindowButton;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnMenu;
-        private ucOrderHistorycs ucOrderHistorycs1;
         private UserControlEmployeesTab ucEmployeeTab;
-        private UserControlProductTab ucProductTab;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnHome;
-        private UserControlHome ucHome;
         private System.Windows.Forms.Panel pnlChangeTab;
+        private UserControlHome ucHome;
+        private UserControlProductTab ucProductTab;
+        private ucOrderHistorycs ucOrderHistorycs1;
         // private ucOrderHistorycs ucOrderHistorycs1;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,26 +50,48 @@ namespace GUI
                 if (busUser.CheckUsername(txtEmail.Text))
                 {
                     DTO_Manager dtoMan = new DTO_Manager();
-                    DateTime tmp = new DateTime();
+                    DateTime bdate = new DateTime();
                     dtoMan.Account = dtoUser;
                     dtoMan.Firstname = txtFirstName.Text;
                     dtoMan.Lastname = txtLastName.Text;
-                    dtoMan.Phone = txtLastName.Text;
+                    dtoMan.Phone = txtPhone.Text;
                     dtoMan.Position = "Manager";
                     if (radFemale.Checked) dtoMan.Gender = "Female";
                     else dtoMan.Gender = "Male";
-                    if (DateTime.TryParse(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text, out tmp))
+                    
+                    string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
+                    if (DateTime.TryParseExact(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text,
+                        formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out bdate))
                     {
-                        dtoMan.Birthdate = tmp;
+                        dtoMan.Birthdate = bdate;
                     }
                     dtoMan.Account = busUser.EncodePass(dtoMan);
-                    busMan.Insert(dtoMan);
-                    MessageBox.Show("Bạn đã đăng ký thành công");
-
+                    if (this.picboxManImg.Image == null)
+                    {
+                        MessageBox.Show("Vui lòng chọn hình ảnh.", "Chọn hình ảnh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        dtoMan.Image = ImageHelper.ImageToByteArray(this.picboxManImg.Image);
+                        busMan.Insert(dtoMan);
+                        MessageBox.Show("Bạn đã đăng ký thành công");
+                    }
                 }
                 else MessageBox.Show("Tên đăng nhập đã tồn tại");
             }
             
+        }
+
+        private void btnBrowseImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+                this.lblNoImg.Visible = false;
+                this.picboxManImg.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.picboxManImg.Image = Image.FromFile(op.FileName);
+            }
         }
     }
 }

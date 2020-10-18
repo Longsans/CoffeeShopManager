@@ -30,13 +30,59 @@ namespace GUI
             txtID.Text = dtoEmp.Id.ToString();
             txtFirstName.Text = dtoEmp.Firstname;
             txtLastName.Text = dtoEmp.Lastname;
-            if (radMale.Checked) dtoEmp.Gender = "Male";
-            else dtoEmp.Gender = "Female";
-            txtPosition.Text = dtoEmp.Position;
+            if (dtoEmp.Gender == "Male") radMale.Checked = true;
+            else radFemale.Checked = true;
+            cboPosition.Text = dtoEmp.Position;
             txtPhone.Text = dtoEmp.Phone;
             txtEmail.Text = dtoEmp.Account.Email;
+            txtDayBD.Text = dtoEmp.Birthdate.Day.ToString();
+            txtMonthBD.Text = dtoEmp.Birthdate.Month.ToString();
+            txtYearBD.Text = dtoEmp.Birthdate.Year.ToString();
+            txtDayJoin.Text = dtoEmp.DateOfJoin.Day.ToString();
+            txtMonthJoin.Text = dtoEmp.DateOfJoin.Month.ToString();
+            txtYearJoin.Text = dtoEmp.DateOfJoin.Year.ToString();
             txtAddress.Text = dtoEmp.Address;
             txtSalary.Text = dtoEmp.Salary.ToString();
+            picboxEmpImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            
+            if (dtoEmp.Image != null)
+            {
+                picboxEmpImg.Image = ImageHelper.ByteArrayToImage(dtoEmp.Image);
+            }
+        }
+
+        private void btnChooseImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog
+            {
+                Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp"
+            };
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+                picboxEmpImg.Image = Image.FromFile(op.FileName);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            //
+
+            dtoEmp.Image = ImageHelper.ImageToByteArray(picboxEmpImg.Image);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtYearJoin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtYearBD_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

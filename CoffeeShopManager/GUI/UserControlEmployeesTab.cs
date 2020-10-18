@@ -24,6 +24,7 @@ namespace GUI
         {
             frmAddEmployee frmAddEmployee = new frmAddEmployee(this);
             frmAddEmployee.ShowDialog();
+            Reload();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -62,6 +63,47 @@ namespace GUI
                     Reload();
                 }
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                switch (cboSearch.Text)
+                {
+                    case "ID":
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchIDFiltered(Int32.Parse(txtSearch.Text));
+                        break;
+                    case "Name":
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchNameFiltered(txtSearch.Text);
+                        break;
+                    case "Gender":
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchGenderFiltered(txtSearch.Text);
+                        break;
+                    case "Position":
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPositionFiltered(txtSearch.Text);
+                        break;
+                    case "Phone number":
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPhoneFiltered(txtSearch.Text);
+                        break;
+                    case "Email":
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchEmailFiltered(txtSearch.Text);
+                        break;
+                    case "Manager's ID":
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchManIDFiltered(Int32.Parse(txtSearch.Text));
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Bro, ông làm gì sai rồi. Thông báo lỗi: {ex.Message}", 
+                    "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            Reload();
         }
     }
 }

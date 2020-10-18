@@ -47,10 +47,14 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtPosition = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.picboxEmpImg = new System.Windows.Forms.PictureBox();
+            this.btnChooseImage = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.cboPosition = new System.Windows.Forms.ComboBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,9 +67,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
             this.SuspendLayout();
             // 
             // label16
@@ -93,8 +97,9 @@
             this.txtYearBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearBD.Location = new System.Drawing.Point(618, 92);
             this.txtYearBD.Name = "txtYearBD";
-            this.txtYearBD.Size = new System.Drawing.Size(33, 23);
+            this.txtYearBD.Size = new System.Drawing.Size(51, 23);
             this.txtYearBD.TabIndex = 21;
+            this.txtYearBD.TextChanged += new System.EventHandler(this.txtYearBD_TextChanged);
             // 
             // txtMonthBD
             // 
@@ -138,12 +143,13 @@
             // 
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(283, 299);
+            this.btnEdit.Location = new System.Drawing.Point(276, 332);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(90, 37);
             this.btnEdit.TabIndex = 34;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // label13
             // 
@@ -170,8 +176,9 @@
             this.txtYearJoin.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearJoin.Location = new System.Drawing.Point(618, 175);
             this.txtYearJoin.Name = "txtYearJoin";
-            this.txtYearJoin.Size = new System.Drawing.Size(33, 23);
+            this.txtYearJoin.Size = new System.Drawing.Size(51, 23);
             this.txtYearJoin.TabIndex = 29;
+            this.txtYearJoin.TextChanged += new System.EventHandler(this.txtYearJoin_TextChanged);
             // 
             // txtMonthJoin
             // 
@@ -225,17 +232,13 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtPosition
-            // 
-            this.txtPosition.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosition.Location = new System.Drawing.Point(138, 219);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(113, 23);
-            this.txtPosition.TabIndex = 11;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.panel2.Controls.Add(this.picboxEmpImg);
+            this.panel2.Controls.Add(this.btnChooseImage);
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Controls.Add(this.cboPosition);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.txtYearBD);
@@ -253,7 +256,6 @@
             this.panel2.Controls.Add(this.txtAddress);
             this.panel2.Controls.Add(this.txtLastName);
             this.panel2.Controls.Add(this.txtFirstName);
-            this.panel2.Controls.Add(this.txtPosition);
             this.panel2.Controls.Add(this.txtSalary);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtID);
@@ -272,8 +274,54 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(670, 358);
+            this.panel2.Size = new System.Drawing.Size(932, 403);
             this.panel2.TabIndex = 8;
+            // 
+            // picboxEmpImg
+            // 
+            this.picboxEmpImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picboxEmpImg.Location = new System.Drawing.Point(715, 52);
+            this.picboxEmpImg.Name = "picboxEmpImg";
+            this.picboxEmpImg.Size = new System.Drawing.Size(171, 172);
+            this.picboxEmpImg.TabIndex = 38;
+            this.picboxEmpImg.TabStop = false;
+            // 
+            // btnChooseImage
+            // 
+            this.btnChooseImage.Location = new System.Drawing.Point(757, 235);
+            this.btnChooseImage.Name = "btnChooseImage";
+            this.btnChooseImage.Size = new System.Drawing.Size(90, 37);
+            this.btnChooseImage.TabIndex = 37;
+            this.btnChooseImage.Text = "Browse";
+            this.btnChooseImage.UseVisualStyleBackColor = true;
+            this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(498, 332);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(90, 37);
+            this.btnCancel.TabIndex = 36;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // cboPosition
+            // 
+            this.cboPosition.FormattingEnabled = true;
+            this.cboPosition.Items.AddRange(new object[] {
+            "Waiter",
+            "Barista",
+            "Cook",
+            "Utility",
+            "Janitor",
+            "Security"});
+            this.cboPosition.Location = new System.Drawing.Point(138, 219);
+            this.cboPosition.Name = "cboPosition";
+            this.cboPosition.Size = new System.Drawing.Size(113, 24);
+            this.cboPosition.TabIndex = 35;
             // 
             // txtSalary
             // 
@@ -290,6 +338,16 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(113, 23);
             this.txtEmail.TabIndex = 15;
+            // 
+            // txtID
+            // 
+            this.txtID.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(138, 52);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(113, 23);
+            this.txtID.TabIndex = 2;
             // 
             // label11
             // 
@@ -319,17 +377,17 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 16;
-            this.label2.Text = "BirthDate";
+            this.label2.Text = "Birthdate";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 265);
+            this.label1.Location = new System.Drawing.Point(24, 268);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 19);
+            this.label1.Size = new System.Drawing.Size(53, 19);
             this.label1.TabIndex = 12;
-            this.label1.Text = "PhoneNumber";
+            this.label1.Text = "Phone";
             // 
             // label14
             // 
@@ -365,7 +423,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 179);
+            this.label6.Location = new System.Drawing.Point(24, 179);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 19);
             this.label6.TabIndex = 7;
@@ -375,7 +433,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 91);
+            this.label5.Location = new System.Drawing.Point(24, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 19);
             this.label5.TabIndex = 3;
@@ -411,21 +469,11 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Edit employee";
             // 
-            // txtID
-            // 
-            this.txtID.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(138, 52);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(113, 23);
-            this.txtID.TabIndex = 2;
-            // 
             // frmEditEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 358);
+            this.ClientSize = new System.Drawing.Size(932, 403);
             this.Controls.Add(this.panel2);
             this.Name = "frmEditEmployees";
             this.Text = "frmEditEmployees";
@@ -433,6 +481,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -458,7 +507,6 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label11;
@@ -474,5 +522,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.ComboBox cboPosition;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.PictureBox picboxEmpImg;
+        private System.Windows.Forms.Button btnChooseImage;
     }
 }
