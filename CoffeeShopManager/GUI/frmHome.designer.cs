@@ -51,13 +51,20 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.ucCustomersTab = new GUI.UserControlCustomers();
             this.ucHome = new GUI.UserControlHome();
+            this.ucUserTab = new GUI.UserControlUserTab();
             this.ucProductTab = new GUI.UserControlProductTab();
             this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
             this.ucEmployeeTab = new GUI.UserControlEmployeesTab();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.ucEventsTab = new GUI.UserControlEvents();
+            this.ucNotifications = new GUI.UserControlNotifications();
+            this.ucStatisticsTab = new GUI.UserControlStatistics();
+            this.ucStockTab = new GUI.UserControlStock();
+            this.ucSuppliersTab = new GUI.UserControlSuppliers();
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlShow.SuspendLayout();
@@ -416,6 +423,13 @@
             // 
             this.pnlShow.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlShow.Controls.Add(this.ucHome);
+            this.pnlShow.Controls.Add(this.ucSuppliersTab);
+            this.pnlShow.Controls.Add(this.ucStockTab);
+            this.pnlShow.Controls.Add(this.ucStatisticsTab);
+            this.pnlShow.Controls.Add(this.ucNotifications);
+            this.pnlShow.Controls.Add(this.ucEventsTab);
+            this.pnlShow.Controls.Add(this.ucCustomersTab);
+            this.pnlShow.Controls.Add(this.ucUserTab);
             this.pnlShow.Controls.Add(this.ucProductTab);
             this.pnlShow.Controls.Add(this.ucOrderHistorycs1);
             this.pnlShow.Controls.Add(this.ucEmployeeTab);
@@ -425,6 +439,15 @@
             this.pnlShow.Name = "pnlShow";
             this.pnlShow.Size = new System.Drawing.Size(884, 597);
             this.pnlShow.TabIndex = 2;
+            // 
+            // ucCustomersTab
+            // 
+            this.ucCustomersTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCustomersTab.Location = new System.Drawing.Point(0, 34);
+            this.ucCustomersTab.Name = "ucCustomersTab";
+            this.ucCustomersTab.Size = new System.Drawing.Size(884, 563);
+            this.ucCustomersTab.TabIndex = 5;
+            this.ucCustomersTab.Visible = false;
             // 
             // ucHome
             // 
@@ -436,6 +459,17 @@
             this.ucHome.Size = new System.Drawing.Size(884, 563);
             this.ucHome.TabIndex = 3;
             this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
+            // 
+            // ucUserTab
+            // 
+            this.ucUserTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucUserTab.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ucUserTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucUserTab.Location = new System.Drawing.Point(0, 34);
+            this.ucUserTab.Name = "ucUserTab";
+            this.ucUserTab.Size = new System.Drawing.Size(884, 563);
+            this.ucUserTab.TabIndex = 4;
+            this.ucUserTab.Visible = false;
             // 
             // ucProductTab
             // 
@@ -501,6 +535,51 @@
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome, Admin";
             // 
+            // ucEventsTab
+            // 
+            this.ucEventsTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucEventsTab.Location = new System.Drawing.Point(0, 34);
+            this.ucEventsTab.Name = "ucEventsTab";
+            this.ucEventsTab.Size = new System.Drawing.Size(884, 563);
+            this.ucEventsTab.TabIndex = 6;
+            this.ucEventsTab.Visible = false;
+            // 
+            // ucNotifications
+            // 
+            this.ucNotifications.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucNotifications.Location = new System.Drawing.Point(0, 34);
+            this.ucNotifications.Name = "ucNotifications";
+            this.ucNotifications.Size = new System.Drawing.Size(884, 563);
+            this.ucNotifications.TabIndex = 7;
+            this.ucNotifications.Visible = false;
+            // 
+            // ucStatisticsTab
+            // 
+            this.ucStatisticsTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStatisticsTab.Location = new System.Drawing.Point(0, 34);
+            this.ucStatisticsTab.Name = "ucStatisticsTab";
+            this.ucStatisticsTab.Size = new System.Drawing.Size(884, 563);
+            this.ucStatisticsTab.TabIndex = 8;
+            this.ucStatisticsTab.Visible = false;
+            // 
+            // ucStockTab
+            // 
+            this.ucStockTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStockTab.Location = new System.Drawing.Point(0, 34);
+            this.ucStockTab.Name = "ucStockTab";
+            this.ucStockTab.Size = new System.Drawing.Size(884, 563);
+            this.ucStockTab.TabIndex = 9;
+            this.ucStockTab.Visible = false;
+            // 
+            // ucSuppliersTab
+            // 
+            this.ucSuppliersTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucSuppliersTab.Location = new System.Drawing.Point(0, 34);
+            this.ucSuppliersTab.Name = "ucSuppliersTab";
+            this.ucSuppliersTab.Size = new System.Drawing.Size(884, 563);
+            this.ucSuppliersTab.TabIndex = 10;
+            this.ucSuppliersTab.Visible = false;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -554,6 +633,12 @@
         private UserControlHome ucHome;
         private UserControlProductTab ucProductTab;
         private ucOrderHistorycs ucOrderHistorycs1;
-        // private ucOrderHistorycs ucOrderHistorycs1;
+        private UserControlUserTab ucUserTab;
+        private UserControlCustomers ucCustomersTab;
+        private UserControlSuppliers ucSuppliersTab;
+        private UserControlStock ucStockTab;
+        private UserControlStatistics ucStatisticsTab;
+        private UserControlNotifications ucNotifications;
+        private UserControlEvents ucEventsTab;
     }
 }

@@ -68,6 +68,12 @@
     <Compile Include="frmAddEmployee.Designer.cs">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +113,22 @@
     <Compile Include="ImageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ucOrderHistorycs.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucOrderHistorycs.Designer.cs">
       <DependentUpon>ucOrderHistorycs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCustomers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlCustomers.Designer.cs">
+      <DependentUpon>UserControlCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlEmployeesTab.cs">
       <SubType>UserControl</SubType>
@@ -119,17 +136,47 @@
     <Compile Include="UserControlEmployeesTab.Designer.cs">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEvents.Designer.cs">
+      <DependentUpon>UserControlEvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlHome.Designer.cs">
       <DependentUpon>UserControlHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlNotifications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlNotifications.Designer.cs">
+      <DependentUpon>UserControlNotifications.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlProductTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlProductTab.Designer.cs">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlStatistics.Designer.cs">
+      <DependentUpon>UserControlStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlStock.Designer.cs">
+      <DependentUpon>UserControlStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSuppliers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSuppliers.Designer.cs">
+      <DependentUpon>UserControlSuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUserTab.cs">
       <SubType>UserControl</SubType>
@@ -140,6 +187,9 @@
     <EmbeddedResource Include="frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditEmployees.resx">
       <DependentUpon>frmEditEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +198,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInsertProDuct.resx">
       <DependentUpon>frmInsertProDuct.cs</DependentUpon>
@@ -160,14 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="ucOrderHistorycs.resx">
       <DependentUpon>ucOrderHistorycs.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlProductTab.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStock.resx">
+      <DependentUpon>UserControlStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUserTab.resx">
       <DependentUpon>UserControlUserTab.cs</DependentUpon>
@@ -217,6 +266,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\select_none_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee_to_go_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid_view_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_30px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,11 +19,27 @@ namespace GUI
         {
             InitializeComponent();
         }
-       // public UserControlProductTab(frmInsertProDuct pro)
-       // {
-        //    frmEdit = pro;
-       //     InitializeComponent();
-      //  }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = busPro.GetAllProducts();
+        }
+
+        private void btnShowDrink_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = busPro.GetAllDrinks();
+        }
+
+        private void btnShowFood_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = busPro.GetAllFood();
+        }
+
+        private void btnShowOther_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = busPro.GetAllOtherProducts();
+        }
+
         private void UserControlProductTab_Load(object sender, EventArgs e)
         {
             Reload();
@@ -83,6 +99,7 @@ namespace GUI
             {
                 switch (cboSearch.Text)
                 {
+
                     case "ID":
                         this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(Int32.Parse(txtSearch.Text));
                         break;
@@ -95,6 +112,7 @@ namespace GUI
                     case "Price":
                         this.dataGridView1.DataSource = busPro.GetProductsSearchPriceFiltered(
                             Int32.Parse(txtPriceSearchLower.Text), Int32.Parse(txtPriceSearchUpper.Text));
+
                         break;
                 }
             }
@@ -104,7 +122,7 @@ namespace GUI
                     "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+    
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboSearch.SelectedItem.ToString() == "Price")
@@ -127,6 +145,7 @@ namespace GUI
             txtPriceSearchUpper.Clear();
         }
 
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null && !dataGridView1.Rows[dataGridView1.RowCount - 1].Selected)
@@ -143,5 +162,6 @@ namespace GUI
         {
             dataGridView1.ReadOnly = true;
         }
+
     }
 }

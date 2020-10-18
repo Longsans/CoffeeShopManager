@@ -19,6 +19,8 @@ namespace GUI
         BUS_UserInfo busUser = new BUS_UserInfo();
         BUS_Manager busMan = new BUS_Manager();
         frmLogin _frmLogin = new frmLogin();
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
         public frmRegister()
         {
             InitializeComponent();
@@ -91,6 +93,26 @@ namespace GUI
                 this.lblNoImg.Visible = false;
                 this.picboxManImg.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.picboxManImg.Image = Image.FromFile(op.FileName);
+            }
+        }
+
+        private void TitleBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void TitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+
+        private void TitleBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - this.startPoint.X, p.Y - this.startPoint.Y);
             }
         }
     }

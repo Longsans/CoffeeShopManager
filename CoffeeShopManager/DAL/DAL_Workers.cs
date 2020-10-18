@@ -296,7 +296,7 @@ namespace DAL
             DAL_UserInfo dalUserInfo = new DAL_UserInfo();
             string qry = "UPDATE [WORKERS] " +
                 "SET FirstName = @fname, LastName = @lname, Gender = @gender, " +
-                "Position = @position, PhoneNumber = @phone, EmailAddress = @email, " +
+                "Position = @position, PhoneNumber = @phone, " +
                 "Birthdate = @bdate, Image = @image " +
                 "WHERE Id = @id";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -305,7 +305,6 @@ namespace DAL
             cmd.Parameters.AddWithValue("@gender", dtoWorkerUpdated.Gender);
             cmd.Parameters.AddWithValue("@position", dtoWorkerUpdated.Position);
             cmd.Parameters.AddWithValue("@phone", dtoWorkerUpdated.Phone);
-            cmd.Parameters.AddWithValue("@email", dtoWorkerUpdated.Account.Email);
             cmd.Parameters.AddWithValue("@bdate", dtoWorkerUpdated.Birthdate);
             cmd.Parameters.AddWithValue("@image", dtoWorkerUpdated.Image);
             cmd.Parameters.AddWithValue("@id", dtoWorkerUpdated.Id);
@@ -315,7 +314,7 @@ namespace DAL
             {
                 OpenConnection();
             }
-            dalUserInfo.Update(dtoWorkerUpdated.Account);
+            //dalUserInfo.Update(dtoWorkerUpdated.Account);
             cmd.ExecuteNonQuery();
             if (!connState)
             {

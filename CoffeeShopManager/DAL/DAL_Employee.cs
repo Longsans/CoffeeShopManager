@@ -362,7 +362,7 @@ namespace DAL
         public void Update(DTO_Employee empUpdated)
         {
             DAL_Workers dalWorkers = new DAL_Workers();
-            string qry = "UPDATE [EMPLOYEE] " +
+            string qry = "UPDATE [EMPLOYEES] " +
                 "SET Address = @address, DateOfJoin = @doj, " +
                 "Salary = @salary, ManagerId = @manId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);

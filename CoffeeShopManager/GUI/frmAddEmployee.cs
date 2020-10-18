@@ -19,6 +19,8 @@ namespace GUI
         BUS_Employee busEmp = new BUS_Employee();
         BUS_UserInfo busUser = new BUS_UserInfo();
         UserControlEmployeesTab _ucEmp;
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
         public frmAddEmployee()
         {
             InitializeComponent();
@@ -122,6 +124,7 @@ namespace GUI
             radFemale.Checked = false;
             radMale.Checked = false;
             picboxEmpImg.Image = null;
+            txtFirstName.Focus();
             _ucEmp.Reload();
         }
 
@@ -155,8 +158,30 @@ namespace GUI
             }
         }
 
-        private void cbboxPosition_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void TitleBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void TitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+
+        private void TitleBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - this.startPoint.X, p.Y - this.startPoint.Y);
+            }
 
         }
     }

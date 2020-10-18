@@ -36,7 +36,7 @@
             this.txtDayBD = new System.Windows.Forms.TextBox();
             this.radFemale = new System.Windows.Forms.RadioButton();
             this.radMale = new System.Windows.Forms.RadioButton();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSaveChange = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtYearJoin = new System.Windows.Forms.TextBox();
@@ -67,16 +67,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.TitleBar = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtManagerID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
+            this.TitleBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(597, 95);
+            this.label16.Location = new System.Drawing.Point(549, 95);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(15, 19);
             this.label16.TabIndex = 20;
@@ -86,7 +91,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(534, 96);
+            this.label17.Location = new System.Drawing.Point(486, 96);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(15, 19);
             this.label17.TabIndex = 18;
@@ -95,7 +100,7 @@
             // txtYearBD
             // 
             this.txtYearBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYearBD.Location = new System.Drawing.Point(618, 92);
+            this.txtYearBD.Location = new System.Drawing.Point(570, 92);
             this.txtYearBD.Name = "txtYearBD";
             this.txtYearBD.Size = new System.Drawing.Size(51, 23);
             this.txtYearBD.TabIndex = 21;
@@ -104,7 +109,7 @@
             // txtMonthBD
             // 
             this.txtMonthBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonthBD.Location = new System.Drawing.Point(555, 92);
+            this.txtMonthBD.Location = new System.Drawing.Point(507, 92);
             this.txtMonthBD.Name = "txtMonthBD";
             this.txtMonthBD.Size = new System.Drawing.Size(33, 23);
             this.txtMonthBD.TabIndex = 19;
@@ -112,7 +117,7 @@
             // txtDayBD
             // 
             this.txtDayBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDayBD.Location = new System.Drawing.Point(496, 92);
+            this.txtDayBD.Location = new System.Drawing.Point(448, 92);
             this.txtDayBD.Name = "txtDayBD";
             this.txtDayBD.Size = new System.Drawing.Size(33, 23);
             this.txtDayBD.TabIndex = 17;
@@ -139,23 +144,27 @@
             this.radMale.Text = "Male";
             this.radMale.UseVisualStyleBackColor = true;
             // 
-            // btnEdit
+            // btnSaveChange
             // 
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(276, 332);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(90, 37);
-            this.btnEdit.TabIndex = 34;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnSaveChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSaveChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveChange.FlatAppearance.BorderSize = 0;
+            this.btnSaveChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveChange.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveChange.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSaveChange.Location = new System.Drawing.Point(209, 324);
+            this.btnSaveChange.Name = "btnSaveChange";
+            this.btnSaveChange.Size = new System.Drawing.Size(121, 37);
+            this.btnSaveChange.TabIndex = 34;
+            this.btnSaveChange.Text = "Save change";
+            this.btnSaveChange.UseVisualStyleBackColor = false;
+            this.btnSaveChange.Click += new System.EventHandler(this.btnSaveChange_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(597, 178);
+            this.label13.Location = new System.Drawing.Point(549, 178);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(15, 19);
             this.label13.TabIndex = 28;
@@ -165,7 +174,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(534, 179);
+            this.label12.Location = new System.Drawing.Point(486, 179);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(15, 19);
             this.label12.TabIndex = 26;
@@ -174,7 +183,7 @@
             // txtYearJoin
             // 
             this.txtYearJoin.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYearJoin.Location = new System.Drawing.Point(618, 175);
+            this.txtYearJoin.Location = new System.Drawing.Point(570, 175);
             this.txtYearJoin.Name = "txtYearJoin";
             this.txtYearJoin.Size = new System.Drawing.Size(51, 23);
             this.txtYearJoin.TabIndex = 29;
@@ -183,7 +192,7 @@
             // txtMonthJoin
             // 
             this.txtMonthJoin.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonthJoin.Location = new System.Drawing.Point(555, 175);
+            this.txtMonthJoin.Location = new System.Drawing.Point(507, 175);
             this.txtMonthJoin.Name = "txtMonthJoin";
             this.txtMonthJoin.Size = new System.Drawing.Size(33, 23);
             this.txtMonthJoin.TabIndex = 27;
@@ -191,7 +200,7 @@
             // txtDayJoin
             // 
             this.txtDayJoin.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDayJoin.Location = new System.Drawing.Point(496, 175);
+            this.txtDayJoin.Location = new System.Drawing.Point(448, 175);
             this.txtDayJoin.Name = "txtDayJoin";
             this.txtDayJoin.Size = new System.Drawing.Size(33, 23);
             this.txtDayJoin.TabIndex = 25;
@@ -207,7 +216,7 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(496, 133);
+            this.txtAddress.Location = new System.Drawing.Point(448, 133);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(113, 23);
             this.txtAddress.TabIndex = 23;
@@ -234,7 +243,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(204)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(134)))), ((int)(((byte)(102)))));
             this.panel2.Controls.Add(this.picboxEmpImg);
             this.panel2.Controls.Add(this.btnChooseImage);
             this.panel2.Controls.Add(this.btnCancel);
@@ -246,7 +255,7 @@
             this.panel2.Controls.Add(this.txtDayBD);
             this.panel2.Controls.Add(this.radFemale);
             this.panel2.Controls.Add(this.radMale);
-            this.panel2.Controls.Add(this.btnEdit);
+            this.panel2.Controls.Add(this.btnSaveChange);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.txtYearJoin);
@@ -256,9 +265,11 @@
             this.panel2.Controls.Add(this.txtAddress);
             this.panel2.Controls.Add(this.txtLastName);
             this.panel2.Controls.Add(this.txtFirstName);
+            this.panel2.Controls.Add(this.txtManagerID);
             this.panel2.Controls.Add(this.txtSalary);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtID);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label2);
@@ -272,16 +283,15 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 30);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(932, 403);
+            this.panel2.Size = new System.Drawing.Size(871, 399);
             this.panel2.TabIndex = 8;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // picboxEmpImg
             // 
             this.picboxEmpImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picboxEmpImg.Location = new System.Drawing.Point(715, 52);
+            this.picboxEmpImg.Location = new System.Drawing.Point(664, 52);
             this.picboxEmpImg.Name = "picboxEmpImg";
             this.picboxEmpImg.Size = new System.Drawing.Size(171, 172);
             this.picboxEmpImg.TabIndex = 38;
@@ -289,24 +299,32 @@
             // 
             // btnChooseImage
             // 
-            this.btnChooseImage.Location = new System.Drawing.Point(757, 235);
+            this.btnChooseImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnChooseImage.FlatAppearance.BorderSize = 0;
+            this.btnChooseImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChooseImage.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnChooseImage.Location = new System.Drawing.Point(706, 235);
             this.btnChooseImage.Name = "btnChooseImage";
             this.btnChooseImage.Size = new System.Drawing.Size(90, 37);
             this.btnChooseImage.TabIndex = 37;
             this.btnChooseImage.Text = "Browse";
-            this.btnChooseImage.UseVisualStyleBackColor = true;
+            this.btnChooseImage.UseVisualStyleBackColor = false;
             this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(498, 332);
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.Location = new System.Drawing.Point(381, 324);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 37);
             this.btnCancel.TabIndex = 36;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // cboPosition
@@ -327,7 +345,7 @@
             // txtSalary
             // 
             this.txtSalary.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalary.Location = new System.Drawing.Point(496, 221);
+            this.txtSalary.Location = new System.Drawing.Point(448, 221);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(113, 23);
             this.txtSalary.TabIndex = 31;
@@ -335,7 +353,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(496, 52);
+            this.txtEmail.Location = new System.Drawing.Point(448, 52);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(113, 23);
             this.txtEmail.TabIndex = 15;
@@ -343,6 +361,7 @@
             // txtID
             // 
             this.txtID.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(138, 52);
             this.txtID.Name = "txtID";
@@ -354,7 +373,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(373, 175);
+            this.label11.Location = new System.Drawing.Point(325, 175);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(88, 19);
             this.label11.TabIndex = 24;
@@ -364,7 +383,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(373, 223);
+            this.label10.Location = new System.Drawing.Point(325, 223);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 19);
             this.label10.TabIndex = 30;
@@ -374,7 +393,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(373, 96);
+            this.label2.Location = new System.Drawing.Point(325, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 16;
@@ -404,7 +423,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(373, 134);
+            this.label15.Location = new System.Drawing.Point(325, 134);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(61, 19);
             this.label15.TabIndex = 22;
@@ -454,7 +473,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(373, 52);
+            this.label8.Location = new System.Drawing.Point(325, 52);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 19);
             this.label8.TabIndex = 14;
@@ -470,12 +489,59 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Edit employee";
             // 
+            // TitleBar
+            // 
+            this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
+            this.TitleBar.Controls.Add(this.btnExit);
+            this.TitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TitleBar.Location = new System.Drawing.Point(0, 0);
+            this.TitleBar.Name = "TitleBar";
+            this.TitleBar.Size = new System.Drawing.Size(871, 30);
+            this.TitleBar.TabIndex = 9;
+            this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
+            this.TitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
+            this.TitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseUp);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
+            this.btnExit.Location = new System.Drawing.Point(840, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(31, 30);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(325, 266);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 19);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Manager ID";
+            // 
+            // txtManagerID
+            // 
+            this.txtManagerID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtManagerID.Location = new System.Drawing.Point(448, 264);
+            this.txtManagerID.Name = "txtManagerID";
+            this.txtManagerID.Size = new System.Drawing.Size(113, 23);
+            this.txtManagerID.TabIndex = 31;
+            // 
             // frmEditEmployees
             // 
+            this.AcceptButton = this.btnSaveChange;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 403);
+            this.ClientSize = new System.Drawing.Size(871, 429);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.TitleBar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEditEmployees";
             this.Text = "frmEditEmployees";
             this.Load += new System.EventHandler(this.frmEditEmployees_Load);
@@ -483,6 +549,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).EndInit();
+            this.TitleBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -496,7 +563,7 @@
         private System.Windows.Forms.TextBox txtDayBD;
         private System.Windows.Forms.RadioButton radFemale;
         private System.Windows.Forms.RadioButton radMale;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSaveChange;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtYearJoin;
@@ -527,5 +594,9 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.PictureBox picboxEmpImg;
         private System.Windows.Forms.Button btnChooseImage;
+        private System.Windows.Forms.Panel TitleBar;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox txtManagerID;
+        private System.Windows.Forms.Label label9;
     }
 }
