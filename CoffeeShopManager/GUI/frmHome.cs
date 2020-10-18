@@ -185,7 +185,6 @@ namespace GUI
         {
             dtoMan = busMan.GetByEmail(_frmLogin.GetEmail());
         }
-
     }
 
 }

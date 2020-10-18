@@ -134,7 +134,7 @@ namespace DAL
 
         public DataTable GetAllOtherProducts()
         {
-            return GetAllProductsOfType("Other");
+            return GetAllProductsOfType("Others");
         }
 
         public DataTable GetProductsSearchIDFiltered(int id)

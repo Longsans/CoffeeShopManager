@@ -82,7 +82,7 @@ namespace BUS
         {
             try
             {
-                return GetAllProductsOfType("Other");
+                return GetAllProductsOfType("Others");
             }
             catch (Exception ex)
             {
@@ -141,12 +141,9 @@ namespace BUS
         {
             try
             {
-                if (dalProduct.GetByName(dtoPro.Name) != null)
-                {
                     dalProduct.Delete(dtoPro);
                     return true;
-                }
-                else return false;                
+               // else return false;                
             }
             catch(Exception ex)
             {

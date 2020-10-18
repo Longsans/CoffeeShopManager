@@ -154,5 +154,10 @@ namespace GUI
                 picboxEmpImg.Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
+
+        private void cbboxPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+}   

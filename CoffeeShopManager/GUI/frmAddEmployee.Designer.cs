@@ -32,7 +32,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cbboxPosition = new System.Windows.Forms.ComboBox();
-            this.picboxEmpImg = new System.Windows.Forms.PictureBox();
             this.btnChooseImage = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -70,9 +69,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.picboxEmpImg = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -147,15 +147,7 @@
             this.cbboxPosition.Name = "cbboxPosition";
             this.cbboxPosition.Size = new System.Drawing.Size(113, 24);
             this.cbboxPosition.TabIndex = 37;
-            // 
-            // picboxEmpImg
-            // 
-            this.picboxEmpImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picboxEmpImg.Location = new System.Drawing.Point(718, 72);
-            this.picboxEmpImg.Name = "picboxEmpImg";
-            this.picboxEmpImg.Size = new System.Drawing.Size(171, 172);
-            this.picboxEmpImg.TabIndex = 36;
-            this.picboxEmpImg.TabStop = false;
+            this.cbboxPosition.SelectedIndexChanged += new System.EventHandler(this.cbboxPosition_SelectedIndexChanged);
             // 
             // btnChooseImage
             // 
@@ -498,6 +490,15 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // picboxEmpImg
+            // 
+            this.picboxEmpImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picboxEmpImg.Location = new System.Drawing.Point(718, 72);
+            this.picboxEmpImg.Name = "picboxEmpImg";
+            this.picboxEmpImg.Size = new System.Drawing.Size(171, 172);
+            this.picboxEmpImg.TabIndex = 36;
+            this.picboxEmpImg.TabStop = false;
+            // 
             // frmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -509,8 +510,8 @@
             this.Load += new System.EventHandler(this.frmAddEmployee_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).EndInit();
             this.ResumeLayout(false);
 
         }
