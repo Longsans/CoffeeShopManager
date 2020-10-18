@@ -124,6 +124,7 @@ namespace GUI
             radFemale.Checked = false;
             radMale.Checked = false;
             picboxEmpImg.Image = null;
+            txtFirstName.Focus();
             _ucEmp.Reload();
         }
 

@@ -73,7 +73,13 @@ namespace GUI
                 tmpUser.PassWord = txtNewPassword.Text;
                 busUser.Update(tmpUser);
                 MessageBox.Show("You have changed password successfully ");
+                Close();
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

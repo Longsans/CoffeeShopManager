@@ -23,13 +23,11 @@ namespace GUI
         public frmHome()
         {
             InitializeComponent();
-            ucUserTab.Parent = this;
         }
         public frmHome(frmLogin frm)
         {
             _frmLogin = frm;
             InitializeComponent();
-            ucUserTab.Parent = this;
         }
 
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -111,7 +109,7 @@ namespace GUI
             pnlChangeTab.Location = btnEmployee.Location;
             ucEmployeeTab.Show();
             ucEmployeeTab.BringToFront();
-            ucUserTab.Hide();
+            Reload();
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
@@ -120,19 +118,26 @@ namespace GUI
             pnlChangeTab.Location = btnProduct.Location;
             ucProductTab.Show();
             ucProductTab.BringToFront();
+            Reload();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Close();
             _frmLogin.Show();
+            Reload();
         }
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome, " + dtoMan.Lastname;
+            
             dtoMan = busMan.GetByEmail(_frmLogin.GetEmail());
-
+            lblWelcome.Text = "Welcome, " + dtoMan.Lastname;
+            dtoMan.Account = busMan.GetUserInfoById(dtoMan.Id);
+        }
+        public  void Reload()
+        {
+            lblWelcome.Text = "Welcome, " + dtoMan.Lastname;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -140,42 +145,61 @@ namespace GUI
             pnlChangeTab.Hide();
             ucHome.Show();
             ucHome.BringToFront();
+            Reload();
         }
 
         private void btnStock_Click(object sender, EventArgs e)
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnStock.Location;
+            ucStockTab.Show();
+            ucStockTab.BringToFront();
+            Reload();
         }
 
         private void btnSupplier_Click(object sender, EventArgs e)
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnSupplier.Location;
+            ucSuppliersTab.Show();
+            ucSuppliersTab.BringToFront();
+            Reload();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnCustomer.Location;
+            ucCustomersTab.Show();
+            ucCustomersTab.BringToFront();
+            Reload();
         }
 
         private void btnStatistic_Click(object sender, EventArgs e)
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnStatistic.Location;
+            ucStatisticsTab.Show();
+            ucStatisticsTab.BringToFront();
+            Reload();
         }
 
         private void btnEvent_Click(object sender, EventArgs e)
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnEvent.Location;
+            ucEventsTab.Show();
+            ucEventsTab.BringToFront();
+            Reload();
         }
 
         private void btnNoti_Click(object sender, EventArgs e)
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnNoti.Location;
+            ucNotifications.Show();
+            ucNotifications.BringToFront();
+            Reload();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -185,12 +209,15 @@ namespace GUI
             ucUserTab.SetUser(dtoMan);
             ucUserTab.Show();
             ucUserTab.BringToFront();
-            
+            ucUserTab.Reload();
+            Reload();
         }
 
         private void ucHome_Load(object sender, EventArgs e)
         {
-            dtoMan = busMan.GetByEmail(_frmLogin.GetEmail());
+            ucHome.SetEmpTab(ucEmployeeTab);
+            ucHome.SetButton(btnEmployee);
+            ucHome.SetPanel(pnlChangeTab);
         }
     }
 

@@ -36,7 +36,7 @@
             this.txtDayBD = new System.Windows.Forms.TextBox();
             this.radFemale = new System.Windows.Forms.RadioButton();
             this.radMale = new System.Windows.Forms.RadioButton();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSaveChange = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtYearJoin = new System.Windows.Forms.TextBox();
@@ -69,6 +69,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TitleBar = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtManagerID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
@@ -142,21 +144,21 @@
             this.radMale.Text = "Male";
             this.radMale.UseVisualStyleBackColor = true;
             // 
-            // btnEdit
+            // btnSaveChange
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEdit.Location = new System.Drawing.Point(209, 324);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(90, 37);
-            this.btnEdit.TabIndex = 34;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnSaveChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSaveChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveChange.FlatAppearance.BorderSize = 0;
+            this.btnSaveChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveChange.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveChange.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSaveChange.Location = new System.Drawing.Point(209, 324);
+            this.btnSaveChange.Name = "btnSaveChange";
+            this.btnSaveChange.Size = new System.Drawing.Size(121, 37);
+            this.btnSaveChange.TabIndex = 34;
+            this.btnSaveChange.Text = "Save change";
+            this.btnSaveChange.UseVisualStyleBackColor = false;
+            this.btnSaveChange.Click += new System.EventHandler(this.btnSaveChange_Click);
             // 
             // label13
             // 
@@ -253,7 +255,7 @@
             this.panel2.Controls.Add(this.txtDayBD);
             this.panel2.Controls.Add(this.radFemale);
             this.panel2.Controls.Add(this.radMale);
-            this.panel2.Controls.Add(this.btnEdit);
+            this.panel2.Controls.Add(this.btnSaveChange);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.txtYearJoin);
@@ -263,9 +265,11 @@
             this.panel2.Controls.Add(this.txtAddress);
             this.panel2.Controls.Add(this.txtLastName);
             this.panel2.Controls.Add(this.txtFirstName);
+            this.panel2.Controls.Add(this.txtManagerID);
             this.panel2.Controls.Add(this.txtSalary);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.txtID);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label2);
@@ -357,6 +361,7 @@
             // txtID
             // 
             this.txtID.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(138, 52);
             this.txtID.Name = "txtID";
@@ -510,9 +515,27 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(325, 266);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 19);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Manager ID";
+            // 
+            // txtManagerID
+            // 
+            this.txtManagerID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtManagerID.Location = new System.Drawing.Point(448, 264);
+            this.txtManagerID.Name = "txtManagerID";
+            this.txtManagerID.Size = new System.Drawing.Size(113, 23);
+            this.txtManagerID.TabIndex = 31;
+            // 
             // frmEditEmployees
             // 
-            this.AcceptButton = this.btnEdit;
+            this.AcceptButton = this.btnSaveChange;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 429);
@@ -540,7 +563,7 @@
         private System.Windows.Forms.TextBox txtDayBD;
         private System.Windows.Forms.RadioButton radFemale;
         private System.Windows.Forms.RadioButton radMale;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSaveChange;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtYearJoin;
@@ -573,5 +596,7 @@
         private System.Windows.Forms.Button btnChooseImage;
         private System.Windows.Forms.Panel TitleBar;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox txtManagerID;
+        private System.Windows.Forms.Label label9;
     }
 }

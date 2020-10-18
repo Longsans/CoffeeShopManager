@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
+using System.Globalization;
 
 namespace GUI
 {
@@ -17,6 +19,8 @@ namespace GUI
         private Point startPoint = new Point(0, 0);
         UserControlEmployeesTab _ucEmp = new UserControlEmployeesTab();
         public DTO_Employee dtoEmp = new DTO_Employee();
+        BUS_Employee busEmp = new BUS_Employee();
+        BUS_Manager busMan = new BUS_Manager();
         public frmEditEmployees()
         {
             InitializeComponent();
@@ -29,6 +33,7 @@ namespace GUI
 
         private void frmEditEmployees_Load(object sender, EventArgs e)
         {
+            txtFirstName.Focus();
             txtID.Text = dtoEmp.Id.ToString();
             txtFirstName.Text = dtoEmp.Firstname;
             txtLastName.Text = dtoEmp.Lastname;
@@ -45,8 +50,8 @@ namespace GUI
             txtYearJoin.Text = dtoEmp.DateOfJoin.Year.ToString();
             txtAddress.Text = dtoEmp.Address;
             txtSalary.Text = dtoEmp.Salary.ToString();
+            txtManagerID.Text = dtoEmp.Manager.Id.ToString();
             picboxEmpImg.SizeMode = PictureBoxSizeMode.StretchImage;
-            
             if (dtoEmp.Image != null)
             {
                 picboxEmpImg.Image = ImageHelper.ByteArrayToImage(dtoEmp.Image);
@@ -63,13 +68,6 @@ namespace GUI
             {
                 picboxEmpImg.Image = Image.FromFile(op.FileName);
             }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            //
-
-            dtoEmp.Image = ImageHelper.ImageToByteArray(picboxEmpImg.Image);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -108,6 +106,56 @@ namespace GUI
             {
                 Point p = PointToScreen(e.Location);
                 Location = new Point(p.X - this.startPoint.X, p.Y - this.startPoint.Y);
+            }
+        }
+
+        private void btnSaveChange_Click(object sender, EventArgs e)
+        {
+            DateTime bdate = new DateTime();
+            DateTime doj = new DateTime();
+            string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
+            errorProvider1.SetError(txtYearBD, "");
+            errorProvider1.SetError(txtYearJoin, "");
+            dtoEmp.Firstname = txtFirstName.Text;
+            dtoEmp.Lastname = txtLastName.Text;
+            dtoEmp.Address = txtAddress.Text;
+            dtoEmp.Position = cboPosition.Text;
+            dtoEmp.Phone = txtPhone.Text;
+            dtoEmp.Account.Email = txtEmail.Text;
+            dtoEmp.Salary = decimal.Parse(txtSalary.Text);
+            dtoEmp.Manager = busMan.GetById(int.Parse(txtManagerID.Text));
+            dtoEmp.Phone = txtPhone.Text;
+            if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
+            else dtoEmp.Gender = radFemale.Text;
+            if (DateTime.TryParseExact(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text,
+                formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out doj)
+                && DateTime.TryParseExact(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text,
+                formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out bdate))
+            {
+                dtoEmp.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
+                dtoEmp.DateOfJoin = new DateTime(doj.Year, doj.Month, doj.Day);
+                if (this.picboxEmpImg.Image == null)
+                {
+                    MessageBox.Show("Vui lòng chọn hình ảnh", "Edit employees", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    dtoEmp.Image = ImageHelper.ImageToByteArray(this.picboxEmpImg.Image);
+                    busEmp.EditEmployee(dtoEmp);
+                    MessageBox.Show("Edit thành công.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                    _ucEmp.Reload();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập ngày hợp lệ.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDayBD.ResetText();
+                txtMonthBD.ResetText();
+                txtYearBD.ResetText();
+                txtDayJoin.ResetText();
+                txtMonthJoin.ResetText();
+                txtYearJoin.ResetText();
             }
         }
     }

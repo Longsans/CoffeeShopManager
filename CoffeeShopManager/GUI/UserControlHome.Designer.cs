@@ -109,6 +109,7 @@
             this.picEmployees.Size = new System.Drawing.Size(194, 145);
             this.picEmployees.TabIndex = 7;
             this.picEmployees.TabStop = false;
+            this.picEmployees.Click += new System.EventHandler(this.picEmployees_Click);
             // 
             // picCustomer
             // 

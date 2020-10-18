@@ -107,11 +107,23 @@
     <Compile Include="ucOrderHistorycs.Designer.cs">
       <DependentUpon>ucOrderHistorycs.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlCustomers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlCustomers.Designer.cs">
+      <DependentUpon>UserControlCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlEmployeesTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlEmployeesTab.Designer.cs">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEvents.Designer.cs">
+      <DependentUpon>UserControlEvents.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlHome.cs">
       <SubType>UserControl</SubType>
@@ -119,11 +131,35 @@
     <Compile Include="UserControlHome.Designer.cs">
       <DependentUpon>UserControlHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlNotifications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlNotifications.Designer.cs">
+      <DependentUpon>UserControlNotifications.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlProductTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlProductTab.Designer.cs">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlStatistics.Designer.cs">
+      <DependentUpon>UserControlStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlStock.Designer.cs">
+      <DependentUpon>UserControlStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSuppliers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSuppliers.Designer.cs">
+      <DependentUpon>UserControlSuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUserTab.cs">
       <SubType>UserControl</SubType>
@@ -171,6 +207,9 @@
     <EmbeddedResource Include="UserControlProductTab.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStock.resx">
+      <DependentUpon>UserControlStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlUserTab.resx">
       <DependentUpon>UserControlUserTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +250,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\grid_view_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_30px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
