@@ -113,6 +113,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coffee_to_go_48px {
+            get {
+                object obj = ResourceManager.GetObject("coffee_to_go_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coffee_to_go_80px {
             get {
                 object obj = ResourceManager.GetObject("coffee_to_go_80px", resourceCulture);
@@ -173,6 +183,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grid_view_24px {
+            get {
+                object obj = ResourceManager.GetObject("grid_view_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GuysDrinkingBeer_Preview_02 {
             get {
                 object obj = ResourceManager.GetObject("GuysDrinkingBeer_Preview_02", resourceCulture);
@@ -186,6 +206,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap it_s_always_coffee_time_quote_slogan_typography_7201_31 {
             get {
                 object obj = ResourceManager.GetObject("it-s-always-coffee-time-quote-slogan-typography_7201-31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_24px {
+            get {
+                object obj = ResourceManager.GetObject("search_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

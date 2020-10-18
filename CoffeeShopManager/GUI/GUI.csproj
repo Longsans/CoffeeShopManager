@@ -185,5 +185,14 @@
   <ItemGroup>
     <None Include="Resources\20394156-coffee-time-seamless-background-for-your-design.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee_to_go_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid_view_24px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,6 +13,8 @@ namespace GUI
 {
     public partial class frmEditEmployees : Form
     {
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
         UserControlEmployeesTab _ucEmp = new UserControlEmployeesTab();
         public DTO_Employee dtoEmp = new DTO_Employee();
         public frmEditEmployees()
@@ -83,6 +85,30 @@ namespace GUI
         private void txtYearBD_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void TitleBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void TitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+
+        private void TitleBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - this.startPoint.X, p.Y - this.startPoint.Y);
+            }
         }
     }
 }
