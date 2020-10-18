@@ -110,6 +110,7 @@
             this.Controls.Add(this.lblOrderHistory);
             this.Name = "ucOrderHistorycs";
             this.Size = new System.Drawing.Size(625, 534);
+            this.Load += new System.EventHandler(this.ucOrderHistorycs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

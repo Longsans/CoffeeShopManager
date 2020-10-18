@@ -32,7 +32,7 @@
             this.btnAll = new System.Windows.Forms.Button();
             this.btnDrink = new System.Windows.Forms.Button();
             this.btnFood = new System.Windows.Forms.Button();
-            this.btnOther = new System.Windows.Forms.Button();
+            this.btnOthers = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -46,6 +46,8 @@
             this.txtPriceSearchLower = new System.Windows.Forms.TextBox();
             this.txtPriceSearchUpper = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.lblBy = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +73,7 @@
             this.btnDrink.FlatAppearance.BorderSize = 0;
             this.btnDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrink.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDrink.Location = new System.Drawing.Point(129, 29);
+            this.btnDrink.Location = new System.Drawing.Point(127, 29);
             this.btnDrink.Name = "btnDrink";
             this.btnDrink.Size = new System.Drawing.Size(95, 36);
             this.btnDrink.TabIndex = 0;
@@ -86,7 +88,7 @@
             this.btnFood.FlatAppearance.BorderSize = 0;
             this.btnFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFood.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFood.Location = new System.Drawing.Point(244, 29);
+            this.btnFood.Location = new System.Drawing.Point(240, 29);
             this.btnFood.Name = "btnFood";
             this.btnFood.Size = new System.Drawing.Size(95, 36);
             this.btnFood.TabIndex = 0;
@@ -94,20 +96,20 @@
             this.btnFood.UseVisualStyleBackColor = false;
             this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
             // 
-            // btnOther
+            // btnOthers
             // 
-            this.btnOther.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.btnOther.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOther.FlatAppearance.BorderSize = 0;
-            this.btnOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOther.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOther.Location = new System.Drawing.Point(359, 29);
-            this.btnOther.Name = "btnOther";
-            this.btnOther.Size = new System.Drawing.Size(95, 36);
-            this.btnOther.TabIndex = 0;
-            this.btnOther.Text = "Other";
-            this.btnOther.UseVisualStyleBackColor = false;
-            this.btnOther.Click += new System.EventHandler(this.btnOther_Click);
+            this.btnOthers.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnOthers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOthers.FlatAppearance.BorderSize = 0;
+            this.btnOthers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOthers.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOthers.Location = new System.Drawing.Point(353, 29);
+            this.btnOthers.Name = "btnOthers";
+            this.btnOthers.Size = new System.Drawing.Size(95, 36);
+            this.btnOthers.TabIndex = 0;
+            this.btnOthers.Text = "Others";
+            this.btnOthers.UseVisualStyleBackColor = false;
+            this.btnOthers.Click += new System.EventHandler(this.btnOther_Click);
             // 
             // dataGridView1
             // 
@@ -122,6 +124,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(830, 275);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnEdit
             // 
@@ -136,6 +139,7 @@
             this.btnEdit.TabIndex = 0;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -267,10 +271,32 @@
             this.label2.Text = "-";
             this.label2.Visible = false;
             // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(412, 84);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(61, 19);
+            this.lblSearch.TabIndex = 11;
+            this.lblSearch.Text = "Search:";
+            // 
+            // lblBy
+            // 
+            this.lblBy.AutoSize = true;
+            this.lblBy.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBy.Location = new System.Drawing.Point(445, 112);
+            this.lblBy.Name = "lblBy";
+            this.lblBy.Size = new System.Drawing.Size(25, 19);
+            this.lblBy.TabIndex = 12;
+            this.lblBy.Text = "By";
+            // 
             // UserControlProductTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblBy);
+            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPriceSearchUpper);
             this.Controls.Add(this.txtPriceSearchLower);
@@ -280,7 +306,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnOther);
+            this.Controls.Add(this.btnOthers);
             this.Controls.Add(this.btnFood);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -301,7 +327,7 @@
         private System.Windows.Forms.Button btnAll;
         private System.Windows.Forms.Button btnDrink;
         private System.Windows.Forms.Button btnFood;
-        private System.Windows.Forms.Button btnOther;
+        private System.Windows.Forms.Button btnOthers;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -315,5 +341,7 @@
         private System.Windows.Forms.TextBox txtPriceSearchLower;
         private System.Windows.Forms.TextBox txtPriceSearchUpper;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Label lblBy;
     }
 }

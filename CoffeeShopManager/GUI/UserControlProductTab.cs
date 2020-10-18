@@ -39,12 +39,13 @@ namespace GUI
         {
             dataGridView1.DataSource = busPro.GetAllOtherProducts();
         }
+
         private void UserControlProductTab_Load(object sender, EventArgs e)
         {
             Reload();
         }
 
-        private void Reload()
+        public void Reload()
         {
             this.cboSearch.Text = "";
             this.dataGridView1.DataSource = busPro.GetAllProducts();
@@ -72,23 +73,24 @@ namespace GUI
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            
+            frmInsertProDuct frmInsert = new frmInsertProDuct(this);
+            frmInsert.ShowDialog();
+            Reload();
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DTO_Product dtoPro = new DTO_Product();
-            try
+            if (dataGridView1.SelectedRows != null && !dataGridView1.Rows[dataGridView1.RowCount - 1].Selected)
             {
-                dtoPro.Id = (int)(this.dataGridView1.SelectedRows[0].Cells["Id"].Value);
-                busPro.Delete(dtoPro);
-                
+                DialogResult ret = MessageBox.Show("Do you want to delete this product?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (ret == DialogResult.Yes)
+                {
+                   // MessageBox.Show(dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
+                    dtoPro = busPro.GetByName(dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
+                    busPro.Delete(dtoPro);
+                    Reload();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            Reload();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -141,6 +143,24 @@ namespace GUI
             txtSearch.Clear();
             txtPriceSearchLower.Clear();
             txtPriceSearchUpper.Clear();
+        }
+
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows != null && !dataGridView1.Rows[dataGridView1.RowCount - 1].Selected)
+            {
+               frmEditProduct frmEdit = new frmEditProduct(this)
+                {
+                    dtoPro = busPro.GetByName(dataGridView1.SelectedRows[0].Cells[1].Value.ToString())
+                };
+                frmEdit.ShowDialog();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.ReadOnly = true;
         }
 
     }

@@ -73,7 +73,6 @@
             this.TitleBar = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.TitleBar.SuspendLayout();
             this.SuspendLayout();
@@ -513,6 +512,7 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+
             // TitleBar
             // 
             this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
@@ -538,6 +538,7 @@
             this.btnExit.TabIndex = 6;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+
             // 
             // frmAddEmployee
             // 
@@ -553,7 +554,6 @@
             this.Load += new System.EventHandler(this.frmAddEmployee_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.TitleBar.ResumeLayout(false);
             this.ResumeLayout(false);

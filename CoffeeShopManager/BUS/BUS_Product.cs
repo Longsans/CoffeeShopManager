@@ -82,7 +82,7 @@ namespace BUS
         {
             try
             {
-                return GetAllProductsOfType("Other");
+                return GetAllProductsOfType("Others");
             }
             catch (Exception ex)
             {
@@ -108,6 +108,11 @@ namespace BUS
         public DataTable GetProductsSearchPriceFiltered(int lowerBound, int upperBound)
         {
             return dalProduct.GetProductsSearchPriceFiltered(lowerBound, upperBound);
+        }
+
+        public int GetNextProductId()
+        {
+            return dalProduct.GetNextProductId();
         }
 
         public bool InsertWithoutImage(DTO_Product dtoPro)
@@ -141,8 +146,9 @@ namespace BUS
         {
             try
             {
-                dalProduct.Delete(dtoPro);
-                return true;
+                    dalProduct.Delete(dtoPro);
+                    return true;
+               // else return false;                
             }
             catch(Exception ex)
             {

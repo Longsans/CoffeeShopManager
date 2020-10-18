@@ -40,6 +40,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
+            this.lblBy = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -173,10 +174,21 @@
             this.btnShowAll.UseVisualStyleBackColor = true;
             this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
+            // lblBy
+            // 
+            this.lblBy.AutoSize = true;
+            this.lblBy.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBy.Location = new System.Drawing.Point(407, 89);
+            this.lblBy.Name = "lblBy";
+            this.lblBy.Size = new System.Drawing.Size(25, 19);
+            this.lblBy.TabIndex = 15;
+            this.lblBy.Text = "By";
+            // 
             // UserControlEmployeesTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblBy);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnDelete);
@@ -210,5 +222,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.Label lblBy;
     }
 }

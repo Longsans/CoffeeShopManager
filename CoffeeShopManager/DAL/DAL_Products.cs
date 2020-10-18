@@ -134,7 +134,7 @@ namespace DAL
 
         public DataTable GetAllOtherProducts()
         {
-            return GetAllProductsOfType("Other");
+            return GetAllProductsOfType("Others");
         }
 
         public DataTable GetProductsSearchIDFiltered(int id)
@@ -191,6 +191,30 @@ namespace DAL
             ada.Fill(dtProFiltered);
 
             return dtProFiltered;
+        }
+
+        public int GetNextProductId()
+        {
+            string qry = "SELECT max(Id) FROM [PRODUCTS]";
+            int currId = -1;
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                currId = reader.GetInt32(0);
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return currId + 1;
         }
 
         public void InsertWithoutImage(DTO_Product dtoPro)

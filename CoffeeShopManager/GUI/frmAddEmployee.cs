@@ -158,6 +158,7 @@ namespace GUI
             }
         }
 
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
@@ -181,6 +182,7 @@ namespace GUI
                 Point p = PointToScreen(e.Location);
                 Location = new Point(p.X - this.startPoint.X, p.Y - this.startPoint.Y);
             }
+
         }
     }
-}
+}   
