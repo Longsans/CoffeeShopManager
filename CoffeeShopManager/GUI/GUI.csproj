@@ -119,6 +119,12 @@
     <Compile Include="UserControlProductTab.Designer.cs">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlUserTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUserTab.Designer.cs">
+      <DependentUpon>UserControlUserTab.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlProductTab.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUserTab.resx">
+      <DependentUpon>UserControlUserTab.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

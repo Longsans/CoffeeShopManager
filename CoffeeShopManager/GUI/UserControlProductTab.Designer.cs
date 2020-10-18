@@ -28,76 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlProductTab));
+            this.btnAll = new System.Windows.Forms.Button();
+            this.btnDrink = new System.Windows.Forms.Button();
+            this.btnFood = new System.Windows.Forms.Button();
+            this.btnOther = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.txtPriceSearchLower = new System.Windows.Forms.TextBox();
+            this.txtPriceSearchUpper = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAll
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(14, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "All";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAll.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAll.FlatAppearance.BorderSize = 0;
+            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAll.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.Location = new System.Drawing.Point(14, 29);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(95, 36);
+            this.btnAll.TabIndex = 0;
+            this.btnAll.Text = "All";
+            this.btnAll.UseVisualStyleBackColor = false;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
-            // button2
+            // btnDrink
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(125, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 36);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Drink";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDrink.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDrink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDrink.FlatAppearance.BorderSize = 0;
+            this.btnDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrink.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDrink.Location = new System.Drawing.Point(129, 29);
+            this.btnDrink.Name = "btnDrink";
+            this.btnDrink.Size = new System.Drawing.Size(95, 36);
+            this.btnDrink.TabIndex = 0;
+            this.btnDrink.Text = "Drink";
+            this.btnDrink.UseVisualStyleBackColor = false;
+            this.btnDrink.Click += new System.EventHandler(this.btnDrink_Click);
             // 
-            // button3
+            // btnFood
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(242, 29);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 36);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Food";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnFood.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnFood.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFood.FlatAppearance.BorderSize = 0;
+            this.btnFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFood.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFood.Location = new System.Drawing.Point(244, 29);
+            this.btnFood.Name = "btnFood";
+            this.btnFood.Size = new System.Drawing.Size(95, 36);
+            this.btnFood.TabIndex = 0;
+            this.btnFood.Text = "Food";
+            this.btnFood.UseVisualStyleBackColor = false;
+            this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
             // 
-            // button4
+            // btnOther
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(360, 29);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(95, 36);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Other";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnOther.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnOther.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOther.FlatAppearance.BorderSize = 0;
+            this.btnOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOther.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOther.Location = new System.Drawing.Point(359, 29);
+            this.btnOther.Name = "btnOther";
+            this.btnOther.Size = new System.Drawing.Size(95, 36);
+            this.btnOther.TabIndex = 0;
+            this.btnOther.Text = "Other";
+            this.btnOther.UseVisualStyleBackColor = false;
+            this.btnOther.Click += new System.EventHandler(this.btnOther_Click);
             // 
             // dataGridView1
             // 
@@ -110,33 +120,34 @@
             this.dataGridView1.Size = new System.Drawing.Size(729, 275);
             this.dataGridView1.TabIndex = 1;
             // 
-            // button7
+            // btnEdit
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(475, 31);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(65, 33);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Edit";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnEdit.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(111, 100);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(71, 33);
+            this.btnEdit.TabIndex = 0;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btnDelete
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(556, 31);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(65, 33);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "Delete";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(202, 100);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(71, 33);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label1
             // 
@@ -148,20 +159,27 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Search:";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(475, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtSearch.Location = new System.Drawing.Point(475, 81);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(154, 22);
+            this.txtSearch.TabIndex = 4;
             // 
-            // comboBox1
+            // cboSearch
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(475, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(148, 24);
-            this.comboBox1.TabIndex = 5;
+            this.cboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSearch.FormattingEnabled = true;
+            this.cboSearch.Items.AddRange(new object[] {
+            "ID",
+            "Name",
+            "Type",
+            "Price"});
+            this.cboSearch.Location = new System.Drawing.Point(475, 109);
+            this.cboSearch.Name = "cboSearch";
+            this.cboSearch.Size = new System.Drawing.Size(154, 24);
+            this.cboSearch.TabIndex = 5;
+            this.cboSearch.SelectedIndexChanged += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
             // 
             // button6
             // 
@@ -189,24 +207,87 @@
             this.button5.TabIndex = 2;
             this.button5.UseVisualStyleBackColor = false;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(635, 79);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(32, 27);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Location = new System.Drawing.Point(20, 100);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(71, 33);
+            this.btnInsert.TabIndex = 7;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // txtPriceSearchLower
+            // 
+            this.txtPriceSearchLower.Location = new System.Drawing.Point(475, 81);
+            this.txtPriceSearchLower.Name = "txtPriceSearchLower";
+            this.txtPriceSearchLower.Size = new System.Drawing.Size(63, 22);
+            this.txtPriceSearchLower.TabIndex = 8;
+            this.txtPriceSearchLower.Visible = false;
+            // 
+            // txtPriceSearchUpper
+            // 
+            this.txtPriceSearchUpper.Location = new System.Drawing.Point(566, 81);
+            this.txtPriceSearchUpper.Name = "txtPriceSearchUpper";
+            this.txtPriceSearchUpper.Size = new System.Drawing.Size(63, 22);
+            this.txtPriceSearchUpper.TabIndex = 9;
+            this.txtPriceSearchUpper.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(545, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "-";
+            this.label2.Visible = false;
+            // 
             // UserControlProductTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtPriceSearchUpper);
+            this.Controls.Add(this.txtPriceSearchLower);
+            this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.cboSearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOther);
+            this.Controls.Add(this.btnFood);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnDrink);
+            this.Controls.Add(this.btnAll);
             this.Name = "UserControlProductTab";
             this.Size = new System.Drawing.Size(735, 446);
+            this.Load += new System.EventHandler(this.UserControlProductTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,17 +296,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAll;
+        private System.Windows.Forms.Button btnDrink;
+        private System.Windows.Forms.Button btnFood;
+        private System.Windows.Forms.Button btnOther;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cboSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.TextBox txtPriceSearchLower;
+        private System.Windows.Forms.TextBox txtPriceSearchUpper;
+        private System.Windows.Forms.Label label2;
     }
 }

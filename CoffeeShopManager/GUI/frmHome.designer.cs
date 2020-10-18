@@ -51,13 +51,13 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.ucHome = new GUI.UserControlHome();
+            this.ucProductTab = new GUI.UserControlProductTab();
+            this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
             this.ucEmployeeTab = new GUI.UserControlEmployeesTab();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
-            this.ucProductTab = new GUI.UserControlProductTab();
-            this.ucHome = new GUI.UserControlHome();
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlShow.SuspendLayout();
@@ -426,6 +426,35 @@
             this.pnlShow.Size = new System.Drawing.Size(884, 597);
             this.pnlShow.TabIndex = 2;
             // 
+            // ucHome
+            // 
+            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucHome.Location = new System.Drawing.Point(0, 34);
+            this.ucHome.Name = "ucHome";
+            this.ucHome.Size = new System.Drawing.Size(884, 563);
+            this.ucHome.TabIndex = 3;
+            this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
+            // 
+            // ucProductTab
+            // 
+            this.ucProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucProductTab.Location = new System.Drawing.Point(0, 34);
+            this.ucProductTab.Name = "ucProductTab";
+            this.ucProductTab.Size = new System.Drawing.Size(884, 563);
+            this.ucProductTab.TabIndex = 1;
+            this.ucProductTab.Visible = false;
+            // 
+            // ucOrderHistorycs1
+            // 
+            this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucOrderHistorycs1.Location = new System.Drawing.Point(0, 34);
+            this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
+            this.ucOrderHistorycs1.Size = new System.Drawing.Size(884, 563);
+            this.ucOrderHistorycs1.TabIndex = 0;
+            this.ucOrderHistorycs1.Visible = false;
+            // 
             // ucEmployeeTab
             // 
             this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -471,35 +500,6 @@
             this.lblWelcome.Size = new System.Drawing.Size(128, 19);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome, Admin";
-            // 
-            // ucOrderHistorycs1
-            // 
-            this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucOrderHistorycs1.Location = new System.Drawing.Point(0, 34);
-            this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
-            this.ucOrderHistorycs1.Size = new System.Drawing.Size(884, 563);
-            this.ucOrderHistorycs1.TabIndex = 0;
-            this.ucOrderHistorycs1.Visible = false;
-            // 
-            // ucProductTab
-            // 
-            this.ucProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucProductTab.Location = new System.Drawing.Point(0, 34);
-            this.ucProductTab.Name = "ucProductTab";
-            this.ucProductTab.Size = new System.Drawing.Size(884, 563);
-            this.ucProductTab.TabIndex = 1;
-            this.ucProductTab.Visible = false;
-            // 
-            // ucHome
-            // 
-            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ucHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucHome.Location = new System.Drawing.Point(0, 34);
-            this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(884, 563);
-            this.ucHome.TabIndex = 3;
-            this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
             // 
             // frmHome
             // 

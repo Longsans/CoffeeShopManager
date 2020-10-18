@@ -89,6 +89,27 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public DataTable GetProductsSearchIDFiltered(int id)
+        {
+            return dalProduct.GetProductsSearchIDFiltered(id);
+        }
+
+        public DataTable GetProductsSearchNameFiltered(string namesubstr)
+        {
+            return dalProduct.GetProductsSearchNameFiltered(namesubstr);
+        }
+
+        public DataTable GetProductsSearchTypeFiltered(string type)
+        {
+            return dalProduct.GetProductsSearchTypeFiltered(type);
+        }
+
+        public DataTable GetProductsSearchPriceFiltered(int lowerBound, int upperBound)
+        {
+            return dalProduct.GetProductsSearchPriceFiltered(lowerBound, upperBound);
+        }
+
         public bool InsertWithoutImage(DTO_Product dtoPro)
         {
             try
