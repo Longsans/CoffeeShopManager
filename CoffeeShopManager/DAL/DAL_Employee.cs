@@ -17,7 +17,7 @@ namespace DAL
         {
             DataTable dtEmp = new DataTable();
             DAL_Workers dalWr = new DAL_Workers();
-            string qry = "SELECT ManagerId FROM [EMPLOYEES]";
+            string qry = "SELECT ManagerId AS [Manager's ID] FROM [EMPLOYEES]";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             
             ada.Fill(dtEmp);
@@ -180,8 +180,8 @@ namespace DAL
         public DataTable GetEmployeesSearchIDFiltered(int id)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
-               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+            string qry = "SELECT [EMPLOYEES].Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+               "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email], ManagerId AS [Manager's ID] " +
                "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "WHERE [EMPLOYEES].Id = @id";
@@ -197,8 +197,8 @@ namespace DAL
         public DataTable GetEmployeesSearchNameFiltered(string nameSubstr)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
-               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+            string qry = "SELECT [EMPLOYEES].Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+               "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email], ManagerId AS [Manager's ID] " +
                "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "WHERE CONCAT(FirstName, ' ', LastName) LIKE '%' + @nameSubstr + '%'";
@@ -214,8 +214,8 @@ namespace DAL
         public DataTable GetEmployeesSearchGenderFiltered(string gender)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
-               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+            string qry = "SELECT [EMPLOYEES].Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+               "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email], ManagerId AS [Manager's ID] " +
                "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "WHERE Gender = @gender";
@@ -231,8 +231,8 @@ namespace DAL
         public DataTable GetEmployeesSearchPositionFiltered(string position)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
-               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+            string qry = "SELECT [EMPLOYEES].Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+               "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email], ManagerId AS [Manager's ID] " +
                "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "WHERE Position = @position";
@@ -248,8 +248,8 @@ namespace DAL
         public DataTable GetEmployeesSearchPhoneFiltered(string phone)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
-               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+            string qry = "SELECT [EMPLOYEES].Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+               "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email], ManagerId AS [Manager's ID] " +
                "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "WHERE PhoneNumber = @phone";
@@ -264,8 +264,8 @@ namespace DAL
         public DataTable GetEmployeesSearchEmailFiltered(string email)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
-               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+            string qry = "SELECT [EMPLOYEES].Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+               "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email], ManagerId AS [Manager's ID] " +
                "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "WHERE EmailAddress = @email";
@@ -281,8 +281,8 @@ namespace DAL
         public DataTable GetEmployeesSearchManIDFiltered(int manId)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT [EMPLOYEES].Id, FirstName AS [First Name], LastName, " +
-               "Gender, Position, PhoneNumber, EmailAddress, ManagerId " +
+            string qry = "SELECT [EMPLOYEES].Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+               "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email], ManagerId AS [Manager's ID] " +
                " FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "WHERE ManagerId = @manId";

@@ -94,9 +94,9 @@ namespace DAL
         public DataTable GetAllManagerWorkers()
         {
             DataTable dtPos = new DataTable();
-            string qry = "SELECT Id, FirstName, LastName, " +
-                "Gender, Position, PhoneNumber, EmailAddress" +
-                " FROM [WORKERS] WHERE Position = @position";
+            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
+                "FROM [WORKERS] WHERE Position = @position";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@position", "Manager");
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
@@ -109,9 +109,9 @@ namespace DAL
         public DataTable GetAllEmployeeWorkers()
         {
             DataTable dtPos = new DataTable();
-            string qry = "SELECT Id, FirstName, LastName, " +
-                "Gender, Position, PhoneNumber, EmailAddress " +
-                " FROM [WORKERS] WHERE Position <> @position";
+            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
+                "FROM [WORKERS] WHERE Position <> @position";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@position", "Manager");
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
@@ -123,9 +123,9 @@ namespace DAL
         public DataTable GetWorkersSearchIDFiltered(int id)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id, FirstName, LastName, " +
-               "Gender, Position, PhoneNumber, EmailAddress " +
-               " FROM [WORKERS] WHERE Id = @id";
+            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
+               "FROM [WORKERS] WHERE Id = @id";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", id);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
@@ -138,9 +138,9 @@ namespace DAL
         public DataTable GetWorkersSearchNameFiltered(string nameSubstr)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id, FirstName, LastName, " +
-                "Gender, Position, PhoneNumber, EmailAddress " +
-                " FROM [WORKERS] WHERE CONCAT(FirstName, ' ', LastName) LIKE '%@name%'";
+            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
+                "FROM [WORKERS] WHERE CONCAT(FirstName, ' ', LastName) LIKE '%@name%'";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@name", nameSubstr);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
@@ -153,9 +153,9 @@ namespace DAL
         public DataTable GetWorkersSearchGenderFiltered(string gender)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id, FirstName, LastName, " +
-                "Gender, Position, PhoneNumber, EmailAddress " +
-                " FROM [WORKERS] WHERE Gender = @gender";
+            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
+                "FROM [WORKERS] WHERE Gender = @gender";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@gender", gender);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
@@ -168,9 +168,9 @@ namespace DAL
         public DataTable GetWorkersSearchPositionFiltered(string position)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id, FirstName, LastName, " +
-                "Gender, Position, PhoneNumber, EmailAddress " +
-                " FROM [WORKERS] WHERE Position = @position";
+            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
+                "FROM [WORKERS] WHERE Position = @position";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@position", position);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
@@ -183,9 +183,9 @@ namespace DAL
         public DataTable GetWorkersSearchPhoneNumberFiltered(string phone)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id, FirstName, LastName, " +
-                "Gender, Position, PhoneNumber, EmailAddress " +
-                " FROM [WORKERS] WHERE PhoneNumber = @phone";
+            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
+                "FROM [WORKERS] WHERE PhoneNumber = @phone";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@phone", phone);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
@@ -198,9 +198,9 @@ namespace DAL
         public DataTable GetWorkersSearchEmailFiltered(string email)
         {
             DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id, FirstName, LastName, " +
-                "Gender, Position, PhoneNumber, EmailAddress " +
-                " FROM [WORKERS] WHERE EmailAddress = @email";
+            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
+                "FROM [WORKERS] WHERE EmailAddress = @email";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@email", email);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
