@@ -137,6 +137,62 @@ namespace DAL
             return GetAllProductsOfType("Other");
         }
 
+        public DataTable GetProductsSearchIDFiltered(int id)
+        {
+            DataTable dtProFiltered = new DataTable();
+            string qry = "SELECT Id, Name, Type, Price FROM [PRODUCTS] WHERE Id = @id";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtProFiltered);
+
+            return dtProFiltered;
+        }
+
+        public DataTable GetProductsSearchNameFiltered(string nameSubstr)
+        {
+            DataTable dtProFiltered = new DataTable();
+            string qry = "SELECT Id, Name, Type, Price FROM [PRODUCTS] " +
+                "WHERE Name LIKE '%' + @namesubstr + '%'";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@namesubstr", nameSubstr);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtProFiltered);
+
+            return dtProFiltered;
+        }
+
+        public DataTable GetProductsSearchTypeFiltered(string type)
+        {
+            DataTable dtProFiltered = new DataTable();
+            string qry = "SELECT Id, Name, Type, Price FROM [PRODUCTS] " +
+                "WHERE Type = @type";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@type", type);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtProFiltered);
+
+            return dtProFiltered;
+        }
+
+        public DataTable GetProductsSearchPriceFiltered(decimal lowerBound, decimal upperBound)
+        {
+            DataTable dtProFiltered = new DataTable();
+            string qry = "SELECT Id, Name, Type, Price FROM [PRODUCTS] " +
+                "WHERE Price >= @lower AND Price <= @upper";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@lower", lowerBound);
+            cmd.Parameters.AddWithValue("@upper", upperBound);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtProFiltered);
+
+            return dtProFiltered;
+        }
+
         public void InsertWithoutImage(DTO_Product dtoPro)
         {
             string qry = "INSERT INTO [PRODUCTS] (Name, Type, Price, Details) " +

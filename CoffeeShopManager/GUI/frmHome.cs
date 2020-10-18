@@ -23,11 +23,13 @@ namespace GUI
         public frmHome()
         {
             InitializeComponent();
+            ucUserTab.Parent = this;
         }
         public frmHome(frmLogin frm)
         {
             _frmLogin = frm;
             InitializeComponent();
+            ucUserTab.Parent = this;
         }
 
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -109,6 +111,7 @@ namespace GUI
             pnlChangeTab.Location = btnEmployee.Location;
             ucEmployeeTab.Show();
             ucEmployeeTab.BringToFront();
+            ucUserTab.Hide();
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
@@ -179,13 +182,16 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnUser.Location;
+            ucUserTab.SetUser(dtoMan);
+            ucUserTab.Show();
+            ucUserTab.BringToFront();
+            
         }
 
         private void ucHome_Load(object sender, EventArgs e)
         {
             dtoMan = busMan.GetByEmail(_frmLogin.GetEmail());
         }
-
     }
 
 }
