@@ -141,12 +141,8 @@ namespace BUS
         {
             try
             {
-                if (dalProduct.GetByName(dtoPro.Name) != null)
-                {
-                    dalProduct.Delete(dtoPro);
-                    return true;
-                }
-                else return false;                
+                dalProduct.Delete(dtoPro);
+                return true;
             }
             catch(Exception ex)
             {

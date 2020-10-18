@@ -364,12 +364,14 @@ namespace DAL
             DAL_Workers dalWorkers = new DAL_Workers();
             string qry = "UPDATE [EMPLOYEES] " +
                 "SET Address = @address, DateOfJoin = @doj, " +
-                "Salary = @salary, ManagerId = @manId";
+                "Salary = @salary, ManagerId = @manId " +
+                "WHERE Id = @id";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@address", empUpdated.Address);
             cmd.Parameters.AddWithValue("@doj", empUpdated.DateOfJoin);
             cmd.Parameters.AddWithValue("@salary", empUpdated.Salary);
             cmd.Parameters.AddWithValue("@manId", empUpdated.Manager.Id);
+            cmd.Parameters.AddWithValue("@id", empUpdated.Id);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)

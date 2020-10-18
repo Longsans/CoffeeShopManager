@@ -82,11 +82,13 @@ namespace GUI
             {
                 dtoPro.Id = (int)(this.dataGridView1.SelectedRows[0].Cells["Id"].Value);
                 busPro.Delete(dtoPro);
+                
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
+            Reload();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

@@ -303,6 +303,7 @@
             this.picManagerInfo.Location = new System.Drawing.Point(43, 181);
             this.picManagerInfo.Name = "picManagerInfo";
             this.picManagerInfo.Size = new System.Drawing.Size(171, 172);
+            this.picManagerInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picManagerInfo.TabIndex = 1;
             this.picManagerInfo.TabStop = false;
             // 
@@ -331,7 +332,7 @@
             this.btnBrowse.Enabled = false;
             this.btnBrowse.FlatAppearance.BorderSize = 0;
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowse.Location = new System.Drawing.Point(60, 366);
+            this.btnBrowse.Location = new System.Drawing.Point(56, 366);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(145, 39);
             this.btnBrowse.TabIndex = 45;
