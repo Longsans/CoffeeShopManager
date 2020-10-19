@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS_Employee.cs" />
+    <Compile Include="BUS_Manager.cs" />
+    <Compile Include="BUS_Product.cs" />
+    <Compile Include="BUS_UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

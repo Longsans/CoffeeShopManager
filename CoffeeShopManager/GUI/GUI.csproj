@@ -6,12 +6,27 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DE32FD45-F77E-4850-BA9C-7E83195004E6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CoffeeShopManager</RootNamespace>
-    <AssemblyName>CoffeeShopManager</AssemblyName>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,17 +62,176 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEmployee.Designer.cs">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditEmployees.Designer.cs">
+      <DependentUpon>frmEditEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditProduct.Designer.cs">
+      <DependentUpon>frmEditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsertProDuct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsertProDuct.Designer.cs">
+      <DependentUpon>frmInsertProDuct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegister.Designer.cs">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ucOrderHistorycs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucOrderHistorycs.Designer.cs">
+      <DependentUpon>ucOrderHistorycs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCustomers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlCustomers.Designer.cs">
+      <DependentUpon>UserControlCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlEmployeesTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEmployeesTab.Designer.cs">
+      <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEvents.Designer.cs">
+      <DependentUpon>UserControlEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlHome.Designer.cs">
+      <DependentUpon>UserControlHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlNotifications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlNotifications.Designer.cs">
+      <DependentUpon>UserControlNotifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlProductTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlProductTab.Designer.cs">
+      <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlStatistics.Designer.cs">
+      <DependentUpon>UserControlStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlStock.Designer.cs">
+      <DependentUpon>UserControlStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSuppliers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSuppliers.Designer.cs">
+      <DependentUpon>UserControlSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUserTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUserTab.Designer.cs">
+      <DependentUpon>UserControlUserTab.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmAddEmployee.resx">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditEmployees.resx">
+      <DependentUpon>frmEditEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditProduct.resx">
+      <DependentUpon>frmEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertProDuct.resx">
+      <DependentUpon>frmInsertProDuct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucOrderHistorycs.resx">
+      <DependentUpon>ucOrderHistorycs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEmployeesTab.resx">
+      <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlHome.resx">
+      <DependentUpon>UserControlHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlProductTab.resx">
+      <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStock.resx">
+      <DependentUpon>UserControlStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUserTab.resx">
+      <DependentUpon>UserControlUserTab.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,6 +254,30 @@
       <Project>{e0d9c117-a4fe-42cc-9877-d3c98f802143}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20394156-coffee-time-seamless-background-for-your-design.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border_none_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select_none_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee_to_go_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid_view_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_30px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

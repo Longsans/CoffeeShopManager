@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CoffeeShopManager
+namespace GUI
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace CoffeeShopManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run();
+            Application.Run(new frmLogin());
         }
     }
 }

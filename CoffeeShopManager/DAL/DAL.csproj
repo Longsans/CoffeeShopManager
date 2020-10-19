@@ -32,7 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_Employee.cs" />
+    <Compile Include="DAL_Manager.cs" />
+    <Compile Include="DAL_Products.cs" />
     <Compile Include="DAL_UserInfo.cs" />
+    <Compile Include="DAL_Workers.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

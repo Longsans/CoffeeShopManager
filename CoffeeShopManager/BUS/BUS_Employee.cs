@@ -8,45 +8,139 @@ using DAL;
 using DTO;
 namespace BUS
 {
-    class BUS_Employee
+    public class BUS_Employee
     {
         DAL_Employee dalEmployee = new DAL_Employee();
-
-
-        public static bool IsDate(string date)
-        {
-            string[] elements = date.Split('/');
-            if ((Convert.ToInt32(elements[0]) >= 1) && (Convert.ToInt32(elements[0]) <= 31) && (Convert.ToInt32(elements[1]) >= 1) && (Convert.ToInt32(elements[1]) <= 12) && (Convert.ToInt32(elements[2]) >= 1900))
-                return true;
-            else return false;
-        }
-
         public DataTable GetAllEmployee()
         {
-            DataTable dtb = new DataTable();
-            dtb = dalEmployee.GetAllEmployees();
-            return dtb;
+            try
+            {
+                DataTable dtb = new DataTable();
+                dtb = dalEmployee.GetAllEmployees();
+                return dtb;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }   
         }
-        public DataTable GetAllEmployees()
+        public DTO_Employee GetEmployeeInfoAndManagerId(int id)
         {
-            return dalEmployee.GetAllEmployees();
+            return dalEmployee.GetEmployeeInfoAndManagerId(id);
         }
-        public DTO_Employee GetById(int id)
+        public DTO_Manager GetManagerInfo(DTO_Employee emp)
         {
-            return dalEmployee.GetById(id);
+            try
+            {
+               return  dalEmployee.GetManagerInfo(emp);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
-        public bool AddEmployee(DTO_Employee emp)
+        public List<DTO_Employee> GetEmployeesThroughManagerId(int managerId)
         {
-            return dalEmployee.Insert(emp);
+            try
+            {
+                return dalEmployee.GetEmployeesThroughManagerId(managerId);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        } 
+        public void AddEmployee(DTO_Employee emp)
+        {
+            try
+            {
+                dalEmployee.Insert(emp);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
-        public bool DeleteEmployee(int ID)
+        public void DeleteEmployee(DTO_Employee emp)
         {
-            return dalEmployee.Delete(ID);
+            try
+            {
+                dalEmployee.Delete(emp);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        public bool EditEmployee(DTO_Employee emp)
+        public void EditEmployee(DTO_Employee emp)
         {
-            return dalEmployee.Update(emp);
+            try
+            {
+                dalEmployee.Update(emp);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DTO_Employee GetEmployeeInfoByEmail(string email)
+        {
+            try
+            {
+                return dalEmployee.GetEmployeeInfoByEmail(email);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int GetNextEmployeeID()
+        {
+            
+            try
+            {
+                DAL_Workers dalWor = new DAL_Workers();
+                return dalWor.GetNextWorkerId();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        public DataTable GetEmployeesSearchIDFiltered(int id)
+        {
+            return dalEmployee.GetEmployeesSearchIDFiltered(id);
+        }
+
+        public DataTable GetEmployeesSearchNameFiltered(string nameSubstr)
+        {
+            return dalEmployee.GetEmployeesSearchNameFiltered(nameSubstr);
+        }
+
+        public DataTable GetEmployeesSearchGenderFiltered(string gender)
+        {
+            return dalEmployee.GetEmployeesSearchGenderFiltered(gender);
+        }
+
+        public DataTable GetEmployeesSearchPositionFiltered(string position)
+        {
+            return dalEmployee.GetEmployeesSearchPositionFiltered(position);
+        }
+
+        public DataTable GetEmployeesSearchPhoneFiltered(string phone)
+        {
+            return dalEmployee.GetEmployeesSearchPhoneFiltered(phone);
+        }
+
+        public DataTable GetEmployeesSearchEmailFiltered(string email)
+        {
+            return dalEmployee.GetEmployeesSearchEmailFiltered(email);
+        }
+
+        public DataTable GetEmployeesSearchManIDFiltered(int manId)
+        {
+            return dalEmployee.GetEmployeesSearchManIDFiltered(manId);
+        }
     }
 }
