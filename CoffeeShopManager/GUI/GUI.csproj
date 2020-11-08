@@ -86,11 +86,17 @@
     <Compile Include="frmEditProduct.Designer.cs">
       <DependentUpon>frmEditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHome.cs">
+    <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHome.Designer.cs">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <Compile Include="frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManager.Designer.cs">
+      <DependentUpon>frmManager.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInsertProDuct.cs">
       <SubType>Form</SubType>
@@ -160,6 +166,18 @@
     <Compile Include="UserControlProductTab.Designer.cs">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlReceipts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlReceipts.Designer.cs">
+      <DependentUpon>UserControlReceipts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlReceiptsDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlReceiptsDetail.Designer.cs">
+      <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlStatistics.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +195,12 @@
     </Compile>
     <Compile Include="UserControlSuppliers.Designer.cs">
       <DependentUpon>UserControlSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTable.Designer.cs">
+      <DependentUpon>UserControlTable.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUserTab.cs">
       <SubType>UserControl</SubType>
@@ -196,8 +220,11 @@
     <EmbeddedResource Include="frmEditProduct.resx">
       <DependentUpon>frmEditProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHome.resx">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManager.resx">
+      <DependentUpon>frmManager.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInsertProDuct.resx">
@@ -226,8 +253,17 @@
     <EmbeddedResource Include="UserControlProductTab.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlReceipts.resx">
+      <DependentUpon>UserControlReceipts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlReceiptsDetail.resx">
+      <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlStock.resx">
       <DependentUpon>UserControlStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTable.resx">
+      <DependentUpon>UserControlTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUserTab.resx">
       <DependentUpon>UserControlUserTab.cs</DependentUpon>
@@ -278,6 +314,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_left_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_right_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

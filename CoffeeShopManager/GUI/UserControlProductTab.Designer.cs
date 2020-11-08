@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlProductTab));
             this.btnAll = new System.Windows.Forms.Button();
             this.btnDrink = new System.Windows.Forms.Button();
@@ -54,14 +57,15 @@
             // 
             // btnAll
             // 
-            this.btnAll.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(96)))), ((int)(((byte)(110)))));
             this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAll.FlatAppearance.BorderSize = 0;
             this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAll.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(224)))), ((int)(((byte)(229)))));
             this.btnAll.Location = new System.Drawing.Point(16, 92);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(95, 36);
+            this.btnAll.Size = new System.Drawing.Size(109, 36);
             this.btnAll.TabIndex = 0;
             this.btnAll.Text = "All";
             this.btnAll.UseVisualStyleBackColor = false;
@@ -69,14 +73,15 @@
             // 
             // btnDrink
             // 
-            this.btnDrink.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDrink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(96)))), ((int)(((byte)(110)))));
             this.btnDrink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDrink.FlatAppearance.BorderSize = 0;
             this.btnDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrink.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDrink.Location = new System.Drawing.Point(129, 92);
+            this.btnDrink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(224)))), ((int)(((byte)(229)))));
+            this.btnDrink.Location = new System.Drawing.Point(118, 92);
             this.btnDrink.Name = "btnDrink";
-            this.btnDrink.Size = new System.Drawing.Size(95, 36);
+            this.btnDrink.Size = new System.Drawing.Size(109, 36);
             this.btnDrink.TabIndex = 0;
             this.btnDrink.Text = "Drink";
             this.btnDrink.UseVisualStyleBackColor = false;
@@ -84,14 +89,15 @@
             // 
             // btnFood
             // 
-            this.btnFood.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(96)))), ((int)(((byte)(110)))));
             this.btnFood.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFood.FlatAppearance.BorderSize = 0;
             this.btnFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFood.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFood.Location = new System.Drawing.Point(242, 92);
+            this.btnFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(224)))), ((int)(((byte)(229)))));
+            this.btnFood.Location = new System.Drawing.Point(223, 92);
             this.btnFood.Name = "btnFood";
-            this.btnFood.Size = new System.Drawing.Size(95, 36);
+            this.btnFood.Size = new System.Drawing.Size(109, 36);
             this.btnFood.TabIndex = 0;
             this.btnFood.Text = "Food";
             this.btnFood.UseVisualStyleBackColor = false;
@@ -99,14 +105,15 @@
             // 
             // btnOthers
             // 
-            this.btnOthers.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnOthers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(96)))), ((int)(((byte)(110)))));
             this.btnOthers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOthers.FlatAppearance.BorderSize = 0;
             this.btnOthers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOthers.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOthers.Location = new System.Drawing.Point(355, 92);
+            this.btnOthers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(224)))), ((int)(((byte)(229)))));
+            this.btnOthers.Location = new System.Drawing.Point(328, 92);
             this.btnOthers.Name = "btnOthers";
-            this.btnOthers.Size = new System.Drawing.Size(95, 36);
+            this.btnOthers.Size = new System.Drawing.Size(109, 36);
             this.btnOthers.TabIndex = 0;
             this.btnOthers.Text = "Others";
             this.btnOthers.UseVisualStyleBackColor = false;
@@ -114,9 +121,31 @@
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 208);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 185);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -129,12 +158,13 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(126)))), ((int)(((byte)(119)))));
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(113, 163);
+            this.btnEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEdit.Location = new System.Drawing.Point(397, 492);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(71, 33);
             this.btnEdit.TabIndex = 0;
@@ -144,12 +174,13 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(126)))), ((int)(((byte)(119)))));
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(204, 163);
+            this.btnDelete.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDelete.Location = new System.Drawing.Point(488, 492);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(71, 33);
             this.btnDelete.TabIndex = 0;
@@ -232,12 +263,13 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(126)))), ((int)(((byte)(119)))));
             this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(22, 163);
+            this.btnInsert.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnInsert.Location = new System.Drawing.Point(306, 492);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(71, 33);
             this.btnInsert.TabIndex = 7;
@@ -325,7 +357,7 @@
             this.Controls.Add(this.btnDrink);
             this.Controls.Add(this.btnAll);
             this.Name = "UserControlProductTab";
-            this.Size = new System.Drawing.Size(852, 533);
+            this.Size = new System.Drawing.Size(852, 580);
             this.Load += new System.EventHandler(this.UserControlProductTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

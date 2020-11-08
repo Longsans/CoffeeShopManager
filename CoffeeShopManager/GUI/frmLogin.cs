@@ -71,11 +71,12 @@ namespace GUI
                 DTO_User dtoUser = new DTO_User() { Email = txtUsername.Text, PassWord = txtPassword.Text };
                 if (busUser.CheckLogin(dtoUser))
                 {
-                    frmHome frmHome = new frmHome(this);
+                    frmManager frmHome = new frmManager(this);
                     this.Hide();
                     frmHome.Show();
                     txtPassword.Text = "";
                     txtUsername.Text = "";
+                    txtUsername.Focus();
                 }
                 else
                 {

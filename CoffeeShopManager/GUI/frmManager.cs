@@ -13,18 +13,18 @@ using BUS;
 namespace GUI
 {
 
-    public partial class frmHome : Form
+    public partial class frmManager : Form
     {
         BUS_Manager busMan = new BUS_Manager();
         public static DTO_Manager dtoMan = new DTO_Manager();
         private bool dragging = false;
         Point startPoint = new Point(0, 0);
         frmLogin _frmLogin = new frmLogin();
-        public frmHome()
+        public frmManager()
         {
             InitializeComponent();
         }
-        public frmHome(frmLogin frm)
+        public frmManager(frmLogin frm)
         {
             _frmLogin = frm;
             InitializeComponent();
@@ -132,12 +132,12 @@ namespace GUI
         {
             
             dtoMan = busMan.GetByEmail(_frmLogin.GetEmail());
-            lblWelcome.Text = "Welcome, " + dtoMan.Lastname;
+            lblWelcome.Text = "Welcome, " + dtoMan.Firstname;
             dtoMan.Account = busMan.GetUserInfoById(dtoMan.Id);
         }
         public  void Reload()
         {
-            lblWelcome.Text = "Welcome, " + dtoMan.Lastname;
+            lblWelcome.Text = "Welcome, " + dtoMan.Firstname;
         }
 
         private void btnHome_Click(object sender, EventArgs e)

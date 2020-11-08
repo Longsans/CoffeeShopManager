@@ -56,7 +56,7 @@ namespace GUI
                 dtoEmp.Account.Email = txtEmail.Text;
                 dtoEmp.Account.PassWord = txtPassword.Text;
                 dtoEmp.Salary = decimal.Parse(txtSalary.Text);
-                dtoEmp.Manager = frmHome.dtoMan;
+                dtoEmp.Manager = frmManager.dtoMan;
 
                 if (!busUser.CheckUsername(dtoEmp.Account.Email))
                 {

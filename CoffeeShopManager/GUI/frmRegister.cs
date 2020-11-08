@@ -77,6 +77,7 @@ namespace GUI
                         dtoMan.Image = ImageHelper.ImageToByteArray(this.picboxManImg.Image);
                         busMan.Insert(dtoMan);
                         MessageBox.Show("Bạn đã đăng ký thành công");
+                        Close();
                     }
                 }
                 else MessageBox.Show("Tên đăng nhập đã tồn tại");

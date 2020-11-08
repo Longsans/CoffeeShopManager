@@ -77,7 +77,7 @@ namespace GUI
             if (ret == DialogResult.Yes)
             {
                 busMan.Update(dtoMan);
-                frmHome.dtoMan = dtoMan;
+                frmManager.dtoMan = dtoMan;
                 DisableTextBox();
                 btnSaveChange.Enabled = false;
             }
