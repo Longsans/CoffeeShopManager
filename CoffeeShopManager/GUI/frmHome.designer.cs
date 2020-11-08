@@ -51,8 +51,12 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.ucSuppliersTab = new GUI.UserControlSuppliers();
+            this.ucStockTab = new GUI.UserControlStock();
+            this.ucStatisticsTab = new GUI.UserControlStatistics();
+            this.ucNotifications = new GUI.UserControlNotifications();
+            this.ucEventsTab = new GUI.UserControlEvents();
             this.ucCustomersTab = new GUI.UserControlCustomers();
-            this.ucHome = new GUI.UserControlHome();
             this.ucUserTab = new GUI.UserControlUserTab();
             this.ucProductTab = new GUI.UserControlProductTab();
             this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
@@ -60,11 +64,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.ucEventsTab = new GUI.UserControlEvents();
-            this.ucNotifications = new GUI.UserControlNotifications();
-            this.ucStatisticsTab = new GUI.UserControlStatistics();
-            this.ucStockTab = new GUI.UserControlStock();
-            this.ucSuppliersTab = new GUI.UserControlSuppliers();
+            this.ucHome = new GUI.UserControlHome();
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlShow.SuspendLayout();
@@ -338,16 +338,16 @@
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.ImageIndex = 5;
             this.btnHome.ImageList = this.imgListWindowButton;
-            this.btnHome.Location = new System.Drawing.Point(64, 0);
+            this.btnHome.Location = new System.Drawing.Point(70, 0);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(237, 37);
+            this.btnHome.Size = new System.Drawing.Size(245, 37);
             this.btnHome.TabIndex = 5;
-            this.btnHome.Text = "     CoffeeShopManager";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Text = "CoffeeShopManager";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
@@ -372,7 +372,7 @@
             this.btnMenu.ImageList = this.imgListWindowButton;
             this.btnMenu.Location = new System.Drawing.Point(0, 0);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(64, 37);
+            this.btnMenu.Size = new System.Drawing.Size(70, 37);
             this.btnMenu.TabIndex = 4;
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
@@ -440,6 +440,51 @@
             this.pnlShow.Size = new System.Drawing.Size(884, 597);
             this.pnlShow.TabIndex = 2;
             // 
+            // ucSuppliersTab
+            // 
+            this.ucSuppliersTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucSuppliersTab.Location = new System.Drawing.Point(0, 34);
+            this.ucSuppliersTab.Name = "ucSuppliersTab";
+            this.ucSuppliersTab.Size = new System.Drawing.Size(884, 563);
+            this.ucSuppliersTab.TabIndex = 10;
+            this.ucSuppliersTab.Visible = false;
+            // 
+            // ucStockTab
+            // 
+            this.ucStockTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStockTab.Location = new System.Drawing.Point(0, 34);
+            this.ucStockTab.Name = "ucStockTab";
+            this.ucStockTab.Size = new System.Drawing.Size(884, 563);
+            this.ucStockTab.TabIndex = 9;
+            this.ucStockTab.Visible = false;
+            // 
+            // ucStatisticsTab
+            // 
+            this.ucStatisticsTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStatisticsTab.Location = new System.Drawing.Point(0, 34);
+            this.ucStatisticsTab.Name = "ucStatisticsTab";
+            this.ucStatisticsTab.Size = new System.Drawing.Size(884, 563);
+            this.ucStatisticsTab.TabIndex = 8;
+            this.ucStatisticsTab.Visible = false;
+            // 
+            // ucNotifications
+            // 
+            this.ucNotifications.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucNotifications.Location = new System.Drawing.Point(0, 34);
+            this.ucNotifications.Name = "ucNotifications";
+            this.ucNotifications.Size = new System.Drawing.Size(884, 563);
+            this.ucNotifications.TabIndex = 7;
+            this.ucNotifications.Visible = false;
+            // 
+            // ucEventsTab
+            // 
+            this.ucEventsTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucEventsTab.Location = new System.Drawing.Point(0, 34);
+            this.ucEventsTab.Name = "ucEventsTab";
+            this.ucEventsTab.Size = new System.Drawing.Size(884, 563);
+            this.ucEventsTab.TabIndex = 6;
+            this.ucEventsTab.Visible = false;
+            // 
             // ucCustomersTab
             // 
             this.ucCustomersTab.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -448,17 +493,6 @@
             this.ucCustomersTab.Size = new System.Drawing.Size(884, 563);
             this.ucCustomersTab.TabIndex = 5;
             this.ucCustomersTab.Visible = false;
-            // 
-            // ucHome
-            // 
-            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ucHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucHome.Location = new System.Drawing.Point(0, 34);
-            this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(884, 563);
-            this.ucHome.TabIndex = 3;
-            this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
             // 
             // ucUserTab
             // 
@@ -535,50 +569,16 @@
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome, Admin";
             // 
-            // ucEventsTab
+            // ucHome
             // 
-            this.ucEventsTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucEventsTab.Location = new System.Drawing.Point(0, 34);
-            this.ucEventsTab.Name = "ucEventsTab";
-            this.ucEventsTab.Size = new System.Drawing.Size(884, 563);
-            this.ucEventsTab.TabIndex = 6;
-            this.ucEventsTab.Visible = false;
-            // 
-            // ucNotifications
-            // 
-            this.ucNotifications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucNotifications.Location = new System.Drawing.Point(0, 34);
-            this.ucNotifications.Name = "ucNotifications";
-            this.ucNotifications.Size = new System.Drawing.Size(884, 563);
-            this.ucNotifications.TabIndex = 7;
-            this.ucNotifications.Visible = false;
-            // 
-            // ucStatisticsTab
-            // 
-            this.ucStatisticsTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucStatisticsTab.Location = new System.Drawing.Point(0, 34);
-            this.ucStatisticsTab.Name = "ucStatisticsTab";
-            this.ucStatisticsTab.Size = new System.Drawing.Size(884, 563);
-            this.ucStatisticsTab.TabIndex = 8;
-            this.ucStatisticsTab.Visible = false;
-            // 
-            // ucStockTab
-            // 
-            this.ucStockTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucStockTab.Location = new System.Drawing.Point(0, 34);
-            this.ucStockTab.Name = "ucStockTab";
-            this.ucStockTab.Size = new System.Drawing.Size(884, 563);
-            this.ucStockTab.TabIndex = 9;
-            this.ucStockTab.Visible = false;
-            // 
-            // ucSuppliersTab
-            // 
-            this.ucSuppliersTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucSuppliersTab.Location = new System.Drawing.Point(0, 34);
-            this.ucSuppliersTab.Name = "ucSuppliersTab";
-            this.ucSuppliersTab.Size = new System.Drawing.Size(884, 563);
-            this.ucSuppliersTab.TabIndex = 10;
-            this.ucSuppliersTab.Visible = false;
+            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucHome.Location = new System.Drawing.Point(0, 34);
+            this.ucHome.Name = "ucHome";
+            this.ucHome.Size = new System.Drawing.Size(884, 563);
+            this.ucHome.TabIndex = 3;
+            this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
             // 
             // frmHome
             // 
@@ -630,7 +630,6 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel pnlChangeTab;
-        private UserControlHome ucHome;
         private UserControlProductTab ucProductTab;
         private ucOrderHistorycs ucOrderHistorycs1;
         private UserControlUserTab ucUserTab;
@@ -640,5 +639,6 @@
         private UserControlStatistics ucStatisticsTab;
         private UserControlNotifications ucNotifications;
         private UserControlEvents ucEventsTab;
+        private UserControlHome ucHome;
     }
 }

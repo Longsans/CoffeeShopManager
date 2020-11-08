@@ -11,7 +11,7 @@ namespace DAL
 {
     public class DAL_Manager : DBConnection
     {
-        public DataTable GetAllManagers()
+        public DataTable GetAllManagers(int shopId)
         {
             DAL_Workers dalWorkers = new DAL_Workers();
 
@@ -20,7 +20,7 @@ namespace DAL
             {
                 OpenConnection();
             }
-            DataTable dtMan = dalWorkers.GetAllManagerWorkers();
+            DataTable dtMan = dalWorkers.GetAllManagerWorkers(shopId);
             if (!connState)
             {
                 CloseConnection();
@@ -29,7 +29,7 @@ namespace DAL
             return dtMan;
         }
 
-        public DTO_Manager GetById(int id)
+        public DTO_Manager GetById(string id, int shopId)
         {
             DAL_Workers dalWorker = new DAL_Workers();
 
@@ -38,7 +38,7 @@ namespace DAL
             {
                 OpenConnection();
             }
-            DTO_Worker dtoWrk = dalWorker.GetInfoById(id);
+            DTO_Worker dtoWrk = dalWorker.GetInfoById(id, shopId);
             if (!connState)
             {
                 CloseConnection();
@@ -49,12 +49,19 @@ namespace DAL
             return dtoMan;
         }
 
-        public DTO_Manager GetByEmail(string email)
+        public DTO_Manager GetByUsername(string username)
         {
-            DTO_Manager man = null;
+            DTO_Manager man;
             DAL_Workers dalWorkers = new DAL_Workers();
-            DTO_Worker dtoWorker = dalWorkers.GetInfoByEmail(email);
-            man = new DTO_Manager(dtoWorker);
+            DTO_Worker dtoWorker = dalWorkers.GetInfoByUsername(username);
+            try
+            {
+                man = new DTO_Manager(dtoWorker);
+            }
+            catch
+            {
+                return null;
+            }
 
             return man;
         }
@@ -68,7 +75,7 @@ namespace DAL
             {
                 OpenConnection();
             }
-            var lsEmp = dalEmp.GetEmployeesThroughManagerId(manager.Id);
+            var lsEmp = dalEmp.GetEmployeesThroughManagerId(manager.Id, manager.Shop.ID);
             if (!connState)
             {
                 CloseConnection();
@@ -77,28 +84,10 @@ namespace DAL
             return lsEmp;
         }
 
-        public DTO_User GetUserInfoById(int id)
-        {
-            DAL_Workers dalWr = new DAL_Workers();
-
-            var connState = (this.conn.State == ConnectionState.Open);
-            if (!connState)
-            {
-                OpenConnection();
-            }
-            var dtoUser = dalWr.GetUserInfoById(id);
-            if (!connState)
-            {
-                CloseConnection();
-            }
-
-            return dtoUser;
-        }
-
-        public int Insert(DTO_Manager dtoMan)
+        public string Insert(DTO_Manager dtoMan)
         {
             DAL_Workers dalWorkers = new DAL_Workers();
-            string qry = "INSERT INTO [MANAGERS] VALUES (@workerId)";
+            string qry = "INSERT INTO [MANAGERS] VALUES (@workerId, @shopId)";
             bool workerInserted = false;
             SqlCommand cmd = new SqlCommand(qry, this.conn);
 
@@ -107,6 +96,7 @@ namespace DAL
                 dtoMan.Id = dalWorkers.Insert(dtoMan);
                 workerInserted = true;
                 cmd.Parameters.AddWithValue("@workerId", dtoMan.Id);
+                cmd.Parameters.AddWithValue("@shopId", dtoMan.Shop.ID);
                 var connState = (this.conn.State == ConnectionState.Open);
                 if (!connState)
                 {
@@ -133,9 +123,11 @@ namespace DAL
         public void Delete(DTO_Manager dtoMan)
         {
             DAL_Workers dalWorkers = new DAL_Workers();
-            string qry = "DELETE FROM [MANAGERS] WHERE Id = @id";
+            string qry = "DELETE FROM [MANAGERS] " +
+                "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", dtoMan.Id);
+            cmd.Parameters.AddWithValue("@shopId", dtoMan.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -154,7 +146,7 @@ namespace DAL
         /// Updates the database where the manager's data has changed, using <c>Id</c> the as identifier
         /// </summary>
         /// <param name="dtoManUpdated">The updated user</param>
-        public void Update(DTO_Manager dtoManUpdated)
+        public void UpdateInfo(DTO_Manager dtoManUpdated)
         {
             DAL_Workers dalWorkers = new DAL_Workers();
             var connState = (this.conn.State == ConnectionState.Open);
@@ -162,7 +154,22 @@ namespace DAL
             {
                 OpenConnection();
             }
-            dalWorkers.Update(dtoManUpdated);
+            dalWorkers.UpdateInfo(dtoManUpdated);
+            if (!connState)
+            {
+                CloseConnection();
+            }
+        }
+
+        public void UpdateInfoAndAccount(DTO_Manager dtoManUpdated)
+        {
+            DAL_Workers dalWorkers = new DAL_Workers();
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            dalWorkers.UpdateInfoAndAccount(dtoManUpdated);
             if (!connState)
             {
                 CloseConnection();

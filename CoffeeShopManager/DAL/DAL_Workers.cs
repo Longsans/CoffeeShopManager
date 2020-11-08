@@ -14,15 +14,15 @@ namespace DAL
 {
     public class DAL_Workers : DBConnection
     {
-        public DTO_Worker GetInfoById(int id)
+        public DTO_Worker GetInfoById(string id, int shopId)
         {
             DTO_Worker dtoWorker = null;
-            string qry = "SELECT Id, FirstName, LastName, " +
-                "Gender, Position, PhoneNumber, " +
-                "EmailAddress, Birthdate, Image " +
-                "FROM [WORKERS] WHERE Id = @Id";
+            string qry = "SELECT * " +
+                "FROM [WORKERS] " +
+                "WHERE Id = @Id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@Id", id);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -34,18 +34,20 @@ namespace DAL
             {
                 dtoWorker = new DTO_Worker
                 {
-                    Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                    Id = id,
                     Firstname = reader.GetString(reader.GetOrdinal("FirstName")),
                     Lastname = reader.GetString(reader.GetOrdinal("LastName")),
                     Gender = reader.GetString(reader.GetOrdinal("Gender")),
                     Position = reader.GetString(reader.GetOrdinal("Position")),
                     Phone = reader.GetString(reader.GetOrdinal("PhoneNumber")),
+                    Email = reader.GetString(reader.GetOrdinal("EmailAddress")),
                     Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[]
                 };
-                dtoWorker.Account.Email = reader.GetString(reader.GetOrdinal("EmailAddress"));
 
                 var bdate = reader.GetDateTime(reader.GetOrdinal("Birthdate"));
                 dtoWorker.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
+                dtoWorker.Account.ID = reader.GetInt32(reader.GetOrdinal("AccountId"));
+                dtoWorker.Shop.ID = shopId;
             }
             if (!connState)
             {
@@ -55,12 +57,15 @@ namespace DAL
             return dtoWorker;
         }
 
-        public DTO_Worker GetInfoByEmail(string email)
+        public DTO_Worker GetInfoByUsername(string username)
         {
             DTO_Worker dtoWorker = null;
-            string qry = "SELECT Id FROM [WORKERS] WHERE EmailAddress = @email";
+            DAL_UserInfo dalUser = new DAL_UserInfo();
+            string qry = "SELECT *" +
+                "FROM [WORKERS] " +
+                "WHERE AccountId = @accId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@accId", dalUser.GetByUsername(username).ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -70,7 +75,22 @@ namespace DAL
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                dtoWorker = GetInfoById(reader.GetInt32(reader.GetOrdinal("Id")));
+                dtoWorker = new DTO_Worker
+                {
+                    Id = reader.GetString(reader.GetOrdinal("Id")),
+                    Firstname = reader.GetString(reader.GetOrdinal("FirstName")),
+                    Lastname = reader.GetString(reader.GetOrdinal("LastName")),
+                    Gender = reader.GetString(reader.GetOrdinal("Gender")),
+                    Position = reader.GetString(reader.GetOrdinal("Position")),
+                    Phone = reader.GetString(reader.GetOrdinal("PhoneNumber")),
+                    Email = reader.GetString(reader.GetOrdinal("EmailAddress")),
+                    Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[]
+                };
+
+                var bdate = reader.GetDateTime(reader.GetOrdinal("Birthdate"));
+                dtoWorker.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
+                dtoWorker.Account.ID = reader.GetInt32(reader.GetOrdinal("AccountId"));
+                dtoWorker.Shop.ID = reader.GetInt32(reader.GetOrdinal("ShopId"));
             }
             if (!connState)
             {
@@ -80,134 +100,33 @@ namespace DAL
             return dtoWorker;
         }
 
-        public DTO_User GetUserInfoByEmail(string email)
+        public DTO_User GetUserInfoByUsername(string username)
         {
             DAL_UserInfo dalUserInfo = new DAL_UserInfo();
-            return dalUserInfo.GetByEmail(email);
+            return dalUserInfo.GetByUsername(username);
         }
 
-        public DTO_User GetUserInfoById(int workerId)
+        public DTO_User GetUserInfoById(string workerId, int shopId)
         {
-            return GetUserInfoByEmail(GetInfoById(workerId).Account.Email);
+            DAL_UserInfo dalUserInfo = new DAL_UserInfo();
+            return dalUserInfo.GetById(GetInfoById(workerId, shopId).Account.ID);
         }
 
-        public DataTable GetAllManagerWorkers()
+        public DataTable GetAllManagerWorkers(int shopId)
         {
             DataTable dtPos = new DataTable();
-            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
+            string qry = "SELECT MANAGERS.Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
                 "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
-                "FROM [WORKERS] WHERE Position = @position";
+                "FROM [WORKERS] INNER JOIN MANAGERS " +
+                "ON WORKERS.Id = MANAGERS.Id " +
+                "WHERE ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@position", "Manager");
+            cmd.Parameters.AddWithValue("@shopId", shopId);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
 
             ada.Fill(dtPos);
 
             return dtPos;
-        }
-
-        public DataTable GetAllEmployeeWorkers()
-        {
-            DataTable dtPos = new DataTable();
-            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
-                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
-                "FROM [WORKERS] WHERE Position <> @position";
-            SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@position", "Manager");
-            SqlDataAdapter ada = new SqlDataAdapter(cmd);
-
-            ada.Fill(dtPos);
-
-            return dtPos;
-        }
-        public DataTable GetWorkersSearchIDFiltered(int id)
-        {
-            DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
-                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
-               "FROM [WORKERS] WHERE Id = @id";
-            SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@id", id);
-            SqlDataAdapter ada = new SqlDataAdapter(cmd);
-
-            ada.Fill(dtEmpFiltered);
-
-            return dtEmpFiltered;
-        }
-
-        public DataTable GetWorkersSearchNameFiltered(string nameSubstr)
-        {
-            DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
-                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
-                "FROM [WORKERS] WHERE CONCAT(FirstName, ' ', LastName) LIKE '%@name%'";
-            SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@name", nameSubstr);
-            SqlDataAdapter ada = new SqlDataAdapter(cmd);
-
-            ada.Fill(dtEmpFiltered);
-
-            return dtEmpFiltered;
-        }
-
-        public DataTable GetWorkersSearchGenderFiltered(string gender)
-        {
-            DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
-                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
-                "FROM [WORKERS] WHERE Gender = @gender";
-            SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@gender", gender);
-            SqlDataAdapter ada = new SqlDataAdapter(cmd);
-
-            ada.Fill(dtEmpFiltered);
-
-            return dtEmpFiltered;
-        }
-
-        public DataTable GetWorkersSearchPositionFiltered(string position)
-        {
-            DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
-                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
-                "FROM [WORKERS] WHERE Position = @position";
-            SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@position", position);
-            SqlDataAdapter ada = new SqlDataAdapter(cmd);
-
-            ada.Fill(dtEmpFiltered);
-
-            return dtEmpFiltered;
-        }
-
-        public DataTable GetWorkersSearchPhoneNumberFiltered(string phone)
-        {
-            DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
-                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
-                "FROM [WORKERS] WHERE PhoneNumber = @phone";
-            SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@phone", phone);
-            SqlDataAdapter ada = new SqlDataAdapter(cmd);
-
-            ada.Fill(dtEmpFiltered);
-
-            return dtEmpFiltered;
-        }
-
-        public DataTable GetWorkersSearchEmailFiltered(string email)
-        {
-            DataTable dtEmpFiltered = new DataTable();
-            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
-                "Gender, Position, PhoneNumber AS [Phone], EmailAddress AS [Email] " +
-                "FROM [WORKERS] WHERE EmailAddress = @email";
-            SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@email", email);
-            SqlDataAdapter ada = new SqlDataAdapter(cmd);
-
-            ada.Fill(dtEmpFiltered);
-
-            return dtEmpFiltered;
         }
 
 
@@ -216,35 +135,36 @@ namespace DAL
         /// </summary>
         /// <param name="dtoWorker"></param>
         /// <returns>The <c>Id</c> of the worker inserted</returns>
-        public int Insert(DTO_Worker dtoWorker)
+        public string Insert(DTO_Worker dtoWorker)
         {
             DAL_UserInfo dalUserInfo = new DAL_UserInfo();
             string qry = "INSERT INTO [WORKERS] VALUES " +
-                "(@firstName, @lastName, @gender, " +
+                "(@id, @firstName, @lastName, @gender, " +
                 "@position, @phoneNumber, @email, " +
-                "@birthdate, @accountId, @image)";
+                "@birthdate, @accountId, @image, @shopId)";
             bool userInserted = false;
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             
             try
             {
+                cmd.Parameters.AddWithValue("@id", dtoWorker.Id);
                 cmd.Parameters.AddWithValue("@firstName", dtoWorker.Firstname);
                 cmd.Parameters.AddWithValue("@lastName", dtoWorker.Lastname);
                 cmd.Parameters.AddWithValue("@gender", dtoWorker.Gender);
                 cmd.Parameters.AddWithValue("@position", dtoWorker.Position);
                 cmd.Parameters.AddWithValue("@phoneNumber", dtoWorker.Phone);
-                cmd.Parameters.AddWithValue("@email", dtoWorker.Account.Email);
+                cmd.Parameters.AddWithValue("@email", dtoWorker.Email);
                 cmd.Parameters.AddWithValue("@birthdate", dtoWorker.Birthdate);
                 cmd.Parameters.AddWithValue("@image", dtoWorker.Image);
+                cmd.Parameters.AddWithValue("@shopId", dtoWorker.Shop.ID);
 
                 var connState = (this.conn.State == ConnectionState.Open);
                 if (!connState)
                 {
                     OpenConnection();
                 }
-                dalUserInfo.Insert(dtoWorker.Account);
+                dtoWorker.Account.ID = dalUserInfo.Insert(dtoWorker.Account);
                 userInserted = true;
-                dtoWorker.Account.ID = dalUserInfo.GetByEmail(dtoWorker.Account.Email).ID;
                 cmd.Parameters.AddWithValue("@accountId", dtoWorker.Account.ID);
 
                 cmd.ExecuteNonQuery();
@@ -252,6 +172,9 @@ namespace DAL
                 {
                     CloseConnection();
                 }
+
+                var workerInfo = GetInfoByUsername(dtoWorker.Account.Username);
+                return workerInfo.Id;
             }
             catch (Exception e)
             {
@@ -261,18 +184,15 @@ namespace DAL
                 }
                 throw e;
             }
-
-            var workerInfo = GetInfoByEmail(dtoWorker.Account.Email);
-            if (workerInfo != null) return workerInfo.Id;
-            return -1;
         }
 
         public void Delete(DTO_Worker dtoWorker)
         {
             DAL_UserInfo dalUserInfo = new DAL_UserInfo();
-            string qry = "DELETE FROM [WORKERS] WHERE Id = @id";
+            string qry = "DELETE FROM [WORKERS] WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", dtoWorker.Id);
+            cmd.Parameters.AddWithValue("@shopId", dtoWorker.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -291,14 +211,13 @@ namespace DAL
         /// Updates the database where the worker's data has changed, using <c>Id</c> the as identifier
         /// </summary>
         /// <param name="dtoWorkerUpdated">The updated worker</param>
-        public void Update(DTO_Worker dtoWorkerUpdated)
+        public void UpdateInfo(DTO_Worker dtoWorkerUpdated)
         {
-            DAL_UserInfo dalUserInfo = new DAL_UserInfo();
             string qry = "UPDATE [WORKERS] " +
                 "SET FirstName = @fname, LastName = @lname, Gender = @gender, " +
                 "Position = @position, PhoneNumber = @phone, " +
                 "Birthdate = @bdate, Image = @image " +
-                "WHERE Id = @id";
+                "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@fname", dtoWorkerUpdated.Firstname);
             cmd.Parameters.AddWithValue("@lname", dtoWorkerUpdated.Lastname);
@@ -308,13 +227,13 @@ namespace DAL
             cmd.Parameters.AddWithValue("@bdate", dtoWorkerUpdated.Birthdate);
             cmd.Parameters.AddWithValue("@image", dtoWorkerUpdated.Image);
             cmd.Parameters.AddWithValue("@id", dtoWorkerUpdated.Id);
+            cmd.Parameters.AddWithValue("@shopId", dtoWorkerUpdated.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
             {
                 OpenConnection();
             }
-            //dalUserInfo.Update(dtoWorkerUpdated.Account);
             cmd.ExecuteNonQuery();
             if (!connState)
             {
@@ -322,28 +241,36 @@ namespace DAL
             }
         }
 
-        public int GetNextWorkerId()
+        public void UpdateInfoAndAccount(DTO_Worker dtoWorkerUpdated)
         {
-            string qry = "SELECT max(Id) FROM [WORKERS]";
-            int currId = -1;
-            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            DAL_UserInfo dalUserInfo = new DAL_UserInfo();
 
-            var connState = (this.conn.State == ConnectionState.Open);
-            if (!connState)
-            {
-                OpenConnection();
-            }
-            var reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                currId = reader.GetInt32(0);
-            }
-            if (!connState)
-            {
-                CloseConnection();
-            }
-
-            return currId + 1;
+            UpdateInfo(dtoWorkerUpdated);
+            dalUserInfo.Update(dtoWorkerUpdated.Account);
         }
+
+        //public int GetNextWorkerId()
+        //{
+        //    string qry = "SELECT max(Id) FROM [WORKERS]";
+        //    int currId = -1;
+        //    SqlCommand cmd = new SqlCommand(qry, this.conn);
+
+        //    var connState = (this.conn.State == ConnectionState.Open);
+        //    if (!connState)
+        //    {
+        //        OpenConnection();
+        //    }
+        //    var reader = cmd.ExecuteReader();
+        //    if (reader.Read())
+        //    {
+        //        currId = reader.GetInt32(0);
+        //    }
+        //    if (!connState)
+        //    {
+        //        CloseConnection();
+        //    }
+
+        //    return currId + 1;
+        //}
     }
 }

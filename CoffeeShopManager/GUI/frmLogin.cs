@@ -26,7 +26,7 @@ namespace GUI
         {
             Close();
         }
-        public string GetEmail()
+        public string GetUsername()
         {
             return txtUsername.Text;
         }
@@ -53,7 +53,7 @@ namespace GUI
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            txtUsername.Select();
         }
 
         private void lblRegister_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace GUI
             if (txtPassword.Text == "" || txtUsername.Text == "") MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             else
             {
-                DTO_User dtoUser = new DTO_User() { Email = txtUsername.Text, PassWord = txtPassword.Text };
+                DTO_User dtoUser = new DTO_User() { Username = txtUsername.Text, PassWord = txtPassword.Text };
                 if (busUser.CheckLogin(dtoUser))
                 {
                     frmHome frmHome = new frmHome(this);
@@ -84,9 +84,9 @@ namespace GUI
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void frmLogin_Activated(object sender, EventArgs e)
         {
-
+            txtUsername.Select();
         }
     }
 }

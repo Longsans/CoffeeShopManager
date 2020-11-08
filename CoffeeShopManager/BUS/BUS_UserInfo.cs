@@ -32,13 +32,13 @@ namespace BUS
         }
         public bool CheckLogin(DTO_User account)
         {
-            if (account.Email == "")
+            if (account.Username == "")
                 return false;
             if (account.PassWord == "")
                 return false;
             try
             {
-                DTO_User accountnew1=  dalUserInfo.GetByEmail(account.Email);
+                DTO_User accountnew1=  dalUserInfo.GetByUsername(account.Username);
                 account.PassWord = ComputeSha256Hash(account.PassWord);
                 if (accountnew1 == null) return false;
                 if (accountnew1.PassWord == account.PassWord)
@@ -51,13 +51,13 @@ namespace BUS
                 throw ex;
             }
         }
-        public bool CheckUsername(string email)
+        public bool CheckUsername(string username)
         {
-            if (email == "")
+            if (username == "")
                 return false;
             try
             {
-                DTO_User accountnew1 = dalUserInfo.GetByEmail(email);
+                DTO_User accountnew1 = dalUserInfo.GetByUsername(username);
                 if (accountnew1 == null) return true;
                 return false;
 
@@ -84,7 +84,7 @@ namespace BUS
         {
             try
             {
-                if (CheckUsername(account.Email))
+                if (CheckUsername(account.Username))
                 {
                     //mã hóa trước khi insert;
                     account.PassWord = ComputeSha256Hash(account.PassWord);
