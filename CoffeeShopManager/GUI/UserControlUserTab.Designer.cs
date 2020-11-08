@@ -44,7 +44,6 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtBirthDate = new System.Windows.Forms.TextBox();
-            this.lblManInfo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -205,16 +204,6 @@
             this.txtBirthDate.Size = new System.Drawing.Size(125, 22);
             this.txtBirthDate.TabIndex = 37;
             // 
-            // lblManInfo
-            // 
-            this.lblManInfo.AutoSize = true;
-            this.lblManInfo.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManInfo.Location = new System.Drawing.Point(37, 131);
-            this.lblManInfo.Name = "lblManInfo";
-            this.lblManInfo.Size = new System.Drawing.Size(181, 31);
-            this.lblManInfo.TabIndex = 38;
-            this.lblManInfo.Text = "Manager Info";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
@@ -300,7 +289,7 @@
             // picManagerInfo
             // 
             this.picManagerInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picManagerInfo.Location = new System.Drawing.Point(43, 181);
+            this.picManagerInfo.Location = new System.Drawing.Point(43, 150);
             this.picManagerInfo.Name = "picManagerInfo";
             this.picManagerInfo.Size = new System.Drawing.Size(171, 172);
             this.picManagerInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -332,7 +321,7 @@
             this.btnBrowse.Enabled = false;
             this.btnBrowse.FlatAppearance.BorderSize = 0;
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowse.Location = new System.Drawing.Point(56, 366);
+            this.btnBrowse.Location = new System.Drawing.Point(55, 328);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(145, 39);
             this.btnBrowse.TabIndex = 45;
@@ -349,6 +338,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.radFemale);
@@ -358,7 +348,6 @@
             this.Controls.Add(this.btnChangeEmail);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblManInfo);
             this.Controls.Add(this.txtBirthDate);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPhone);
@@ -405,7 +394,6 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtBirthDate;
-        private System.Windows.Forms.Label lblManInfo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Panel panel2;

@@ -73,6 +73,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _25444 {
+            get {
+                object obj = ResourceManager.GetObject("25444", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back_32px {
             get {
                 object obj = ResourceManager.GetObject("back_32px", resourceCulture);
@@ -236,6 +246,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap it_s_always_coffee_time_quote_slogan_typography_7201_31 {
             get {
                 object obj = ResourceManager.GetObject("it-s-always-coffee-time-quote-slogan-typography_7201-31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2020_11_08_205640 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2020-11-08 205640", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

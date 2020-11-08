@@ -154,6 +154,12 @@
     <Compile Include="UserControlHome.Designer.cs">
       <DependentUpon>UserControlHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlManagerAndShopInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlManagerAndShopInfo.Designer.cs">
+      <DependentUpon>UserControlManagerAndShopInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlNotifications.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     <EmbeddedResource Include="UserControlHome.resx">
       <DependentUpon>UserControlHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerAndShopInfo.resx">
+      <DependentUpon>UserControlManagerAndShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlProductTab.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +332,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sort_right_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25444.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2020-11-08 205640.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -130,8 +130,8 @@
   <data name="view_details_26px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\view_details_26px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sort_left_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sort_left_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sort_right_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort_right_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coffee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coffee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,20 +139,26 @@
   <data name="grid_view_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grid_view_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="20394156-coffee-time-seamless-background-for-your-design" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\20394156-coffee-time-seamless-background-for-your-design.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close_window_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_window_24px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="back_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sort_left_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort_left_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GuysDrinkingBeer_Preview_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GuysDrinkingBeer_Preview_02.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="25444" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\25444.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="employee_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\employee_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FreeVector-3D-Charts-Graphics" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FreeVector-3D-Charts-Graphics.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +175,8 @@
   <data name="edit_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close_window_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_window_24px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="20394156-coffee-time-seamless-background-for-your-design" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20394156-coffee-time-seamless-background-for-your-design.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coffee_to_go_80px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coffee_to_go_80px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,7 +193,7 @@
   <data name="Coffee-Shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Coffee-Shop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sort_right_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sort_right_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Screenshot 2020-11-08 205640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot 2020-11-08 205640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

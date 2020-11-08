@@ -48,6 +48,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.userControlUserTab1 = new GUI.UserControlUserTab();
             this.pnlTitleBar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,6 +68,9 @@
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.Size = new System.Drawing.Size(1240, 37);
             this.pnlTitleBar.TabIndex = 2;
+            this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
+            this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
+            this.pnlTitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
             // 
             // btnHome
             // 
@@ -98,6 +102,7 @@
             this.btnMenu.Size = new System.Drawing.Size(64, 37);
             this.btnMenu.TabIndex = 4;
             this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // imgListMenuButton
             // 
@@ -121,6 +126,7 @@
             this.btnMinimize.Size = new System.Drawing.Size(41, 37);
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // imgListWindowButton
             // 
@@ -145,6 +151,7 @@
             this.btnMaximize.Size = new System.Drawing.Size(41, 37);
             this.btnMaximize.TabIndex = 1;
             this.btnMaximize.UseVisualStyleBackColor = true;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnCancel
             // 
@@ -158,6 +165,7 @@
             this.btnCancel.Size = new System.Drawing.Size(41, 37);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pnlMenu
             // 
@@ -170,7 +178,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 37);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(273, 614);
+            this.pnlMenu.Size = new System.Drawing.Size(267, 614);
             this.pnlMenu.TabIndex = 3;
             // 
             // pnlChangeTab
@@ -213,9 +221,9 @@
             this.btnManager.Location = new System.Drawing.Point(0, 110);
             this.btnManager.Name = "btnManager";
             this.btnManager.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnManager.Size = new System.Drawing.Size(221, 50);
+            this.btnManager.Size = new System.Drawing.Size(252, 50);
             this.btnManager.TabIndex = 0;
-            this.btnManager.Text = "   Manager";
+            this.btnManager.Text = "   Shop && Manager";
             this.btnManager.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnManager.UseVisualStyleBackColor = true;
@@ -265,9 +273,9 @@
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.lblWelcome);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(273, 37);
+            this.panel1.Location = new System.Drawing.Point(267, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(967, 34);
+            this.panel1.Size = new System.Drawing.Size(973, 34);
             this.panel1.TabIndex = 4;
             // 
             // btnLogout
@@ -277,7 +285,7 @@
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(814, 0);
+            this.btnLogout.Location = new System.Drawing.Point(820, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(89, 32);
             this.btnLogout.TabIndex = 1;
@@ -289,7 +297,7 @@
             this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(659, 8);
+            this.lblWelcome.Location = new System.Drawing.Point(665, 8);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(128, 19);
             this.lblWelcome.TabIndex = 0;
@@ -297,11 +305,22 @@
             // 
             // pnlShow
             // 
+            this.pnlShow.Controls.Add(this.userControlUserTab1);
             this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlShow.Location = new System.Drawing.Point(273, 71);
+            this.pnlShow.Location = new System.Drawing.Point(267, 71);
             this.pnlShow.Name = "pnlShow";
-            this.pnlShow.Size = new System.Drawing.Size(967, 580);
+            this.pnlShow.Size = new System.Drawing.Size(973, 580);
             this.pnlShow.TabIndex = 6;
+            // 
+            // userControlUserTab1
+            // 
+            this.userControlUserTab1.BackColor = System.Drawing.SystemColors.Control;
+            this.userControlUserTab1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.userControlUserTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlUserTab1.Location = new System.Drawing.Point(0, 0);
+            this.userControlUserTab1.Name = "userControlUserTab1";
+            this.userControlUserTab1.Size = new System.Drawing.Size(973, 580);
+            this.userControlUserTab1.TabIndex = 0;
             // 
             // frmEmployee
             // 
@@ -344,6 +363,6 @@
         private System.Windows.Forms.ImageList imgListWindowButton;
         private System.Windows.Forms.ImageList imgListMenuButton;
         private System.Windows.Forms.Panel pnlShow;
-  
+        private UserControlUserTab userControlUserTab1;
     }
 }
