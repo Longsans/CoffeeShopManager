@@ -34,9 +34,9 @@ namespace GUI
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
+            if (txtID.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
                 cbboxPosition.Text == "" || txtPhone.Text == "" || txtEmail.Text == "" || txtDayBD.Text == "" ||
-                txtMonthBD.Text == "" || txtYearBD.Text == "" || txtSalary.Text == "" || txtPassword.Text == "" ||
+                txtMonthBD.Text == "" || txtYearBD.Text == "" || txtSalary.Text == "" || txtUsername.Text == "" || txtPassword.Text == "" ||
                 txtDayJoin.Text == "" || txtMonthJoin.Text == "" || txtYearJoin.Text == "" || (radFemale.Checked == false &&
                 radMale.Checked == false))
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -48,19 +48,22 @@ namespace GUI
                 errorProvider1.SetError(txtYearBD, "");
                 errorProvider1.SetError(txtYearJoin, "");
                 DTO_Employee dtoEmp = new DTO_Employee();
+                dtoEmp.Id = txtID.Text;
                 dtoEmp.Firstname = txtFirstName.Text;
                 dtoEmp.Lastname = txtLastName.Text;
                 dtoEmp.Address = txtAddress.Text;
                 dtoEmp.Position = cbboxPosition.Text;
                 dtoEmp.Phone = txtPhone.Text;
-                dtoEmp.Account.Email = txtEmail.Text;
+                dtoEmp.Email = txtEmail.Text;
+                dtoEmp.Account.Username = txtUsername.Text;
                 dtoEmp.Account.PassWord = txtPassword.Text;
                 dtoEmp.Salary = decimal.Parse(txtSalary.Text);
                 dtoEmp.Manager = frmManager.dtoMan;
+                dtoEmp.Shop.ID = frmManager.dtoMan.Shop.ID;
 
-                if (!busUser.CheckUsername(dtoEmp.Account.Email))
+                if (!busUser.CheckUsername(dtoEmp.Account.Username))
                 {
-                    MessageBox.Show("Email đã tồn tại");
+                    MessageBox.Show("Username has already existed.", "Username taken", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtEmail.ResetText();
                     return;
                 }
@@ -79,19 +82,19 @@ namespace GUI
 
                     if (this.picboxEmpImg.Image == null)
                     {
-                        MessageBox.Show("Vui lòng chọn hình ảnh", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Please select a picture.", "Picture not selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
                         dtoEmp.Image = ImageHelper.ImageToByteArray(this.picboxEmpImg.Image);
                         busEmp.AddEmployee(dtoEmp);
                         Reload();
-                        MessageBox.Show("Thêm thành công.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("New employee added.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng nhập ngày hợp lệ.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter valid date fields.", "Invalid date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtDayBD.ResetText();
                     txtMonthBD.ResetText();
                     txtYearBD.ResetText();
@@ -130,7 +133,7 @@ namespace GUI
 
         private void frmAddEmployee_Load(object sender, EventArgs e)
         {
-            txtID.Text = busEmp.GetNextEmployeeID().ToString();
+            
         }
 
         private void txtDayBD_TextChanged(object sender, EventArgs e)
@@ -185,4 +188,4 @@ namespace GUI
 
         }
     }
-}   
+}

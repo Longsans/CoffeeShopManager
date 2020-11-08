@@ -50,7 +50,7 @@
             this.btnSaveChange = new System.Windows.Forms.Button();
             this.radMale = new System.Windows.Forms.RadioButton();
             this.radFemale = new System.Windows.Forms.RadioButton();
-            this.btnChangeEmail = new System.Windows.Forms.Button();
+            this.btnChangeUsername = new System.Windows.Forms.Button();
             this.picManagerInfo = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -273,18 +273,19 @@
             this.radFemale.Text = "Female";
             this.radFemale.UseVisualStyleBackColor = true;
             // 
-            // btnChangeEmail
+            // btnChangeUsername
             // 
-            this.btnChangeEmail.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btnChangeEmail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangeEmail.FlatAppearance.BorderSize = 0;
-            this.btnChangeEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeEmail.Location = new System.Drawing.Point(146, 453);
-            this.btnChangeEmail.Name = "btnChangeEmail";
-            this.btnChangeEmail.Size = new System.Drawing.Size(145, 39);
-            this.btnChangeEmail.TabIndex = 40;
-            this.btnChangeEmail.Text = "Change email";
-            this.btnChangeEmail.UseVisualStyleBackColor = false;
+            this.btnChangeUsername.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnChangeUsername.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeUsername.FlatAppearance.BorderSize = 0;
+            this.btnChangeUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeUsername.Location = new System.Drawing.Point(146, 453);
+            this.btnChangeUsername.Name = "btnChangeUsername";
+            this.btnChangeUsername.Size = new System.Drawing.Size(145, 39);
+            this.btnChangeUsername.TabIndex = 40;
+            this.btnChangeUsername.Text = "Change username";
+            this.btnChangeUsername.UseVisualStyleBackColor = false;
+            this.btnChangeUsername.Click += new System.EventHandler(this.btnChangeUsername_Click);
             // 
             // picManagerInfo
             // 
@@ -345,7 +346,7 @@
             this.Controls.Add(this.radMale);
             this.Controls.Add(this.btnSaveChange);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnChangeEmail);
+            this.Controls.Add(this.btnChangeUsername);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtBirthDate);
@@ -400,7 +401,7 @@
         private System.Windows.Forms.Button btnSaveChange;
         private System.Windows.Forms.RadioButton radMale;
         private System.Windows.Forms.RadioButton radFemale;
-        private System.Windows.Forms.Button btnChangeEmail;
+        private System.Windows.Forms.Button btnChangeUsername;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;

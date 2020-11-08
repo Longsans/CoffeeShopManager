@@ -39,7 +39,7 @@ namespace GUI
             else radFemale.Checked = true;
             txtPosition.Text = dtoMan.Position;
             txtPhone.Text = dtoMan.Phone;
-            txtEmail.Text = dtoMan.Account.Email;
+            txtEmail.Text = dtoMan.Email;
             txtBirthDate.Text = dtoMan.Birthdate.ToString("dd/MM/yyyy");
             if (dtoMan.Image != null)
             {
@@ -71,12 +71,12 @@ namespace GUI
             dtoMan.Phone = txtPhone.Text;
             if (radMale.Checked == true) dtoMan.Gender = "Male";
             else dtoMan.Gender = "Female";
-            dtoMan.Account.Email = txtEmail.Text;
+            dtoMan.Email = txtEmail.Text;
             dtoMan.Birthdate = DateTime.ParseExact(txtBirthDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             DialogResult ret = MessageBox.Show("Bạn có chắc chắn những thay đổi này không?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (ret == DialogResult.Yes)
             {
-                busMan.Update(dtoMan);
+                busMan.UpdateInfo(dtoMan);
                 frmManager.dtoMan = dtoMan;
                 DisableTextBox();
                 btnSaveChange.Enabled = false;
@@ -124,6 +124,11 @@ namespace GUI
                 picManagerInfo.SizeMode = PictureBoxSizeMode.StretchImage;
                 picManagerInfo.Image = Image.FromFile(openFileDialog1.FileName);
             }
+        }
+
+        private void btnChangeUsername_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

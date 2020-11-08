@@ -31,7 +31,6 @@ namespace GUI
         private void frmInsertProDuct_Load(object sender, EventArgs e)
         {
             btnAdd.Visible = true;
-            txtID.Text = dtoPro.Id.ToString();
             txtName1.Text = dtoPro.Name;
             txtPrice.Text = dtoPro.Price.ToString();
             cbxType.Text = dtoPro.Type;
@@ -43,7 +42,6 @@ namespace GUI
             }
             //btnSave.Visible = false;
 
-            txtID.Text = busPro.GetNextProductId().ToString();
         }
         private void Reload()
         {
@@ -63,13 +61,15 @@ namespace GUI
             else
             {
                 DTO_Product dtoPro = new DTO_Product();
+                dtoPro.Id = txtID.Text;
                 dtoPro.Name = txtName1.Text;
                 dtoPro.Price =decimal.Parse(txtPrice.Text);
                 dtoPro.Type = cbxType.Text;
                 dtoPro.Detail = rtxDetail.Text;
+                dtoPro.Shop = _ucPro.dtoShop;
                 if (this.pictureBox1.Image == null)
                 {
-                    if (busPro.GetByName(dtoPro.Name) == null)
+                    if (busPro.GetByName(dtoPro.Name, dtoPro.Shop.ID) == null)
                     {
                    //     dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image);
                         busPro.InsertWithoutImage(dtoPro);
@@ -86,7 +86,7 @@ namespace GUI
                 }
                 else
                 {
-                    if (busPro.GetByName(dtoPro.Name) == null)
+                    if (busPro.GetByName(dtoPro.Name, dtoPro.Shop.ID) == null)
                     {
                         dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image);
                         busPro.InsertWithImage(dtoPro);

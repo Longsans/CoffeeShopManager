@@ -41,7 +41,7 @@ namespace GUI
             else radFemale.Checked = true;
             cboPosition.Text = dtoEmp.Position;
             txtPhone.Text = dtoEmp.Phone;
-            txtEmail.Text = dtoEmp.Account.Email;
+            txtEmail.Text = dtoEmp.Email;
             txtDayBD.Text = dtoEmp.Birthdate.Day.ToString();
             txtMonthBD.Text = dtoEmp.Birthdate.Month.ToString();
             txtYearBD.Text = dtoEmp.Birthdate.Year.ToString();
@@ -121,9 +121,9 @@ namespace GUI
             dtoEmp.Address = txtAddress.Text;
             dtoEmp.Position = cboPosition.Text;
             dtoEmp.Phone = txtPhone.Text;
-            dtoEmp.Account.Email = txtEmail.Text;
+            dtoEmp.Email = txtEmail.Text;
             dtoEmp.Salary = decimal.Parse(txtSalary.Text);
-            dtoEmp.Manager = busMan.GetById(int.Parse(txtManagerID.Text));
+            dtoEmp.Manager = busMan.GetById(txtManagerID.Text, dtoEmp.Shop.ID);
             dtoEmp.Phone = txtPhone.Text;
             if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
             else dtoEmp.Gender = radFemale.Text;

@@ -78,13 +78,13 @@ namespace GUI
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            if (pnlMenu.Width == 221)
+            if (pnlMenu.Width == btnEmployee.Width)
             {
-                pnlMenu.Width = 64;
+                pnlMenu.Width = btnMenu.Width;
             }
             else
             {
-                pnlMenu.Width = 221;
+                pnlMenu.Width = btnEmployee.Width;
             }
         }
 
@@ -107,6 +107,7 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnEmployee.Location;
+            ucEmployeeTab.dtoMan = dtoMan;
             ucEmployeeTab.Show();
             ucEmployeeTab.BringToFront();
             Reload();
@@ -116,6 +117,7 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnProduct.Location;
+            ucProductTab.dtoShop = dtoMan.Shop;
             ucProductTab.Show();
             ucProductTab.BringToFront();
             Reload();
@@ -131,13 +133,13 @@ namespace GUI
         private void frmHome_Load(object sender, EventArgs e)
         {
             
-            dtoMan = busMan.GetByEmail(_frmLogin.GetEmail());
+            dtoMan = busMan.GetByUsername(_frmLogin.GetUsername());
+            dtoMan.Account = busMan.GetUserInfoByUsername(_frmLogin.GetUsername());
             lblWelcome.Text = "Welcome, " + dtoMan.Firstname;
-            dtoMan.Account = busMan.GetUserInfoById(dtoMan.Id);
         }
-        public  void Reload()
+        public void Reload()
         {
-            lblWelcome.Text = "Welcome, " + dtoMan.Firstname;
+            lblWelcome.Text = "Welcome, " + dtoMan.Lastname;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -220,5 +222,4 @@ namespace GUI
             ucHome.SetPanel(pnlChangeTab);
         }
     }
-
 }

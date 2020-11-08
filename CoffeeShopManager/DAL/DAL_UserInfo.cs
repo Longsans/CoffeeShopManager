@@ -23,13 +23,13 @@ namespace DAL
             {
                 OpenConnection();
             }
-            SqlDataReader reader = cmd.ExecuteReader();
+            var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 dtoUser = new DTO_User
                 {
-                    ID = reader.GetInt32(reader.GetOrdinal("Id")),
-                    Email = reader.GetString(reader.GetOrdinal("EmailAddress")),
+                    ID = id,
+                    Username = reader.GetString(reader.GetOrdinal("Username")),
                     PassWord = reader.GetString(reader.GetOrdinal("Password"))
                 };
             }
@@ -40,12 +40,13 @@ namespace DAL
 
             return dtoUser;
         }
-        public DTO_User GetByEmail(string email)
+
+        public DTO_User GetByUsername(string username)
         {
             DTO_User dtoUser = null;
-            string qry = "SELECT * FROM [USERS] WHERE EmailAddress = @email";
+            string qry = "SELECT * FROM [USERS] WHERE Username = @username";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@username", username);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -55,7 +56,12 @@ namespace DAL
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                dtoUser = GetById(reader.GetInt32(reader.GetOrdinal("Id")));
+                dtoUser = new DTO_User
+                {
+                    ID = reader.GetInt32(reader.GetOrdinal("Id")),
+                    Username = username,
+                    PassWord = reader.GetString(reader.GetOrdinal("Password"))
+                };
             }
             if (!connState)
             {
@@ -65,11 +71,11 @@ namespace DAL
             return dtoUser;
         }
 
-        public void Insert(DTO_User dtoUser)
+        public int Insert(DTO_User dtoUser)
         {
-            string qry = "INSERT INTO [USERS] VALUES (@email, @password)";
+            string qry = "INSERT INTO [USERS] VALUES (@username, @password)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@email", dtoUser.Email);
+            cmd.Parameters.AddWithValue("@username", dtoUser.Username);
             cmd.Parameters.AddWithValue("@password", dtoUser.PassWord);
 
             var connState = (this.conn.State == ConnectionState.Open);
@@ -82,6 +88,9 @@ namespace DAL
             {
                 CloseConnection();
             }
+
+            var userInfo = GetByUsername(dtoUser.Username);
+            return userInfo.ID;
         }
 
         public void Delete(DTO_User dtoUser)
@@ -109,10 +118,10 @@ namespace DAL
         public void Update(DTO_User dtoUserUpdated)
         {
             string qry = "UPDATE [USERS] " +
-                "SET EmailAddress = @email, Password = @passwd " +
+                "SET Username = @username, Password = @passwd " +
                 "WHERE Id = @id";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@email", dtoUserUpdated.Email);
+            cmd.Parameters.AddWithValue("@username", dtoUserUpdated.Username);
             cmd.Parameters.AddWithValue("@passwd", dtoUserUpdated.PassWord);
             cmd.Parameters.AddWithValue("@id", dtoUserUpdated.ID);
 

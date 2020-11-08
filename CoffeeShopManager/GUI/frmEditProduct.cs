@@ -28,7 +28,7 @@ namespace GUI
         }
         private void frmEditProduct_Load(object sender, EventArgs e)
         {
-            txtID.Text = dtoPro.Id.ToString();
+            txtID.Text = dtoPro.Id;
             txtName1.Text = dtoPro.Name;
             txtPrice.Text = dtoPro.Price.ToString();
             cbxType.Text = dtoPro.Type;
@@ -74,7 +74,7 @@ namespace GUI
                 dtoPro.Type = cbxType.Text;
                 dtoPro.Detail = rtxDetail.Text;
                 dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image);
-                if (busPro.GetByName(dtoPro.Name) == null)
+                if (busPro.GetByName(dtoPro.Name, dtoPro.Shop.ID) == null)
                 {
                     dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image); ;
                     busPro.Update(dtoPro);

@@ -32,6 +32,10 @@
             this.TitleBar = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnBrowseImg = new System.Windows.Forms.Button();
             this.lblNoImg = new System.Windows.Forms.Label();
             this.picboxManImg = new System.Windows.Forms.PictureBox();
@@ -42,6 +46,7 @@
             this.txtDayBD = new System.Windows.Forms.TextBox();
             this.radFemale = new System.Windows.Forms.RadioButton();
             this.radMale = new System.Windows.Forms.RadioButton();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -56,7 +61,7 @@
             this.btnSignUp = new System.Windows.Forms.Button();
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,7 +80,7 @@
             this.TitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.TitleBar.Location = new System.Drawing.Point(0, 0);
             this.TitleBar.Name = "TitleBar";
-            this.TitleBar.Size = new System.Drawing.Size(542, 30);
+            this.TitleBar.Size = new System.Drawing.Size(614, 30);
             this.TitleBar.TabIndex = 1;
             this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
             this.TitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
@@ -87,7 +92,7 @@
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
-            this.btnExit.Location = new System.Drawing.Point(511, 0);
+            this.btnExit.Location = new System.Drawing.Point(583, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(31, 30);
             this.btnExit.TabIndex = 0;
@@ -97,6 +102,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(134)))), ((int)(((byte)(102)))));
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.txtID);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btnBrowseImg);
             this.panel1.Controls.Add(this.lblNoImg);
             this.panel1.Controls.Add(this.picboxManImg);
@@ -107,6 +116,7 @@
             this.panel1.Controls.Add(this.txtDayBD);
             this.panel1.Controls.Add(this.radFemale);
             this.panel1.Controls.Add(this.radMale);
+            this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtPhone);
             this.panel1.Controls.Add(this.txtLastName);
             this.panel1.Controls.Add(this.txtFirstName);
@@ -121,15 +131,53 @@
             this.panel1.Controls.Add(this.btnSignUp);
             this.panel1.Controls.Add(this.txtConfirm);
             this.panel1.Controls.Add(this.txtPass);
-            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtUsername);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(542, 517);
+            this.panel1.Size = new System.Drawing.Size(614, 562);
             this.panel1.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(334, 394);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(61, 19);
+            this.label14.TabIndex = 42;
+            this.label14.Text = "Shop ID";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(334, 349);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(90, 19);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Manager ID";
+            // 
+            // txtID
+            // 
+            this.txtID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(434, 346);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(157, 23);
+            this.txtID.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(34, 394);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 19);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "Email";
             // 
             // btnBrowseImg
             // 
@@ -139,10 +187,10 @@
             this.btnBrowseImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowseImg.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowseImg.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnBrowseImg.Location = new System.Drawing.Point(380, 263);
+            this.btnBrowseImg.Location = new System.Drawing.Point(422, 263);
             this.btnBrowseImg.Name = "btnBrowseImg";
             this.btnBrowseImg.Size = new System.Drawing.Size(86, 30);
-            this.btnBrowseImg.TabIndex = 21;
+            this.btnBrowseImg.TabIndex = 23;
             this.btnBrowseImg.Text = "Browse";
             this.btnBrowseImg.UseVisualStyleBackColor = false;
             this.btnBrowseImg.Click += new System.EventHandler(this.btnBrowseImg_Click);
@@ -151,7 +199,7 @@
             // 
             this.lblNoImg.AutoSize = true;
             this.lblNoImg.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoImg.Location = new System.Drawing.Point(384, 157);
+            this.lblNoImg.Location = new System.Drawing.Point(426, 157);
             this.lblNoImg.Name = "lblNoImg";
             this.lblNoImg.Size = new System.Drawing.Size(76, 19);
             this.lblNoImg.TabIndex = 38;
@@ -160,7 +208,7 @@
             // picboxManImg
             // 
             this.picboxManImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picboxManImg.Location = new System.Drawing.Point(337, 82);
+            this.picboxManImg.Location = new System.Drawing.Point(379, 82);
             this.picboxManImg.Name = "picboxManImg";
             this.picboxManImg.Size = new System.Drawing.Size(171, 172);
             this.picboxManImg.TabIndex = 35;
@@ -171,7 +219,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(215, 392);
+            this.label13.Location = new System.Drawing.Point(215, 436);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(15, 19);
             this.label13.TabIndex = 19;
@@ -181,7 +229,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(160, 392);
+            this.label12.Location = new System.Drawing.Point(160, 436);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(15, 19);
             this.label12.TabIndex = 17;
@@ -190,7 +238,7 @@
             // txtYearBD
             // 
             this.txtYearBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYearBD.Location = new System.Drawing.Point(237, 392);
+            this.txtYearBD.Location = new System.Drawing.Point(237, 434);
             this.txtYearBD.Name = "txtYearBD";
             this.txtYearBD.Size = new System.Drawing.Size(45, 23);
             this.txtYearBD.TabIndex = 20;
@@ -198,7 +246,7 @@
             // txtMonthBD
             // 
             this.txtMonthBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonthBD.Location = new System.Drawing.Point(181, 391);
+            this.txtMonthBD.Location = new System.Drawing.Point(181, 434);
             this.txtMonthBD.Name = "txtMonthBD";
             this.txtMonthBD.Size = new System.Drawing.Size(33, 23);
             this.txtMonthBD.TabIndex = 18;
@@ -206,7 +254,7 @@
             // txtDayBD
             // 
             this.txtDayBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDayBD.Location = new System.Drawing.Point(125, 390);
+            this.txtDayBD.Location = new System.Drawing.Point(125, 434);
             this.txtDayBD.Name = "txtDayBD";
             this.txtDayBD.Size = new System.Drawing.Size(33, 23);
             this.txtDayBD.TabIndex = 16;
@@ -232,6 +280,14 @@
             this.radMale.TabStop = true;
             this.radMale.Text = "Male";
             this.radMale.UseVisualStyleBackColor = true;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(125, 391);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(157, 23);
+            this.txtEmail.TabIndex = 15;
             // 
             // txtPhone
             // 
@@ -261,7 +317,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(34, 391);
+            this.label9.Location = new System.Drawing.Point(34, 435);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 19);
             this.label9.TabIndex = 15;
@@ -335,10 +391,10 @@
             this.btnExit2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnExit2.Location = new System.Drawing.Point(315, 454);
+            this.btnExit2.Location = new System.Drawing.Point(315, 498);
             this.btnExit2.Name = "btnExit2";
             this.btnExit2.Size = new System.Drawing.Size(86, 30);
-            this.btnExit2.TabIndex = 23;
+            this.btnExit2.TabIndex = 25;
             this.btnExit2.Text = "Exit";
             this.btnExit2.UseVisualStyleBackColor = false;
             this.btnExit2.Click += new System.EventHandler(this.btnExit_Click);
@@ -351,10 +407,10 @@
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSignUp.Location = new System.Drawing.Point(166, 454);
+            this.btnSignUp.Location = new System.Drawing.Point(166, 498);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(86, 30);
-            this.btnSignUp.TabIndex = 22;
+            this.btnSignUp.TabIndex = 24;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = false;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
@@ -377,13 +433,13 @@
             this.txtPass.TabIndex = 3;
             this.txtPass.UseSystemPasswordChar = true;
             // 
-            // txtEmail
+            // txtUsername
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(125, 82);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(157, 23);
-            this.txtEmail.TabIndex = 1;
+            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(125, 82);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(157, 23);
+            this.txtUsername.TabIndex = 1;
             // 
             // label3
             // 
@@ -411,9 +467,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(34, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 19);
+            this.label1.Size = new System.Drawing.Size(77, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Email";
+            this.label1.Text = "Username";
             // 
             // errorProvider1
             // 
@@ -424,7 +480,7 @@
             this.AcceptButton = this.btnSignUp;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 547);
+            this.ClientSize = new System.Drawing.Size(614, 592);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TitleBar);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -450,7 +506,7 @@
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -475,5 +531,10 @@
         private System.Windows.Forms.PictureBox picboxManImg;
         private System.Windows.Forms.Button btnBrowseImg;
         private System.Windows.Forms.Label lblNoImg;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtID;
     }
 }
