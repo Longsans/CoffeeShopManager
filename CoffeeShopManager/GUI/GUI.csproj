@@ -279,5 +279,11 @@
   <ItemGroup>
     <None Include="Resources\edit_30px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\squared_menu_32px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
