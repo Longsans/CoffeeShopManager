@@ -22,9 +22,10 @@ namespace DTO
             this.Gender = dtoWr.Gender;
             this.Position = dtoWr.Position;
             this.Phone = dtoWr.Phone;
-            this.Account.Email = dtoWr.Account.Email;
+            this.Email = dtoWr.Email;
             this.Birthdate = dtoWr.Birthdate;
             this.Image = dtoWr.Image;
+            this.Shop.ID = dtoWr.Shop.ID;
         }
         public DTO_Employee(int year,int month,int day)
         {

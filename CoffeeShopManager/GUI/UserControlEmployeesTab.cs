@@ -15,6 +15,7 @@ namespace GUI
     public partial class UserControlEmployeesTab : UserControl
     {
         BUS_Employee busEmp = new BUS_Employee();
+        public DTO_Manager dtoMan { get; set; }
         public UserControlEmployeesTab()
         {
             InitializeComponent();
@@ -33,14 +34,14 @@ namespace GUI
             {
                 frmEditEmployees frmEditEmployees = new frmEditEmployees(this)
                 {
-                    dtoEmp = busEmp.GetEmployeeInfoByEmail(dataGridView1.SelectedRows[0].Cells[6].Value.ToString())
+                    dtoEmp = busEmp.GetEmployeeInfoAndManagerId(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoMan.Shop.ID)
                 };
                 frmEditEmployees.ShowDialog();
             }
         }
         public void Reload()
         {
-            dataGridView1.DataSource = busEmp.GetAllEmployee();
+            dataGridView1.DataSource = busEmp.GetAllEmployee(dtoMan.Shop.ID);
             txtSearch.Text = "";
             cboSearch.Text = "";
         }
@@ -58,7 +59,7 @@ namespace GUI
                 DialogResult ret = MessageBox.Show("Do you want to delete this employee?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ret == DialogResult.Yes)
                 {
-                    dtoEmp = busEmp.GetEmployeeInfoByEmail(dataGridView1.SelectedRows[0].Cells[6].Value.ToString());
+                    dtoEmp = busEmp.GetEmployeeInfoAndManagerId(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoMan.Shop.ID);
                     busEmp.DeleteEmployee(dtoEmp);
                     Reload();
                 }
@@ -72,25 +73,25 @@ namespace GUI
                 switch (cboSearch.Text)
                 {
                     case "ID":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchIDFiltered(Int32.Parse(txtSearch.Text));
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchIDFiltered(txtSearch.Text, dtoMan.Shop.ID);
                         break;
                     case "Name":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchNameFiltered(txtSearch.Text);
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchNameFiltered(txtSearch.Text, dtoMan.Shop.ID);
                         break;
                     case "Gender":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchGenderFiltered(txtSearch.Text);
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchGenderFiltered(txtSearch.Text, dtoMan.Shop.ID);
                         break;
                     case "Position":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPositionFiltered(txtSearch.Text);
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPositionFiltered(txtSearch.Text, dtoMan.Shop.ID);
                         break;
                     case "Phone number":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPhoneFiltered(txtSearch.Text);
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPhoneFiltered(txtSearch.Text, dtoMan.Shop.ID);
                         break;
                     case "Email":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchEmailFiltered(txtSearch.Text);
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchEmailFiltered(txtSearch.Text, dtoMan.Shop.ID);
                         break;
                     case "Manager's ID":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchManIDFiltered(Int32.Parse(txtSearch.Text));
+                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchManIDFiltered(txtSearch.Text, dtoMan.Shop.ID);
                         break;
                 }
             }

@@ -40,24 +40,26 @@ namespace GUI
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             errorProvider1.SetError(txtConfirm, "");
-            if (txtEmail.Text == "" || txtPass.Text == "" || txtConfirm.Text == "" || txtDayBD.Text == "" ||
+            if (txtUsername.Text == "" || txtPass.Text == "" || txtConfirm.Text == "" || txtDayBD.Text == "" ||
                 txtMonthBD.Text == "" || txtYearBD.Text == "" || txtFirstName.Text == "" || txtLastName.Text == ""||
-                txtPhone.Text == "" || (radFemale.Checked == false && radMale.Checked == false))
+                txtPhone.Text == "" || txtEmail.Text == "" || (radFemale.Checked == false && radMale.Checked == false))
                 MessageBox.Show("Vui lòng nhập đủ thông tin");
             else if (txtPass.Text != txtConfirm.Text) errorProvider1.SetError(txtConfirm, "Xác nhận mật khẩu không đúng");
             else
             {
 
-                DTO_User dtoUser = new DTO_User() { Email = txtEmail.Text, PassWord = txtPass.Text };
-                if (busUser.CheckUsername(txtEmail.Text))
+                DTO_User dtoUser = new DTO_User() { Username = txtUsername.Text, PassWord = txtPass.Text };
+                if (busUser.CheckUsername(txtUsername.Text))
                 {
                     DTO_Manager dtoMan = new DTO_Manager();
                     DateTime bdate = new DateTime();
                     dtoMan.Account = dtoUser;
+                    dtoMan.Id = txtID.Text;
                     dtoMan.Firstname = txtFirstName.Text;
                     dtoMan.Lastname = txtLastName.Text;
                     dtoMan.Phone = txtPhone.Text;
                     dtoMan.Position = "Manager";
+                    dtoMan.Email = txtEmail.Text;
                     if (radFemale.Checked) dtoMan.Gender = "Female";
                     else dtoMan.Gender = "Male";
                     
@@ -67,6 +69,7 @@ namespace GUI
                     {
                         dtoMan.Birthdate = bdate;
                     }
+                    dtoMan.Shop.ID = 1;
                     dtoMan.Account = busUser.EncodePass(dtoMan);
                     if (this.picboxManImg.Image == null)
                     {

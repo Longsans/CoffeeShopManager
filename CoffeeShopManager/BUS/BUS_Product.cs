@@ -12,77 +12,77 @@ namespace BUS
    public class BUS_Product
     {
         DAL_Products dalProduct = new DAL_Products();
-        public DataTable GetAllProducts()
+        public DataTable GetAllProducts(int shopId)
         {
             try
             {
-                return dalProduct.GetAllProducts();
+                return dalProduct.GetAllProducts(shopId);
             }
             catch(Exception e)
             {
                 throw e;
             }
         }
-        public DTO_Product GetById(int id)
+        public DTO_Product GetById(string id, int shopId)
         {
             try
             {               
-                    return dalProduct.GetById(id);
+                    return dalProduct.GetById(id, shopId);
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
-        public DTO_Product GetByName(string name)
+        public DTO_Product GetByName(string name, int shopId)
         {
             try
             {
-                return dalProduct.GetByName(name);
+                return dalProduct.GetByName(name, shopId);
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
-        private DataTable GetAllProductsOfType(string type)
+        private DataTable GetAllProductsOfType(string type, int shopId)
         {
             try
             {
-                return dalProduct.GetAllProductsOfType(type);
+                return dalProduct.GetAllProductsOfType(type, shopId);
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
-        public DataTable GetAllDrinks()
+        public DataTable GetAllDrinks(int shopId)
         {
             try
             {
-                return GetAllProductsOfType("Drink");
+                return GetAllProductsOfType("Drink", shopId);
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
-        public DataTable GetAllFood()
+        public DataTable GetAllFood(int shopId)
         {
             try
             {
-                return GetAllProductsOfType("Food");
+                return GetAllProductsOfType("Food", shopId);
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
-        public DataTable GetAllOtherProducts()
+        public DataTable GetAllOtherProducts(int shopId)
         {
             try
             {
-                return GetAllProductsOfType("Others");
+                return GetAllProductsOfType("Others", shopId);
             }
             catch (Exception ex)
             {
@@ -90,36 +90,31 @@ namespace BUS
             }
         }
 
-        public DataTable GetProductsSearchIDFiltered(int id)
+        public DataTable GetProductsSearchIDFiltered(string id, int shopId)
         {
-            return dalProduct.GetProductsSearchIDFiltered(id);
+            return dalProduct.GetProductsSearchIDFiltered(id, shopId);
         }
 
-        public DataTable GetProductsSearchNameFiltered(string namesubstr)
+        public DataTable GetProductsSearchNameFiltered(string namesubstr, int shopId)
         {
-            return dalProduct.GetProductsSearchNameFiltered(namesubstr);
+            return dalProduct.GetProductsSearchNameFiltered(namesubstr, shopId);
         }
 
-        public DataTable GetProductsSearchTypeFiltered(string type)
+        public DataTable GetProductsSearchTypeFiltered(string type, int shopId)
         {
-            return dalProduct.GetProductsSearchTypeFiltered(type);
+            return dalProduct.GetProductsSearchTypeFiltered(type, shopId);
         }
 
-        public DataTable GetProductsSearchPriceFiltered(int lowerBound, int upperBound)
+        public DataTable GetProductsSearchPriceFiltered(int lowerBound, int upperBound, int shopId)
         {
-            return dalProduct.GetProductsSearchPriceFiltered(lowerBound, upperBound);
-        }
-
-        public int GetNextProductId()
-        {
-            return dalProduct.GetNextProductId();
+            return dalProduct.GetProductsSearchPriceFiltered(lowerBound, upperBound, shopId);
         }
 
         public bool InsertWithoutImage(DTO_Product dtoPro)
         {
             try
             {
-                if (dalProduct.GetByName(dtoPro.Name) == null)
+                if (dalProduct.GetByName(dtoPro.Name, dtoPro.Shop.ID) == null)
                 {
                     dalProduct.InsertWithoutImage(dtoPro);
                     return true;
@@ -159,7 +154,7 @@ namespace BUS
         {
             try
             {
-                if (dalProduct.GetById(dtoPro.Id) != null)
+                if (dalProduct.GetById(dtoPro.Id, dtoPro.Shop.ID) != null)
                 {
                     dalProduct.Update(dtoPro);
                     return true;

@@ -89,7 +89,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(429, 523);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureBox1
             // 
@@ -211,6 +210,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.Text = "frmLogin";
+            this.Activated += new System.EventHandler(this.frmLogin_Activated);
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.TitleBar.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
