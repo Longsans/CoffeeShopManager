@@ -124,14 +124,14 @@
   <data name="coffee_to_go_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coffee_to_go_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="list_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="view_details_26px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\view_details_26px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="20394156-coffee-time-seamless-background-for-your-design" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\20394156-coffee-time-seamless-background-for-your-design.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close_window_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_window_24px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coffee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coffee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +139,11 @@
   <data name="grid_view_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grid_view_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close_window_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_window_24px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="20394156-coffee-time-seamless-background-for-your-design" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20394156-coffee-time-seamless-background-for-your-design.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="list_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="squared_menu_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\squared_menu_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GuysDrinkingBeer_Preview_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GuysDrinkingBeer_Preview_02.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,11 +163,17 @@
   <data name="chart_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chart_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add_new_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_new_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="edit_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="it-s-always-coffee-time-quote-slogan-typography_7201-31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\it-s-always-coffee-time-quote-slogan-typography_7201-31.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coffee_to_go_80px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coffee_to_go_80px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,7 +190,7 @@
   <data name="Coffee-Shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Coffee-Shop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="squared_menu_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\squared_menu_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -214,6 +214,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 450);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInsertProDuct";
             this.Text = "frmInsertProDuct";
             this.Load += new System.EventHandler(this.frmInsertProDuct_Load);

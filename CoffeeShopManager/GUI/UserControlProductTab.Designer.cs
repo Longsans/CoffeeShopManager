@@ -46,13 +46,15 @@
             this.lblBy = new System.Windows.Forms.Label();
             this.lblProducts = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblLabel = new System.Windows.Forms.Label();
+            this.lblSumTotal = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnImageadd = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -122,14 +124,14 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 191);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 199);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(847, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(846, 302);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -262,13 +264,63 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 191);
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 199);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(833, 292);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(838, 302);
             this.flowLayoutPanel1.TabIndex = 14;
             this.flowLayoutPanel1.Visible = false;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             this.flowLayoutPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseClick);
+            // 
+            // lblLabel
+            // 
+            this.lblLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLabel.AutoSize = true;
+            this.lblLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLabel.Location = new System.Drawing.Point(12, 505);
+            this.lblLabel.Name = "lblLabel";
+            this.lblLabel.Size = new System.Drawing.Size(72, 19);
+            this.lblLabel.TabIndex = 18;
+            this.lblLabel.Text = "Total All";
+            this.lblLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSumTotal
+            // 
+            this.lblSumTotal.AutoSize = true;
+            this.lblSumTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblSumTotal.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSumTotal.Location = new System.Drawing.Point(110, 504);
+            this.lblSumTotal.Name = "lblSumTotal";
+            this.lblSumTotal.Size = new System.Drawing.Size(76, 21);
+            this.lblSumTotal.TabIndex = 19;
+            this.lblSumTotal.Text = "Number";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnImageadd
+            // 
+            this.btnImageadd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImageadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImageadd.Image = global::GUI.Properties.Resources.add_100px;
+            this.btnImageadd.Location = new System.Drawing.Point(428, 145);
+            this.btnImageadd.Name = "btnImageadd";
+            this.btnImageadd.Size = new System.Drawing.Size(146, 150);
+            this.btnImageadd.TabIndex = 21;
+            this.btnImageadd.UseVisualStyleBackColor = true;
+            this.btnImageadd.Visible = false;
             // 
             // pictureBox2
             // 
@@ -334,34 +386,15 @@
             this.button5.TabIndex = 2;
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(129, 502);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(42, 22);
-            this.textBox1.TabIndex = 17;
-            // 
-            // lblLabel
-            // 
-            this.lblLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLabel.AutoSize = true;
-            this.lblLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblLabel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLabel.Location = new System.Drawing.Point(12, 505);
-            this.lblLabel.Name = "lblLabel";
-            this.lblLabel.Size = new System.Drawing.Size(72, 19);
-            this.lblLabel.TabIndex = 18;
-            this.lblLabel.Text = "Total All";
-            this.lblLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // UserControlProductTab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.Controls.Add(this.btnImageadd);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblSumTotal);
             this.Controls.Add(this.lblLabel);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -383,7 +416,7 @@
             this.Controls.Add(this.btnDrink);
             this.Controls.Add(this.btnAll);
             this.Name = "UserControlProductTab";
-            this.Size = new System.Drawing.Size(852, 533);
+            this.Size = new System.Drawing.Size(870, 533);
             this.Load += new System.EventHandler(this.UserControlProductTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -418,7 +451,9 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblLabel;
+        private System.Windows.Forms.Label lblSumTotal;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImageadd;
     }
 }

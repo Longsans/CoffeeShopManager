@@ -189,7 +189,15 @@ namespace GUI
         {
             dto_pro = new DTO_Product();
             int dem = 0;
-            foreach(DataRow row in c.Rows)
+            btnImageadd.Tag = "add";
+            btnImageadd.Visible = true;
+            bt = btnImageadd;
+            bt.Width = 146;
+            bt.Height = 150;
+            flowLayoutPanel1.Controls.Add(bt);
+            bt.Click += new EventHandler(ClickCong);
+
+            foreach (DataRow row in c.Rows)
             {
                 dem++;
                 pic = new PictureBox();
@@ -268,7 +276,16 @@ namespace GUI
                 //  bt.MouseClick += new EventHandler(OnClick);
                 //  MessageBox.Show("" + pic.Tag.ToString());
                 //  bt.ContextMenuStrip.Click += new EventHandler(OnClick);
-                textBox1.Text = ""+dem;
+                lblSumTotal.Text = ""+dem;
+            }
+        }
+        public void ClickCong(object sender,EventArgs e)
+        {
+            if (((Button)sender).Tag.ToString() == "add")
+            {
+                frmInsertProDuct frmInsert = new frmInsertProDuct(this);
+                frmInsert.ShowDialog();
+                // Reload();
             }
         }
         public void OnClick(object sender,EventArgs e)
@@ -280,11 +297,12 @@ namespace GUI
             //   if (dataGridView1.SelectedRows != null && !dataGridView1.Rows[dataGridView1.RowCount - 1].Selected)
             //   {
             //textBox1.Text = ((Button)sender).Tag.ToString();
-           // MessageBox.Show(textBox1.Text);
+            // MessageBox.Show(textBox1.Text);
+
                 frmEditProduct frmEdit = new frmEditProduct(this)
                 {
-                   // dtoPro = busPro.GetByName(namelb.Text)
-                    dtoPro=busPro.GetById(((Button)sender).Tag.ToString(),dtoShop.ID)
+                    // dtoPro = busPro.GetByName(namelb.Text)
+                    dtoPro = busPro.GetById(((Button)sender).Tag.ToString(), dtoShop.ID)
                 };
                 frmEdit.ShowDialog();
           //  }
@@ -293,7 +311,6 @@ namespace GUI
         {
             frmInsertProDuct frmInsert = new frmInsertProDuct(this);
             frmInsert.ShowDialog();
-            Reload();
         }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -325,7 +342,7 @@ namespace GUI
             //   Reload();
             // GetData();
 
-              MessageBox.Show("1234" + textBox1.Text);
+              MessageBox.Show("1234" + lblSumTotal.Text);
             Button btn;
             /*  foreach (Control item in flowLayoutPanel1.Controls)
               {
