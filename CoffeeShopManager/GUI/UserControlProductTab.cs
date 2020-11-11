@@ -30,6 +30,9 @@ namespace GUI
         private void UserControlProductTab_Load(object sender, EventArgs e)
         {
             Reload();
+            GetCong();
+            GetData(busPro.GetAllProducts(dtoShop.ID));
+
             pictureBox1.BackColor = Color.FromArgb(62,62,66);
         }
 
@@ -37,7 +40,7 @@ namespace GUI
         {
             this.cboSearch.Text = "";
             flowLayoutPanel1.Controls.Clear();
-            GetData(busPro.GetAllProducts(dtoShop.ID));
+          //  GetData(busPro.GetAllProducts(dtoShop.ID));
             this.dataGridView1.DataSource = busPro.GetAllProducts(dtoShop.ID);
             lblLabel.Text = "Total All:";
         }
@@ -45,13 +48,16 @@ namespace GUI
         private void btnAll_Click(object sender, EventArgs e)
         {
             Reload();
-            lblLabel.Text = "Total All:";
+            GetCong();
+            GetData(busPro.GetAllProducts(dtoShop.ID));
+
         }
 
         private void btnDrink_Click(object sender, EventArgs e)
         {
             this.dataGridView1.DataSource = busPro.GetAllDrinks(dtoShop.ID);
             flowLayoutPanel1.Controls.Clear();
+            GetCong();
             GetData(busPro.GetAllDrinks(dtoShop.ID));
             lblLabel.Text = "Total Drink:";
         }
@@ -60,6 +66,7 @@ namespace GUI
         {
             this.dataGridView1.DataSource = busPro.GetAllFood(dtoShop.ID);
             flowLayoutPanel1.Controls.Clear();
+            GetCong();
             GetData(busPro.GetAllFood(dtoShop.ID));
             lblLabel.Text = "Total Food:";
         }
@@ -68,6 +75,7 @@ namespace GUI
         {
             this.dataGridView1.DataSource = busPro.GetAllOtherProducts(dtoShop.ID);
             flowLayoutPanel1.Controls.Clear();
+            GetCong();
             GetData(busPro.GetAllOtherProducts(dtoShop.ID));
             lblLabel.Text = "Total Others:";
         }
@@ -77,6 +85,9 @@ namespace GUI
             frmInsertProDuct frmInsert = new frmInsertProDuct(this);
             frmInsert.ShowDialog();
             Reload();
+            GetCong();
+            GetData(busPro.GetAllProducts(dtoShop.ID));
+
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -90,6 +101,9 @@ namespace GUI
                     dtoPro = busPro.GetById(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoShop.ID);
                     busPro.Delete(dtoPro);
                     Reload();
+                    GetCong();
+                    GetData(busPro.GetAllProducts(dtoShop.ID));
+
                 }
             }
         }
@@ -185,18 +199,20 @@ namespace GUI
         {
             dataGridView1.ReadOnly = true;
         }
+        public void GetCong()
+        {
+            btnImageadd.Tag = "add";
+            btnImageadd.Visible = true;
+            // bt = btnImageadd;
+            btnImageadd.Width = 146;
+            btnImageadd.Height = 150;
+            flowLayoutPanel1.Controls.Add(btnImageadd);
+            btnImageadd.Click += new EventHandler(ClickCong);
+        }
         private void GetData(DataTable c)
         {
             dto_pro = new DTO_Product();
             int dem = 0;
-            btnImageadd.Tag = "add";
-            btnImageadd.Visible = true;
-            bt = btnImageadd;
-            bt.Width = 146;
-            bt.Height = 150;
-            flowLayoutPanel1.Controls.Add(bt);
-            bt.Click += new EventHandler(ClickCong);
-
             foreach (DataRow row in c.Rows)
             {
                 dem++;
@@ -285,7 +301,9 @@ namespace GUI
             {
                 frmInsertProDuct frmInsert = new frmInsertProDuct(this);
                 frmInsert.ShowDialog();
-                // Reload();
+                Reload();
+                GetCong();
+                GetData(busPro.GetAllProducts(dtoShop.ID));
             }
         }
         public void OnClick(object sender,EventArgs e)
@@ -311,6 +329,9 @@ namespace GUI
         {
             frmInsertProDuct frmInsert = new frmInsertProDuct(this);
             frmInsert.ShowDialog();
+            Reload();
+            GetCong();
+            GetData(busPro.GetAllProducts(dtoShop.ID));
         }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -386,9 +407,12 @@ namespace GUI
 
                 busPro.Delete(dtoPro);
                 Reload();
+                GetCong();
+                GetData(busPro.GetAllProducts(dtoShop.ID));
+
             }
-                
-            
+
+
         }
 
         private void flowLayoutPanel1_MouseClick(object sender, MouseEventArgs e)

@@ -48,7 +48,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLabel = new System.Windows.Forms.Label();
             this.lblSumTotal = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnImageadd = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -299,15 +298,6 @@
             this.lblSumTotal.TabIndex = 19;
             this.lblSumTotal.Text = "Number";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnImageadd
             // 
             this.btnImageadd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -392,7 +382,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.Controls.Add(this.btnImageadd);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblSumTotal);
             this.Controls.Add(this.lblLabel);
             this.Controls.Add(this.pictureBox2);
@@ -453,7 +442,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblLabel;
         private System.Windows.Forms.Label lblSumTotal;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnImageadd;
     }
 }
