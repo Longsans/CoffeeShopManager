@@ -15,7 +15,7 @@ namespace GUI
     public partial class UserControlEmployeesTab : UserControl
     {
         BUS_Employee busEmp = new BUS_Employee();
-        public DTO_Manager dtoMan { get; set; }
+        public DTO_Manager dtoMan { get; set; } = new DTO_Manager();
         public UserControlEmployeesTab()
         {
             InitializeComponent();

@@ -15,7 +15,7 @@ namespace GUI
     public partial class UserControlProductTab : UserControl
     {
         BUS_Product busPro = new BUS_Product();
-        public DTO_Shop dtoShop { get; set; }
+        public DTO_Shop dtoShop { get; set; } = new DTO_Shop();
         public UserControlProductTab()
         {
             InitializeComponent();
