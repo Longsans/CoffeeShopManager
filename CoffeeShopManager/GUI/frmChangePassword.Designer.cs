@@ -38,8 +38,8 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtCurrentPassword = new System.Windows.Forms.TextBox();
             this.TitleBar = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.TitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -47,7 +47,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(134)))), ((int)(((byte)(102)))));
             this.panel1.Controls.Add(this.btnSaveChange);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtRetypeNewPassword);
@@ -63,13 +63,13 @@
             // 
             // btnSaveChange
             // 
-            this.btnSaveChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSaveChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnSaveChange.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveChange.FlatAppearance.BorderSize = 0;
             this.btnSaveChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveChange.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveChange.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSaveChange.Location = new System.Drawing.Point(202, 208);
+            this.btnSaveChange.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSaveChange.Location = new System.Drawing.Point(204, 213);
             this.btnSaveChange.Name = "btnSaveChange";
             this.btnSaveChange.Size = new System.Drawing.Size(144, 35);
             this.btnSaveChange.TabIndex = 10;
@@ -136,7 +136,7 @@
             // 
             // TitleBar
             // 
-            this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(134)))), ((int)(((byte)(102)))));
+            this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.TitleBar.Controls.Add(this.btnExit);
             this.TitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.TitleBar.Location = new System.Drawing.Point(0, 0);
@@ -146,6 +146,10 @@
             this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
             this.TitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
             this.TitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseUp);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // btnExit
             // 
@@ -159,10 +163,6 @@
             this.btnExit.TabIndex = 6;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // frmChangePassword
             // 

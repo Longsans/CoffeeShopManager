@@ -52,11 +52,9 @@
             this.btnChooseImage = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cboPosition = new System.Windows.Forms.ComboBox();
-            this.txtManagerID = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,6 +69,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TitleBar = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtManagerID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
@@ -146,12 +146,12 @@
             // 
             // btnSaveChange
             // 
-            this.btnSaveChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSaveChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnSaveChange.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveChange.FlatAppearance.BorderSize = 0;
             this.btnSaveChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveChange.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveChange.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSaveChange.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnSaveChange.Location = new System.Drawing.Point(209, 324);
             this.btnSaveChange.Name = "btnSaveChange";
             this.btnSaveChange.Size = new System.Drawing.Size(121, 37);
@@ -243,7 +243,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(134)))), ((int)(((byte)(102)))));
             this.panel2.Controls.Add(this.picboxEmpImg);
             this.panel2.Controls.Add(this.btnChooseImage);
             this.panel2.Controls.Add(this.btnCancel);
@@ -299,10 +299,10 @@
             // 
             // btnChooseImage
             // 
-            this.btnChooseImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnChooseImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnChooseImage.FlatAppearance.BorderSize = 0;
             this.btnChooseImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChooseImage.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnChooseImage.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnChooseImage.Location = new System.Drawing.Point(706, 235);
             this.btnChooseImage.Name = "btnChooseImage";
             this.btnChooseImage.Size = new System.Drawing.Size(90, 37);
@@ -313,12 +313,12 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancel.Location = new System.Drawing.Point(381, 324);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 37);
@@ -341,14 +341,6 @@
             this.cboPosition.Name = "cboPosition";
             this.cboPosition.Size = new System.Drawing.Size(113, 24);
             this.cboPosition.TabIndex = 35;
-            // 
-            // txtManagerID
-            // 
-            this.txtManagerID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtManagerID.Location = new System.Drawing.Point(448, 264);
-            this.txtManagerID.Name = "txtManagerID";
-            this.txtManagerID.Size = new System.Drawing.Size(113, 23);
-            this.txtManagerID.TabIndex = 31;
             // 
             // txtSalary
             // 
@@ -376,16 +368,6 @@
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(113, 23);
             this.txtID.TabIndex = 2;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(325, 266);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 19);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Manager ID";
             // 
             // label11
             // 
@@ -509,7 +491,7 @@
             // 
             // TitleBar
             // 
-            this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(134)))), ((int)(((byte)(102)))));
+            this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.TitleBar.Controls.Add(this.btnExit);
             this.TitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.TitleBar.Location = new System.Drawing.Point(0, 0);
@@ -532,6 +514,24 @@
             this.btnExit.TabIndex = 6;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(325, 266);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 19);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Manager ID";
+            // 
+            // txtManagerID
+            // 
+            this.txtManagerID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtManagerID.Location = new System.Drawing.Point(448, 264);
+            this.txtManagerID.Name = "txtManagerID";
+            this.txtManagerID.Size = new System.Drawing.Size(113, 23);
+            this.txtManagerID.TabIndex = 31;
             // 
             // frmEditEmployees
             // 

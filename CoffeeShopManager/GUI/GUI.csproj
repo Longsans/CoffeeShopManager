@@ -269,9 +269,6 @@
     <EmbeddedResource Include="UserControlReceiptsDetail.resx">
       <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlStatistics.resx">
-      <DependentUpon>UserControlStatistics.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControlStock.resx">
       <DependentUpon>UserControlStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +339,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot 2020-11-08 205640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\squared_menu_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_new_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_100px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
