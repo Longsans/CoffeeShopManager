@@ -37,7 +37,10 @@ namespace DAL
                     Total = reader.GetDecimal(reader.GetOrdinal("Total")),
                     Details = reader.GetString(reader.GetOrdinal("Details")),
                     Items = GetReceiptDetailsListById(id),
-                    ShopID = reader.GetInt32(reader.GetOrdinal("ShopId"))
+                    Shop = new DTO_Shop
+                    {
+                        ID = reader.GetInt32(reader.GetOrdinal("ShopId"))
+                    }
                 };
             }
             if (!connState)
@@ -154,7 +157,16 @@ namespace DAL
             return dtRecDetails;
         }
 
-        public void InsertReceipt(DTO_Receipt rec)
+        public DTO_Table GetTableOfReceipt(int receiptId)
+        {
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            DTO_Table tab = null;
+            tab = dalTabSitting.GetTableOfReceipt(receiptId);
+
+            return tab;
+        }
+
+        public void InsertTakeAwayReceipt(DTO_Receipt rec)
         {
             string qry = "INSERT INTO RECEIPTS " +
                 "VALUES (@cusId, @dateofpayment, @total, @details, @shopId)";
@@ -163,7 +175,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@dateofpayment", rec.DateOfPayMent);
             cmd.Parameters.AddWithValue("@total", rec.Total);
             cmd.Parameters.AddWithValue("@details", rec.Details);
-            cmd.Parameters.AddWithValue("@shopId", rec.ShopID);
+            cmd.Parameters.AddWithValue("@shopId", rec.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -176,6 +188,13 @@ namespace DAL
             {
                 CloseConnection();
             }
+        }
+
+        public void InsertSittingReceipt(DTO_Receipt rec, DTO_Table tab)
+        {
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            InsertTakeAwayReceipt(rec);
+            dalTabSitting.Insert(rec, tab);
         }
 
         private void InsertReceiptDetails(DTO_Receipt rec)
@@ -201,11 +220,11 @@ namespace DAL
                     CloseConnection();
                 }
             }
-
         }
 
         public void DeleteReceipt(DTO_Receipt rec)
         {
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
             string qry = "DELETE FROM RECEIPTS WHERE Id = @id";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", rec.Id);
@@ -215,6 +234,8 @@ namespace DAL
             {
                 OpenConnection();
             }
+            dalTabSitting.DeleteAllSittingsByReceipt(rec);
+            DeleteReceiptDetails(rec);
             cmd.ExecuteNonQuery();
             if (!connState)
             {
@@ -233,7 +254,6 @@ namespace DAL
             {
                 OpenConnection();
             }
-            DeleteReceiptDetails(rec);
             cmd.ExecuteNonQuery();
             if (!connState)
             {

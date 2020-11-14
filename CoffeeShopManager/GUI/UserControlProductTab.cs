@@ -364,7 +364,7 @@ namespace GUI
             // GetData();
 
               MessageBox.Show("1234" + lblSumTotal.Text);
-            Button btn;
+            //Button btn;
             /*  foreach (Control item in flowLayoutPanel1.Controls)
               {
                   if (item.Controls == null) { continue; }
