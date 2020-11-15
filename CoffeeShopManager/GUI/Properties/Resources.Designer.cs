@@ -10,9 +10,8 @@
 
 namespace GUI.Properties {
     using System;
-    using System.Drawing;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -24,6 +23,7 @@ namespace GUI.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -86,6 +86,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap add_new_30px {
             get {
                 object obj = ResourceManager.GetObject("add_new_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back_32px {
+            get {
+                object obj = ResourceManager.GetObject("back_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,6 +293,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sort_left_24px {
+            get {
+                object obj = ResourceManager.GetObject("sort_left_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sort_right_24px {
+            get {
+                object obj = ResourceManager.GetObject("sort_right_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap squared_menu_32px {
             get {
                 object obj = ResourceManager.GetObject("squared_menu_32px", resourceCulture);
@@ -306,30 +336,6 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap view_details_26px {
             get {
                 object obj = ResourceManager.GetObject("view_details_26px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap sort_left_24px
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("sort_left_24px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap sort_right_24px
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("sort_rightz_24px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        internal static System.Drawing.Bitmap back_32px
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("back_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
