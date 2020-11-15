@@ -21,7 +21,7 @@ namespace GUI
         Button bt;
         DTO_Product dto_pro;
      
-        public DTO_Shop dtoShop { get; set; } = new DTO_Shop();
+        public DTO_Shop dtoShop = new DTO_Shop();
         public UserControlProductTab()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace GUI
         {
             Reload();
             GetCong();
-            GetData(busPro.GetAllProducts(dtoShop.ID));
+            GetData(busPro.GetAllProductsWithImages(dtoShop.ID));
 
             pictureBox1.BackColor = Color.FromArgb(62,62,66);
         }
@@ -41,7 +41,7 @@ namespace GUI
             this.cboSearch.Text = "";
             flowLayoutPanel1.Controls.Clear();
           //  GetData(busPro.GetAllProducts(dtoShop.ID));
-            this.dataGridView1.DataSource = busPro.GetAllProducts(dtoShop.ID);
+            this.dataGridView1.DataSource = busPro.GetAllProductsWithImages(dtoShop.ID);
             lblLabel.Text = "Total All:";
         }
 
@@ -49,7 +49,7 @@ namespace GUI
         {
             Reload();
             GetCong();
-            GetData(busPro.GetAllProducts(dtoShop.ID));
+            GetData(busPro.GetAllProductsWithImages(dtoShop.ID));
 
         }
 
@@ -86,9 +86,9 @@ namespace GUI
             frmInsert.ShowDialog();
             Reload();
             GetCong();
-            GetData(busPro.GetAllProducts(dtoShop.ID));
-
+            GetData(busPro.GetAllProductsWithImages(dtoShop.ID));
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DTO_Product dtoPro = new DTO_Product();
@@ -102,7 +102,7 @@ namespace GUI
                     busPro.Delete(dtoPro);
                     Reload();
                     GetCong();
-                    GetData(busPro.GetAllProducts(dtoShop.ID));
+                    GetData(busPro.GetAllProductsWithImages(dtoShop.ID));
 
                 }
             }
@@ -235,7 +235,6 @@ namespace GUI
                 pricelb.Dock = DockStyle.Bottom;
                 pic.BorderStyle = BorderStyle.FixedSingle;
                // pic.Controls.Add(pricelb);
-             
 
                 namelb.Text = row["Name"].ToString();
                 namelb.BackColor = Color.FromArgb(46, 134, 222);
@@ -303,7 +302,7 @@ namespace GUI
                 frmInsert.ShowDialog();
                 Reload();
                 GetCong();
-                GetData(busPro.GetAllProducts(dtoShop.ID));
+                GetData(busPro.GetAllProductsWithImages(dtoShop.ID));
             }
         }
         public void OnClick(object sender,EventArgs e)
@@ -331,7 +330,7 @@ namespace GUI
             frmInsert.ShowDialog();
             Reload();
             GetCong();
-            GetData(busPro.GetAllProducts(dtoShop.ID));
+            GetData(busPro.GetAllProductsWithImages(dtoShop.ID));
         }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -408,7 +407,7 @@ namespace GUI
                 busPro.Delete(dtoPro);
                 Reload();
                 GetCong();
-                GetData(busPro.GetAllProducts(dtoShop.ID));
+                GetData(busPro.GetAllProductsWithImages(dtoShop.ID));
 
             }
 

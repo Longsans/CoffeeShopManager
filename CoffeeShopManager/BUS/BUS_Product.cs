@@ -12,11 +12,11 @@ namespace BUS
    public class BUS_Product
     {
         DAL_Products dalProduct = new DAL_Products();
-        public DataTable GetAllProducts(int shopId)
+        public DataTable GetAllProductsWithImages(int shopId)
         {
             try
             {
-                return dalProduct.GetAllProducts(shopId);
+                return dalProduct.GetAllProductsWithImages(shopId);
             }
             catch(Exception e)
             {

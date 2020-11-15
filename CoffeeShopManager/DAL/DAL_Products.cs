@@ -12,10 +12,32 @@ namespace DAL
     public class DAL_Products : DBConnection
     {
         /// <summary>
-        /// Gets Id, Name, Type and Price regarding all products; Image and details are shown in the Details tab
+        /// Gets Id, Name, Type, Price and Image regarding all products;
         /// </summary>
         /// <returns></returns>
-        public DataTable GetAllProducts(int shopId)
+        public DataTable GetAllProductsWithImages(int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT Id, Name, Type, Price, Image FROM [PRODUCTS] " +
+                "WHERE ShopId = @shopId";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            ada.Fill(dt);
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return dt;
+        }
+
+        public DataTable GetAllProductsWithoutImages(int shopId)
         {
             DataTable dt = new DataTable();
             string qry = "SELECT Id, Name, Type, Price FROM [PRODUCTS] " +
