@@ -48,6 +48,9 @@
     <Compile Include="DAL_Manager.cs" />
     <Compile Include="DAL_Products.cs" />
     <Compile Include="DAL_Receipts.cs" />
+    <Compile Include="DAL_Shop.cs" />
+    <Compile Include="DAL_Tables.cs" />
+    <Compile Include="DAL_TableSitting.cs" />
     <Compile Include="DAL_UserInfo.cs" />
     <Compile Include="DAL_Workers.cs" />
     <Compile Include="DBConnection.cs" />

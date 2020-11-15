@@ -13,7 +13,11 @@ namespace DTO
         public DateTime DateOfPayMent { get; set; }
         public decimal Total { get; set; }
         public string Details { get; set; }
-        public int ShopID { get; set; }
+        public DTO_Shop Shop = new DTO_Shop();
         public List<DTO_ReceiptDetails> Items { get; set; }
+        public DTO_Receipt()
+        {
+
+        }
     }
 }
