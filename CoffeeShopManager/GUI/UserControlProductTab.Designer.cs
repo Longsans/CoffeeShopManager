@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlProductTab));
             this.btnAll = new System.Windows.Forms.Button();
             this.btnDrink = new System.Windows.Forms.Button();
@@ -66,7 +69,7 @@
             this.btnAll.FlatAppearance.BorderSize = 0;
             this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAll.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.Location = new System.Drawing.Point(16, 92);
+            this.btnAll.Location = new System.Drawing.Point(16, 61);
             this.btnAll.Name = "btnAll";
             this.btnAll.Size = new System.Drawing.Size(95, 36);
             this.btnAll.TabIndex = 0;
@@ -81,7 +84,7 @@
             this.btnDrink.FlatAppearance.BorderSize = 0;
             this.btnDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrink.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDrink.Location = new System.Drawing.Point(129, 92);
+            this.btnDrink.Location = new System.Drawing.Point(129, 61);
             this.btnDrink.Name = "btnDrink";
             this.btnDrink.Size = new System.Drawing.Size(95, 36);
             this.btnDrink.TabIndex = 0;
@@ -96,7 +99,7 @@
             this.btnFood.FlatAppearance.BorderSize = 0;
             this.btnFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFood.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFood.Location = new System.Drawing.Point(242, 92);
+            this.btnFood.Location = new System.Drawing.Point(243, 61);
             this.btnFood.Name = "btnFood";
             this.btnFood.Size = new System.Drawing.Size(95, 36);
             this.btnFood.TabIndex = 0;
@@ -111,7 +114,7 @@
             this.btnOthers.FlatAppearance.BorderSize = 0;
             this.btnOthers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOthers.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOthers.Location = new System.Drawing.Point(355, 92);
+            this.btnOthers.Location = new System.Drawing.Point(360, 61);
             this.btnOthers.Name = "btnOthers";
             this.btnOthers.Size = new System.Drawing.Size(95, 36);
             this.btnOthers.TabIndex = 0;
@@ -121,16 +124,42 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 199);
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.ColumnHeadersHeight = 29;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.HotPink;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 187);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(846, 302);
+            this.dataGridView1.Size = new System.Drawing.Size(852, 314);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -141,7 +170,7 @@
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(113, 152);
+            this.btnEdit.Location = new System.Drawing.Point(115, 134);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(71, 33);
             this.btnEdit.TabIndex = 0;
@@ -156,7 +185,7 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(205, 152);
+            this.btnDelete.Location = new System.Drawing.Point(212, 134);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(71, 33);
             this.btnDelete.TabIndex = 0;
@@ -166,7 +195,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(569, 92);
+            this.txtSearch.Location = new System.Drawing.Point(568, 51);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(154, 22);
             this.txtSearch.TabIndex = 4;
@@ -180,7 +209,7 @@
             "Name",
             "Type",
             "Price"});
-            this.cboSearch.Location = new System.Drawing.Point(569, 120);
+            this.cboSearch.Location = new System.Drawing.Point(569, 79);
             this.cboSearch.Name = "cboSearch";
             this.cboSearch.Size = new System.Drawing.Size(154, 24);
             this.cboSearch.TabIndex = 5;
@@ -193,7 +222,7 @@
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(16, 152);
+            this.btnInsert.Location = new System.Drawing.Point(16, 134);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(71, 33);
             this.btnInsert.TabIndex = 7;
@@ -203,7 +232,7 @@
             // 
             // txtPriceSearchLower
             // 
-            this.txtPriceSearchLower.Location = new System.Drawing.Point(569, 92);
+            this.txtPriceSearchLower.Location = new System.Drawing.Point(569, 51);
             this.txtPriceSearchLower.Name = "txtPriceSearchLower";
             this.txtPriceSearchLower.Size = new System.Drawing.Size(63, 22);
             this.txtPriceSearchLower.TabIndex = 8;
@@ -211,7 +240,7 @@
             // 
             // txtPriceSearchUpper
             // 
-            this.txtPriceSearchUpper.Location = new System.Drawing.Point(660, 92);
+            this.txtPriceSearchUpper.Location = new System.Drawing.Point(659, 51);
             this.txtPriceSearchUpper.Name = "txtPriceSearchUpper";
             this.txtPriceSearchUpper.Size = new System.Drawing.Size(63, 22);
             this.txtPriceSearchUpper.TabIndex = 9;
@@ -221,7 +250,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(639, 92);
+            this.label2.Location = new System.Drawing.Point(638, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(15, 20);
             this.label2.TabIndex = 10;
@@ -232,7 +261,7 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(502, 95);
+            this.lblSearch.Location = new System.Drawing.Point(502, 51);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(61, 19);
             this.lblSearch.TabIndex = 11;
@@ -242,7 +271,7 @@
             // 
             this.lblBy.AutoSize = true;
             this.lblBy.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBy.Location = new System.Drawing.Point(535, 123);
+            this.lblBy.Location = new System.Drawing.Point(523, 84);
             this.lblBy.Name = "lblBy";
             this.lblBy.Size = new System.Drawing.Size(25, 19);
             this.lblBy.TabIndex = 12;
@@ -252,7 +281,7 @@
             // 
             this.lblProducts.AutoSize = true;
             this.lblProducts.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducts.Location = new System.Drawing.Point(10, 25);
+            this.lblProducts.Location = new System.Drawing.Point(10, 11);
             this.lblProducts.Name = "lblProducts";
             this.lblProducts.Size = new System.Drawing.Size(129, 33);
             this.lblProducts.TabIndex = 13;
@@ -264,11 +293,12 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 199);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 187);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(838, 302);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(838, 314);
             this.flowLayoutPanel1.TabIndex = 14;
             this.flowLayoutPanel1.Visible = false;
+            this.flowLayoutPanel1.Click += new System.EventHandler(this.flowLayoutPanel1_Click);
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             this.flowLayoutPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseClick);
             // 
@@ -311,11 +341,12 @@
             this.btnImageadd.TabIndex = 21;
             this.btnImageadd.UseVisualStyleBackColor = true;
             this.btnImageadd.Visible = false;
+            this.btnImageadd.Click += new System.EventHandler(this.btnImageadd_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GUI.Properties.Resources.squared_menu_32px;
-            this.pictureBox2.Location = new System.Drawing.Point(782, 123);
+            this.pictureBox2.Location = new System.Drawing.Point(805, 123);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(49, 44);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -327,7 +358,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::GUI.Properties.Resources.list_50px;
-            this.pictureBox1.Location = new System.Drawing.Point(729, 123);
+            this.pictureBox1.Location = new System.Drawing.Point(744, 123);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(47, 44);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -343,7 +374,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(729, 90);
+            this.btnSearch.Location = new System.Drawing.Point(744, 49);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(32, 27);
             this.btnSearch.TabIndex = 6;

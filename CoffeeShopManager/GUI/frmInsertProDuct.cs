@@ -100,7 +100,7 @@ namespace GUI
                         MessageBox.Show("Trùng tên thức ăn đã có sẵn");
                     }
                 }
-            }
+            }this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
