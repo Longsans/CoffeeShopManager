@@ -41,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_Customers.cs" />
     <Compile Include="BUS_Employee.cs" />
     <Compile Include="BUS_Manager.cs" />
     <Compile Include="BUS_Product.cs" />
+    <Compile Include="BUS_Receipts.cs" />
+    <Compile Include="BUS_Shop.cs" />
     <Compile Include="BUS_UserInfo.cs" />
+    <Compile Include="BUS_Tables.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

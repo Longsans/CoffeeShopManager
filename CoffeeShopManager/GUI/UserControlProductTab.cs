@@ -20,7 +20,6 @@ namespace GUI
         Label namelb;
         Button bt;
         DTO_Product dto_pro;
-        DataRow[] row;
         public DTO_Shop dtoShop = new DTO_Shop();
         public UserControlProductTab()
         {
@@ -419,6 +418,11 @@ namespace GUI
             Reload();
             GetCong();
             GetData();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
