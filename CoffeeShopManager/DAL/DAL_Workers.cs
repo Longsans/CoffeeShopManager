@@ -138,6 +138,7 @@ namespace DAL
         public string Insert(DTO_Worker dtoWorker)
         {
             DAL_UserInfo dalUserInfo = new DAL_UserInfo();
+            DAL_Shop dalShop = new DAL_Shop();
             string qry = "INSERT INTO [WORKERS] VALUES " +
                 "(@id, @firstName, @lastName, @gender, " +
                 "@position, @phoneNumber, @email, " +
@@ -248,29 +249,5 @@ namespace DAL
             UpdateInfo(dtoWorkerUpdated);
             dalUserInfo.Update(dtoWorkerUpdated.Account);
         }
-
-        //public int GetNextWorkerId()
-        //{
-        //    string qry = "SELECT max(Id) FROM [WORKERS]";
-        //    int currId = -1;
-        //    SqlCommand cmd = new SqlCommand(qry, this.conn);
-
-        //    var connState = (this.conn.State == ConnectionState.Open);
-        //    if (!connState)
-        //    {
-        //        OpenConnection();
-        //    }
-        //    var reader = cmd.ExecuteReader();
-        //    if (reader.Read())
-        //    {
-        //        currId = reader.GetInt32(0);
-        //    }
-        //    if (!connState)
-        //    {
-        //        CloseConnection();
-        //    }
-
-        //    return currId + 1;
-        //}
     }
 }
