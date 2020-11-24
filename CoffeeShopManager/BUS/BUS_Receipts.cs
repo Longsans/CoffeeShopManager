@@ -71,11 +71,11 @@ namespace BUS
                 throw ex;
             }
         }
-        public DataTable GetReceiptSearchCustomersNameFiltered(string cusName, int shopId)
+        public DataTable GetReceiptSearchCustomersIdFiltered(int customerId)
         {
             try
             {
-                return dalReceipts.GetReceiptSearchCustomersNameFiltered(cusName, shopId);
+                return dalReceipts.GetReceiptSearchCustomersIdFiltered(customerId);
             }
             catch (Exception ex)
             {
@@ -83,6 +83,12 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public DataTable GetReceiptSearchDateOfPaymentFiltered(DateTime dop)
+        {
+            return dalReceipts.GetReceiptSearchDateOfPaymentFiltered(dop);
+        }
+
         public DTO_Table GetTableOfReceipt(int receiptId)
         {
             try

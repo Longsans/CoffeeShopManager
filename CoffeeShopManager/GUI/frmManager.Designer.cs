@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
+            DTO.DTO_Manager dtO_Manager2 = new DTO.DTO_Manager();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlChangeTab = new System.Windows.Forms.Panel();
             this.btnUser = new System.Windows.Forms.Button();
@@ -38,7 +39,7 @@
             this.btnEvent = new System.Windows.Forms.Button();
             this.btnStatistic = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
-            this.btnOrderhistory = new System.Windows.Forms.Button();
+            this.btnReceipts = new System.Windows.Forms.Button();
             this.btnSupplier = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
@@ -51,6 +52,7 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.ucHome = new GUI.UserControlHome();
             this.ucSuppliersTab = new GUI.UserControlSuppliers();
             this.ucStockTab = new GUI.UserControlStock();
             this.ucStatisticsTab = new GUI.UserControlStatistics();
@@ -59,12 +61,11 @@
             this.ucCustomersTab = new GUI.UserControlCustomers();
             this.ucUserTab = new GUI.UserControlUserTab();
             this.ucProductTab = new GUI.UserControlProductTab();
-            this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
+            this.ucReceipts = new GUI.UserControlManagerReceiptsTab();
             this.ucEmployeeTab = new GUI.UserControlEmployeesTab();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.ucHome = new GUI.UserControlHome();
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlShow.SuspendLayout();
@@ -80,7 +81,7 @@
             this.pnlMenu.Controls.Add(this.btnEvent);
             this.pnlMenu.Controls.Add(this.btnStatistic);
             this.pnlMenu.Controls.Add(this.btnCustomer);
-            this.pnlMenu.Controls.Add(this.btnOrderhistory);
+            this.pnlMenu.Controls.Add(this.btnReceipts);
             this.pnlMenu.Controls.Add(this.btnSupplier);
             this.pnlMenu.Controls.Add(this.btnStock);
             this.pnlMenu.Controls.Add(this.btnProduct);
@@ -215,25 +216,25 @@
             this.btnCustomer.UseVisualStyleBackColor = true;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
-            // btnOrderhistory
+            // btnReceipts
             // 
-            this.btnOrderhistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOrderhistory.FlatAppearance.BorderSize = 0;
-            this.btnOrderhistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderhistory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderhistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrderhistory.ImageIndex = 4;
-            this.btnOrderhistory.ImageList = this.imgListMenuButton;
-            this.btnOrderhistory.Location = new System.Drawing.Point(0, 222);
-            this.btnOrderhistory.Name = "btnOrderhistory";
-            this.btnOrderhistory.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnOrderhistory.Size = new System.Drawing.Size(221, 50);
-            this.btnOrderhistory.TabIndex = 0;
-            this.btnOrderhistory.Text = "   Order history";
-            this.btnOrderhistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrderhistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOrderhistory.UseVisualStyleBackColor = true;
-            this.btnOrderhistory.Click += new System.EventHandler(this.btnOrderhistory_Click);
+            this.btnReceipts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReceipts.FlatAppearance.BorderSize = 0;
+            this.btnReceipts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReceipts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReceipts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReceipts.ImageIndex = 4;
+            this.btnReceipts.ImageList = this.imgListMenuButton;
+            this.btnReceipts.Location = new System.Drawing.Point(0, 222);
+            this.btnReceipts.Name = "btnReceipts";
+            this.btnReceipts.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnReceipts.Size = new System.Drawing.Size(221, 50);
+            this.btnReceipts.TabIndex = 0;
+            this.btnReceipts.Text = "   Receipts";
+            this.btnReceipts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReceipts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReceipts.UseVisualStyleBackColor = true;
+            this.btnReceipts.Click += new System.EventHandler(this.btnReceipts_Click);
             // 
             // btnSupplier
             // 
@@ -431,7 +432,7 @@
             this.pnlShow.Controls.Add(this.ucCustomersTab);
             this.pnlShow.Controls.Add(this.ucUserTab);
             this.pnlShow.Controls.Add(this.ucProductTab);
-            this.pnlShow.Controls.Add(this.ucOrderHistorycs1);
+            this.pnlShow.Controls.Add(this.ucReceipts);
             this.pnlShow.Controls.Add(this.ucEmployeeTab);
             this.pnlShow.Controls.Add(this.panel1);
             this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -439,6 +440,18 @@
             this.pnlShow.Name = "pnlShow";
             this.pnlShow.Size = new System.Drawing.Size(884, 597);
             this.pnlShow.TabIndex = 2;
+            // 
+            // ucHome
+            // 
+            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucHome.dtoMan = null;
+            this.ucHome.Location = new System.Drawing.Point(0, 34);
+            this.ucHome.Name = "ucHome";
+            this.ucHome.Size = new System.Drawing.Size(884, 563);
+            this.ucHome.TabIndex = 3;
+            this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
             // 
             // ucSuppliersTab
             // 
@@ -487,7 +500,9 @@
             // 
             // ucCustomersTab
             // 
+            this.ucCustomersTab.BackColor = System.Drawing.Color.White;
             this.ucCustomersTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCustomersTab.frmMan = null;
             this.ucCustomersTab.Location = new System.Drawing.Point(0, 34);
             this.ucCustomersTab.Name = "ucCustomersTab";
             this.ucCustomersTab.Size = new System.Drawing.Size(884, 563);
@@ -507,6 +522,7 @@
             // 
             // ucProductTab
             // 
+            this.ucProductTab.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ucProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucProductTab.Location = new System.Drawing.Point(0, 34);
             this.ucProductTab.Name = "ucProductTab";
@@ -514,18 +530,29 @@
             this.ucProductTab.TabIndex = 1;
             this.ucProductTab.Visible = false;
             // 
-            // ucOrderHistorycs1
+            // ucReceipts
             // 
-            this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucOrderHistorycs1.Location = new System.Drawing.Point(0, 34);
-            this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
-            this.ucOrderHistorycs1.Size = new System.Drawing.Size(884, 563);
-            this.ucOrderHistorycs1.TabIndex = 0;
-            this.ucOrderHistorycs1.Visible = false;
+            this.ucReceipts.BackColor = System.Drawing.Color.White;
+            this.ucReceipts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucReceipts.Location = new System.Drawing.Point(0, 34);
+            this.ucReceipts.Name = "ucReceipts";
+            this.ucReceipts.Size = new System.Drawing.Size(884, 563);
+            this.ucReceipts.TabIndex = 0;
+            this.ucReceipts.Visible = false;
             // 
             // ucEmployeeTab
             // 
             this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            dtO_Manager2.Birthdate = new System.DateTime(((long)(0)));
+            dtO_Manager2.Email = null;
+            dtO_Manager2.Firstname = null;
+            dtO_Manager2.Gender = null;
+            dtO_Manager2.Id = null;
+            dtO_Manager2.Image = null;
+            dtO_Manager2.Lastname = null;
+            dtO_Manager2.Phone = null;
+            dtO_Manager2.Position = null;
+            this.ucEmployeeTab.dtoMan = dtO_Manager2;
             this.ucEmployeeTab.Location = new System.Drawing.Point(0, 34);
             this.ucEmployeeTab.Name = "ucEmployeeTab";
             this.ucEmployeeTab.Size = new System.Drawing.Size(884, 563);
@@ -569,18 +596,7 @@
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome, Admin";
             // 
-            // ucHome
-            // 
-            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ucHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucHome.Location = new System.Drawing.Point(0, 34);
-            this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(884, 563);
-            this.ucHome.TabIndex = 3;
-            this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
-            // 
-            // frmHome
+            // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -590,7 +606,7 @@
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmHome";
+            this.Name = "frmManager";
             this.Text = "frmHome";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHome_FormClosed);
             this.Load += new System.EventHandler(this.frmHome_Load);
@@ -615,7 +631,7 @@
         private System.Windows.Forms.Button btnEvent;
         private System.Windows.Forms.Button btnStatistic;
         private System.Windows.Forms.Button btnCustomer;
-        private System.Windows.Forms.Button btnOrderhistory;
+        private System.Windows.Forms.Button btnReceipts;
         private System.Windows.Forms.Button btnSupplier;
         private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Button btnProduct;
@@ -631,7 +647,7 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel pnlChangeTab;
         private UserControlProductTab ucProductTab;
-        private ucOrderHistorycs ucOrderHistorycs1;
+        private UserControlManagerReceiptsTab ucReceipts;
         private UserControlUserTab ucUserTab;
         private UserControlCustomers ucCustomersTab;
         private UserControlSuppliers ucSuppliersTab;

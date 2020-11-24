@@ -27,6 +27,7 @@ namespace GUI
         public frmManager(frmLogin frm)
         {
             _frmLogin = frm;
+            DoubleBuffered = true;
             InitializeComponent();
         }
 
@@ -59,6 +60,7 @@ namespace GUI
         {
             if (this.WindowState == FormWindowState.Normal)
             {
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                 this.WindowState = FormWindowState.Maximized;
                 btnMaximize.ImageIndex = 3;
             }
@@ -89,12 +91,13 @@ namespace GUI
         }
 
 
-        private void btnOrderhistory_Click(object sender, EventArgs e)
+        private void btnReceipts_Click(object sender, EventArgs e)
         {
             pnlChangeTab.Show();
-            pnlChangeTab.Location = btnOrderhistory.Location;
-            ucOrderHistorycs1.Show();
-            ucOrderHistorycs1.BringToFront();
+            pnlChangeTab.Location = btnReceipts.Location;
+            ucReceipts.dtoShop = dtoMan.Shop;
+            ucReceipts.Show();
+            ucReceipts.BringToFront();
         }
 
         private void frmHome_FormClosed(object sender, FormClosedEventArgs e)
@@ -136,6 +139,7 @@ namespace GUI
             dtoMan = busMan.GetByUsername(_frmLogin.GetUsername());
             dtoMan.Account = busMan.GetUserInfoByUsername(_frmLogin.GetUsername());
             lblWelcome.Text = "Welcome, " + dtoMan.Firstname;
+            ucHome.dtoMan = dtoMan;
         }
         public void Reload()
         {
@@ -172,6 +176,8 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnCustomer.Location;
+            ucCustomersTab.dtoShop = dtoMan.Shop;
+            ucCustomersTab.frmMan = this;
             ucCustomersTab.Show();
             ucCustomersTab.BringToFront();
             Reload();

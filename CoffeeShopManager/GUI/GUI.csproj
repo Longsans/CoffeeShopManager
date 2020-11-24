@@ -75,6 +75,12 @@
     <Compile Include="frmChangePassword.Designer.cs">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditCustomer.Designer.cs">
+      <DependentUpon>frmEditCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,12 +131,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ucOrderHistorycs.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucOrderHistorycs.Designer.cs">
-      <DependentUpon>ucOrderHistorycs.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlCustomers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,6 +160,12 @@
     </Compile>
     <Compile Include="UserControlManagerAndShopInfo.Designer.cs">
       <DependentUpon>UserControlManagerAndShopInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlManagerReceiptsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlManagerReceiptsTab.Designer.cs">
+      <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlNotifications.cs">
       <SubType>UserControl</SubType>
@@ -221,6 +227,9 @@
     <EmbeddedResource Include="frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditCustomer.resx">
+      <DependentUpon>frmEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditEmployees.resx">
       <DependentUpon>frmEditEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,8 +257,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucOrderHistorycs.resx">
-      <DependentUpon>ucOrderHistorycs.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlCustomers.resx">
+      <DependentUpon>UserControlCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlEmployeesTab.resx">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
@@ -259,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlManagerAndShopInfo.resx">
       <DependentUpon>UserControlManagerAndShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerReceiptsTab.resx">
+      <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlProductTab.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
