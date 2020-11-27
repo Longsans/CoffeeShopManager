@@ -96,6 +96,7 @@ namespace GUI
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnReceipts.Location;
             ucReceipts.dtoShop = dtoMan.Shop;
+            ucReceipts.ucRecDetails = ucReceiptDetails;
             ucReceipts.Show();
             ucReceipts.BringToFront();
         }

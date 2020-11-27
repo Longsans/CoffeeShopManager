@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,7 +41,11 @@
             this.cboSearch = new System.Windows.Forms.ComboBox();
             this.lblReceipts = new System.Windows.Forms.Label();
             this.datSearch = new System.Windows.Forms.DateTimePicker();
+            this.ctxRightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdReceipts)).BeginInit();
+            this.ctxRightClick.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -102,12 +107,15 @@
             this.grdReceipts.EnableHeadersVisualStyles = false;
             this.grdReceipts.Location = new System.Drawing.Point(72, 147);
             this.grdReceipts.Name = "grdReceipts";
+            this.grdReceipts.ReadOnly = true;
             this.grdReceipts.RowHeadersVisible = false;
             this.grdReceipts.RowHeadersWidth = 51;
             this.grdReceipts.RowTemplate.Height = 24;
             this.grdReceipts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdReceipts.Size = new System.Drawing.Size(741, 273);
             this.grdReceipts.TabIndex = 30;
+            this.grdReceipts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdReceipts_CellDoubleClick);
+            this.grdReceipts.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdReceipts_CellMouseDown);
             this.grdReceipts.SelectionChanged += new System.EventHandler(this.grdReceipts_SelectionChanged);
             // 
             // btnSearch
@@ -169,6 +177,29 @@
             this.datSearch.Size = new System.Drawing.Size(172, 22);
             this.datSearch.TabIndex = 33;
             // 
+            // ctxRightClick
+            // 
+            this.ctxRightClick.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ctxRightClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.ctxRightClick.Name = "ctxRightClick";
+            this.ctxRightClick.Size = new System.Drawing.Size(123, 52);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // UserControlManagerReceiptsTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -186,6 +217,7 @@
             this.Size = new System.Drawing.Size(885, 541);
             this.Load += new System.EventHandler(this.UserControlManagerReceiptsTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdReceipts)).EndInit();
+            this.ctxRightClick.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,5 +233,8 @@
         private System.Windows.Forms.ComboBox cboSearch;
         private System.Windows.Forms.Label lblReceipts;
         private System.Windows.Forms.DateTimePicker datSearch;
+        private System.Windows.Forms.ContextMenuStrip ctxRightClick;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -29,8 +29,8 @@ namespace DAL
         public DTO_Customer GetCustomerById(int id)
         {
             DTO_Customer cus = null;
-            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
-                "EmailAddress AS Email, Birthdate " +
+            string qry = "SELECT Id AS ID, FirstName, LastName, " +
+                "EmailAddress, Birthdate " +
                 "FROM CUSTOMERS " +
                 "WHERE Id = @id";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -64,8 +64,8 @@ namespace DAL
         public DTO_Customer GetCustomerByEmail(string email, int shopId)
         {
             DTO_Customer cus = null;
-            string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
-                "EmailAddress AS Email, Birthdate " +
+            string qry = "SELECT Id AS ID, FirstName, LastName, " +
+                "EmailAddress, Birthdate " +
                 "FROM CUSTOMERS " +
                 "WHERE EmailAddress = @email AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);

@@ -152,8 +152,9 @@ namespace DAL
         {
             DataTable dtRecDetails = new DataTable();
             string qry = "SELECT ProductId AS ID, Name, Quantity, TotalPrice AS [Total Price] " +
-                "FROM RECEIPTS_DETAILS INNER JOIN PRODUCTS " +
-                "ON RECEIPTS_DETAILS.ProductId = PRODUCTS.Id " +
+                "FROM RECEIPT_DETAILS INNER JOIN PRODUCTS " +
+                "ON RECEIPT_DETAILS.ProductId = PRODUCTS.Id " +
+                "AND RECEIPT_DETAILS.ShopId = PRODUCTS.ShopId " +
                 "WHERE ReceiptId = @id";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", receiptId);

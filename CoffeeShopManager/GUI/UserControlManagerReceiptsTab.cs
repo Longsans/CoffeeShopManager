@@ -15,6 +15,8 @@ namespace GUI
     public partial class UserControlManagerReceiptsTab : UserControl
     {
         private BUS_Receipts busRec = new BUS_Receipts();
+        public EventHandler ReceiptDetailsView;
+        public UserControlReceiptsDetail ucRecDetails { get; set; }
         public DTO_Shop dtoShop = new DTO_Shop();
 
         public UserControlManagerReceiptsTab()
@@ -39,7 +41,10 @@ namespace GUI
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            
+            ucRecDetails.rec = busRec.GetReceiptById((int)grdReceipts.SelectedRows[0].Cells["ID"].Value);
+            OnReceiptDetailsView();
+            ucRecDetails.Show();
+            ucRecDetails.BringToFront();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -131,6 +136,33 @@ namespace GUI
             {
                 txtSearch.Visible = true;
                 datSearch.Visible = false;
+            }
+        }
+
+        private void grdReceipts_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    ctxRightClick.Show(Cursor.Position);
+                }
+            }
+        }
+
+        protected virtual void OnReceiptDetailsView()
+        {
+            ReceiptDetailsView?.Invoke(this, null);
+        }
+
+        private void grdReceipts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                ucRecDetails.rec = busRec.GetReceiptById((int)grdReceipts.SelectedRows[0].Cells["ID"].Value);
+                OnReceiptDetailsView();
+                ucRecDetails.Show();
+                ucRecDetails.BringToFront();
             }
         }
     }
