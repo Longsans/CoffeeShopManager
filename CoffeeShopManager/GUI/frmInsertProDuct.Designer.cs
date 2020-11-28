@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInsertProDuct));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.rtxDetail = new System.Windows.Forms.RichTextBox();
@@ -44,8 +46,12 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,6 +102,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(121, 22);
             this.txtPrice.TabIndex = 12;
+            this.txtPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrice_Validating);
             // 
             // cbxType
             // 
@@ -108,6 +115,7 @@
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(121, 24);
             this.cbxType.TabIndex = 11;
+            this.cbxType.Validating += new System.ComponentModel.CancelEventHandler(this.cbxType_Validating);
             // 
             // txtName1
             // 
@@ -115,6 +123,7 @@
             this.txtName1.Name = "txtName1";
             this.txtName1.Size = new System.Drawing.Size(130, 22);
             this.txtName1.TabIndex = 10;
+            this.txtName1.Validating += new System.ComponentModel.CancelEventHandler(this.txtName1_Validating);
             // 
             // txtID
             // 
@@ -122,6 +131,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(130, 22);
             this.txtID.TabIndex = 9;
+            this.txtID.Validating += new System.ComponentModel.CancelEventHandler(this.txtID_Validating);
             // 
             // btnCancel
             // 
@@ -208,6 +218,17 @@
             this.lblID.TabIndex = 0;
             this.lblID.Text = "ID";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.BlinkRate = 300;
+            this.errorProvider2.ContainerControl = this;
+            this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
+            // 
             // frmInsertProDuct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -221,6 +242,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,5 +266,7 @@
         private System.Windows.Forms.Label lblDetails;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

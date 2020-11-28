@@ -263,6 +263,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_delete_bin_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_delete_bin_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap it_s_always_coffee_time_quote_slogan_typography_7201_31 {
             get {
                 object obj = ResourceManager.GetObject("it-s-always-coffee-time-quote-slogan-typography_7201-31", resourceCulture);

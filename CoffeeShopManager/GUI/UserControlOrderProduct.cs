@@ -1,0 +1,352 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using BUS;
+using DTO;
+namespace GUI
+{
+    public partial class UserControlOrderProduct : UserControl
+    {
+        DTO_ReceiptDetails dtoDetail = new DTO_ReceiptDetails();
+        List<string> strSave = new List<string>();
+        List<DTO_Table> lsTable = new List<DTO_Table>();
+        BUS_Product busPro = new BUS_Product();
+        BUS_Tables busTable = new BUS_Tables();
+        BUS_Receipts busReceipt = new BUS_Receipts();
+        BUS_Customers busCus = new BUS_Customers();
+        DTO_Receipt dtoReceipt = new DTO_Receipt();
+        DTO_Customer dtoCus = new DTO_Customer();
+        DTO_Product dto_pro;
+        PictureBox pic;
+        Label pricelb;
+        Label namelb;
+        Button bt;
+        DataRow[] RowSave;
+        DataGridViewRow r1;
+        int abc = 0;
+        DataTable a, b, c, T;
+        public DTO_Shop dtoShop = new DTO_Shop();
+        public UserControlOrderProduct()
+        {
+            InitializeComponent();
+        }
+        public void Reload()
+        {
+
+            flowLayoutPanel1.Controls.Clear();
+            //  GetData(busPro.GetAllProducts(dtoShop.ID));
+            //  dataGridView1.Columns["Image"].Visible = false;
+        }
+        public int cur = 0;
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
+        private void GetData(DataTable table)
+        {
+
+            dto_pro = new DTO_Product();
+            foreach (DataRow row in table.Rows)
+            {
+                pic = new PictureBox();
+                pricelb = new Label();
+                namelb = new Label();
+                Label prlabel = new Label();
+                /* pic.BackgroundImageLayout = ImageLayout.Stretch;
+                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                 dto_pro = busPro.GetById(row["Id"].ToString(), 1);
+                 pic.Width = 146;
+                 pic.Height = 150;
+                 pic.Image = ImageHelper.ByteArrayToImage(dto_pro.Image);
+                 pic.Tag = row["Id"];*/
+                dto_pro = busPro.GetById(row["Id"].ToString(), 1);
+
+                pricelb.Text = row["Price"].ToString() + "$";
+                pricelb.BackColor = Color.FromArgb(255, 121, 121);
+                pricelb.Width = 20;
+                pricelb.TextAlign = ContentAlignment.MiddleRight;
+                pricelb.Dock = DockStyle.Bottom;
+                pic.BorderStyle = BorderStyle.FixedSingle;
+
+
+                namelb.Text = row["Name"].ToString();
+                namelb.BackColor = Color.FromArgb(46, 134, 222);
+                namelb.TextAlign = ContentAlignment.MiddleLeft;
+                namelb.Dock = DockStyle.Top;
+
+                namelb.Tag = row["Name"].ToString();
+
+
+
+                // pic.DoubleClick += new EventHandler(OnClick);
+                bt = new Button();
+                bt.Tag = row["Name"].ToString() + "/" + row["Price"].ToString() + ""; ;
+                bt.Name = row["Id"].ToString();
+                bt.BackgroundImage = ImageHelper.ByteArrayToImage(dto_pro.Image);
+                bt.BackgroundImageLayout = ImageLayout.Stretch;
+                bt.Width = 146;
+                bt.Height = 150;
+                bt.Controls.Add(namelb);
+                bt.Controls.Add(pricelb);
+                flowLayoutPanel1.Controls.Add(bt);
+                bt.Click += (s, e) =>
+                {
+                    // if(cur!=1)
+                    OnClick(s, e);
+                };
+
+            }
+        }
+        public void OnClick(object sender, EventArgs e)
+        {
+            // ((Button)sender).Enabled = false;
+            string s = ((Button)sender).Tag.ToString();
+            string[] arrListStr = s.Split('/');
+            Image image = ((Button)sender).Image;
+
+
+            foreach (var a in strSave)
+            {
+                if (arrListStr[0] == a)
+                {
+                    // bt.Image = DenTrang(bt.Image);
+                    ((Button)sender).Text = "X";
+                    MessageBox.Show("You have clicked before");
+
+                    return;
+                }
+            }
+
+
+            r1 = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+            //  MessageBox.Show(arrListStr[0] + "-0-" + arrListStr[1]);
+            r1.Cells[0].Value = arrListStr[0].ToString();
+            r1.Cells[2].Value = "1";
+            int vitri = 0;
+            vitri = arrListStr[1].IndexOf(".");
+            r1.Cells[4].Value = arrListStr[1].Substring(0, vitri).ToString();
+            r1.Cells[6].Value = ((Button)sender).Name.ToString();
+            dataGridView1.Rows.Add(r1);
+            // ((Button)sender).Text = "done";
+            strSave.Add(arrListStr[0]);
+            ((Button)sender).Text = "X";
+
+        }
+        
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserControlOrderProduct_Load(object sender, EventArgs e)
+        {
+            Reload();
+            T = busPro.GetAllProductsWithImages(1);
+            GetData(T);
+            a = busPro.GetAllFood(1);
+            b = busPro.GetAllDrinks(1);
+            c = busPro.GetAllOtherProducts(1);
+            lsTable = busTable.GetAvailableTables(1);
+            for (int i = 0; i < lsTable.Count; i++)
+            {
+                comboBox2.Items.Add(lsTable[i].Id.ToString());
+            }
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Timer t1 = new Timer();
+            t1.Interval = 1000;
+            t1.Enabled = true;
+            t1.Tick += Timer_Click;
+            txtID.Enabled = false;
+            txtFirstName.Enabled = false;
+            txtLastName.Enabled = false;
+        }
+        public int bien = 0;
+        public double giatri = 0;
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            r1 = new DataGridViewRow();
+            if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDown")
+            {
+                r1 = dataGridView1.Rows[e.RowIndex];
+                if (r1.Cells[2].Value.ToString() != "0")
+                {
+                    r1.Cells[2].Value = (Int32.Parse(r1.Cells[2].Value.ToString()) - 1);
+                    bien = (Int32.Parse(r1.Cells[2].Value.ToString()));
+
+                    giatri = float.Parse(r1.Cells[4].Value.ToString()) / (bien + 1);
+                    r1.Cells[4].Value = giatri * bien;
+                }
+                if (r1.Cells[2].Value.ToString() == "0")
+                {
+                    for (int i = 0; i < strSave.Count; i++)
+                    {
+                        if (strSave[i] == r1.Cells[0].Value.ToString())
+                        {
+                            strSave.RemoveAt(i);
+                        }
+                    }
+                    dataGridView1.Rows.RemoveAt(r1.Index);
+                }
+
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmUp")
+            {
+                r1 = dataGridView1.Rows[e.RowIndex];
+                r1.Cells[2].Value = (Int32.Parse(r1.Cells[2].Value.ToString()) + 1);
+                bien = (Int32.Parse(r1.Cells[2].Value.ToString()));
+                //  MessageBox.Show(""+ Int32.Parse(r1.Cells[4].Value.ToString()));
+                giatri = float.Parse(r1.Cells[4].Value.ToString()) / (bien - 1);
+                r1.Cells[4].Value = giatri * bien;
+                //  MessageBox.Show(row.Cells[2].Value.ToString());
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDelete")
+            {
+                for (int i = 0; i < strSave.Count; i++)
+                {
+                    if (strSave[i] == dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString())
+                    {
+                        strSave.RemoveAt(dataGridView1.Rows[e.RowIndex].Index);
+                        break;
+                    }
+                }
+                dataGridView1.Rows.RemoveAt(dataGridView1.Rows[e.RowIndex].Index);
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            int resultIndex = -1;
+            resultIndex = comboBox1.FindStringExact(comboBox1.Text);
+            if (resultIndex == 1)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                GetData(a);
+            }
+            else if (resultIndex == 2)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                GetData(b);
+            }
+            else if (resultIndex == 3)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                GetData(c);
+            }
+            else if (resultIndex == 0)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                GetData(T);
+            }
+            lblSelect.Visible = false;
+            Refresh();
+        }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            //Image SomeImage = Image.FromFile("icon8_delete_bin_16.png");
+            //I supposed your button column is at index 0
+            if (e.ColumnIndex == 5)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.icons8_delete_bin_16.Width;
+                var h = Properties.Resources.icons8_delete_bin_16.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.icons8_delete_bin_16, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void UserControlOrderProduct_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "")
+            {
+                lblSelect.Visible = true;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                flowLayoutPanel1.Controls.Clear();
+                GetData(busPro.GetProductsSearchNameFiltered(txtSearchName.Text, 1));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public double sum = 0;
+        public void Timer_Click(object sender, EventArgs e)
+        {
+            sum = 0;
+
+            if (dataGridView1.Rows.Count > 1)
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    sum += Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                    // if (i < dataGridView1.Rows.Count - 1)
+                    // itemcode += ", ";
+                }
+            lblTotalSum.Text = sum.ToString();
+            if (txtDiscount.Text != "" && IsNumber(txtDiscount.Text))
+            {
+                sum = sum - sum * (double.Parse(txtDiscount.Text)) / 100;
+                lblGrandTotal.Text = sum.ToString();
+            }
+            lblGrandTotal.Text = sum.ToString();
+
+
+        }
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

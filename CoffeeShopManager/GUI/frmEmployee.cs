@@ -91,5 +91,10 @@ namespace GUI
                 pnlMenu.Width = 221;
             }
         }
+
+        private void pnlMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

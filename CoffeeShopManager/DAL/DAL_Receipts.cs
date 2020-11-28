@@ -183,7 +183,7 @@ namespace DAL
                 OpenConnection();
             }
             cmd.ExecuteNonQuery();
-            InsertReceiptDetails(rec);
+           InsertReceiptDetails(rec);
             if (!connState)
             {
                 CloseConnection();
