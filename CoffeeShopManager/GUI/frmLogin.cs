@@ -15,6 +15,8 @@ namespace GUI
     public partial class frmLogin : Form
     {
         BUS_UserInfo busUser = new BUS_UserInfo();
+        BUS_Employee busEmp = new BUS_Employee();
+        BUS_Manager busMan = new BUS_Manager();
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
         public frmLogin()
@@ -71,11 +73,22 @@ namespace GUI
                 DTO_User dtoUser = new DTO_User() { Username = txtUsername.Text, PassWord = txtPassword.Text };
                 if (busUser.CheckLogin(dtoUser))
                 {
-                    frmManager frmManager = new frmManager(this);
-                    this.Hide();
-                    frmManager.Show();
-                    txtPassword.Text = "";
-                    txtUsername.Text = "";
+                    if (busMan.GetByUsername(txtUsername.Text).Position == "Manager")
+                    {
+                        frmManager frmManager = new frmManager(this);
+                        this.Hide();
+                        frmManager.Show();
+                        txtPassword.Text = "";
+                        txtUsername.Text = "";
+                    }
+                    else
+                    {
+                        frmEmployee frmEmployee = new frmEmployee(this);
+                        this.Hide();
+                        frmEmployee.Show();
+                        txtUsername.Text = "";
+                        txtPassword.Text = "";
+                    }
                 }
                 else
                 {

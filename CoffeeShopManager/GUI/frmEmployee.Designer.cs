@@ -48,7 +48,9 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pnlShow = new System.Windows.Forms.Panel();
-            this.userControlUserTab1 = new GUI.UserControlUserTab();
+            this.ucManagerInfo = new GUI.UserControlManagerAndShopInfo();
+            this.ucTable = new GUI.UserControlTable();
+            this.ucUserInfo = new GUI.UserControlUserTab();
             this.pnlTitleBar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -208,6 +210,7 @@
             this.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUser.UseVisualStyleBackColor = true;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // btnManager
             // 
@@ -227,6 +230,7 @@
             this.btnManager.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnManager.UseVisualStyleBackColor = true;
+            this.btnManager.Click += new System.EventHandler(this.btnManager_Click);
             // 
             // btnTables
             // 
@@ -246,6 +250,7 @@
             this.btnTables.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTables.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTables.UseVisualStyleBackColor = true;
+            this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
             // 
             // btnReceipts
             // 
@@ -305,22 +310,41 @@
             // 
             // pnlShow
             // 
-            this.pnlShow.Controls.Add(this.userControlUserTab1);
+            this.pnlShow.Controls.Add(this.ucManagerInfo);
+            this.pnlShow.Controls.Add(this.ucTable);
+            this.pnlShow.Controls.Add(this.ucUserInfo);
             this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlShow.Location = new System.Drawing.Point(267, 71);
             this.pnlShow.Name = "pnlShow";
             this.pnlShow.Size = new System.Drawing.Size(973, 580);
             this.pnlShow.TabIndex = 6;
             // 
-            // userControlUserTab1
+            // ucManagerInfo
             // 
-            this.userControlUserTab1.BackColor = System.Drawing.SystemColors.Control;
-            this.userControlUserTab1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.userControlUserTab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlUserTab1.Location = new System.Drawing.Point(0, 0);
-            this.userControlUserTab1.Name = "userControlUserTab1";
-            this.userControlUserTab1.Size = new System.Drawing.Size(973, 580);
-            this.userControlUserTab1.TabIndex = 0;
+            this.ucManagerInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucManagerInfo.Location = new System.Drawing.Point(0, 0);
+            this.ucManagerInfo.Name = "ucManagerInfo";
+            this.ucManagerInfo.Size = new System.Drawing.Size(973, 580);
+            this.ucManagerInfo.TabIndex = 2;
+            // 
+            // ucTable
+            // 
+            this.ucTable.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTable.Location = new System.Drawing.Point(0, 0);
+            this.ucTable.Name = "ucTable";
+            this.ucTable.Size = new System.Drawing.Size(973, 580);
+            this.ucTable.TabIndex = 1;
+            // 
+            // ucUserInfo
+            // 
+            this.ucUserInfo.BackColor = System.Drawing.SystemColors.Control;
+            this.ucUserInfo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ucUserInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucUserInfo.Location = new System.Drawing.Point(0, 0);
+            this.ucUserInfo.Name = "ucUserInfo";
+            this.ucUserInfo.Size = new System.Drawing.Size(973, 580);
+            this.ucUserInfo.TabIndex = 0;
             // 
             // frmEmployee
             // 
@@ -334,6 +358,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEmployee";
             this.Text = "frmEmployee";
+            this.Load += new System.EventHandler(this.frmEmployee_Load);
             this.pnlTitleBar.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -363,6 +388,8 @@
         private System.Windows.Forms.ImageList imgListWindowButton;
         private System.Windows.Forms.ImageList imgListMenuButton;
         private System.Windows.Forms.Panel pnlShow;
-        private UserControlUserTab userControlUserTab1;
+        private UserControlUserTab ucUserInfo;
+        private UserControlTable ucTable;
+        private UserControlManagerAndShopInfo ucManagerInfo;
     }
 }

@@ -44,7 +44,6 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtBirthDate = new System.Windows.Forms.TextBox();
-            this.lblManInfo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,6 +55,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lblManInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picManagerInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,16 +205,6 @@
             this.txtBirthDate.Size = new System.Drawing.Size(125, 22);
             this.txtBirthDate.TabIndex = 37;
             // 
-            // lblManInfo
-            // 
-            this.lblManInfo.AutoSize = true;
-            this.lblManInfo.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManInfo.Location = new System.Drawing.Point(37, 131);
-            this.lblManInfo.Name = "lblManInfo";
-            this.lblManInfo.Size = new System.Drawing.Size(181, 31);
-            this.lblManInfo.TabIndex = 38;
-            this.lblManInfo.Text = "Manager Info";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
@@ -345,6 +335,16 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // lblManInfo
+            // 
+            this.lblManInfo.AutoSize = true;
+            this.lblManInfo.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManInfo.Location = new System.Drawing.Point(37, 131);
+            this.lblManInfo.Name = "lblManInfo";
+            this.lblManInfo.Size = new System.Drawing.Size(181, 31);
+            this.lblManInfo.TabIndex = 38;
+            this.lblManInfo.Text = "Manager Info";
+            // 
             // UserControlUserTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -406,7 +406,6 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtBirthDate;
-        private System.Windows.Forms.Label lblManInfo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Panel panel2;
@@ -417,5 +416,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lblManInfo;
     }
 }
