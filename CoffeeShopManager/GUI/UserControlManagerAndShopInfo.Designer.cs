@@ -43,17 +43,17 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txtManID = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.txtManPhoneNumer = new System.Windows.Forms.TextBox();
-            this.txtBirthDate = new System.Windows.Forms.TextBox();
-            this.txtShopName = new System.Windows.Forms.TextBox();
-            this.txtShopAddress = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtGender = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtPosition = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtBirthDate = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtManPhoneNumer = new System.Windows.Forms.TextBox();
+            this.txtManID = new System.Windows.Forms.TextBox();
             this.txtShopPhone = new System.Windows.Forms.TextBox();
+            this.txtShopAddress = new System.Windows.Forms.TextBox();
+            this.txtShopName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -243,59 +243,23 @@
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 4;
             // 
-            // txtManID
+            // txtEmail
             // 
-            this.txtManID.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtManID.Location = new System.Drawing.Point(395, 75);
-            this.txtManID.Name = "txtManID";
-            this.txtManID.ReadOnly = true;
-            this.txtManID.Size = new System.Drawing.Size(122, 22);
-            this.txtManID.TabIndex = 4;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtEmail.Location = new System.Drawing.Point(677, 107);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(122, 22);
+            this.txtEmail.TabIndex = 8;
             // 
-            // txtLastName
+            // txtPosition
             // 
-            this.txtLastName.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtLastName.Location = new System.Drawing.Point(395, 139);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.ReadOnly = true;
-            this.txtLastName.Size = new System.Drawing.Size(122, 22);
-            this.txtLastName.TabIndex = 4;
-            // 
-            // txtManPhoneNumer
-            // 
-            this.txtManPhoneNumer.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtManPhoneNumer.Location = new System.Drawing.Point(677, 75);
-            this.txtManPhoneNumer.Name = "txtManPhoneNumer";
-            this.txtManPhoneNumer.ReadOnly = true;
-            this.txtManPhoneNumer.Size = new System.Drawing.Size(122, 22);
-            this.txtManPhoneNumer.TabIndex = 4;
-            // 
-            // txtBirthDate
-            // 
-            this.txtBirthDate.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtBirthDate.Location = new System.Drawing.Point(677, 139);
-            this.txtBirthDate.Name = "txtBirthDate";
-            this.txtBirthDate.ReadOnly = true;
-            this.txtBirthDate.Size = new System.Drawing.Size(122, 22);
-            this.txtBirthDate.TabIndex = 4;
-            // 
-            // txtShopName
-            // 
-            this.txtShopName.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtShopName.Location = new System.Drawing.Point(409, 92);
-            this.txtShopName.Name = "txtShopName";
-            this.txtShopName.ReadOnly = true;
-            this.txtShopName.Size = new System.Drawing.Size(122, 22);
-            this.txtShopName.TabIndex = 4;
-            // 
-            // txtShopAddress
-            // 
-            this.txtShopAddress.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtShopAddress.Location = new System.Drawing.Point(409, 173);
-            this.txtShopAddress.Name = "txtShopAddress";
-            this.txtShopAddress.ReadOnly = true;
-            this.txtShopAddress.Size = new System.Drawing.Size(122, 22);
-            this.txtShopAddress.TabIndex = 4;
+            this.txtPosition.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtPosition.Location = new System.Drawing.Point(395, 205);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.ReadOnly = true;
+            this.txtPosition.Size = new System.Drawing.Size(122, 22);
+            this.txtPosition.TabIndex = 7;
             // 
             // txtGender
             // 
@@ -315,23 +279,41 @@
             this.txtFirstName.Size = new System.Drawing.Size(122, 22);
             this.txtFirstName.TabIndex = 6;
             // 
-            // txtPosition
+            // txtBirthDate
             // 
-            this.txtPosition.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtPosition.Location = new System.Drawing.Point(395, 205);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.ReadOnly = true;
-            this.txtPosition.Size = new System.Drawing.Size(122, 22);
-            this.txtPosition.TabIndex = 7;
+            this.txtBirthDate.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtBirthDate.Location = new System.Drawing.Point(677, 139);
+            this.txtBirthDate.Name = "txtBirthDate";
+            this.txtBirthDate.ReadOnly = true;
+            this.txtBirthDate.Size = new System.Drawing.Size(122, 22);
+            this.txtBirthDate.TabIndex = 4;
             // 
-            // txtEmail
+            // txtLastName
             // 
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtEmail.Location = new System.Drawing.Point(677, 107);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(122, 22);
-            this.txtEmail.TabIndex = 8;
+            this.txtLastName.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtLastName.Location = new System.Drawing.Point(395, 139);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ReadOnly = true;
+            this.txtLastName.Size = new System.Drawing.Size(122, 22);
+            this.txtLastName.TabIndex = 4;
+            // 
+            // txtManPhoneNumer
+            // 
+            this.txtManPhoneNumer.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtManPhoneNumer.Location = new System.Drawing.Point(677, 75);
+            this.txtManPhoneNumer.Name = "txtManPhoneNumer";
+            this.txtManPhoneNumer.ReadOnly = true;
+            this.txtManPhoneNumer.Size = new System.Drawing.Size(122, 22);
+            this.txtManPhoneNumer.TabIndex = 4;
+            // 
+            // txtManID
+            // 
+            this.txtManID.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtManID.Location = new System.Drawing.Point(395, 75);
+            this.txtManID.Name = "txtManID";
+            this.txtManID.ReadOnly = true;
+            this.txtManID.Size = new System.Drawing.Size(122, 22);
+            this.txtManID.TabIndex = 4;
             // 
             // txtShopPhone
             // 
@@ -341,6 +323,24 @@
             this.txtShopPhone.ReadOnly = true;
             this.txtShopPhone.Size = new System.Drawing.Size(122, 22);
             this.txtShopPhone.TabIndex = 6;
+            // 
+            // txtShopAddress
+            // 
+            this.txtShopAddress.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtShopAddress.Location = new System.Drawing.Point(409, 173);
+            this.txtShopAddress.Name = "txtShopAddress";
+            this.txtShopAddress.ReadOnly = true;
+            this.txtShopAddress.Size = new System.Drawing.Size(122, 22);
+            this.txtShopAddress.TabIndex = 4;
+            // 
+            // txtShopName
+            // 
+            this.txtShopName.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtShopName.Location = new System.Drawing.Point(409, 92);
+            this.txtShopName.Name = "txtShopName";
+            this.txtShopName.ReadOnly = true;
+            this.txtShopName.Size = new System.Drawing.Size(122, 22);
+            this.txtShopName.TabIndex = 4;
             // 
             // UserControlManagerAndShopInfo
             // 

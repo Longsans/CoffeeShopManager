@@ -144,25 +144,31 @@
             // 
             // txtLastName
             // 
+            this.txtLastName.Cursor = System.Windows.Forms.Cursors.No;
             this.txtLastName.Enabled = false;
             this.txtLastName.Location = new System.Drawing.Point(138, 204);
             this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(126, 22);
             this.txtLastName.TabIndex = 13;
             // 
             // txtFirstName
             // 
+            this.txtFirstName.Cursor = System.Windows.Forms.Cursors.No;
             this.txtFirstName.Enabled = false;
             this.txtFirstName.Location = new System.Drawing.Point(138, 159);
             this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(126, 22);
             this.txtFirstName.TabIndex = 14;
             // 
             // txtId
             // 
+            this.txtId.Cursor = System.Windows.Forms.Cursors.No;
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(138, 113);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(126, 22);
             this.txtId.TabIndex = 15;
             // 

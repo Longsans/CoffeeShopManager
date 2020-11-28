@@ -34,12 +34,20 @@ namespace GUI
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            
             if (txtID.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
                 cbboxPosition.Text == "" || txtPhone.Text == "" || txtEmail.Text == "" || txtDayBD.Text == "" ||
                 txtMonthBD.Text == "" || txtYearBD.Text == "" || txtSalary.Text == "" || txtUsername.Text == "" || txtPassword.Text == "" ||
                 txtDayJoin.Text == "" || txtMonthJoin.Text == "" || txtYearJoin.Text == "" || (radFemale.Checked == false &&
                 radMale.Checked == false))
+            {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cbboxPosition.Text == "Manager")
+            {
+                MessageBox.Show("Employee's position cannot be \"Manager\".", "Invalid employee position", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                errorProvider1.SetError(cbboxPosition, "Position can't be \"Manager\"");
+            }
             else
             {
                 DateTime bdate = new DateTime();
@@ -90,6 +98,7 @@ namespace GUI
                         dtoEmp.Image = ImageHelper.ImageToByteArray(this.picboxEmpImg.Image);
                         busEmp.AddEmployee(dtoEmp);
                         Reload();
+                        errorProvider1.SetError(cbboxPosition, "");
                         MessageBox.Show("New employee added.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

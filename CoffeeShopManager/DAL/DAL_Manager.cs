@@ -38,7 +38,7 @@ namespace DAL
             {
                 OpenConnection();
             }
-            DTO_Worker dtoWrk = dalWorker.GetInfoById(id, shopId);
+            DTO_Worker dtoWrk = dalWorker.GetById(id, shopId);
             if (!connState)
             {
                 CloseConnection();
@@ -53,7 +53,7 @@ namespace DAL
         {
             DTO_Manager man;
             DAL_Workers dalWorkers = new DAL_Workers();
-            DTO_Worker dtoWorker = dalWorkers.GetInfoByUsername(username);
+            DTO_Worker dtoWorker = dalWorkers.GetByUsername(username);
             try
             {
                 man = new DTO_Manager(dtoWorker);

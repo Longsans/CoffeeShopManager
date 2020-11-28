@@ -263,10 +263,11 @@ namespace DAL
             foreach (var item in rec.Items)
             {
                 string qry = "INSERT INTO RECEIPT_DETAILS " +
-                "VALUES (@recId, @proId, @qty, @totalPrice)";
+                "VALUES (@recId, @proId, @shopId, @qty, @totalPrice)";
                 SqlCommand cmd = new SqlCommand(qry, this.conn);
                 cmd.Parameters.AddWithValue("@recId", rec.Id);
                 cmd.Parameters.AddWithValue("@proId", item.Product.Id);
+                cmd.Parameters.AddWithValue("@shopId", rec.Shop.ID);
                 cmd.Parameters.AddWithValue("@qty", item.Quantity);
                 cmd.Parameters.AddWithValue("@totalPrice", item.TotalPrice);
 
