@@ -49,7 +49,7 @@ namespace GUI
                 if (txtUsername.Text == "" || txtPass.Text == "" || txtConfirm.Text == "" || txtDayBD.Text == "" ||
                     txtMonthBD.Text == "" || txtYearBD.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" ||
                     txtPhone.Text == "" || txtEmail.Text == "" || (radFemale.Checked == false && radMale.Checked == false) ||
-                    (lblShopName.Visible && txtShopName.ForeColor == Color.DimGray) || txtShopId.ForeColor == Color.DimGray ||
+                    (lblShopName.Visible && txtShopName.ForeColor == Color.DimGray) || (!lblShopName.Visible && txtShopId.ForeColor == Color.DimGray) ||
                     txtAuthCode.ForeColor == Color.DimGray)
                 {
                     MessageBox.Show("Please fill all info fields.", "More information is required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
