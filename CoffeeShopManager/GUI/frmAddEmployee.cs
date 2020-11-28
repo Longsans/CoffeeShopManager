@@ -60,6 +60,7 @@ namespace GUI
                 dtoEmp.Salary = decimal.Parse(txtSalary.Text);
                 dtoEmp.Manager = frmManager.dtoMan;
                 dtoEmp.Shop.ID = frmManager.dtoMan.Shop.ID;
+                dtoEmp.Account = busUser.EncodePass(dtoEmp);
 
                 if (!busUser.CheckUsername(dtoEmp.Account.Username))
                 {

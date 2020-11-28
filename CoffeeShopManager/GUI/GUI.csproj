@@ -131,6 +131,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Table.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table.Designer.cs">
+      <DependentUpon>Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlCustomers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -257,6 +263,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Table.resx">
+      <DependentUpon>Table.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlCustomers.resx">
       <DependentUpon>UserControlCustomers.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +381,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\left-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dinner-table.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,15 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BUS;
 
 namespace GUI
 {
     public partial class frmEmployee : Form
     {
+        frmLogin _frmLogin = new frmLogin();
+        public DTO_Employee dtoEmp = new DTO_Employee();
+        public DTO_Shop dtoShop = new DTO_Shop();
+        BUS_Employee busEmp = new BUS_Employee();
+        BUS_Manager busMan = new BUS_Manager();
+        BUS_Shop busShop = new BUS_Shop();
         private bool dragging = false;
         Point startPoint = new Point(0, 0);
         public frmEmployee()
         {
+            InitializeComponent();
+        }
+        public frmEmployee(frmLogin fLogin)
+        {
+            _frmLogin = fLogin;
             InitializeComponent();
         }
 
@@ -82,14 +95,49 @@ namespace GUI
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            if (pnlMenu.Width == 221)
+            if (pnlMenu.Width == 267)
             {
                 pnlMenu.Width = 64;
             }
             else
             {
-                pnlMenu.Width = 221;
+                pnlMenu.Width = 267;
             }
+        }
+
+        private void btnTables_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnTables.Location;
+            ucTable.BringToFront();
+            ucTable.Show();
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnUser.Location;
+            ucUserInfo.BringToFront();
+            ucUserInfo.Show();
+        }
+
+        private void btnManager_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnManager.Location;
+            ucManagerInfo.BringToFront();
+            ucUserInfo.Show();
+        }
+
+        private void frmEmployee_Load(object sender, EventArgs e)
+        {
+           
+            dtoEmp = busEmp.GetEmployeeInfoByUsername(_frmLogin.GetUsername());
+            dtoShop = dtoEmp.Shop;
+            lblWelcome.Text = "Welcome, " + dtoEmp.Firstname;
+            ucTable.SetShopID(dtoShop.ID);
+            ucManagerInfo.SetManager(busMan.GetById(dtoEmp.Manager.Id, dtoShop.ID));
+            //ucManagerInfo.SetShop(busShop.GetShopById(dtoShop.ID));
         }
     }
 }
