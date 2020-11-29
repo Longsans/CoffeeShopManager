@@ -229,9 +229,10 @@ namespace DAL
 
         public void InsertTakeAwayReceipt(DTO_Receipt rec)
         {
-            string qry = "INSERT INTO RECEIPTS " +
-                "VALUES (@cusId, @dateofpayment, @total, @details, @shopId)";
-            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            string insertQry = "INSERT INTO RECEIPTS " +
+                "VALUES (@cusId, @dateofpayment, @total, @details, @shopId)",
+                selectQry = "SELECT SCOPE_IDENTITY()";
+            SqlCommand cmd = new SqlCommand(insertQry, this.conn);
             cmd.Parameters.AddWithValue("@cusId", rec.Customer.Id);
             cmd.Parameters.AddWithValue("@dateofpayment", rec.DateOfPayMent);
             cmd.Parameters.AddWithValue("@total", rec.Total);
@@ -244,6 +245,8 @@ namespace DAL
                 OpenConnection();
             }
             cmd.ExecuteNonQuery();
+            cmd = new SqlCommand(selectQry, this.conn);
+            rec.Id = (int)cmd.ExecuteScalar();
             InsertReceiptDetails(rec);
             if (!connState)
             {
