@@ -39,6 +39,9 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtYearBD = new System.Windows.Forms.TextBox();
+            this.txtMonthBD = new System.Windows.Forms.TextBox();
+            this.txtDayBD = new System.Windows.Forms.TextBox();
             this.btnAddCus = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
@@ -62,21 +65,18 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clmProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDown = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmUp = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSelect = new System.Windows.Forms.Label();
-            this.txtDayBD = new System.Windows.Forms.TextBox();
-            this.txtMonthBD = new System.Windows.Forms.TextBox();
-            this.txtYearBD = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
@@ -159,6 +159,7 @@
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -196,6 +197,27 @@
             this.panel2.Size = new System.Drawing.Size(412, 219);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // txtYearBD
+            // 
+            this.txtYearBD.Location = new System.Drawing.Point(157, 151);
+            this.txtYearBD.Name = "txtYearBD";
+            this.txtYearBD.Size = new System.Drawing.Size(46, 22);
+            this.txtYearBD.TabIndex = 18;
+            // 
+            // txtMonthBD
+            // 
+            this.txtMonthBD.Location = new System.Drawing.Point(119, 149);
+            this.txtMonthBD.Name = "txtMonthBD";
+            this.txtMonthBD.Size = new System.Drawing.Size(32, 22);
+            this.txtMonthBD.TabIndex = 17;
+            // 
+            // txtDayBD
+            // 
+            this.txtDayBD.Location = new System.Drawing.Point(81, 149);
+            this.txtDayBD.Name = "txtDayBD";
+            this.txtDayBD.Size = new System.Drawing.Size(32, 22);
+            this.txtDayBD.TabIndex = 16;
             // 
             // btnAddCus
             // 
@@ -256,7 +278,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 22);
             this.txtEmail.TabIndex = 8;
-            this.txtEmail.Text = "vhao1509@gmail.com";
             this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // txtFirstName
@@ -427,6 +448,15 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             // 
+            // clmProduct
+            // 
+            this.clmProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmProduct.FillWeight = 150F;
+            this.clmProduct.HeaderText = "Product";
+            this.clmProduct.MinimumWidth = 6;
+            this.clmProduct.Name = "clmProduct";
+            this.clmProduct.ReadOnly = true;
+            // 
             // clmDown
             // 
             this.clmDown.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -436,6 +466,14 @@
             this.clmDown.Name = "clmDown";
             this.clmDown.Text = "-";
             this.clmDown.UseColumnTextForButtonValue = true;
+            // 
+            // clmQuantity
+            // 
+            this.clmQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmQuantity.FillWeight = 50F;
+            this.clmQuantity.HeaderText = "SL";
+            this.clmQuantity.MinimumWidth = 6;
+            this.clmQuantity.Name = "clmQuantity";
             // 
             // clmUp
             // 
@@ -447,6 +485,15 @@
             this.clmUp.Text = " +";
             this.clmUp.UseColumnTextForButtonValue = true;
             // 
+            // clmTotal
+            // 
+            this.clmTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmTotal.FillWeight = 150F;
+            this.clmTotal.HeaderText = "Total Price";
+            this.clmTotal.MinimumWidth = 6;
+            this.clmTotal.Name = "clmTotal";
+            this.clmTotal.ReadOnly = true;
+            // 
             // clmDelete
             // 
             this.clmDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -456,6 +503,15 @@
             this.clmDelete.Name = "clmDelete";
             this.clmDelete.Text = "";
             this.clmDelete.UseColumnTextForButtonValue = true;
+            // 
+            // clmID
+            // 
+            this.clmID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmID.FillWeight = 0.1F;
+            this.clmID.HeaderText = "";
+            this.clmID.MinimumWidth = 6;
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
             // 
             // lblSelect
             // 
@@ -468,27 +524,6 @@
             this.lblSelect.Size = new System.Drawing.Size(164, 19);
             this.lblSelect.TabIndex = 12;
             this.lblSelect.Text = "Select type of product";
-            // 
-            // txtDayBD
-            // 
-            this.txtDayBD.Location = new System.Drawing.Point(81, 149);
-            this.txtDayBD.Name = "txtDayBD";
-            this.txtDayBD.Size = new System.Drawing.Size(32, 22);
-            this.txtDayBD.TabIndex = 16;
-            // 
-            // txtMonthBD
-            // 
-            this.txtMonthBD.Location = new System.Drawing.Point(119, 149);
-            this.txtMonthBD.Name = "txtMonthBD";
-            this.txtMonthBD.Size = new System.Drawing.Size(32, 22);
-            this.txtMonthBD.TabIndex = 17;
-            // 
-            // txtYearBD
-            // 
-            this.txtYearBD.Location = new System.Drawing.Point(157, 151);
-            this.txtYearBD.Name = "txtYearBD";
-            this.txtYearBD.Size = new System.Drawing.Size(46, 22);
-            this.txtYearBD.TabIndex = 18;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -525,50 +560,14 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // clmProduct
-            // 
-            this.clmProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmProduct.FillWeight = 150F;
-            this.clmProduct.HeaderText = "Product";
-            this.clmProduct.MinimumWidth = 6;
-            this.clmProduct.Name = "clmProduct";
-            this.clmProduct.ReadOnly = true;
-            // 
-            // clmQuantity
-            // 
-            this.clmQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmQuantity.FillWeight = 50F;
-            this.clmQuantity.HeaderText = "SL";
-            this.clmQuantity.MinimumWidth = 6;
-            this.clmQuantity.Name = "clmQuantity";
-            // 
-            // clmTotal
-            // 
-            this.clmTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmTotal.FillWeight = 150F;
-            this.clmTotal.HeaderText = "Total Price";
-            this.clmTotal.MinimumWidth = 6;
-            this.clmTotal.Name = "clmTotal";
-            this.clmTotal.ReadOnly = true;
-            // 
-            // clmID
-            // 
-            this.clmID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmID.FillWeight = 0.1F;
-            this.clmID.HeaderText = "";
-            this.clmID.MinimumWidth = 6;
-            this.clmID.Name = "clmID";
-            this.clmID.ReadOnly = true;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-        //    this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // errorProvider2
             // 
             this.errorProvider2.ContainerControl = this;
-     //       this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
+            this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
             // 
             // Test
             // 

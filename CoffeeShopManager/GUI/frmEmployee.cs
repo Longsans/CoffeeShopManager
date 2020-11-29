@@ -34,7 +34,10 @@ namespace GUI
 
         private void btnReceipts_Click(object sender, EventArgs e)
         {
-            
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnReceipts.Location;
+            userControlOrderProduct2.BringToFront();
+            userControlOrderProduct2.Show();
         }
 
         private void ucReceipts_Load(object sender, EventArgs e)

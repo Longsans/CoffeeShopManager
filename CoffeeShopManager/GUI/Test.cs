@@ -33,8 +33,8 @@ namespace GUI
         DataGridViewRow r1;
         int abc = 0;
         DataTable a, b, c,T;
-        public DTO_Shop dtoShop = new DTO_Shop();
-
+        DTO_Shop dtoShop = new DTO_Shop();
+        
         public Test()
         {
             InitializeComponent();
@@ -154,6 +154,7 @@ namespace GUI
 
         private void Test_Load(object sender, EventArgs e)
         {
+            dtoShop.ID = 1;
             Reload();
             T = busPro.GetAllProductsWithImages(1);
             GetData(T);
@@ -179,6 +180,15 @@ namespace GUI
 
         }
         public double sum = 0;
+        public void ResetCus()
+        {
+            txtID.Text = "";
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtDayBD.Text = "";
+            txtMonthBD.Text = "";
+            txtYearBD.Text = "";
+        }
         public void Timer_Click(object sender, EventArgs e)
         {
             sum = 0;
@@ -197,8 +207,39 @@ namespace GUI
                 lblGrandTotal.Text = sum.ToString();
             }
             lblGrandTotal.Text = sum.ToString();
-            
-           
+            if (busCus.GetCustomerByEmail(txtEmail.Text.ToString(), 1) == null)
+            {
+                errorProvider1.SetError(txtEmail, "Doesn't have customer này, vui lòng nhập thông tin");
+                errorProvider2.SetError(txtEmail, "");
+                txtFirstName.Enabled = true;
+                txtLastName.Enabled = true;
+                btnAddCus.Visible = true;
+                txtDayBD.Enabled = true;
+                txtMonthBD.Enabled = true;
+                txtYearBD.Enabled = true;
+                txtID.Visible = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtEmail, "");
+                errorProvider2.SetError(txtEmail, "Correct");
+                txtID.Enabled = false;
+                txtFirstName.Enabled = false;
+                txtLastName.Enabled = false;
+                dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, 1);
+                txtID.Text = dtoCus.Id.ToString();
+                txtFirstName.Text = dtoCus.FirstName;
+                txtLastName.Text = dtoCus.LastName;
+                txtDayBD.Text = dtoCus.Birthdate.Day.ToString();
+                txtMonthBD.Text = dtoCus.Birthdate.Month.ToString();
+                txtYearBD.Text = dtoCus.Birthdate.Year.ToString();
+                btnAddCus.Visible = false;
+                txtDayBD.Enabled = false;
+                txtMonthBD.Enabled = false;
+                txtYearBD.Enabled = false;
+                txtID.Visible = true;
+            }
+
         }
         public int bien = 0;
         public double giatri = 0;
@@ -268,6 +309,7 @@ namespace GUI
                 }
             return kq;
         }
+
         private void comboBox1_Click(object sender, EventArgs e)
         {
             lblSelect.Visible = false;
@@ -308,8 +350,20 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count <= 1)
+            {
+                MessageBox.Show("Chua order mon");
+                return;
+            }
+          //  if (busCus.GetCustomerByEmail(txtEmail.Text, dtoShop.ID) == null)
+          //  {
+                if (txtEmail.Text == ""||txtFirstName.Text==""||txtLastName.Text==""||txtDayBD.Text==""||txtMonthBD.Text==""||txtYearBD.Text=="")
+                {
+                    MessageBox.Show("Nhap day du thong tin customer");
+                    return;
+                }
+            //}
             DateTime now = DateTime.Now;
-            dtoCus.Id = 7;
             dtoReceipt.Customer = dtoCus;
             dtoReceipt.DateOfPayMent = now;
             dtoReceipt.Total = Int32.Parse(lblGrandTotal.Text);
@@ -318,17 +372,22 @@ namespace GUI
             //  dataGridView1.Rows[i].Cells[4].Value.ToString()
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
-                dto_pro.Id = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                dtoDetail = new DTO_ReceiptDetails();//cai nay a
+
+                dto_pro = new DTO_Product
+                {
+                    Id = dataGridView1.Rows[i].Cells[6].Value.ToString()
+                };
                 dtoDetail.Product = dto_pro;
-                dtoDetail.Product.Id = dto_pro.Id;
-              dtoDetail.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
+                //dtoDetail.Product.Id = dto_pro.Id;
+                dtoDetail.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
                 dtoDetail.TotalPrice = decimal.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 MessageBox.Show(dtoDetail.TotalPrice.ToString());
                 dtoReceipt.Items.Add(dtoDetail);
             }
             busReceipt.InsertTakeAwayReceipt(dtoReceipt);
         }
-
+        //ddinh lam chi 
         private void btnAddCus_Click(object sender, EventArgs e)
         {
             string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
@@ -342,7 +401,7 @@ namespace GUI
             {
                 dtoCus.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
             }
-            dtoCus.ShopID = 1;
+            dtoCus.ShopID = dtoShop.ID;
             busCus.Insert(dtoCus);
         }
 
@@ -353,23 +412,23 @@ namespace GUI
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
-            //if(busCus.GetCustomerByEmail(txtEmail.Text.ToString(),1)==null)
-            //{
-                MessageBox.Show("123");
-                errorProvider1.SetError(txtEmail, "Doesn't have customer này, vui lòng nhập thông tin");
-                errorProvider2.SetError(txtEmail, "");
-                txtID.Enabled = true;
-                txtFirstName.Enabled = true;
-                txtLastName.Enabled = true;
-            //}
-           // else
-            //{
-                MessageBox.Show("123");
-            //    dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, 1);
-                txtID.Text = dtoCus.Id.ToString();
-                txtFirstName.Text = dtoCus.FirstName;
-                txtLastName.Text = dtoCus.LastName;
-            //}
+            
+        }
+        public void ResetAll()
+        {
+            MessageBox.Show(dataGridView1.Rows.Count.ToString());
+            int to = dataGridView1.Rows.Count;
+            for(int i=0;i<to-1;i++)
+            {
+
+                dataGridView1.Rows.RemoveAt(0);
+            }
+            strSave.Clear();
+            ResetCus();
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ResetAll();
         }
 
         private void Test_Click(object sender, EventArgs e)

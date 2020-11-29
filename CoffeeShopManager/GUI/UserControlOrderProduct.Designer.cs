@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlOrderProduct));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtYearBD = new System.Windows.Forms.TextBox();
@@ -58,6 +60,15 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSelect = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblOr = new System.Windows.Forms.Label();
+            this.txtSearchName = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblHead = new System.Windows.Forms.Label();
             this.clmProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDown = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,20 +76,17 @@
             this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblSelect = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblOr = new System.Windows.Forms.Label();
-            this.txtSearchName = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblHead);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnSave);
@@ -86,7 +94,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(473, 585);
+            this.panel1.Size = new System.Drawing.Size(472, 580);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -109,14 +117,14 @@
             this.panel2.Controls.Add(this.lblEmail);
             this.panel2.Controls.Add(this.lblFirstName);
             this.panel2.Controls.Add(this.lblCustomer);
-            this.panel2.Location = new System.Drawing.Point(17, 294);
+            this.panel2.Location = new System.Drawing.Point(20, 322);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(432, 244);
+            this.panel2.Size = new System.Drawing.Size(452, 201);
             this.panel2.TabIndex = 12;
             // 
             // txtYearBD
             // 
-            this.txtYearBD.Location = new System.Drawing.Point(157, 151);
+            this.txtYearBD.Location = new System.Drawing.Point(157, 149);
             this.txtYearBD.Name = "txtYearBD";
             this.txtYearBD.Size = new System.Drawing.Size(46, 22);
             this.txtYearBD.TabIndex = 18;
@@ -137,12 +145,13 @@
             // 
             // btnAddCus
             // 
-            this.btnAddCus.Location = new System.Drawing.Point(102, 177);
+            this.btnAddCus.Location = new System.Drawing.Point(103, 178);
             this.btnAddCus.Name = "btnAddCus";
             this.btnAddCus.Size = new System.Drawing.Size(75, 23);
             this.btnAddCus.TabIndex = 15;
             this.btnAddCus.Text = "Add Customer";
             this.btnAddCus.UseVisualStyleBackColor = true;
+            this.btnAddCus.Click += new System.EventHandler(this.btnAddCus_Click);
             // 
             // txtID
             // 
@@ -210,7 +219,7 @@
             this.panel3.Controls.Add(this.lblGrand);
             this.panel3.Controls.Add(this.lblDiscount);
             this.panel3.Controls.Add(this.lblTotal);
-            this.panel3.Location = new System.Drawing.Point(209, 79);
+            this.panel3.Location = new System.Drawing.Point(232, 79);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 109);
             this.panel3.TabIndex = 6;
@@ -343,22 +352,24 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(236, 544);
+            this.btnCancel.Location = new System.Drawing.Point(236, 543);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 32);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(108, 544);
+            this.btnSave.Location = new System.Drawing.Point(144, 543);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(86, 32);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dataGridView1
             // 
@@ -371,19 +382,102 @@
             this.clmTotal,
             this.clmDelete,
             this.clmID});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 13);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(432, 256);
+            this.dataGridView1.Size = new System.Drawing.Size(452, 256);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(478, 49);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(490, 504);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // lblSelect
+            // 
+            this.lblSelect.AutoSize = true;
+            this.lblSelect.BackColor = System.Drawing.Color.LightGray;
+            this.lblSelect.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelect.ForeColor = System.Drawing.Color.DimGray;
+            this.lblSelect.Location = new System.Drawing.Point(515, 19);
+            this.lblSelect.Name = "lblSelect";
+            this.lblSelect.Size = new System.Drawing.Size(164, 19);
+            this.lblSelect.TabIndex = 13;
+            this.lblSelect.Text = "Select type of product";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "All",
+            "Food",
+            "Drink",
+            "Others"});
+            this.comboBox1.Location = new System.Drawing.Point(491, 17);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(231, 24);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            // 
+            // lblOr
+            // 
+            this.lblOr.AutoSize = true;
+            this.lblOr.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOr.Location = new System.Drawing.Point(728, 20);
+            this.lblOr.Name = "lblOr";
+            this.lblOr.Size = new System.Drawing.Size(26, 21);
+            this.lblOr.TabIndex = 15;
+            this.lblOr.Text = "or";
+            // 
+            // txtSearchName
+            // 
+            this.txtSearchName.Location = new System.Drawing.Point(760, 21);
+            this.txtSearchName.Name = "txtSearchName";
+            this.txtSearchName.Size = new System.Drawing.Size(137, 22);
+            this.txtSearchName.TabIndex = 16;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(903, 13);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(42, 31);
+            this.btnSearch.TabIndex = 17;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
+            // 
+            // lblHead
+            // 
+            this.lblHead.AutoSize = true;
+            this.lblHead.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHead.Location = new System.Drawing.Point(3, 2);
+            this.lblHead.Name = "lblHead";
+            this.lblHead.Size = new System.Drawing.Size(224, 37);
+            this.lblHead.TabIndex = 13;
+            this.lblHead.Text = "Oder Products";
             // 
             // clmProduct
             // 
             this.clmProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmProduct.FillWeight = 200F;
             this.clmProduct.HeaderText = "Product";
             this.clmProduct.MinimumWidth = 6;
             this.clmProduct.Name = "clmProduct";
@@ -392,11 +486,13 @@
             // clmDown
             // 
             this.clmDown.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmDown.FillWeight = 50F;
+            this.clmDown.FillWeight = 30F;
             this.clmDown.HeaderText = "";
             this.clmDown.MinimumWidth = 6;
             this.clmDown.Name = "clmDown";
             this.clmDown.ReadOnly = true;
+            this.clmDown.Text = " -";
+            this.clmDown.UseColumnTextForButtonValue = true;
             // 
             // clmQuantity
             // 
@@ -409,15 +505,18 @@
             // clmUp
             // 
             this.clmUp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmUp.FillWeight = 50F;
+            this.clmUp.FillWeight = 30F;
             this.clmUp.HeaderText = "";
             this.clmUp.MinimumWidth = 6;
             this.clmUp.Name = "clmUp";
             this.clmUp.ReadOnly = true;
+            this.clmUp.Text = " +";
+            this.clmUp.UseColumnTextForButtonValue = true;
             // 
             // clmTotal
             // 
             this.clmTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmTotal.FillWeight = 150F;
             this.clmTotal.HeaderText = "Total Price";
             this.clmTotal.MinimumWidth = 6;
             this.clmTotal.Name = "clmTotal";
@@ -426,7 +525,7 @@
             // clmDelete
             // 
             this.clmDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmDelete.FillWeight = 50F;
+            this.clmDelete.FillWeight = 44F;
             this.clmDelete.HeaderText = "";
             this.clmDelete.MinimumWidth = 6;
             this.clmDelete.Name = "clmDelete";
@@ -441,69 +540,6 @@
             this.clmID.Name = "clmID";
             this.clmID.ReadOnly = true;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(504, 72);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(464, 447);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // lblSelect
-            // 
-            this.lblSelect.AutoSize = true;
-            this.lblSelect.BackColor = System.Drawing.Color.LightGray;
-            this.lblSelect.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelect.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSelect.Location = new System.Drawing.Point(537, 34);
-            this.lblSelect.Name = "lblSelect";
-            this.lblSelect.Size = new System.Drawing.Size(164, 19);
-            this.lblSelect.TabIndex = 13;
-            this.lblSelect.Text = "Select type of product";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "All",
-            "Food",
-            "Drink",
-            "Others"});
-            this.comboBox1.Location = new System.Drawing.Point(512, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(231, 24);
-            this.comboBox1.TabIndex = 14;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
-            // 
-            // lblOr
-            // 
-            this.lblOr.AutoSize = true;
-            this.lblOr.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOr.Location = new System.Drawing.Point(759, 34);
-            this.lblOr.Name = "lblOr";
-            this.lblOr.Size = new System.Drawing.Size(26, 21);
-            this.lblOr.TabIndex = 15;
-            this.lblOr.Text = "or";
-            // 
-            // txtSearchName
-            // 
-            this.txtSearchName.Location = new System.Drawing.Point(791, 35);
-            this.txtSearchName.Name = "txtSearchName";
-            this.txtSearchName.Size = new System.Drawing.Size(137, 22);
-            this.txtSearchName.TabIndex = 16;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(934, 31);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(42, 31);
-            this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // UserControlOrderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -516,15 +552,18 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel1);
             this.Name = "UserControlOrderProduct";
-            this.Size = new System.Drawing.Size(996, 585);
+            this.Size = new System.Drawing.Size(973, 580);
             this.Load += new System.EventHandler(this.UserControlOrderProduct_Load);
             this.Click += new System.EventHandler(this.UserControlOrderProduct_Click);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -537,13 +576,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmProduct;
-        private System.Windows.Forms.DataGridViewButtonColumn clmDown;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
-        private System.Windows.Forms.DataGridViewButtonColumn clmUp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
-        private System.Windows.Forms.DataGridViewButtonColumn clmDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmID;
         private System.Windows.Forms.Label lblSelect;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lblOr;
@@ -575,5 +607,15 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblCustomer;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.Label lblHead;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmProduct;
+        private System.Windows.Forms.DataGridViewButtonColumn clmDown;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
+        private System.Windows.Forms.DataGridViewButtonColumn clmUp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
+        private System.Windows.Forms.DataGridViewButtonColumn clmDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmID;
     }
 }

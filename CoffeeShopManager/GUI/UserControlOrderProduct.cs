@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
+using System.Globalization;
+
 namespace GUI
 {
     public partial class UserControlOrderProduct : UserControl
@@ -149,11 +151,6 @@ namespace GUI
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -176,6 +173,7 @@ namespace GUI
 
         private void UserControlOrderProduct_Load(object sender, EventArgs e)
         {
+            dtoShop.ID = 1;
             Reload();
             T = busPro.GetAllProductsWithImages(1);
             GetData(T);
@@ -200,6 +198,15 @@ namespace GUI
         }
         public int bien = 0;
         public double giatri = 0;
+        public void ResetCus()
+        {
+            txtID.Text = "";
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtDayBD.Text = "";
+            txtMonthBD.Text = "";
+            txtYearBD.Text = "";
+        }
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             r1 = new DataGridViewRow();
@@ -279,7 +286,7 @@ namespace GUI
             Refresh();
         }
 
-        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+      /*  private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
@@ -298,7 +305,7 @@ namespace GUI
                 e.Handled = true;
             }
         }
-
+      */
         private void UserControlOrderProduct_Click(object sender, EventArgs e)
         {
             if (comboBox1.Text == "")
@@ -320,6 +327,151 @@ namespace GUI
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                r1 = new DataGridViewRow();
+            if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDown")
+            {
+                r1 = dataGridView1.Rows[e.RowIndex];
+                if (r1.Cells[2].Value.ToString() != "0")
+                {
+                    r1.Cells[2].Value = (Int32.Parse(r1.Cells[2].Value.ToString()) - 1);
+                    bien = (Int32.Parse(r1.Cells[2].Value.ToString()));
+
+                    giatri = float.Parse(r1.Cells[4].Value.ToString()) / (bien + 1);
+                    r1.Cells[4].Value = giatri * bien;
+                }
+                if (r1.Cells[2].Value.ToString() == "0")
+                {
+                    for (int i = 0; i < strSave.Count; i++)
+                    {
+                        if (strSave[i] == r1.Cells[0].Value.ToString())
+                        {
+                            strSave.RemoveAt(i);
+                        }
+                    }
+                    dataGridView1.Rows.RemoveAt(r1.Index);
+                }
+
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmUp")
+            {
+                r1 = dataGridView1.Rows[e.RowIndex];
+                r1.Cells[2].Value = (Int32.Parse(r1.Cells[2].Value.ToString()) + 1);
+                bien = (Int32.Parse(r1.Cells[2].Value.ToString()));
+                //  MessageBox.Show(""+ Int32.Parse(r1.Cells[4].Value.ToString()));
+                giatri = float.Parse(r1.Cells[4].Value.ToString()) / (bien - 1);
+                r1.Cells[4].Value = giatri * bien;
+                //  MessageBox.Show(row.Cells[2].Value.ToString());
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDelete")
+            {
+                for (int i = 0; i < strSave.Count; i++)
+                {
+                    if (strSave[i] == dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString())
+                    {
+                        strSave.RemoveAt(dataGridView1.Rows[e.RowIndex].Index);
+                        break;
+                    }
+                }
+                dataGridView1.Rows.RemoveAt(dataGridView1.Rows[e.RowIndex].Index);
+            }
+        }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            //Image SomeImage = Image.FromFile("icon8_delete_bin_16.png");
+            //I supposed your button column is at index 0
+            if (e.ColumnIndex == 5)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.close_window_24px1.Width;
+                var h = Properties.Resources.close_window_24px1.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.close_window_24px1, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count <= 1)
+            {
+                MessageBox.Show("Chua order mon");
+                return;
+            }
+            //  if (busCus.GetCustomerByEmail(txtEmail.Text, dtoShop.ID) == null)
+            //  {
+            if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtDayBD.Text == "" || txtMonthBD.Text == "" || txtYearBD.Text == "")
+            {
+                MessageBox.Show("Nhap day du thong tin customer");
+                return;
+            }
+            //}
+            DateTime now = DateTime.Now;
+            dtoReceipt.Customer = dtoCus;
+            dtoReceipt.DateOfPayMent = now;
+            dtoReceipt.Total = Int32.Parse(lblGrandTotal.Text);
+            dtoReceipt.Details = "";
+            dtoReceipt.Shop.ID = 1;
+            //  dataGridView1.Rows[i].Cells[4].Value.ToString()
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                dtoDetail = new DTO_ReceiptDetails();//cai nay a
+
+                dto_pro = new DTO_Product
+                {
+                    Id = dataGridView1.Rows[i].Cells[6].Value.ToString()
+                };
+                dtoDetail.Product = dto_pro;
+                //dtoDetail.Product.Id = dto_pro.Id;
+                dtoDetail.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
+                dtoDetail.TotalPrice = decimal.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                MessageBox.Show(dtoDetail.TotalPrice.ToString());
+                dtoReceipt.Items.Add(dtoDetail);
+            }
+            busReceipt.InsertTakeAwayReceipt(dtoReceipt);
+        }
+
+        private void btnAddCus_Click(object sender, EventArgs e)
+        {
+            string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
+            DateTime bdate = new DateTime();
+            dtoCus.Email = txtEmail.Text;
+            dtoCus.Id = Int32.Parse(txtID.Text);
+            dtoCus.FirstName = txtFirstName.Text;
+            dtoCus.LastName = txtLastName.Text;
+            if (DateTime.TryParseExact(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text,
+                     formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out bdate))
+            {
+                dtoCus.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
+            }
+            dtoCus.ShopID = dtoShop.ID;
+            busCus.Insert(dtoCus);
+        }
+        public void ResetAll()
+        {
+            MessageBox.Show(dataGridView1.Rows.Count.ToString());
+            int to = dataGridView1.Rows.Count;
+            for (int i = 0; i < to - 1; i++)
+            {
+
+                dataGridView1.Rows.RemoveAt(0);
+            }
+            strSave.Clear();
+            ResetCus();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ResetAll();
+        }
+
         public double sum = 0;
         public void Timer_Click(object sender, EventArgs e)
         {
@@ -339,7 +491,38 @@ namespace GUI
                 lblGrandTotal.Text = sum.ToString();
             }
             lblGrandTotal.Text = sum.ToString();
-
+            if (busCus.GetCustomerByEmail(txtEmail.Text.ToString(), 1) == null)
+            {
+                errorProvider1.SetError(txtEmail, "Doesn't have customer này, vui lòng nhập thông tin");
+                errorProvider2.SetError(txtEmail, "");
+                txtFirstName.Enabled = true;
+                txtLastName.Enabled = true;
+                btnAddCus.Visible = true;
+                txtDayBD.Enabled = true;
+                txtMonthBD.Enabled = true;
+                txtYearBD.Enabled = true;
+                txtID.Visible = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txtEmail, "");
+                errorProvider2.SetError(txtEmail, "Correct");
+                txtID.Enabled = false;
+                txtFirstName.Enabled = false;
+                txtLastName.Enabled = false;
+                dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, 1);
+                txtID.Text = dtoCus.Id.ToString();
+                txtFirstName.Text = dtoCus.FirstName;
+                txtLastName.Text = dtoCus.LastName;
+                txtDayBD.Text = dtoCus.Birthdate.Day.ToString();
+                txtMonthBD.Text = dtoCus.Birthdate.Month.ToString();
+                txtYearBD.Text = dtoCus.Birthdate.Year.ToString();
+                btnAddCus.Visible = false;
+                txtDayBD.Enabled = false;
+                txtMonthBD.Enabled = false;
+                txtYearBD.Enabled = false;
+                txtID.Visible = true;
+            }
 
         }
 

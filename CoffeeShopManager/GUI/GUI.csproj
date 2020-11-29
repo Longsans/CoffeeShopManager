@@ -279,6 +279,9 @@
     <EmbeddedResource Include="Table.resx">
       <DependentUpon>Table.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlCustomers.resx">
       <DependentUpon>UserControlCustomers.cs</DependentUpon>
     </EmbeddedResource>
