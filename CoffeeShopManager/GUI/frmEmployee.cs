@@ -140,12 +140,18 @@ namespace GUI
             lblWelcome.Text = "Welcome, " + dtoEmp.Firstname;
             ucTable.SetShopID(dtoShop.ID);
             ucManagerInfo.SetManager(busMan.GetById(dtoEmp.Manager.Id, dtoShop.ID));
-            //ucManagerInfo.SetShop(busShop.GetShopById(dtoShop.ID));
+            ucManagerInfo.SetShop(busShop.GetShopById(dtoShop.ID));
         }
 
         private void pnlMenu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            _frmLogin.Show();
+            this.Close();
         }
     }
 }

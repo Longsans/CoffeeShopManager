@@ -35,6 +35,10 @@ namespace GUI
             txtPosition.Text = dtoMan.Position;
             txtBirthDate.Text = dtoMan.Birthdate.ToString("dd/MM/yyyy");
             txtEmail.Text = dtoMan.Email;
+            if (dtoMan.Image != null)
+            {
+                picMan.Image = ImageHelper.ByteArrayToImage(dtoMan.Image);
+            }
         }
         private void ReloadShopInfo()
         {

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picMan = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.txtShopPhone = new System.Windows.Forms.TextBox();
             this.txtShopAddress = new System.Windows.Forms.TextBox();
             this.txtShopName = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,14 +71,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Manager Info";
             // 
-            // pictureBox1
+            // picMan
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(54, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 161);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.picMan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picMan.Location = new System.Drawing.Point(54, 69);
+            this.picMan.Name = "picMan";
+            this.picMan.Size = new System.Drawing.Size(165, 161);
+            this.picMan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMan.TabIndex = 2;
+            this.picMan.TabStop = false;
             // 
             // label2
             // 
@@ -220,7 +221,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.txtManID);
             this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.picMan);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
@@ -350,7 +351,7 @@
             this.Name = "UserControlManagerAndShopInfo";
             this.Size = new System.Drawing.Size(841, 514);
             this.Load += new System.EventHandler(this.UserControlManagerAndShopInfo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMan)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -364,7 +365,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picMan;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
