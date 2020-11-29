@@ -133,6 +133,10 @@ namespace GUI
             userControlOrderProduct2.SetShopID(dtoShop.ID);
         }
 
-
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            _frmLogin.Show();
+        }
     }
 }

@@ -32,26 +32,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployee));
             this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.imgListMenuButton = new System.Windows.Forms.ImageList(this.components);
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.imgListWindowButton = new System.Windows.Forms.ImageList(this.components);
+            this.btnMaximize = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlChangeTab = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.pnlShow = new System.Windows.Forms.Panel();
             this.btnUser = new System.Windows.Forms.Button();
             this.btnManager = new System.Windows.Forms.Button();
             this.btnTables = new System.Windows.Forms.Button();
             this.btnReceipts = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.pnlShow = new System.Windows.Forms.Panel();
+            this.userControlOrderProduct2 = new GUI.UserControlOrderProduct();
             this.ucManagerInfo = new GUI.UserControlManagerAndShopInfo();
             this.ucTable = new GUI.UserControlTable();
             this.ucUserInfo = new GUI.UserControlUserTab();
-            this.userControlOrderProduct2 = new GUI.UserControlOrderProduct();
             this.pnlTitleBar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -92,6 +92,21 @@
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.UseVisualStyleBackColor = true;
             // 
+            // btnMenu
+            // 
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.ImageIndex = 4;
+            this.btnMenu.ImageList = this.imgListMenuButton;
+            this.btnMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(64, 37);
+            this.btnMenu.TabIndex = 4;
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
             // imgListMenuButton
             // 
             this.imgListMenuButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListMenuButton.ImageStream")));
@@ -101,6 +116,20 @@
             this.imgListMenuButton.Images.SetKeyName(2, "manager_40px.png");
             this.imgListMenuButton.Images.SetKeyName(3, "user_40px.png");
             this.imgListMenuButton.Images.SetKeyName(4, "menu_50px.png");
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ImageIndex = 2;
+            this.btnMinimize.ImageList = this.imgListWindowButton;
+            this.btnMinimize.Location = new System.Drawing.Point(1117, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(41, 37);
+            this.btnMinimize.TabIndex = 2;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // imgListWindowButton
             // 
@@ -112,6 +141,34 @@
             this.imgListWindowButton.Images.SetKeyName(3, "restore.png");
             this.imgListWindowButton.Images.SetKeyName(4, "menu_50px.png");
             this.imgListWindowButton.Images.SetKeyName(5, "tea_cup_100px.png");
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.ImageIndex = 1;
+            this.btnMaximize.ImageList = this.imgListWindowButton;
+            this.btnMaximize.Location = new System.Drawing.Point(1158, 0);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(41, 37);
+            this.btnMaximize.TabIndex = 1;
+            this.btnMaximize.UseVisualStyleBackColor = true;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ImageIndex = 0;
+            this.btnCancel.ImageList = this.imgListWindowButton;
+            this.btnCancel.Location = new System.Drawing.Point(1199, 0);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(41, 37);
+            this.btnCancel.TabIndex = 0;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pnlMenu
             // 
@@ -135,54 +192,6 @@
             this.pnlChangeTab.Size = new System.Drawing.Size(7, 50);
             this.pnlChangeTab.TabIndex = 4;
             this.pnlChangeTab.Visible = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Controls.Add(this.lblWelcome);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(267, 37);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 34);
-            this.panel1.TabIndex = 4;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(820, 0);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(89, 32);
-            this.btnLogout.TabIndex = 1;
-            this.btnLogout.Text = "Log out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(665, 8);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(128, 19);
-            this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.Text = "Welcome, Admin";
-            // 
-            // pnlShow
-            // 
-            this.pnlShow.Controls.Add(this.userControlOrderProduct2);
-            this.pnlShow.Controls.Add(this.ucManagerInfo);
-            this.pnlShow.Controls.Add(this.ucTable);
-            this.pnlShow.Controls.Add(this.ucUserInfo);
-            this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlShow.Location = new System.Drawing.Point(267, 71);
-            this.pnlShow.Name = "pnlShow";
-            this.pnlShow.Size = new System.Drawing.Size(973, 580);
-            this.pnlShow.TabIndex = 6;
             // 
             // btnUser
             // 
@@ -264,62 +273,62 @@
             this.btnReceipts.UseVisualStyleBackColor = true;
             this.btnReceipts.Click += new System.EventHandler(this.btnReceipts_Click);
             // 
-            // btnMenu
+            // panel1
             // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.ImageIndex = 4;
-            this.btnMenu.ImageList = this.imgListMenuButton;
-            this.btnMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(64, 37);
-            this.btnMenu.TabIndex = 4;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Controls.Add(this.lblWelcome);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(267, 37);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(973, 34);
+            this.panel1.TabIndex = 4;
             // 
-            // btnMinimize
+            // btnLogout
             // 
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ImageIndex = 2;
-            this.btnMinimize.ImageList = this.imgListWindowButton;
-            this.btnMinimize.Location = new System.Drawing.Point(1117, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(41, 37);
-            this.btnMinimize.TabIndex = 2;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(820, 0);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(89, 32);
+            this.btnLogout.TabIndex = 1;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnMaximize
+            // lblWelcome
             // 
-            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.ImageIndex = 1;
-            this.btnMaximize.ImageList = this.imgListWindowButton;
-            this.btnMaximize.Location = new System.Drawing.Point(1158, 0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(41, 37);
-            this.btnMaximize.TabIndex = 1;
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(665, 8);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(128, 19);
+            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.Text = "Welcome, Admin";
             // 
-            // btnCancel
+            // pnlShow
             // 
-            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ImageIndex = 0;
-            this.btnCancel.ImageList = this.imgListWindowButton;
-            this.btnCancel.Location = new System.Drawing.Point(1199, 0);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(41, 37);
-            this.btnCancel.TabIndex = 0;
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.pnlShow.Controls.Add(this.userControlOrderProduct2);
+            this.pnlShow.Controls.Add(this.ucManagerInfo);
+            this.pnlShow.Controls.Add(this.ucTable);
+            this.pnlShow.Controls.Add(this.ucUserInfo);
+            this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlShow.Location = new System.Drawing.Point(267, 71);
+            this.pnlShow.Name = "pnlShow";
+            this.pnlShow.Size = new System.Drawing.Size(973, 580);
+            this.pnlShow.TabIndex = 6;
+            // 
+            // userControlOrderProduct2
+            // 
+            this.userControlOrderProduct2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlOrderProduct2.Location = new System.Drawing.Point(0, 0);
+            this.userControlOrderProduct2.Name = "userControlOrderProduct2";
+            this.userControlOrderProduct2.Size = new System.Drawing.Size(973, 580);
+            this.userControlOrderProduct2.TabIndex = 3;
             // 
             // ucManagerInfo
             // 
@@ -347,13 +356,6 @@
             this.ucUserInfo.Name = "ucUserInfo";
             this.ucUserInfo.Size = new System.Drawing.Size(973, 580);
             this.ucUserInfo.TabIndex = 0;
-            // 
-            // userControlOrderProduct2
-            // 
-            this.userControlOrderProduct2.Location = new System.Drawing.Point(0, -4);
-            this.userControlOrderProduct2.Name = "userControlOrderProduct2";
-            this.userControlOrderProduct2.Size = new System.Drawing.Size(970, 596);
-            this.userControlOrderProduct2.TabIndex = 3;
             // 
             // frmEmployee
             // 

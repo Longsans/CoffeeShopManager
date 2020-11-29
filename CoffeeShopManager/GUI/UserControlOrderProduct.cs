@@ -289,8 +289,6 @@ namespace GUI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-
             if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDown")
             {
                 r1 = dataGridView1.Rows[e.RowIndex];
@@ -412,7 +410,7 @@ namespace GUI
             }
             busReceipt.InsertTakeAwayReceipt(dtoReceipt);
             DTO_Table dtoTab = new DTO_Table();
-            if (comboBox2.Text != null) 
+            if (!string.IsNullOrWhiteSpace(comboBox2.Text)) 
             {
                 dtoTab.Id = Int32.Parse(comboBox2.Text);
                 dtoTab.Shop.ID = shopID;
@@ -563,7 +561,6 @@ namespace GUI
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(shopID.ToString());
         }
     }
 }
