@@ -162,6 +162,12 @@
     <Compile Include="UserControlEmployeesTab.Designer.cs">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlEmployeeUserTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEmployeeUserTab.Designer.cs">
+      <DependentUpon>UserControlEmployeeUserTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlEvents.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlEmployeesTab.resx">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEmployeeUserTab.resx">
+      <DependentUpon>UserControlEmployeeUserTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlHome.resx">
       <DependentUpon>UserControlHome.cs</DependentUpon>

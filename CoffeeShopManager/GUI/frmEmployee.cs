@@ -15,7 +15,7 @@ namespace GUI
     public partial class frmEmployee : Form
     {
         frmLogin _frmLogin = new frmLogin();
-        public DTO_Employee dtoEmp = new DTO_Employee();
+        static public DTO_Employee dtoEmp = new DTO_Employee();
         public DTO_Shop dtoShop = new DTO_Shop();
         BUS_Employee busEmp = new BUS_Employee();
         BUS_Manager busMan = new BUS_Manager();
@@ -118,21 +118,32 @@ namespace GUI
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnManager.Location;
             ucManagerInfo.BringToFront();
-            ucUserInfo.Show();
+            ucManagerInfo.Show();
         }
 
         private void frmEmployee_Load(object sender, EventArgs e)
         {
            
             dtoEmp = busEmp.GetEmployeeInfoByUsername(_frmLogin.GetUsername());
+            dtoEmp.Account = busEmp.GetUserInfoByUsername(_frmLogin.GetUsername());
             dtoShop = dtoEmp.Shop;
             lblWelcome.Text = "Welcome, " + dtoEmp.Firstname;
             ucTable.SetShopID(dtoShop.ID);
             ucManagerInfo.SetManager(busMan.GetById(dtoEmp.Manager.Id, dtoShop.ID));
             ucManagerInfo.SetShop(busShop.GetShopById(dtoShop.ID));
+            ucUserInfo.SetUser(dtoEmp);
             userControlOrderProduct2.SetShopID(dtoShop.ID);
+            MessageBox.Show(dtoEmp.Account.Username);
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
+        private void frmEmployee_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _frmLogin.Show();
+        }
     }
 }

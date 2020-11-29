@@ -82,8 +82,8 @@ namespace GUI
 
         private void btnChangeAuthCode_Click(object sender, EventArgs e)
         {
-            frmChangeAuthCodeShop frmChangeCode = new frmChangeAuthCodeShop(dtoShop);
-            frmChangeCode.ShowDialog();
+            frmChangeAuthCodeShop frmChangeAuthCode = new frmChangeAuthCodeShop(dtoShop);
+            frmChangeAuthCode.ShowDialog();
         }
     }
 }
