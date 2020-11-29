@@ -64,6 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataGridViewNumericUpDownCell.cs" />
+    <Compile Include="frmChangeAuthCodeShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangeAuthCodeShop.Designer.cs">
+      <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,12 @@
     <Compile Include="UserControlManagerReceiptsTab.Designer.cs">
       <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlManagerShopInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlManagerShopInfo.Designer.cs">
+      <DependentUpon>UserControlManagerShopInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlNotifications.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -243,6 +255,9 @@
     <EmbeddedResource Include="frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeAuthCodeShop.resx">
+      <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlManagerAndShopInfo.resx">
       <DependentUpon>UserControlManagerAndShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerShopInfo.resx">
+      <DependentUpon>UserControlManagerShopInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlOrderProduct.resx">
       <DependentUpon>UserControlOrderProduct.cs</DependentUpon>

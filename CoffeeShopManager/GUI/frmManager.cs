@@ -141,6 +141,7 @@ namespace GUI
             dtoMan.Account = busMan.GetUserInfoByUsername(_frmLogin.GetUsername());
             lblWelcome.Text = "Welcome, " + dtoMan.Firstname;
             ucHome.dtoMan = dtoMan;
+            ucShopInfoTab.SetManager(dtoMan);
         }
         public void Reload()
         {
@@ -227,6 +228,21 @@ namespace GUI
             ucHome.SetEmpTab(ucEmployeeTab);
             ucHome.SetButton(btnEmployee);
             ucHome.SetPanel(pnlChangeTab);
+        }
+
+        private void ucShopInfoTab_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnShop_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnShop.Location;
+            ucShopInfoTab.Show();
+            ucShopInfoTab.BringToFront();
+            ucShopInfoTab.Reload();
+            Reload();
         }
     }
 }

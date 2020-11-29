@@ -30,11 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
-            DTO.DTO_Manager dtO_Manager2 = new DTO.DTO_Manager();
+            DTO.DTO_Manager dtO_Manager1 = new DTO.DTO_Manager();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnShop = new System.Windows.Forms.Button();
+            this.imgListMenuButton = new System.Windows.Forms.ImageList(this.components);
             this.pnlChangeTab = new System.Windows.Forms.Panel();
             this.btnUser = new System.Windows.Forms.Button();
-            this.imgListMenuButton = new System.Windows.Forms.ImageList(this.components);
             this.btnNoti = new System.Windows.Forms.Button();
             this.btnEvent = new System.Windows.Forms.Button();
             this.btnStatistic = new System.Windows.Forms.Button();
@@ -67,6 +68,7 @@
             this.ucReceipts = new GUI.UserControlManagerReceiptsTab();
             this.ucEmployeeTab = new GUI.UserControlEmployeesTab();
             this.ucReceiptDetails = new GUI.UserControlReceiptsDetail();
+            this.ucShopInfoTab = new GUI.UserControlManagerShopInfo();
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlShow.SuspendLayout();
@@ -76,6 +78,7 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
+            this.pnlMenu.Controls.Add(this.btnShop);
             this.pnlMenu.Controls.Add(this.pnlChangeTab);
             this.pnlMenu.Controls.Add(this.btnUser);
             this.pnlMenu.Controls.Add(this.btnNoti);
@@ -90,8 +93,44 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 37);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(221, 610);
+            this.pnlMenu.Size = new System.Drawing.Size(221, 649);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // btnShop
+            // 
+            this.btnShop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShop.FlatAppearance.BorderSize = 0;
+            this.btnShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShop.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShop.ImageIndex = 10;
+            this.btnShop.ImageList = this.imgListMenuButton;
+            this.btnShop.Location = new System.Drawing.Point(-3, 577);
+            this.btnShop.Name = "btnShop";
+            this.btnShop.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnShop.Size = new System.Drawing.Size(221, 50);
+            this.btnShop.TabIndex = 5;
+            this.btnShop.Text = "   Shop";
+            this.btnShop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnShop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShop.UseVisualStyleBackColor = true;
+            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
+            // 
+            // imgListMenuButton
+            // 
+            this.imgListMenuButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListMenuButton.ImageStream")));
+            this.imgListMenuButton.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListMenuButton.Images.SetKeyName(0, "Employee.png");
+            this.imgListMenuButton.Images.SetKeyName(1, "Coffee.png");
+            this.imgListMenuButton.Images.SetKeyName(2, "Stockpng.png");
+            this.imgListMenuButton.Images.SetKeyName(3, "supplier.png");
+            this.imgListMenuButton.Images.SetKeyName(4, "order_history.png");
+            this.imgListMenuButton.Images.SetKeyName(5, "customer.png");
+            this.imgListMenuButton.Images.SetKeyName(6, "statistics.png");
+            this.imgListMenuButton.Images.SetKeyName(7, "event.png");
+            this.imgListMenuButton.Images.SetKeyName(8, "notification_50px.png");
+            this.imgListMenuButton.Images.SetKeyName(9, "user_account_50px.png");
+            this.imgListMenuButton.Images.SetKeyName(10, "shop_32px.png");
             // 
             // pnlChangeTab
             // 
@@ -121,21 +160,6 @@
             this.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUser.UseVisualStyleBackColor = true;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
-            // 
-            // imgListMenuButton
-            // 
-            this.imgListMenuButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListMenuButton.ImageStream")));
-            this.imgListMenuButton.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgListMenuButton.Images.SetKeyName(0, "Employee.png");
-            this.imgListMenuButton.Images.SetKeyName(1, "Coffee.png");
-            this.imgListMenuButton.Images.SetKeyName(2, "Stockpng.png");
-            this.imgListMenuButton.Images.SetKeyName(3, "supplier.png");
-            this.imgListMenuButton.Images.SetKeyName(4, "order_history.png");
-            this.imgListMenuButton.Images.SetKeyName(5, "customer.png");
-            this.imgListMenuButton.Images.SetKeyName(6, "statistics.png");
-            this.imgListMenuButton.Images.SetKeyName(7, "event.png");
-            this.imgListMenuButton.Images.SetKeyName(8, "notification_50px.png");
-            this.imgListMenuButton.Images.SetKeyName(9, "user_account_50px.png");
             // 
             // btnNoti
             // 
@@ -437,10 +461,11 @@
             this.pnlShow.Controls.Add(this.ucReceipts);
             this.pnlShow.Controls.Add(this.ucEmployeeTab);
             this.pnlShow.Controls.Add(this.ucReceiptDetails);
+            this.pnlShow.Controls.Add(this.ucShopInfoTab);
             this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlShow.Location = new System.Drawing.Point(221, 37);
             this.pnlShow.Name = "pnlShow";
-            this.pnlShow.Size = new System.Drawing.Size(916, 610);
+            this.pnlShow.Size = new System.Drawing.Size(916, 649);
             this.pnlShow.TabIndex = 2;
             // 
             // panel1
@@ -488,7 +513,7 @@
             this.ucHome.dtoMan = null;
             this.ucHome.Location = new System.Drawing.Point(0, 0);
             this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(916, 610);
+            this.ucHome.Size = new System.Drawing.Size(916, 649);
             this.ucHome.TabIndex = 3;
             this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
             // 
@@ -497,7 +522,7 @@
             this.ucSuppliersTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucSuppliersTab.Location = new System.Drawing.Point(0, 0);
             this.ucSuppliersTab.Name = "ucSuppliersTab";
-            this.ucSuppliersTab.Size = new System.Drawing.Size(916, 610);
+            this.ucSuppliersTab.Size = new System.Drawing.Size(916, 649);
             this.ucSuppliersTab.TabIndex = 10;
             this.ucSuppliersTab.Visible = false;
             // 
@@ -506,7 +531,7 @@
             this.ucStockTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucStockTab.Location = new System.Drawing.Point(0, 0);
             this.ucStockTab.Name = "ucStockTab";
-            this.ucStockTab.Size = new System.Drawing.Size(916, 610);
+            this.ucStockTab.Size = new System.Drawing.Size(916, 649);
             this.ucStockTab.TabIndex = 9;
             this.ucStockTab.Visible = false;
             // 
@@ -515,7 +540,7 @@
             this.ucStatisticsTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucStatisticsTab.Location = new System.Drawing.Point(0, 0);
             this.ucStatisticsTab.Name = "ucStatisticsTab";
-            this.ucStatisticsTab.Size = new System.Drawing.Size(916, 610);
+            this.ucStatisticsTab.Size = new System.Drawing.Size(916, 649);
             this.ucStatisticsTab.TabIndex = 8;
             this.ucStatisticsTab.Visible = false;
             // 
@@ -524,7 +549,7 @@
             this.ucNotifications.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucNotifications.Location = new System.Drawing.Point(0, 0);
             this.ucNotifications.Name = "ucNotifications";
-            this.ucNotifications.Size = new System.Drawing.Size(916, 610);
+            this.ucNotifications.Size = new System.Drawing.Size(916, 649);
             this.ucNotifications.TabIndex = 7;
             this.ucNotifications.Visible = false;
             // 
@@ -533,7 +558,7 @@
             this.ucEventsTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucEventsTab.Location = new System.Drawing.Point(0, 0);
             this.ucEventsTab.Name = "ucEventsTab";
-            this.ucEventsTab.Size = new System.Drawing.Size(916, 610);
+            this.ucEventsTab.Size = new System.Drawing.Size(916, 649);
             this.ucEventsTab.TabIndex = 6;
             this.ucEventsTab.Visible = false;
             // 
@@ -544,7 +569,7 @@
             this.ucCustomersTab.frmMan = null;
             this.ucCustomersTab.Location = new System.Drawing.Point(0, 0);
             this.ucCustomersTab.Name = "ucCustomersTab";
-            this.ucCustomersTab.Size = new System.Drawing.Size(916, 610);
+            this.ucCustomersTab.Size = new System.Drawing.Size(916, 649);
             this.ucCustomersTab.TabIndex = 5;
             this.ucCustomersTab.Visible = false;
             // 
@@ -555,7 +580,7 @@
             this.ucUserTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucUserTab.Location = new System.Drawing.Point(0, 0);
             this.ucUserTab.Name = "ucUserTab";
-            this.ucUserTab.Size = new System.Drawing.Size(916, 610);
+            this.ucUserTab.Size = new System.Drawing.Size(916, 649);
             this.ucUserTab.TabIndex = 4;
             this.ucUserTab.Visible = false;
             // 
@@ -565,7 +590,7 @@
             this.ucProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucProductTab.Location = new System.Drawing.Point(0, 0);
             this.ucProductTab.Name = "ucProductTab";
-            this.ucProductTab.Size = new System.Drawing.Size(916, 610);
+            this.ucProductTab.Size = new System.Drawing.Size(916, 649);
             this.ucProductTab.TabIndex = 1;
             this.ucProductTab.Visible = false;
             // 
@@ -575,7 +600,7 @@
             this.ucReceipts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucReceipts.Location = new System.Drawing.Point(0, 0);
             this.ucReceipts.Name = "ucReceipts";
-            this.ucReceipts.Size = new System.Drawing.Size(916, 610);
+            this.ucReceipts.Size = new System.Drawing.Size(916, 649);
             this.ucReceipts.TabIndex = 0;
             this.ucReceipts.ucRecDetails = null;
             this.ucReceipts.Visible = false;
@@ -583,19 +608,19 @@
             // ucEmployeeTab
             // 
             this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            dtO_Manager2.Birthdate = new System.DateTime(((long)(0)));
-            dtO_Manager2.Email = null;
-            dtO_Manager2.Firstname = null;
-            dtO_Manager2.Gender = null;
-            dtO_Manager2.Id = null;
-            dtO_Manager2.Image = null;
-            dtO_Manager2.Lastname = null;
-            dtO_Manager2.Phone = null;
-            dtO_Manager2.Position = null;
-            this.ucEmployeeTab.dtoMan = dtO_Manager2;
+            dtO_Manager1.Birthdate = new System.DateTime(((long)(0)));
+            dtO_Manager1.Email = null;
+            dtO_Manager1.Firstname = null;
+            dtO_Manager1.Gender = null;
+            dtO_Manager1.Id = null;
+            dtO_Manager1.Image = null;
+            dtO_Manager1.Lastname = null;
+            dtO_Manager1.Phone = null;
+            dtO_Manager1.Position = null;
+            this.ucEmployeeTab.dtoMan = dtO_Manager1;
             this.ucEmployeeTab.Location = new System.Drawing.Point(0, 0);
             this.ucEmployeeTab.Name = "ucEmployeeTab";
-            this.ucEmployeeTab.Size = new System.Drawing.Size(916, 610);
+            this.ucEmployeeTab.Size = new System.Drawing.Size(916, 649);
             this.ucEmployeeTab.TabIndex = 0;
             this.ucEmployeeTab.Visible = false;
             // 
@@ -606,16 +631,26 @@
             this.ucReceiptDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucReceiptDetails.Location = new System.Drawing.Point(0, 0);
             this.ucReceiptDetails.Name = "ucReceiptDetails";
-            this.ucReceiptDetails.Size = new System.Drawing.Size(916, 610);
+            this.ucReceiptDetails.Size = new System.Drawing.Size(916, 649);
             this.ucReceiptDetails.TabIndex = 11;
             this.ucReceiptDetails.UcManReceipt = this.ucReceipts;
+            // 
+            // ucShopInfoTab
+            // 
+            this.ucShopInfoTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucShopInfoTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucShopInfoTab.Location = new System.Drawing.Point(0, 0);
+            this.ucShopInfoTab.Name = "ucShopInfoTab";
+            this.ucShopInfoTab.Size = new System.Drawing.Size(916, 649);
+            this.ucShopInfoTab.TabIndex = 12;
+            this.ucShopInfoTab.Load += new System.EventHandler(this.ucShopInfoTab_Load);
             // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1137, 647);
+            this.ClientSize = new System.Drawing.Size(1137, 686);
             this.Controls.Add(this.pnlShow);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlTitleBar);
@@ -671,5 +706,7 @@
         private UserControlEvents ucEventsTab;
         private UserControlHome ucHome;
         private UserControlReceiptsDetail ucReceiptDetails;
+        private System.Windows.Forms.Button btnShop;
+        private UserControlManagerShopInfo ucShopInfoTab;
     }
 }
