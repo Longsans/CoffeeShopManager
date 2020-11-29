@@ -400,6 +400,10 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (busCus.GetCustomerByEmail(txtEmail.Text,dtoShop.ID) == null)
+            {
+                check = 0;
+            }
             if (dataGridView1.Rows.Count <= 1)
             {
                 MessageBox.Show("Chua order mon");
@@ -410,6 +414,11 @@ namespace GUI
             if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtDayBD.Text == "" || txtMonthBD.Text == "" || txtYearBD.Text == "")
             {
                 MessageBox.Show("Nhap day du thong tin customer");
+                return;
+            }
+            if (check == 0)
+            {
+                MessageBox.Show("Yeu cau dang ky  khach hang");
                 return;
             }
             //}
@@ -437,7 +446,7 @@ namespace GUI
             }
             busReceipt.InsertTakeAwayReceipt(dtoReceipt);
         }
-
+        public int check = 0;
         private void btnAddCus_Click(object sender, EventArgs e)
         {
             string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
@@ -453,6 +462,7 @@ namespace GUI
             }
             dtoCus.ShopID = dtoShop.ID;
             busCus.Insert(dtoCus);
+            check = 1;
         }
         public void ResetAll()
         {
@@ -465,6 +475,7 @@ namespace GUI
             }
             strSave.Clear();
             ResetCus();
+            check = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
