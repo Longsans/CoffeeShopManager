@@ -431,6 +431,11 @@ namespace GUI
             ResetAll();
         }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void Test_Click(object sender, EventArgs e)
         {
             if (comboBox1.Text == "")

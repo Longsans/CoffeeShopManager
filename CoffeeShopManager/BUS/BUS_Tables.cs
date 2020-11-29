@@ -97,6 +97,19 @@ namespace BUS
             }
         }
 
+        public void Update(DTO_Table tabUpdated)
+        {
+            try
+            {
+                dalTables.Update(tabUpdated);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw ex;
+            }
+        }
+
 
 
 
