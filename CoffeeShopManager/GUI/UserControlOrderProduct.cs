@@ -37,7 +37,7 @@ namespace GUI
         DataTable c = new DataTable();
         DataTable T = new DataTable();
         public DTO_Shop dtoShop = new DTO_Shop();
-        int shopID=1;
+        int shopID;
         public UserControlOrderProduct()
         {
             InitializeComponent();
@@ -46,6 +46,19 @@ namespace GUI
         {
 
             flowLayoutPanel1.Controls.Clear();
+            T = busPro.GetAllProductsWithImages(1);
+            GetData(T);
+            a = busPro.GetAllFood(shopID);
+            b = busPro.GetAllDrinks(shopID);
+            c = busPro.GetAllOtherProducts(shopID);
+            lsTable = busTable.GetAvailableTables(shopID);
+            for (int i = 0; i < lsTable.Count; i++)
+            {
+                comboBox2.Items.Add(lsTable[i].Id.ToString());
+            }
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //  GetData(busPro.GetAllProducts(dtoShop.ID));
             //  dataGridView1.Columns["Image"].Visible = false;
         }
@@ -184,20 +197,8 @@ namespace GUI
 
         private void UserControlOrderProduct_Load(object sender, EventArgs e)
         {
-            Reload();
-            T = busPro.GetAllProductsWithImages(1);
-            GetData(T);
-            a = busPro.GetAllFood(shopID);
-            b = busPro.GetAllDrinks(shopID);
-            c = busPro.GetAllOtherProducts(shopID);
-            lsTable = busTable.GetAvailableTables(shopID);
-            for (int i = 0; i < lsTable.Count; i++)
-            {
-                comboBox2.Items.Add(lsTable[i].Id.ToString());
-            }
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+          //  Reload();
+          
             Timer t1 = new Timer();
             t1.Interval = 1000;
             t1.Enabled = true;
@@ -410,10 +411,33 @@ namespace GUI
                 dtoReceipt.Items.Add(dtoDetail);
             }
             busReceipt.InsertTakeAwayReceipt(dtoReceipt);
+            DTO_Table dtoTab = new DTO_Table();
+            if (comboBox2.Text != null) 
+            {
+                dtoTab.Id = Int32.Parse(comboBox2.Text);
+                dtoTab.Shop.ID = shopID;
+                dtoTab.Status = "No";
+                busTable.Update(dtoTab);
+                
+            }
+            comboBox2.Items.Clear();
+            lsTable.Clear();
+            lsTable = busTable.GetAvailableTables(shopID);
+            for (int i = 0; i < lsTable.Count; i++)
+            {
+                comboBox2.Items.Add(lsTable[i].Id.ToString());
+            }
+            MessageBox.Show("Done, add new receipts");
+            ResetAll();
         }
         public int check = 0;
         private void btnAddCus_Click(object sender, EventArgs e)
         {
+            if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtDayBD.Text == "" || txtMonthBD.Text == "" || txtYearBD.Text == "")
+            {
+                MessageBox.Show("Nhap day du thong tin khach hang");
+                return;
+            }
             string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
             DateTime bdate = new DateTime();
             dtoCus.Email = txtEmail.Text;
@@ -430,7 +454,6 @@ namespace GUI
         }
         public void ResetAll()
         {
-            MessageBox.Show(dataGridView1.Rows.Count.ToString());
             int to = dataGridView1.Rows.Count;
             for (int i = 0; i < to - 1; i++)
             {
@@ -529,12 +552,18 @@ namespace GUI
         public void SetShopID(int id)
         {
             shopID = id;
+            Reload();
         }
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
             lblSelect.Visible = false;
 
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(shopID.ToString());
         }
     }
 }
