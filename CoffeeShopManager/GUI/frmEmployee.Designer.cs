@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployee));
             this.pnlTitleBar = new System.Windows.Forms.Panel();
+            this.userControlOrderProduct1 = new GUI.UserControlOrderProduct();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.imgListMenuButton = new System.Windows.Forms.ImageList(this.components);
@@ -48,6 +49,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.userControlOrderProduct2 = new GUI.UserControlOrderProduct();
             this.ucManagerInfo = new GUI.UserControlManagerAndShopInfo();
             this.ucTable = new GUI.UserControlTable();
             this.ucUserInfo = new GUI.UserControlUserTab();
@@ -60,6 +62,7 @@
             // pnlTitleBar
             // 
             this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(138)))), ((int)(((byte)(93)))));
+            this.pnlTitleBar.Controls.Add(this.userControlOrderProduct1);
             this.pnlTitleBar.Controls.Add(this.btnHome);
             this.pnlTitleBar.Controls.Add(this.btnMenu);
             this.pnlTitleBar.Controls.Add(this.btnMinimize);
@@ -73,6 +76,13 @@
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.pnlTitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
+            // 
+            // userControlOrderProduct1
+            // 
+            this.userControlOrderProduct1.Location = new System.Drawing.Point(267, 35);
+            this.userControlOrderProduct1.Name = "userControlOrderProduct1";
+            this.userControlOrderProduct1.Size = new System.Drawing.Size(973, 580);
+            this.userControlOrderProduct1.TabIndex = 3;
             // 
             // btnHome
             // 
@@ -182,6 +192,7 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(267, 614);
             this.pnlMenu.TabIndex = 3;
+            this.pnlMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMenu_Paint);
             // 
             // pnlChangeTab
             // 
@@ -310,6 +321,7 @@
             // 
             // pnlShow
             // 
+            this.pnlShow.Controls.Add(this.userControlOrderProduct2);
             this.pnlShow.Controls.Add(this.ucManagerInfo);
             this.pnlShow.Controls.Add(this.ucTable);
             this.pnlShow.Controls.Add(this.ucUserInfo);
@@ -318,6 +330,13 @@
             this.pnlShow.Name = "pnlShow";
             this.pnlShow.Size = new System.Drawing.Size(973, 580);
             this.pnlShow.TabIndex = 6;
+            // 
+            // userControlOrderProduct2
+            // 
+            this.userControlOrderProduct2.Location = new System.Drawing.Point(0, -4);
+            this.userControlOrderProduct2.Name = "userControlOrderProduct2";
+            this.userControlOrderProduct2.Size = new System.Drawing.Size(970, 596);
+            this.userControlOrderProduct2.TabIndex = 3;
             // 
             // ucManagerInfo
             // 
@@ -391,5 +410,7 @@
         private UserControlUserTab ucUserInfo;
         private UserControlTable ucTable;
         private UserControlManagerAndShopInfo ucManagerInfo;
+        private UserControlOrderProduct userControlOrderProduct1;
+        private UserControlOrderProduct userControlOrderProduct2;
     }
 }

@@ -40,7 +40,7 @@ namespace GUI
             flowLayoutPanel1.Controls.Clear();
           //  GetData(busPro.GetAllProducts(dtoShop.ID));
             this.dataGridView1.DataSource = busPro.GetAllProductsWithImages(dtoShop.ID);
-            dataGridView1.Columns["Image"].Visible = false;
+          //  dataGridView1.Columns["Image"].Visible = false;
             lblLabel.Text = "Total All:";
         }
 

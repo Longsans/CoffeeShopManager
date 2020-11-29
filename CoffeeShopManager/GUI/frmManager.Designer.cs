@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
-            DTO.DTO_Manager dtO_Manager1 = new DTO.DTO_Manager();
+            DTO.DTO_Manager dtO_Manager2 = new DTO.DTO_Manager();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlChangeTab = new System.Windows.Forms.Panel();
             this.btnUser = new System.Windows.Forms.Button();
@@ -583,16 +583,16 @@
             // ucEmployeeTab
             // 
             this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            dtO_Manager1.Birthdate = new System.DateTime(((long)(0)));
-            dtO_Manager1.Email = null;
-            dtO_Manager1.Firstname = null;
-            dtO_Manager1.Gender = null;
-            dtO_Manager1.Id = null;
-            dtO_Manager1.Image = null;
-            dtO_Manager1.Lastname = null;
-            dtO_Manager1.Phone = null;
-            dtO_Manager1.Position = null;
-            this.ucEmployeeTab.dtoMan = dtO_Manager1;
+            dtO_Manager2.Birthdate = new System.DateTime(((long)(0)));
+            dtO_Manager2.Email = null;
+            dtO_Manager2.Firstname = null;
+            dtO_Manager2.Gender = null;
+            dtO_Manager2.Id = null;
+            dtO_Manager2.Image = null;
+            dtO_Manager2.Lastname = null;
+            dtO_Manager2.Phone = null;
+            dtO_Manager2.Position = null;
+            this.ucEmployeeTab.dtoMan = dtO_Manager2;
             this.ucEmployeeTab.Location = new System.Drawing.Point(0, 0);
             this.ucEmployeeTab.Name = "ucEmployeeTab";
             this.ucEmployeeTab.Size = new System.Drawing.Size(916, 610);

@@ -14,7 +14,7 @@ namespace DTO
         public decimal Total { get; set; }
         public string Details { get; set; }
         public DTO_Shop Shop = new DTO_Shop();
-        public List<DTO_ReceiptDetails> Items { get; set; }
+        public List<DTO_ReceiptDetails> Items = new List<DTO_ReceiptDetails>();
         public DTO_Receipt()
         {
 
