@@ -32,8 +32,12 @@ namespace GUI
         DataRow[] RowSave;
         DataGridViewRow r1;
         int abc = 0;
-        DataTable a, b, c, T;
+        DataTable a = new DataTable();
+        DataTable b = new DataTable();
+        DataTable c = new DataTable();
+        DataTable T = new DataTable();
         public DTO_Shop dtoShop = new DTO_Shop();
+        int shopID=1;
         public UserControlOrderProduct()
         {
             InitializeComponent();
@@ -110,8 +114,10 @@ namespace GUI
 
             }
         }
+        public int dem = 0;
         public void OnClick(object sender, EventArgs e)
         {
+            dem++;
             // ((Button)sender).Enabled = false;
             string s = ((Button)sender).Tag.ToString();
             string[] arrListStr = s.Split('/');
@@ -130,7 +136,7 @@ namespace GUI
                 }
             }
 
-
+        
             r1 = (DataGridViewRow)dataGridView1.Rows[0].Clone();
             //  MessageBox.Show(arrListStr[0] + "-0-" + arrListStr[1]);
             r1.Cells[0].Value = arrListStr[0].ToString();
@@ -142,10 +148,15 @@ namespace GUI
             dataGridView1.Rows.Add(r1);
             // ((Button)sender).Text = "done";
             strSave.Add(arrListStr[0]);
-            ((Button)sender).Text = "X";
+
+          //  int rowId = dataGridView1.Rows.Add();
+
+            // Grab the new row!
+          //  r1 = (DataGridViewRow)dataGridView1.Rows[rowId].Clone();
+
 
         }
-        
+
         private void lblEmail_Click(object sender, EventArgs e)
         {
 
@@ -173,14 +184,13 @@ namespace GUI
 
         private void UserControlOrderProduct_Load(object sender, EventArgs e)
         {
-            dtoShop.ID = 1;
             Reload();
             T = busPro.GetAllProductsWithImages(1);
             GetData(T);
-            a = busPro.GetAllFood(1);
-            b = busPro.GetAllDrinks(1);
-            c = busPro.GetAllOtherProducts(1);
-            lsTable = busTable.GetAvailableTables(1);
+            a = busPro.GetAllFood(shopID);
+            b = busPro.GetAllDrinks(shopID);
+            c = busPro.GetAllOtherProducts(shopID);
+            lsTable = busTable.GetAvailableTables(shopID);
             for (int i = 0; i < lsTable.Count; i++)
             {
                 comboBox2.Items.Add(lsTable[i].Id.ToString());
@@ -207,58 +217,8 @@ namespace GUI
             txtMonthBD.Text = "";
             txtYearBD.Text = "";
         }
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            r1 = new DataGridViewRow();
-            if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDown")
-            {
-                r1 = dataGridView1.Rows[e.RowIndex];
-                if (r1.Cells[2].Value.ToString() != "0")
-                {
-                    r1.Cells[2].Value = (Int32.Parse(r1.Cells[2].Value.ToString()) - 1);
-                    bien = (Int32.Parse(r1.Cells[2].Value.ToString()));
 
-                    giatri = float.Parse(r1.Cells[4].Value.ToString()) / (bien + 1);
-                    r1.Cells[4].Value = giatri * bien;
-                }
-                if (r1.Cells[2].Value.ToString() == "0")
-                {
-                    for (int i = 0; i < strSave.Count; i++)
-                    {
-                        if (strSave[i] == r1.Cells[0].Value.ToString())
-                        {
-                            strSave.RemoveAt(i);
-                        }
-                    }
-                    dataGridView1.Rows.RemoveAt(r1.Index);
-                }
-
-            }
-            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmUp")
-            {
-                r1 = dataGridView1.Rows[e.RowIndex];
-                r1.Cells[2].Value = (Int32.Parse(r1.Cells[2].Value.ToString()) + 1);
-                bien = (Int32.Parse(r1.Cells[2].Value.ToString()));
-                //  MessageBox.Show(""+ Int32.Parse(r1.Cells[4].Value.ToString()));
-                giatri = float.Parse(r1.Cells[4].Value.ToString()) / (bien - 1);
-                r1.Cells[4].Value = giatri * bien;
-                //  MessageBox.Show(row.Cells[2].Value.ToString());
-            }
-            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDelete")
-            {
-                for (int i = 0; i < strSave.Count; i++)
-                {
-                    if (strSave[i] == dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString())
-                    {
-                        strSave.RemoveAt(dataGridView1.Rows[e.RowIndex].Index);
-                        break;
-                    }
-                }
-                dataGridView1.Rows.RemoveAt(dataGridView1.Rows[e.RowIndex].Index);
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int resultIndex = -1;
             resultIndex = comboBox1.FindStringExact(comboBox1.Text);
@@ -282,9 +242,8 @@ namespace GUI
                 flowLayoutPanel1.Controls.Clear();
                 GetData(T);
             }
-            lblSelect.Visible = false;
-            Refresh();
         }
+    
 
       /*  private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -319,7 +278,7 @@ namespace GUI
             try
             {
                 flowLayoutPanel1.Controls.Clear();
-                GetData(busPro.GetProductsSearchNameFiltered(txtSearchName.Text, 1));
+                GetData(busPro.GetProductsSearchNameFiltered(txtSearchName.Text, shopID));
             }
             catch (Exception ex)
             {
@@ -329,7 +288,8 @@ namespace GUI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-                r1 = new DataGridViewRow();
+            MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+
             if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDown")
             {
                 r1 = dataGridView1.Rows[e.RowIndex];
@@ -364,7 +324,8 @@ namespace GUI
                 r1.Cells[4].Value = giatri * bien;
                 //  MessageBox.Show(row.Cells[2].Value.ToString());
             }
-            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDelete")
+
+            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDelete" )
             {
                 for (int i = 0; i < strSave.Count; i++)
                 {
@@ -400,9 +361,14 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (busCus.GetCustomerByEmail(txtEmail.Text,dtoShop.ID) == null)
+            dtoReceipt = new DTO_Receipt();
+            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
             {
                 check = 0;
+            }
+            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
+            {
+                check = 1;
             }
             if (dataGridView1.Rows.Count <= 1)
             {
@@ -416,7 +382,7 @@ namespace GUI
                 MessageBox.Show("Nhap day du thong tin customer");
                 return;
             }
-            if (check == 0)
+            if (check==0)
             {
                 MessageBox.Show("Yeu cau dang ky  khach hang");
                 return;
@@ -427,7 +393,7 @@ namespace GUI
             dtoReceipt.DateOfPayMent = now;
             dtoReceipt.Total = Int32.Parse(lblGrandTotal.Text);
             dtoReceipt.Details = "";
-            dtoReceipt.Shop.ID = 1;
+            dtoReceipt.Shop.ID = shopID;
             //  dataGridView1.Rows[i].Cells[4].Value.ToString()
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
@@ -441,7 +407,6 @@ namespace GUI
                 //dtoDetail.Product.Id = dto_pro.Id;
                 dtoDetail.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
                 dtoDetail.TotalPrice = decimal.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
-                MessageBox.Show(dtoDetail.TotalPrice.ToString());
                 dtoReceipt.Items.Add(dtoDetail);
             }
             busReceipt.InsertTakeAwayReceipt(dtoReceipt);
@@ -460,9 +425,8 @@ namespace GUI
             {
                 dtoCus.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
             }
-            dtoCus.ShopID = dtoShop.ID;
+            dtoCus.ShopID = shopID;
             busCus.Insert(dtoCus);
-            check = 1;
         }
         public void ResetAll()
         {
@@ -475,12 +439,37 @@ namespace GUI
             }
             strSave.Clear();
             ResetCus();
-            check = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ResetAll();
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            int resultIndex = -1;
+            resultIndex = comboBox1.FindStringExact(comboBox1.Text);
+            if (resultIndex == 1)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                GetData(a);
+            }
+            else if (resultIndex == 2)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                GetData(b);
+            }
+            else if (resultIndex == 3)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                GetData(c);
+            }
+            else if (resultIndex == 0)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                GetData(T);
+            }
         }
 
         public double sum = 0;
@@ -502,7 +491,7 @@ namespace GUI
                 lblGrandTotal.Text = sum.ToString();
             }
             lblGrandTotal.Text = sum.ToString();
-            if (busCus.GetCustomerByEmail(txtEmail.Text.ToString(), 1) == null)
+            if (busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) == null)
             {
                 errorProvider1.SetError(txtEmail, "Doesn't have customer này, vui lòng nhập thông tin");
                 errorProvider2.SetError(txtEmail, "");
@@ -521,7 +510,7 @@ namespace GUI
                 txtID.Enabled = false;
                 txtFirstName.Enabled = false;
                 txtLastName.Enabled = false;
-                dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, 1);
+                dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
                 txtID.Text = dtoCus.Id.ToString();
                 txtFirstName.Text = dtoCus.FirstName;
                 txtLastName.Text = dtoCus.LastName;
@@ -536,10 +525,15 @@ namespace GUI
             }
 
         }
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        
+        public void SetShopID(int id)
         {
+            shopID = id;
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+            lblSelect.Visible = false;
 
         }
     }
