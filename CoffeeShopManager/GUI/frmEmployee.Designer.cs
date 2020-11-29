@@ -48,10 +48,10 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.ucUserInfo = new GUI.UserControlEmployeeUserTab();
             this.userControlOrderProduct2 = new GUI.UserControlOrderProduct();
             this.ucManagerInfo = new GUI.UserControlManagerAndShopInfo();
             this.ucTable = new GUI.UserControlTable();
-            this.ucUserInfo = new GUI.UserControlUserTab();
             this.pnlTitleBar.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -313,8 +313,8 @@
             // pnlShow
             // 
             this.pnlShow.Controls.Add(this.userControlOrderProduct2);
-            this.pnlShow.Controls.Add(this.ucManagerInfo);
             this.pnlShow.Controls.Add(this.ucTable);
+            this.pnlShow.Controls.Add(this.ucManagerInfo);
             this.pnlShow.Controls.Add(this.ucUserInfo);
             this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlShow.Location = new System.Drawing.Point(267, 71);
@@ -322,12 +322,19 @@
             this.pnlShow.Size = new System.Drawing.Size(973, 580);
             this.pnlShow.TabIndex = 6;
             // 
+            // ucUserInfo
+            // 
+            this.ucUserInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucUserInfo.Location = new System.Drawing.Point(0, 0);
+            this.ucUserInfo.Name = "ucUserInfo";
+            this.ucUserInfo.Size = new System.Drawing.Size(973, 580);
+            this.ucUserInfo.TabIndex = 4;
+            // 
             // userControlOrderProduct2
             // 
-            this.userControlOrderProduct2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlOrderProduct2.Location = new System.Drawing.Point(0, 0);
             this.userControlOrderProduct2.Name = "userControlOrderProduct2";
-            this.userControlOrderProduct2.Size = new System.Drawing.Size(973, 580);
+            this.userControlOrderProduct2.Size = new System.Drawing.Size(970, 596);
             this.userControlOrderProduct2.TabIndex = 3;
             // 
             // ucManagerInfo
@@ -347,16 +354,6 @@
             this.ucTable.Size = new System.Drawing.Size(973, 580);
             this.ucTable.TabIndex = 1;
             // 
-            // ucUserInfo
-            // 
-            this.ucUserInfo.BackColor = System.Drawing.SystemColors.Control;
-            this.ucUserInfo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ucUserInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucUserInfo.Location = new System.Drawing.Point(0, 0);
-            this.ucUserInfo.Name = "ucUserInfo";
-            this.ucUserInfo.Size = new System.Drawing.Size(973, 580);
-            this.ucUserInfo.TabIndex = 0;
-            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -369,6 +366,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEmployee";
             this.Text = "frmEmployee";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEmployee_FormClosed);
             this.Load += new System.EventHandler(this.frmEmployee_Load);
             this.pnlTitleBar.ResumeLayout(false);
             this.pnlMenu.ResumeLayout(false);
@@ -399,9 +397,9 @@
         private System.Windows.Forms.ImageList imgListWindowButton;
         private System.Windows.Forms.ImageList imgListMenuButton;
         private System.Windows.Forms.Panel pnlShow;
-        private UserControlUserTab ucUserInfo;
         private UserControlTable ucTable;
         private UserControlManagerAndShopInfo ucManagerInfo;
         private UserControlOrderProduct userControlOrderProduct2;
+        private UserControlEmployeeUserTab ucUserInfo;
     }
 }
