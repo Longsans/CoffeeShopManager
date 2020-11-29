@@ -39,17 +39,6 @@ namespace GUI
             userControlOrderProduct2.BringToFront();
             userControlOrderProduct2.Show();
         }
-
-        private void ucReceipts_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void ucReceiptsDetail_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
@@ -141,17 +130,9 @@ namespace GUI
             ucTable.SetShopID(dtoShop.ID);
             ucManagerInfo.SetManager(busMan.GetById(dtoEmp.Manager.Id, dtoShop.ID));
             ucManagerInfo.SetShop(busShop.GetShopById(dtoShop.ID));
+            userControlOrderProduct2.SetShopID(dtoShop.ID);
         }
 
-        private void pnlMenu_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            _frmLogin.Show();
-            this.Close();
-        }
     }
 }
