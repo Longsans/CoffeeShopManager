@@ -12,7 +12,7 @@ namespace DTO
         public DateTime DateOfJoin { get; set; }
         public string Address { get; set; }
         public decimal Salary { get; set; }
-        public DTO_Manager Manager { get; set; }
+        public DTO_Manager Manager { get; set; } = new DTO_Manager();
         public DTO_Employee() { }
         public DTO_Employee(DTO_Worker dtoWr)
         {

@@ -11,6 +11,12 @@ namespace BUS
     public class BUS_Customers
     {
         DAL_Customers dalCus = new DAL_Customers();
+
+        public DataTable GetAllCustomers(int shopId)
+        {
+            return dalCus.GetAllCustomers(shopId);
+        }
+
         public DTO_Customer GetCustomerById(int id)
         {
             try

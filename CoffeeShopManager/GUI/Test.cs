@@ -284,12 +284,14 @@ namespace GUI
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                var w = Properties.Resources.icons8_delete_bin_16.Width;
-                var h = Properties.Resources.icons8_delete_bin_16.Height;
+                //var w = Properties.Resources.icons8_delete_bin_16.Width;
+                var w = Properties.Resources.grid_view_24px.Width;
+               // var h = Properties.Resources.icons8_delete_bin_16.Height;
+                var h = Properties.Resources.grid_view_24px.Height;
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                e.Graphics.DrawImage(Properties.Resources.icons8_delete_bin_16, new Rectangle(x, y, w, h));
+                e.Graphics.DrawImage(Properties.Resources.grid_view_24px, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
         }

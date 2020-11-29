@@ -43,19 +43,20 @@
             this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtBirthDate = new System.Windows.Forms.TextBox();
-            this.lblManInfo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSaveChange = new System.Windows.Forms.Button();
             this.radMale = new System.Windows.Forms.RadioButton();
             this.radFemale = new System.Windows.Forms.RadioButton();
-            this.btnChangeUsername = new System.Windows.Forms.Button();
             this.picManagerInfo = new System.Windows.Forms.PictureBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lblManInfo = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.datBirthdate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.picManagerInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(522, 236);
+            this.label1.Location = new System.Drawing.Point(260, 360);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 19);
             this.label1.TabIndex = 18;
@@ -93,7 +94,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(260, 283);
+            this.label7.Location = new System.Drawing.Point(260, 279);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 19);
             this.label7.TabIndex = 15;
@@ -103,7 +104,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(260, 321);
+            this.label6.Location = new System.Drawing.Point(260, 319);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 19);
             this.label6.TabIndex = 16;
@@ -133,7 +134,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(522, 325);
+            this.label2.Location = new System.Drawing.Point(522, 280);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 32;
@@ -143,7 +144,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(522, 281);
+            this.label8.Location = new System.Drawing.Point(522, 238);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 19);
             this.label8.TabIndex = 31;
@@ -151,9 +152,10 @@
             // 
             // txtID
             // 
-            this.txtID.Enabled = false;
+            this.txtID.Cursor = System.Windows.Forms.Cursors.No;
             this.txtID.Location = new System.Drawing.Point(354, 194);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(125, 22);
             this.txtID.TabIndex = 36;
             // 
@@ -168,23 +170,24 @@
             // txtLastName
             // 
             this.txtLastName.Enabled = false;
-            this.txtLastName.Location = new System.Drawing.Point(354, 280);
+            this.txtLastName.Location = new System.Drawing.Point(354, 276);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(125, 22);
             this.txtLastName.TabIndex = 37;
             // 
             // txtPosition
             // 
-            this.txtPosition.Enabled = false;
+            this.txtPosition.Cursor = System.Windows.Forms.Cursors.No;
             this.txtPosition.Location = new System.Drawing.Point(640, 194);
             this.txtPosition.Name = "txtPosition";
+            this.txtPosition.ReadOnly = true;
             this.txtPosition.Size = new System.Drawing.Size(125, 22);
             this.txtPosition.TabIndex = 37;
             // 
             // txtPhone
             // 
             this.txtPhone.Enabled = false;
-            this.txtPhone.Location = new System.Drawing.Point(640, 233);
+            this.txtPhone.Location = new System.Drawing.Point(354, 357);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(125, 22);
             this.txtPhone.TabIndex = 37;
@@ -192,28 +195,10 @@
             // txtEmail
             // 
             this.txtEmail.Enabled = false;
-            this.txtEmail.Location = new System.Drawing.Point(640, 278);
+            this.txtEmail.Location = new System.Drawing.Point(640, 235);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(125, 22);
             this.txtEmail.TabIndex = 37;
-            // 
-            // txtBirthDate
-            // 
-            this.txtBirthDate.Enabled = false;
-            this.txtBirthDate.Location = new System.Drawing.Point(640, 322);
-            this.txtBirthDate.Name = "txtBirthDate";
-            this.txtBirthDate.Size = new System.Drawing.Size(125, 22);
-            this.txtBirthDate.TabIndex = 37;
-            // 
-            // lblManInfo
-            // 
-            this.lblManInfo.AutoSize = true;
-            this.lblManInfo.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManInfo.Location = new System.Drawing.Point(37, 131);
-            this.lblManInfo.Name = "lblManInfo";
-            this.lblManInfo.Size = new System.Drawing.Size(181, 31);
-            this.lblManInfo.TabIndex = 38;
-            this.lblManInfo.Text = "Manager Info";
             // 
             // panel1
             // 
@@ -229,7 +214,7 @@
             this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangePassword.FlatAppearance.BorderSize = 0;
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePassword.Location = new System.Drawing.Point(649, 453);
+            this.btnChangePassword.Location = new System.Drawing.Point(497, 458);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(145, 39);
             this.btnChangePassword.TabIndex = 40;
@@ -252,7 +237,7 @@
             this.btnSaveChange.Enabled = false;
             this.btnSaveChange.FlatAppearance.BorderSize = 0;
             this.btnSaveChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveChange.Location = new System.Drawing.Point(407, 453);
+            this.btnSaveChange.Location = new System.Drawing.Point(255, 458);
             this.btnSaveChange.Name = "btnSaveChange";
             this.btnSaveChange.Size = new System.Drawing.Size(145, 39);
             this.btnSaveChange.TabIndex = 42;
@@ -264,7 +249,7 @@
             // 
             this.radMale.AutoSize = true;
             this.radMale.Enabled = false;
-            this.radMale.Location = new System.Drawing.Point(351, 319);
+            this.radMale.Location = new System.Drawing.Point(351, 317);
             this.radMale.Name = "radMale";
             this.radMale.Size = new System.Drawing.Size(59, 21);
             this.radMale.TabIndex = 43;
@@ -276,27 +261,13 @@
             // 
             this.radFemale.AutoSize = true;
             this.radFemale.Enabled = false;
-            this.radFemale.Location = new System.Drawing.Point(416, 319);
+            this.radFemale.Location = new System.Drawing.Point(416, 317);
             this.radFemale.Name = "radFemale";
             this.radFemale.Size = new System.Drawing.Size(75, 21);
             this.radFemale.TabIndex = 43;
             this.radFemale.TabStop = true;
             this.radFemale.Text = "Female";
             this.radFemale.UseVisualStyleBackColor = true;
-            // 
-            // btnChangeUsername
-            // 
-            this.btnChangeUsername.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btnChangeUsername.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangeUsername.FlatAppearance.BorderSize = 0;
-            this.btnChangeUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeUsername.Location = new System.Drawing.Point(146, 453);
-            this.btnChangeUsername.Name = "btnChangeUsername";
-            this.btnChangeUsername.Size = new System.Drawing.Size(145, 39);
-            this.btnChangeUsername.TabIndex = 40;
-            this.btnChangeUsername.Text = "Change username";
-            this.btnChangeUsername.UseVisualStyleBackColor = false;
-            this.btnChangeUsername.Click += new System.EventHandler(this.btnChangeUsername_Click);
             // 
             // picManagerInfo
             // 
@@ -345,22 +316,59 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // lblManInfo
+            // 
+            this.lblManInfo.AutoSize = true;
+            this.lblManInfo.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManInfo.Location = new System.Drawing.Point(37, 131);
+            this.lblManInfo.Name = "lblManInfo";
+            this.lblManInfo.Size = new System.Drawing.Size(181, 31);
+            this.lblManInfo.TabIndex = 38;
+            this.lblManInfo.Text = "Manager Info";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Enabled = false;
+            this.txtUsername.Location = new System.Drawing.Point(640, 319);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(125, 22);
+            this.txtUsername.TabIndex = 47;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(522, 322);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 19);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Username";
+            // 
+            // datBirthdate
+            // 
+            this.datBirthdate.Enabled = false;
+            this.datBirthdate.Location = new System.Drawing.Point(640, 278);
+            this.datBirthdate.Name = "datBirthdate";
+            this.datBirthdate.Size = new System.Drawing.Size(125, 22);
+            this.datBirthdate.TabIndex = 48;
+            // 
             // UserControlUserTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.datBirthdate);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.radFemale);
             this.Controls.Add(this.radMale);
             this.Controls.Add(this.btnSaveChange);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnChangeUsername);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblManInfo);
-            this.Controls.Add(this.txtBirthDate);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtPosition);
@@ -405,17 +413,18 @@
         private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtBirthDate;
-        private System.Windows.Forms.Label lblManInfo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSaveChange;
         private System.Windows.Forms.RadioButton radMale;
         private System.Windows.Forms.RadioButton radFemale;
-        private System.Windows.Forms.Button btnChangeUsername;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lblManInfo;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker datBirthdate;
     }
 }

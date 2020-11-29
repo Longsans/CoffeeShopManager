@@ -60,7 +60,6 @@ namespace BUS
                 DTO_User accountnew1 = dalUserInfo.GetByUsername(username);
                 if (accountnew1 == null) return true;
                 return false;
-
             }
             catch (Exception ex)
             {
@@ -128,6 +127,11 @@ namespace BUS
         {
             dtoMan.Account.PassWord = ComputeSha256Hash(dtoMan.Account.PassWord);
             return dtoMan.Account;
+        }
+        public DTO_User EncodePass(DTO_Employee dtoEmp)
+        {
+            dtoEmp.Account.PassWord = ComputeSha256Hash(dtoEmp.Account.PassWord);
+            return dtoEmp.Account;
         }
     }
 }

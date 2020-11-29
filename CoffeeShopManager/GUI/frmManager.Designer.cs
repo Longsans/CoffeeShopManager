@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
+            DTO.DTO_Manager dtO_Manager1 = new DTO.DTO_Manager();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlChangeTab = new System.Windows.Forms.Panel();
             this.btnUser = new System.Windows.Forms.Button();
@@ -38,7 +39,7 @@
             this.btnEvent = new System.Windows.Forms.Button();
             this.btnStatistic = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
-            this.btnOrderhistory = new System.Windows.Forms.Button();
+            this.btnReceipts = new System.Windows.Forms.Button();
             this.btnSupplier = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
@@ -51,6 +52,10 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.ucHome = new GUI.UserControlHome();
             this.ucSuppliersTab = new GUI.UserControlSuppliers();
             this.ucStockTab = new GUI.UserControlStock();
             this.ucStatisticsTab = new GUI.UserControlStatistics();
@@ -59,12 +64,9 @@
             this.ucCustomersTab = new GUI.UserControlCustomers();
             this.ucUserTab = new GUI.UserControlUserTab();
             this.ucProductTab = new GUI.UserControlProductTab();
-            this.ucOrderHistorycs1 = new GUI.ucOrderHistorycs();
+            this.ucReceipts = new GUI.UserControlManagerReceiptsTab();
             this.ucEmployeeTab = new GUI.UserControlEmployeesTab();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.ucHome = new GUI.UserControlHome();
+            this.ucReceiptDetails = new GUI.UserControlReceiptsDetail();
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlShow.SuspendLayout();
@@ -80,7 +82,7 @@
             this.pnlMenu.Controls.Add(this.btnEvent);
             this.pnlMenu.Controls.Add(this.btnStatistic);
             this.pnlMenu.Controls.Add(this.btnCustomer);
-            this.pnlMenu.Controls.Add(this.btnOrderhistory);
+            this.pnlMenu.Controls.Add(this.btnReceipts);
             this.pnlMenu.Controls.Add(this.btnSupplier);
             this.pnlMenu.Controls.Add(this.btnStock);
             this.pnlMenu.Controls.Add(this.btnProduct);
@@ -88,7 +90,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 37);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(221, 597);
+            this.pnlMenu.Size = new System.Drawing.Size(221, 610);
             this.pnlMenu.TabIndex = 0;
             // 
             // pnlChangeTab
@@ -215,25 +217,25 @@
             this.btnCustomer.UseVisualStyleBackColor = true;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
-            // btnOrderhistory
+            // btnReceipts
             // 
-            this.btnOrderhistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOrderhistory.FlatAppearance.BorderSize = 0;
-            this.btnOrderhistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderhistory.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderhistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrderhistory.ImageIndex = 4;
-            this.btnOrderhistory.ImageList = this.imgListMenuButton;
-            this.btnOrderhistory.Location = new System.Drawing.Point(0, 222);
-            this.btnOrderhistory.Name = "btnOrderhistory";
-            this.btnOrderhistory.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btnOrderhistory.Size = new System.Drawing.Size(221, 50);
-            this.btnOrderhistory.TabIndex = 0;
-            this.btnOrderhistory.Text = "   Order history";
-            this.btnOrderhistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrderhistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOrderhistory.UseVisualStyleBackColor = true;
-            this.btnOrderhistory.Click += new System.EventHandler(this.btnOrderhistory_Click);
+            this.btnReceipts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReceipts.FlatAppearance.BorderSize = 0;
+            this.btnReceipts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReceipts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReceipts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReceipts.ImageIndex = 4;
+            this.btnReceipts.ImageList = this.imgListMenuButton;
+            this.btnReceipts.Location = new System.Drawing.Point(0, 222);
+            this.btnReceipts.Name = "btnReceipts";
+            this.btnReceipts.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.btnReceipts.Size = new System.Drawing.Size(221, 50);
+            this.btnReceipts.TabIndex = 0;
+            this.btnReceipts.Text = "   Receipts";
+            this.btnReceipts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReceipts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReceipts.UseVisualStyleBackColor = true;
+            this.btnReceipts.Click += new System.EventHandler(this.btnReceipts_Click);
             // 
             // btnSupplier
             // 
@@ -326,7 +328,7 @@
             this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
             this.pnlTitleBar.Name = "pnlTitleBar";
-            this.pnlTitleBar.Size = new System.Drawing.Size(1105, 37);
+            this.pnlTitleBar.Size = new System.Drawing.Size(1137, 37);
             this.pnlTitleBar.TabIndex = 1;
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
@@ -384,7 +386,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ImageIndex = 2;
             this.btnMinimize.ImageList = this.imgListWindowButton;
-            this.btnMinimize.Location = new System.Drawing.Point(982, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1014, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(41, 37);
             this.btnMinimize.TabIndex = 2;
@@ -398,7 +400,7 @@
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.ImageIndex = 1;
             this.btnMaximize.ImageList = this.imgListWindowButton;
-            this.btnMaximize.Location = new System.Drawing.Point(1023, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1055, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(41, 37);
             this.btnMaximize.TabIndex = 1;
@@ -412,7 +414,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ImageIndex = 0;
             this.btnCancel.ImageList = this.imgListWindowButton;
-            this.btnCancel.Location = new System.Drawing.Point(1064, 0);
+            this.btnCancel.Location = new System.Drawing.Point(1096, 0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(41, 37);
             this.btnCancel.TabIndex = 0;
@@ -422,6 +424,7 @@
             // pnlShow
             // 
             this.pnlShow.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlShow.Controls.Add(this.panel1);
             this.pnlShow.Controls.Add(this.ucHome);
             this.pnlShow.Controls.Add(this.ucSuppliersTab);
             this.pnlShow.Controls.Add(this.ucStockTab);
@@ -431,106 +434,14 @@
             this.pnlShow.Controls.Add(this.ucCustomersTab);
             this.pnlShow.Controls.Add(this.ucUserTab);
             this.pnlShow.Controls.Add(this.ucProductTab);
-            this.pnlShow.Controls.Add(this.ucOrderHistorycs1);
+            this.pnlShow.Controls.Add(this.ucReceipts);
             this.pnlShow.Controls.Add(this.ucEmployeeTab);
-            this.pnlShow.Controls.Add(this.panel1);
+            this.pnlShow.Controls.Add(this.ucReceiptDetails);
             this.pnlShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlShow.Location = new System.Drawing.Point(221, 37);
             this.pnlShow.Name = "pnlShow";
-            this.pnlShow.Size = new System.Drawing.Size(884, 597);
+            this.pnlShow.Size = new System.Drawing.Size(916, 610);
             this.pnlShow.TabIndex = 2;
-            // 
-            // ucSuppliersTab
-            // 
-            this.ucSuppliersTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucSuppliersTab.Location = new System.Drawing.Point(0, 34);
-            this.ucSuppliersTab.Name = "ucSuppliersTab";
-            this.ucSuppliersTab.Size = new System.Drawing.Size(884, 563);
-            this.ucSuppliersTab.TabIndex = 10;
-            this.ucSuppliersTab.Visible = false;
-            // 
-            // ucStockTab
-            // 
-            this.ucStockTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucStockTab.Location = new System.Drawing.Point(0, 34);
-            this.ucStockTab.Name = "ucStockTab";
-            this.ucStockTab.Size = new System.Drawing.Size(884, 563);
-            this.ucStockTab.TabIndex = 9;
-            this.ucStockTab.Visible = false;
-            // 
-            // ucStatisticsTab
-            // 
-            this.ucStatisticsTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucStatisticsTab.Location = new System.Drawing.Point(0, 34);
-            this.ucStatisticsTab.Name = "ucStatisticsTab";
-            this.ucStatisticsTab.Size = new System.Drawing.Size(884, 563);
-            this.ucStatisticsTab.TabIndex = 8;
-            this.ucStatisticsTab.Visible = false;
-            // 
-            // ucNotifications
-            // 
-            this.ucNotifications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucNotifications.Location = new System.Drawing.Point(0, 34);
-            this.ucNotifications.Name = "ucNotifications";
-            this.ucNotifications.Size = new System.Drawing.Size(884, 563);
-            this.ucNotifications.TabIndex = 7;
-            this.ucNotifications.Visible = false;
-            // 
-            // ucEventsTab
-            // 
-            this.ucEventsTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucEventsTab.Location = new System.Drawing.Point(0, 34);
-            this.ucEventsTab.Name = "ucEventsTab";
-            this.ucEventsTab.Size = new System.Drawing.Size(884, 563);
-            this.ucEventsTab.TabIndex = 6;
-            this.ucEventsTab.Visible = false;
-            // 
-            // ucCustomersTab
-            // 
-            this.ucCustomersTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCustomersTab.Location = new System.Drawing.Point(0, 34);
-            this.ucCustomersTab.Name = "ucCustomersTab";
-            this.ucCustomersTab.Size = new System.Drawing.Size(884, 563);
-            this.ucCustomersTab.TabIndex = 5;
-            this.ucCustomersTab.Visible = false;
-            // 
-            // ucUserTab
-            // 
-            this.ucUserTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ucUserTab.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ucUserTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucUserTab.Location = new System.Drawing.Point(0, 34);
-            this.ucUserTab.Name = "ucUserTab";
-            this.ucUserTab.Size = new System.Drawing.Size(884, 563);
-            this.ucUserTab.TabIndex = 4;
-            this.ucUserTab.Visible = false;
-            // 
-            // ucProductTab
-            // 
-            this.ucProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucProductTab.Location = new System.Drawing.Point(0, 34);
-            this.ucProductTab.Name = "ucProductTab";
-            this.ucProductTab.Size = new System.Drawing.Size(884, 563);
-            this.ucProductTab.TabIndex = 1;
-            this.ucProductTab.Visible = false;
-            // 
-            // ucOrderHistorycs1
-            // 
-            this.ucOrderHistorycs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucOrderHistorycs1.Location = new System.Drawing.Point(0, 34);
-            this.ucOrderHistorycs1.Name = "ucOrderHistorycs1";
-            this.ucOrderHistorycs1.Size = new System.Drawing.Size(884, 563);
-            this.ucOrderHistorycs1.TabIndex = 0;
-            this.ucOrderHistorycs1.Visible = false;
-            // 
-            // ucEmployeeTab
-            // 
-            this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucEmployeeTab.Location = new System.Drawing.Point(0, 34);
-            this.ucEmployeeTab.Name = "ucEmployeeTab";
-            this.ucEmployeeTab.Size = new System.Drawing.Size(884, 563);
-            this.ucEmployeeTab.TabIndex = 0;
-            this.ucEmployeeTab.Visible = false;
             // 
             // panel1
             // 
@@ -540,7 +451,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 34);
+            this.panel1.Size = new System.Drawing.Size(916, 34);
             this.panel1.TabIndex = 2;
             // 
             // btnLogout
@@ -550,7 +461,7 @@
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(731, 0);
+            this.btnLogout.Location = new System.Drawing.Point(763, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(89, 32);
             this.btnLogout.TabIndex = 1;
@@ -563,7 +474,7 @@
             this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(576, 8);
+            this.lblWelcome.Location = new System.Drawing.Point(608, 8);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(128, 19);
             this.lblWelcome.TabIndex = 0;
@@ -574,23 +485,142 @@
             this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ucHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucHome.Location = new System.Drawing.Point(0, 34);
+            this.ucHome.dtoMan = null;
+            this.ucHome.Location = new System.Drawing.Point(0, 0);
             this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(884, 563);
+            this.ucHome.Size = new System.Drawing.Size(916, 610);
             this.ucHome.TabIndex = 3;
             this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
             // 
-            // frmHome
+            // ucSuppliersTab
+            // 
+            this.ucSuppliersTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucSuppliersTab.Location = new System.Drawing.Point(0, 0);
+            this.ucSuppliersTab.Name = "ucSuppliersTab";
+            this.ucSuppliersTab.Size = new System.Drawing.Size(916, 610);
+            this.ucSuppliersTab.TabIndex = 10;
+            this.ucSuppliersTab.Visible = false;
+            // 
+            // ucStockTab
+            // 
+            this.ucStockTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStockTab.Location = new System.Drawing.Point(0, 0);
+            this.ucStockTab.Name = "ucStockTab";
+            this.ucStockTab.Size = new System.Drawing.Size(916, 610);
+            this.ucStockTab.TabIndex = 9;
+            this.ucStockTab.Visible = false;
+            // 
+            // ucStatisticsTab
+            // 
+            this.ucStatisticsTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStatisticsTab.Location = new System.Drawing.Point(0, 0);
+            this.ucStatisticsTab.Name = "ucStatisticsTab";
+            this.ucStatisticsTab.Size = new System.Drawing.Size(916, 610);
+            this.ucStatisticsTab.TabIndex = 8;
+            this.ucStatisticsTab.Visible = false;
+            // 
+            // ucNotifications
+            // 
+            this.ucNotifications.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucNotifications.Location = new System.Drawing.Point(0, 0);
+            this.ucNotifications.Name = "ucNotifications";
+            this.ucNotifications.Size = new System.Drawing.Size(916, 610);
+            this.ucNotifications.TabIndex = 7;
+            this.ucNotifications.Visible = false;
+            // 
+            // ucEventsTab
+            // 
+            this.ucEventsTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucEventsTab.Location = new System.Drawing.Point(0, 0);
+            this.ucEventsTab.Name = "ucEventsTab";
+            this.ucEventsTab.Size = new System.Drawing.Size(916, 610);
+            this.ucEventsTab.TabIndex = 6;
+            this.ucEventsTab.Visible = false;
+            // 
+            // ucCustomersTab
+            // 
+            this.ucCustomersTab.BackColor = System.Drawing.Color.White;
+            this.ucCustomersTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucCustomersTab.frmMan = null;
+            this.ucCustomersTab.Location = new System.Drawing.Point(0, 0);
+            this.ucCustomersTab.Name = "ucCustomersTab";
+            this.ucCustomersTab.Size = new System.Drawing.Size(916, 610);
+            this.ucCustomersTab.TabIndex = 5;
+            this.ucCustomersTab.Visible = false;
+            // 
+            // ucUserTab
+            // 
+            this.ucUserTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucUserTab.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ucUserTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucUserTab.Location = new System.Drawing.Point(0, 0);
+            this.ucUserTab.Name = "ucUserTab";
+            this.ucUserTab.Size = new System.Drawing.Size(916, 610);
+            this.ucUserTab.TabIndex = 4;
+            this.ucUserTab.Visible = false;
+            // 
+            // ucProductTab
+            // 
+            this.ucProductTab.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.ucProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucProductTab.Location = new System.Drawing.Point(0, 0);
+            this.ucProductTab.Name = "ucProductTab";
+            this.ucProductTab.Size = new System.Drawing.Size(916, 610);
+            this.ucProductTab.TabIndex = 1;
+            this.ucProductTab.Visible = false;
+            // 
+            // ucReceipts
+            // 
+            this.ucReceipts.BackColor = System.Drawing.Color.White;
+            this.ucReceipts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucReceipts.Location = new System.Drawing.Point(0, 0);
+            this.ucReceipts.Name = "ucReceipts";
+            this.ucReceipts.Size = new System.Drawing.Size(916, 610);
+            this.ucReceipts.TabIndex = 0;
+            this.ucReceipts.ucRecDetails = null;
+            this.ucReceipts.Visible = false;
+            // 
+            // ucEmployeeTab
+            // 
+            this.ucEmployeeTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            dtO_Manager1.Birthdate = new System.DateTime(((long)(0)));
+            dtO_Manager1.Email = null;
+            dtO_Manager1.Firstname = null;
+            dtO_Manager1.Gender = null;
+            dtO_Manager1.Id = null;
+            dtO_Manager1.Image = null;
+            dtO_Manager1.Lastname = null;
+            dtO_Manager1.Phone = null;
+            dtO_Manager1.Position = null;
+            this.ucEmployeeTab.dtoMan = dtO_Manager1;
+            this.ucEmployeeTab.Location = new System.Drawing.Point(0, 0);
+            this.ucEmployeeTab.Name = "ucEmployeeTab";
+            this.ucEmployeeTab.Size = new System.Drawing.Size(916, 610);
+            this.ucEmployeeTab.TabIndex = 0;
+            this.ucEmployeeTab.Visible = false;
+            // 
+            // ucReceiptDetails
+            // 
+            this.ucReceiptDetails.BackColor = System.Drawing.Color.White;
+            this.ucReceiptDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ucReceiptDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucReceiptDetails.Location = new System.Drawing.Point(0, 0);
+            this.ucReceiptDetails.Name = "ucReceiptDetails";
+            this.ucReceiptDetails.Size = new System.Drawing.Size(916, 610);
+            this.ucReceiptDetails.TabIndex = 11;
+            this.ucReceiptDetails.UcManReceipt = this.ucReceipts;
+            // 
+            // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1105, 634);
+            this.ClientSize = new System.Drawing.Size(1137, 647);
             this.Controls.Add(this.pnlShow);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmHome";
+            this.Name = "frmManager";
             this.Text = "frmHome";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHome_FormClosed);
             this.Load += new System.EventHandler(this.frmHome_Load);
@@ -615,7 +645,7 @@
         private System.Windows.Forms.Button btnEvent;
         private System.Windows.Forms.Button btnStatistic;
         private System.Windows.Forms.Button btnCustomer;
-        private System.Windows.Forms.Button btnOrderhistory;
+        private System.Windows.Forms.Button btnReceipts;
         private System.Windows.Forms.Button btnSupplier;
         private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Button btnProduct;
@@ -631,7 +661,7 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel pnlChangeTab;
         private UserControlProductTab ucProductTab;
-        private ucOrderHistorycs ucOrderHistorycs1;
+        private UserControlManagerReceiptsTab ucReceipts;
         private UserControlUserTab ucUserTab;
         private UserControlCustomers ucCustomersTab;
         private UserControlSuppliers ucSuppliersTab;
@@ -640,5 +670,6 @@
         private UserControlNotifications ucNotifications;
         private UserControlEvents ucEventsTab;
         private UserControlHome ucHome;
+        private UserControlReceiptsDetail ucReceiptDetails;
     }
 }

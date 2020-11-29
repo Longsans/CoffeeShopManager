@@ -14,7 +14,7 @@ namespace DAL
 {
     public class DAL_Workers : DBConnection
     {
-        public DTO_Worker GetInfoById(string id, int shopId)
+        public DTO_Worker GetById(string id, int shopId)
         {
             DTO_Worker dtoWorker = null;
             string qry = "SELECT * " +
@@ -57,7 +57,7 @@ namespace DAL
             return dtoWorker;
         }
 
-        public DTO_Worker GetInfoByUsername(string username)
+        public DTO_Worker GetByUsername(string username)
         {
             DTO_Worker dtoWorker = null;
             DAL_UserInfo dalUser = new DAL_UserInfo();
@@ -109,7 +109,7 @@ namespace DAL
         public DTO_User GetUserInfoById(string workerId, int shopId)
         {
             DAL_UserInfo dalUserInfo = new DAL_UserInfo();
-            return dalUserInfo.GetById(GetInfoById(workerId, shopId).Account.ID);
+            return dalUserInfo.GetById(GetById(workerId, shopId).Account.ID);
         }
 
         public DataTable GetAllManagerWorkers(int shopId)
@@ -174,7 +174,7 @@ namespace DAL
                     CloseConnection();
                 }
 
-                var workerInfo = GetInfoByUsername(dtoWorker.Account.Username);
+                var workerInfo = GetByUsername(dtoWorker.Account.Username);
                 return workerInfo.Id;
             }
             catch (Exception e)

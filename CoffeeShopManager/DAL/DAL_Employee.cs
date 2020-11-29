@@ -83,7 +83,7 @@ namespace DAL
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                emp = new DTO_Employee(dalWorkers.GetInfoById(reader.GetString(reader.GetOrdinal("Id")), shopId))
+                emp = new DTO_Employee(dalWorkers.GetById(reader.GetString(reader.GetOrdinal("Id")), shopId))
                 {
                     Address = reader.GetString(reader.GetOrdinal("Address")),
                     Salary = reader.GetDecimal(reader.GetOrdinal("Salary")),
@@ -110,7 +110,7 @@ namespace DAL
         public DTO_Employee GetEmployeeInfoByUsername(string username)
         {
             DAL_Workers dalWorkers = new DAL_Workers();
-            DTO_Employee emp = new DTO_Employee(dalWorkers.GetInfoByUsername(username));
+            DTO_Employee emp = new DTO_Employee(dalWorkers.GetByUsername(username));
             string qry = "SELECT * FROM [EMPLOYEES] " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace GUI
 {
@@ -14,7 +15,8 @@ namespace GUI
     {
         UserControlEmployeesTab ucEmpTab = new UserControlEmployeesTab();
         Panel pnlChangeTab = new Panel();
-        Button btnGetLocationToChangeTab = new Button(); 
+        Button btnGetLocationToChangeTab = new Button();
+        public DTO_Manager dtoMan{ get; set; }
         public UserControlHome()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnGetLocationToChangeTab.Location;
+            ucEmpTab.dtoMan = dtoMan;
             ucEmpTab.Show();
             ucEmpTab.BringToFront();
         }
