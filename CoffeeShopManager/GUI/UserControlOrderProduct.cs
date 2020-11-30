@@ -362,7 +362,7 @@ namespace GUI
             }
             busReceipt.InsertTakeAwayReceipt(dtoReceipt);
             DTO_Table dtoTab = new DTO_Table();
-            if (comboBox2.Text != null) 
+            if (!string.IsNullOrWhiteSpace(comboBox2.Text)) 
             {
                 dtoTab.Id = Int32.Parse(comboBox2.Text);
                 dtoTab.Shop.ID = shopID;
