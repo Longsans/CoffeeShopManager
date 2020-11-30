@@ -446,5 +446,50 @@
   <ItemGroup>
     <None Include="Resources\icons8_delete_bin_16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_in_list_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_in_list_100px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_128px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_128px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_group_man_man_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_200px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_128px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_100px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_group_man_man_100px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_in_list_100px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_200px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_200px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_200px3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_200px4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
