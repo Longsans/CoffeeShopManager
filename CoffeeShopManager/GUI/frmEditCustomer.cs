@@ -75,7 +75,7 @@ namespace GUI
             busCus.Update(dtoCus);
             MessageBox.Show("Update succeeded.", "Edit success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
-            ucCus.Reload();
+            ucCus.ReloadGridView();
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)

@@ -64,6 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataGridViewNumericUpDownCell.cs" />
+    <Compile Include="frmAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSupplier.Designer.cs">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChangeAuthCodeShop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     <EmbeddedResource Include="frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSupplier.resx">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangeAuthCodeShop.resx">
       <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlStock.resx">
       <DependentUpon>UserControlStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSuppliers.resx">
+      <DependentUpon>UserControlSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlTable.resx">
       <DependentUpon>UserControlTable.cs</DependentUpon>
