@@ -243,6 +243,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checked_80px {
+            get {
+                object obj = ResourceManager.GetObject("checked_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_window_24px1 {
             get {
                 object obj = ResourceManager.GetObject("close_window_24px1", resourceCulture);
@@ -416,6 +426,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap list_50px {
             get {
                 object obj = ResourceManager.GetObject("list_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ok_48px {
+            get {
+                object obj = ResourceManager.GetObject("ok_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

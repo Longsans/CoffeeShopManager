@@ -7,45 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BUS;
 
 namespace GUI
 {
     public partial class Table : UserControl
     {
         string stt;
+        DTO_Table table = new DTO_Table();
         public Table()
         {
             InitializeComponent();
         }
-        public void SetID(int id)
+        public Table(DTO_Table _table)
         {
-            lblTable.Text = id.ToString();
+            InitializeComponent();
+            table = _table;
+            Reload();
         }
-        public void SetStatus(string status)
+        private void Reload()
         {
+            lblTable.Text = table.Id.ToString();
+            string status = table.Status;
             lblStatus.Text = status;
             if (status == "Available")
                 BackColor = Color.FromArgb(186, 243, 157);
             else if (status == "Occupied")
                 BackColor = Color.FromArgb(248, 246, 158);
             else BackColor = Color.FromArgb(254, 238, 238);
-
         }
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmDetailTable = new Form();
-            TextBox t = new TextBox();
-            frmDetailTable.Controls.Add(t);
-            Button btn = new Button();
-            frmDetailTable.Controls.Add(btn);
-            btn.Click += Btn_Click;
-            stt = t.Text;
-            frmDetailTable.ShowDialog();
+            frmShowDetailTable frmShowDetail = new frmShowDetailTable(table);
+            frmShowDetail.ShowDialog();
         }
 
-        private void Btn_Click(object sender, EventArgs e)
-        {
-            SetStatus("Ocupied");
-        }
     }
 }

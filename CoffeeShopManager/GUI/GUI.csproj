@@ -77,6 +77,12 @@
     <Compile Include="frmChangeAuthCodeShop.Designer.cs">
       <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShowDetailTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowDetailTable.Designer.cs">
+      <DependentUpon>frmShowDetailTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +317,9 @@
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmShowDetailTable.resx">
+      <DependentUpon>frmShowDetailTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -518,6 +527,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_80px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

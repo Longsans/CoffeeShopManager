@@ -31,11 +31,8 @@ namespace GUI
             flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < listTable.Count; i++)
             {
-                Table ucTable = new Table();
-                ucTable.SetID(listTable[i].Id);
-                ucTable.SetStatus(listTable[i].Status);
+                Table ucTable = new Table(listTable[i]);
                 flowLayoutPanel1.Controls.Add(ucTable);
-                ucTable.ContextMenuStrip = contextMenuStrip1;
             }
         }
 
@@ -104,7 +101,8 @@ namespace GUI
             if (cboBy.Text == "ID Table")
             {
                 listTable = new List<DTO_Table>();
-                listTable.Add(table.GetTableById(int.Parse(txtSearch.Text), shopID));
+                if(table.GetTableById(int.Parse(txtSearch.Text), shopID) != null)
+                    listTable.Add(table.GetTableById(int.Parse(txtSearch.Text), shopID));
                 ReloadTable();
             }
             else if(cboBy.Text == "ID Customer")
