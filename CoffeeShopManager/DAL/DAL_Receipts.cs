@@ -256,8 +256,14 @@ namespace DAL
         public void InsertSittingReceipt(DTO_Receipt rec, DTO_Table tab)
         {
             DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            DTO_TableSitting tabSit = new DTO_TableSitting
+            {
+                Receipt = rec,
+                Table = tab,
+                Sitting = true
+            };
             InsertTakeAwayReceipt(rec);
-            dalTabSitting.Insert(rec, tab);
+            dalTabSitting.Insert(tabSit);
         }
 
         private void InsertReceiptDetails(DTO_Receipt rec)

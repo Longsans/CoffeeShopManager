@@ -133,7 +133,6 @@ namespace GUI
             ucManagerInfo.SetShop(busShop.GetShopById(dtoShop.ID));
             ucUserInfo.SetUser(dtoEmp);
             userControlOrderProduct2.SetShopID(dtoShop.ID);
-            MessageBox.Show(dtoEmp.Account.Username);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

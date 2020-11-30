@@ -47,6 +47,8 @@
     <Compile Include="BUS_Product.cs" />
     <Compile Include="BUS_Receipts.cs" />
     <Compile Include="BUS_Shop.cs" />
+    <Compile Include="BUS_StockItems.cs" />
+    <Compile Include="BUS_Suppliers.cs" />
     <Compile Include="BUS_UserInfo.cs" />
     <Compile Include="BUS_Tables.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

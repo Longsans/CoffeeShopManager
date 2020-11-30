@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlOrderProduct));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHead = new System.Windows.Forms.Label();
@@ -72,10 +75,10 @@
             this.lblSelect = new System.Windows.Forms.Label();
             this.lblOr = new System.Windows.Forms.Label();
             this.txtSearchName = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,6 +93,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblHead);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnCancel);
@@ -114,6 +119,8 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.txtYearBD);
             this.panel2.Controls.Add(this.txtMonthBD);
             this.panel2.Controls.Add(this.txtDayBD);
@@ -132,9 +139,9 @@
             this.panel2.Controls.Add(this.lblEmail);
             this.panel2.Controls.Add(this.lblFirstName);
             this.panel2.Controls.Add(this.lblCustomer);
-            this.panel2.Location = new System.Drawing.Point(20, 322);
+            this.panel2.Location = new System.Drawing.Point(17, 311);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(452, 201);
+            this.panel2.Size = new System.Drawing.Size(452, 226);
             this.panel2.TabIndex = 12;
             // 
             // txtYearBD
@@ -142,30 +149,34 @@
             this.txtYearBD.Location = new System.Drawing.Point(157, 149);
             this.txtYearBD.Name = "txtYearBD";
             this.txtYearBD.Size = new System.Drawing.Size(46, 22);
-            this.txtYearBD.TabIndex = 18;
+            this.txtYearBD.TabIndex = 7;
             // 
             // txtMonthBD
             // 
             this.txtMonthBD.Location = new System.Drawing.Point(119, 149);
             this.txtMonthBD.Name = "txtMonthBD";
             this.txtMonthBD.Size = new System.Drawing.Size(32, 22);
-            this.txtMonthBD.TabIndex = 17;
+            this.txtMonthBD.TabIndex = 6;
             // 
             // txtDayBD
             // 
             this.txtDayBD.Location = new System.Drawing.Point(81, 149);
             this.txtDayBD.Name = "txtDayBD";
             this.txtDayBD.Size = new System.Drawing.Size(32, 22);
-            this.txtDayBD.TabIndex = 16;
+            this.txtDayBD.TabIndex = 5;
             // 
             // btnAddCus
             // 
-            this.btnAddCus.Location = new System.Drawing.Point(103, 178);
+            this.btnAddCus.BackColor = System.Drawing.Color.Coral;
+            this.btnAddCus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddCus.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCus.Location = new System.Drawing.Point(88, 177);
             this.btnAddCus.Name = "btnAddCus";
-            this.btnAddCus.Size = new System.Drawing.Size(75, 23);
-            this.btnAddCus.TabIndex = 15;
-            this.btnAddCus.Text = "Add Customer";
-            this.btnAddCus.UseVisualStyleBackColor = true;
+            this.btnAddCus.Size = new System.Drawing.Size(115, 36);
+            this.btnAddCus.TabIndex = 7;
+            this.btnAddCus.Text = "Add customer";
+            this.btnAddCus.UseVisualStyleBackColor = false;
             this.btnAddCus.Click += new System.EventHandler(this.btnAddCus_Click);
             // 
             // txtID
@@ -173,7 +184,7 @@
             this.txtID.Location = new System.Drawing.Point(91, 54);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 22);
-            this.txtID.TabIndex = 14;
+            this.txtID.TabIndex = 2;
             // 
             // lblID
             // 
@@ -190,7 +201,7 @@
             this.txtLastName.Location = new System.Drawing.Point(91, 112);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(100, 22);
-            this.txtLastName.TabIndex = 12;
+            this.txtLastName.TabIndex = 4;
             // 
             // lblLastName
             // 
@@ -208,24 +219,25 @@
             this.comboBox2.Location = new System.Drawing.Point(338, 33);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(65, 24);
-            this.comboBox2.TabIndex = 10;
+            this.comboBox2.TabIndex = 8;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(91, 26);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 22);
-            this.txtEmail.TabIndex = 8;
+            this.txtEmail.TabIndex = 1;
             // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(91, 79);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(100, 22);
-            this.txtFirstName.TabIndex = 7;
+            this.txtFirstName.TabIndex = 3;
             // 
             // panel3
             // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.txtDiscount);
             this.panel3.Controls.Add(this.lblGrandTotal);
@@ -251,7 +263,7 @@
             this.txtDiscount.Location = new System.Drawing.Point(129, 33);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(44, 22);
-            this.txtDiscount.TabIndex = 6;
+            this.txtDiscount.TabIndex = 9;
             // 
             // lblGrandTotal
             // 
@@ -259,9 +271,9 @@
             this.lblGrandTotal.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrandTotal.Location = new System.Drawing.Point(128, 72);
             this.lblGrandTotal.Name = "lblGrandTotal";
-            this.lblGrandTotal.Size = new System.Drawing.Size(19, 21);
+            this.lblGrandTotal.Size = new System.Drawing.Size(28, 21);
             this.lblGrandTotal.TabIndex = 5;
-            this.lblGrandTotal.Text = "0";
+            this.lblGrandTotal.Text = "0$";
             // 
             // lblTotalSum
             // 
@@ -269,9 +281,9 @@
             this.lblTotalSum.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalSum.Location = new System.Drawing.Point(125, 3);
             this.lblTotalSum.Name = "lblTotalSum";
-            this.lblTotalSum.Size = new System.Drawing.Size(69, 21);
+            this.lblTotalSum.Size = new System.Drawing.Size(28, 21);
             this.lblTotalSum.TabIndex = 3;
-            this.lblTotalSum.Text = "label10";
+            this.lblTotalSum.Text = "0$";
             // 
             // lblGrand
             // 
@@ -369,7 +381,7 @@
             this.btnCancel.Location = new System.Drawing.Point(236, 543);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 32);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -380,14 +392,30 @@
             this.btnSave.Location = new System.Drawing.Point(144, 543);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(86, 32);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeight = 29;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmProduct,
             this.clmDown,
@@ -396,6 +424,15 @@
             this.clmTotal,
             this.clmDelete,
             this.clmID});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(17, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
@@ -475,6 +512,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Tan;
             this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(478, 49);
@@ -488,7 +526,7 @@
             this.lblSelect.BackColor = System.Drawing.Color.LightGray;
             this.lblSelect.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelect.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSelect.Location = new System.Drawing.Point(504, 18);
+            this.lblSelect.Location = new System.Drawing.Point(503, 16);
             this.lblSelect.Name = "lblSelect";
             this.lblSelect.Size = new System.Drawing.Size(164, 19);
             this.lblSelect.TabIndex = 13;
@@ -498,7 +536,7 @@
             // 
             this.lblOr.AutoSize = true;
             this.lblOr.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOr.Location = new System.Drawing.Point(728, 20);
+            this.lblOr.Location = new System.Drawing.Point(716, 15);
             this.lblOr.Name = "lblOr";
             this.lblOr.Size = new System.Drawing.Size(26, 21);
             this.lblOr.TabIndex = 15;
@@ -506,24 +544,17 @@
             // 
             // txtSearchName
             // 
-            this.txtSearchName.Location = new System.Drawing.Point(760, 21);
+            this.txtSearchName.Location = new System.Drawing.Point(748, 16);
             this.txtSearchName.Name = "txtSearchName";
             this.txtSearchName.Size = new System.Drawing.Size(137, 22);
             this.txtSearchName.TabIndex = 16;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(903, 13);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(42, 31);
-            this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.txtSearchName.Text = "Search by name";
+            this.txtSearchName.Click += new System.EventHandler(this.txtSearchName_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // errorProvider2
             // 
@@ -544,6 +575,20 @@
             this.comboBox1.TabIndex = 18;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.White;
+            this.btnSearch.BackgroundImage = global::GUI.Properties.Resources.search_128px;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(901, 9);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(48, 34);
+            this.btnSearch.TabIndex = 17;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -584,6 +629,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblSelect);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnSearch);
@@ -624,7 +670,6 @@
         private System.Windows.Forms.TextBox txtYearBD;
         private System.Windows.Forms.TextBox txtMonthBD;
         private System.Windows.Forms.TextBox txtDayBD;
-        private System.Windows.Forms.Button btnAddCus;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtLastName;
@@ -661,5 +706,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Button btnAddCus;
     }
 }

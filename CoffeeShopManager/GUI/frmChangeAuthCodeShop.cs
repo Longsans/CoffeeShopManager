@@ -79,5 +79,10 @@ namespace GUI
                 Close();
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

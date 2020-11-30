@@ -219,7 +219,7 @@ namespace GUI
                 Label prlabel = new Label();
                 pic.BackgroundImageLayout = ImageLayout.Stretch;
                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
-                dto_pro = busPro.GetById(row.Cells[0].Value.ToString(),1);
+                dto_pro = busPro.GetById(row.Cells[0].Value.ToString(), dtoShop.ID);
                 pic.Width = 146;
                 pic.Height = 150;
                 pic.Image = ImageHelper.ByteArrayToImage(dto_pro.Image);

@@ -49,7 +49,10 @@
     <Compile Include="DTO_Receipt.cs" />
     <Compile Include="DTO_ReceiptDetails.cs" />
     <Compile Include="DTO_Shop.cs" />
+    <Compile Include="DTO_StockItem.cs" />
+    <Compile Include="DTO_Supplier.cs" />
     <Compile Include="DTO_Table.cs" />
+    <Compile Include="DTO_TableSitting.cs" />
     <Compile Include="DTO_User.cs" />
     <Compile Include="DTO_Worker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

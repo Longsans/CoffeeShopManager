@@ -82,14 +82,7 @@ namespace GUI
                 pricelb = new Label();
                 namelb = new Label();
                 Label prlabel = new Label();
-                /* pic.BackgroundImageLayout = ImageLayout.Stretch;
-                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
-                 dto_pro = busPro.GetById(row["Id"].ToString(), 1);
-                 pic.Width = 146;
-                 pic.Height = 150;
-                 pic.Image = ImageHelper.ByteArrayToImage(dto_pro.Image);
-                 pic.Tag = row["Id"];*/
-                dto_pro = busPro.GetById(row["Id"].ToString(), 1);
+                dto_pro = busPro.GetById(row["Id"].ToString(), shopID);
 
                 pricelb.Text = row["Price"].ToString() + "$";
                 pricelb.BackColor = Color.FromArgb(255, 121, 121);
@@ -107,30 +100,25 @@ namespace GUI
                 namelb.Tag = row["Name"].ToString();
 
 
-
-                // pic.DoubleClick += new EventHandler(OnClick);
                 bt = new Button();
                 bt.Tag = row["Name"].ToString() + "/" + row["Price"].ToString() + ""; ;
                 bt.Name = row["Id"].ToString();
                 bt.BackgroundImage = ImageHelper.ByteArrayToImage(dto_pro.Image);
                 bt.BackgroundImageLayout = ImageLayout.Stretch;
-                bt.Width = 146;
-                bt.Height = 150;
+                bt.Width = 170;
+                bt.Height = 160;
                 bt.Controls.Add(namelb);
                 bt.Controls.Add(pricelb);
                 flowLayoutPanel1.Controls.Add(bt);
                 bt.Click += (s, e) =>
                 {
-                    // if(cur!=1)
                     OnClick(s, e);
                 };
 
             }
         }
-        public int dem = 0;
         public void OnClick(object sender, EventArgs e)
         {
-            dem++;
             // ((Button)sender).Enabled = false;
             string s = ((Button)sender).Tag.ToString();
             string[] arrListStr = s.Split('/');
@@ -159,13 +147,7 @@ namespace GUI
             r1.Cells[4].Value = arrListStr[1].Substring(0, vitri).ToString();
             r1.Cells[6].Value = ((Button)sender).Name.ToString();
             dataGridView1.Rows.Add(r1);
-            // ((Button)sender).Text = "done";
             strSave.Add(arrListStr[0]);
-
-          //  int rowId = dataGridView1.Rows.Add();
-
-            // Grab the new row!
-          //  r1 = (DataGridViewRow)dataGridView1.Rows[rowId].Clone();
 
 
         }
@@ -244,36 +226,14 @@ namespace GUI
                 GetData(T);
             }
         }
-    
-
-      /*  private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex < 0)
-                return;
-            //Image SomeImage = Image.FromFile("icon8_delete_bin_16.png");
-            //I supposed your button column is at index 0
-            if (e.ColumnIndex == 5)
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-                var w = Properties.Resources.icons8_delete_bin_16.Width;
-                var h = Properties.Resources.icons8_delete_bin_16.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-
-                e.Graphics.DrawImage(Properties.Resources.icons8_delete_bin_16, new Rectangle(x, y, w, h));
-                e.Handled = true;
-            }
-        }
-      */
         private void UserControlOrderProduct_Click(object sender, EventArgs e)
         {
             if (comboBox1.Text == "")
             {
                 lblSelect.Visible = true;
             }
+            txtSearchName.Text = "Search by name";
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
@@ -286,11 +246,8 @@ namespace GUI
                 MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-
             if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDown")
             {
                 r1 = dataGridView1.Rows[e.RowIndex];
@@ -320,10 +277,8 @@ namespace GUI
                 r1 = dataGridView1.Rows[e.RowIndex];
                 r1.Cells[2].Value = (Int32.Parse(r1.Cells[2].Value.ToString()) + 1);
                 bien = (Int32.Parse(r1.Cells[2].Value.ToString()));
-                //  MessageBox.Show(""+ Int32.Parse(r1.Cells[4].Value.ToString()));
                 giatri = float.Parse(r1.Cells[4].Value.ToString()) / (bien - 1);
                 r1.Cells[4].Value = giatri * bien;
-                //  MessageBox.Show(row.Cells[2].Value.ToString());
             }
 
             else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDelete" )
@@ -344,8 +299,6 @@ namespace GUI
         {
             if (e.RowIndex < 0)
                 return;
-            //Image SomeImage = Image.FromFile("icon8_delete_bin_16.png");
-            //I supposed your button column is at index 0
             if (e.ColumnIndex == 5)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
@@ -376,8 +329,6 @@ namespace GUI
                 MessageBox.Show("Chua order mon");
                 return;
             }
-            //  if (busCus.GetCustomerByEmail(txtEmail.Text, dtoShop.ID) == null)
-            //  {
             if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtDayBD.Text == "" || txtMonthBD.Text == "" || txtYearBD.Text == "")
             {
                 MessageBox.Show("Nhap day du thong tin customer");
@@ -388,14 +339,13 @@ namespace GUI
                 MessageBox.Show("Yeu cau dang ky  khach hang");
                 return;
             }
-            //}
             DateTime now = DateTime.Now;
             dtoReceipt.Customer = dtoCus;
             dtoReceipt.DateOfPayMent = now;
-            dtoReceipt.Total = Int32.Parse(lblGrandTotal.Text);
+            int mon = lblGrandTotal.Text.IndexOf("$");
+            dtoReceipt.Total = Int32.Parse(lblGrandTotal.Text.Substring(0,mon-1));
             dtoReceipt.Details = "";
             dtoReceipt.Shop.ID = shopID;
-            //  dataGridView1.Rows[i].Cells[4].Value.ToString()
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
                 dtoDetail = new DTO_ReceiptDetails();//cai nay a
@@ -412,11 +362,11 @@ namespace GUI
             }
             busReceipt.InsertTakeAwayReceipt(dtoReceipt);
             DTO_Table dtoTab = new DTO_Table();
-            if (comboBox2.Text != null) 
+            if (!string.IsNullOrWhiteSpace(comboBox2.Text)) 
             {
                 dtoTab.Id = Int32.Parse(comboBox2.Text);
                 dtoTab.Shop.ID = shopID;
-                dtoTab.Status = "No";
+                dtoTab.Status = "Occupied";
                 busTable.Update(dtoTab);
                 
             }
@@ -504,16 +454,14 @@ namespace GUI
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
                     sum += Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
-                    // if (i < dataGridView1.Rows.Count - 1)
-                    // itemcode += ", ";
                 }
-            lblTotalSum.Text = sum.ToString();
+            lblTotalSum.Text = sum.ToString()+"$";
             if (txtDiscount.Text != "" && IsNumber(txtDiscount.Text))
             {
                 sum = sum - sum * (double.Parse(txtDiscount.Text)) / 100;
-                lblGrandTotal.Text = sum.ToString();
+                lblGrandTotal.Text = sum.ToString()+"$";
             }
-            lblGrandTotal.Text = sum.ToString();
+            lblGrandTotal.Text = sum.ToString()+"$";
             if (busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) == null)
             {
                 errorProvider1.SetError(txtEmail, "Doesn't have customer này, vui lòng nhập thông tin");
@@ -563,7 +511,12 @@ namespace GUI
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(shopID.ToString());
+
+        }
+
+        private void txtSearchName_Click(object sender, EventArgs e)
+        {
+            txtSearchName.Text = "";
         }
     }
 }

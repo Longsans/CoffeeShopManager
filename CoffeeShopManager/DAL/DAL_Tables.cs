@@ -149,6 +149,23 @@ namespace DAL
             return rec;
         }
 
+        public DataTable GetCurrentReceiptIdsAtTable(int tableId, int shopId)
+        {
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            DataTable dt = new DataTable();
+            DTO_Table tab = GetTableById(tableId, shopId);
+
+            if (tab != null)
+            {
+                if (tab.Status == "Occupied")
+                {
+                    dt = dalTabSitting.GetCurrentReceiptIdsAtTable(tableId, shopId);
+                }
+            }
+
+            return dt;
+        }
+
         public void Insert(DTO_Table tab)
         {
             string qry = "INSERT INTO [TABLES] " +
@@ -194,6 +211,7 @@ namespace DAL
 
         public void Update(DTO_Table tabUpdated)
         {
+            DAL_TableSitting dalTabSit = new DAL_TableSitting();
             string qry = "UPDATE [TABLES] " +
                 "SET TableStatus = @status " +
                 "WHERE Id = @id AND ShopId = @shopId";
@@ -208,6 +226,15 @@ namespace DAL
                 OpenConnection();
             }
             cmd.ExecuteNonQuery();
+            if (tabUpdated.Status == "Available")
+            {
+                var tabsit = new DTO_TableSitting
+                {
+                    Table = tabUpdated,
+                    Sitting = false
+                };
+                dalTabSit.Update(tabsit);
+            }
             if (!connState)
             {
                 CloseConnection();
