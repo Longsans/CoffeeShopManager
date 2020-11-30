@@ -366,7 +366,7 @@ namespace GUI
             {
                 dtoTab.Id = Int32.Parse(comboBox2.Text);
                 dtoTab.Shop.ID = shopID;
-                dtoTab.Status = "Unavailable";
+                dtoTab.Status = "Occupied";
                 busTable.Update(dtoTab);
                 
             }
