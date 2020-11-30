@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAll = new System.Windows.Forms.Button();
@@ -36,8 +35,6 @@
             this.btnOccupied = new System.Windows.Forms.Button();
             this.btnUnavailable = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cboBy = new System.Windows.Forms.ComboBox();
             this.lblBy = new System.Windows.Forms.Label();
@@ -45,7 +42,6 @@
             this.btnCollapse = new System.Windows.Forms.Button();
             this.btnExpand = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -119,20 +115,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 391);
             this.flowLayoutPanel1.TabIndex = 4;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(111, 28);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
-            this.viewToolStripMenuItem.Text = "View";
             // 
             // txtSearch
             // 
@@ -233,7 +215,6 @@
             this.Name = "UserControlTable";
             this.Size = new System.Drawing.Size(887, 550);
             this.Load += new System.EventHandler(this.UserControlTable_Load);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,7 +236,5 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.Button btnExpand;
         private System.Windows.Forms.Button btnCollapse;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
     }
 }
