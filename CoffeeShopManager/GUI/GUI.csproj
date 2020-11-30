@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataGridViewNumericUpDownCell.cs" />
+    <Compile Include="FilterProperties.cs" />
     <Compile Include="frmAddSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +76,12 @@
     </Compile>
     <Compile Include="frmChangeAuthCodeShop.Designer.cs">
       <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditSupplier.Designer.cs">
+      <DependentUpon>frmEditSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
@@ -285,6 +292,9 @@
     <EmbeddedResource Include="frmEditProduct.resx">
       <DependentUpon>frmEditProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditSupplier.resx">
+      <DependentUpon>frmEditSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -490,6 +500,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add_200px4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-removebg-preview.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error-icon-png-23.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

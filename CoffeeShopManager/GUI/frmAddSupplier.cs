@@ -15,9 +15,12 @@ namespace GUI
     public partial class frmAddSupplier : Form
     {
         BUS_Suppliers busSup = new BUS_Suppliers();
-        ErrorProvider err = new ErrorProvider();
+        ErrorProvider err = new ErrorProvider(),
+            errtwo = new ErrorProvider();
         public DTO_Shop Shop = new DTO_Shop();
         public UserControlSuppliers ucSup { get; set; }
+        Icon checkIcon,
+            errorIcon;
         Point prevPoint;
         bool dragging;
 
@@ -30,7 +33,10 @@ namespace GUI
 
         private void frmAddSupplier_Load(object sender, EventArgs e)
         {
-            
+            checkIcon = new Icon(GUI.Properties.Resources.check1, err.Icon.Size);
+            errorIcon = new Icon(GUI.Properties.Resources.cancel, err.Icon.Size);
+            err.SetIconPadding(txtId, 5);
+            errtwo.SetIconPadding(txtEmail, 5);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -51,6 +57,7 @@ namespace GUI
 
             busSup.Insert(sup);
             ucSup.ReloadGridView();
+            MessageBox.Show("Insert successful.", "Add supplier", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ResetTextboxes();
         }
 
@@ -62,29 +69,6 @@ namespace GUI
             txtPhone.Clear();
         }
 
-        private void txtId_Validating(object sender, CancelEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtId.Text))
-            {
-                var dbsup = busSup.GetById(txtId.Text, Shop.ID);
-
-                if (dbsup != null)
-                {
-                    err.SetError(txtId, "A supplier with such ID already exists");
-                    btnAdd.Enabled = false;
-                }
-                else
-                {
-                    err.SetError(txtId, "");
-                    btnAdd.Enabled = true;
-                }
-            }
-            else
-            {
-                btnAdd.Enabled = false;
-            }
-        }
-
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
@@ -94,6 +78,68 @@ namespace GUI
         private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                if (busSup.GetById(txtId.Text, Shop.ID) != null)
+                {
+                    err.Icon = errorIcon;
+                    err.SetError(txtId, "A supplier with such ID already exists");
+                }
+                else
+                {
+                    err.Icon = checkIcon;
+                    err.SetError(txtId, "Valid");
+                }
+            }
+            else
+            {
+                err.Icon = errorIcon;
+                err.SetError(txtId, "Please fill all info fields");
+            }
+
+            if (err.Icon == checkIcon && errtwo.Icon == checkIcon)
+            {
+                btnAdd.Enabled = true;
+            }
+            else
+            {
+                btnAdd.Enabled = false;
+            }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                if (busSup.GetByEmail(txtEmail.Text, Shop.ID) != null)
+                {
+                    errtwo.Icon = errorIcon;
+                    errtwo.SetError(txtEmail, "A supplier with such email already exists");
+                }
+                else
+                {
+                    errtwo.Icon = checkIcon;
+                    errtwo.SetError(txtEmail, "Valid");
+                }
+            }
+            else
+            {
+                errtwo.Icon = errorIcon;
+                errtwo.SetError(txtEmail, "Please fill all info fields");
+            }
+
+            if (err.Icon == checkIcon && errtwo.Icon == checkIcon)
+            {
+                btnAdd.Enabled = true;
+            }
+            else
+            {
+                btnAdd.Enabled = false;
+            }
         }
 
         private void pnlTitleBar_MouseMove(object sender, MouseEventArgs e)

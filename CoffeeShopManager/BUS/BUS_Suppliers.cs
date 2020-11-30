@@ -19,6 +19,11 @@ namespace BUS
             return dalSup.GetById(id, shopId);
         }
 
+        public DTO_Supplier GetByEmail(string email, int shopId)
+        {
+            return dalSup.GetByEmail(email, shopId);
+        }
+
         public DataTable GetAllSuppliers(int shopId)
         {
             return dalSup.GetAllSuppliers(shopId);
@@ -32,6 +37,16 @@ namespace BUS
         public DataTable GetDataTableByName(string name, int shopId)
         {
             return dalSup.GetDataTableByName(name, shopId);
+        }
+
+        public DataTable GetDataTableByEmail(string email, int shopId)
+        {
+            return dalSup.GetDataTableByEmail(email, shopId);
+        }
+
+        public DataTable GetDataTableByPhoneNumber(string phone, int shopId)
+        {
+            return dalSup.GetDataTableByPhoneNumber(phone, shopId);
         }
 
         public void Insert(DTO_Supplier sup)

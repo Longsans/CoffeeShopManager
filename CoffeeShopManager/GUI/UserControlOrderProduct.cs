@@ -399,7 +399,7 @@ namespace GUI
             {
                 dtoCus.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
             }
-            dtoCus.ShopID = shopID;
+            dtoCus.Shop.ID = shopID;
             busCus.Insert(dtoCus);
         }
         public void ResetAll()

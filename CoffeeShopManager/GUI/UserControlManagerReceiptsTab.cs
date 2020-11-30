@@ -18,6 +18,7 @@ namespace GUI
         public EventHandler ReceiptDetailsView;
         public UserControlReceiptsDetail ucRecDetails { get; set; }
         public DTO_Shop dtoShop = new DTO_Shop();
+        FilterProperties filProp = new FilterProperties();
 
         public UserControlManagerReceiptsTab()
         {
@@ -31,12 +32,50 @@ namespace GUI
             datSearch.Visible = false;
             txtSearch.GotFocus += TxtSearch_GotFocus;
             txtSearch.LostFocus += TxtSearch_LostFocus;
-            Reload();
+            ReloadGridView();
         }
 
-        private void Reload()
+        private void ReloadGridView()
         {
-            grdReceipts.DataSource = busRec.GetAllReceipts(dtoShop.ID);
+            if (!(string.IsNullOrWhiteSpace(filProp.CurrentFilter) || string.IsNullOrWhiteSpace(filProp.CurrentFilterText)))
+            {
+                switch (filProp.CurrentFilter)
+                {
+                    case "ID":
+                        {
+                            if (int.TryParse(txtSearch.Text, out int id))
+                            {
+                                grdReceipts.DataSource = busRec.GetReceiptSearchIdFiltered(id);
+                            }
+                            else
+                            {
+                                ((DataTable)grdReceipts.DataSource).Clear();
+                            }
+                        }
+                        break;
+                    case "Customer ID":
+                        {
+                            if (int.TryParse(txtSearch.Text, out int cusId))
+                            {
+                                grdReceipts.DataSource = busRec.GetReceiptSearchCustomersIdFiltered(cusId);
+                            }
+                            else
+                            {
+                                ((DataTable)grdReceipts.DataSource).Clear();
+                            }
+                        }
+                        break;
+                    case "Date of Payment":
+                        {
+                            grdReceipts.DataSource = busRec.GetReceiptSearchDateOfPaymentFiltered(datSearch.Value);
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                grdReceipts.DataSource = busRec.GetAllReceipts(dtoShop.ID);
+            }
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -57,7 +96,7 @@ namespace GUI
                 };
                 busRec.DeleteReceipt(rec);
             }
-            Reload();
+            ReloadGridView();
         }
 
         private void grdReceipts_SelectionChanged(object sender, EventArgs e)
@@ -101,25 +140,33 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (txtSearch.Visible)
+            if (!string.IsNullOrWhiteSpace(cboSearch.Text))
             {
-                switch (cboSearch.Text)
+                if (txtSearch.Visible)
                 {
-                    case "ID":
-                        {
-                            grdReceipts.DataSource = busRec.GetReceiptSearchIdFiltered(int.Parse(txtSearch.Text));
-                        }
-                        break;
-                    case "Customer ID":
-                        {
-                            grdReceipts.DataSource = busRec.GetReceiptSearchCustomersIdFiltered(int.Parse(txtSearch.Text));
-                        }
-                        break;
+                    switch (cboSearch.Text)
+                    {
+                        case "ID":
+                            {
+                                grdReceipts.DataSource = busRec.GetReceiptSearchIdFiltered(int.Parse(txtSearch.Text));
+                            }
+                            break;
+                        case "Customer ID":
+                            {
+                                grdReceipts.DataSource = busRec.GetReceiptSearchCustomersIdFiltered(int.Parse(txtSearch.Text));
+                            }
+                            break;
+                    }
+                    
                 }
-            }
-            else if (datSearch.Visible)
-            {
-                grdReceipts.DataSource = busRec.GetReceiptSearchDateOfPaymentFiltered(datSearch.Value);
+                else if (datSearch.Visible)
+                {
+                    grdReceipts.DataSource = busRec.GetReceiptSearchDateOfPaymentFiltered(datSearch.Value);
+                }
+
+                lblResetFilters.Visible = true;
+                filProp.CurrentFilter = cboSearch.Text;
+                filProp.CurrentFilterText = txtSearch.Text;
             }
         }
 
@@ -164,6 +211,20 @@ namespace GUI
                 ucRecDetails.Show();
                 ucRecDetails.BringToFront();
             }
+        }
+
+        private void lblResetFilters_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblResetFilters.ForeColor = Color.Black;
+        }
+
+        private void lblResetFilters_MouseUp(object sender, MouseEventArgs e)
+        {
+            lblResetFilters.ForeColor = SystemColors.Highlight;
+            filProp.CurrentFilter = null;
+            filProp.CurrentFilterText = null;
+            lblResetFilters.Visible = false;
+            ReloadGridView();
         }
     }
 }

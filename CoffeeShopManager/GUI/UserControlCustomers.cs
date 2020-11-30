@@ -16,10 +16,9 @@ namespace GUI
     public partial class UserControlCustomers : UserControl
     {
         BUS_Customers busCus = new BUS_Customers();
+        FilterProperties filProp = new FilterProperties();
         public frmManager frmMan { get; set; }
         public DTO_Shop dtoShop = new DTO_Shop();
-        string currentFilter = null,
-            currentFilterText;
 
         public UserControlCustomers()
         {
@@ -55,13 +54,13 @@ namespace GUI
 
         public void ReloadGridView()
         {
-            if (!(string.IsNullOrWhiteSpace(currentFilter) || string.IsNullOrWhiteSpace(currentFilterText)))
+            if (!(string.IsNullOrWhiteSpace(filProp.CurrentFilter) || string.IsNullOrWhiteSpace(filProp.CurrentFilterText)))
             {
-                switch(currentFilter)
+                switch(filProp.CurrentFilter)
                 {
                     case "ID":
                         {
-                            if (int.TryParse(currentFilterText, out int id))
+                            if (int.TryParse(filProp.CurrentFilterText, out int id))
                             {
                                 grdCustomers.DataSource = busCus.GetCustomerSearchIDFiltered(id);
                             }
@@ -73,12 +72,12 @@ namespace GUI
                         break;
                     case "Name":
                         {
-                            grdCustomers.DataSource = busCus.GetCustomersSearchNameFiltered(currentFilterText, dtoShop.ID);
+                            grdCustomers.DataSource = busCus.GetCustomersSearchNameFiltered(filProp.CurrentFilterText, dtoShop.ID);
                         }
                         break;
                     case "Email":
                         {
-                            grdCustomers.DataSource = busCus.GetCustomerSearchEmailFiltered(currentFilterText, dtoShop.ID);
+                            grdCustomers.DataSource = busCus.GetCustomerSearchEmailFiltered(filProp.CurrentFilterText, dtoShop.ID);
                         }
                         break;
                 }
@@ -100,6 +99,7 @@ namespace GUI
                     FirstName = row.Cells["First Name"].Value.ToString(),
                     LastName = row.Cells["Last Name"].Value.ToString(),
                     Email = row.Cells["Email"].Value.ToString(),
+                    Shop = dtoShop
                 }
             };
 
@@ -142,36 +142,37 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            switch (cboSearch.Text)
+            if (!string.IsNullOrWhiteSpace(cboSearch.Text))
             {
-                case "ID":
-                    {
-                        if (int.TryParse(txtSearch.Text, out int id))
+                switch (cboSearch.Text)
+                {
+                    case "ID":
                         {
-                            grdCustomers.DataSource = busCus.GetCustomerSearchIDFiltered(id);
+                            if (int.TryParse(txtSearch.Text, out int id))
+                            {
+                                grdCustomers.DataSource = busCus.GetCustomerSearchIDFiltered(id);
+                            }
+                            else
+                            {
+                                ((DataTable)grdCustomers.DataSource).Clear();
+                            }
                         }
-                        else
+                        break;
+                    case "Name":
                         {
-                            ((DataTable)grdCustomers.DataSource).Clear();
+                            grdCustomers.DataSource = busCus.GetCustomersSearchNameFiltered(txtSearch.Text, dtoShop.ID);
                         }
-                        currentFilter = cboSearch.Text;
-                        currentFilterText = txtSearch.Text;
-                    }
-                    break;
-                case "Name":
-                    {
-                        grdCustomers.DataSource = busCus.GetCustomersSearchNameFiltered(txtSearch.Text, dtoShop.ID);
-                        currentFilter = cboSearch.Text;
-                        currentFilterText = txtSearch.Text;
-                    }
-                    break;
-                case "Email":
-                    {
-                        grdCustomers.DataSource = busCus.GetCustomerSearchEmailFiltered(txtSearch.Text, dtoShop.ID);
-                        currentFilter = cboSearch.Text;
-                        currentFilterText = txtSearch.Text;
-                    }
-                    break;
+                        break;
+                    case "Email":
+                        {
+                            grdCustomers.DataSource = busCus.GetCustomerSearchEmailFiltered(txtSearch.Text, dtoShop.ID);
+                        }
+                        break;
+                }
+
+                lblResetFilters.Visible = true;
+                filProp.CurrentFilter = cboSearch.Text;
+                filProp.CurrentFilterText = txtSearch.Text;
             }
         }
 
@@ -194,6 +195,20 @@ namespace GUI
                 btnEdit.Enabled = false;
                 btnDelete.Enabled = false;
             }
+        }
+
+        private void lblResetFilters_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblResetFilters.ForeColor = Color.Black;
+        }
+
+        private void lblResetFilters_MouseUp(object sender, MouseEventArgs e)
+        {
+            lblResetFilters.ForeColor = SystemColors.Highlight;
+            filProp.CurrentFilter = null;
+            filProp.CurrentFilterText = null;
+            lblResetFilters.Visible = false;
+            ReloadGridView();
         }
     }
 }

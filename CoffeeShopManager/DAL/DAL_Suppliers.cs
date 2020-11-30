@@ -49,6 +49,43 @@ namespace DAL
             return sup;
         }
 
+        public DTO_Supplier GetByEmail(string email, int shopId)
+        {
+            DTO_Supplier sup = null;
+            string qry = "SELECT * FROM SUPPLIERS " +
+                "WHERE EmailAddress = @email AND ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                sup = new DTO_Supplier
+                {
+                    Id = reader["Id"].ToString(),
+                    Name = reader["SupplierName"].ToString(),
+                    Shop = new DTO_Shop
+                    {
+                        ID = (int)reader["ShopId"]
+                    },
+                    Email = reader["EmailAddress"].ToString(),
+                    Phone = reader["PhoneNumber"].ToString()
+                };
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return sup;
+        }
+
         public DataTable GetAllSuppliers(int shopId)
         {
             DataTable dt = new DataTable();
@@ -67,7 +104,7 @@ namespace DAL
         public DataTable GetDataTableById(string id, int shopId)
         {
             DataTable dt = new DataTable();
-            string qry = "SELECT Id AS ID, SupplierName AS Name " +
+            string qry = "SELECT Id AS ID, SupplierName AS Name, " +
                 "EmailAddress AS Email, PhoneNumber AS [Phone Number] " +
                 "FROM SUPPLIERS " +
                 "WHERE ShopId = @shopId " +
@@ -84,7 +121,7 @@ namespace DAL
         public DataTable GetDataTableByName(string name, int shopId)
         {
             DataTable dt = new DataTable();
-            string qry = "SELECT Id AS ID, SupplierName AS Name " +
+            string qry = "SELECT Id AS ID, SupplierName AS Name, " +
                 "EmailAddress AS Email, PhoneNumber AS [Phone Number] " +
                 "FROM SUPPLIERS " +
                 "WHERE ShopId = @shopId " +
@@ -92,6 +129,40 @@ namespace DAL
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
             ada.SelectCommand.Parameters.AddWithValue("@name", name);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable GetDataTableByEmail(string email, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT Id AS ID, SupplierName AS Name, " +
+                "EmailAddress AS Email, PhoneNumber AS [Phone Number] " +
+                "FROM SUPPLIERS " +
+                "WHERE ShopId = @shopId " +
+                "AND EmailAddress = @email";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+            ada.SelectCommand.Parameters.AddWithValue("@email", email);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable GetDataTableByPhoneNumber(string phone, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT Id AS ID, SupplierName AS Name, " +
+                "EmailAddress AS Email, PhoneNumber AS [Phone Number] " +
+                "FROM SUPPLIERS " +
+                "WHERE ShopId = @shopId " +
+                "AND PhoneNumber = @phone";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+            ada.SelectCommand.Parameters.AddWithValue("@phone", phone);
 
             ada.Fill(dt);
 

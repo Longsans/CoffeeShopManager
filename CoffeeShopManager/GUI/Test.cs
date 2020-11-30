@@ -401,7 +401,7 @@ namespace GUI
             {
                 dtoCus.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
             }
-            dtoCus.ShopID = dtoShop.ID;
+            dtoCus.Shop = dtoShop;
             busCus.Insert(dtoCus);
         }
 

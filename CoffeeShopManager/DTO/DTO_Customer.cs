@@ -13,7 +13,7 @@ namespace DTO
         public string LastName { get; set; }
         public string Email { get; set; }
         public DateTime Birthdate { get; set; }
-        public int ShopID { get; set; }
+        public DTO_Shop Shop = new DTO_Shop();
         public DTO_Customer()
         {
 
@@ -25,7 +25,7 @@ namespace DTO
             this.LastName = lname;
             this.Email = email;
             this.Birthdate = bdate;
-            this.ShopID = shopId;
+            Shop.ID = shopId;
         }
     }
 }

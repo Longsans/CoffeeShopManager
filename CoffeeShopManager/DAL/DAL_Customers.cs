@@ -29,7 +29,7 @@ namespace DAL
         public DTO_Customer GetCustomerById(int id)
         {
             DTO_Customer cus = null;
-            string qry = "SELECT Id AS ID, FirstName, LastName, " +
+            string qry = "SELECT Id, FirstName, LastName, " +
                 "EmailAddress, Birthdate " +
                 "FROM CUSTOMERS " +
                 "WHERE Id = @id";
@@ -64,7 +64,7 @@ namespace DAL
         public DTO_Customer GetCustomerByEmail(string email, int shopId)
         {
             DTO_Customer cus = null;
-            string qry = "SELECT Id AS ID, FirstName, LastName, " +
+            string qry = "SELECT Id, FirstName, LastName, " +
                 "EmailAddress, Birthdate " +
                 "FROM CUSTOMERS " +
                 "WHERE EmailAddress = @email AND ShopId = @shopId";
@@ -157,7 +157,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@lname", cus.LastName);
             cmd.Parameters.AddWithValue("@email", cus.Email);
             cmd.Parameters.AddWithValue("@bdate", cus.Birthdate);
-            cmd.Parameters.AddWithValue("@shopId", cus.ShopID);
+            cmd.Parameters.AddWithValue("@shopId", cus.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
