@@ -75,14 +75,30 @@ namespace DAL
             return rec;
         }
 
-        public void Insert(DTO_Receipt rec, DTO_Table tab)
+        public DataTable GetCurrentReceiptIdsAtTable(int tableId, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT ReceiptId " +
+                "FROM TABLE_SITTING " +
+                "WHERE TableId = @tableId AND ShopId = @shopId AND Sitting = 1";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@tableId", tableId);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public void Insert(DTO_TableSitting tabSit)
         {
             string qry = "INSERT INTO TABLE_SITTING " +
-                "VALUES (@receiptId, @tableId, @shopId)";
+                "VALUES (@receiptId, @tableId, @shopId, @sitting)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@receiptId", rec.Id);
-            cmd.Parameters.AddWithValue("@tableId", tab.Id);
-            cmd.Parameters.AddWithValue("@shopId", rec.Shop.ID);
+            cmd.Parameters.AddWithValue("@receiptId", tabSit.Receipt.Id);
+            cmd.Parameters.AddWithValue("@tableId", tabSit.Table.Id);
+            cmd.Parameters.AddWithValue("@shopId", tabSit.Receipt.Id);
+            cmd.Parameters.AddWithValue("@sitting", tabSit.Sitting);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -144,6 +160,28 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@recId", rec.Id);
             cmd.Parameters.AddWithValue("@shopId", rec.Shop.ID);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
+        }
+
+        public void Update(DTO_TableSitting tabSit)
+        {
+            string qry = "UPDATE TABLE_SITTING " +
+                "SET Sitting = @sitting " +
+                "WHERE TableId = @tabId AND ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@tabId", tabSit.Table.Id);
+            cmd.Parameters.AddWithValue("@shopId", tabSit.Table.Shop.ID);
+            cmd.Parameters.AddWithValue("@sitting", tabSit.Sitting);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)

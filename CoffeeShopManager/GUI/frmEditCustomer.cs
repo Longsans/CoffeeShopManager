@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
 using DTO;
 using BUS;
 
@@ -14,11 +15,14 @@ namespace GUI
 {
     public partial class frmEditCustomer : Form
     {
+        BUS_Customers busCus = new BUS_Customers();
         public DTO_Customer dtoCus { get; set; }
         public UserControlCustomers ucCus { get; set; }
+        ErrorProvider err = new ErrorProvider();
+        Icon checkIcon,
+            errorIcon;
         Point prevPoint;
         bool dragging;
-        BUS_Customers busCus = new BUS_Customers();
 
         public frmEditCustomer()
         {
@@ -34,6 +38,9 @@ namespace GUI
 
         private void frmEditCustomer_Load(object sender, EventArgs e)
         {
+            checkIcon = new Icon(GUI.Properties.Resources.check1, err.Icon.Size);
+            errorIcon = new Icon(GUI.Properties.Resources.cancel, err.Icon.Size);
+            err.SetIconPadding(txtEmail, 5);
             txtId.Text = dtoCus.Id.ToString();
             txtFirstName.Text = dtoCus.FirstName;
             txtLastName.Text = dtoCus.LastName;
@@ -73,14 +80,35 @@ namespace GUI
             };
 
             busCus.Update(dtoCus);
-            MessageBox.Show("Update succeeded.", "Edit success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Update successful.", "Edit success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
-            ucCus.Reload();
+            ucCus.ReloadGridView();
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            btnSave.Enabled = true;
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                var cus = busCus.GetCustomerByEmail(txtEmail.Text, dtoCus.Shop.ID);
+                if (cus != null && cus.Email != dtoCus.Email)
+                {
+                    err.Icon = errorIcon;
+                    err.SetError(txtEmail, "A customer with such email already exists");
+                    btnSave.Enabled = false;
+                }
+                else
+                {
+                    err.Icon = checkIcon;
+                    err.SetError(txtEmail, "Valid");
+                    btnSave.Enabled = true;
+                }
+            }
+            else
+            {
+                err.Icon = errorIcon;
+                err.SetError(txtEmail, "Please fill all info fields");
+                btnSave.Enabled = false;
+            }
         }
 
         private void datBirthdate_ValueChanged(object sender, EventArgs e)

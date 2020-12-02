@@ -365,7 +365,7 @@ namespace GUI
             {
                 dtoTab.Id = Int32.Parse(comboBox2.Text);
                 dtoTab.Shop.ID = shopID;
-                dtoTab.Status = "Unavailable";
+                dtoTab.Status = "Occupied";
                 busTable.Update(dtoTab);
                 
             }
@@ -399,7 +399,7 @@ namespace GUI
             {
                 dtoCus.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
             }
-            dtoCus.ShopID = shopID;
+            dtoCus.Shop.ID = shopID;
             busCus.Insert(dtoCus);
         }
         public void ResetAll()

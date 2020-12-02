@@ -169,6 +169,7 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnSupplier.Location;
+            ucSuppliersTab.frmMan = this;
             ucSuppliersTab.Show();
             ucSuppliersTab.BringToFront();
             Reload();

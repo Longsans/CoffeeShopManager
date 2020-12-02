@@ -16,6 +16,7 @@ namespace GUI
     public partial class UserControlCustomers : UserControl
     {
         BUS_Customers busCus = new BUS_Customers();
+        FilterProperties filProp = new FilterProperties();
         public frmManager frmMan { get; set; }
         public DTO_Shop dtoShop = new DTO_Shop();
 
@@ -30,7 +31,7 @@ namespace GUI
             txtSearch.LostFocus += TxtSearch_LostFocus;
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
-            Reload();
+            ReloadGridView();
         }
 
         private void TxtSearch_LostFocus(object sender, EventArgs e)
@@ -51,9 +52,40 @@ namespace GUI
             }
         }
 
-        public void Reload()
+        public void ReloadGridView()
         {
-            grdCustomers.DataSource = busCus.GetAllCustomers(dtoShop.ID);
+            if (!(string.IsNullOrWhiteSpace(filProp.CurrentFilter) || string.IsNullOrWhiteSpace(filProp.CurrentFilterText)))
+            {
+                switch(filProp.CurrentFilter)
+                {
+                    case "ID":
+                        {
+                            if (int.TryParse(filProp.CurrentFilterText, out int id))
+                            {
+                                grdCustomers.DataSource = busCus.GetCustomerSearchIDFiltered(id);
+                            }
+                            else
+                            {
+                                ((DataTable)grdCustomers.DataSource).Clear();
+                            }
+                        }
+                        break;
+                    case "Name":
+                        {
+                            grdCustomers.DataSource = busCus.GetCustomersSearchNameFiltered(filProp.CurrentFilterText, dtoShop.ID);
+                        }
+                        break;
+                    case "Email":
+                        {
+                            grdCustomers.DataSource = busCus.GetCustomerSearchEmailFiltered(filProp.CurrentFilterText, dtoShop.ID);
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                grdCustomers.DataSource = busCus.GetAllCustomers(dtoShop.ID);
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -67,6 +99,7 @@ namespace GUI
                     FirstName = row.Cells["First Name"].Value.ToString(),
                     LastName = row.Cells["Last Name"].Value.ToString(),
                     Email = row.Cells["Email"].Value.ToString(),
+                    Shop = dtoShop
                 }
             };
 
@@ -104,28 +137,42 @@ namespace GUI
                 };
                 busCus.Delete(cus);
             }
-            Reload();
+            ReloadGridView();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            switch (cboSearch.Text)
+            if (!string.IsNullOrWhiteSpace(cboSearch.Text))
             {
-                case "ID":
-                    {
-                        grdCustomers.DataSource = busCus.GetCustomerSearchIDFiltered(int.Parse(txtSearch.Text));
-                    }
-                    break;
-                case "Name":
-                    {
-                        grdCustomers.DataSource = busCus.GetCustomersSearchNameFiltered(txtSearch.Text, dtoShop.ID);
-                    }
-                    break;
-                case "Email":
-                    {
-                        grdCustomers.DataSource = busCus.GetCustomerSearchEmailFiltered(txtSearch.Text, dtoShop.ID);
-                    }
-                    break;
+                switch (cboSearch.Text)
+                {
+                    case "ID":
+                        {
+                            if (int.TryParse(txtSearch.Text, out int id))
+                            {
+                                grdCustomers.DataSource = busCus.GetCustomerSearchIDFiltered(id);
+                            }
+                            else
+                            {
+                                ((DataTable)grdCustomers.DataSource).Clear();
+                            }
+                        }
+                        break;
+                    case "Name":
+                        {
+                            grdCustomers.DataSource = busCus.GetCustomersSearchNameFiltered(txtSearch.Text, dtoShop.ID);
+                        }
+                        break;
+                    case "Email":
+                        {
+                            grdCustomers.DataSource = busCus.GetCustomerSearchEmailFiltered(txtSearch.Text, dtoShop.ID);
+                        }
+                        break;
+                }
+
+                lblResetFilters.Visible = true;
+                filProp.CurrentFilter = cboSearch.Text;
+                filProp.CurrentFilterText = txtSearch.Text;
             }
         }
 
@@ -148,6 +195,20 @@ namespace GUI
                 btnEdit.Enabled = false;
                 btnDelete.Enabled = false;
             }
+        }
+
+        private void lblResetFilters_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblResetFilters.ForeColor = Color.Black;
+        }
+
+        private void lblResetFilters_MouseUp(object sender, MouseEventArgs e)
+        {
+            lblResetFilters.ForeColor = SystemColors.Highlight;
+            filProp.CurrentFilter = null;
+            filProp.CurrentFilterText = null;
+            lblResetFilters.Visible = false;
+            ReloadGridView();
         }
     }
 }

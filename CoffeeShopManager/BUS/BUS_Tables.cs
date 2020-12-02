@@ -83,6 +83,12 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public DataTable GetCurrentReceiptIdsAtTable(int tableId, int shopId)
+        {
+            return dalTables.GetCurrentReceiptIdsAtTable(tableId, shopId);
+        }
+
         public bool Insert(DTO_Table tab)
         {
             if(dalTables.GetTableById(tab.Id,1)!=null)

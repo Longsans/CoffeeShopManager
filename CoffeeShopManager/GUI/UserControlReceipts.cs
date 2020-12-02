@@ -22,7 +22,7 @@ namespace GUI
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserControlReceiptsDetail ucReceiptDetail = new UserControlReceiptsDetail() ;
+            UserControlReceiptsDetail ucReceiptDetail = new UserControlReceiptsDetail();
             ucReceiptDetail.Show();
             //ucReceiptDetail.BringToFront();
             this.Hide();
