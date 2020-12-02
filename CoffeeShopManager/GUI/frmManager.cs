@@ -160,6 +160,8 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnStock.Location;
+            ucStockTab.Shop = dtoMan.Shop;
+            ucStockTab.frmMan = this;
             ucStockTab.Show();
             ucStockTab.BringToFront();
             Reload();
@@ -169,6 +171,7 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnSupplier.Location;
+            ucSuppliersTab.Shop = dtoMan.Shop;
             ucSuppliersTab.frmMan = this;
             ucSuppliersTab.Show();
             ucSuppliersTab.BringToFront();

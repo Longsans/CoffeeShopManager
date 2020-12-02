@@ -169,6 +169,20 @@ namespace DAL
             return dt;
         }
 
+        internal DataTable GetDataTableSupplierIDsByName(string name, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT Id FROM SUPPLIERS " +
+                "WHERE ShopId = @shopId AND SupplierName LIKE '%' + @name + '%'";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+            ada.SelectCommand.Parameters.AddWithValue("@name", name);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
         public void Insert(DTO_Supplier sup)
         {
             string qry = "INSERT INTO SUPPLIERS " +

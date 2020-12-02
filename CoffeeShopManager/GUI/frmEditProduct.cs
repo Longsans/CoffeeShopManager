@@ -17,6 +17,9 @@ namespace GUI
         public DTO_Product dtoPro = new DTO_Product();
         BUS_UserInfo busUser = new BUS_UserInfo();
         UserControlProductTab _ucPro;
+        Point prevPoint;
+        bool dragging;
+
         public frmEditProduct()
         {
             InitializeComponent();
@@ -33,11 +36,13 @@ namespace GUI
             txtPrice.Text = dtoPro.Price.ToString();
             cbxType.Text = dtoPro.Type;
             rtxDetail.Text = dtoPro.Detail;
+            lblListCaption.Text += $"{dtoPro.Name}:";
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             if (dtoPro.Image != null)
             {
                 pictureBox1.Image = ImageHelper.ByteArrayToImage(dtoPro.Image);
             }
+            ReloadGridView();
         }
         private void Reload()
         {
@@ -98,6 +103,76 @@ namespace GUI
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void lblRemoveFromList_MouseDown(object sender, MouseEventArgs e)
+        {
+            ((Label)sender).ForeColor = SystemColors.Highlight;
+        }
+
+        public void ReloadGridView()
+        {
+            grdItems.DataSource = busPro.GetDataTableItemsOfProduct(dtoPro.Id, dtoPro.Shop.ID);
+        }
+
+        private void lblAdd_MouseUp(object sender, MouseEventArgs e)
+        {
+            lblAdd.ForeColor = SystemColors.ControlText;
+            var frmAdd = new frmSmallAddStockItemToList
+            {
+                Product = dtoPro,
+                frmEditPro = this
+            };
+            frmAdd.Location = new Point(this.Location.X + this.Width / 2 - frmAdd.Width / 2, 
+                this.Location.Y + this.Height / 2 - frmAdd.Height / 2);
+            frmAdd.ShowDialog();
+        }
+
+        private void lblRemove_MouseUp(object sender, MouseEventArgs e)
+        {
+            lblRemove.ForeColor = SystemColors.ControlText;
+            if (grdItems.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("Remove these items from list?", "Remove items",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in grdItems.SelectedRows)
+                    {
+                        var itemForPro = new DTO_StockItemsForProducts
+                        {
+                            Item = new DTO_StockItem
+                            {
+                                Id = row.Cells["Item ID"].Value.ToString(),
+                                Shop = dtoPro.Shop
+                            },
+                            Product = dtoPro,
+                            Shop = dtoPro.Shop
+                        };
+                        busPro.RemoveItemForProduct(itemForPro);
+                    }
+                    ReloadGridView();
+                }
+            }
+        }
+
+        private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            prevPoint = Cursor.Position;
+        }
+
+        private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void pnlTitleBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                this.Location = new Point(this.Location.X + Cursor.Position.X - prevPoint.X, this.Location.Y + Cursor.Position.Y - prevPoint.Y);
+                prevPoint = Cursor.Position;
+            }
         }
     }
 }

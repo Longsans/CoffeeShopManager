@@ -50,6 +50,7 @@
     <Compile Include="DAL_Receipts.cs" />
     <Compile Include="DAL_Shop.cs" />
     <Compile Include="DAL_StockItems.cs" />
+    <Compile Include="DAL_StockItemsForProducts.cs" />
     <Compile Include="DAL_Suppliers.cs" />
     <Compile Include="DAL_Tables.cs" />
     <Compile Include="DAL_TableSitting.cs" />

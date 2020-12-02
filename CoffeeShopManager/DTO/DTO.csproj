@@ -50,6 +50,7 @@
     <Compile Include="DTO_ReceiptDetails.cs" />
     <Compile Include="DTO_Shop.cs" />
     <Compile Include="DTO_StockItem.cs" />
+    <Compile Include="DTO_StockItemsForProducts.cs" />
     <Compile Include="DTO_Supplier.cs" />
     <Compile Include="DTO_Table.cs" />
     <Compile Include="DTO_TableSitting.cs" />

@@ -110,6 +110,31 @@ namespace BUS
             return dalProduct.GetProductsSearchPriceFiltered(lowerBound, upperBound, shopId);
         }
 
+        public DataTable GetDataTableItemsOfProduct(string productId, int shopId)
+        {
+            return dalProduct.GetDataTableItemsOfProduct(productId, shopId);
+        }
+
+        public DTO_StockItemsForProducts GetItemForProduct(string itemId, string productId, int shopId)
+        {
+            return dalProduct.GetItemForProduct(itemId, productId, shopId);
+        }
+
+        public void AddItemForProduct(DTO_StockItemsForProducts itemForPro)
+        {
+            dalProduct.AddItemForProduct(itemForPro);
+        }
+
+        public void RemoveItemForProduct(DTO_StockItemsForProducts itemForPro)
+        {
+            dalProduct.RemoveItemForProduct(itemForPro);
+        }
+
+        public void RemoveAllItemsForProductByProductId(string productId, int shopId)
+        {
+            dalProduct.RemoveAllItemsForProductByProductId(productId, shopId);
+        }
+
         public bool InsertWithoutImage(DTO_Product dtoPro)
         {
             try

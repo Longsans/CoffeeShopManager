@@ -65,6 +65,12 @@
   <ItemGroup>
     <Compile Include="DataGridViewNumericUpDownCell.cs" />
     <Compile Include="FilterProperties.cs" />
+    <Compile Include="frmAddStockItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddStockItem.Designer.cs">
+      <DependentUpon>frmAddStockItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     <Compile Include="frmChangeAuthCodeShop.Designer.cs">
       <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditStockItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditStockItem.Designer.cs">
+      <DependentUpon>frmEditStockItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmShowDetailTable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +100,18 @@
     </Compile>
     <Compile Include="frmEditSupplier.Designer.cs">
       <DependentUpon>frmEditSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSmallAddProductToList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSmallAddProductToList.Designer.cs">
+      <DependentUpon>frmSmallAddProductToList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSmallAddStockItemToList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSmallAddStockItemToList.Designer.cs">
+      <DependentUpon>frmSmallAddStockItemToList.cs</DependentUpon>
     </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
@@ -280,6 +304,9 @@
     <EmbeddedResource Include="frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStockItem.resx">
+      <DependentUpon>frmAddStockItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddSupplier.resx">
       <DependentUpon>frmAddSupplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditProduct.resx">
       <DependentUpon>frmEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditStockItem.resx">
+      <DependentUpon>frmEditStockItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditSupplier.resx">
       <DependentUpon>frmEditSupplier.cs</DependentUpon>
@@ -319,6 +349,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowDetailTable.resx">
       <DependentUpon>frmShowDetailTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSmallAddProductToList.resx">
+      <DependentUpon>frmSmallAddProductToList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSmallAddStockItemToList.resx">
+      <DependentUpon>frmSmallAddStockItemToList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -533,6 +569,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checked_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

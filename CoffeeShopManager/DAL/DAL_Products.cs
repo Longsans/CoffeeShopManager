@@ -237,29 +237,17 @@ namespace DAL
             return dtProFiltered;
         }
 
-        //public int GetNextProductId()
-        //{
-        //    string qry = "SELECT max(Id) FROM [PRODUCTS]";
-        //    int currId = -1;
-        //    SqlCommand cmd = new SqlCommand(qry, this.conn);
+        public DataTable GetDataTableItemsOfProduct(string productId, int shopId)
+        {
+            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
+            return dalItemForPro.GetDataTableItemsOfProduct(productId, shopId);
+        }
 
-        //    var connState = (this.conn.State == ConnectionState.Open);
-        //    if (!connState)
-        //    {
-        //        OpenConnection();
-        //    }
-        //    var reader = cmd.ExecuteReader();
-        //    if (reader.Read())
-        //    {
-        //        currId = reader.GetInt32(0);
-        //    }
-        //    if (!connState)
-        //    {
-        //        CloseConnection();
-        //    }
-
-        //    return currId + 1;
-        //}
+        public DTO_StockItemsForProducts GetItemForProduct(string itemId, string productId, int shopId)
+        {
+            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
+            return dalItemForPro.GetItemForProduct(itemId, productId, shopId);
+        }
 
         public void InsertWithoutImage(DTO_Product dtoPro)
         {
@@ -356,6 +344,24 @@ namespace DAL
             {
                 CloseConnection();
             }
+        }
+
+        public void AddItemForProduct(DTO_StockItemsForProducts itemForPro)
+        {
+            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
+            dalItemForPro.Insert(itemForPro);
+        }
+
+        public void RemoveItemForProduct(DTO_StockItemsForProducts itemForPro)
+        {
+            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
+            dalItemForPro.Delete(itemForPro);
+        }
+
+        public void RemoveAllItemsForProductByProductId(string productId, int shopId)
+        {
+            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
+            dalItemForPro.DeleteAllByProductId(productId, shopId);
         }
     }
 }

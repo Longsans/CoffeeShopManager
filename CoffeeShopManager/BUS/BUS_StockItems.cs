@@ -19,6 +19,11 @@ namespace BUS
             return dalStock.GetById(id, shopId);
         }
 
+        public DTO_StockItem GetByName(string name, int shopId)
+        {
+            return dalStock.GetByName(name, shopId);
+        }
+
         public DataTable GetAllStockItems(int shopId)
         {
             return dalStock.GetAllStockItems(shopId);
@@ -37,6 +42,36 @@ namespace BUS
         public DataTable GetDataTableBySupplierId(string supplierId, int shopId)
         {
             return dalStock.GetDataTableBySupplierId(supplierId, shopId);
+        }
+
+        public DataTable GetDataTableBySupplierName(string name, int shopId)
+        {
+            return dalStock.GetDataTableBySupplierName(name, shopId);
+        }
+
+        public DataTable GetDataTableProductsUsingItem(string itemId, int shopId)
+        {
+            return dalStock.GetDataTableProductsUsingItem(itemId, shopId);
+        }
+
+        public DTO_StockItemsForProducts GetItemForProduct(string itemId, string productId, int shopId)
+        {
+            return dalStock.GetItemForProduct(itemId, productId, shopId);
+        }
+
+        public void AddItemForProduct(DTO_StockItemsForProducts itemForPro)
+        {
+            dalStock.AddItemForProduct(itemForPro);
+        }
+
+        public void RemoveItemForProduct(DTO_StockItemsForProducts itemForPro)
+        {
+            dalStock.RemoveItemForProduct(itemForPro);
+        }
+
+        public void RemoveAllProductsUsingItemByItemId(string itemId, int shopId)
+        {
+            dalStock.RemoveAllProductsUsingItemByItemId(itemId, shopId);
         }
 
         public void Insert(DTO_StockItem item)
