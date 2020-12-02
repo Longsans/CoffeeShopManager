@@ -46,7 +46,7 @@ namespace GUI
         {
 
             flowLayoutPanel1.Controls.Clear();
-            T = busPro.GetAllProductsWithImages(1);
+            T = busPro.GetAllProductsWithImages(shopID);
             GetData(T);
             a = busPro.GetAllFood(shopID);
             b = busPro.GetAllDrinks(shopID);
@@ -232,7 +232,6 @@ namespace GUI
             {
                 lblSelect.Visible = true;
             }
-            txtSearchName.Text = "Search by name";
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -343,7 +342,7 @@ namespace GUI
             dtoReceipt.Customer = dtoCus;
             dtoReceipt.DateOfPayMent = now;
             int mon = lblGrandTotal.Text.IndexOf("$");
-            dtoReceipt.Total = Int32.Parse(lblGrandTotal.Text.Substring(0,mon-1));
+            dtoReceipt.Total = decimal.Parse(lblGrandTotal.Text.Substring(0,mon-1));
             dtoReceipt.Details = "";
             dtoReceipt.Shop.ID = shopID;
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
@@ -391,6 +390,7 @@ namespace GUI
             string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
             DateTime bdate = new DateTime();
             dtoCus.Email = txtEmail.Text;
+            if(busCus.GetCustomerByEmail(txtEmail.Text,shopID)!=null)
             dtoCus.Id = Int32.Parse(txtID.Text);
             dtoCus.FirstName = txtFirstName.Text;
             dtoCus.LastName = txtLastName.Text;
@@ -516,7 +516,27 @@ namespace GUI
 
         private void txtSearchName_Click(object sender, EventArgs e)
         {
-            txtSearchName.Text = "";
+            txtSearchName.Text = null;
+        }
+        private void txtSearchName_TextChanged(object sender, EventArgs e)
+        {
+                try
+                {
+                    flowLayoutPanel1.Controls.Clear();
+                    comboBox1.Enabled = false;
+                    comboBox1.Text = "All";
+                    if (txtSearchName.Text == "")
+                    {
+                        comboBox1.Enabled = true;
+                        GetData(T);
+                    }
+                    else 
+                    GetData(busPro.GetProductsSearchNameFiltered(txtSearchName.Text, shopID));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
     }
 }

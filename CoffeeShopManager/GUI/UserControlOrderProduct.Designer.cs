@@ -548,8 +548,8 @@
             this.txtSearchName.Name = "txtSearchName";
             this.txtSearchName.Size = new System.Drawing.Size(137, 22);
             this.txtSearchName.TabIndex = 16;
-            this.txtSearchName.Text = "Search by name";
             this.txtSearchName.Click += new System.EventHandler(this.txtSearchName_Click);
+            this.txtSearchName.TextChanged += new System.EventHandler(this.txtSearchName_TextChanged);
             // 
             // errorProvider1
             // 
