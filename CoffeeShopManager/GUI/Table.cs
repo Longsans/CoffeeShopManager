@@ -16,14 +16,17 @@ namespace GUI
     {
         string stt;
         DTO_Table table = new DTO_Table();
+        UserControlTable ucTable { get; set; }
         public Table()
         {
             InitializeComponent();
         }
-        public Table(DTO_Table _table)
+        public Table(DTO_Table _table, UserControlTable _ucTable)
         {
             InitializeComponent();
             table = _table;
+            ucTable = _ucTable;
+
             Reload();
         }
         private void Reload()
@@ -39,9 +42,8 @@ namespace GUI
         }
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmShowDetailTable frmShowDetail = new frmShowDetailTable(table);
+            frmShowDetailTable frmShowDetail = new frmShowDetailTable(table, ucTable);
             frmShowDetail.ShowDialog();
         }
-
     }
 }

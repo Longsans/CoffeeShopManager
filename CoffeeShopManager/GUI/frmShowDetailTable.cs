@@ -14,6 +14,7 @@ namespace GUI
 {
     public partial class frmShowDetailTable : Form
     {
+        public UserControlTable ucTable { get; set; }
         DTO_Table table = new DTO_Table();
         BUS_Tables busTable = new BUS_Tables();
         private bool dragging = false;
@@ -22,9 +23,10 @@ namespace GUI
         {
             InitializeComponent();
         }
-        public frmShowDetailTable(DTO_Table _table)
+        public frmShowDetailTable(DTO_Table _table, UserControlTable _ucTable)
         {
             InitializeComponent();
+            ucTable = _ucTable;
             table = _table;
             if (table.Status == "Occupied")
             {
@@ -33,8 +35,18 @@ namespace GUI
             }
             else
             {
-                btnCheckOut.Enabled = false;
-                btnCheckOut.BackgroundImage = global::GUI.Properties.Resources.checked_80px;
+                if (table.Status == "Unavailable")
+                {
+                    btnSetUnavailable.Enabled = false;
+                    btnCheckOut.Enabled = true;
+                    btnCheckOut.BackgroundImage = global::GUI.Properties.Resources.ok_48px;
+                }
+                else
+                {
+                    btnSetUnavailable.Enabled = true;
+                    btnCheckOut.Enabled = false;
+                    btnCheckOut.BackgroundImage = global::GUI.Properties.Resources.checked_80px;
+                }
             }
         }
 
@@ -76,11 +88,39 @@ namespace GUI
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            DialogResult ret;
+            if (table.Status == "Occupied")
+            {
+                ret = MessageBox.Show("Do you want to clear this table ?", "Clear table", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+            else
+            {
+                ret = MessageBox.Show("Do you want to make this table available ?", "Enable table", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
             table.Status = "Available";
-            DialogResult ret = MessageBox.Show("Do you want to clear this table ?", "Clear table", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ret == DialogResult.Yes) busTable.Update(table);
             btnCheckOut.BackgroundImage = global::GUI.Properties.Resources.checked_80px;
             btnCheckOut.Enabled = false;
+            Close();
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSetUnavailable_Click(object sender, EventArgs e)
+        {
+            table.Status = "Unavailable";
+            DialogResult ret = MessageBox.Show("Do you want to make this table unavailable?", "Disable table", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (ret == DialogResult.Yes) busTable.Update(table);
+            Close();
+        }
+
+        private void frmShowDetailTable_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ucTable.LoadAllTables();
         }
     }
 }

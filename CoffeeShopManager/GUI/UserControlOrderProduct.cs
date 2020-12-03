@@ -247,7 +247,7 @@ namespace GUI
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDown")
+            if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDown" && e.RowIndex != dataGridView1.Rows.Count - 1)
             {
                 r1 = dataGridView1.Rows[e.RowIndex];
                 if (r1.Cells[2].Value.ToString() != "0")
@@ -271,7 +271,7 @@ namespace GUI
                 }
 
             }
-            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmUp")
+            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmUp" && e.RowIndex != dataGridView1.Rows.Count - 1)
             {
                 r1 = dataGridView1.Rows[e.RowIndex];
                 r1.Cells[2].Value = (Int32.Parse(r1.Cells[2].Value.ToString()) + 1);
@@ -280,7 +280,7 @@ namespace GUI
                 r1.Cells[4].Value = giatri * bien;
             }
 
-            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDelete" )
+            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDelete"&& e.RowIndex != dataGridView1.Rows.Count - 1)
             {
                 for (int i = 0; i < strSave.Count; i++)
                 {
@@ -537,6 +537,15 @@ namespace GUI
                 {
                     MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+        }
+        public void ReloadTable()
+        {
+            comboBox2.Items.Clear();
+            lsTable = busTable.GetAvailableTables(shopID);
+            for (int i = 0; i < lsTable.Count; i++)
+            {
+                comboBox2.Items.Add(lsTable[i].Id.ToString());
+            }
         }
     }
 }

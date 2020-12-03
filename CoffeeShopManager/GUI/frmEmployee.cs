@@ -38,6 +38,7 @@ namespace GUI
             pnlChangeTab.Location = btnReceipts.Location;
             userControlOrderProduct2.BringToFront();
             userControlOrderProduct2.Show();
+            userControlOrderProduct2.ReloadTable();
         }
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
@@ -103,6 +104,7 @@ namespace GUI
             pnlChangeTab.Location = btnTables.Location;
             ucTable.BringToFront();
             ucTable.Show();
+            ucTable.LoadAllTables();
         }
 
         private void btnUser_Click(object sender, EventArgs e)

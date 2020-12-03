@@ -313,6 +313,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap construction_80px {
+            get {
+                object obj = ResourceManager.GetObject("construction_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Customer {
             get {
                 object obj = ResourceManager.GetObject("Customer", resourceCulture);
@@ -386,6 +396,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap GuysDrinkingBeer_Preview_02 {
             get {
                 object obj = ResourceManager.GetObject("GuysDrinkingBeer_Preview_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hammer_96px {
+            get {
+                object obj = ResourceManager.GetObject("hammer_96px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

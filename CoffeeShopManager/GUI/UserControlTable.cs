@@ -31,7 +31,7 @@ namespace GUI
             flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < listTable.Count; i++)
             {
-                Table ucTable = new Table(listTable[i]);
+                Table ucTable = new Table(listTable[i], this);
                 flowLayoutPanel1.Controls.Add(ucTable);
             }
         }
@@ -45,7 +45,7 @@ namespace GUI
             listTable = table.GetAvailableTables(shopID);
             ReloadTable();
         }
-        private void LoadAllTables()
+        public void LoadAllTables()
         {
             listTable = table.GetTablesByShopId(shopID);
             ReloadTable();
