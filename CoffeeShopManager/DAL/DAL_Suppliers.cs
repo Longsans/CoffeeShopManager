@@ -208,6 +208,7 @@ namespace DAL
 
         public void Delete(DTO_Supplier sup)
         {
+            DAL_StockItems dalStock = new DAL_StockItems();
             string qry = "DELETE FROM SUPPLIERS " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -219,9 +220,15 @@ namespace DAL
             {
                 OpenConnection();
             }
-
-            //
-
+            foreach (DataRow row in dalStock.GetDataTableBySupplierId(sup.Id, sup.Shop.ID).Rows)
+            {
+                var item = new DTO_StockItem
+                {
+                    Id = (int)row["ID"],
+                    Shop = sup.Shop
+                };
+                dalStock.Delete(item);
+            }
             cmd.ExecuteNonQuery();
             if (!connState)
             {

@@ -243,7 +243,7 @@ namespace DAL
             return dalItemForPro.GetDataTableItemsOfProduct(productId, shopId);
         }
 
-        public DTO_StockItemsForProducts GetItemForProduct(string itemId, string productId, int shopId)
+        public DTO_StockItemsForProducts GetItemForProduct(int itemId, string productId, int shopId)
         {
             DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
             return dalItemForPro.GetItemForProduct(itemId, productId, shopId);

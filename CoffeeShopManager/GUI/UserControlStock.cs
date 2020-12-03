@@ -16,6 +16,7 @@ namespace GUI
     {
         BUS_StockItems busStock = new BUS_StockItems();
         FilterProperties filProp = new FilterProperties();
+        ErrorProvider err = new ErrorProvider();
         public DTO_Shop Shop = new DTO_Shop();
         public frmManager frmMan { get; set; }
 
@@ -26,6 +27,7 @@ namespace GUI
 
         private void UserControlStock_Load(object sender, EventArgs e)
         {
+            err.SetIconPadding(txtSearch, -10);
             txtSearch.LostFocus += TxtSearch_LostFocus;
             txtSearch.GotFocus += TxtSearch_GotFocus;
             ReloadGridView();
@@ -76,7 +78,10 @@ namespace GUI
             {
                 case "ID":
                     {
-                        grdStock.DataSource = busStock.GetDataTableById(filProp.CurrentFilterText, Shop.ID);
+                        if (int.TryParse(filProp.CurrentFilterText, out int id))
+                        {
+                            grdStock.DataSource = busStock.GetDataTableById(id, Shop.ID);
+                        }
                     }
                     break;
                 case "Name":
@@ -106,11 +111,19 @@ namespace GUI
         {
             if (!string.IsNullOrWhiteSpace(cboSearch.Text))
             {
+                err.SetError(txtSearch, "");
                 switch (cboSearch.Text)
                 {
                     case "ID":
                         {
-                            grdStock.DataSource = busStock.GetDataTableById(txtSearch.Text, Shop.ID);
+                            if (int.TryParse(txtSearch.Text, out int id))
+                            {
+                                grdStock.DataSource = busStock.GetDataTableById(id, Shop.ID);
+                            }
+                            else
+                            {
+                                err.SetError(txtSearch, "Stock item ID must be a natural number");
+                            }
                         }
                         break;
                     case "Name":
@@ -154,7 +167,7 @@ namespace GUI
             {
                 var item = new DTO_StockItem
                 {
-                    Id = row.Cells["ID"].Value.ToString(),
+                    Id = (int)row.Cells["ID"].Value,
                     Name = row.Cells["Item Name"].Value.ToString(),
                     Shop = this.Shop,
                     Supplier = new DTO_Supplier
@@ -188,7 +201,7 @@ namespace GUI
             {
                 Item = new DTO_StockItem
                 {
-                    Id = row.Cells["ID"].Value.ToString(),
+                    Id = (int)row.Cells["ID"].Value,
                     Name = row.Cells["Item Name"].Value.ToString(),
                     Shop = this.Shop,
                     Supplier = new DTO_Supplier

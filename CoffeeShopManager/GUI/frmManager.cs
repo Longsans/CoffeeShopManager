@@ -172,6 +172,7 @@ namespace GUI
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnSupplier.Location;
             ucSuppliersTab.Shop = dtoMan.Shop;
+            ucSuppliersTab.UcStock = this.ucStockTab;
             ucSuppliersTab.frmMan = this;
             ucSuppliersTab.Show();
             ucSuppliersTab.BringToFront();

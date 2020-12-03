@@ -80,7 +80,7 @@ namespace GUI
             {
                 Item = new DTO_StockItem
                 {
-                    Id = txtItemId.Text,
+                    Id = int.Parse(txtItemId.Text),
                     Shop = this.Product.Shop
                 },
                 Product = this.Product,
@@ -103,34 +103,44 @@ namespace GUI
 
         private void txtItemId_Validating(object sender, CancelEventArgs e)
         {
-            if (txtItemId.TextLength > 0)
+            try
             {
-                if (busStock.GetById(txtItemId.Text, Product.Shop.ID) != null)
+                if (txtItemId.TextLength > 0)
                 {
-                    if (busStock.GetItemForProduct(txtItemId.Text, Product.Id, Product.Shop.ID) != null)
+                    if (int.TryParse(txtItemId.Text, out int id))
                     {
-                        err.Icon = errorIcon;
-                        err.SetError(txtItemId, "A stock item with such ID has already been added to the list");
-                        lblAdd.Enabled = false;
+                        if (busStock.GetById(id, Product.Shop.ID) != null)
+                        {
+                            if (busStock.GetItemForProduct(id, Product.Id, Product.Shop.ID) == null)
+                            {
+                                err.Icon = checkIcon;
+                                err.SetError(txtItemId, "Valid");
+                                lblAdd.Enabled = true;
+                            }
+                            else
+                            {
+                                throw new Exception("A stock item with such ID has already been added to the list");
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("A stock item with such ID does not exist");
+                        }
                     }
                     else
                     {
-                        err.Icon = checkIcon;
-                        err.SetError(txtItemId, "Valid");
-                        lblAdd.Enabled = true;
+                        throw new Exception("Stock item ID must be a natural number");
                     }
                 }
                 else
                 {
-                    err.Icon = errorIcon;
-                    err.SetError(txtItemId, "A stock item with such ID does not exist");
-                    lblAdd.Enabled = false;
+                    throw new Exception("Please fill all info fields");
                 }
             }
-            else
+            catch (Exception ex)
             {
                 err.Icon = errorIcon;
-                err.SetError(txtItemId, "Please fill all info fields");
+                err.SetError(txtItemId, ex.Message);
                 lblAdd.Enabled = false;
             }
         }

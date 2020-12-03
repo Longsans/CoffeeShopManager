@@ -45,7 +45,7 @@ namespace GUI
             errtwo.Icon = checkIcon;
             err.SetIconPadding(txtItemName, 5);
             errtwo.SetIconPadding(txtSupId, 5);
-            txtId.Text = Item.Id;
+            txtId.Text = Item.Id.ToString();
             txtItemName.Text = Item.Name;
             txtSupId.Text = Item.Supplier.Id;
             lblListCaption.Text += $"{Item.Name}:";
@@ -58,7 +58,7 @@ namespace GUI
         {
             Item = new DTO_StockItem
             {
-                Id = txtId.Text,
+                Id = int.Parse(txtId.Text),
                 Name = txtItemName.Text,
                 Supplier = new DTO_Supplier
                 {

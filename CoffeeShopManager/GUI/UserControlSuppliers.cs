@@ -18,6 +18,7 @@ namespace GUI
         FilterProperties filProp = new FilterProperties();
         public DTO_Shop Shop = new DTO_Shop();
         public frmManager frmMan { get; set; }
+        public UserControlStock UcStock { get; set; }
 
         public UserControlSuppliers()
         {
@@ -185,6 +186,7 @@ namespace GUI
                 busSup.Delete(sup);
             }
             ReloadGridView();
+            UcStock.ReloadGridView();
         }
 
         private void lblResetFilters_MouseDown(object sender, MouseEventArgs e)

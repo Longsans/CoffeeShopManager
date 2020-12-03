@@ -11,7 +11,7 @@ namespace DAL
 {
     internal class DAL_StockItemsForProducts : DBConnection
     {
-        public DTO_StockItemsForProducts GetItemForProduct(string itemId, string productId, int shopId)
+        public DTO_StockItemsForProducts GetItemForProduct(int itemId, string productId, int shopId)
         {
             DTO_StockItemsForProducts itemForPro = null;
             string qry = "SELECT * FROM STOCK_ITEMS_FOR_PRODUCTS " +
@@ -35,7 +35,7 @@ namespace DAL
                 {
                     Item = new DTO_StockItem
                     {
-                        Id = reader["ItemId"].ToString(),
+                        Id = (int)reader["ItemId"],
                         Shop = new DTO_Shop
                         {
                             ID = (int)reader["ShopId"]
@@ -63,7 +63,7 @@ namespace DAL
             return itemForPro;
         }
 
-        public DataTable GetDataTableProductsUsingItem(string itemId, int shopId)
+        public DataTable GetDataTableProductsUsingItem(int itemId, int shopId)
         {
             DataTable dt = new DataTable();
             string qry = "SELECT ProductId AS [Product ID], Name AS [Product Name] " +
@@ -166,7 +166,7 @@ namespace DAL
             }
         }
 
-        public void DeleteAllByItemId(string itemId, int shopId)
+        public void DeleteAllByItemId(int itemId, int shopId)
         {
             string qry = "DELETE FROM STOCK_ITEMS_FOR_PRODUCTS " +
                 "WHERE ItemId = @itemId " +

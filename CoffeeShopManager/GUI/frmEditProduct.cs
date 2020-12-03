@@ -142,7 +142,7 @@ namespace GUI
                         {
                             Item = new DTO_StockItem
                             {
-                                Id = row.Cells["Item ID"].Value.ToString(),
+                                Id = (int)row.Cells["Item ID"].Value,
                                 Shop = dtoPro.Shop
                             },
                             Product = dtoPro,

@@ -36,19 +36,19 @@ namespace GUI
 
         private void frmAddStockItem_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 4; ++i)
+            for (int i = 0; i < 3; ++i)
             {
                 var newErr = new ErrorProvider();
                 errs.Add(newErr);
             }
 
-            errs[0].SetIconPadding(txtId, 5);
-            errs[1].SetIconPadding(txtItemName, 5);
-            errs[2].SetIconPadding(txtSupId, 5);
-            errs[3].SetIconPadding(txtEmail, 5);
+            errs[0].SetIconPadding(txtItemName, 5);
+            errs[1].SetIconPadding(txtSupId, 5);
+            errs[2].SetIconPadding(txtEmail, 5);
             lblEnterSup.Location = lblAddSup.Location;
             checkIcon = new Icon(GUI.Properties.Resources.check1, errs[0].Icon.Size);
             errorIcon = new Icon(GUI.Properties.Resources.cancel, errs[0].Icon.Size);
+            txtId.Text = busStock.GetNextItemId(Shop.ID).ToString();
             tiktoker.Interval = 200;
             txtSupId.GotFocus += TxtSupId_GotFocus;
             txtSupId.LostFocus += TxtSupId_LostFocus;
@@ -68,7 +68,7 @@ namespace GUI
             {
                 btnAdd.Enabled = true;
 
-                for (int i = 0; i < errs.Count - 1; ++i)
+                for (int i = 0; i < errs.Count; ++i)
                 {
                     if (!lblEnterSup.Visible && i == errs.Count - 1)
                     {
@@ -162,7 +162,6 @@ namespace GUI
         {
             var item = new DTO_StockItem
             {
-                Id = txtId.Text,
                 Name = txtItemName.Text,
                 Shop = this.Shop,
                 Supplier = new DTO_Supplier
@@ -194,10 +193,9 @@ namespace GUI
             txtEmail.Clear();
             txtPhone.Clear();
             txtSupId.ForeColor = Color.DimGray;
-            errs[0].SetError(txtId, "");
-            errs[1].SetError(txtItemName, "");
-            errs[2].SetError(txtSupId, "");
-            errs[3].SetError(txtEmail, "");
+            errs[0].SetError(txtItemName, "");
+            errs[1].SetError(txtSupId, "");
+            errs[2].SetError(txtEmail, "");
 
             if (lblAddSup.Visible)
             {
@@ -216,47 +214,25 @@ namespace GUI
             prevPoint = Cursor.Position;
         }
 
-        private void txtId_Validating(object sender, CancelEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtId.Text))
-            {
-                if (busStock.GetById(txtId.Text, Shop.ID) != null)
-                {
-                    errs[0].Icon = errorIcon;
-                    errs[0].SetError(txtId, "An item with such ID already exists");
-                }
-                else
-                {
-                    errs[0].Icon = checkIcon;
-                    errs[0].SetError(txtId, "Valid");
-                }
-            }
-            else
-            {
-                errs[0].Icon = errorIcon;
-                errs[0].SetError(txtId, "Please fill all info fields");
-            }
-        }
-
         private void txtItemName_Validating(object sender, CancelEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtItemName.Text))
             {
                 if (busStock.GetByName(txtItemName.Text, Shop.ID) != null)
                 {
-                    errs[1].Icon = errorIcon;
-                    errs[1].SetError(txtItemName, "An item with such name already exists");
+                    errs[0].Icon = errorIcon;
+                    errs[0].SetError(txtItemName, "An item with such name already exists");
                 }
                 else
                 {
-                    errs[1].Icon = checkIcon;
-                    errs[1].SetError(txtItemName, "Valid");
+                    errs[0].Icon = checkIcon;
+                    errs[0].SetError(txtItemName, "Valid");
                 }
             }
             else
             {
-                errs[1].Icon = errorIcon;
-                errs[1].SetError(txtItemName, "Please fill all info fields");
+                errs[0].Icon = errorIcon;
+                errs[0].SetError(txtItemName, "Please fill all info fields");
             }
         }
 
@@ -268,33 +244,33 @@ namespace GUI
                 {
                     if (busSup.GetById(txtSupId.Text, Shop.ID) != null)
                     {
-                        errs[2].Icon = errorIcon;
-                        errs[2].SetError(txtSupId, "A supplier with such ID already exists");
+                        errs[1].Icon = errorIcon;
+                        errs[1].SetError(txtSupId, "A supplier with such ID already exists");
                     }
                     else
                     {
-                        errs[2].Icon = checkIcon;
-                        errs[2].SetError(txtSupId, "Valid");
+                        errs[1].Icon = checkIcon;
+                        errs[1].SetError(txtSupId, "Valid");
                     }
                 }
                 else if (lblAddSup.Visible)
                 {
                     if (busSup.GetById(txtSupId.Text, Shop.ID) == null)
                     {
-                        errs[2].Icon = errorIcon;
-                        errs[2].SetError(txtSupId, "A supplier with such ID does not exist");
+                        errs[1].Icon = errorIcon;
+                        errs[1].SetError(txtSupId, "A supplier with such ID does not exist");
                     }
                     else
                     {
-                        errs[2].Icon = checkIcon;
-                        errs[2].SetError(txtSupId, "Valid");
+                        errs[1].Icon = checkIcon;
+                        errs[1].SetError(txtSupId, "Valid");
                     }
                 }
             }
             else
             {
-                errs[2].Icon = errorIcon;
-                errs[2].SetError(txtSupId, "Please fill all info fields");
+                errs[1].Icon = errorIcon;
+                errs[1].SetError(txtSupId, "Please fill all info fields");
             }
         }
 
@@ -304,19 +280,19 @@ namespace GUI
             {
                 if (busSup.GetByEmail(txtEmail.Text, Shop.ID) != null)
                 {
-                    errs[3].Icon = errorIcon;
-                    errs[3].SetError(txtEmail, "A supplier with such email already exists");
+                    errs[2].Icon = errorIcon;
+                    errs[2].SetError(txtEmail, "A supplier with such email already exists");
                 }
                 else
                 {
-                    errs[3].Icon = checkIcon;
-                    errs[3].SetError(txtEmail, "Valid");
+                    errs[2].Icon = checkIcon;
+                    errs[2].SetError(txtEmail, "Valid");
                 }
             }
             else
             {
-                errs[3].Icon = errorIcon;
-                errs[3].SetError(txtEmail, "Please fill all info fields");
+                errs[2].Icon = errorIcon;
+                errs[2].SetError(txtEmail, "Please fill all info fields");
             }
         }
 

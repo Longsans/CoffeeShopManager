@@ -126,7 +126,7 @@
             this.btnCancel.Location = new System.Drawing.Point(318, 259);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(82, 31);
-            this.btnCancel.TabIndex = 11;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -143,7 +143,7 @@
             this.btnAdd.Location = new System.Drawing.Point(166, 259);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 31);
-            this.btnAdd.TabIndex = 9;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -153,7 +153,7 @@
             this.txtPhone.Location = new System.Drawing.Point(407, 191);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(142, 22);
-            this.txtPhone.TabIndex = 7;
+            this.txtPhone.TabIndex = 6;
             this.txtPhone.Visible = false;
             // 
             // txtEmail
@@ -171,7 +171,7 @@
             this.txtSupName.Location = new System.Drawing.Point(133, 191);
             this.txtSupName.Name = "txtSupName";
             this.txtSupName.Size = new System.Drawing.Size(142, 22);
-            this.txtSupName.TabIndex = 3;
+            this.txtSupName.TabIndex = 4;
             this.txtSupName.Visible = false;
             // 
             // txtSupId
@@ -191,7 +191,7 @@
             this.txtItemName.Location = new System.Drawing.Point(407, 54);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(142, 22);
-            this.txtItemName.TabIndex = 3;
+            this.txtItemName.TabIndex = 2;
             this.txtItemName.Validating += new System.ComponentModel.CancelEventHandler(this.txtItemName_Validating);
             // 
             // lblPhone
@@ -218,12 +218,12 @@
             // 
             // txtId
             // 
-            this.txtId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtId.Cursor = System.Windows.Forms.Cursors.No;
             this.txtId.Location = new System.Drawing.Point(133, 54);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(142, 22);
             this.txtId.TabIndex = 1;
-            this.txtId.Validating += new System.ComponentModel.CancelEventHandler(this.txtId_Validating);
             // 
             // label6
             // 
@@ -303,7 +303,7 @@
             this.btnExit.Location = new System.Drawing.Point(555, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(31, 35);
-            this.btnExit.TabIndex = 13;
+            this.btnExit.TabIndex = 9;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnCancel_Click);
             // 

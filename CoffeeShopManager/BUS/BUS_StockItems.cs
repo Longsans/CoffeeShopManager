@@ -14,7 +14,7 @@ namespace BUS
     {
         DAL_StockItems dalStock = new DAL_StockItems();
 
-        public DTO_StockItem GetById(string id, int shopId)
+        public DTO_StockItem GetById(int id, int shopId)
         {
             return dalStock.GetById(id, shopId);
         }
@@ -29,7 +29,7 @@ namespace BUS
             return dalStock.GetAllStockItems(shopId);
         }
 
-        public DataTable GetDataTableById(string id, int shopId)
+        public DataTable GetDataTableById(int id, int shopId)
         {
             return dalStock.GetDataTableById(id, shopId);
         }
@@ -44,17 +44,17 @@ namespace BUS
             return dalStock.GetDataTableBySupplierId(supplierId, shopId);
         }
 
-        public DataTable GetDataTableBySupplierName(string name, int shopId)
+        public DataTable GetDataTableBySupplierName(string supName, int shopId)
         {
-            return dalStock.GetDataTableBySupplierName(name, shopId);
+            return dalStock.GetDataTableBySupplierName(supName, shopId);
         }
 
-        public DataTable GetDataTableProductsUsingItem(string itemId, int shopId)
+        public DataTable GetDataTableProductsUsingItem(int itemId, int shopId)
         {
             return dalStock.GetDataTableProductsUsingItem(itemId, shopId);
         }
 
-        public DTO_StockItemsForProducts GetItemForProduct(string itemId, string productId, int shopId)
+        public DTO_StockItemsForProducts GetItemForProduct(int itemId, string productId, int shopId)
         {
             return dalStock.GetItemForProduct(itemId, productId, shopId);
         }
@@ -69,9 +69,9 @@ namespace BUS
             dalStock.RemoveItemForProduct(itemForPro);
         }
 
-        public void RemoveAllProductsUsingItemByItemId(string itemId, int shopId)
+        public void RemoveAllItemForProductsByItemId(int itemId, int shopId)
         {
-            dalStock.RemoveAllProductsUsingItemByItemId(itemId, shopId);
+            dalStock.RemoveAllItemForProductsByItemId(itemId, shopId);
         }
 
         public void Insert(DTO_StockItem item)
@@ -87,6 +87,11 @@ namespace BUS
         public void Update(DTO_StockItem updatedItem)
         {
             dalStock.Update(updatedItem);
+        }
+
+        public int GetNextItemId(int shopId)
+        {
+            return dalStock.GetNextItemId(shopId);
         }
     }
 }

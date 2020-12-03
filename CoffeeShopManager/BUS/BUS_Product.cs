@@ -115,7 +115,7 @@ namespace BUS
             return dalProduct.GetDataTableItemsOfProduct(productId, shopId);
         }
 
-        public DTO_StockItemsForProducts GetItemForProduct(string itemId, string productId, int shopId)
+        public DTO_StockItemsForProducts GetItemForProduct(int itemId, string productId, int shopId)
         {
             return dalProduct.GetItemForProduct(itemId, productId, shopId);
         }

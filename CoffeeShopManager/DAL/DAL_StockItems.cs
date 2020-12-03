@@ -11,7 +11,7 @@ namespace DAL
 {
     public class DAL_StockItems : DBConnection
     {
-        public DTO_StockItem GetById(string id, int shopId)
+        public DTO_StockItem GetById(int id, int shopId)
         {
             DTO_StockItem item = null;
             string qry = "SELECT * FROM STOCK_ITEMS " +
@@ -30,7 +30,7 @@ namespace DAL
             {
                 item = new DTO_StockItem
                 {
-                    Id = reader["Id"].ToString(),
+                    Id = (int)reader["Id"],
                     Name = reader["ItemName"].ToString(),
                     Supplier = new DTO_Supplier
                     {
@@ -70,7 +70,7 @@ namespace DAL
             {
                 item = new DTO_StockItem
                 {
-                    Id = reader["Id"].ToString(),
+                    Id = (int)reader["Id"],
                     Name = reader["ItemName"].ToString(),
                     Supplier = new DTO_Supplier
                     {
@@ -96,7 +96,8 @@ namespace DAL
             string qry = "SELECT Id AS ID, ItemName AS [Item Name], " +
                 "SupplierId AS [Supplier ID] " +
                 "FROM STOCK_ITEMS " +
-                "WHERE ShopId = @shopId";
+                "WHERE ShopId = @shopId " +
+                "ORDER BY Id ASC";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
 
@@ -105,14 +106,15 @@ namespace DAL
             return dt;
         }
 
-        public DataTable GetDataTableById(string id, int shopId)
+        public DataTable GetDataTableById(int id, int shopId)
         {
             DataTable dt = new DataTable();
             string qry = "SELECT Id AS ID, ItemName AS [Item Name], " +
                 "SupplierId AS [Supplier ID] " +
                 "FROM STOCK_ITEMS " +
                 "WHERE ShopId = @shopId " +
-                "AND Id = @id";
+                "AND Id = @id " +
+                "ORDER BY Id ASC";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@id", id);
             ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
@@ -129,7 +131,8 @@ namespace DAL
                 "SupplierId AS [Supplier ID] " +
                 "FROM STOCK_ITEMS " +
                 "WHERE ShopId = @shopId " +
-                "AND ItemName LIKE '%' + @name + '%'";
+                "AND ItemName LIKE '%' + @name + '%' " +
+                "ORDER BY Id ASC";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@name", name);
             ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
@@ -146,7 +149,8 @@ namespace DAL
                 "SupplierId AS [Supplier ID] " +
                 "FROM STOCK_ITEMS " +
                 "WHERE ShopId = @shopId " +
-                "AND SupplierId = @supplierId";
+                "AND SupplierId = @supplierId " +
+                "ORDER BY Id ASC";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
             ada.SelectCommand.Parameters.AddWithValue("@supplierId", supplierId);
@@ -156,7 +160,7 @@ namespace DAL
             return dt;
         }
 
-        public DataTable GetDataTableBySupplierName(string name, int shopId)
+        public DataTable GetDataTableBySupplierName(string supName, int shopId)
         {
             DataTable dt = new DataTable();
             DAL_Suppliers dalSup = new DAL_Suppliers();
@@ -167,11 +171,12 @@ namespace DAL
                 "AND SupplierId IN (" +
                 "   SELECT * " +
                 "   FROM @supIds" +
-                ")";
+                ") " +
+                "ORDER BY Id ASC";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
             var tabParam =  ada.SelectCommand.Parameters.AddWithValue("@supIds", 
-                dalSup.GetDataTableSupplierIDsByName(name, shopId));
+                dalSup.GetDataTableSupplierIDsByName(supName, shopId));
             tabParam.SqlDbType = SqlDbType.Structured;
             tabParam.TypeName = "[dbo].Varchar10CollectionType";
 
@@ -180,13 +185,13 @@ namespace DAL
             return dt;
         }
 
-        public DTO_StockItemsForProducts GetItemForProduct(string itemId, string productId, int shopId)
+        public DTO_StockItemsForProducts GetItemForProduct(int itemId, string productId, int shopId)
         {
             DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
             return dalItemForPro.GetItemForProduct(itemId, productId, shopId);
         }
 
-        public DataTable GetDataTableProductsUsingItem(string itemId, int shopId)
+        public DataTable GetDataTableProductsUsingItem(int itemId, int shopId)
         {
             DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
             return dalItemForPro.GetDataTableProductsUsingItem(itemId, shopId);
@@ -194,10 +199,9 @@ namespace DAL
 
         public void Insert(DTO_StockItem item)
         {
-            string qry = "INSERT INTO STOCK_ITEMS " +
-                "VALUES (@id, @name, @supplierId, @shopId)";
+            string qry = "INSERT INTO STOCK_ITEMS (ItemName, SupplierId, ShopId) " +
+                "VALUES (@name, @supplierId, @shopId)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@id", item.Id);
             cmd.Parameters.AddWithValue("@name", item.Name);
             cmd.Parameters.AddWithValue("@supplierId", item.Supplier.Id);
             cmd.Parameters.AddWithValue("@shopId", item.Shop.ID);
@@ -227,9 +231,7 @@ namespace DAL
             {
                 OpenConnection();
             }
-
-            //
-
+            RemoveAllItemForProductsByItemId(item.Id, item.Shop.ID);
             cmd.ExecuteNonQuery();
             if (!connState)
             {
@@ -253,9 +255,6 @@ namespace DAL
             {
                 OpenConnection();
             }
-
-            //
-
             cmd.ExecuteNonQuery();
             if (!connState)
             {
@@ -275,10 +274,38 @@ namespace DAL
             dalItemForPro.Delete(itemForPro);
         }
 
-        public void RemoveAllProductsUsingItemByItemId(string itemId, int shopId)
+        public void RemoveAllItemForProductsByItemId(int itemId, int shopId)
         {
             DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
             dalItemForPro.DeleteAllByItemId(itemId, shopId);
+        }
+
+        public int GetNextItemId(int shopId)
+        {
+            int currentId = -1;
+            string qry = "SELECT max(Id) " +
+                "FROM STOCK_ITEMS " +
+                "GROUP BY ShopId " +
+                "HAVING ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var obj = cmd.ExecuteScalar();
+            if (obj != null)
+            {
+                currentId = (int)obj;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return currentId + 1;
         }
     }
 }
