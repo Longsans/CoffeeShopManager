@@ -78,8 +78,8 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
-            this.pnlMenu.Controls.Add(this.btnShop);
             this.pnlMenu.Controls.Add(this.pnlChangeTab);
+            this.pnlMenu.Controls.Add(this.btnShop);
             this.pnlMenu.Controls.Add(this.btnUser);
             this.pnlMenu.Controls.Add(this.btnNoti);
             this.pnlMenu.Controls.Add(this.btnEvent);
@@ -519,7 +519,9 @@
             // 
             // ucSuppliersTab
             // 
+            this.ucSuppliersTab.BackColor = System.Drawing.Color.White;
             this.ucSuppliersTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucSuppliersTab.frmMan = null;
             this.ucSuppliersTab.Location = new System.Drawing.Point(0, 0);
             this.ucSuppliersTab.Name = "ucSuppliersTab";
             this.ucSuppliersTab.Size = new System.Drawing.Size(916, 649);
@@ -528,7 +530,9 @@
             // 
             // ucStockTab
             // 
+            this.ucStockTab.BackColor = System.Drawing.Color.White;
             this.ucStockTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStockTab.frmMan = null;
             this.ucStockTab.Location = new System.Drawing.Point(0, 0);
             this.ucStockTab.Name = "ucStockTab";
             this.ucStockTab.Size = new System.Drawing.Size(916, 649);
