@@ -694,6 +694,9 @@
         private System.Windows.Forms.TextBox txtSearchName;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtYearBD;
+        private System.Windows.Forms.TextBox txtMonthBD;
+        private System.Windows.Forms.TextBox txtDayBD;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtLastName;
@@ -702,6 +705,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtDiscount;
         private System.Windows.Forms.Label lblGrandTotal;
         private System.Windows.Forms.Label lblTotalSum;

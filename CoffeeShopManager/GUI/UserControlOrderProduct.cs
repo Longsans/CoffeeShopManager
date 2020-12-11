@@ -130,6 +130,7 @@ namespace GUI
                 if (arrListStr[0] == a)
                 {
                     // bt.Image = DenTrang(bt.Image);
+                    ((Button)sender).Text = "X";
                     MessageBox.Show("You have clicked before");
 
                     return;
@@ -176,7 +177,7 @@ namespace GUI
 
         private void UserControlOrderProduct_Load(object sender, EventArgs e)
         {
-            //  Reload();
+          //  Reload();
             datBirthdate.Format = DateTimePickerFormat.Custom;
             datBirthdate.CustomFormat = "dd/MM/yyyy";
             if (dtoCus.Birthdate >= datBirthdate.MinDate && dtoCus.Birthdate <= datBirthdate.MaxDate)
@@ -198,6 +199,7 @@ namespace GUI
             txtLastName.Enabled = false;
         }
         public int bien = 0;
+        public double giatri = 0;
         public void ResetCus()
         {
             txtID.Text = "";
@@ -347,29 +349,29 @@ namespace GUI
             }
             else
             {
-                if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
-                {
-                    check = 0;
-                }
-                if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
-                {
-                    check = 1;
-                }
-                if (dataGridView1.Rows.Count <= 1)
-                {
-                    MessageBox.Show("Chua order mon");
-                    return;
-                }
+            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
+            {
+                check = 0;
+            }
+            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
+            {
+                check = 1;
+            }
+            if (dataGridView1.Rows.Count <= 1)
+            {
+                MessageBox.Show("Chua order mon");
+                return;
+            }
                 if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "")
-                {
-                    MessageBox.Show("Nhap day du thong tin customer");
-                    return;
-                }
+            {
+                MessageBox.Show("Nhap day du thong tin customer");
+                return;
+            }
                 if (check == 0)
-                {
-                    MessageBox.Show("Yeu cau dang ky  khach hang");
-                    return;
-                }
+            {
+                MessageBox.Show("Yeu cau dang ky  khach hang");
+                return;
+            }
             }
             dtoReceipt.Customer = dtoCus;
             dtoReceipt.DateOfPayMent = now;
@@ -413,24 +415,24 @@ namespace GUI
         }
         public int check = 0;
         private void btnAddCus_Click(object sender, EventArgs e)
-        {        
+        {
                 if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "")
-                {
-                    MessageBox.Show("Nhap day du thong tin khach hang");
-                    return;
-                }
-                string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
-                DateTime bdate = new DateTime();
-                dtoCus.Email = txtEmail.Text;
+            {
+                MessageBox.Show("Nhap day du thong tin khach hang");
+                return;
+            }
+            string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
+            DateTime bdate = new DateTime();
+            dtoCus.Email = txtEmail.Text;
                 if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
-                    dtoCus.Id = Int32.Parse(txtID.Text);
-                dtoCus.FirstName = txtFirstName.Text;
-                dtoCus.LastName = txtLastName.Text;
+            dtoCus.Id = Int32.Parse(txtID.Text);
+            dtoCus.FirstName = txtFirstName.Text;
+            dtoCus.LastName = txtLastName.Text;
 
                 dtoCus.Birthdate = datBirthdate.Value;
 
-                dtoCus.Shop.ID = shopID;
-                busCus.Insert(dtoCus);
+            dtoCus.Shop.ID = shopID;
+            busCus.Insert(dtoCus);
             
         }
         public void ResetAll()
