@@ -37,7 +37,7 @@
             this.lblHead = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblNoneName = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboCustomerType = new System.Windows.Forms.ComboBox();
             this.datBirthdate = new System.Windows.Forms.DateTimePicker();
             this.btnAddCus = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -48,6 +48,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.lblGrandTotal = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -123,7 +123,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblNoneName);
-            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.cboCustomerType);
             this.panel2.Controls.Add(this.datBirthdate);
             this.panel2.Controls.Add(this.btnAddCus);
             this.panel2.Controls.Add(this.txtID);
@@ -158,16 +158,16 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "None",
-            "Register Cus"});
-            this.comboBox3.Location = new System.Drawing.Point(110, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(87, 24);
-            this.comboBox3.TabIndex = 15;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.cboCustomerType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCustomerType.FormattingEnabled = true;
+            this.cboCustomerType.Items.AddRange(new object[] {
+            "Guest",
+            "Registered"});
+            this.cboCustomerType.Location = new System.Drawing.Point(110, 3);
+            this.cboCustomerType.Name = "comboBox3";
+            this.cboCustomerType.Size = new System.Drawing.Size(87, 24);
+            this.cboCustomerType.TabIndex = 15;
+            this.cboCustomerType.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // datBirthdate
             // 
@@ -263,6 +263,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(228, 139);
             this.panel3.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(149, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 21);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "%";
             // 
             // panel4
             // 
@@ -642,16 +652,6 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "%";
-            // 
             // UserControlOrderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -731,7 +731,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button btnAddCus;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboCustomerType;
         private System.Windows.Forms.DateTimePicker datBirthdate;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblNoneName;

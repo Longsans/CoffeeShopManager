@@ -104,6 +104,44 @@ namespace DAL
             return cus;
         }
 
+        public DTO_Customer GetNullCustomer(int shopId)
+        {
+            DTO_Customer cus = null;
+            string qry = "SELECT * " +
+                "FROM CUSTOMERS " +
+                "WHERE EmailAddress = 'N/A' AND ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                cus = new DTO_Customer
+                {
+                    Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                    FirstName = null,
+                    LastName = null,
+                    Email = null,
+                    Birthdate = DateTime.MinValue,
+                    Shop = new DTO_Shop
+                    {
+                        ID = (int)reader["ShopId"]
+                    }
+                };
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return cus;
+        }
+
         public DataTable GetCustomerSearchIDFiltered(int id, int shopId)
         {
             DataTable dtCus = new DataTable();
@@ -165,6 +203,26 @@ namespace DAL
             cmd.Parameters.AddWithValue("@lname", cus.LastName);
             cmd.Parameters.AddWithValue("@email", cus.Email);
             cmd.Parameters.AddWithValue("@bdate", cus.Birthdate);
+            cmd.Parameters.AddWithValue("@shopId", cus.Shop.ID);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
+        }
+
+        public void InsertNullCustomer(DTO_Customer cus)
+        {
+            string qry = "INSERT INTO CUSTOMERS (FirstName, LastName, EmailAddress, Birthdate, ShopId)" +
+                "VALUES ('N/A', 'N/A', 'N/A', @bdate, @shopId)";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@bdate", DateTime.Now);
             cmd.Parameters.AddWithValue("@shopId", cus.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);

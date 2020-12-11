@@ -332,51 +332,54 @@ namespace GUI
                 MessageBox.Show("Chua order mon");
                 return;
             }
-            if (comboBox3.Text == "None"||comboBox3.Text=="")
+            if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == string.Empty)
             {
-                if (busCus.GetCustomerByEmail("None", shopID) == null)
+                if (busCus.GetNullCustomer(shopID) == null)
                 {
-                    dtoCus.Email = "None";
-                    dtoCus.FirstName = "None";
-                    dtoCus.LastName = "None";
-                    dtoCus.Shop.ID = shopID;
-                    datBirthdate.CustomFormat = "dd/MM/yyyy";
-                    datBirthdate.Value = now;
-                    dtoCus.Birthdate = datBirthdate.Value;
-                    busCus.Insert(dtoCus);
+                    var nullCus = new DTO_Customer
+                    {
+                        Shop = new DTO_Shop
+                        {
+                            ID = shopID
+                        }
+                    };
+                    busCus.InsertNullCustomer(nullCus);
                 }
-                    dtoCus = busCus.GetCustomerByEmail("None", shopID);
+                dtoCus = busCus.GetNullCustomer(shopID);
             }
             else
             {
-            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
-            {
-                check = 0;
-            }
-            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
-            {
-                check = 1;
-            }
-            if (dataGridView1.Rows.Count <= 1)
-            {
-                MessageBox.Show("Chua order mon");
-                return;
-            }
-                if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "")
-            {
-                MessageBox.Show("Nhap day du thong tin customer");
-                return;
-            }
-                if (check == 0)
-            {
-                MessageBox.Show("Yeu cau dang ky  khach hang");
-                return;
-            }
+                if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
+                {
+                    check = 0;
+                }
+                if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
+                {
+                    check = 1;
+                }
+                if (dataGridView1.Rows.Count <= 1)
+                {
+                    MessageBox.Show("Chua order mon");
+                    return;
+                }
+                    if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "")
+                {
+                    MessageBox.Show("Nhap day du thong tin customer");
+                    return;
+                }
+                    if (check == 0)
+                {
+                    MessageBox.Show("Yeu cau dang ky  khach hang");
+                    return;
+                }
             }
             dtoReceipt.Customer = dtoCus;
             dtoReceipt.DateOfPayMent = now;
             int mon = lblGrandTotal.Text.IndexOf("$");
-            dtoReceipt.Discount = double.Parse(txtDiscount.Text);
+            if (double.TryParse(txtDiscount.Text, out double discount))
+            {
+                dtoReceipt.Discount = discount;
+            }
             dtoReceipt.Total = decimal.Parse(lblGrandTotal.Text.Substring(0,mon));
             dtoReceipt.Details = "";
             dtoReceipt.Shop.ID = shopID;
@@ -496,7 +499,7 @@ namespace GUI
                 lblGrandTotal.Text = sum.ToString()+"$";
             }
             lblGrandTotal.Text = sum.ToString()+"$";
-            if (busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) == null&& comboBox3.Text != "None" && comboBox3.Text != "")
+            if (busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) == null&& cboCustomerType.Text != "None" && cboCustomerType.Text != "")
             {
                 errorProvider1.SetError(txtEmail, "Doesn't have customer này, vui lòng nhập thông tin");
                 errorProvider2.SetError(txtEmail, "");
@@ -506,7 +509,7 @@ namespace GUI
                 datBirthdate.Enabled = true;
                 txtID.Visible = false;
             }
-            else if(busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) != null && comboBox3.Text != "None"&&comboBox3.Text!="")
+            else if(busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) != null && cboCustomerType.Text != "None"&&cboCustomerType.Text!="")
             {
                 errorProvider1.SetError(txtEmail, "");
                 errorProvider2.SetError(txtEmail, "Correct");
@@ -613,7 +616,7 @@ namespace GUI
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             int resultIndex = -1;
-            resultIndex = comboBox3.FindStringExact(comboBox3.Text);
+            resultIndex = cboCustomerType.FindStringExact(cboCustomerType.Text);
             if (resultIndex == 0)
             {
                 HideCus();

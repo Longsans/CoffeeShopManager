@@ -41,6 +41,12 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public DTO_Customer GetNullCustomer(int shopId)
+        {
+            return dalCus.GetNullCustomer(shopId);
+        }
+
         public DataTable GetCustomerSearchIDFiltered(int id, int shopId)
         {
             try
@@ -90,6 +96,12 @@ namespace BUS
                 return true;
             }
         }
+
+        public void InsertNullCustomer(DTO_Customer cus)
+        {
+            dalCus.InsertNullCustomer(cus);
+        }
+
         public void Delete(DTO_Customer cus)
         {
             try

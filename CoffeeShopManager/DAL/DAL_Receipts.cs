@@ -79,7 +79,7 @@ namespace DAL
                         Id = customerId
                     },
                     DateOfPayMent = reader.GetDateTime(reader.GetOrdinal("DateOfPayment")),
-                    Discount = (float)reader["Discount"],
+                    Discount = (double)reader["Discount"],
                     Total = reader.GetDecimal(reader.GetOrdinal("Total")),
                     Shop = new DTO_Shop
                     {
