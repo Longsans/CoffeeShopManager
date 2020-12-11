@@ -11,13 +11,14 @@ namespace DAL
 {
     internal class DAL_TableSitting : DBConnection
     {
-        public DTO_Table GetTableOfReceipt(int receiptId)
+        public DTO_Table GetTableOfReceipt(int receiptId, int shopId)
         {
             DTO_Table tab = null;
             string qry = "SELECT * FROM TABLE_SITTING " +
-                "WHERE ReceiptId = @receiptId";
+                "WHERE ReceiptId = @receiptId AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@receiptId", receiptId);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -65,7 +66,7 @@ namespace DAL
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                rec = dalRec.GetReceiptById(reader.GetInt32(reader.GetOrdinal("ReceiptId")));
+                rec = dalRec.GetReceiptById(reader.GetInt32(reader.GetOrdinal("ReceiptId")), shopId);
             }
             if (!connState)
             {

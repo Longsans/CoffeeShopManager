@@ -11,11 +11,11 @@ namespace BUS
     public class BUS_Receipts
     {
         DAL_Receipts dalReceipts = new DAL_Receipts();
-        public DTO_Receipt GetReceiptById(int id)
+        public DTO_Receipt GetReceiptById(int id, int shopId)
         {
             try
             {
-                return dalReceipts.GetReceiptById(id);
+                return dalReceipts.GetReceiptById(id, shopId);
             }
             catch (Exception ex)
             {
@@ -23,11 +23,11 @@ namespace BUS
                 throw ex;
             }
         }
-        public List<DTO_ReceiptDetails> GetReceiptDetailsListById(int receiptId)
+        public List<DTO_ReceiptDetails> GetReceiptDetailsListById(int receiptId, int shopId)
         {
             try
             {
-                return dalReceipts.GetReceiptDetailsListById(receiptId);
+                return dalReceipts.GetReceiptDetailsListById(receiptId, shopId);
             }
             catch (Exception ex)
             {
@@ -47,11 +47,11 @@ namespace BUS
                 throw ex;
             }
         }
-        public DataTable GetReceiptDetailsGridViewByReceiptId(int receiptId)
+        public DataTable GetReceiptDetailsGridViewByReceiptId(int receiptId, int shopId)
         {
             try
             {
-                return dalReceipts.GetReceiptDetailsGridViewByReceiptId(receiptId);
+                return dalReceipts.GetReceiptDetailsGridViewByReceiptId(receiptId, shopId);
             }
             catch (Exception ex)
             {
@@ -59,11 +59,11 @@ namespace BUS
                 throw ex;
             }
         }
-        public DataTable GetReceiptSearchIdFiltered(int id)
+        public DataTable GetReceiptSearchIdFiltered(int id, int shopId)
         {
             try
             {
-                return dalReceipts.GetReceiptSearchIdFiltered(id);
+                return dalReceipts.GetReceiptSearchIdFiltered(id, shopId);
             }
             catch (Exception ex)
             {
@@ -71,11 +71,11 @@ namespace BUS
                 throw ex;
             }
         }
-        public DataTable GetReceiptSearchCustomersIdFiltered(int customerId)
+        public DataTable GetReceiptSearchCustomersIdFiltered(int customerId, int shopId)
         {
             try
             {
-                return dalReceipts.GetReceiptSearchCustomersIdFiltered(customerId);
+                return dalReceipts.GetReceiptSearchCustomersIdFiltered(customerId, shopId);
             }
             catch (Exception ex)
             {
@@ -89,11 +89,11 @@ namespace BUS
             return dalReceipts.GetReceiptSearchDateOfPaymentFiltered(dop);
         }
 
-        public DTO_Table GetTableOfReceipt(int receiptId)
+        public DTO_Table GetTableOfReceipt(int receiptId, int shopId)
         {
             try
             {
-                return dalReceipts.GetTableOfReceipt(receiptId);
+                return dalReceipts.GetTableOfReceipt(receiptId, shopId);
             }
             catch (Exception ex)
             {

@@ -26,15 +26,15 @@ namespace DAL
             return dt;
         }
 
-        public DTO_Customer GetCustomerById(int id)
+        public DTO_Customer GetCustomerById(int id, int shopId)
         {
             DTO_Customer cus = null;
-            string qry = "SELECT Id, FirstName, LastName, " +
-                "EmailAddress, Birthdate " +
+            string qry = "SELECT * " +
                 "FROM CUSTOMERS " +
-                "WHERE Id = @id";
+                "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -50,7 +50,11 @@ namespace DAL
                     FirstName = reader.GetString(reader.GetOrdinal("FirstName")),
                     LastName = reader.GetString(reader.GetOrdinal("LastName")),
                     Email = reader.GetString(reader.GetOrdinal("EmailAddress")),
-                    Birthdate = reader.GetDateTime(reader.GetOrdinal("Birthdate"))
+                    Birthdate = reader.GetDateTime(reader.GetOrdinal("Birthdate")),
+                    Shop = new DTO_Shop
+                    {
+                        ID = (int)reader["ShopId"]
+                    }
                 };
             }
             if (!connState)
@@ -64,8 +68,7 @@ namespace DAL
         public DTO_Customer GetCustomerByEmail(string email, int shopId)
         {
             DTO_Customer cus = null;
-            string qry = "SELECT Id, FirstName, LastName, " +
-                "EmailAddress, Birthdate " +
+            string qry = "SELECT * " +
                 "FROM CUSTOMERS " +
                 "WHERE EmailAddress = @email AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -86,7 +89,11 @@ namespace DAL
                     FirstName = reader.GetString(reader.GetOrdinal("FirstName")),
                     LastName = reader.GetString(reader.GetOrdinal("LastName")),
                     Email = email,
-                    Birthdate = reader.GetDateTime(reader.GetOrdinal("Birthdate"))
+                    Birthdate = reader.GetDateTime(reader.GetOrdinal("Birthdate")),
+                    Shop = new DTO_Shop
+                    {
+                        ID = (int)reader["ShopId"]
+                    }
                 };
             }
             if (!connState)
@@ -97,15 +104,16 @@ namespace DAL
             return cus;
         }
 
-        public DataTable GetCustomerSearchIDFiltered(int id)
+        public DataTable GetCustomerSearchIDFiltered(int id, int shopId)
         {
             DataTable dtCus = new DataTable();
             string qry = "SELECT Id AS ID, FirstName AS [First Name], LastName AS [Last Name], " +
                 "EmailAddress AS Email, CONVERT(varchar(11), Birthdate, 103) AS Birthdate " +
                 "FROM CUSTOMERS " +
-                "WHERE Id = @id";
+                "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
 
             ada.Fill(dtCus);
@@ -150,7 +158,7 @@ namespace DAL
 
         public void Insert(DTO_Customer cus)
         {
-            string qry = "INSERT INTO CUSTOMERS " +
+            string qry = "INSERT INTO CUSTOMERS (FirstName, LastName, EmailAddress, Birthdate, ShopId)" +
                 "VALUES (@fname, @lname, @email, @bdate, @shopId)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@fname", cus.FirstName);
@@ -174,9 +182,11 @@ namespace DAL
         public void Delete(DTO_Customer cus)
         {
             DAL_Receipts dalRec = new DAL_Receipts();
-            string qry = "DELETE FROM CUSTOMERS WHERE Id = @id";
+            string qry = "DELETE FROM CUSTOMERS " +
+                "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", cus.Id);
+            cmd.Parameters.AddWithValue("@shopId", cus.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -196,11 +206,12 @@ namespace DAL
             string qry = "UPDATE CUSTOMERS " +
                 "SET EmailAddress = @email, " +
                 "Birthdate = @bdate " +
-                "WHERE Id = @id";
+                "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@email", cus.Email);
             cmd.Parameters.AddWithValue("@bdate", cus.Birthdate);
             cmd.Parameters.AddWithValue("@id", cus.Id);
+            cmd.Parameters.AddWithValue("@shopId", cus.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)

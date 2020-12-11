@@ -124,7 +124,11 @@ namespace GUI
             txtEmail.Visible = true;
             lblPhone.Visible = true;
             txtPhone.Visible = true;
-            txtSupId.Text = addSup;
+            if (txtSupId.TextLength > 0 && txtSupId.ForeColor == SystemColors.WindowText)
+            {
+                txtSupId.ForeColor = Color.DimGray;
+                txtSupId.Text = addSup;
+            }
         }
 
         private void lblEnterSup_MouseUp(object sender, MouseEventArgs e)
@@ -139,7 +143,11 @@ namespace GUI
             txtEmail.Visible = false;
             lblPhone.Visible = false;
             txtPhone.Visible = false;
-            txtSupId.Text = existingSup;
+            if (txtSupId.TextLength > 0 && txtSupId.ForeColor == SystemColors.WindowText)
+            {
+                txtSupId.ForeColor = Color.DimGray;
+                txtSupId.Text = existingSup;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -187,7 +195,7 @@ namespace GUI
 
         private void ClearTextboxes()
         {
-            txtId.Clear();
+            txtId.Text = busStock.GetNextItemId(Shop.ID).ToString();
             txtItemName.Clear();
             txtSupName.Clear();
             txtEmail.Clear();
@@ -218,16 +226,8 @@ namespace GUI
         {
             if (!string.IsNullOrWhiteSpace(txtItemName.Text))
             {
-                if (busStock.GetByName(txtItemName.Text, Shop.ID) != null)
-                {
-                    errs[0].Icon = errorIcon;
-                    errs[0].SetError(txtItemName, "An item with such name already exists");
-                }
-                else
-                {
-                    errs[0].Icon = checkIcon;
-                    errs[0].SetError(txtItemName, "Valid");
-                }
+                errs[0].Icon = checkIcon;
+                errs[0].SetError(txtItemName, "Valid");
             }
             else
             {

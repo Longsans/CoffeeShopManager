@@ -62,7 +62,7 @@ namespace GUI
                         {
                             if (int.TryParse(filProp.CurrentFilterText, out int id))
                             {
-                                grdCustomers.DataSource = busCus.GetCustomerSearchIDFiltered(id);
+                                grdCustomers.DataSource = busCus.GetCustomerSearchIDFiltered(id, dtoShop.ID);
                             }
                             else
                             {
@@ -134,6 +134,7 @@ namespace GUI
                 DTO_Customer cus = new DTO_Customer
                 {
                     Id = (int)row.Cells["ID"].Value,
+                    Shop = dtoShop
                 };
                 busCus.Delete(cus);
             }
@@ -150,7 +151,7 @@ namespace GUI
                         {
                             if (int.TryParse(txtSearch.Text, out int id))
                             {
-                                grdCustomers.DataSource = busCus.GetCustomerSearchIDFiltered(id);
+                                grdCustomers.DataSource = busCus.GetCustomerSearchIDFiltered(id, dtoShop.ID);
                             }
                             else
                             {

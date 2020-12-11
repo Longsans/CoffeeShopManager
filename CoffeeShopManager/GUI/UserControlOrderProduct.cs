@@ -342,7 +342,8 @@ namespace GUI
             dtoReceipt.Customer = dtoCus;
             dtoReceipt.DateOfPayMent = now;
             int mon = lblGrandTotal.Text.IndexOf("$");
-            dtoReceipt.Total = decimal.Parse(lblGrandTotal.Text.Substring(0,mon-1));
+            dtoReceipt.Discount = double.Parse(txtDiscount.Text);
+            dtoReceipt.Total = decimal.Parse(lblGrandTotal.Text.Substring(0,mon));
             dtoReceipt.Details = "";
             dtoReceipt.Shop.ID = shopID;
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)

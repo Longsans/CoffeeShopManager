@@ -33,14 +33,14 @@ namespace GUI
 
         private void Reload()
         {
-            rec.Customer = busCus.GetCustomerById(rec.Customer.Id);
+            rec.Customer = busCus.GetCustomerById(rec.Customer.Id, rec.Shop.ID);
             txtId.Text = rec.Id.ToString();
             datDop.Format = DateTimePickerFormat.Custom;
             datDop.CustomFormat = "dd/MM/yyyy";
             datDop.Value = rec.DateOfPayMent;
-            if (busRec.GetTableOfReceipt(rec.Id) != null)
+            if (busRec.GetTableOfReceipt(rec.Id, rec.Shop.ID) != null)
             {
-                txtTabNum.Text = busRec.GetTableOfReceipt(rec.Id).Id.ToString();
+                txtTabNum.Text = busRec.GetTableOfReceipt(rec.Id, rec.Shop.ID).Id.ToString();
             }
             else
             {
@@ -53,7 +53,8 @@ namespace GUI
             datCusBirthdate.CustomFormat = datDop.CustomFormat;
             datCusBirthdate.Value = rec.Customer.Birthdate;
 
-            grdProducts.DataSource = busRec.GetReceiptDetailsGridViewByReceiptId(rec.Id);
+            grdProducts.DataSource = busRec.GetReceiptDetailsGridViewByReceiptId(rec.Id, rec.Shop.ID);
+            lblDiscount.Text = rec.Discount.ToString();
             lblTotalDisplay.Text = rec.Total.ToString();
             rtxtDetails.Text = rec.Details;
 

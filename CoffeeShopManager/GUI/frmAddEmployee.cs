@@ -133,7 +133,8 @@ namespace GUI
             txtPassword.Text = "";
             txtDayJoin.Text = "";
             txtMonthJoin.Text = "";
-            txtYearJoin.Text = ""; 
+            txtYearJoin.Text = "";
+            txtUsername.Text = "";
             radFemale.Checked = false;
             radMale.Checked = false;
             picboxEmpImg.Image = null;

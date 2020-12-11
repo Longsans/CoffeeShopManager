@@ -45,7 +45,7 @@ namespace GUI
                         {
                             if (int.TryParse(txtSearch.Text, out int id))
                             {
-                                grdReceipts.DataSource = busRec.GetReceiptSearchIdFiltered(id);
+                                grdReceipts.DataSource = busRec.GetReceiptSearchIdFiltered(id, dtoShop.ID);
                             }
                             else
                             {
@@ -57,7 +57,7 @@ namespace GUI
                         {
                             if (int.TryParse(txtSearch.Text, out int cusId))
                             {
-                                grdReceipts.DataSource = busRec.GetReceiptSearchCustomersIdFiltered(cusId);
+                                grdReceipts.DataSource = busRec.GetReceiptSearchCustomersIdFiltered(cusId, dtoShop.ID);
                             }
                             else
                             {
@@ -80,7 +80,7 @@ namespace GUI
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            ucRecDetails.rec = busRec.GetReceiptById((int)grdReceipts.SelectedRows[0].Cells["ID"].Value);
+            ucRecDetails.rec = busRec.GetReceiptById((int)grdReceipts.SelectedRows[0].Cells["ID"].Value, dtoShop.ID);
             OnReceiptDetailsView();
             ucRecDetails.Show();
             ucRecDetails.BringToFront();
@@ -92,7 +92,8 @@ namespace GUI
             {
                 DTO_Receipt rec = new DTO_Receipt
                 {
-                    Id = (int)row.Cells["ID"].Value
+                    Id = (int)row.Cells["ID"].Value,
+                    Shop = dtoShop
                 };
                 busRec.DeleteReceipt(rec);
             }
@@ -148,12 +149,12 @@ namespace GUI
                     {
                         case "ID":
                             {
-                                grdReceipts.DataSource = busRec.GetReceiptSearchIdFiltered(int.Parse(txtSearch.Text));
+                                grdReceipts.DataSource = busRec.GetReceiptSearchIdFiltered(int.Parse(txtSearch.Text), dtoShop.ID);
                             }
                             break;
                         case "Customer ID":
                             {
-                                grdReceipts.DataSource = busRec.GetReceiptSearchCustomersIdFiltered(int.Parse(txtSearch.Text));
+                                grdReceipts.DataSource = busRec.GetReceiptSearchCustomersIdFiltered(int.Parse(txtSearch.Text), dtoShop.ID);
                             }
                             break;
                     }
@@ -206,7 +207,7 @@ namespace GUI
         {
             if (e.RowIndex != -1)
             {
-                ucRecDetails.rec = busRec.GetReceiptById((int)grdReceipts.SelectedRows[0].Cells["ID"].Value);
+                ucRecDetails.rec = busRec.GetReceiptById((int)grdReceipts.SelectedRows[0].Cells["ID"].Value, dtoShop.ID);
                 OnReceiptDetailsView();
                 ucRecDetails.Show();
                 ucRecDetails.BringToFront();

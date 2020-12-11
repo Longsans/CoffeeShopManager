@@ -283,10 +283,9 @@ namespace DAL
         public int GetNextItemId(int shopId)
         {
             int currentId = -1;
-            string qry = "SELECT max(Id) " +
+            string qry = "SELECT ISNULL(max(Id), 0) " +
                 "FROM STOCK_ITEMS " +
-                "GROUP BY ShopId " +
-                "HAVING ShopId = @shopId";
+                "WHERE ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@shopId", shopId);
 

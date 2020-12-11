@@ -17,11 +17,11 @@ namespace BUS
             return dalCus.GetAllCustomers(shopId);
         }
 
-        public DTO_Customer GetCustomerById(int id)
+        public DTO_Customer GetCustomerById(int id, int shopId)
         {
             try
             {
-                return dalCus.GetCustomerById(id);
+                return dalCus.GetCustomerById(id, shopId);
             }
             catch (Exception ex)
             {
@@ -41,11 +41,11 @@ namespace BUS
                 throw ex;
             }
         }
-        public DataTable GetCustomerSearchIDFiltered(int id)
+        public DataTable GetCustomerSearchIDFiltered(int id, int shopId)
         {
             try
             {
-                return dalCus.GetCustomerSearchIDFiltered(id);
+                return dalCus.GetCustomerSearchIDFiltered(id, shopId);
             }
             catch (Exception ex)
             {

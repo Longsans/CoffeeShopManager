@@ -11,12 +11,14 @@ namespace DAL
 {
     public class DAL_Receipts : DBConnection
     {
-        public DTO_Receipt GetReceiptById(int id)
+        public DTO_Receipt GetReceiptById(int id, int shopId)
         {
             DTO_Receipt rec = null;
-            string qry = "SELECT * FROM RECEIPTS WHERE Id = @id";
+            string qry = "SELECT * FROM RECEIPTS " +
+                "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -34,9 +36,10 @@ namespace DAL
                         Id = reader.GetInt32(reader.GetOrdinal("CustomerId"))
                     },
                     DateOfPayMent = reader.GetDateTime(reader.GetOrdinal("DateOfPayment")),
+                    Discount = (double)reader["Discount"],
                     Total = reader.GetDecimal(reader.GetOrdinal("Total")),
                     Details = reader.GetString(reader.GetOrdinal("Details")),
-                    Items = GetReceiptDetailsListById(id),
+                    Items = GetReceiptDetailsListById(id, shopId),
                     Shop = new DTO_Shop
                     {
                         ID = reader.GetInt32(reader.GetOrdinal("ShopId"))
@@ -51,12 +54,14 @@ namespace DAL
             return rec;
         }
 
-        public List<DTO_Receipt> GetAllReceiptsByCustomerId(int customerId)
+        public List<DTO_Receipt> GetAllReceiptsByCustomerId(int customerId, int shopId)
         {
             List<DTO_Receipt> recList = new List<DTO_Receipt>();
-            string qry = "SELECT * FROM RECEIPTS WHERE CustomerId = @cusId";
+            string qry = "SELECT * FROM RECEIPTS " +
+                "WHERE CustomerId = @cusId AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@cusId", customerId);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -74,6 +79,7 @@ namespace DAL
                         Id = customerId
                     },
                     DateOfPayMent = reader.GetDateTime(reader.GetOrdinal("DateOfPayment")),
+                    Discount = (float)reader["Discount"],
                     Total = reader.GetDecimal(reader.GetOrdinal("Total")),
                     Shop = new DTO_Shop
                     {
@@ -94,12 +100,14 @@ namespace DAL
             return recList;
         }
 
-        public List<DTO_ReceiptDetails> GetReceiptDetailsListById(int receiptId)
+        public List<DTO_ReceiptDetails> GetReceiptDetailsListById(int receiptId, int shopId)
         {
             List<DTO_ReceiptDetails> detailsList = new List<DTO_ReceiptDetails>();
-            string qry = "SELECT * FROM RECEIPT_DETAILS WHERE ReceiptId = @id";
+            string qry = "SELECT * FROM RECEIPT_DETAILS " +
+                "WHERE ReceiptId = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", receiptId);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -113,7 +121,11 @@ namespace DAL
                 {
                     Product = new DTO_Product
                     {
-                        Id = reader.GetString(reader.GetOrdinal("ProductId"))
+                        Id = reader.GetString(reader.GetOrdinal("ProductId")),
+                        Shop = new DTO_Shop
+                        {
+                            ID = (int)reader["ShopId"]
+                        }
                     },
                     Quantity = reader.GetInt32(reader.GetOrdinal("Quantity")),
                     TotalPrice = reader.GetDecimal(reader.GetOrdinal("TotalPrice"))
@@ -148,16 +160,17 @@ namespace DAL
             return dtReceipts;
         }
         
-        public DataTable GetReceiptDetailsGridViewByReceiptId(int receiptId)
+        public DataTable GetReceiptDetailsGridViewByReceiptId(int receiptId, int shopId)
         {
             DataTable dtRecDetails = new DataTable();
             string qry = "SELECT ProductId AS ID, Name, Quantity, TotalPrice AS [Total Price] " +
                 "FROM RECEIPT_DETAILS INNER JOIN PRODUCTS " +
                 "ON RECEIPT_DETAILS.ProductId = PRODUCTS.Id " +
                 "AND RECEIPT_DETAILS.ShopId = PRODUCTS.ShopId " +
-                "WHERE ReceiptId = @id";
+                "WHERE ReceiptId = @id AND RECEIPT_DETAILS.ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", receiptId);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
 
             ada.Fill(dtRecDetails);
@@ -165,16 +178,17 @@ namespace DAL
             return dtRecDetails;
         }
 
-        public DataTable GetReceiptSearchIdFiltered(int id)
+        public DataTable GetReceiptSearchIdFiltered(int id, int shopId)
         {
             DataTable dtRecDetails = new DataTable();
             string qry = "SELECT RECEIPTS.Id AS ID, CustomerId AS [Customer ID], FirstName AS [Customer's First Name], " +
                 "LastName AS [Customer's Last Name], DateOfPayment AS [Date of Payment], Total " +
                 "FROM RECEIPTS INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
-                "WHERE RECEIPTS.Id = @id";
+                "WHERE RECEIPTS.Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
 
             ada.Fill(dtRecDetails);
@@ -182,7 +196,7 @@ namespace DAL
             return dtRecDetails;
         }
 
-        public DataTable GetReceiptSearchCustomersIdFiltered(int cusId)
+        public DataTable GetReceiptSearchCustomersIdFiltered(int cusId, int shopId)
         {
             DataTable dtRecDetails = new DataTable();
             string qry = "SELECT RECEIPTS.Id AS ID, CustomerId AS [Customer ID], FirstName AS [Customer's First Name], " +
@@ -190,9 +204,10 @@ namespace DAL
                 "FROM RECEIPTS INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
                 "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
-                "WHERE CustomerId = @cusId";
+                "WHERE CustomerId = @cusId AND RECEIPTS.ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@cusId", cusId);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
 
             ada.Fill(dtRecDetails);
@@ -208,7 +223,8 @@ namespace DAL
                 "FROM RECEIPTS INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
                 "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
-                "WHERE datediff(day, DateOfPayment, @dop) = 0";
+                "WHERE datediff(day, DateOfPayment, @dop) = 0 " +
+                "AND RECEIPTS.ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@dop", dop);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
@@ -218,23 +234,26 @@ namespace DAL
             return dtRecDetails;
         }
 
-        public DTO_Table GetTableOfReceipt(int receiptId)
+        public DTO_Table GetTableOfReceipt(int receiptId, int shopId)
         {
             DAL_TableSitting dalTabSitting = new DAL_TableSitting();
             DTO_Table tab = null;
-            tab = dalTabSitting.GetTableOfReceipt(receiptId);
+            tab = dalTabSitting.GetTableOfReceipt(receiptId, shopId);
 
             return tab;
         }
 
         public void InsertTakeAwayReceipt(DTO_Receipt rec)
         {
-            string compoundQry = "INSERT INTO RECEIPTS " +
-                "VALUES (@cusId, @dateofpayment, @total, @details, @shopId); " +
-                "SELECT SCOPE_IDENTITY();";
+            string compoundQry = "INSERT INTO RECEIPTS (CustomerId, DateOfPayment, Discount, Total, Details, ShopId)" +
+                "VALUES (@cusId, @dateofpayment, @discount, @total, @details, @shopId); " +
+                "SELECT max(Id) " +
+                "FROM RECEIPTS " +
+                "WHERE ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(compoundQry, this.conn);
             cmd.Parameters.AddWithValue("@cusId", rec.Customer.Id);
             cmd.Parameters.AddWithValue("@dateofpayment", rec.DateOfPayMent);
+            cmd.Parameters.AddWithValue("@discount", rec.Discount);
             cmd.Parameters.AddWithValue("@total", rec.Total);
             cmd.Parameters.AddWithValue("@details", rec.Details);
             cmd.Parameters.AddWithValue("@shopId", rec.Shop.ID);
@@ -244,7 +263,6 @@ namespace DAL
             {
                 OpenConnection();
             }
-            var s = cmd.ExecuteScalar().ToString();
             rec.Id = Convert.ToInt32(cmd.ExecuteScalar());
             InsertReceiptDetails(rec);
             if (!connState)
@@ -294,7 +312,7 @@ namespace DAL
 
         public void DeleteAllReceiptsOfCustomer(DTO_Customer cus)
         {
-            var recList = GetAllReceiptsByCustomerId(cus.Id);
+            var recList = GetAllReceiptsByCustomerId(cus.Id, cus.Shop.ID);
             
             foreach (var rec in recList)
             {
@@ -305,9 +323,11 @@ namespace DAL
         public void DeleteReceipt(DTO_Receipt rec)
         {
             DAL_TableSitting dalTabSitting = new DAL_TableSitting();
-            string qry = "DELETE FROM RECEIPTS WHERE Id = @id";
+            string qry = "DELETE FROM RECEIPTS " +
+                "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", rec.Id);
+            cmd.Parameters.AddWithValue("@shopId", rec.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -325,9 +345,11 @@ namespace DAL
 
         private void DeleteReceiptDetails(DTO_Receipt rec)
         {
-            string qry = "DELETE FROM RECEIPT_DETAILS WHERE ReceiptId = @id";
+            string qry = "DELETE FROM RECEIPT_DETAILS " +
+                "WHERE ReceiptId = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", rec.Id);
+            cmd.Parameters.AddWithValue("@shopId", rec.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
