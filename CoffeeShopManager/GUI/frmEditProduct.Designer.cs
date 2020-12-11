@@ -61,20 +61,14 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtCopyPrice = new System.Windows.Forms.TextBox();
-            this.grdItems = new System.Windows.Forms.DataGridView();
-            this.lblListCaption = new System.Windows.Forms.Label();
-            this.lblAdd = new System.Windows.Forms.Label();
-            this.lblRemove = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdItems)).BeginInit();
-            this.panel2.SuspendLayout();
+       //     ((System.ComponentModel.ISupportInitialize)(this.grdItems)).BeginInit();
+       //     this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -364,14 +358,8 @@
             // 
             // errorProvider1
             // 
-            this.grdItems.AllowUserToAddRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.grdItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.grdItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grdItems.BackgroundColor = System.Drawing.Color.White;
-            this.grdItems.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.grdItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.grdItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -379,9 +367,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.grdItems.ColumnHeadersHeight = 29;
-            this.grdItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+ 
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -389,65 +375,27 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(171)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdItems.DefaultCellStyle = dataGridViewCellStyle6;
-            this.grdItems.EnableHeadersVisualStyles = false;
-            this.grdItems.Location = new System.Drawing.Point(77, 302);
-            this.grdItems.Name = "grdItems";
-            this.grdItems.ReadOnly = true;
-            this.grdItems.RowHeadersVisible = false;
-            this.grdItems.RowHeadersWidth = 51;
-            this.grdItems.RowTemplate.Height = 24;
-            this.grdItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdItems.Size = new System.Drawing.Size(251, 147);
-            this.grdItems.TabIndex = 23;
+
             this.errorProvider1.ContainerControl = this;
             // 
             // errorProvider2
             // lblListCaption
             // 
-            this.lblListCaption.AutoSize = true;
-            this.lblListCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblListCaption.Location = new System.Drawing.Point(74, 266);
-            this.lblListCaption.Name = "lblListCaption";
-            this.lblListCaption.Size = new System.Drawing.Size(188, 18);
-            this.lblListCaption.TabIndex = 2;
-            this.lblListCaption.Text = "List of stock items used by ";
+
             this.errorProvider2.ContainerControl = this;
             this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
             // 
             // lblAdd
             // 
-            this.lblAdd.AutoSize = true;
-            this.lblAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAdd.Image = global::GUI.Properties.Resources.plus_not_circle;
-            this.lblAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAdd.Location = new System.Drawing.Point(334, 308);
-            this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(98, 17);
-            this.lblAdd.TabIndex = 2;
-            this.lblAdd.Text = "       Add to list";
-            this.lblAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblRemoveFromList_MouseDown);
-            this.lblAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblAdd_MouseUp);
+
             // 
             // lblRemove
             // 
-            this.lblRemove.AutoSize = true;
-            this.lblRemove.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRemove.Image = global::GUI.Properties.Resources.minus;
-            this.lblRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblRemove.Location = new System.Drawing.Point(334, 349);
-            this.lblRemove.Name = "lblRemove";
-            this.lblRemove.Size = new System.Drawing.Size(141, 17);
-            this.lblRemove.TabIndex = 2;
-            this.lblRemove.Text = "       Remove from list";
-            this.lblRemove.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblRemove.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblRemoveFromList_MouseDown);
-            this.lblRemove.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblRemove_MouseUp);
+
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
+          /*  this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -457,11 +405,11 @@
             this.panel2.TabIndex = 24;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
-            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);*/
             // 
             // btnExit
             // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+           /* this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
@@ -470,7 +418,7 @@
             this.btnExit.Size = new System.Drawing.Size(31, 39);
             this.btnExit.TabIndex = 15;
             this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnExit.Click += new System.EventHandler(this.btnCancel_Click);*/
             this.txtCopyPrice.Location = new System.Drawing.Point(359, 472);
             this.txtCopyPrice.Name = "txtCopyPrice";
             this.txtCopyPrice.Size = new System.Drawing.Size(100, 22);
@@ -490,7 +438,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdItems)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.grdItems)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdItems)).EndInit();

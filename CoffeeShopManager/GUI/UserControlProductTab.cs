@@ -106,9 +106,6 @@ namespace GUI
         {
             frmInsertProDuct frmInsert = new frmInsertProDuct(this);
             frmInsert.ShowDialog();
-            Reload();
-            GetCong();
-            GetData();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -312,9 +309,6 @@ namespace GUI
             frmInsertProDuct frmInsert1 = new frmInsertProDuct(this);
             frmInsert1.ShowDialog();
             frmInsert1.Close();
-            Reload();
-            GetCong();
-            GetData();
         }
         public void OnClick(object sender,EventArgs e)
         {
@@ -339,9 +333,6 @@ namespace GUI
         {
             frmInsertProDuct frmInsert = new frmInsertProDuct(this);
             frmInsert.ShowDialog();
-            Reload();
-            GetCong();
-            GetData();
         }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -440,9 +431,6 @@ namespace GUI
 
             frmInsertProDuct frmInsert = new frmInsertProDuct(this);
             frmInsert.ShowDialog();
-            Reload();
-            GetCong();
-            GetData();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

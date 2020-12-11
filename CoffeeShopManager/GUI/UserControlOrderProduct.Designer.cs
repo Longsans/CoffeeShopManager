@@ -694,9 +694,6 @@
         private System.Windows.Forms.TextBox txtSearchName;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtYearBD;
-        private System.Windows.Forms.TextBox txtMonthBD;
-        private System.Windows.Forms.TextBox txtDayBD;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtLastName;

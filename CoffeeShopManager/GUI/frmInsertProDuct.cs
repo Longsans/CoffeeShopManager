@@ -75,7 +75,6 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("" + IsNumber(txtPrice.Text).ToString());
                 DTO_Product dtoPro = new DTO_Product();
                 dtoPro.Id = txtID.Text;
                 dtoPro.Name = txtName1.Text;
@@ -145,19 +144,6 @@ namespace GUI
             this.Close();
         }
         private void txtID_TextChanged(object sender, EventArgs e)
-                {
-                    errorProvider2.SetError(txtPrice, "Correct");
-                    errorProvider1.SetError(txtPrice, "");
-                }
-                else
-                {
-                    errorProvider1.SetError(txtPrice, "Wrong format");
-                    errorProvider2.SetError(txtPrice, "");
-                }
-            }    
-        }
-
-        private void txtID_Validating(object sender, CancelEventArgs e)
         {
             if (txtID.Text == string.Empty)
             {
@@ -180,16 +166,15 @@ namespace GUI
                     checkid = 1;
                 }
             }
-            if (checkname == 1 && checkid ==1 && checktype == 1 && checkprice == 1)
+            if (checkname == 1 && checkid == 1 && checktype == 1 && checkprice == 1)
             {
                 btnAdd.Enabled = true;
-        }
+            }
             else
             {
                 btnAdd.Enabled = false;
             }
         }
-
         private void txtName1_TextChanged(object sender, EventArgs e)
         {
             if (txtName1.Text == string.Empty)
