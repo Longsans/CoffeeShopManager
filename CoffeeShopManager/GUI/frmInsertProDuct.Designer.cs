@@ -48,6 +48,7 @@
             this.lblID = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtCopyPrice = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -56,6 +57,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txtCopyPrice);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.rtxDetail);
             this.panel1.Controls.Add(this.txtPrice);
@@ -102,10 +105,11 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(121, 22);
             this.txtPrice.TabIndex = 12;
-            this.txtPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrice_Validating);
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // cbxType
             // 
+            this.cbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxType.FormattingEnabled = true;
             this.cbxType.Items.AddRange(new object[] {
             "Food",
@@ -115,7 +119,7 @@
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(121, 24);
             this.cbxType.TabIndex = 11;
-            this.cbxType.Validating += new System.ComponentModel.CancelEventHandler(this.cbxType_Validating);
+            this.cbxType.TextChanged += new System.EventHandler(this.cbxType_TextChanged);
             // 
             // txtName1
             // 
@@ -123,7 +127,7 @@
             this.txtName1.Name = "txtName1";
             this.txtName1.Size = new System.Drawing.Size(130, 22);
             this.txtName1.TabIndex = 10;
-            this.txtName1.Validating += new System.ComponentModel.CancelEventHandler(this.txtName1_Validating);
+            this.txtName1.TextChanged += new System.EventHandler(this.txtName1_TextChanged);
             // 
             // txtID
             // 
@@ -131,36 +135,39 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(130, 22);
             this.txtID.TabIndex = 9;
-            this.txtID.Validating += new System.ComponentModel.CancelEventHandler(this.txtID_Validating);
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(450, 350);
+            this.btnCancel.BackColor = System.Drawing.Color.LightSalmon;
+            this.btnCancel.Location = new System.Drawing.Point(430, 350);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(102, 55);
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.LightSalmon;
             this.btnAdd.Location = new System.Drawing.Point(290, 350);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(107, 55);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnBrowse
             // 
+            this.btnBrowse.BackColor = System.Drawing.Color.LightSalmon;
             this.btnBrowse.Location = new System.Drawing.Point(715, 302);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowse.Size = new System.Drawing.Size(100, 27);
             this.btnBrowse.TabIndex = 6;
             this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // pictureBox1
@@ -229,6 +236,14 @@
             this.errorProvider2.ContainerControl = this;
             this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
             // 
+            // txtCopyPrice
+            // 
+            this.txtCopyPrice.Location = new System.Drawing.Point(715, 416);
+            this.txtCopyPrice.Name = "txtCopyPrice";
+            this.txtCopyPrice.Size = new System.Drawing.Size(100, 22);
+            this.txtCopyPrice.TabIndex = 15;
+            this.txtCopyPrice.Visible = false;
+            // 
             // frmInsertProDuct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -268,5 +283,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.TextBox txtCopyPrice;
     }
 }

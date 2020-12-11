@@ -19,7 +19,8 @@ namespace GUI
         UserControlProductTab _ucPro;
         Point prevPoint;
         bool dragging;
-
+        string savename;
+        int checkname, checktype, checkprice;
         public frmEditProduct()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace GUI
         {
             txtID.Text = dtoPro.Id;
             txtName1.Text = dtoPro.Name;
+            savename = dtoPro.Name;
             txtPrice.Text = dtoPro.Price.ToString();
             cbxType.Text = dtoPro.Type;
             rtxDetail.Text = dtoPro.Detail;
@@ -55,7 +57,15 @@ namespace GUI
             cbxType.Text = "";
             _ucPro.Reload();
         }
-
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c)&&c!='.'&&c!=',')
+                    return false;
+            }
+            return true;
+        }
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -70,24 +80,30 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtName1.Text == "" || txtPrice.Text == "" || cbxType.Text == "" || rtxDetail.Text == "")
+            if (txtName1.Text == "" || txtPrice.Text == "" || cbxType.Text == "")
+            {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Insert product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else
+                return;
+            }
+            if (checkname == 1 && checktype == 1 && checkprice == 1)
             {
                 dtoPro.Name = txtName1.Text;
-                dtoPro.Price = decimal.Parse(txtPrice.Text);
+                dtoPro.Price = decimal.Parse(txtCopyPrice.Text);
                 dtoPro.Type = cbxType.Text;
                 dtoPro.Detail = rtxDetail.Text;
                 dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image);
-                if (busPro.GetByName(dtoPro.Name, dtoPro.Shop.ID) == null)
+                if (busPro.GetByName(dtoPro.Name, dtoPro.Shop.ID) == null||savename==txtName1.Text)
                 {
                     dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image); ;
                     busPro.Update(dtoPro);
-                    Reload();
+                    //Reload();
                     _ucPro.Reload();
+                    _ucPro.GetCong();
+                    _ucPro.GetData();
                     MessageBox.Show("Edit thành công.", "Products", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
-                else
+                else if (savename != txtName1.Text)
                 {
                     txtName1.ResetText();
                     MessageBox.Show("Trùng tên thức ăn đã có sẵn");
@@ -172,6 +188,83 @@ namespace GUI
             {
                 this.Location = new Point(this.Location.X + Cursor.Position.X - prevPoint.X, this.Location.Y + Cursor.Position.Y - prevPoint.Y);
                 prevPoint = Cursor.Position;
+            }
+        }
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            int countdoc = 0;
+            string sums=null;
+            if (txtPrice.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtPrice, "Please provide Price");
+                errorProvider2.SetError(txtPrice, "");
+            }
+            else
+            {
+                string s = txtPrice.Text.ToString();
+
+                for(int i=0;i<s.Length;i++)
+                {
+                    if (s[i] == '.' || s[i] == ',')
+                    {
+                        countdoc++;
+                        sums += '.';
+                    }
+                    else
+                        sums += s[i];
+                }
+                txtCopyPrice.Text = sums;
+                if (IsNumber(txtPrice.Text) == true&&countdoc<=1)
+                {
+                    errorProvider2.SetError(txtPrice, "Correct");
+                    errorProvider1.SetError(txtPrice, "");
+                    checkprice = 1;
+                }
+                else 
+                {
+                    errorProvider1.SetError(txtPrice, "Wrong format");
+                    errorProvider2.SetError(txtPrice, "");
+                }
+                if (s[s.Length - 1] == '.' || s[s.Length - 1] == ',')
+                {
+                    errorProvider1.SetError(txtPrice, "Wrong format");
+                    errorProvider2.SetError(txtPrice, "");
+                }
+            }
+        }
+
+        private void txtName1_TextChanged(object sender, EventArgs e)
+        {
+            if (busPro.GetByName(txtName1.Text, dtoPro.Shop.ID) != null && savename != txtName1.Text)
+            {
+                errorProvider1.SetError(txtName1, "Had name before");
+                errorProvider2.SetError(txtName1, "");
+            }
+            if (txtName1.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtName1, "Please Enter Name");
+                errorProvider2.SetError(txtName1, "");
+            }
+            else
+            {
+                errorProvider1.SetError(txtName1, "");
+                errorProvider2.SetError(txtName1, "Correct");
+                checkname = 1;
+            }
+        }
+
+        private void cbxType_TextChanged(object sender, EventArgs e)
+        {
+            if (cbxType.Text == string.Empty)
+            {
+                errorProvider1.SetError(cbxType, "Please choose");
+                errorProvider2.SetError(cbxType, "");
+            }
+            else
+            {
+                errorProvider1.SetError(cbxType, "");
+                errorProvider2.SetError(cbxType, "Correct");
+                checktype = 1;
             }
         }
     }

@@ -142,9 +142,7 @@ namespace GUI
             //  MessageBox.Show(arrListStr[0] + "-0-" + arrListStr[1]);
             r1.Cells[0].Value = arrListStr[0].ToString();
             r1.Cells[2].Value = "1";
-            int vitri = 0;
-            vitri = arrListStr[1].IndexOf(".");
-            r1.Cells[4].Value = arrListStr[1].Substring(0, vitri).ToString();
+            r1.Cells[4].Value = arrListStr[1].ToString();
             r1.Cells[6].Value = ((Button)sender).Name.ToString();
             dataGridView1.Rows.Add(r1);
             strSave.Add(arrListStr[0]);
@@ -180,7 +178,18 @@ namespace GUI
         private void UserControlOrderProduct_Load(object sender, EventArgs e)
         {
           //  Reload();
-          
+            datBirthdate.Format = DateTimePickerFormat.Custom;
+            datBirthdate.CustomFormat = "dd/MM/yyyy";
+            if (dtoCus.Birthdate >= datBirthdate.MinDate && dtoCus.Birthdate <= datBirthdate.MaxDate)
+            {
+                datBirthdate.Value = dtoCus.Birthdate;
+            }
+            else
+            {
+                datBirthdate.CustomFormat = " ";
+            }
+            HideCus();
+            lblNoneName.Visible = true;
             Timer t1 = new Timer();
             t1.Interval = 1000;
             t1.Enabled = true;
@@ -196,9 +205,11 @@ namespace GUI
             txtID.Text = "";
             txtFirstName.Text = "";
             txtLastName.Text = "";
-            txtDayBD.Text = "";
-            txtMonthBD.Text = "";
-            txtYearBD.Text = "";
+            txtEmail.Text = "";
+            txtID.Text = "";
+            datBirthdate.CustomFormat = " ";
+            
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -252,10 +263,10 @@ namespace GUI
                 r1 = dataGridView1.Rows[e.RowIndex];
                 if (r1.Cells[2].Value.ToString() != "0")
                 {
-                    r1.Cells[2].Value = (Int32.Parse(r1.Cells[2].Value.ToString()) - 1);
+                    r1.Cells[2].Value = (decimal.Parse(r1.Cells[2].Value.ToString()) - 1);
                     bien = (Int32.Parse(r1.Cells[2].Value.ToString()));
 
-                    giatri = float.Parse(r1.Cells[4].Value.ToString()) / (bien + 1);
+                   var giatri = decimal.Parse(r1.Cells[4].Value.ToString()) / (bien + 1);
                     r1.Cells[4].Value = giatri * bien;
                 }
                 if (r1.Cells[2].Value.ToString() == "0")
@@ -274,9 +285,9 @@ namespace GUI
             else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmUp" && e.RowIndex != dataGridView1.Rows.Count - 1)
             {
                 r1 = dataGridView1.Rows[e.RowIndex];
-                r1.Cells[2].Value = (Int32.Parse(r1.Cells[2].Value.ToString()) + 1);
+                r1.Cells[2].Value = (decimal.Parse(r1.Cells[2].Value.ToString()) + 1);
                 bien = (Int32.Parse(r1.Cells[2].Value.ToString()));
-                giatri = float.Parse(r1.Cells[4].Value.ToString()) / (bien - 1);
+                var giatri = decimal.Parse(r1.Cells[4].Value.ToString()) / (bien - 1);
                 r1.Cells[4].Value = giatri * bien;
             }
 
@@ -314,7 +325,30 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            DateTime now = DateTime.Now;
             dtoReceipt = new DTO_Receipt();
+            if (dataGridView1.Rows.Count <= 1)
+            {
+                MessageBox.Show("Chua order mon");
+                return;
+            }
+            if (comboBox3.Text == "None"||comboBox3.Text=="")
+            {
+                if (busCus.GetCustomerByEmail("None", shopID) == null)
+                {
+                    dtoCus.Email = "None";
+                    dtoCus.FirstName = "None";
+                    dtoCus.LastName = "None";
+                    dtoCus.Shop.ID = shopID;
+                    datBirthdate.CustomFormat = "dd/MM/yyyy";
+                    datBirthdate.Value = now;
+                    dtoCus.Birthdate = datBirthdate.Value;
+                    busCus.Insert(dtoCus);
+                }
+                    dtoCus = busCus.GetCustomerByEmail("None", shopID);
+            }
+            else
+            {
             if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
             {
                 check = 0;
@@ -328,17 +362,17 @@ namespace GUI
                 MessageBox.Show("Chua order mon");
                 return;
             }
-            if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtDayBD.Text == "" || txtMonthBD.Text == "" || txtYearBD.Text == "")
+                if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "")
             {
                 MessageBox.Show("Nhap day du thong tin customer");
                 return;
             }
-            if (check==0)
+                if (check == 0)
             {
                 MessageBox.Show("Yeu cau dang ky  khach hang");
                 return;
             }
-            DateTime now = DateTime.Now;
+            }
             dtoReceipt.Customer = dtoCus;
             dtoReceipt.DateOfPayMent = now;
             int mon = lblGrandTotal.Text.IndexOf("$");
@@ -383,7 +417,7 @@ namespace GUI
         public int check = 0;
         private void btnAddCus_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtDayBD.Text == "" || txtMonthBD.Text == "" || txtYearBD.Text == "")
+                if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "")
             {
                 MessageBox.Show("Nhap day du thong tin khach hang");
                 return;
@@ -391,17 +425,16 @@ namespace GUI
             string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
             DateTime bdate = new DateTime();
             dtoCus.Email = txtEmail.Text;
-            if(busCus.GetCustomerByEmail(txtEmail.Text,shopID)!=null)
+                if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
             dtoCus.Id = Int32.Parse(txtID.Text);
             dtoCus.FirstName = txtFirstName.Text;
             dtoCus.LastName = txtLastName.Text;
-            if (DateTime.TryParseExact(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text,
-                     formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out bdate))
-            {
-                dtoCus.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
-            }
+
+                dtoCus.Birthdate = datBirthdate.Value;
+
             dtoCus.Shop.ID = shopID;
             busCus.Insert(dtoCus);
+            
         }
         public void ResetAll()
         {
@@ -454,7 +487,7 @@ namespace GUI
             if (dataGridView1.Rows.Count > 1)
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
-                    sum += Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                    sum += double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 }
             lblTotalSum.Text = sum.ToString()+"$";
             if (txtDiscount.Text != "" && IsNumber(txtDiscount.Text))
@@ -463,19 +496,17 @@ namespace GUI
                 lblGrandTotal.Text = sum.ToString()+"$";
             }
             lblGrandTotal.Text = sum.ToString()+"$";
-            if (busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) == null)
+            if (busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) == null&& comboBox3.Text != "None" && comboBox3.Text != "")
             {
                 errorProvider1.SetError(txtEmail, "Doesn't have customer này, vui lòng nhập thông tin");
                 errorProvider2.SetError(txtEmail, "");
                 txtFirstName.Enabled = true;
                 txtLastName.Enabled = true;
                 btnAddCus.Visible = true;
-                txtDayBD.Enabled = true;
-                txtMonthBD.Enabled = true;
-                txtYearBD.Enabled = true;
+                datBirthdate.Enabled = true;
                 txtID.Visible = false;
             }
-            else
+            else if(busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) != null && comboBox3.Text != "None"&&comboBox3.Text!="")
             {
                 errorProvider1.SetError(txtEmail, "");
                 errorProvider2.SetError(txtEmail, "Correct");
@@ -486,13 +517,9 @@ namespace GUI
                 txtID.Text = dtoCus.Id.ToString();
                 txtFirstName.Text = dtoCus.FirstName;
                 txtLastName.Text = dtoCus.LastName;
-                txtDayBD.Text = dtoCus.Birthdate.Day.ToString();
-                txtMonthBD.Text = dtoCus.Birthdate.Month.ToString();
-                txtYearBD.Text = dtoCus.Birthdate.Year.ToString();
+                datBirthdate.Value = dtoCus.Birthdate;
                 btnAddCus.Visible = false;
-                txtDayBD.Enabled = false;
-                txtMonthBD.Enabled = false;
-                txtYearBD.Enabled = false;
+                datBirthdate.Enabled = false;
                 txtID.Visible = true;
             }
 
@@ -546,6 +573,55 @@ namespace GUI
             for (int i = 0; i < lsTable.Count; i++)
             {
                 comboBox2.Items.Add(lsTable[i].Id.ToString());
+            }
+        }
+
+        private void datBirthdate_ValueChanged(object sender, EventArgs e)
+        {
+            datBirthdate.CustomFormat = "dd/MM/yyyy";
+        }
+        public void HideCus()
+        {
+            lblEmail.Visible = false;
+            lblFirstName.Visible = false;
+            lblLastName.Visible = false;
+            lblID.Visible = false;
+            lblBirthday.Visible = false;
+            txtEmail.Visible = false;
+            txtID.Visible = false;
+            txtFirstName.Visible = false;
+            txtLastName.Visible = false;
+            datBirthdate.Visible = false;
+            btnAddCus.Visible = false;
+            lblNoneName.Visible = true;
+        }
+        public void ShowCus()
+        {
+            lblEmail.Visible = true;
+            lblFirstName.Visible = true;
+            lblLastName.Visible = true;
+            lblID.Visible = true;
+            lblBirthday.Visible = true;
+            txtEmail.Visible = true;
+            txtID.Visible = true;
+            txtFirstName.Visible = true;
+            txtLastName.Visible = true;
+            datBirthdate.Visible = true;
+            btnAddCus.Visible = true;
+            lblNoneName.Visible = false;
+        }
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int resultIndex = -1;
+            resultIndex = comboBox3.FindStringExact(comboBox3.Text);
+            if (resultIndex == 0)
+            {
+                HideCus();
+            }
+            else if (resultIndex == 1)
+            {
+                ResetCus();
+                ShowCus();
             }
         }
     }

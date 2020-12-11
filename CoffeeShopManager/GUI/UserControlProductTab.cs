@@ -32,8 +32,24 @@ namespace GUI
             GetCong();
             GetData();
             pictureBox1.BackColor = Color.FromArgb(62,62,66);
+            dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
-
+        public void Reload2()
+        {
+            this.cboSearch.Text = "";
+            this.dataGridView1.DataSource = busPro.GetAllProductsWithImages(dtoShop.ID);
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                if (dataGridView1.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dataGridView1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+                }
+                dataGridView1.Columns[i].Width = 50;
+            }
+            //  dataGridView1.Columns["Image"].Visible = false;
+            lblLabel.Text = "Total All:";
+        }
         public void Reload()
         {
             this.cboSearch.Text = "";
@@ -90,15 +106,12 @@ namespace GUI
         {
             frmInsertProDuct frmInsert = new frmInsertProDuct(this);
             frmInsert.ShowDialog();
-            Reload();
-            GetCong();
-            GetData();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DTO_Product dtoPro = new DTO_Product();
-            if (dataGridView1.SelectedRows != null && !dataGridView1.Rows[dataGridView1.RowCount - 1].Selected)
+            if (dataGridView1.SelectedRows != null)
             {
                 DialogResult ret = MessageBox.Show("Do you want to delete this product?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ret == DialogResult.Yes)
@@ -190,7 +203,8 @@ namespace GUI
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows != null && !dataGridView1.Rows[dataGridView1.RowCount - 1].Selected)
+            //e.RowIndex != dataGridView1.Rows.Count - 1
+            if (dataGridView1.SelectedRows != null )
             {
                frmEditProduct frmEdit = new frmEditProduct(this)
                 {
@@ -213,7 +227,7 @@ namespace GUI
             btnImageadd.Height = 150;
             flowLayoutPanel1.Controls.Add(btnImageadd);
         }
-        private void GetData()
+        public void GetData()
         {
             
             dto_pro = new DTO_Product();
@@ -295,9 +309,6 @@ namespace GUI
             frmInsertProDuct frmInsert1 = new frmInsertProDuct(this);
             frmInsert1.ShowDialog();
             frmInsert1.Close();
-            Reload();
-            GetCong();
-            GetData();
         }
         public void OnClick(object sender,EventArgs e)
         {
@@ -322,9 +333,6 @@ namespace GUI
         {
             frmInsertProDuct frmInsert = new frmInsertProDuct(this);
             frmInsert.ShowDialog();
-            Reload();
-            GetCong();
-            GetData();
         }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -423,9 +431,6 @@ namespace GUI
 
             frmInsertProDuct frmInsert = new frmInsertProDuct(this);
             frmInsert.ShowDialog();
-            Reload();
-            GetCong();
-            GetData();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
