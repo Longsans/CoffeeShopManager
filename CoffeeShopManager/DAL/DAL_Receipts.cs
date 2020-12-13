@@ -36,8 +36,8 @@ namespace DAL
                         Id = reader.GetInt32(reader.GetOrdinal("CustomerId"))
                     },
                     DateOfPayMent = reader.GetDateTime(reader.GetOrdinal("DateOfPayment")),
-                    Discount = (double)reader["Discount"],
-                    Total = reader.GetDecimal(reader.GetOrdinal("Total")),
+                    Discount = (decimal)reader["Discount"],
+                    Total = (decimal)reader["Total"],
                     Details = reader.GetString(reader.GetOrdinal("Details")),
                     Items = GetReceiptDetailsListById(id, shopId),
                     Shop = new DTO_Shop
@@ -45,6 +45,13 @@ namespace DAL
                         ID = reader.GetInt32(reader.GetOrdinal("ShopId"))
                     }
                 };
+                if (!reader.IsDBNull(reader.GetOrdinal("EmployeeId")))
+                {
+                    rec.Employee = new DTO_Employee
+                    {
+                        Id = reader["EmployeeId"].ToString()
+                    };
+                }
             }
             if (!connState)
             {
@@ -79,7 +86,7 @@ namespace DAL
                         Id = customerId
                     },
                     DateOfPayMent = reader.GetDateTime(reader.GetOrdinal("DateOfPayment")),
-                    Discount = (double)reader["Discount"],
+                    Discount = (decimal)reader["Discount"],
                     Total = reader.GetDecimal(reader.GetOrdinal("Total")),
                     Shop = new DTO_Shop
                     {
@@ -89,6 +96,13 @@ namespace DAL
                 if (!reader.IsDBNull(reader.GetOrdinal("Details")))
                 {
                     rec.Details = reader.GetString(reader.GetOrdinal("Details"));
+                }
+                if (!reader.IsDBNull(reader.GetOrdinal("EmployeeId")))
+                {
+                    rec.Employee = new DTO_Employee
+                    {
+                        Id = reader["EmployeeId"].ToString()
+                    };
                 }
                 recList.Add(rec);
             }
@@ -104,7 +118,10 @@ namespace DAL
         {
             List<DTO_ReceiptDetails> detailsList = new List<DTO_ReceiptDetails>();
             string qry = "SELECT * FROM RECEIPT_DETAILS " +
-                "WHERE ReceiptId = @id AND ShopId = @shopId";
+                "INNER JOIN PRODUCTS " +
+                "ON RECEIPT_DETAILS.ProductId = PRODUCTS.Id " +
+                "AND RECEIPT_DETAILS.ShopId = PRODUCTS.ShopId " +
+                "WHERE ReceiptId = @id AND RECEIPT_DETAILS.ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", receiptId);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -122,13 +139,14 @@ namespace DAL
                     Product = new DTO_Product
                     {
                         Id = reader.GetString(reader.GetOrdinal("ProductId")),
+                        Name = reader["Name"].ToString(),
                         Shop = new DTO_Shop
                         {
                             ID = (int)reader["ShopId"]
                         }
                     },
                     Quantity = reader.GetInt32(reader.GetOrdinal("Quantity")),
-                    TotalPrice = reader.GetDecimal(reader.GetOrdinal("TotalPrice"))
+                    TotalPrice = decimal.Round((decimal)reader["TotalPrice"], 2, MidpointRounding.AwayFromZero)
                 };
                 detailsList.Add(recDetails);
             }
@@ -145,7 +163,8 @@ namespace DAL
         {
             DataTable dtReceipts = new DataTable();
             string qry = "SELECT RECEIPTS.Id AS ID, CustomerId AS [Customer ID], FirstName AS [Customer's First Name], " +
-                "LastName AS [Customer's Last Name], DateOfPayMent AS [Date of Payment], Total " +
+                "LastName AS [Customer's Last Name], CONVERT(varchar(11), DateOfPayMent, 103) AS [Date of Payment], " +
+                "EmployeeId AS [Employee ID], cast(Total as decimal(10, 2)) AS Total " +
                 "FROM RECEIPTS " +
                 "INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
@@ -163,7 +182,7 @@ namespace DAL
         public DataTable GetReceiptDetailsGridViewByReceiptId(int receiptId, int shopId)
         {
             DataTable dtRecDetails = new DataTable();
-            string qry = "SELECT ProductId AS ID, Name, Quantity, TotalPrice AS [Total Price] " +
+            string qry = "SELECT ProductId AS ID, Name, Quantity, cast(TotalPrice as decimal(10, 2)) AS [Total Price] " +
                 "FROM RECEIPT_DETAILS INNER JOIN PRODUCTS " +
                 "ON RECEIPT_DETAILS.ProductId = PRODUCTS.Id " +
                 "AND RECEIPT_DETAILS.ShopId = PRODUCTS.ShopId " +
@@ -182,10 +201,12 @@ namespace DAL
         {
             DataTable dtRecDetails = new DataTable();
             string qry = "SELECT RECEIPTS.Id AS ID, CustomerId AS [Customer ID], FirstName AS [Customer's First Name], " +
-                "LastName AS [Customer's Last Name], DateOfPayment AS [Date of Payment], Total " +
+                "LastName AS [Customer's Last Name], CONVERT(varchar(11), DateOfPayMent, 103) AS [Date of Payment], " +
+                "EmployeeId AS [Employee ID], cast(Total as decimal(10, 2)) AS Total " +
                 "FROM RECEIPTS INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
-                "WHERE RECEIPTS.Id = @id AND ShopId = @shopId";
+                "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
+                "WHERE RECEIPTS.Id = @id AND RECEIPTS.ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -200,7 +221,8 @@ namespace DAL
         {
             DataTable dtRecDetails = new DataTable();
             string qry = "SELECT RECEIPTS.Id AS ID, CustomerId AS [Customer ID], FirstName AS [Customer's First Name], " +
-                "LastName AS [Customer's Last Name], DateOfPayment AS [Date of Payment], Total " +
+                "LastName AS [Customer's Last Name], CONVERT(varchar(11), DateOfPayMent, 103) AS [Date of Payment], " +
+                "EmployeeId AS [Employee ID], cast(Total as decimal(10, 2)) AS Total " +
                 "FROM RECEIPTS INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
                 "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
@@ -215,11 +237,12 @@ namespace DAL
             return dtRecDetails;
         }
 
-        public DataTable GetReceiptSearchDateOfPaymentFiltered(DateTime dop)
+        public DataTable GetReceiptSearchDateOfPaymentFiltered(DateTime dop, int shopId)
         {
             DataTable dtRecDetails = new DataTable();
             string qry = "SELECT RECEIPTS.Id AS ID, CustomerId AS [Customer ID], FirstName AS [Customer's First Name], " +
-                "LastName AS [Customer's Last Name], DateOfPayment AS [Date of Payment], Total " +
+                "LastName AS [Customer's Last Name], CONVERT(varchar(11), DateOfPayMent, 103) AS [Date of Payment], " +
+                "EmployeeId AS [Employee ID], cast(Total as decimal(10, 2)) AS Total " +
                 "FROM RECEIPTS INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
                 "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
@@ -227,6 +250,27 @@ namespace DAL
                 "AND RECEIPTS.ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@dop", dop);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+            SqlDataAdapter ada = new SqlDataAdapter(cmd);
+
+            ada.Fill(dtRecDetails);
+
+            return dtRecDetails;
+        }
+
+        public DataTable GetReceiptSearchEmployeesIdFiltered(string empId, int shopId)
+        {
+            DataTable dtRecDetails = new DataTable();
+            string qry = "SELECT RECEIPTS.Id AS ID, CustomerId AS [Customer ID], FirstName AS [Customer's First Name], " +
+                "LastName AS [Customer's Last Name], CONVERT(varchar(11), DateOfPayMent, 103) AS [Date of Payment], " +
+                "EmployeeId AS [Employee ID], cast(Total as decimal(10, 2)) AS Total " +
+                "FROM RECEIPTS INNER JOIN CUSTOMERS " +
+                "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
+                "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
+                "WHERE EmployeeId = @empId AND RECEIPTS.ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@empId", empId);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
 
             ada.Fill(dtRecDetails);
@@ -245,13 +289,14 @@ namespace DAL
 
         public void InsertTakeAwayReceipt(DTO_Receipt rec)
         {
-            string compoundQry = "INSERT INTO RECEIPTS (CustomerId, DateOfPayment, Discount, Total, Details, ShopId)" +
-                "VALUES (@cusId, @dateofpayment, @discount, @total, @details, @shopId); " +
+            string compoundQry = "INSERT INTO RECEIPTS (CustomerId, EmployeeId, DateOfPayment, Discount, Total, Details, ShopId)" +
+                "VALUES (@cusId, @empId, @dateofpayment, @discount, @total, @details, @shopId); " +
                 "SELECT max(Id) " +
                 "FROM RECEIPTS " +
                 "WHERE ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(compoundQry, this.conn);
             cmd.Parameters.AddWithValue("@cusId", rec.Customer.Id);
+            cmd.Parameters.AddWithValue("@empId", rec.Employee.Id);
             cmd.Parameters.AddWithValue("@dateofpayment", rec.DateOfPayMent);
             cmd.Parameters.AddWithValue("@discount", rec.Discount);
             cmd.Parameters.AddWithValue("@total", rec.Total);

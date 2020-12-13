@@ -45,6 +45,7 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblResetFilters = new System.Windows.Forms.Label();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdReceipts)).BeginInit();
             this.ctxRightClick.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            this.btnDelete.Location = new System.Drawing.Point(742, 475);
+            this.btnDelete.Location = new System.Drawing.Point(741, 475);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(85, 34);
             this.btnDelete.TabIndex = 31;
@@ -71,7 +72,7 @@
             this.btnView.FlatAppearance.BorderSize = 0;
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            this.btnView.Location = new System.Drawing.Point(576, 475);
+            this.btnView.Location = new System.Drawing.Point(603, 475);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(85, 34);
             this.btnView.TabIndex = 32;
@@ -155,6 +156,7 @@
             this.cboSearch.Items.AddRange(new object[] {
             "ID",
             "Customer ID",
+            "Employee ID",
             "Date of Payment"});
             this.cboSearch.Location = new System.Drawing.Point(465, 85);
             this.cboSearch.Name = "cboSearch";
@@ -219,6 +221,21 @@
             this.lblResetFilters.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblResetFilters_MouseDown);
             this.lblResetFilters.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblResetFilters_MouseUp);
             // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
+            this.btnPrint.Location = new System.Drawing.Point(465, 475);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(85, 34);
+            this.btnPrint.TabIndex = 32;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // UserControlManagerReceiptsTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,6 +244,7 @@
             this.Controls.Add(this.lblResetFilters);
             this.Controls.Add(this.datSearch);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.grdReceipts);
             this.Controls.Add(this.btnSearch);
@@ -257,5 +275,6 @@
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.Label lblResetFilters;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

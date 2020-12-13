@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUI.Properties {
+namespace DAL.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -23,15 +23,13 @@ namespace GUI.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ReceiptSaveFileLocation {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=NewDB;User Id=sa;Password=onetwothree;Multi" +
+            "pleActiveResultSets=true;")]
+        public string ConnectionString {
             get {
-                return ((string)(this["ReceiptSaveFileLocation"]));
-            }
-            set {
-                this["ReceiptSaveFileLocation"] = value;
+                return ((string)(this["ConnectionString"]));
             }
         }
     }

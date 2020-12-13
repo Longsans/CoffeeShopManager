@@ -34,6 +34,8 @@ namespace GUI
             pictureBox1.BackColor = Color.FromArgb(62,62,66);
             dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            txtSearch.GotFocus += TxtSearch_GotFocus;
+            txtSearch.LostFocus += TxtSearch_LostFocus;
         }
         public void Reload2()
         {
@@ -66,6 +68,24 @@ namespace GUI
             }
             //  dataGridView1.Columns["Image"].Visible = false;
             lblLabel.Text = "Total All:";
+        }
+
+        private void TxtSearch_LostFocus(object sender, EventArgs e)
+        {
+            if (txtSearch.TextLength == 0)
+            {
+                txtSearch.ForeColor = Color.DimGray;
+                txtSearch.Text = "Search...";
+            }
+        }
+
+        private void TxtSearch_GotFocus(object sender, EventArgs e)
+        {
+            if (txtSearch.ForeColor == Color.DimGray)
+            {
+                txtSearch.Clear();
+                txtSearch.ForeColor = SystemColors.WindowText;
+            }
         }
 
         private void btnAll_Click(object sender, EventArgs e)
@@ -131,45 +151,48 @@ namespace GUI
         {
             try
             {
-                switch (cboSearch.Text)
+                if (txtSearch.ForeColor != Color.DimGray || txtPriceSearchLower.Visible)
                 {
+                    switch (cboSearch.Text)
+                    {
 
-                    case "ID":
-                        this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(txtSearch.Text, dtoShop.ID);
-                        flowLayoutPanel1.Controls.Clear();
-                        GetData();
-                        break;
-                    case "Name":
-                        this.dataGridView1.DataSource = busPro.GetProductsSearchNameFiltered(txtSearch.Text, dtoShop.ID);
-                        flowLayoutPanel1.Controls.Clear();
-                        GetData();
-                        break;
-                    case "Type":
-                        this.dataGridView1.DataSource = busPro.GetProductsSearchTypeFiltered(txtSearch.Text, dtoShop.ID);
-                        flowLayoutPanel1.Controls.Clear();
-                        GetData();
-                        break;
-                    case "Price":
-                        if (int.Parse(txtPriceSearchLower.Text) > 0 && int.Parse(txtPriceSearchUpper.Text) > 0)
-                        {
-                            if (int.Parse(txtPriceSearchLower.Text) <= int.Parse(txtPriceSearchUpper.Text))
+                        case "ID":
+                            this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(txtSearch.Text, dtoShop.ID);
+                            flowLayoutPanel1.Controls.Clear();
+                            GetData();
+                            break;
+                        case "Name":
+                            this.dataGridView1.DataSource = busPro.GetProductsSearchNameFiltered(txtSearch.Text, dtoShop.ID);
+                            flowLayoutPanel1.Controls.Clear();
+                            GetData();
+                            break;
+                        case "Type":
+                            this.dataGridView1.DataSource = busPro.GetProductsSearchTypeFiltered(txtSearch.Text, dtoShop.ID);
+                            flowLayoutPanel1.Controls.Clear();
+                            GetData();
+                            break;
+                        case "Price":
+                            if (int.Parse(txtPriceSearchLower.Text) > 0 && int.Parse(txtPriceSearchUpper.Text) > 0)
                             {
-                                this.dataGridView1.DataSource = busPro.GetProductsSearchPriceFiltered(
-                                Int32.Parse(txtPriceSearchLower.Text), Int32.Parse(txtPriceSearchUpper.Text),
-                                dtoShop.ID);
-                                flowLayoutPanel1.Controls.Clear();
-                                GetData();
+                                if (int.Parse(txtPriceSearchLower.Text) <= int.Parse(txtPriceSearchUpper.Text))
+                                {
+                                    this.dataGridView1.DataSource = busPro.GetProductsSearchPriceFiltered(
+                                    Int32.Parse(txtPriceSearchLower.Text), Int32.Parse(txtPriceSearchUpper.Text),
+                                    dtoShop.ID);
+                                    flowLayoutPanel1.Controls.Clear();
+                                    GetData();
+                                }
+                                else
+                                {
+                                    throw new Exception("Upper bound value must be greater than lower bound value.");
+                                }
                             }
                             else
                             {
-                                throw new Exception("Upper bound value must be greater than lower bound value.");
+                                throw new Exception("Money value must be positive.");
                             }
-                        }
-                        else
-                        {
-                            throw new Exception("Money value must be positive.");
-                        }
-                        break;
+                            break;
+                    }
                 }
             }
             catch (Exception ex)
@@ -195,7 +218,8 @@ namespace GUI
                 label2.Visible = false;
             }
 
-            txtSearch.Clear();
+            txtSearch.Text = "Search...";
+            txtSearch.ForeColor = Color.DimGray;
             txtPriceSearchLower.Clear();
             txtPriceSearchUpper.Clear();
         }
@@ -437,45 +461,48 @@ namespace GUI
         {
             try
             {
-                switch (cboSearch.Text)
+                if (txtSearch.ForeColor != Color.DimGray)
                 {
+                    switch (cboSearch.Text)
+                    {
 
-                    case "ID":
-                        this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(txtSearch.Text, dtoShop.ID);
-                        flowLayoutPanel1.Controls.Clear();
-                        GetData();
-                        break;
-                    case "Name":
-                        this.dataGridView1.DataSource = busPro.GetProductsSearchNameFiltered(txtSearch.Text, dtoShop.ID);
-                        flowLayoutPanel1.Controls.Clear();
-                        GetData();
-                        break;
-                    case "Type":
-                        this.dataGridView1.DataSource = busPro.GetProductsSearchTypeFiltered(txtSearch.Text, dtoShop.ID);
-                        flowLayoutPanel1.Controls.Clear();
-                        GetData();
-                        break;
-                    case "Price":
-                        if (int.Parse(txtPriceSearchLower.Text) > 0 && int.Parse(txtPriceSearchUpper.Text) > 0)
-                        {
-                            if (int.Parse(txtPriceSearchLower.Text) <= int.Parse(txtPriceSearchUpper.Text))
+                        case "ID":
+                            this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(txtSearch.Text, dtoShop.ID);
+                            flowLayoutPanel1.Controls.Clear();
+                            GetData();
+                            break;
+                        case "Name":
+                            this.dataGridView1.DataSource = busPro.GetProductsSearchNameFiltered(txtSearch.Text, dtoShop.ID);
+                            flowLayoutPanel1.Controls.Clear();
+                            GetData();
+                            break;
+                        case "Type":
+                            this.dataGridView1.DataSource = busPro.GetProductsSearchTypeFiltered(txtSearch.Text, dtoShop.ID);
+                            flowLayoutPanel1.Controls.Clear();
+                            GetData();
+                            break;
+                        case "Price":
+                            if (int.Parse(txtPriceSearchLower.Text) > 0 && int.Parse(txtPriceSearchUpper.Text) > 0)
                             {
-                                this.dataGridView1.DataSource = busPro.GetProductsSearchPriceFiltered(
-                                Int32.Parse(txtPriceSearchLower.Text), Int32.Parse(txtPriceSearchUpper.Text),
-                                dtoShop.ID);
-                                flowLayoutPanel1.Controls.Clear();
-                                GetData();
+                                if (int.Parse(txtPriceSearchLower.Text) <= int.Parse(txtPriceSearchUpper.Text))
+                                {
+                                    this.dataGridView1.DataSource = busPro.GetProductsSearchPriceFiltered(
+                                    Int32.Parse(txtPriceSearchLower.Text), Int32.Parse(txtPriceSearchUpper.Text),
+                                    dtoShop.ID);
+                                    flowLayoutPanel1.Controls.Clear();
+                                    GetData();
+                                }
+                                else
+                                {
+                                    throw new Exception("Upper bound value must be greater than lower bound value.");
+                                }
                             }
                             else
                             {
-                                throw new Exception("Upper bound value must be greater than lower bound value.");
+                                throw new Exception("Money value must be positive.");
                             }
-                        }
-                        else
-                        {
-                            throw new Exception("Money value must be positive.");
-                        }
-                        break;
+                            break;
+                    }
                 }
             }
             catch (Exception ex)

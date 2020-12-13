@@ -18,7 +18,7 @@ namespace DAL
         public DataTable GetAllProductsWithImages(int shopId)
         {
             DataTable dt = new DataTable();
-            string qry = "SELECT Id, Name, Type, Price, Image FROM [PRODUCTS] " +
+            string qry = "SELECT Id, Name, Type, cast(Price as decimal(10, 2)) AS Price, Image FROM [PRODUCTS] " +
                 "WHERE ShopId = @shopId";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
@@ -40,7 +40,7 @@ namespace DAL
         public DataTable GetAllProductsWithoutImages(int shopId)
         {
             DataTable dt = new DataTable();
-            string qry = "SELECT Id, Name, Type, Price FROM [PRODUCTS] " +
+            string qry = "SELECT Id, Name, Type, cast(Price as decimal(10, 2)) AS Price FROM [PRODUCTS] " +
                 "WHERE ShopId = @shopId";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
@@ -82,7 +82,7 @@ namespace DAL
                     Id = id,
                     Name = reader.GetString(reader.GetOrdinal("Name")),
                     Type = reader.GetString(reader.GetOrdinal("Type")),
-                    Price = reader.GetDecimal(reader.GetOrdinal("Price")),
+                    Price = decimal.Round((decimal)reader["Price"], 2, MidpointRounding.AwayFromZero),
                     Detail = reader.GetString(reader.GetOrdinal("Details")),
                     Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[],
                 };
@@ -119,7 +119,7 @@ namespace DAL
                     Id = reader.GetString(reader.GetOrdinal("Id")),
                     Name = name,
                     Type = reader.GetString(reader.GetOrdinal("Type")),
-                    Price = reader.GetDecimal(reader.GetOrdinal("Price")),
+                    Price = decimal.Round((decimal)reader["Price"], 2, MidpointRounding.AwayFromZero),
                     Detail = reader.GetString(reader.GetOrdinal("Details")),
                     Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[],
                 };
@@ -136,7 +136,7 @@ namespace DAL
         public DataTable GetAllProductsOfType(string type, int shopId)
         {
             DataTable dt = new DataTable();
-            string qry = "SELECT Id, Name, Type, Price " +
+            string qry = "SELECT Id, Name, Type, cast(Price as decimal(10, 2)) AS Price " +
                 "FROM [PRODUCTS] " +
                 "WHERE Type = @type AND ShopId = @shopId";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
@@ -175,7 +175,7 @@ namespace DAL
         public DataTable GetProductsSearchIDFiltered(string id, int shopId)
         {
             DataTable dtProFiltered = new DataTable();
-            string qry = "SELECT Id, Name, Type, Price " +
+            string qry = "SELECT Id, Name, Type, cast(Price as decimal(10, 2)) AS Price " +
                 "FROM [PRODUCTS] " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -191,7 +191,7 @@ namespace DAL
         public DataTable GetProductsSearchNameFiltered(string nameSubstr, int shopId)
         {
             DataTable dtProFiltered = new DataTable();
-            string qry = "SELECT Id, Name, Type, Price " +
+            string qry = "SELECT Id, Name, Type, cast(Price as decimal(10, 2)) AS Price " +
                 "FROM [PRODUCTS] " +
                 "WHERE Name LIKE '%' + @namesubstr + '%' " +
                 "AND ShopId = @shopId";
@@ -208,7 +208,7 @@ namespace DAL
         public DataTable GetProductsSearchTypeFiltered(string type, int shopId)
         {
             DataTable dtProFiltered = new DataTable();
-            string qry = "SELECT Id, Name, Type, Price " +
+            string qry = "SELECT Id, Name, Type, cast(Price as decimal(10, 2)) AS Price " +
                 "FROM [PRODUCTS] " +
                 "WHERE Type = @type AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -224,7 +224,7 @@ namespace DAL
         public DataTable GetProductsSearchPriceFiltered(decimal lowerBound, decimal upperBound, int shopId)
         {
             DataTable dtProFiltered = new DataTable();
-            string qry = "SELECT Id, Name, Type, Price FROM [PRODUCTS] " +
+            string qry = "SELECT Id, Name, Type, cast(Price as decimal(10, 2)) AS Price FROM [PRODUCTS] " +
                 "WHERE (Price BETWEEN @lower AND @upper) AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@lower", lowerBound);
@@ -252,7 +252,7 @@ namespace DAL
         public void InsertWithoutImage(DTO_Product dtoPro)
         {
             string qry = "INSERT INTO [PRODUCTS] " +
-                "(Id, Name, Type, Price, Details) " +
+                "(Id, Name, Type, cast(Price as decimal(10, 2)) AS Price, Details) " +
                 "VALUES (@id, @name, @type, @price, @details, @shopId)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", dtoPro.Id);

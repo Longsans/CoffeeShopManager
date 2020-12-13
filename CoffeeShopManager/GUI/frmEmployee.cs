@@ -134,7 +134,9 @@ namespace GUI
             ucManagerInfo.SetManager(busMan.GetById(dtoEmp.Manager.Id, dtoShop.ID));
             ucManagerInfo.SetShop(busShop.GetShopById(dtoShop.ID));
             ucUserInfo.SetUser(dtoEmp);
+            userControlOrderProduct2.dtoEmp = frmEmployee.dtoEmp;
             userControlOrderProduct2.SetShopID(dtoShop.ID);
+            userControlOrderProduct2.dtoShop = busShop.GetShopById(dtoEmp.Shop.ID);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

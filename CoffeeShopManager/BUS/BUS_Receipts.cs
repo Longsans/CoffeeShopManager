@@ -84,9 +84,14 @@ namespace BUS
             }
         }
 
-        public DataTable GetReceiptSearchDateOfPaymentFiltered(DateTime dop)
+        public DataTable GetReceiptSearchEmployeesIdFiltered(string empId, int shopId)
         {
-            return dalReceipts.GetReceiptSearchDateOfPaymentFiltered(dop);
+            return dalReceipts.GetReceiptSearchEmployeesIdFiltered(empId, shopId);
+        }
+
+        public DataTable GetReceiptSearchDateOfPaymentFiltered(DateTime dop, int shopId)
+        {
+            return dalReceipts.GetReceiptSearchDateOfPaymentFiltered(dop, shopId);
         }
 
         public DTO_Table GetTableOfReceipt(int receiptId, int shopId)

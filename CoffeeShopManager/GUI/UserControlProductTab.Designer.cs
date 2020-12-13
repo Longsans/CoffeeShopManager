@@ -45,8 +45,6 @@
             this.txtPriceSearchLower = new System.Windows.Forms.TextBox();
             this.txtPriceSearchUpper = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.lblBy = new System.Windows.Forms.Label();
             this.lblProducts = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLabel = new System.Windows.Forms.Label();
@@ -199,24 +197,28 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(568, 61);
+            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.Location = new System.Drawing.Point(612, 63);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(154, 22);
+            this.txtSearch.Size = new System.Drawing.Size(154, 23);
             this.txtSearch.TabIndex = 4;
+            this.txtSearch.Text = "Search...";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // cboSearch
             // 
             this.cboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboSearch.FormattingEnabled = true;
             this.cboSearch.Items.AddRange(new object[] {
             "ID",
             "Name",
             "Type",
             "Price"});
-            this.cboSearch.Location = new System.Drawing.Point(569, 96);
+            this.cboSearch.Location = new System.Drawing.Point(503, 63);
             this.cboSearch.Name = "cboSearch";
-            this.cboSearch.Size = new System.Drawing.Size(154, 24);
+            this.cboSearch.Size = new System.Drawing.Size(104, 24);
             this.cboSearch.TabIndex = 5;
             this.cboSearch.SelectedIndexChanged += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
             // 
@@ -237,7 +239,7 @@
             // 
             // txtPriceSearchLower
             // 
-            this.txtPriceSearchLower.Location = new System.Drawing.Point(569, 61);
+            this.txtPriceSearchLower.Location = new System.Drawing.Point(613, 63);
             this.txtPriceSearchLower.Name = "txtPriceSearchLower";
             this.txtPriceSearchLower.Size = new System.Drawing.Size(63, 22);
             this.txtPriceSearchLower.TabIndex = 8;
@@ -245,7 +247,7 @@
             // 
             // txtPriceSearchUpper
             // 
-            this.txtPriceSearchUpper.Location = new System.Drawing.Point(669, 61);
+            this.txtPriceSearchUpper.Location = new System.Drawing.Point(713, 63);
             this.txtPriceSearchUpper.Name = "txtPriceSearchUpper";
             this.txtPriceSearchUpper.Size = new System.Drawing.Size(63, 22);
             this.txtPriceSearchUpper.TabIndex = 9;
@@ -255,32 +257,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(638, 61);
+            this.label2.Location = new System.Drawing.Point(682, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(15, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "-";
             this.label2.Visible = false;
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(501, 61);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(61, 19);
-            this.lblSearch.TabIndex = 11;
-            this.lblSearch.Text = "Search:";
-            // 
-            // lblBy
-            // 
-            this.lblBy.AutoSize = true;
-            this.lblBy.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBy.Location = new System.Drawing.Point(523, 96);
-            this.lblBy.Name = "lblBy";
-            this.lblBy.Size = new System.Drawing.Size(25, 19);
-            this.lblBy.TabIndex = 12;
-            this.lblBy.Text = "By";
             // 
             // lblProducts
             // 
@@ -378,8 +360,9 @@
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(761, 61);
+            this.btnSearch.Location = new System.Drawing.Point(783, 59);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(32, 27);
             this.btnSearch.TabIndex = 6;
@@ -456,8 +439,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lblProducts);
-            this.Controls.Add(this.lblBy);
-            this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPriceSearchUpper);
             this.Controls.Add(this.txtPriceSearchLower);
@@ -502,8 +483,6 @@
         private System.Windows.Forms.TextBox txtPriceSearchLower;
         private System.Windows.Forms.TextBox txtPriceSearchUpper;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.Label lblBy;
         private System.Windows.Forms.Label lblProducts;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;

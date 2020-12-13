@@ -22,6 +22,7 @@ namespace GUI
         BUS_Tables busTable = new BUS_Tables();
         BUS_Receipts busReceipt = new BUS_Receipts();
         BUS_Customers busCus = new BUS_Customers();
+        BUS_Shop busShop = new BUS_Shop();
         DTO_Receipt dtoReceipt = new DTO_Receipt();
         DTO_Customer dtoCus = new DTO_Customer();
         DTO_Product dto_pro;
@@ -37,6 +38,7 @@ namespace GUI
         DataTable c = new DataTable();
         DataTable T = new DataTable();
         public DTO_Shop dtoShop = new DTO_Shop();
+        public DTO_Employee dtoEmp = new DTO_Employee();
         int shopID;
         public UserControlOrderProduct()
         {
@@ -44,7 +46,6 @@ namespace GUI
         }
         public void Reload()
         {
-
             flowLayoutPanel1.Controls.Clear();
             T = busPro.GetAllProductsWithImages(shopID);
             GetData(T);
@@ -177,7 +178,7 @@ namespace GUI
 
         private void UserControlOrderProduct_Load(object sender, EventArgs e)
         {
-          //  Reload();
+            //  Reload();
             datBirthdate.Format = DateTimePickerFormat.Custom;
             datBirthdate.CustomFormat = "dd/MM/yyyy";
             if (dtoCus.Birthdate >= datBirthdate.MinDate && dtoCus.Birthdate <= datBirthdate.MaxDate)
@@ -374,23 +375,21 @@ namespace GUI
                 }
             }
             dtoReceipt.Customer = dtoCus;
+            dtoReceipt.Employee = dtoEmp;
             dtoReceipt.DateOfPayMent = now;
             int mon = lblGrandTotal.Text.IndexOf("$");
-            if (double.TryParse(txtDiscount.Text, out double discount))
+            if (decimal.TryParse(txtDiscount.Text, out decimal discount))
             {
-                dtoReceipt.Discount = discount;
+                dtoReceipt.Discount = discount / 100;
             }
             dtoReceipt.Total = decimal.Parse(lblGrandTotal.Text.Substring(0,mon));
             dtoReceipt.Details = "";
-            dtoReceipt.Shop.ID = shopID;
+            dtoReceipt.Shop = dtoShop;
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
             {
                 dtoDetail = new DTO_ReceiptDetails();//cai nay a
 
-                dto_pro = new DTO_Product
-                {
-                    Id = dataGridView1.Rows[i].Cells[6].Value.ToString()
-                };
+                dto_pro = busPro.GetById(dataGridView1.Rows[i].Cells[6].Value.ToString(), shopID);
                 dtoDetail.Product = dto_pro;
                 //dtoDetail.Product.Id = dto_pro.Id;
                 dtoDetail.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
@@ -413,6 +412,12 @@ namespace GUI
             for (int i = 0; i < lsTable.Count; i++)
             {
                 comboBox2.Items.Add(lsTable[i].Id.ToString());
+            }
+            var resp = MessageBox.Show("Do you want to print the receipt you just saved?", "Print receipt", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resp == DialogResult.Yes)
+            {
+                PDFPrinter.PrintReceipt(dtoReceipt);
             }
             MessageBox.Show("Done, add new receipts");
             ResetAll();

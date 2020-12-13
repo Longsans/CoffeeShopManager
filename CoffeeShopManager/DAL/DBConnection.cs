@@ -10,11 +10,7 @@ namespace DAL
 {
     public class DBConnection
     {
-        protected string connectionString = "Data Source=localhost;" +
-            "Initial Catalog=NewDB;" +
-            "User Id=sa;" +
-            "Password=onetwothree;" +
-            "MultipleActiveResultSets=true";
+        protected string connectionString = Properties.Settings.Default.ConnectionString;
         protected SqlConnection conn = null;
 
         public DBConnection()

@@ -52,20 +52,20 @@ namespace GUI
             datCusBirthdate.Format = DateTimePickerFormat.Custom;
             datCusBirthdate.CustomFormat = datDop.CustomFormat;
             datCusBirthdate.Value = rec.Customer.Birthdate;
+            if (rec.Employee != null)
+            {
+                txtEmpId.Text = rec.Employee.Id.ToString();
+            }
+            else
+            {
+                txtEmpId.Text = "(None)";
+            }
 
             grdProducts.DataSource = busRec.GetReceiptDetailsGridViewByReceiptId(rec.Id, rec.Shop.ID);
-            lblDiscount.Text = rec.Discount.ToString();
-            lblTotalDisplay.Text = rec.Total.ToString();
+            lblDiscount.Text = string.Format("{0:0.00}", rec.Discount * 100);
+            lblSubtotal.Text = string.Format("{0:0.00}", rec.Total / (1m - rec.Discount));
+            lblTotalDisplay.Text = string.Format("{0:0.00}", rec.Total);
             rtxtDetails.Text = rec.Details;
-
-            try
-            {
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void UserControlReceiptsDetail_Load(object sender, EventArgs e)

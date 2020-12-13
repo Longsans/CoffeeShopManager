@@ -15,6 +15,7 @@ namespace GUI
     public partial class UserControlManagerReceiptsTab : UserControl
     {
         private BUS_Receipts busRec = new BUS_Receipts();
+        private BUS_Shop busShop = new BUS_Shop();
         public EventHandler ReceiptDetailsView;
         public UserControlReceiptsDetail ucRecDetails { get; set; }
         public DTO_Shop dtoShop = new DTO_Shop();
@@ -29,6 +30,7 @@ namespace GUI
         {
             btnView.Enabled = false;
             btnDelete.Enabled = false;
+            btnPrint.Enabled = false;
             datSearch.Visible = false;
             txtSearch.GotFocus += TxtSearch_GotFocus;
             txtSearch.LostFocus += TxtSearch_LostFocus;
@@ -65,9 +67,14 @@ namespace GUI
                             }
                         }
                         break;
+                    case "Employee ID":
+                        {
+                            grdReceipts.DataSource = busRec.GetReceiptSearchEmployeesIdFiltered(filProp.CurrentFilterText, dtoShop.ID);
+                        }
+                        break;
                     case "Date of Payment":
                         {
-                            grdReceipts.DataSource = busRec.GetReceiptSearchDateOfPaymentFiltered(datSearch.Value);
+                            grdReceipts.DataSource = busRec.GetReceiptSearchDateOfPaymentFiltered(datSearch.Value, dtoShop.ID);
                         }
                         break;
                 }
@@ -113,11 +120,13 @@ namespace GUI
                     btnView.Enabled = false;
                 }
                 btnDelete.Enabled = true;
+                btnPrint.Enabled = true;
             }
             else
             {
                 btnView.Enabled = false;
                 btnDelete.Enabled = false;
+                btnPrint.Enabled = false;
             }
         }
 
@@ -143,31 +152,10 @@ namespace GUI
         {
             if (!string.IsNullOrWhiteSpace(cboSearch.Text))
             {
-                if (txtSearch.Visible)
-                {
-                    switch (cboSearch.Text)
-                    {
-                        case "ID":
-                            {
-                                grdReceipts.DataSource = busRec.GetReceiptSearchIdFiltered(int.Parse(txtSearch.Text), dtoShop.ID);
-                            }
-                            break;
-                        case "Customer ID":
-                            {
-                                grdReceipts.DataSource = busRec.GetReceiptSearchCustomersIdFiltered(int.Parse(txtSearch.Text), dtoShop.ID);
-                            }
-                            break;
-                    }
-                    
-                }
-                else if (datSearch.Visible)
-                {
-                    grdReceipts.DataSource = busRec.GetReceiptSearchDateOfPaymentFiltered(datSearch.Value);
-                }
-
                 lblResetFilters.Visible = true;
                 filProp.CurrentFilter = cboSearch.Text;
                 filProp.CurrentFilterText = txtSearch.Text;
+                ReloadGridView();
             }
         }
 
@@ -226,6 +214,17 @@ namespace GUI
             filProp.CurrentFilterText = null;
             lblResetFilters.Visible = false;
             ReloadGridView();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in grdReceipts.SelectedRows)
+            {
+                var rec = busRec.GetReceiptById((int)row.Cells["ID"].Value, dtoShop.ID);
+                rec.Shop = busShop.GetShopById(rec.Shop.ID);
+                rec.Items = busRec.GetReceiptDetailsListById(rec.Id, rec.Shop.ID);
+                PDFPrinter.PrintReceipt(rec);
+            }
         }
     }
 }

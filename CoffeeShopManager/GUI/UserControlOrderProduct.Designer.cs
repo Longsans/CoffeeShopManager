@@ -156,7 +156,7 @@
             this.lblNoneName.Text = "Needn\'t write Cus";
             this.lblNoneName.Visible = false;
             // 
-            // comboBox3
+            // cboCustomerType
             // 
             this.cboCustomerType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCustomerType.FormattingEnabled = true;
@@ -164,7 +164,7 @@
             "Guest",
             "Registered"});
             this.cboCustomerType.Location = new System.Drawing.Point(110, 3);
-            this.cboCustomerType.Name = "comboBox3";
+            this.cboCustomerType.Name = "cboCustomerType";
             this.cboCustomerType.Size = new System.Drawing.Size(87, 24);
             this.cboCustomerType.TabIndex = 15;
             this.cboCustomerType.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
@@ -407,7 +407,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(236, 543);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 32);
+            this.btnCancel.Size = new System.Drawing.Size(89, 32);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -416,9 +416,9 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(144, 543);
+            this.btnSave.Location = new System.Drawing.Point(141, 543);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(86, 32);
+            this.btnSave.Size = new System.Drawing.Size(89, 32);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;

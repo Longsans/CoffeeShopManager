@@ -39,15 +39,36 @@ namespace GUI
                 frmEditEmployees.ShowDialog();
             }
         }
+
+        private void TxtSearch_LostFocus(object sender, EventArgs e)
+        {
+            if (txtSearch.TextLength == 0)
+            {
+                txtSearch.ForeColor = Color.DimGray;
+                txtSearch.Text = "Search...";
+            }
+        }
+
+        private void TxtSearch_GotFocus(object sender, EventArgs e)
+        {
+            if (txtSearch.ForeColor == Color.DimGray)
+            {
+                txtSearch.Clear();
+                txtSearch.ForeColor = SystemColors.WindowText;
+            }
+        }
+
         public void Reload()
         {
             dataGridView1.DataSource = busEmp.GetAllEmployee(dtoMan.Shop.ID);
-            txtSearch.Text = "";
+            txtSearch.Text = "Search...";
             cboSearch.Text = "";
         }
 
         private void UserControlEmployeesTab_Load(object sender, EventArgs e)
         {
+            txtSearch.GotFocus += TxtSearch_GotFocus;
+            txtSearch.LostFocus += TxtSearch_LostFocus;
             Reload();
         }
 
@@ -70,29 +91,32 @@ namespace GUI
         {
             try
             {
-                switch (cboSearch.Text)
+                if (txtSearch.ForeColor != Color.DimGray)
                 {
-                    case "ID":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchIDFiltered(txtSearch.Text, dtoMan.Shop.ID);
-                        break;
-                    case "Name":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchNameFiltered(txtSearch.Text, dtoMan.Shop.ID);
-                        break;
-                    case "Gender":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchGenderFiltered(txtSearch.Text, dtoMan.Shop.ID);
-                        break;
-                    case "Position":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPositionFiltered(txtSearch.Text, dtoMan.Shop.ID);
-                        break;
-                    case "Phone number":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPhoneFiltered(txtSearch.Text, dtoMan.Shop.ID);
-                        break;
-                    case "Email":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchEmailFiltered(txtSearch.Text, dtoMan.Shop.ID);
-                        break;
-                    case "Manager's ID":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchManIDFiltered(txtSearch.Text, dtoMan.Shop.ID);
-                        break;
+                    switch (cboSearch.Text)
+                    {
+                        case "ID":
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchIDFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case "Name":
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchNameFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case "Gender":
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchGenderFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case "Position":
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPositionFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case "Phone number":
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPhoneFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case "Email":
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchEmailFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case "Manager's ID":
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchManIDFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                    }
                 }
             }
             catch (Exception ex)

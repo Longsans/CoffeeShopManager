@@ -30,37 +30,6 @@ namespace DAL
             ada.Fill(dtEmp);
 
             return dtEmp;
-
-            //DataTable dtEmp = new DataTable();
-            //DAL_Workers dalWr = new DAL_Workers();
-            //string qry = "SELECT ManagerId AS [Manager's ID] FROM [EMPLOYEES]";
-            //SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
-
-            //ada.Fill(dtEmp);
-            //var connState = (this.conn.State == ConnectionState.Open);
-            //if (!connState)
-            //{
-            //    OpenConnection();
-            //}
-            //var dtWorkers = dalWr.GetAllEmployeeWorkers();
-            //var dtMerged = dtWorkers.Clone();
-            //for (int i = 0; i < dtEmp.Columns.Count; ++i)
-            //{
-            //    dtMerged.Columns.Add(dtEmp.Columns[i].ColumnName);
-            //}
-
-            //var workerTab = dtWorkers.AsEnumerable();
-            //var empTab = dtEmp.AsEnumerable();
-            //var mergedRows = workerTab.Zip(empTab, (r1, r2) => r1.ItemArray.Concat(r2.ItemArray).ToArray());
-            //foreach (object[] row in mergedRows)
-            //{
-            //    dtMerged.Rows.Add(row);
-            //}
-            //if (!connState)
-            //{
-            //    CloseConnection();
-            //}
-            //return dtMerged;
         }
 
         /// <summary>Gets the employee with the specified <c>Id</c> and only the <c>Id</c> of the <c>Manager</c> property; returns <returns>null</returns> if no employee with such <c>Id</c> exists</summary>
@@ -86,7 +55,7 @@ namespace DAL
                 emp = new DTO_Employee(dalWorkers.GetById(reader.GetString(reader.GetOrdinal("Id")), shopId))
                 {
                     Address = reader.GetString(reader.GetOrdinal("Address")),
-                    Salary = reader.GetDecimal(reader.GetOrdinal("Salary")),
+                    Salary = decimal.Round((decimal)reader["Salary"], 2, MidpointRounding.AwayFromZero),
                     Manager = new DTO_Manager
                     {
                         Id = reader.GetString(reader.GetOrdinal("ManagerId"))
@@ -129,7 +98,7 @@ namespace DAL
 
                 var dateofjoin = reader.GetDateTime(reader.GetOrdinal("DateOfJoin"));
                 emp.DateOfJoin = new DateTime(dateofjoin.Year, dateofjoin.Month, dateofjoin.Day);
-                emp.Salary = reader.GetDecimal(reader.GetOrdinal("Salary"));
+                emp.Salary = decimal.Round((decimal)reader["Salary"], 2, MidpointRounding.AwayFromZero);
 
                 var empAccount = dalWorkers.GetUserInfoByUsername(username);
                 emp.Account.ID = empAccount.ID;
