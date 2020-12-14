@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Mail;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
@@ -199,6 +200,7 @@ namespace GUI
             txtFirstName.Enabled = false;
             txtLastName.Enabled = false;
         }
+
         public int bien = 0;
         public double giatri = 0;
         public void ResetCus()
@@ -504,17 +506,51 @@ namespace GUI
                 lblGrandTotal.Text = sum.ToString()+"$";
             }
             lblGrandTotal.Text = sum.ToString()+"$";
-            if (busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) == null&& cboCustomerType.Text != "None" && cboCustomerType.Text != "")
+
+            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
             {
-                errorProvider1.SetError(txtEmail, "Doesn't have customer này, vui lòng nhập thông tin");
                 errorProvider2.SetError(txtEmail, "");
                 txtFirstName.Enabled = true;
                 txtLastName.Enabled = true;
                 btnAddCus.Visible = true;
                 datBirthdate.Enabled = true;
                 txtID.Visible = false;
+                if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                {
+                    errorProvider1.SetError(txtEmail, "Email is required");
+                    btnSave.Enabled = false;
+                }
+                else
+                {
+                    try
+                    {
+                        var mail = new MailAddress(txtEmail.Text);
+                        if (txtEmail.Text.TrimEnd() == mail.Address)
+                        {
+                            if (txtEmail.Text.TrimEnd().Contains(".") && txtEmail.Text.TrimEnd().IndexOf(".") < txtEmail.Text.TrimEnd().Length - 1)
+                            {
+                                errorProvider1.SetError(txtEmail, "");
+                                errorProvider2.SetError(txtEmail, "Valid");
+                                btnSave.Enabled = true;
+                            }
+                            else
+                            {
+                                throw new Exception();
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception();
+                        }
+                    }
+                    catch
+                    {
+                        errorProvider1.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                        btnSave.Enabled = false;
+                    }
+                }
             }
-            else if(busCus.GetCustomerByEmail(txtEmail.Text.ToString(), shopID) != null && cboCustomerType.Text != "None"&&cboCustomerType.Text!="")
+            else if(busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
             {
                 errorProvider1.SetError(txtEmail, "");
                 errorProvider2.SetError(txtEmail, "Correct");
@@ -530,7 +566,6 @@ namespace GUI
                 datBirthdate.Enabled = false;
                 txtID.Visible = true;
             }
-
         }
         
         public void SetShopID(int id)

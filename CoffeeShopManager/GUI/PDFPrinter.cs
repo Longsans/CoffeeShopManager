@@ -154,11 +154,28 @@ namespace GUI
                     "Grand Total:", $"${string.Format("{0:0.00}", rec.Total)}" };
                 for (int i = 0; i < summary.Length; ++i)
                 {
-                    var cell = new PdfPCell(new Phrase(summary[i], unifont));
+                    PdfPCell cell;
+                    if (i == summary.Length - 1)
+                    {
+                        cell = new PdfPCell(new Phrase(summary[i], FontFactory.GetFont("Courier", 7f, iTextSharp.text.Font.BOLD)));
+                    }
+                    else
+                    {
+                        cell = new PdfPCell(new Phrase(summary[i], unifont));
+                    }
                     cell.Border = 0;
                     cell.HorizontalAlignment = 2;
+                    
                     sumTable.AddCell(cell);
                 }
+
+                // Final lines
+                PdfPTable finTable = new PdfPTable(1);
+                finTable.SpacingBefore = 10f;
+                PdfPCell finCell = new PdfPCell(new Phrase("THANK YOU FOR VISITING!", unifont));
+                finCell.Border = 0;
+                finCell.HorizontalAlignment = 1;
+                finTable.AddCell(finCell);
 
                 // Add to document
                 doc.Open();
@@ -167,6 +184,7 @@ namespace GUI
                 doc.Add(detailsTable);
                 doc.Add(theLine);
                 doc.Add(sumTable);
+                doc.Add(finTable);
                 doc.Close();
                 writer.Close();
 

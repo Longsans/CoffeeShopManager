@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 using DTO;
 using BUS;
 
@@ -23,7 +24,10 @@ namespace GUI
         Icon checkIcon,
             errorIcon;
         List<ErrorProvider> errs = new List<ErrorProvider>();
-        Timer tiktoker = new Timer();
+        Timer tiktoker = new Timer(),
+            timerItemId = new Timer(),
+            timerSupId = new Timer(),
+            timerSupEmail = new Timer();
         Point prevPoint;
         bool dragging;
 
@@ -42,6 +46,7 @@ namespace GUI
                 errs.Add(newErr);
             }
 
+            this.FormClosing += FrmAddStockItem_FormClosing;
             errs[0].SetIconPadding(txtItemName, 5);
             errs[1].SetIconPadding(txtSupId, 5);
             errs[2].SetIconPadding(txtEmail, 5);
@@ -49,11 +54,104 @@ namespace GUI
             checkIcon = new Icon(GUI.Properties.Resources.check1, errs[0].Icon.Size);
             errorIcon = new Icon(GUI.Properties.Resources.cancel, errs[0].Icon.Size);
             txtId.Text = busStock.GetNextItemId(Shop.ID).ToString();
-            tiktoker.Interval = 200;
             txtSupId.GotFocus += TxtSupId_GotFocus;
             txtSupId.LostFocus += TxtSupId_LostFocus;
+            tiktoker.Interval = timerItemId.Interval = timerSupId.Interval = timerSupEmail.Interval = 200;
             tiktoker.Tick += Tiktoker_Tick;
+            timerItemId.Tick += TimerItemId_Tick;
+            timerSupId.Tick += TimerSupId_Tick;
+            timerSupEmail.Tick += TimerSupEmail_Tick;
             tiktoker.Start();
+        }
+
+        private void FrmAddStockItem_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            tiktoker.Dispose();
+            timerItemId.Dispose();
+            timerSupId.Dispose();
+            timerSupEmail.Dispose();
+        }
+
+        private void TimerSupEmail_Tick(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                if (busSup.GetByEmail(txtEmail.Text, Shop.ID) != null)
+                {
+                    errs[2].Icon = errorIcon;
+                    errs[2].SetError(txtEmail, "A supplier with such email already exists");
+                }
+                else
+                {
+                    if (EmailHelper.ValidateEmail(txtEmail.Text))
+                    {
+                        errs[2].Icon = checkIcon;
+                        errs[2].SetError(txtEmail, "Valid");
+                    }
+                    else
+                    {
+                        errs[2].Icon = errorIcon;
+                        errs[2].SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    }
+                }
+            }
+            else
+            {
+                errs[2].Icon = errorIcon;
+                errs[2].SetError(txtEmail, "Please fill all info fields");
+            }
+        }
+
+        private void TimerSupId_Tick(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(txtSupId.Text) || txtSupId.ForeColor == Color.DimGray))
+            {
+                if (lblEnterSup.Visible)
+                {
+                    if (busSup.GetById(txtSupId.Text, Shop.ID) != null)
+                    {
+                        errs[1].Icon = errorIcon;
+                        errs[1].SetError(txtSupId, "A supplier with such ID already exists");
+                    }
+                    else
+                    {
+                        errs[1].Icon = checkIcon;
+                        errs[1].SetError(txtSupId, "Valid");
+                    }
+                }
+                else if (lblAddSup.Visible)
+                {
+                    if (busSup.GetById(txtSupId.Text, Shop.ID) == null)
+                    {
+                        errs[1].Icon = errorIcon;
+                        errs[1].SetError(txtSupId, "A supplier with such ID does not exist");
+                    }
+                    else
+                    {
+                        errs[1].Icon = checkIcon;
+                        errs[1].SetError(txtSupId, "Valid");
+                    }
+                }
+            }
+            else
+            {
+                errs[1].Icon = errorIcon;
+                errs[1].SetError(txtSupId, "Please fill all info fields");
+            }
+        }
+
+        private void TimerItemId_Tick(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtItemName.Text))
+            {
+                errs[0].Icon = checkIcon;
+                errs[0].SetError(txtItemName, "Valid");
+            }
+            else
+            {
+                errs[0].Icon = errorIcon;
+                errs[0].SetError(txtItemName, "Please fill all info fields");
+            }
         }
 
         private void Tiktoker_Tick(object sender, EventArgs e)
@@ -86,7 +184,6 @@ namespace GUI
         {
             if (txtSupId.ForeColor == SystemColors.WindowText && txtSupId.TextLength == 0)
             {
-                txtSupId.ForeColor = Color.DimGray;
                 if (lblAddSup.Visible)
                 {
                     txtSupId.Text = existingSup;
@@ -95,6 +192,7 @@ namespace GUI
                 {
                     txtSupId.Text = addSup;
                 }
+                txtSupId.ForeColor = Color.DimGray;
             }
         }
 
@@ -201,18 +299,28 @@ namespace GUI
             txtEmail.Clear();
             txtPhone.Clear();
             txtSupId.ForeColor = Color.DimGray;
+            timerItemId.Stop();
+            timerSupId.Stop();
+            timerSupEmail.Stop();
             errs[0].SetError(txtItemName, "");
             errs[1].SetError(txtSupId, "");
             errs[2].SetError(txtEmail, "");
 
             if (lblAddSup.Visible)
             {
-
                 txtSupId.Text = addSup;
             }
             else if (lblEnterSup.Visible)
             {
                 txtSupId.Text = existingSup;
+            }
+        }
+
+        private void txtSupId_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSupId.ForeColor != Color.DimGray)
+            {
+                timerSupId.Start();
             }
         }
 
@@ -224,76 +332,12 @@ namespace GUI
 
         private void txtItemName_Validating(object sender, CancelEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtItemName.Text))
-            {
-                errs[0].Icon = checkIcon;
-                errs[0].SetError(txtItemName, "Valid");
-            }
-            else
-            {
-                errs[0].Icon = errorIcon;
-                errs[0].SetError(txtItemName, "Please fill all info fields");
-            }
-        }
-
-        private void txtSupId_Validating(object sender, CancelEventArgs e)
-        {
-            if (!(string.IsNullOrWhiteSpace(txtSupId.Text) || txtSupId.ForeColor == Color.DimGray))
-            {
-                if (lblEnterSup.Visible)
-                {
-                    if (busSup.GetById(txtSupId.Text, Shop.ID) != null)
-                    {
-                        errs[1].Icon = errorIcon;
-                        errs[1].SetError(txtSupId, "A supplier with such ID already exists");
-                    }
-                    else
-                    {
-                        errs[1].Icon = checkIcon;
-                        errs[1].SetError(txtSupId, "Valid");
-                    }
-                }
-                else if (lblAddSup.Visible)
-                {
-                    if (busSup.GetById(txtSupId.Text, Shop.ID) == null)
-                    {
-                        errs[1].Icon = errorIcon;
-                        errs[1].SetError(txtSupId, "A supplier with such ID does not exist");
-                    }
-                    else
-                    {
-                        errs[1].Icon = checkIcon;
-                        errs[1].SetError(txtSupId, "Valid");
-                    }
-                }
-            }
-            else
-            {
-                errs[1].Icon = errorIcon;
-                errs[1].SetError(txtSupId, "Please fill all info fields");
-            }
+            timerItemId.Start();
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
-            {
-                if (busSup.GetByEmail(txtEmail.Text, Shop.ID) != null)
-                {
-                    errs[2].Icon = errorIcon;
-                    errs[2].SetError(txtEmail, "A supplier with such email already exists");
-                }
-                else
-                {
-                    errs[2].Icon = checkIcon;
-                    errs[2].SetError(txtEmail, "Valid");
-                }
-            }
-            else
-            {
-                errs[2].Icon = errorIcon;
-                errs[2].SetError(txtEmail, "Please fill all info fields");
-            }
+            timerSupEmail.Start();
         }
 
         private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)

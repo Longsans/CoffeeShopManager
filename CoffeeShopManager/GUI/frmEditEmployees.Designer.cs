@@ -52,9 +52,11 @@
             this.btnChooseImage = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cboPosition = new System.Windows.Forms.ComboBox();
+            this.txtManagerID = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,12 +71,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TitleBar = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtManagerID = new System.Windows.Forms.TextBox();
+            this.errEmail = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
             this.TitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errEmail)).BeginInit();
             this.SuspendLayout();
             // 
             // label16
@@ -342,6 +344,14 @@
             this.cboPosition.Size = new System.Drawing.Size(113, 24);
             this.cboPosition.TabIndex = 35;
             // 
+            // txtManagerID
+            // 
+            this.txtManagerID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtManagerID.Location = new System.Drawing.Point(448, 264);
+            this.txtManagerID.Name = "txtManagerID";
+            this.txtManagerID.Size = new System.Drawing.Size(113, 23);
+            this.txtManagerID.TabIndex = 31;
+            // 
             // txtSalary
             // 
             this.txtSalary.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -357,6 +367,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(113, 23);
             this.txtEmail.TabIndex = 15;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtID
             // 
@@ -368,6 +379,16 @@
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(113, 23);
             this.txtID.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(325, 266);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 19);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Manager ID";
             // 
             // label11
             // 
@@ -515,23 +536,9 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // label9
+            // errEmail
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(325, 266);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 19);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Manager ID";
-            // 
-            // txtManagerID
-            // 
-            this.txtManagerID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtManagerID.Location = new System.Drawing.Point(448, 264);
-            this.txtManagerID.Name = "txtManagerID";
-            this.txtManagerID.Size = new System.Drawing.Size(113, 23);
-            this.txtManagerID.TabIndex = 31;
+            this.errEmail.ContainerControl = this;
             // 
             // frmEditEmployees
             // 
@@ -550,6 +557,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).EndInit();
             this.TitleBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errEmail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -598,5 +606,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox txtManagerID;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ErrorProvider errEmail;
     }
 }

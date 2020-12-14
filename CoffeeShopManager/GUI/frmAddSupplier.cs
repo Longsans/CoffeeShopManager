@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Net.Mail;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace GUI
             errtwo = new ErrorProvider();
         public DTO_Shop Shop = new DTO_Shop();
         public UserControlSuppliers ucSup { get; set; }
+        Timer tiktoker = new Timer();
         Icon checkIcon,
             errorIcon;
         Point prevPoint;
@@ -37,6 +39,21 @@ namespace GUI
             errorIcon = new Icon(GUI.Properties.Resources.cancel, err.Icon.Size);
             err.SetIconPadding(txtId, 5);
             errtwo.SetIconPadding(txtEmail, 5);
+            tiktoker.Interval = 200;
+            tiktoker.Tick += Tiktoker_Tick;
+            tiktoker.Start();
+        }
+
+        private void Tiktoker_Tick(object sender, EventArgs e)
+        {
+            if (err.Icon == checkIcon && errtwo.Icon == checkIcon && !string.IsNullOrWhiteSpace(txtName.Text) && !string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                btnAdd.Enabled = true;
+            }
+            else
+            {
+                btnAdd.Enabled = false;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -100,15 +117,6 @@ namespace GUI
                 err.Icon = errorIcon;
                 err.SetError(txtId, "Please fill all info fields");
             }
-
-            if (err.Icon == checkIcon && errtwo.Icon == checkIcon)
-            {
-                btnAdd.Enabled = true;
-            }
-            else
-            {
-                btnAdd.Enabled = false;
-            }
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
@@ -122,23 +130,22 @@ namespace GUI
                 }
                 else
                 {
-                    errtwo.Icon = checkIcon;
-                    errtwo.SetError(txtEmail, "Valid");
+                    if (EmailHelper.ValidateEmail(txtEmail.Text))
+                    {
+                        errtwo.Icon = checkIcon;
+                        errtwo.SetError(txtEmail, "Valid");
+                    }
+                    else
+                    {
+                        errtwo.Icon = errorIcon;
+                        errtwo.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    }
                 }
             }
             else
             {
                 errtwo.Icon = errorIcon;
                 errtwo.SetError(txtEmail, "Please fill all info fields");
-            }
-
-            if (err.Icon == checkIcon && errtwo.Icon == checkIcon)
-            {
-                btnAdd.Enabled = true;
-            }
-            else
-            {
-                btnAdd.Enabled = false;
             }
         }
 

@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataGridViewNumericUpDownCell.cs" />
+    <Compile Include="EmailHelper.cs" />
     <Compile Include="FilterProperties.cs" />
     <Compile Include="frmAddStockItem.cs">
       <SubType>Form</SubType>

@@ -18,6 +18,7 @@ namespace GUI
         BUS_Suppliers busSup = new BUS_Suppliers();
         ErrorProvider err = new ErrorProvider();
         Timer tiktoker = new Timer();
+        bool emailValid = true;
         public DTO_Supplier sup = new DTO_Supplier();
         public UserControlSuppliers ucSup { get; set; }
 
@@ -43,7 +44,7 @@ namespace GUI
 
         private void Tiktoker_Tick(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text)))
+            if (!(string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text)) && emailValid)
             {
                 btnSave.Enabled = true;
             }
@@ -60,6 +61,7 @@ namespace GUI
 
         private void Textboxes_Validating(object sender, CancelEventArgs e)
         {
+            err.SetIconPadding((TextBox)sender, 3);
             if (string.IsNullOrWhiteSpace(((TextBox)sender).Text))
             {
                 err.SetError((TextBox)sender, "Please fill all info fields");
@@ -67,6 +69,18 @@ namespace GUI
             else
             {
                 err.SetError((TextBox)sender, "");
+                if (sender == txtEmail)
+                {
+                    if (!EmailHelper.ValidateEmail(txtEmail.Text))
+                    {
+                        err.SetError((TextBox)sender, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                        emailValid = false;
+                    }
+                    else
+                    {
+                        emailValid = true;
+                    }
+                }
             }
             tiktoker.Start();
         }

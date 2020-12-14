@@ -112,6 +112,7 @@ namespace GUI
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnUser.Location;
             ucUserInfo.BringToFront();
+            ucUserInfo.Reload();
             ucUserInfo.Show();
         }
 

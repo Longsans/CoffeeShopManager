@@ -217,7 +217,7 @@ namespace DAL
             string qry = "UPDATE [WORKERS] " +
                 "SET FirstName = @fname, LastName = @lname, Gender = @gender, " +
                 "Position = @position, PhoneNumber = @phone, " +
-                "Birthdate = @bdate, Image = @image " +
+                "EmailAddress = @email, Birthdate = @bdate, Image = @image " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@fname", dtoWorkerUpdated.Firstname);
@@ -225,6 +225,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@gender", dtoWorkerUpdated.Gender);
             cmd.Parameters.AddWithValue("@position", dtoWorkerUpdated.Position);
             cmd.Parameters.AddWithValue("@phone", dtoWorkerUpdated.Phone);
+            cmd.Parameters.AddWithValue("@email", dtoWorkerUpdated.Email);
             cmd.Parameters.AddWithValue("@bdate", dtoWorkerUpdated.Birthdate);
             cmd.Parameters.AddWithValue("@image", dtoWorkerUpdated.Image);
             cmd.Parameters.AddWithValue("@id", dtoWorkerUpdated.Id);
