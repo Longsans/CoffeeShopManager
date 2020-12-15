@@ -48,7 +48,6 @@ namespace GUI
                 txtItemId.Text = "Enter product ID";
             }
         }
-
         private void TxtItemId_GotFocus(object sender, EventArgs e)
         {
             if (txtItemId.ForeColor == Color.DimGray)

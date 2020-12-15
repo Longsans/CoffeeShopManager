@@ -92,8 +92,21 @@ namespace GUI
                 if (picManagerInfo.Image != null)
                     dtoMan.Image = ImageHelper.ImageToByteArray(picManagerInfo.Image);
                 dtoMan.Phone = txtPhone.Text;
-                if (radMale.Checked == true) dtoMan.Gender = "Male";
-                else dtoMan.Gender = "Female";
+                if (radMale.Checked == true)
+                {
+                    if (radMale.Text != "Nam")
+                        dtoMan.Gender = radMale.Text;
+                    else
+                        dtoMan.Gender = "Male";
+
+                }
+                else
+                {
+                    if (radFemale.Text != "Nữ")
+                        dtoMan.Gender = radMale.Text;
+                    else
+                        dtoMan.Gender = "Female";
+                }
                 dtoMan.Email = txtEmail.Text;
                 dtoMan.Birthdate = datBirthdate.Value;
                 dtoMan.Account.Username = txtUsername.Text;

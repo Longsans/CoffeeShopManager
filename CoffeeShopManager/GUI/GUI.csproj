@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeLanguage.cs" />
     <Compile Include="DataGridViewNumericUpDownCell.cs" />
     <Compile Include="FilterProperties.cs" />
     <Compile Include="frmAddStockItem.cs">
@@ -312,10 +313,19 @@
     <EmbeddedResource Include="frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEmployee.vi-VN.resx">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddStockItem.resx">
       <DependentUpon>frmAddStockItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStockItem.vi-VN.resx">
+      <DependentUpon>frmAddStockItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddSupplier.resx">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSupplier.vi-VN.resx">
       <DependentUpon>frmAddSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangeAuthCodeShop.resx">
@@ -327,20 +337,44 @@
     <EmbeddedResource Include="frmEditCustomer.resx">
       <DependentUpon>frmEditCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditCustomer.vi-VN.resx">
+      <DependentUpon>frmEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditEmployees.resx">
+      <DependentUpon>frmEditEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditEmployees.vi-VN.resx">
       <DependentUpon>frmEditEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditProduct.resx">
       <DependentUpon>frmEditProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditProduct.vi-VN.resx">
+      <DependentUpon>frmEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditStockItem.resx">
+      <DependentUpon>frmEditStockItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditStockItem.vi-VN.resx">
       <DependentUpon>frmEditStockItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditSupplier.resx">
       <DependentUpon>frmEditSupplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditSupplier.vi-VN.resx">
+      <DependentUpon>frmEditSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployee.vi-VN.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertProDuct.vi-VN.resx">
+      <DependentUpon>frmInsertProDuct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.vi-VN.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
@@ -352,16 +386,31 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManager.vi-VN.resx">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegister.vi-VN.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowDetailTable.resx">
       <DependentUpon>frmShowDetailTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmShowDetailTable.vi-VN.resx">
+      <DependentUpon>frmShowDetailTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSmallAddProductToList.resx">
       <DependentUpon>frmSmallAddProductToList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSmallAddProductToList.vi-VN.resx">
+      <DependentUpon>frmSmallAddProductToList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSmallAddStockItemToList.resx">
+      <DependentUpon>frmSmallAddStockItemToList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSmallAddStockItemToList.vi-VN.resx">
       <DependentUpon>frmSmallAddStockItemToList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -378,19 +427,40 @@
     <EmbeddedResource Include="UserControlCustomers.resx">
       <DependentUpon>UserControlCustomers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlCustomers.vi-VN.resx">
+      <DependentUpon>UserControlCustomers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlEmployeesTab.resx">
+      <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEmployeesTab.vi-VN.resx">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlEmployeeUserTab.resx">
       <DependentUpon>UserControlEmployeeUserTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEmployeeUserTab.vi-VN.resx">
+      <DependentUpon>UserControlEmployeeUserTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlHome.resx">
+      <DependentUpon>UserControlHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlHome.vi-VN.resx">
       <DependentUpon>UserControlHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlManagerAndShopInfo.resx">
       <DependentUpon>UserControlManagerAndShopInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerAndShopInfo.vi-VN.resx">
+      <DependentUpon>UserControlManagerAndShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerReceiptsTab.vi-VN.resx">
+      <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlManagerShopInfo.resx">
+      <DependentUpon>UserControlManagerShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerShopInfo.vi-VN.resx">
       <DependentUpon>UserControlManagerShopInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlOrderProduct.resx">
@@ -399,25 +469,49 @@
     <EmbeddedResource Include="UserControlManagerReceiptsTab.resx">
       <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlOrderProduct.vi-VN.resx">
+      <DependentUpon>UserControlOrderProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlProductTab.resx">
+      <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlProductTab.vi-VN.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlReceipts.resx">
       <DependentUpon>UserControlReceipts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlReceipts.vi-VN.resx">
+      <DependentUpon>UserControlReceipts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlReceiptsDetail.resx">
+      <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlReceiptsDetail.vi-VN.resx">
       <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlStock.resx">
       <DependentUpon>UserControlStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStock.vi-VN.resx">
+      <DependentUpon>UserControlStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlSuppliers.resx">
+      <DependentUpon>UserControlSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSuppliers.vi-VN.resx">
       <DependentUpon>UserControlSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlTable.resx">
       <DependentUpon>UserControlTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTable.vi-VN.resx">
+      <DependentUpon>UserControlTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlUserTab.resx">
+      <DependentUpon>UserControlUserTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUserTab.vi-VN.resx">
       <DependentUpon>UserControlUserTab.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

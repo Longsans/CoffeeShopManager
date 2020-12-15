@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlOrderProduct));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlOrderProduct));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHead = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -76,14 +76,14 @@
             this.lblSelect = new System.Windows.Forms.Label();
             this.lblOr = new System.Windows.Forms.Label();
             this.txtSearchName = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -94,6 +94,7 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblHead);
@@ -101,25 +102,29 @@
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.errorProvider2.SetError(this.panel1, resources.GetString("panel1.Error"));
+            this.errorProvider1.SetError(this.panel1, resources.GetString("panel1.Error1"));
+            this.errorProvider2.SetIconAlignment(this.panel1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel1.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.panel1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel1.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.panel1, ((int)(resources.GetObject("panel1.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.panel1, ((int)(resources.GetObject("panel1.IconPadding1"))));
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 580);
-            this.panel1.TabIndex = 0;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // lblHead
             // 
-            this.lblHead.AutoSize = true;
-            this.lblHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHead.Location = new System.Drawing.Point(3, 2);
+            resources.ApplyResources(this.lblHead, "lblHead");
+            this.errorProvider2.SetError(this.lblHead, resources.GetString("lblHead.Error"));
+            this.errorProvider1.SetError(this.lblHead, resources.GetString("lblHead.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblHead, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblHead.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblHead, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblHead.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblHead, ((int)(resources.GetObject("lblHead.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblHead, ((int)(resources.GetObject("lblHead.IconPadding1"))));
             this.lblHead.Name = "lblHead";
-            this.lblHead.Size = new System.Drawing.Size(220, 36);
-            this.lblHead.TabIndex = 13;
-            this.lblHead.Text = "Oder Products";
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblNoneName);
@@ -140,116 +145,149 @@
             this.panel2.Controls.Add(this.lblEmail);
             this.panel2.Controls.Add(this.lblFirstName);
             this.panel2.Controls.Add(this.lblCustomer);
-            this.panel2.Location = new System.Drawing.Point(17, 296);
+            this.errorProvider2.SetError(this.panel2, resources.GetString("panel2.Error"));
+            this.errorProvider1.SetError(this.panel2, resources.GetString("panel2.Error1"));
+            this.errorProvider2.SetIconAlignment(this.panel2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel2.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.panel2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel2.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.panel2, ((int)(resources.GetObject("panel2.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.panel2, ((int)(resources.GetObject("panel2.IconPadding1"))));
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(452, 241);
-            this.panel2.TabIndex = 12;
             // 
             // lblNoneName
             // 
-            this.lblNoneName.AutoSize = true;
-            this.lblNoneName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoneName.Location = new System.Drawing.Point(16, 101);
+            resources.ApplyResources(this.lblNoneName, "lblNoneName");
+            this.errorProvider2.SetError(this.lblNoneName, resources.GetString("lblNoneName.Error"));
+            this.errorProvider1.SetError(this.lblNoneName, resources.GetString("lblNoneName.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblNoneName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblNoneName.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblNoneName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblNoneName.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblNoneName, ((int)(resources.GetObject("lblNoneName.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblNoneName, ((int)(resources.GetObject("lblNoneName.IconPadding1"))));
             this.lblNoneName.Name = "lblNoneName";
-            this.lblNoneName.Size = new System.Drawing.Size(158, 21);
-            this.lblNoneName.TabIndex = 16;
-            this.lblNoneName.Text = "Needn\'t write Cus";
-            this.lblNoneName.Visible = false;
             // 
             // cboCustomerType
             // 
+            resources.ApplyResources(this.cboCustomerType, "cboCustomerType");
             this.cboCustomerType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider2.SetError(this.cboCustomerType, resources.GetString("cboCustomerType.Error"));
+            this.errorProvider1.SetError(this.cboCustomerType, resources.GetString("cboCustomerType.Error1"));
             this.cboCustomerType.FormattingEnabled = true;
+            this.errorProvider2.SetIconAlignment(this.cboCustomerType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cboCustomerType.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.cboCustomerType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cboCustomerType.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.cboCustomerType, ((int)(resources.GetObject("cboCustomerType.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.cboCustomerType, ((int)(resources.GetObject("cboCustomerType.IconPadding1"))));
             this.cboCustomerType.Items.AddRange(new object[] {
-            "Guest",
-            "Registered"});
-            this.cboCustomerType.Location = new System.Drawing.Point(110, 3);
+            resources.GetString("cboCustomerType.Items"),
+            resources.GetString("cboCustomerType.Items1")});
             this.cboCustomerType.Name = "cboCustomerType";
-            this.cboCustomerType.Size = new System.Drawing.Size(87, 24);
-            this.cboCustomerType.TabIndex = 15;
             this.cboCustomerType.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // datBirthdate
             // 
-            this.datBirthdate.Location = new System.Drawing.Point(88, 155);
+            resources.ApplyResources(this.datBirthdate, "datBirthdate");
+            this.errorProvider2.SetError(this.datBirthdate, resources.GetString("datBirthdate.Error"));
+            this.errorProvider1.SetError(this.datBirthdate, resources.GetString("datBirthdate.Error1"));
+            this.errorProvider2.SetIconAlignment(this.datBirthdate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("datBirthdate.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.datBirthdate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("datBirthdate.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.datBirthdate, ((int)(resources.GetObject("datBirthdate.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.datBirthdate, ((int)(resources.GetObject("datBirthdate.IconPadding1"))));
             this.datBirthdate.Name = "datBirthdate";
-            this.datBirthdate.Size = new System.Drawing.Size(103, 22);
-            this.datBirthdate.TabIndex = 14;
             this.datBirthdate.ValueChanged += new System.EventHandler(this.datBirthdate_ValueChanged);
             // 
             // btnAddCus
             // 
+            resources.ApplyResources(this.btnAddCus, "btnAddCus");
             this.btnAddCus.BackColor = System.Drawing.Color.Coral;
-            this.btnAddCus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddCus.Location = new System.Drawing.Point(88, 200);
+            this.errorProvider2.SetError(this.btnAddCus, resources.GetString("btnAddCus.Error"));
+            this.errorProvider1.SetError(this.btnAddCus, resources.GetString("btnAddCus.Error1"));
+            this.errorProvider1.SetIconAlignment(this.btnAddCus, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnAddCus.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.btnAddCus, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnAddCus.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.btnAddCus, ((int)(resources.GetObject("btnAddCus.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.btnAddCus, ((int)(resources.GetObject("btnAddCus.IconPadding1"))));
             this.btnAddCus.Name = "btnAddCus";
-            this.btnAddCus.Size = new System.Drawing.Size(115, 36);
-            this.btnAddCus.TabIndex = 7;
-            this.btnAddCus.Text = "Add customer";
             this.btnAddCus.UseVisualStyleBackColor = false;
-            this.btnAddCus.Visible = false;
             this.btnAddCus.Click += new System.EventHandler(this.btnAddCus_Click);
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(88, 71);
+            resources.ApplyResources(this.txtID, "txtID");
+            this.errorProvider2.SetError(this.txtID, resources.GetString("txtID.Error"));
+            this.errorProvider1.SetError(this.txtID, resources.GetString("txtID.Error1"));
+            this.errorProvider2.SetIconAlignment(this.txtID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtID.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.txtID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtID.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.txtID, ((int)(resources.GetObject("txtID.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.txtID, ((int)(resources.GetObject("txtID.IconPadding1"))));
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(103, 22);
-            this.txtID.TabIndex = 2;
             // 
             // lblID
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(56, 79);
+            resources.ApplyResources(this.lblID, "lblID");
+            this.errorProvider2.SetError(this.lblID, resources.GetString("lblID.Error"));
+            this.errorProvider1.SetError(this.lblID, resources.GetString("lblID.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblID.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblID.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblID, ((int)(resources.GetObject("lblID.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblID, ((int)(resources.GetObject("lblID.IconPadding1"))));
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(26, 18);
-            this.lblID.TabIndex = 13;
-            this.lblID.Text = "ID:";
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(88, 127);
+            resources.ApplyResources(this.txtLastName, "txtLastName");
+            this.errorProvider2.SetError(this.txtLastName, resources.GetString("txtLastName.Error"));
+            this.errorProvider1.SetError(this.txtLastName, resources.GetString("txtLastName.Error1"));
+            this.errorProvider2.SetIconAlignment(this.txtLastName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtLastName.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.txtLastName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtLastName.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.txtLastName, ((int)(resources.GetObject("txtLastName.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.txtLastName, ((int)(resources.GetObject("txtLastName.IconPadding1"))));
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(103, 22);
-            this.txtLastName.TabIndex = 4;
             // 
             // lblLastName
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(1, 131);
+            resources.ApplyResources(this.lblLastName, "lblLastName");
+            this.errorProvider2.SetError(this.lblLastName, resources.GetString("lblLastName.Error"));
+            this.errorProvider1.SetError(this.lblLastName, resources.GetString("lblLastName.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblLastName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblLastName.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblLastName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblLastName.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblLastName, ((int)(resources.GetObject("lblLastName.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblLastName, ((int)(resources.GetObject("lblLastName.IconPadding1"))));
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(84, 18);
-            this.lblLastName.TabIndex = 11;
-            this.lblLastName.Text = "Last Name:";
             // 
             // comboBox2
             // 
+            resources.ApplyResources(this.comboBox2, "comboBox2");
+            this.errorProvider2.SetError(this.comboBox2, resources.GetString("comboBox2.Error"));
+            this.errorProvider1.SetError(this.comboBox2, resources.GetString("comboBox2.Error1"));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(338, 33);
+            this.errorProvider2.SetIconAlignment(this.comboBox2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboBox2.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.comboBox2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboBox2.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.comboBox2, ((int)(resources.GetObject("comboBox2.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.comboBox2, ((int)(resources.GetObject("comboBox2.IconPadding1"))));
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(65, 24);
-            this.comboBox2.TabIndex = 8;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(88, 43);
+            resources.ApplyResources(this.txtEmail, "txtEmail");
+            this.errorProvider2.SetError(this.txtEmail, resources.GetString("txtEmail.Error"));
+            this.errorProvider1.SetError(this.txtEmail, resources.GetString("txtEmail.Error1"));
+            this.errorProvider2.SetIconAlignment(this.txtEmail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtEmail.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.txtEmail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtEmail.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.txtEmail, ((int)(resources.GetObject("txtEmail.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.txtEmail, ((int)(resources.GetObject("txtEmail.IconPadding1"))));
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(103, 22);
-            this.txtEmail.TabIndex = 1;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(88, 99);
+            resources.ApplyResources(this.txtFirstName, "txtFirstName");
+            this.errorProvider2.SetError(this.txtFirstName, resources.GetString("txtFirstName.Error"));
+            this.errorProvider1.SetError(this.txtFirstName, resources.GetString("txtFirstName.Error1"));
+            this.errorProvider2.SetIconAlignment(this.txtFirstName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtFirstName.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.txtFirstName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtFirstName.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.txtFirstName, ((int)(resources.GetObject("txtFirstName.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.txtFirstName, ((int)(resources.GetObject("txtFirstName.IconPadding1"))));
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(103, 22);
-            this.txtFirstName.TabIndex = 3;
             // 
             // panel3
             // 
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.panel4);
@@ -259,173 +297,198 @@
             this.panel3.Controls.Add(this.lblGrand);
             this.panel3.Controls.Add(this.lblDiscount);
             this.panel3.Controls.Add(this.lblTotal);
-            this.panel3.Location = new System.Drawing.Point(204, 79);
+            this.errorProvider2.SetError(this.panel3, resources.GetString("panel3.Error"));
+            this.errorProvider1.SetError(this.panel3, resources.GetString("panel3.Error1"));
+            this.errorProvider2.SetIconAlignment(this.panel3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel3.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.panel3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel3.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.panel3, ((int)(resources.GetObject("panel3.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.panel3, ((int)(resources.GetObject("panel3.IconPadding1"))));
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(228, 139);
-            this.panel3.TabIndex = 6;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 34);
+            resources.ApplyResources(this.label1, "label1");
+            this.errorProvider2.SetError(this.label1, resources.GetString("label1.Error"));
+            this.errorProvider1.SetError(this.label1, resources.GetString("label1.Error1"));
+            this.errorProvider2.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding1"))));
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "%";
             // 
             // panel4
             // 
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel4.Location = new System.Drawing.Point(7, 58);
+            this.errorProvider2.SetError(this.panel4, resources.GetString("panel4.Error"));
+            this.errorProvider1.SetError(this.panel4, resources.GetString("panel4.Error1"));
+            this.errorProvider2.SetIconAlignment(this.panel4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel4.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.panel4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel4.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.panel4, ((int)(resources.GetObject("panel4.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.panel4, ((int)(resources.GetObject("panel4.IconPadding1"))));
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(209, 10);
-            this.panel4.TabIndex = 10;
             // 
             // txtDiscount
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(99, 33);
+            resources.ApplyResources(this.txtDiscount, "txtDiscount");
+            this.errorProvider2.SetError(this.txtDiscount, resources.GetString("txtDiscount.Error"));
+            this.errorProvider1.SetError(this.txtDiscount, resources.GetString("txtDiscount.Error1"));
+            this.errorProvider2.SetIconAlignment(this.txtDiscount, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtDiscount.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.txtDiscount, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtDiscount.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.txtDiscount, ((int)(resources.GetObject("txtDiscount.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.txtDiscount, ((int)(resources.GetObject("txtDiscount.IconPadding1"))));
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(44, 22);
-            this.txtDiscount.TabIndex = 9;
             // 
             // lblGrandTotal
             // 
-            this.lblGrandTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGrandTotal.AutoSize = true;
-            this.lblGrandTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrandTotal.Location = new System.Drawing.Point(95, 105);
+            resources.ApplyResources(this.lblGrandTotal, "lblGrandTotal");
+            this.errorProvider2.SetError(this.lblGrandTotal, resources.GetString("lblGrandTotal.Error"));
+            this.errorProvider1.SetError(this.lblGrandTotal, resources.GetString("lblGrandTotal.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblGrandTotal, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblGrandTotal.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblGrandTotal, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblGrandTotal.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblGrandTotal, ((int)(resources.GetObject("lblGrandTotal.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblGrandTotal, ((int)(resources.GetObject("lblGrandTotal.IconPadding1"))));
             this.lblGrandTotal.Name = "lblGrandTotal";
-            this.lblGrandTotal.Size = new System.Drawing.Size(27, 20);
-            this.lblGrandTotal.TabIndex = 5;
-            this.lblGrandTotal.Text = "0$";
             // 
             // lblTotalSum
             // 
-            this.lblTotalSum.AutoSize = true;
-            this.lblTotalSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalSum.Location = new System.Drawing.Point(95, 3);
+            resources.ApplyResources(this.lblTotalSum, "lblTotalSum");
+            this.errorProvider2.SetError(this.lblTotalSum, resources.GetString("lblTotalSum.Error"));
+            this.errorProvider1.SetError(this.lblTotalSum, resources.GetString("lblTotalSum.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblTotalSum, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTotalSum.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblTotalSum, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTotalSum.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblTotalSum, ((int)(resources.GetObject("lblTotalSum.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblTotalSum, ((int)(resources.GetObject("lblTotalSum.IconPadding1"))));
             this.lblTotalSum.Name = "lblTotalSum";
-            this.lblTotalSum.Size = new System.Drawing.Size(27, 20);
-            this.lblTotalSum.TabIndex = 3;
-            this.lblTotalSum.Text = "0$";
             // 
             // lblGrand
             // 
-            this.lblGrand.AutoSize = true;
-            this.lblGrand.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrand.Location = new System.Drawing.Point(8, 76);
+            resources.ApplyResources(this.lblGrand, "lblGrand");
+            this.errorProvider2.SetError(this.lblGrand, resources.GetString("lblGrand.Error"));
+            this.errorProvider1.SetError(this.lblGrand, resources.GetString("lblGrand.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblGrand, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblGrand.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblGrand, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblGrand.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblGrand, ((int)(resources.GetObject("lblGrand.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblGrand, ((int)(resources.GetObject("lblGrand.IconPadding1"))));
             this.lblGrand.Name = "lblGrand";
-            this.lblGrand.Size = new System.Drawing.Size(108, 20);
-            this.lblGrand.TabIndex = 2;
-            this.lblGrand.Text = "Grand Total";
             // 
             // lblDiscount
             // 
-            this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.Location = new System.Drawing.Point(3, 33);
+            resources.ApplyResources(this.lblDiscount, "lblDiscount");
+            this.errorProvider2.SetError(this.lblDiscount, resources.GetString("lblDiscount.Error"));
+            this.errorProvider1.SetError(this.lblDiscount, resources.GetString("lblDiscount.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblDiscount, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblDiscount.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblDiscount, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblDiscount.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblDiscount, ((int)(resources.GetObject("lblDiscount.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblDiscount, ((int)(resources.GetObject("lblDiscount.IconPadding1"))));
             this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(90, 20);
-            this.lblDiscount.TabIndex = 1;
-            this.lblDiscount.Text = "Discount:";
             // 
             // lblTotal
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.lblTotal, "lblTotal");
+            this.errorProvider2.SetError(this.lblTotal, resources.GetString("lblTotal.Error"));
+            this.errorProvider1.SetError(this.lblTotal, resources.GetString("lblTotal.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblTotal, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTotal.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblTotal, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTotal.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblTotal, ((int)(resources.GetObject("lblTotal.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblTotal, ((int)(resources.GetObject("lblTotal.IconPadding1"))));
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(57, 20);
-            this.lblTotal.TabIndex = 0;
-            this.lblTotal.Text = "Total:";
             // 
             // lblTableNumber
             // 
-            this.lblTableNumber.AutoSize = true;
-            this.lblTableNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableNumber.Location = new System.Drawing.Point(228, 36);
+            resources.ApplyResources(this.lblTableNumber, "lblTableNumber");
+            this.errorProvider2.SetError(this.lblTableNumber, resources.GetString("lblTableNumber.Error"));
+            this.errorProvider1.SetError(this.lblTableNumber, resources.GetString("lblTableNumber.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblTableNumber, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTableNumber.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblTableNumber, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTableNumber.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblTableNumber, ((int)(resources.GetObject("lblTableNumber.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblTableNumber, ((int)(resources.GetObject("lblTableNumber.IconPadding1"))));
             this.lblTableNumber.Name = "lblTableNumber";
-            this.lblTableNumber.Size = new System.Drawing.Size(100, 17);
-            this.lblTableNumber.TabIndex = 5;
-            this.lblTableNumber.Text = "Table number:";
             // 
             // lblTable
             // 
-            this.lblTable.AutoSize = true;
-            this.lblTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTable.Location = new System.Drawing.Point(199, 0);
+            resources.ApplyResources(this.lblTable, "lblTable");
+            this.errorProvider2.SetError(this.lblTable, resources.GetString("lblTable.Error"));
+            this.errorProvider1.SetError(this.lblTable, resources.GetString("lblTable.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblTable, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTable.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblTable, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTable.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblTable, ((int)(resources.GetObject("lblTable.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblTable, ((int)(resources.GetObject("lblTable.IconPadding1"))));
             this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(67, 25);
-            this.lblTable.TabIndex = 4;
-            this.lblTable.Text = "Table";
             // 
             // lblBirthday
             // 
-            this.lblBirthday.AutoSize = true;
-            this.lblBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthday.Location = new System.Drawing.Point(17, 157);
+            resources.ApplyResources(this.lblBirthday, "lblBirthday");
+            this.errorProvider2.SetError(this.lblBirthday, resources.GetString("lblBirthday.Error"));
+            this.errorProvider1.SetError(this.lblBirthday, resources.GetString("lblBirthday.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblBirthday, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblBirthday.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblBirthday, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblBirthday.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblBirthday, ((int)(resources.GetObject("lblBirthday.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblBirthday, ((int)(resources.GetObject("lblBirthday.IconPadding1"))));
             this.lblBirthday.Name = "lblBirthday";
-            this.lblBirthday.Size = new System.Drawing.Size(65, 18);
-            this.lblBirthday.TabIndex = 3;
-            this.lblBirthday.Text = "Birthday:";
             // 
             // lblEmail
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(33, 47);
+            resources.ApplyResources(this.lblEmail, "lblEmail");
+            this.errorProvider2.SetError(this.lblEmail, resources.GetString("lblEmail.Error"));
+            this.errorProvider1.SetError(this.lblEmail, resources.GetString("lblEmail.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblEmail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblEmail.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblEmail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblEmail.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblEmail, ((int)(resources.GetObject("lblEmail.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblEmail, ((int)(resources.GetObject("lblEmail.IconPadding1"))));
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(49, 18);
-            this.lblEmail.TabIndex = 2;
-            this.lblEmail.Text = "Email:";
             // 
             // lblFirstName
             // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(1, 103);
+            resources.ApplyResources(this.lblFirstName, "lblFirstName");
+            this.errorProvider2.SetError(this.lblFirstName, resources.GetString("lblFirstName.Error"));
+            this.errorProvider1.SetError(this.lblFirstName, resources.GetString("lblFirstName.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblFirstName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblFirstName.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblFirstName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblFirstName.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblFirstName, ((int)(resources.GetObject("lblFirstName.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblFirstName, ((int)(resources.GetObject("lblFirstName.IconPadding1"))));
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(85, 18);
-            this.lblFirstName.TabIndex = 1;
-            this.lblFirstName.Text = "First Name:";
             // 
             // lblCustomer
             // 
-            this.lblCustomer.AutoSize = true;
-            this.lblCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(-1, 0);
+            resources.ApplyResources(this.lblCustomer, "lblCustomer");
+            this.errorProvider2.SetError(this.lblCustomer, resources.GetString("lblCustomer.Error"));
+            this.errorProvider1.SetError(this.lblCustomer, resources.GetString("lblCustomer.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblCustomer, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblCustomer.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblCustomer, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblCustomer.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblCustomer, ((int)(resources.GetObject("lblCustomer.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblCustomer, ((int)(resources.GetObject("lblCustomer.IconPadding1"))));
             this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(105, 25);
-            this.lblCustomer.TabIndex = 0;
-            this.lblCustomer.Text = "Customer";
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(236, 543);
+            resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.errorProvider2.SetError(this.btnCancel, resources.GetString("btnCancel.Error"));
+            this.errorProvider1.SetError(this.btnCancel, resources.GetString("btnCancel.Error1"));
+            this.errorProvider1.SetIconAlignment(this.btnCancel, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCancel.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.btnCancel, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCancel.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.btnCancel, ((int)(resources.GetObject("btnCancel.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.btnCancel, ((int)(resources.GetObject("btnCancel.IconPadding1"))));
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(89, 32);
-            this.btnCancel.TabIndex = 11;
-            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(141, 543);
+            resources.ApplyResources(this.btnSave, "btnSave");
+            this.errorProvider2.SetError(this.btnSave, resources.GetString("btnSave.Error"));
+            this.errorProvider1.SetError(this.btnSave, resources.GetString("btnSave.Error1"));
+            this.errorProvider1.SetIconAlignment(this.btnSave, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSave.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.btnSave, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSave.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.btnSave, ((int)(resources.GetObject("btnSave.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.btnSave, ((int)(resources.GetObject("btnSave.IconPadding1"))));
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(89, 32);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dataGridView1
             // 
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -441,7 +504,6 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeight = 29;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmProduct,
@@ -460,13 +522,15 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 41);
+            this.errorProvider2.SetError(this.dataGridView1, resources.GetString("dataGridView1.Error"));
+            this.errorProvider1.SetError(this.dataGridView1, resources.GetString("dataGridView1.Error1"));
+            this.errorProvider2.SetIconAlignment(this.dataGridView1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("dataGridView1.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.dataGridView1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("dataGridView1.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.dataGridView1, ((int)(resources.GetObject("dataGridView1.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.dataGridView1, ((int)(resources.GetObject("dataGridView1.IconPadding1"))));
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(452, 249);
-            this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             // 
@@ -474,8 +538,7 @@
             // 
             this.clmProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmProduct.FillWeight = 200F;
-            this.clmProduct.HeaderText = "Product";
-            this.clmProduct.MinimumWidth = 6;
+            resources.ApplyResources(this.clmProduct, "clmProduct");
             this.clmProduct.Name = "clmProduct";
             this.clmProduct.ReadOnly = true;
             // 
@@ -483,8 +546,7 @@
             // 
             this.clmDown.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmDown.FillWeight = 30F;
-            this.clmDown.HeaderText = "";
-            this.clmDown.MinimumWidth = 6;
+            resources.ApplyResources(this.clmDown, "clmDown");
             this.clmDown.Name = "clmDown";
             this.clmDown.ReadOnly = true;
             this.clmDown.Text = " -";
@@ -494,16 +556,14 @@
             // 
             this.clmQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmQuantity.FillWeight = 50F;
-            this.clmQuantity.HeaderText = "SL";
-            this.clmQuantity.MinimumWidth = 6;
+            resources.ApplyResources(this.clmQuantity, "clmQuantity");
             this.clmQuantity.Name = "clmQuantity";
             // 
             // clmUp
             // 
             this.clmUp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmUp.FillWeight = 30F;
-            this.clmUp.HeaderText = "";
-            this.clmUp.MinimumWidth = 6;
+            resources.ApplyResources(this.clmUp, "clmUp");
             this.clmUp.Name = "clmUp";
             this.clmUp.ReadOnly = true;
             this.clmUp.Text = " +";
@@ -513,8 +573,7 @@
             // 
             this.clmTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmTotal.FillWeight = 150F;
-            this.clmTotal.HeaderText = "Total Price";
-            this.clmTotal.MinimumWidth = 6;
+            resources.ApplyResources(this.clmTotal, "clmTotal");
             this.clmTotal.Name = "clmTotal";
             this.clmTotal.ReadOnly = true;
             // 
@@ -522,8 +581,7 @@
             // 
             this.clmDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmDelete.FillWeight = 44F;
-            this.clmDelete.HeaderText = "";
-            this.clmDelete.MinimumWidth = 6;
+            resources.ApplyResources(this.clmDelete, "clmDelete");
             this.clmDelete.Name = "clmDelete";
             this.clmDelete.ReadOnly = true;
             // 
@@ -531,98 +589,84 @@
             // 
             this.clmID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmID.FillWeight = 0.1F;
-            this.clmID.HeaderText = "";
-            this.clmID.MinimumWidth = 6;
+            resources.ApplyResources(this.clmID, "clmID");
             this.clmID.Name = "clmID";
             this.clmID.ReadOnly = true;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Tan;
-            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(478, 49);
+            this.errorProvider2.SetError(this.flowLayoutPanel1, resources.GetString("flowLayoutPanel1.Error"));
+            this.errorProvider1.SetError(this.flowLayoutPanel1, resources.GetString("flowLayoutPanel1.Error1"));
+            this.errorProvider2.SetIconAlignment(this.flowLayoutPanel1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("flowLayoutPanel1.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.flowLayoutPanel1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("flowLayoutPanel1.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.flowLayoutPanel1, ((int)(resources.GetObject("flowLayoutPanel1.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.flowLayoutPanel1, ((int)(resources.GetObject("flowLayoutPanel1.IconPadding1"))));
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(490, 504);
-            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // lblSelect
             // 
-            this.lblSelect.AutoSize = true;
+            resources.ApplyResources(this.lblSelect, "lblSelect");
             this.lblSelect.BackColor = System.Drawing.Color.LightGray;
-            this.lblSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorProvider2.SetError(this.lblSelect, resources.GetString("lblSelect.Error"));
+            this.errorProvider1.SetError(this.lblSelect, resources.GetString("lblSelect.Error1"));
             this.lblSelect.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSelect.Location = new System.Drawing.Point(503, 16);
+            this.errorProvider2.SetIconAlignment(this.lblSelect, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblSelect.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblSelect, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblSelect.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblSelect, ((int)(resources.GetObject("lblSelect.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblSelect, ((int)(resources.GetObject("lblSelect.IconPadding1"))));
             this.lblSelect.Name = "lblSelect";
-            this.lblSelect.Size = new System.Drawing.Size(146, 17);
-            this.lblSelect.TabIndex = 13;
-            this.lblSelect.Text = "Select type of product";
             // 
             // lblOr
             // 
-            this.lblOr.AutoSize = true;
-            this.lblOr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOr.Location = new System.Drawing.Point(716, 15);
+            resources.ApplyResources(this.lblOr, "lblOr");
+            this.errorProvider2.SetError(this.lblOr, resources.GetString("lblOr.Error"));
+            this.errorProvider1.SetError(this.lblOr, resources.GetString("lblOr.Error1"));
+            this.errorProvider2.SetIconAlignment(this.lblOr, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblOr.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblOr, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblOr.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.lblOr, ((int)(resources.GetObject("lblOr.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.lblOr, ((int)(resources.GetObject("lblOr.IconPadding1"))));
             this.lblOr.Name = "lblOr";
-            this.lblOr.Size = new System.Drawing.Size(24, 20);
-            this.lblOr.TabIndex = 15;
-            this.lblOr.Text = "or";
             // 
             // txtSearchName
             // 
-            this.txtSearchName.Location = new System.Drawing.Point(748, 16);
+            resources.ApplyResources(this.txtSearchName, "txtSearchName");
+            this.errorProvider2.SetError(this.txtSearchName, resources.GetString("txtSearchName.Error"));
+            this.errorProvider1.SetError(this.txtSearchName, resources.GetString("txtSearchName.Error1"));
+            this.errorProvider2.SetIconAlignment(this.txtSearchName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtSearchName.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.txtSearchName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtSearchName.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.txtSearchName, ((int)(resources.GetObject("txtSearchName.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.txtSearchName, ((int)(resources.GetObject("txtSearchName.IconPadding1"))));
             this.txtSearchName.Name = "txtSearchName";
-            this.txtSearchName.Size = new System.Drawing.Size(137, 22);
-            this.txtSearchName.TabIndex = 16;
             this.txtSearchName.Click += new System.EventHandler(this.txtSearchName_Click);
             this.txtSearchName.TextChanged += new System.EventHandler(this.txtSearchName_TextChanged);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // errorProvider2
-            // 
-            this.errorProvider2.ContainerControl = this;
-            this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
-            // 
             // comboBox1
             // 
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.errorProvider2.SetError(this.comboBox1, resources.GetString("comboBox1.Error"));
+            this.errorProvider1.SetError(this.comboBox1, resources.GetString("comboBox1.Error1"));
             this.comboBox1.FormattingEnabled = true;
+            this.errorProvider2.SetIconAlignment(this.comboBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboBox1.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.comboBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboBox1.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.comboBox1, ((int)(resources.GetObject("comboBox1.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.comboBox1, ((int)(resources.GetObject("comboBox1.IconPadding1"))));
             this.comboBox1.Items.AddRange(new object[] {
-            "All",
-            "Food",
-            "Drink",
-            "Others"});
-            this.comboBox1.Location = new System.Drawing.Point(486, 15);
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1"),
+            resources.GetString("comboBox1.Items2"),
+            resources.GetString("comboBox1.Items3")});
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(224, 24);
-            this.comboBox1.TabIndex = 18;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.White;
-            this.btnSearch.BackgroundImage = global::GUI.Properties.Resources.search_128px;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(901, 9);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(48, 34);
-            this.btnSearch.TabIndex = 17;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn1.FillWeight = 200F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Product";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -630,16 +674,14 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "SL";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn3.FillWeight = 150F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Total Price";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
@@ -647,14 +689,39 @@
             // 
             this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.FillWeight = 0.1F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            resources.ApplyResources(this.errorProvider1, "errorProvider1");
+            // 
+            // btnSearch
+            // 
+            resources.ApplyResources(this.btnSearch, "btnSearch");
+            this.btnSearch.BackColor = System.Drawing.Color.White;
+            this.btnSearch.BackgroundImage = global::GUI.Properties.Resources.search_128px;
+            this.errorProvider2.SetError(this.btnSearch, resources.GetString("btnSearch.Error"));
+            this.errorProvider1.SetError(this.btnSearch, resources.GetString("btnSearch.Error1"));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.errorProvider1.SetIconAlignment(this.btnSearch, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSearch.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.btnSearch, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSearch.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.btnSearch, ((int)(resources.GetObject("btnSearch.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.btnSearch, ((int)(resources.GetObject("btnSearch.IconPadding1"))));
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            resources.ApplyResources(this.errorProvider2, "errorProvider2");
+            // 
             // UserControlOrderProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblSelect);
@@ -664,8 +731,13 @@
             this.Controls.Add(this.lblOr);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
+            this.errorProvider2.SetError(this, resources.GetString("$this.Error"));
+            this.errorProvider1.SetError(this, resources.GetString("$this.Error1"));
+            this.errorProvider2.SetIconAlignment(this, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("$this.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("$this.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this, ((int)(resources.GetObject("$this.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this, ((int)(resources.GetObject("$this.IconPadding1"))));
             this.Name = "UserControlOrderProduct";
-            this.Size = new System.Drawing.Size(973, 580);
             this.Load += new System.EventHandler(this.UserControlOrderProduct_Load);
             this.Click += new System.EventHandler(this.UserControlOrderProduct_Click);
             this.panel1.ResumeLayout(false);
@@ -718,13 +790,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.Label lblHead;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmProduct;
-        private System.Windows.Forms.DataGridViewButtonColumn clmDown;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
-        private System.Windows.Forms.DataGridViewButtonColumn clmUp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
-        private System.Windows.Forms.DataGridViewButtonColumn clmDelete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmID;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -736,5 +801,12 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblNoneName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmProduct;
+        private System.Windows.Forms.DataGridViewButtonColumn clmDown;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmQuantity;
+        private System.Windows.Forms.DataGridViewButtonColumn clmUp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
+        private System.Windows.Forms.DataGridViewButtonColumn clmDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmID;
     }
 }

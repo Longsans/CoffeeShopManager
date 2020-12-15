@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlTable));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAll = new System.Windows.Forms.Button();
@@ -46,156 +47,109 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 19);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 34);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tables";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 99);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Filter by:";
             // 
             // btnAll
             // 
+            resources.ApplyResources(this.btnAll, "btnAll");
             this.btnAll.FlatAppearance.BorderSize = 0;
-            this.btnAll.Location = new System.Drawing.Point(139, 99);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(75, 28);
-            this.btnAll.TabIndex = 3;
-            this.btnAll.Text = "All";
             this.btnAll.UseVisualStyleBackColor = true;
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // btnAvailable
             // 
+            resources.ApplyResources(this.btnAvailable, "btnAvailable");
             this.btnAvailable.FlatAppearance.BorderSize = 0;
-            this.btnAvailable.Location = new System.Drawing.Point(230, 99);
             this.btnAvailable.Name = "btnAvailable";
-            this.btnAvailable.Size = new System.Drawing.Size(75, 28);
-            this.btnAvailable.TabIndex = 3;
-            this.btnAvailable.Text = "Available";
             this.btnAvailable.UseVisualStyleBackColor = true;
             this.btnAvailable.Click += new System.EventHandler(this.btnAvailable_Click);
             // 
             // btnOccupied
             // 
+            resources.ApplyResources(this.btnOccupied, "btnOccupied");
             this.btnOccupied.FlatAppearance.BorderSize = 0;
-            this.btnOccupied.Location = new System.Drawing.Point(321, 99);
             this.btnOccupied.Name = "btnOccupied";
-            this.btnOccupied.Size = new System.Drawing.Size(87, 28);
-            this.btnOccupied.TabIndex = 3;
-            this.btnOccupied.Text = "Occupied";
             this.btnOccupied.UseVisualStyleBackColor = true;
             this.btnOccupied.Click += new System.EventHandler(this.btnOccupied_Click);
             // 
             // btnUnavailable
             // 
+            resources.ApplyResources(this.btnUnavailable, "btnUnavailable");
             this.btnUnavailable.FlatAppearance.BorderSize = 0;
-            this.btnUnavailable.Location = new System.Drawing.Point(414, 99);
             this.btnUnavailable.Name = "btnUnavailable";
-            this.btnUnavailable.Size = new System.Drawing.Size(101, 28);
-            this.btnUnavailable.TabIndex = 3;
-            this.btnUnavailable.Text = "Unavailable";
             this.btnUnavailable.UseVisualStyleBackColor = true;
             this.btnUnavailable.Click += new System.EventHandler(this.btnUnavailable_Click);
             // 
             // flowLayoutPanel1
             // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(47, 143);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 391);
-            this.flowLayoutPanel1.TabIndex = 4;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(580, 29);
+            resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(158, 22);
-            this.txtSearch.TabIndex = 9;
             // 
             // cboBy
             // 
+            resources.ApplyResources(this.cboBy, "cboBy");
             this.cboBy.FormattingEnabled = true;
             this.cboBy.Items.AddRange(new object[] {
-            "ID Customer",
-            "ID Table"});
-            this.cboBy.Location = new System.Drawing.Point(580, 67);
+            resources.GetString("cboBy.Items"),
+            resources.GetString("cboBy.Items1")});
             this.cboBy.Name = "cboBy";
-            this.cboBy.Size = new System.Drawing.Size(126, 24);
-            this.cboBy.TabIndex = 8;
             // 
             // lblBy
             // 
-            this.lblBy.AutoSize = true;
-            this.lblBy.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBy.Location = new System.Drawing.Point(501, 67);
+            resources.ApplyResources(this.lblBy, "lblBy");
             this.lblBy.Name = "lblBy";
-            this.lblBy.Size = new System.Drawing.Size(29, 19);
-            this.lblBy.TabIndex = 5;
-            this.lblBy.Text = "By:";
             // 
             // lblSearch
             // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(501, 28);
+            resources.ApplyResources(this.lblSearch, "lblSearch");
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(61, 19);
-            this.lblSearch.TabIndex = 6;
-            this.lblSearch.Text = "Search:";
             // 
             // btnCollapse
             // 
+            resources.ApplyResources(this.btnCollapse, "btnCollapse");
             this.btnCollapse.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnCollapse.FlatAppearance.BorderSize = 0;
-            this.btnCollapse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCollapse.Image = global::GUI.Properties.Resources.sort_right_24px;
-            this.btnCollapse.Location = new System.Drawing.Point(802, 29);
             this.btnCollapse.Name = "btnCollapse";
-            this.btnCollapse.Size = new System.Drawing.Size(14, 24);
-            this.btnCollapse.TabIndex = 11;
             this.btnCollapse.UseVisualStyleBackColor = false;
             this.btnCollapse.Click += new System.EventHandler(this.btnCollapse_Click);
             // 
             // btnExpand
             // 
+            resources.ApplyResources(this.btnExpand, "btnExpand");
             this.btnExpand.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnExpand.FlatAppearance.BorderSize = 0;
-            this.btnExpand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExpand.Image = global::GUI.Properties.Resources.sort_left_24px;
-            this.btnExpand.Location = new System.Drawing.Point(744, 29);
             this.btnExpand.Name = "btnExpand";
-            this.btnExpand.Size = new System.Drawing.Size(18, 24);
-            this.btnExpand.TabIndex = 10;
             this.btnExpand.UseVisualStyleBackColor = false;
             this.btnExpand.Click += new System.EventHandler(this.btnExpand_Click);
             // 
             // btnSearch
             // 
+            resources.ApplyResources(this.btnSearch, "btnSearch");
             this.btnSearch.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Image = global::GUI.Properties.Resources.search_24px;
-            this.btnSearch.Location = new System.Drawing.Point(768, 30);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(28, 22);
-            this.btnSearch.TabIndex = 7;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // UserControlTable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.btnCollapse);
@@ -213,7 +167,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "UserControlTable";
-            this.Size = new System.Drawing.Size(887, 550);
             this.Load += new System.EventHandler(this.UserControlTable_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -122,5 +122,10 @@ namespace GUI
         {
             ucTable.LoadAllTables();
         }
+
+        private void lblTableID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

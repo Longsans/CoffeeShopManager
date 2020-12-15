@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShowDetailTable));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSetUnavailable = new System.Windows.Forms.Button();
             this.txtStatus = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.btnSetUnavailable);
             this.panel1.Controls.Add(this.txtStatus);
@@ -58,136 +60,134 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblTableID);
             this.panel1.Controls.Add(this.txtTableID);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.errorProvider1.SetError(this.panel1, resources.GetString("panel1.Error"));
+            this.errorProvider1.SetIconAlignment(this.panel1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.panel1, ((int)(resources.GetObject("panel1.IconPadding"))));
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(395, 291);
-            this.panel1.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.panel1, resources.GetString("panel1.ToolTip"));
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnSetUnavailable
             // 
+            resources.ApplyResources(this.btnSetUnavailable, "btnSetUnavailable");
             this.btnSetUnavailable.BackgroundImage = global::GUI.Properties.Resources.hammer_96px;
-            this.btnSetUnavailable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.errorProvider1.SetError(this.btnSetUnavailable, resources.GetString("btnSetUnavailable.Error"));
             this.btnSetUnavailable.FlatAppearance.BorderSize = 0;
-            this.btnSetUnavailable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetUnavailable.Location = new System.Drawing.Point(242, 212);
+            this.errorProvider1.SetIconAlignment(this.btnSetUnavailable, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSetUnavailable.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnSetUnavailable, ((int)(resources.GetObject("btnSetUnavailable.IconPadding"))));
             this.btnSetUnavailable.Name = "btnSetUnavailable";
-            this.btnSetUnavailable.Size = new System.Drawing.Size(56, 49);
-            this.btnSetUnavailable.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.btnSetUnavailable, resources.GetString("btnSetUnavailable.ToolTip"));
             this.btnSetUnavailable.UseVisualStyleBackColor = true;
             this.btnSetUnavailable.Click += new System.EventHandler(this.btnSetUnavailable_Click);
             // 
             // txtStatus
             // 
-            this.txtStatus.Enabled = false;
-            this.txtStatus.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.Location = new System.Drawing.Point(181, 84);
+            resources.ApplyResources(this.txtStatus, "txtStatus");
+            this.errorProvider1.SetError(this.txtStatus, resources.GetString("txtStatus.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtStatus, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtStatus.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtStatus, ((int)(resources.GetObject("txtStatus.IconPadding"))));
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(117, 26);
-            this.txtStatus.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.txtStatus, resources.GetString("txtStatus.ToolTip"));
             // 
             // txtCurrentReceipt
             // 
-            this.txtCurrentReceipt.Enabled = false;
-            this.txtCurrentReceipt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurrentReceipt.Location = new System.Drawing.Point(181, 141);
+            resources.ApplyResources(this.txtCurrentReceipt, "txtCurrentReceipt");
+            this.errorProvider1.SetError(this.txtCurrentReceipt, resources.GetString("txtCurrentReceipt.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtCurrentReceipt, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtCurrentReceipt.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtCurrentReceipt, ((int)(resources.GetObject("txtCurrentReceipt.IconPadding"))));
             this.txtCurrentReceipt.Name = "txtCurrentReceipt";
-            this.txtCurrentReceipt.Size = new System.Drawing.Size(117, 26);
-            this.txtCurrentReceipt.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.txtCurrentReceipt, resources.GetString("txtCurrentReceipt.ToolTip"));
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(38, 148);
+            resources.ApplyResources(this.label2, "label2");
+            this.errorProvider1.SetError(this.label2, resources.GetString("label2.Error"));
+            this.errorProvider1.SetIconAlignment(this.label2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label2.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label2, ((int)(resources.GetObject("label2.IconPadding"))));
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 19);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Current receipt ID";
+            this.toolTip1.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // btnCheckOut
             // 
+            resources.ApplyResources(this.btnCheckOut, "btnCheckOut");
             this.btnCheckOut.BackgroundImage = global::GUI.Properties.Resources.ok_48px;
-            this.btnCheckOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.errorProvider1.SetError(this.btnCheckOut, resources.GetString("btnCheckOut.Error"));
             this.btnCheckOut.FlatAppearance.BorderSize = 0;
-            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Location = new System.Drawing.Point(83, 205);
+            this.errorProvider1.SetIconAlignment(this.btnCheckOut, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCheckOut.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnCheckOut, ((int)(resources.GetObject("btnCheckOut.IconPadding"))));
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(71, 63);
-            this.btnCheckOut.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.btnCheckOut, resources.GetString("btnCheckOut.ToolTip"));
             this.btnCheckOut.UseVisualStyleBackColor = true;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 91);
+            resources.ApplyResources(this.label1, "label1");
+            this.errorProvider1.SetError(this.label1, resources.GetString("label1.Error"));
+            this.errorProvider1.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding"))));
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 19);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Status";
+            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // lblTableID
             // 
-            this.lblTableID.AutoSize = true;
-            this.lblTableID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableID.Location = new System.Drawing.Point(38, 35);
+            resources.ApplyResources(this.lblTableID, "lblTableID");
+            this.errorProvider1.SetError(this.lblTableID, resources.GetString("lblTableID.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblTableID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTableID.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblTableID, ((int)(resources.GetObject("lblTableID.IconPadding"))));
             this.lblTableID.Name = "lblTableID";
-            this.lblTableID.Size = new System.Drawing.Size(63, 19);
-            this.lblTableID.TabIndex = 4;
-            this.lblTableID.Text = "Table ID";
+            this.toolTip1.SetToolTip(this.lblTableID, resources.GetString("lblTableID.ToolTip"));
             // 
             // txtTableID
             // 
-            this.txtTableID.Enabled = false;
-            this.txtTableID.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTableID.Location = new System.Drawing.Point(181, 35);
+            resources.ApplyResources(this.txtTableID, "txtTableID");
+            this.errorProvider1.SetError(this.txtTableID, resources.GetString("txtTableID.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtTableID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtTableID.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtTableID, ((int)(resources.GetObject("txtTableID.IconPadding"))));
             this.txtTableID.Name = "txtTableID";
-            this.txtTableID.Size = new System.Drawing.Size(117, 26);
-            this.txtTableID.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.txtTableID, resources.GetString("txtTableID.ToolTip"));
             // 
             // TitleBar
             // 
+            resources.ApplyResources(this.TitleBar, "TitleBar");
             this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(118)))), ((int)(((byte)(69)))));
             this.TitleBar.Controls.Add(this.btnExit);
-            this.TitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TitleBar.Location = new System.Drawing.Point(0, 0);
+            this.errorProvider1.SetError(this.TitleBar, resources.GetString("TitleBar.Error"));
+            this.errorProvider1.SetIconAlignment(this.TitleBar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("TitleBar.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.TitleBar, ((int)(resources.GetObject("TitleBar.IconPadding"))));
             this.TitleBar.Name = "TitleBar";
-            this.TitleBar.Size = new System.Drawing.Size(395, 30);
-            this.TitleBar.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.TitleBar, resources.GetString("TitleBar.ToolTip"));
             this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
             this.TitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
             this.TitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseUp);
             // 
             // btnExit
             // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            resources.ApplyResources(this.btnExit, "btnExit");
+            this.errorProvider1.SetError(this.btnExit, resources.GetString("btnExit.Error"));
             this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.errorProvider1.SetIconAlignment(this.btnExit, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnExit.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnExit, ((int)(resources.GetObject("btnExit.IconPadding"))));
             this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
-            this.btnExit.Location = new System.Drawing.Point(364, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(31, 30);
-            this.btnExit.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnExit, resources.GetString("btnExit.ToolTip"));
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            resources.ApplyResources(this.errorProvider1, "errorProvider1");
             // 
             // frmShowDetailTable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 321);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmShowDetailTable";
-            this.Text = "Detail of table";
+            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmShowDetailTable_FormClosed);
             this.Load += new System.EventHandler(this.frmShowDetailTable_Load);
             this.panel1.ResumeLayout(false);
