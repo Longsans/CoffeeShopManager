@@ -136,14 +136,41 @@ namespace GUI
             dtoEmp.Firstname = txtFirstName.Text;
             dtoEmp.Lastname = txtLastName.Text;
             dtoEmp.Address = txtAddress.Text;
+            if (cboPosition.Text == "Phục vụ")
+                cboPosition.Text = "Waiter";
+            if (cboPosition.Text == "Thợ pha cà phê")
+                cboPosition.Text = "Barista";
+            if (cboPosition.Text == "Nấu ăn")
+                cboPosition.Text = "Cook";
+            if (cboPosition.Text == "Tiện ích")
+                cboPosition.Text = "Utility";
+            if (cboPosition.Text == "Vệ sinh")
+                cboPosition.Text = "Janitor";
+            if (cboPosition.Text == "Bảo vệ")
+                cboPosition.Text = "Security";
+            if (cboPosition.Text == "Khác")
+                cboPosition.Text = "Others";
             dtoEmp.Position = cboPosition.Text;
             dtoEmp.Phone = txtPhone.Text;
             dtoEmp.Email = txtEmail.Text;
             dtoEmp.Salary = decimal.Parse(txtSalary.Text);
             dtoEmp.Manager = busMan.GetById(txtManagerID.Text, dtoEmp.Shop.ID);
             dtoEmp.Phone = txtPhone.Text;
-            if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
-            else dtoEmp.Gender = radFemale.Text;
+            if (radMale.Checked == true)
+            {
+                if (radMale.Text != "Nam")
+                    dtoEmp.Gender = radMale.Text;
+                else
+                    dtoEmp.Gender = "Male";
+
+            }
+            else
+            {
+                if (radFemale.Text != "Nữ")
+                    dtoEmp.Gender = radMale.Text;
+                else
+                    dtoEmp.Gender = "Female";
+            }
             if (DateTime.TryParseExact(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text,
                 formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out doj)
                 && DateTime.TryParseExact(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text,

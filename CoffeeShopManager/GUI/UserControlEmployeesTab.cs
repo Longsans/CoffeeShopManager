@@ -61,6 +61,15 @@ namespace GUI
         public void Reload()
         {
             dataGridView1.DataSource = busEmp.GetAllEmployee(dtoMan.Shop.ID);
+            if (btnShowAll.Text != "Show All")
+            {
+                dataGridView1.Columns["First Name"].HeaderText = "Họ";
+                dataGridView1.Columns["Last Name"].HeaderText = "Tên";
+                dataGridView1.Columns["Position"].HeaderText = "Chức vụ";
+                dataGridView1.Columns["Phone"].HeaderText = "SĐT";
+                dataGridView1.Columns["Gender"].HeaderText = "Giới tính";
+                dataGridView1.Columns["Manager's ID"].HeaderText = "ID Quản lý";
+            }
             txtSearch.Text = "Search...";
             cboSearch.Text = "";
         }

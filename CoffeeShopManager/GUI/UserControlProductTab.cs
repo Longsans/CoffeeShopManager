@@ -58,6 +58,14 @@ namespace GUI
             flowLayoutPanel1.Controls.Clear();
           //  GetData(busPro.GetAllProducts(dtoShop.ID));
             this.dataGridView1.DataSource = busPro.GetAllProductsWithImages(dtoShop.ID);
+            if (lblProducts.Text != "Products")
+            {
+                dataGridView1.Columns["Name"].HeaderText = "Tên sản phẩm";
+                dataGridView1.Columns["Type"].HeaderText = "Loại";
+                dataGridView1.Columns["Price"].HeaderText = "Giá";
+                dataGridView1.Columns["Image"].HeaderText = "Ảnh";
+
+            }
             for (int i = 0; i < dataGridView1.Columns.Count; i++)
             {
                 if (dataGridView1.Columns[i] is DataGridViewImageColumn)

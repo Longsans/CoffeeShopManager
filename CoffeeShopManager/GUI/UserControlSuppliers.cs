@@ -64,6 +64,11 @@ namespace GUI
             {
                 grdSup.DataSource = busSup.GetAllSuppliers(Shop.ID);
             }
+            if (lblSuppliers.Text != "Suppliers")
+            {
+                grdSup.Columns["Name"].HeaderText = "Tên nhà cung";
+                grdSup.Columns["Phone Number"].HeaderText = "Điện thoại";
+            }
         }
 
         private void TxtSearch_LostFocus(object sender, EventArgs e)

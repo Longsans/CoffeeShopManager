@@ -137,6 +137,11 @@ namespace GUI
             dragging = false;
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pnlTitleBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)

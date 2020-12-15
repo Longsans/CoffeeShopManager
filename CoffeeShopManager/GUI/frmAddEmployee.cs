@@ -62,6 +62,20 @@ namespace GUI
                 dtoEmp.Firstname = txtFirstName.Text;
                 dtoEmp.Lastname = txtLastName.Text;
                 dtoEmp.Address = txtAddress.Text;
+                if (cbboxPosition.Text == "Phục vụ")
+                    cbboxPosition.Text = "Waiter";
+                if (cbboxPosition.Text == "Thợ pha cà phê")
+                    cbboxPosition.Text = "Barista";
+                if (cbboxPosition.Text == "Nấu ăn")
+                    cbboxPosition.Text = "Cook";
+                if (cbboxPosition.Text == "Tiện ích")
+                    cbboxPosition.Text = "Utility";
+                if (cbboxPosition.Text == "Vệ sinh")
+                    cbboxPosition.Text = "Janitor";
+                if (cbboxPosition.Text == "Bảo vệ")
+                    cbboxPosition.Text = "Security";
+                if (cbboxPosition.Text == "Khác")
+                    cbboxPosition.Text = "Others";
                 dtoEmp.Position = cbboxPosition.Text;
                 dtoEmp.Phone = txtPhone.Text;
                 dtoEmp.Email = txtEmail.Text;
@@ -80,8 +94,21 @@ namespace GUI
                 }
                 dtoEmp.Phone = txtPhone.Text;
 
-                if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
-                else dtoEmp.Gender = radFemale.Text;
+                if (radMale.Checked == true)
+                {
+                    if (radMale.Text != "Nam")
+                        dtoEmp.Gender = radMale.Text;
+                    else
+                        dtoEmp.Gender = "Male";
+
+                }
+                else
+                {
+                    if (radFemale.Text != "Nữ")
+                        dtoEmp.Gender = radMale.Text;
+                    else
+                        dtoEmp.Gender = "Female";
+                }
 
                 if (DateTime.TryParseExact(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text, 
                     formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out doj)
@@ -227,6 +254,11 @@ namespace GUI
                 Point p = PointToScreen(e.Location);
                 Location = new Point(p.X - this.startPoint.X, p.Y - this.startPoint.Y);
             }
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
 
         }
     }

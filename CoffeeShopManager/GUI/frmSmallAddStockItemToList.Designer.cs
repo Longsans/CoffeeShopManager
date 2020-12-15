@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSmallAddStockItemToList));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -42,79 +43,56 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtItemId);
             this.panel1.Controls.Add(this.lblCancel);
             this.panel1.Controls.Add(this.lblAdd);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 150);
-            this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.lblTitle);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(332, 39);
-            this.panel2.TabIndex = 15;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
             // 
             // btnExit
             // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
-            this.btnExit.Location = new System.Drawing.Point(301, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(31, 39);
-            this.btnExit.TabIndex = 8;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(73, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(186, 21);
-            this.lblTitle.TabIndex = 7;
-            this.lblTitle.Text = "Add stock item to list";
             this.lblTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.lblTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
             // 
             // txtItemId
             // 
+            resources.ApplyResources(this.txtItemId, "txtItemId");
             this.txtItemId.ForeColor = System.Drawing.Color.DimGray;
-            this.txtItemId.Location = new System.Drawing.Point(129, 66);
             this.txtItemId.Name = "txtItemId";
-            this.txtItemId.Size = new System.Drawing.Size(126, 22);
-            this.txtItemId.TabIndex = 19;
-            this.txtItemId.Text = "Enter stock item ID";
             this.txtItemId.Validating += new System.ComponentModel.CancelEventHandler(this.txtItemId_Validating);
             // 
             // lblCancel
             // 
-            this.lblCancel.AutoSize = true;
+            resources.ApplyResources(this.lblCancel, "lblCancel");
             this.lblCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCancel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCancel.Location = new System.Drawing.Point(170, 119);
             this.lblCancel.Name = "lblCancel";
-            this.lblCancel.Size = new System.Drawing.Size(60, 19);
-            this.lblCancel.TabIndex = 16;
-            this.lblCancel.Text = "Cancel";
             this.lblCancel.Click += new System.EventHandler(this.btnExit_Click);
             this.lblCancel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblAdd_MouseDown);
             this.lblCancel.MouseEnter += new System.EventHandler(this.lblAdd_MouseEnter);
@@ -122,15 +100,9 @@
             // 
             // lblAdd
             // 
-            this.lblAdd.AutoSize = true;
+            resources.ApplyResources(this.lblAdd, "lblAdd");
             this.lblAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAdd.Enabled = false;
-            this.lblAdd.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdd.Location = new System.Drawing.Point(102, 119);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(38, 19);
-            this.lblAdd.TabIndex = 17;
-            this.lblAdd.Text = "Add";
             this.lblAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblAdd_MouseDown);
             this.lblAdd.MouseEnter += new System.EventHandler(this.lblAdd_MouseEnter);
             this.lblAdd.MouseLeave += new System.EventHandler(this.lblAdd_MouseLeave);
@@ -138,25 +110,18 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(77, 69);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 19);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "ID";
             // 
             // frmSmallAddStockItemToList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(334, 150);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSmallAddStockItemToList";
-            this.Text = "frmSmallAddStockItemToList";
-            this.Load += new System.EventHandler(this.frmSmallAddStockItemToList_Load);
+            this.Load += new System.EventHandler(this.lblAdd_MouseLeave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

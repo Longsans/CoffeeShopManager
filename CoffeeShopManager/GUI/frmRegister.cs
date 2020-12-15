@@ -70,8 +70,21 @@ namespace GUI
                         dtoMan.Phone = txtPhone.Text;
                         dtoMan.Position = "Manager";
                         dtoMan.Email = txtEmail.Text;
-                        if (radFemale.Checked) dtoMan.Gender = "Female";
-                        else dtoMan.Gender = "Male";
+                        if (radMale.Checked == true)
+                        {
+                            if (radMale.Text != "Nam")
+                                dtoMan.Gender = radMale.Text;
+                            else
+                                dtoMan.Gender = "Male";
+
+                        }
+                        else
+                        {
+                            if (radFemale.Text != "Nữ")
+                                dtoMan.Gender = radMale.Text;
+                            else
+                                dtoMan.Gender = "Female";
+                        }
 
                         string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
                         if (DateTime.TryParseExact(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text,

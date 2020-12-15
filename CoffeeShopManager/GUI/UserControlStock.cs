@@ -105,6 +105,11 @@ namespace GUI
                     }
                     break;
             }
+            if (lblStock.Text != "Stock")
+            {
+                grdStock.Columns["Item Name"].HeaderText = "Tên sản phẩm";
+                grdStock.Columns["Supplier ID"].HeaderText = "ID Nhà cung";
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

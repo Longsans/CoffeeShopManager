@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlStock));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlStock));
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cboSearch = new System.Windows.Forms.ComboBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -46,65 +46,48 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.Location = new System.Drawing.Point(623, 87);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(172, 23);
-            this.txtSearch.TabIndex = 25;
-            this.txtSearch.Text = "Search...";
             // 
             // cboSearch
             // 
+            resources.ApplyResources(this.cboSearch, "cboSearch");
             this.cboSearch.BackColor = System.Drawing.Color.White;
             this.cboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboSearch.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSearch.FormattingEnabled = true;
             this.cboSearch.Items.AddRange(new object[] {
-            "ID",
-            "Name",
-            "Supplier ID",
-            "Supplier Name"});
-            this.cboSearch.Location = new System.Drawing.Point(477, 85);
+            resources.GetString("cboSearch.Items"),
+            resources.GetString("cboSearch.Items1"),
+            resources.GetString("cboSearch.Items2"),
+            resources.GetString("cboSearch.Items3")});
             this.cboSearch.Name = "cboSearch";
-            this.cboSearch.Size = new System.Drawing.Size(140, 25);
-            this.cboSearch.TabIndex = 24;
             // 
             // btnDelete
             // 
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Enabled = false;
             this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            this.btnDelete.Location = new System.Drawing.Point(742, 475);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(85, 34);
-            this.btnDelete.TabIndex = 22;
-            this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Enabled = false;
             this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            this.btnEdit.Location = new System.Drawing.Point(628, 475);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(85, 34);
-            this.btnEdit.TabIndex = 23;
-            this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // grdStock
             // 
+            resources.ApplyResources(this.grdStock, "grdStock");
             this.grdStock.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.grdStock.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -121,7 +104,6 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.grdStock.ColumnHeadersHeight = 29;
             this.grdStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -132,75 +114,51 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grdStock.DefaultCellStyle = dataGridViewCellStyle3;
             this.grdStock.EnableHeadersVisualStyles = false;
-            this.grdStock.Location = new System.Drawing.Point(92, 164);
             this.grdStock.Name = "grdStock";
             this.grdStock.ReadOnly = true;
             this.grdStock.RowHeadersVisible = false;
-            this.grdStock.RowHeadersWidth = 51;
             this.grdStock.RowTemplate.Height = 24;
             this.grdStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdStock.Size = new System.Drawing.Size(741, 273);
-            this.grdStock.TabIndex = 21;
             this.grdStock.SelectionChanged += new System.EventHandler(this.grdStock_SelectionChanged);
             // 
             // lblStock
             // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lblStock, "lblStock");
             this.lblStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            this.lblStock.Location = new System.Drawing.Point(65, 66);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(116, 44);
-            this.lblStock.TabIndex = 20;
-            this.lblStock.Text = "Stock";
             // 
             // btnAdd
             // 
+            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            this.btnAdd.Location = new System.Drawing.Point(514, 475);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(85, 34);
-            this.btnAdd.TabIndex = 27;
-            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblResetFilters
             // 
-            this.lblResetFilters.AutoSize = true;
+            resources.ApplyResources(this.lblResetFilters, "lblResetFilters");
             this.lblResetFilters.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblResetFilters.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResetFilters.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblResetFilters.Location = new System.Drawing.Point(692, 115);
             this.lblResetFilters.Name = "lblResetFilters";
-            this.lblResetFilters.Size = new System.Drawing.Size(86, 19);
-            this.lblResetFilters.TabIndex = 37;
-            this.lblResetFilters.Text = "Reset Filters";
-            this.lblResetFilters.Visible = false;
             this.lblResetFilters.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblResetFilters_MouseDown);
             this.lblResetFilters.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblResetFilters_MouseUp);
             // 
             // btnSearch
             // 
-            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            resources.ApplyResources(this.btnSearch, "btnSearch");
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(801, 84);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(32, 28);
-            this.btnSearch.TabIndex = 26;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // UserControlStock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblResetFilters);
@@ -213,7 +171,6 @@
             this.Controls.Add(this.grdStock);
             this.Controls.Add(this.lblStock);
             this.Name = "UserControlStock";
-            this.Size = new System.Drawing.Size(899, 574);
             this.Load += new System.EventHandler(this.UserControlStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdStock)).EndInit();
             this.ResumeLayout(false);

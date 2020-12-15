@@ -86,6 +86,12 @@ namespace GUI
             {
                 grdCustomers.DataSource = busCus.GetAllCustomers(dtoShop.ID);
             }
+            if (lblCustomer.Text != "Customers")
+            {
+                grdCustomers.Columns["First Name"].HeaderText = "Họ";
+                grdCustomers.Columns["Last Name"].HeaderText = "Tên";
+                grdCustomers.Columns["Birthdate"].HeaderText = "Ngày sinh";
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

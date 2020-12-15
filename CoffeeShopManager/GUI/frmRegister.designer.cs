@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegister));
             this.TitleBar = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.lblShopName = new System.Windows.Forms.Label();
             this.lblAuthCode = new System.Windows.Forms.Label();
             this.fpnlCreateNew = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lblShopId = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -44,6 +48,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnBrowseImg = new System.Windows.Forms.Button();
             this.lblNoImg = new System.Windows.Forms.Label();
+            this.picboxManImg = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtYearBD = new System.Windows.Forms.TextBox();
@@ -61,6 +66,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit2 = new System.Windows.Forms.Button();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.txtConfirm = new System.Windows.Forms.TextBox();
@@ -70,35 +76,43 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnBack = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.picboxManImg = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.TitleBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.fpnlCreateNew.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxManImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // TitleBar
             // 
+            resources.ApplyResources(this.TitleBar, "TitleBar");
             this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.TitleBar.Controls.Add(this.btnExit);
-            this.TitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TitleBar.Location = new System.Drawing.Point(0, 0);
+            this.errorProvider1.SetError(this.TitleBar, resources.GetString("TitleBar.Error"));
+            this.errorProvider1.SetIconAlignment(this.TitleBar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("TitleBar.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.TitleBar, ((int)(resources.GetObject("TitleBar.IconPadding"))));
             this.TitleBar.Name = "TitleBar";
-            this.TitleBar.Size = new System.Drawing.Size(646, 30);
-            this.TitleBar.TabIndex = 1;
             this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
             this.TitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
             this.TitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseUp);
             // 
+            // btnExit
+            // 
+            resources.ApplyResources(this.btnExit, "btnExit");
+            this.errorProvider1.SetError(this.btnExit, resources.GetString("btnExit.Error"));
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.errorProvider1.SetIconAlignment(this.btnExit, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnExit.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnExit, ((int)(resources.GetObject("btnExit.IconPadding"))));
+            this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(134)))), ((int)(((byte)(102)))));
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.lblShopName);
@@ -140,487 +154,422 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.errorProvider1.SetError(this.panel1, resources.GetString("panel1.Error"));
+            this.errorProvider1.SetIconAlignment(this.panel1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.panel1, ((int)(resources.GetObject("panel1.IconPadding"))));
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(646, 578);
-            this.panel1.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.errorProvider1.SetError(this.btnBack, resources.GetString("btnBack.Error"));
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.errorProvider1.SetIconAlignment(this.btnBack, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnBack.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnBack, ((int)(resources.GetObject("btnBack.IconPadding"))));
+            this.btnBack.Image = global::GUI.Properties.Resources.back_32px;
+            this.btnBack.Name = "btnBack";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblShopName
             // 
-            this.lblShopName.AutoSize = true;
-            this.lblShopName.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShopName.Location = new System.Drawing.Point(316, 400);
+            resources.ApplyResources(this.lblShopName, "lblShopName");
+            this.errorProvider1.SetError(this.lblShopName, resources.GetString("lblShopName.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblShopName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblShopName.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblShopName, ((int)(resources.GetObject("lblShopName.IconPadding"))));
             this.lblShopName.Name = "lblShopName";
-            this.lblShopName.Size = new System.Drawing.Size(90, 19);
-            this.lblShopName.TabIndex = 45;
-            this.lblShopName.Text = "Shop Name";
             // 
             // lblAuthCode
             // 
-            this.lblAuthCode.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthCode.Location = new System.Drawing.Point(316, 441);
+            resources.ApplyResources(this.lblAuthCode, "lblAuthCode");
+            this.errorProvider1.SetError(this.lblAuthCode, resources.GetString("lblAuthCode.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblAuthCode, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblAuthCode.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblAuthCode, ((int)(resources.GetObject("lblAuthCode.IconPadding"))));
             this.lblAuthCode.Name = "lblAuthCode";
-            this.lblAuthCode.Size = new System.Drawing.Size(125, 52);
-            this.lblAuthCode.TabIndex = 44;
-            this.lblAuthCode.Text = "Authentication\r\nCode";
             // 
             // fpnlCreateNew
             // 
-            this.fpnlCreateNew.AutoSize = true;
+            resources.ApplyResources(this.fpnlCreateNew, "fpnlCreateNew");
             this.fpnlCreateNew.BackColor = System.Drawing.Color.White;
             this.fpnlCreateNew.Controls.Add(this.pictureBox2);
             this.fpnlCreateNew.Controls.Add(this.label15);
             this.fpnlCreateNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fpnlCreateNew.Location = new System.Drawing.Point(442, 381);
+            this.errorProvider1.SetError(this.fpnlCreateNew, resources.GetString("fpnlCreateNew.Error"));
+            this.errorProvider1.SetIconAlignment(this.fpnlCreateNew, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("fpnlCreateNew.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.fpnlCreateNew, ((int)(resources.GetObject("fpnlCreateNew.IconPadding"))));
             this.fpnlCreateNew.Name = "fpnlCreateNew";
-            this.fpnlCreateNew.Size = new System.Drawing.Size(180, 50);
-            this.fpnlCreateNew.TabIndex = 43;
             this.fpnlCreateNew.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.BackgroundImage = global::GUI.Properties.Resources.add_new_30px;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.errorProvider1.SetError(this.pictureBox2, resources.GetString("pictureBox2.Error"));
+            this.errorProvider1.SetIconAlignment(this.pictureBox2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox2.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.pictureBox2, ((int)(resources.GetObject("pictureBox2.IconPadding"))));
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
+            resources.ApplyResources(this.label15, "label15");
             this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Location = new System.Drawing.Point(51, 0);
+            this.errorProvider1.SetError(this.label15, resources.GetString("label15.Error"));
+            this.errorProvider1.SetIconAlignment(this.label15, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label15.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label15, ((int)(resources.GetObject("label15.IconPadding"))));
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(126, 47);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Create a new shop";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label15.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // lblShopId
             // 
-            this.lblShopId.AutoSize = true;
-            this.lblShopId.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShopId.Location = new System.Drawing.Point(316, 359);
+            resources.ApplyResources(this.lblShopId, "lblShopId");
+            this.errorProvider1.SetError(this.lblShopId, resources.GetString("lblShopId.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblShopId, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblShopId.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblShopId, ((int)(resources.GetObject("lblShopId.IconPadding"))));
             this.lblShopId.Name = "lblShopId";
-            this.lblShopId.Size = new System.Drawing.Size(61, 19);
-            this.lblShopId.TabIndex = 42;
-            this.lblShopId.Text = "Shop ID";
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(316, 318);
+            resources.ApplyResources(this.label11, "label11");
+            this.errorProvider1.SetError(this.label11, resources.GetString("label11.Error"));
+            this.errorProvider1.SetIconAlignment(this.label11, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label11.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label11, ((int)(resources.GetObject("label11.IconPadding"))));
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 19);
-            this.label11.TabIndex = 41;
-            this.label11.Text = "Manager ID";
             // 
             // txtShopId
             // 
-            this.txtShopId.Font = new System.Drawing.Font("Constantia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.txtShopId, "txtShopId");
+            this.errorProvider1.SetError(this.txtShopId, resources.GetString("txtShopId.Error"));
             this.txtShopId.ForeColor = System.Drawing.Color.DimGray;
-            this.txtShopId.Location = new System.Drawing.Point(442, 357);
+            this.errorProvider1.SetIconAlignment(this.txtShopId, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtShopId.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtShopId, ((int)(resources.GetObject("txtShopId.IconPadding"))));
             this.txtShopId.Name = "txtShopId";
-            this.txtShopId.Size = new System.Drawing.Size(180, 23);
-            this.txtShopId.TabIndex = 22;
-            this.txtShopId.Text = "Enter existing shop ID or...\r\n";
             this.txtShopId.TextChanged += new System.EventHandler(this.txtShopId_TextChanged);
             // 
             // txtAuthCode
             // 
-            this.txtAuthCode.Font = new System.Drawing.Font("Constantia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.txtAuthCode, "txtAuthCode");
+            this.errorProvider1.SetError(this.txtAuthCode, resources.GetString("txtAuthCode.Error"));
             this.txtAuthCode.ForeColor = System.Drawing.Color.DimGray;
-            this.txtAuthCode.Location = new System.Drawing.Point(442, 439);
+            this.errorProvider1.SetIconAlignment(this.txtAuthCode, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtAuthCode.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtAuthCode, ((int)(resources.GetObject("txtAuthCode.IconPadding"))));
             this.txtAuthCode.Name = "txtAuthCode";
-            this.txtAuthCode.Size = new System.Drawing.Size(180, 23);
-            this.txtAuthCode.TabIndex = 24;
-            this.txtAuthCode.Text = "Enter password";
             this.txtAuthCode.TextChanged += new System.EventHandler(this.txtAuthCode_TextChanged);
             // 
             // txtShopName
             // 
-            this.txtShopName.Font = new System.Drawing.Font("Constantia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.txtShopName, "txtShopName");
+            this.errorProvider1.SetError(this.txtShopName, resources.GetString("txtShopName.Error"));
             this.txtShopName.ForeColor = System.Drawing.Color.DimGray;
-            this.txtShopName.Location = new System.Drawing.Point(442, 399);
+            this.errorProvider1.SetIconAlignment(this.txtShopName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtShopName.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtShopName, ((int)(resources.GetObject("txtShopName.IconPadding"))));
             this.txtShopName.Name = "txtShopName";
-            this.txtShopName.Size = new System.Drawing.Size(180, 23);
-            this.txtShopName.TabIndex = 23;
-            this.txtShopName.Text = "Enter new shop name";
             // 
             // txtID
             // 
-            this.txtID.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(442, 315);
+            resources.ApplyResources(this.txtID, "txtID");
+            this.errorProvider1.SetError(this.txtID, resources.GetString("txtID.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtID.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtID, ((int)(resources.GetObject("txtID.IconPadding"))));
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(180, 23);
-            this.txtID.TabIndex = 21;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(24, 399);
+            resources.ApplyResources(this.label8, "label8");
+            this.errorProvider1.SetError(this.label8, resources.GetString("label8.Error"));
+            this.errorProvider1.SetIconAlignment(this.label8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label8.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label8, ((int)(resources.GetObject("label8.IconPadding"))));
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 19);
-            this.label8.TabIndex = 39;
-            this.label8.Text = "Email";
             // 
             // btnBrowseImg
             // 
+            resources.ApplyResources(this.btnBrowseImg, "btnBrowseImg");
             this.btnBrowseImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnBrowseImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.errorProvider1.SetError(this.btnBrowseImg, resources.GetString("btnBrowseImg.Error"));
             this.btnBrowseImg.FlatAppearance.BorderSize = 0;
-            this.btnBrowseImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowseImg.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowseImg.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnBrowseImg.Location = new System.Drawing.Point(412, 268);
+            this.errorProvider1.SetIconAlignment(this.btnBrowseImg, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnBrowseImg.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnBrowseImg, ((int)(resources.GetObject("btnBrowseImg.IconPadding"))));
             this.btnBrowseImg.Name = "btnBrowseImg";
-            this.btnBrowseImg.Size = new System.Drawing.Size(86, 30);
-            this.btnBrowseImg.TabIndex = 25;
-            this.btnBrowseImg.Text = "Browse";
             this.btnBrowseImg.UseVisualStyleBackColor = false;
             this.btnBrowseImg.Click += new System.EventHandler(this.btnBrowseImg_Click);
             // 
             // lblNoImg
             // 
-            this.lblNoImg.AutoSize = true;
-            this.lblNoImg.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoImg.Location = new System.Drawing.Point(416, 162);
+            resources.ApplyResources(this.lblNoImg, "lblNoImg");
+            this.errorProvider1.SetError(this.lblNoImg, resources.GetString("lblNoImg.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblNoImg, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblNoImg.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblNoImg, ((int)(resources.GetObject("lblNoImg.IconPadding"))));
             this.lblNoImg.Name = "lblNoImg";
-            this.lblNoImg.Size = new System.Drawing.Size(76, 19);
-            this.lblNoImg.TabIndex = 38;
-            this.lblNoImg.Text = "No Image";
+            // 
+            // picboxManImg
+            // 
+            resources.ApplyResources(this.picboxManImg, "picboxManImg");
+            this.picboxManImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.errorProvider1.SetError(this.picboxManImg, resources.GetString("picboxManImg.Error"));
+            this.errorProvider1.SetIconAlignment(this.picboxManImg, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("picboxManImg.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.picboxManImg, ((int)(resources.GetObject("picboxManImg.IconPadding"))));
+            this.picboxManImg.Name = "picboxManImg";
+            this.picboxManImg.TabStop = false;
+            this.picboxManImg.Tag = "";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(205, 441);
+            resources.ApplyResources(this.label13, "label13");
+            this.errorProvider1.SetError(this.label13, resources.GetString("label13.Error"));
+            this.errorProvider1.SetIconAlignment(this.label13, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label13.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label13, ((int)(resources.GetObject("label13.IconPadding"))));
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(15, 19);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "/";
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(150, 441);
+            resources.ApplyResources(this.label12, "label12");
+            this.errorProvider1.SetError(this.label12, resources.GetString("label12.Error"));
+            this.errorProvider1.SetIconAlignment(this.label12, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label12.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label12, ((int)(resources.GetObject("label12.IconPadding"))));
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(15, 19);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "/";
             // 
             // txtYearBD
             // 
-            this.txtYearBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYearBD.Location = new System.Drawing.Point(227, 439);
+            resources.ApplyResources(this.txtYearBD, "txtYearBD");
+            this.errorProvider1.SetError(this.txtYearBD, resources.GetString("txtYearBD.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtYearBD, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtYearBD.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtYearBD, ((int)(resources.GetObject("txtYearBD.IconPadding"))));
             this.txtYearBD.Name = "txtYearBD";
-            this.txtYearBD.Size = new System.Drawing.Size(45, 23);
-            this.txtYearBD.TabIndex = 20;
             // 
             // txtMonthBD
             // 
-            this.txtMonthBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonthBD.Location = new System.Drawing.Point(171, 439);
+            resources.ApplyResources(this.txtMonthBD, "txtMonthBD");
+            this.errorProvider1.SetError(this.txtMonthBD, resources.GetString("txtMonthBD.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtMonthBD, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtMonthBD.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtMonthBD, ((int)(resources.GetObject("txtMonthBD.IconPadding"))));
             this.txtMonthBD.Name = "txtMonthBD";
-            this.txtMonthBD.Size = new System.Drawing.Size(33, 23);
-            this.txtMonthBD.TabIndex = 18;
             // 
             // txtDayBD
             // 
-            this.txtDayBD.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDayBD.Location = new System.Drawing.Point(115, 439);
+            resources.ApplyResources(this.txtDayBD, "txtDayBD");
+            this.errorProvider1.SetError(this.txtDayBD, resources.GetString("txtDayBD.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtDayBD, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtDayBD.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtDayBD, ((int)(resources.GetObject("txtDayBD.IconPadding"))));
             this.txtDayBD.Name = "txtDayBD";
-            this.txtDayBD.Size = new System.Drawing.Size(33, 23);
-            this.txtDayBD.TabIndex = 16;
             // 
             // radFemale
             // 
-            this.radFemale.AutoSize = true;
-            this.radFemale.Location = new System.Drawing.Point(191, 316);
+            resources.ApplyResources(this.radFemale, "radFemale");
+            this.errorProvider1.SetError(this.radFemale, resources.GetString("radFemale.Error"));
+            this.errorProvider1.SetIconAlignment(this.radFemale, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("radFemale.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.radFemale, ((int)(resources.GetObject("radFemale.IconPadding"))));
             this.radFemale.Name = "radFemale";
-            this.radFemale.Size = new System.Drawing.Size(75, 21);
-            this.radFemale.TabIndex = 12;
             this.radFemale.TabStop = true;
-            this.radFemale.Text = "Female";
             this.radFemale.UseVisualStyleBackColor = true;
             // 
             // radMale
             // 
-            this.radMale.AutoSize = true;
-            this.radMale.Location = new System.Drawing.Point(115, 316);
+            resources.ApplyResources(this.radMale, "radMale");
+            this.errorProvider1.SetError(this.radMale, resources.GetString("radMale.Error"));
+            this.errorProvider1.SetIconAlignment(this.radMale, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("radMale.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.radMale, ((int)(resources.GetObject("radMale.IconPadding"))));
             this.radMale.Name = "radMale";
-            this.radMale.Size = new System.Drawing.Size(59, 21);
-            this.radMale.TabIndex = 11;
             this.radMale.TabStop = true;
-            this.radMale.Text = "Male";
             this.radMale.UseVisualStyleBackColor = true;
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(115, 396);
+            resources.ApplyResources(this.txtEmail, "txtEmail");
+            this.errorProvider1.SetError(this.txtEmail, resources.GetString("txtEmail.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtEmail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtEmail.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtEmail, ((int)(resources.GetObject("txtEmail.IconPadding"))));
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(157, 23);
-            this.txtEmail.TabIndex = 15;
             // 
             // txtPhone
             // 
-            this.txtPhone.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(115, 351);
+            resources.ApplyResources(this.txtPhone, "txtPhone");
+            this.errorProvider1.SetError(this.txtPhone, resources.GetString("txtPhone.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtPhone, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtPhone.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtPhone, ((int)(resources.GetObject("txtPhone.IconPadding"))));
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(157, 23);
-            this.txtPhone.TabIndex = 14;
             // 
             // txtLastName
             // 
-            this.txtLastName.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(115, 265);
+            resources.ApplyResources(this.txtLastName, "txtLastName");
+            this.errorProvider1.SetError(this.txtLastName, resources.GetString("txtLastName.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtLastName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtLastName.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtLastName, ((int)(resources.GetObject("txtLastName.IconPadding"))));
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(157, 23);
-            this.txtLastName.TabIndex = 9;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(115, 224);
+            resources.ApplyResources(this.txtFirstName, "txtFirstName");
+            this.errorProvider1.SetError(this.txtFirstName, resources.GetString("txtFirstName.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtFirstName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtFirstName.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtFirstName, ((int)(resources.GetObject("txtFirstName.IconPadding"))));
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(157, 23);
-            this.txtFirstName.TabIndex = 7;
             // 
             // lblBirthdate
             // 
-            this.lblBirthdate.AutoSize = true;
-            this.lblBirthdate.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthdate.Location = new System.Drawing.Point(24, 440);
+            resources.ApplyResources(this.lblBirthdate, "lblBirthdate");
+            this.errorProvider1.SetError(this.lblBirthdate, resources.GetString("lblBirthdate.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblBirthdate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblBirthdate.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblBirthdate, ((int)(resources.GetObject("lblBirthdate.IconPadding"))));
             this.lblBirthdate.Name = "lblBirthdate";
-            this.lblBirthdate.Size = new System.Drawing.Size(72, 19);
-            this.lblBirthdate.TabIndex = 15;
-            this.lblBirthdate.Text = "Birthdate";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(24, 353);
+            resources.ApplyResources(this.label10, "label10");
+            this.errorProvider1.SetError(this.label10, resources.GetString("label10.Error"));
+            this.errorProvider1.SetIconAlignment(this.label10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label10.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label10, ((int)(resources.GetObject("label10.IconPadding"))));
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 19);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Phone";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 315);
+            resources.ApplyResources(this.label5, "label5");
+            this.errorProvider1.SetError(this.label5, resources.GetString("label5.Error"));
+            this.errorProvider1.SetIconAlignment(this.label5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label5.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label5, ((int)(resources.GetObject("label5.IconPadding"))));
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 19);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Gender";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 269);
+            resources.ApplyResources(this.label6, "label6");
+            this.errorProvider1.SetError(this.label6, resources.GetString("label6.Error"));
+            this.errorProvider1.SetIconAlignment(this.label6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label6.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label6, ((int)(resources.GetObject("label6.IconPadding"))));
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 19);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Last name";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 224);
+            resources.ApplyResources(this.label7, "label7");
+            this.errorProvider1.SetError(this.label7, resources.GetString("label7.Error"));
+            this.errorProvider1.SetIconAlignment(this.label7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label7.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label7, ((int)(resources.GetObject("label7.IconPadding"))));
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 19);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "First name";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(310, 37);
+            resources.ApplyResources(this.label4, "label4");
+            this.errorProvider1.SetError(this.label4, resources.GetString("label4.Error"));
+            this.errorProvider1.SetIconAlignment(this.label4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label4.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label4, ((int)(resources.GetObject("label4.IconPadding"))));
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 23);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Register";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.user_40px;
+            this.errorProvider1.SetError(this.pictureBox1, resources.GetString("pictureBox1.Error"));
+            this.errorProvider1.SetIconAlignment(this.pictureBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.pictureBox1, ((int)(resources.GetObject("pictureBox1.IconPadding"))));
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // btnExit2
             // 
+            resources.ApplyResources(this.btnExit2, "btnExit2");
             this.btnExit2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnExit2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.errorProvider1.SetError(this.btnExit2, resources.GetString("btnExit2.Error"));
             this.btnExit2.FlatAppearance.BorderSize = 0;
-            this.btnExit2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnExit2.Location = new System.Drawing.Point(355, 512);
+            this.errorProvider1.SetIconAlignment(this.btnExit2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnExit2.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnExit2, ((int)(resources.GetObject("btnExit2.IconPadding"))));
             this.btnExit2.Name = "btnExit2";
-            this.btnExit2.Size = new System.Drawing.Size(86, 30);
-            this.btnExit2.TabIndex = 27;
-            this.btnExit2.Text = "Exit";
             this.btnExit2.UseVisualStyleBackColor = false;
             this.btnExit2.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSignUp
             // 
+            resources.ApplyResources(this.btnSignUp, "btnSignUp");
             this.btnSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.errorProvider1.SetError(this.btnSignUp, resources.GetString("btnSignUp.Error"));
             this.btnSignUp.FlatAppearance.BorderSize = 0;
-            this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignUp.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSignUp.Location = new System.Drawing.Point(206, 512);
+            this.errorProvider1.SetIconAlignment(this.btnSignUp, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSignUp.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnSignUp, ((int)(resources.GetObject("btnSignUp.IconPadding"))));
             this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(86, 30);
-            this.btnSignUp.TabIndex = 26;
-            this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = false;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // txtConfirm
             // 
-            this.txtConfirm.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirm.Location = new System.Drawing.Point(115, 177);
+            resources.ApplyResources(this.txtConfirm, "txtConfirm");
+            this.errorProvider1.SetError(this.txtConfirm, resources.GetString("txtConfirm.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtConfirm, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtConfirm.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtConfirm, ((int)(resources.GetObject("txtConfirm.IconPadding"))));
             this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.Size = new System.Drawing.Size(157, 23);
-            this.txtConfirm.TabIndex = 5;
             this.txtConfirm.UseSystemPasswordChar = true;
             // 
             // txtPass
             // 
-            this.txtPass.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(115, 132);
+            resources.ApplyResources(this.txtPass, "txtPass");
+            this.errorProvider1.SetError(this.txtPass, resources.GetString("txtPass.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtPass, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtPass.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtPass, ((int)(resources.GetObject("txtPass.IconPadding"))));
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(157, 23);
-            this.txtPass.TabIndex = 3;
             this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(115, 87);
+            resources.ApplyResources(this.txtUsername, "txtUsername");
+            this.errorProvider1.SetError(this.txtUsername, resources.GetString("txtUsername.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtUsername, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtUsername.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtUsername, ((int)(resources.GetObject("txtUsername.IconPadding"))));
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(157, 23);
-            this.txtUsername.TabIndex = 1;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 181);
+            resources.ApplyResources(this.label3, "label3");
+            this.errorProvider1.SetError(this.label3, resources.GetString("label3.Error"));
+            this.errorProvider1.SetIconAlignment(this.label3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label3.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label3, ((int)(resources.GetObject("label3.IconPadding"))));
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Confirm";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 135);
+            resources.ApplyResources(this.label2, "label2");
+            this.errorProvider1.SetError(this.label2, resources.GetString("label2.Error"));
+            this.errorProvider1.SetIconAlignment(this.label2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label2.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label2, ((int)(resources.GetObject("label2.IconPadding"))));
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Password";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 91);
+            resources.ApplyResources(this.label1, "label1");
+            this.errorProvider1.SetError(this.label1, resources.GetString("label1.Error"));
+            this.errorProvider1.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding"))));
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Image = global::GUI.Properties.Resources.back_32px;
-            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBack.Location = new System.Drawing.Point(439, 39);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(195, 27);
-            this.btnBack.TabIndex = 46;
-            this.btnBack.Text = "          Enter existing shop";
-            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::GUI.Properties.Resources.add_new_30px;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 41);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // picboxManImg
-            // 
-            this.picboxManImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picboxManImg.Location = new System.Drawing.Point(369, 87);
-            this.picboxManImg.Name = "picboxManImg";
-            this.picboxManImg.Size = new System.Drawing.Size(171, 172);
-            this.picboxManImg.TabIndex = 35;
-            this.picboxManImg.TabStop = false;
-            this.picboxManImg.Tag = "";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.user_40px;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(252, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 32);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
-            this.btnExit.Location = new System.Drawing.Point(615, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(31, 30);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            resources.ApplyResources(this.errorProvider1, "errorProvider1");
             // 
             // frmRegister
             // 
             this.AcceptButton = this.btnSignUp;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 608);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TitleBar);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRegister";
-            this.Text = "frmRegister";
             this.Load += new System.EventHandler(this.frmRegister_Load);
             this.TitleBar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.fpnlCreateNew.ResumeLayout(false);
             this.fpnlCreateNew.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxManImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
