@@ -515,45 +515,36 @@ namespace GUI
                 btnAddCus.Visible = true;
                 datBirthdate.Enabled = true;
                 txtID.Visible = false;
-                if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                btnSave.Enabled = false;
+                if (cboCustomerType.Text == "Registered")
                 {
-                    errorProvider1.SetError(txtEmail, "Email is required");
-                    btnSave.Enabled = false;
-                }
-                else
-                {
-                    try
+                    if (string.IsNullOrWhiteSpace(txtEmail.Text))
                     {
-                        var mail = new MailAddress(txtEmail.Text);
-                        if (txtEmail.Text.TrimEnd() == mail.Address)
+                        errorProvider1.SetError(txtEmail, "Email is required");
+                    }
+                    else
+                    {
+                        if (EmailHelper.ValidateEmail(txtEmail.Text))
                         {
-                            if (txtEmail.Text.TrimEnd().Contains(".") && txtEmail.Text.TrimEnd().IndexOf(".") < txtEmail.Text.TrimEnd().Length - 1)
-                            {
-                                errorProvider1.SetError(txtEmail, "");
-                                errorProvider2.SetError(txtEmail, "Valid");
-                                btnSave.Enabled = true;
-                            }
-                            else
-                            {
-                                throw new Exception();
-                            }
+                            errorProvider1.SetError(txtEmail, "");
+                            errorProvider2.SetError(txtEmail, "Valid");
+                            btnSave.Enabled = true;
                         }
                         else
                         {
-                            throw new Exception();
+                            errorProvider1.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
                         }
                     }
-                    catch
-                    {
-                        errorProvider1.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
-                        btnSave.Enabled = false;
-                    }
+                }
+                else if (cboCustomerType.Text == "Guest")
+                {
+                    btnSave.Enabled = true;
                 }
             }
             else if(busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
             {
                 errorProvider1.SetError(txtEmail, "");
-                errorProvider2.SetError(txtEmail, "Correct");
+                errorProvider2.SetError(txtEmail, "Valid");
                 txtID.Enabled = false;
                 txtFirstName.Enabled = false;
                 txtLastName.Enabled = false;
