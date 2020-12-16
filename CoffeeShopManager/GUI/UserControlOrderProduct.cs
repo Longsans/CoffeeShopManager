@@ -746,5 +746,9 @@ namespace GUI
                 errorProvider2.SetError(txtFirstName, "Correct");
             }
         }
+        public void SetTable(int id)
+        {
+            comboBox2.Text = id.ToString();
+        }
     }
 }
