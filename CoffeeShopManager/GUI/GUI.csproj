@@ -263,12 +263,6 @@
     <Compile Include="UserControlManagerShopInfo.Designer.cs">
       <DependentUpon>UserControlManagerShopInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlNotifications.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlNotifications.Designer.cs">
-      <DependentUpon>UserControlNotifications.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlOrderProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>

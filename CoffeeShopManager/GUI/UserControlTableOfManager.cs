@@ -125,5 +125,11 @@ namespace GUI
             frmAddTable frmAddTable = new frmAddTable(shopID, this);
             frmAddTable.ShowDialog();
         }
+
+        private void UserControlTableOfManager_Load(object sender, EventArgs e)
+        {
+            btnExpand.Hide();
+            LoadAllTables();
+        }
     }
 }
