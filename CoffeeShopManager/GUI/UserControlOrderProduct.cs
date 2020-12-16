@@ -58,7 +58,7 @@ namespace GUI
             {
                 comboBox2.Items.Add(lsTable[i].Id.ToString());
             }
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDown;
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //  GetData(busPro.GetAllProducts(dtoShop.ID));
@@ -240,13 +240,6 @@ namespace GUI
                 GetData(T);
             }
         }
-        private void UserControlOrderProduct_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.Text == "")
-            {
-                lblSelect.Visible = true;
-            }
-        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
@@ -332,7 +325,7 @@ namespace GUI
             dtoReceipt = new DTO_Receipt();
             if (dataGridView1.Rows.Count <= 1)
             {
-                MessageBox.Show("Chua order mon");
+                MessageBox.Show("haven't ordered yet");
                 return;
             }
             if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == string.Empty)
@@ -362,18 +355,19 @@ namespace GUI
                 }
                 if (dataGridView1.Rows.Count <= 1)
                 {
-                    MessageBox.Show("Chua order mon");
+                    MessageBox.Show("haven't ordered yet");
                     return;
                 }
-                    if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "")
+                if (check == 0&&cboCustomerType.Text== "Registered")
                 {
-                    MessageBox.Show("Nhap day du thong tin customer");
-                    return;
-                }
-                    if (check == 0)
-                {
-                    MessageBox.Show("Yeu cau dang ky  khach hang");
-                    return;
+                    DateTime bdate = new DateTime();
+                    dtoCus.Email = txtEmail.Text;
+                    dtoCus.FirstName = txtFirstName.Text;
+                    dtoCus.LastName = txtLastName.Text;
+                    dtoCus.Birthdate = datBirthdate.Value;
+                    dtoCus.Shop.ID = shopID;
+                    busCus.Insert(dtoCus);
+                    dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
                 }
             }
             dtoReceipt.Customer = dtoCus;
@@ -425,27 +419,6 @@ namespace GUI
             ResetAll();
         }
         public int check = 0;
-        private void btnAddCus_Click(object sender, EventArgs e)
-        {
-                if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "")
-            {
-                MessageBox.Show("Nhap day du thong tin khach hang");
-                return;
-            }
-            string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
-            DateTime bdate = new DateTime();
-            dtoCus.Email = txtEmail.Text;
-                if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
-            dtoCus.Id = Int32.Parse(txtID.Text);
-            dtoCus.FirstName = txtFirstName.Text;
-            dtoCus.LastName = txtLastName.Text;
-
-                dtoCus.Birthdate = datBirthdate.Value;
-
-            dtoCus.Shop.ID = shopID;
-            busCus.Insert(dtoCus);
-            
-        }
         public void ResetAll()
         {
             int to = dataGridView1.Rows.Count;
@@ -467,6 +440,7 @@ namespace GUI
         {
             int resultIndex = -1;
             resultIndex = comboBox1.FindStringExact(comboBox1.Text);
+
             if (resultIndex == 1)
             {
                 flowLayoutPanel1.Controls.Clear();
@@ -482,8 +456,16 @@ namespace GUI
                 flowLayoutPanel1.Controls.Clear();
                 GetData(c);
             }
-            else if (resultIndex == 0)
+            else if (resultIndex == 0||comboBox1.Text==string.Empty)
             {
+                if (lblHead.Text == "Đặt món")
+                {
+                    comboBox1.Text = "Chọn loại sản phẩm";
+                }
+                else
+                {
+                    comboBox1.Text = "Select type of products";
+                }
                 flowLayoutPanel1.Controls.Clear();
                 GetData(T);
             }
@@ -564,13 +546,6 @@ namespace GUI
             shopID = id;
             Reload();
         }
-
-        private void comboBox1_Click(object sender, EventArgs e)
-        {
-            lblSelect.Visible = false;
-
-        }
-
         private void panel1_Click(object sender, EventArgs e)
         {
 
@@ -586,8 +561,15 @@ namespace GUI
                 {
                     flowLayoutPanel1.Controls.Clear();
                     comboBox1.Enabled = false;
-                    comboBox1.Text = "All";
-                    if (txtSearchName.Text == "")
+                if (lblHead.Text == "Đặt món")
+                {
+                    comboBox1.Text = "Chọn loại sản phẩm";
+                }
+                else
+                {
+                    comboBox1.Text = "Select type of products";
+                }
+                if (txtSearchName.Text == string.Empty)
                     {
                         comboBox1.Enabled = true;
                         GetData(T);
@@ -626,7 +608,6 @@ namespace GUI
             txtFirstName.Visible = false;
             txtLastName.Visible = false;
             datBirthdate.Visible = false;
-            btnAddCus.Visible = false;
             lblNoneName.Visible = true;
         }
         public void ShowCus()
@@ -641,7 +622,6 @@ namespace GUI
             txtFirstName.Visible = true;
             txtLastName.Visible = true;
             datBirthdate.Visible = true;
-            btnAddCus.Visible = true;
             lblNoneName.Visible = false;
         }
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -651,12 +631,56 @@ namespace GUI
             if (resultIndex == 0)
             {
                 HideCus();
+                btnSave.Enabled = true;
             }
             else if (resultIndex == 1)
             {
                 ResetCus();
                 ShowCus();
             }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtEmail.Text) && (cboCustomerType.Text == "Registered" ||cboCustomerType.Text=="Đăng ký"))
+            {
+                errorProvider1.SetError(txtEmail, "Please write Email");
+                errorProvider2.SetError(txtEmail, "");
+                btnSave.Enabled = false;
+            }
+            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null && (cboCustomerType.Text != "Guest"||cboCustomerType.Text!="Vẵng lai" )&& cboCustomerType.Text != string.Empty && string.IsNullOrWhiteSpace(txtEmail.Text) == false)
+            {
+                errorProvider1.SetError(txtEmail, "Doesn't have customer, Will be registered when you click Save");
+                errorProvider2.SetError(txtEmail, "");
+                txtFirstName.Enabled = true;
+                txtLastName.Enabled = true;
+                datBirthdate.Enabled = true;
+                txtID.Visible = false;
+                check = 0;
+                btnSave.Enabled = true;
+            }
+            else if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null && cboCustomerType.Text != "Guest" && cboCustomerType.Text != "")
+            {
+                errorProvider1.SetError(txtEmail, "");
+                errorProvider2.SetError(txtEmail, "Correct");
+                txtID.Enabled = false;
+                txtFirstName.Enabled = false;
+                txtLastName.Enabled = false;
+                dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
+                txtID.Text = dtoCus.Id.ToString();
+                txtFirstName.Text = dtoCus.FirstName;
+                txtLastName.Text = dtoCus.LastName;
+                datBirthdate.Value = dtoCus.Birthdate;
+                datBirthdate.Enabled = false;
+                txtID.Visible = true;
+                check = 1;
+                btnSave.Enabled = true;
+            }
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "";
         }
     }
 }
