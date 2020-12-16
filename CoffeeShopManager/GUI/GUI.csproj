@@ -86,6 +86,12 @@
     <Compile Include="frmAddSupplier.Designer.cs">
       <DependentUpon>frmAddSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddTable.Designer.cs">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChangeAuthCodeShop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="frmEditStockItem.Designer.cs">
       <DependentUpon>frmEditStockItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderForTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderForTable.Designer.cs">
+      <DependentUpon>frmOrderForTable.cs</DependentUpon>
     </Compile>
     <Compile Include="frmShowDetailTable.cs">
       <SubType>Form</SubType>
@@ -305,6 +317,12 @@
     <Compile Include="UserControlTable.Designer.cs">
       <DependentUpon>UserControlTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlTableOfManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTableOfManager.Designer.cs">
+      <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlUserTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -328,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddSupplier.vi-VN.resx">
       <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTable.resx">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangeAuthCodeShop.resx">
       <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
@@ -389,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManager.vi-VN.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderForTable.resx">
+      <DependentUpon>frmOrderForTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
@@ -508,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlTable.vi-VN.resx">
       <DependentUpon>UserControlTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTableOfManager.resx">
+      <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUserTab.resx">
       <DependentUpon>UserControlUserTab.cs</DependentUpon>

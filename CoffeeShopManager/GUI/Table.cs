@@ -15,8 +15,11 @@ namespace GUI
     public partial class Table : UserControl
     {
         string stt;
+        DTO_Employee dtoEmp = new DTO_Employee();
         DTO_Table table = new DTO_Table();
+        BUS_Tables bus_table = new BUS_Tables();
         UserControlTable ucTable { get; set; }
+        UserControlTableOfManager ucTableManager { get; set; }
         public Table()
         {
             InitializeComponent();
@@ -26,7 +29,26 @@ namespace GUI
             InitializeComponent();
             table = _table;
             ucTable = _ucTable;
-
+            dtoEmp = ucTable.GetEmployee();
+            this.ContextMenuStrip = contextMenuStrip1;
+            Reload();
+        }
+        public Table(DTO_Table _table, UserControlTableOfManager _ucTable)
+        {
+            InitializeComponent();
+            table = _table;
+            ucTableManager = _ucTable;
+            this.ContextMenuStrip = contextMenuStrip2;
+            if (table.Status == "Unavailable")
+            {
+                setStatusToolStripMenuItem.Enabled = true;
+                setRepairingToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                setStatusToolStripMenuItem.Enabled = false;
+                setRepairingToolStripMenuItem.Enabled = true;
+            }
             Reload();
         }
         private void Reload()
@@ -39,11 +61,39 @@ namespace GUI
             else if (status == "Occupied")
                 BackColor = Color.FromArgb(248, 246, 158);
             else BackColor = Color.FromArgb(254, 238, 238);
+            if (status == "Available") orderToolStripMenuItem.Enabled = true;
+            else orderToolStripMenuItem.Enabled = false;
         }
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmShowDetailTable frmShowDetail = new frmShowDetailTable(table, ucTable);
             frmShowDetail.ShowDialog();
+        }
+
+        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrderForTable frmOrder = new frmOrderForTable(table.Id, ucTable.GetShopID(), dtoEmp);
+            frmOrder.ShowDialog();
+        }
+
+        private void setRepairingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            table.Status = "Unavailable";
+            bus_table.Update(table);
+            ucTableManager.LoadAllTables();
+        }
+
+        private void setStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            table.Status = "Available";
+            bus_table.Update(table);
+            ucTableManager.LoadAllTables();
+        }
+
+        private void removeTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bus_table.Delete(table);
+            ucTableManager.LoadAllTables();
         }
     }
 }

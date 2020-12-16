@@ -102,6 +102,7 @@ namespace GUI
             btnCheckOut.BackgroundImage = global::GUI.Properties.Resources.checked_80px;
             btnCheckOut.Enabled = false;
             Close();
+   
             
         }
 

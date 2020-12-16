@@ -267,5 +267,15 @@ namespace GUI
                 Application.Restart();
             }
         }
+
+        private void btnTable_Click(object sender, EventArgs e)
+        {
+            pnlChangeTab.Show();
+            pnlChangeTab.Location = btnTable.Location;
+            ucTable.Show();
+            ucTable.BringToFront();
+            ucTable.SetShopID(dtoMan.Shop.ID);
+            Reload();
+        }
     }
 }

@@ -11,16 +11,15 @@ using DTO;
 using BUS;
 namespace GUI
 {
-    public partial class UserControlTable : UserControl
+    public partial class UserControlTableOfManager : UserControl
     {
-        List<DTO_Table> listTable = new List<DTO_Table>();
-        BUS_Tables table = new BUS_Tables();
-        DTO_Employee dtoEmp = new DTO_Employee();
-        int shopID;
-        public UserControlTable()
+        public UserControlTableOfManager()
         {
             InitializeComponent();
         }
+        List<DTO_Table> listTable = new List<DTO_Table>();
+        BUS_Tables table = new BUS_Tables();
+        int shopID;
 
         private void UserControlTable_Load(object sender, EventArgs e)
         {
@@ -90,7 +89,7 @@ namespace GUI
         private void btnCollapse_Click(object sender, EventArgs e)
         {
             lblBy.Hide();
-            lblSearch.Hide(); 
+            lblSearch.Hide();
             cboBy.Hide(); ;
             txtSearch.Hide();
             btnExpand.Show();
@@ -102,11 +101,11 @@ namespace GUI
             if (cboBy.Text == "ID Table")
             {
                 listTable = new List<DTO_Table>();
-                if(table.GetTableById(int.Parse(txtSearch.Text), shopID) != null)
+                if (table.GetTableById(int.Parse(txtSearch.Text), shopID) != null)
                     listTable.Add(table.GetTableById(int.Parse(txtSearch.Text), shopID));
                 ReloadTable();
             }
-            else if(cboBy.Text == "ID Customer")
+            else if (cboBy.Text == "ID Customer")
             {
 
             }
@@ -120,13 +119,11 @@ namespace GUI
         {
             return shopID;
         }
-        public void SetEmployee(DTO_Employee emp)
+
+        private void btnAddTable_Click(object sender, EventArgs e)
         {
-            dtoEmp = emp;
-        }
-        public DTO_Employee GetEmployee()
-        {
-            return dtoEmp;
+            frmAddTable frmAddTable = new frmAddTable(shopID, this);
+            frmAddTable.ShowDialog();
         }
     }
 }

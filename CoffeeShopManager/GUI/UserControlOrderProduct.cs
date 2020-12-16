@@ -658,5 +658,9 @@ namespace GUI
                 ShowCus();
             }
         }
+        public void SetTable(int id)
+        {
+            comboBox2.Text = id.ToString();
+        }
     }
 }
