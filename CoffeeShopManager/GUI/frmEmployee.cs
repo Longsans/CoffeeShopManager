@@ -149,23 +149,5 @@ namespace GUI
         {
             _frmLogin.Show();
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int resultIndex = -1;
-            resultIndex = comboBox1.FindStringExact(comboBox1.Text);
-            if (comboBox1.Text == "English")
-            {
-                var changeLanguage = new ChangeLanguage();
-                changeLanguage.UpdateConfig("language", "eng");
-                Application.Restart();
-            }
-            else if (comboBox1.Text == "Vietnamese")
-            {
-                var changeLanguage = new ChangeLanguage();
-                changeLanguage.UpdateConfig("language", "vi-VN");
-                Application.Restart();
-            }
-        }
     }
 }
