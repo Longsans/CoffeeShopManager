@@ -169,7 +169,8 @@ namespace DAL
                 "INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
                 "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
-                "WHERE RECEIPTS.ShopId = @shopId";
+                "WHERE RECEIPTS.ShopId = @shopId " +
+                "ORDER BY RECEIPTS.Id ASC";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@shopId", shopId);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
@@ -206,7 +207,8 @@ namespace DAL
                 "FROM RECEIPTS INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
                 "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
-                "WHERE RECEIPTS.Id = @id AND RECEIPTS.ShopId = @shopId";
+                "WHERE RECEIPTS.Id = @id AND RECEIPTS.ShopId = @shopId " +
+                "ORDER BY RECEIPTS.Id ASC";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -226,7 +228,8 @@ namespace DAL
                 "FROM RECEIPTS INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
                 "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
-                "WHERE CustomerId = @cusId AND RECEIPTS.ShopId = @shopId";
+                "WHERE CustomerId = @cusId AND RECEIPTS.ShopId = @shopId " +
+                "ORDER BY RECEIPTS.Id ASC";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@cusId", cusId);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -247,7 +250,8 @@ namespace DAL
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
                 "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
                 "WHERE datediff(day, DateOfPayment, @dop) = 0 " +
-                "AND RECEIPTS.ShopId = @shopId";
+                "AND RECEIPTS.ShopId = @shopId " +
+                "ORDER BY RECEIPTS.Id ASC";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@dop", dop);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -267,7 +271,8 @@ namespace DAL
                 "FROM RECEIPTS INNER JOIN CUSTOMERS " +
                 "ON RECEIPTS.CustomerId = CUSTOMERS.Id " +
                 "AND RECEIPTS.ShopId = CUSTOMERS.ShopId " +
-                "WHERE EmployeeId = @empId AND RECEIPTS.ShopId = @shopId";
+                "WHERE EmployeeId = @empId AND RECEIPTS.ShopId = @shopId " +
+                "ORDER BY RECEIPTS.Id ASC";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@empId", empId);
             cmd.Parameters.AddWithValue("@shopId", shopId);

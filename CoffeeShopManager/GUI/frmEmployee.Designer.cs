@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployee));
             this.pnlTitleBar = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.imgListMenuButton = new System.Windows.Forms.ImageList(this.components);
@@ -62,6 +63,7 @@
             // 
             resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(138)))), ((int)(((byte)(93)))));
+            this.pnlTitleBar.Controls.Add(this.comboBox1);
             this.pnlTitleBar.Controls.Add(this.btnHome);
             this.pnlTitleBar.Controls.Add(this.btnMenu);
             this.pnlTitleBar.Controls.Add(this.btnMinimize);
@@ -71,6 +73,15 @@
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.pnlTitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
+            // 
+            // comboBox1
+            // 
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items")});
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnHome
             // 
@@ -293,5 +304,6 @@
         private UserControlManagerAndShopInfo ucManagerInfo;
         private UserControlOrderProduct userControlOrderProduct2;
         private UserControlEmployeeUserTab ucUserInfo;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
