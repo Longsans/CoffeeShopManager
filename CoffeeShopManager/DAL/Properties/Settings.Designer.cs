@@ -25,8 +25,8 @@ namespace DAL.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-14KFC4R\\SQLEXPRESS; Initial Catalog=NewDB; User id=sa;Passwor" +
-            "d=123456;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=NewDB;User Id=sa;Password=onetwothree;Multi" +
+            "pleActiveResultSets=true;")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
