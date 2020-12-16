@@ -97,6 +97,12 @@
     <Compile Include="frmEditStockItem.Designer.cs">
       <DependentUpon>frmEditStockItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOrderForTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderForTable.Designer.cs">
+      <DependentUpon>frmOrderForTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmShowDetailTable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManager.vi-VN.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderForTable.resx">
+      <DependentUpon>frmOrderForTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>

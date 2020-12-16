@@ -12,6 +12,8 @@ namespace DAL
     {
         protected string connectionString = Properties.Settings.Default.ConnectionString;
         //"Data Source=HDM-PC-DC54PLF;Initial Catalog=NewDB;Integrated Security=True";
+        //"Data Source=DESKTOP-14KFC4R\SQLEXPRESS; Initial Catalog=GUI4; User id=sa;Password=123456;" 
+
         protected SqlConnection conn = null;
 
         public DBConnection()
