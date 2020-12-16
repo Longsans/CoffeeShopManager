@@ -56,6 +56,16 @@ namespace GUI
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtUsername.Select();
+            if (lblPassword.Text == "Password")
+            {
+                btnEng.Enabled = false;
+                btnVie.Enabled = true;
+            }
+            else
+            {
+                btnEng.Enabled = true;
+                btnVie.Enabled = false;
+            }
         }
 
         private void lblRegister_Click(object sender, EventArgs e)
@@ -100,6 +110,20 @@ namespace GUI
         private void frmLogin_Activated(object sender, EventArgs e)
         {
             txtUsername.Select();
+        }
+
+        private void btnVie_Click(object sender, EventArgs e)
+        {
+            var changeLanguage = new ChangeLanguage();
+            changeLanguage.UpdateConfig("language", "vi-VN");
+            Application.Restart();
+        }
+
+        private void btnEng_Click(object sender, EventArgs e)
+        {
+            var changeLanguage = new ChangeLanguage();
+            changeLanguage.UpdateConfig("language", "en");
+            Application.Restart();
         }
     }
 }
