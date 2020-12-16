@@ -115,6 +115,18 @@ namespace BUS
                 throw ex;
             }
         }
+        public void Delete(DTO_Table table)
+        {
+            try
+            {
+                dalTables.Delete(table);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw ex;
+            }
+        }
 
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Net.Mail;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace GUI
         BUS_Employee busEmp = new BUS_Employee();
         BUS_UserInfo busUser = new BUS_UserInfo();
         UserControlEmployeesTab _ucEmp;
+        Timer tiktoker = new Timer();
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
         public frmAddEmployee()
@@ -171,7 +173,36 @@ namespace GUI
 
         private void frmAddEmployee_Load(object sender, EventArgs e)
         {
-            
+            txtEmail.LostFocus += TxtEmail_LostFocus;
+            tiktoker.Interval = 200;
+            tiktoker.Tick += Tiktoker_Tick;
+        }
+
+        private void Tiktoker_Tick(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                errEmail.SetError(txtEmail, "Email is required");
+                btnAdd.Enabled = false;
+            }
+            else
+            {
+                if (EmailHelper.ValidateEmail(txtEmail.Text))
+                {
+                    errEmail.SetError(txtEmail, "");
+                    btnAdd.Enabled = true;
+                }
+                else
+                {
+                    errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    btnAdd.Enabled = false;
+                }
+            }
+        }
+
+        private void TxtEmail_LostFocus(object sender, EventArgs e)
+        {
+            tiktoker.Start();
         }
 
         private void txtDayBD_TextChanged(object sender, EventArgs e)

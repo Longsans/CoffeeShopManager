@@ -21,7 +21,10 @@ namespace GUI
         BUS_UserInfo busUser = new BUS_UserInfo();
         DTO_Employee dtoEmp = new DTO_Employee();
         BUS_Employee busEmp = new BUS_Employee();
-        ErrorProvider err = new ErrorProvider();
+        ErrorProvider errEmail = new ErrorProvider();
+        Timer tiktoker = new Timer();
+        bool emailValid = true;
+
         public void Reload()
         {
             txtID.Text = dtoEmp.Id.ToString();
@@ -172,6 +175,7 @@ namespace GUI
             radMale.Enabled = false;
             radFemale.Enabled = false;
             btnBrowse.Enabled = false;
+            tiktoker.Stop();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -188,6 +192,46 @@ namespace GUI
             {
                 picEmpInfo.SizeMode = PictureBoxSizeMode.StretchImage;
                 picEmpInfo.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                if (EmailHelper.ValidateEmail(txtEmail.Text))
+                {
+                    errEmail.SetError(txtEmail, "");
+                    emailValid = true;
+                }
+                else
+                {
+                    errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    emailValid = false;
+                }
+            }
+            else
+            {
+                emailValid = false;
+            }
+            tiktoker.Start();
+        }
+
+        private void UserControlEmployeeUserTab_Load(object sender, EventArgs e)
+        {
+            tiktoker.Interval = 200;
+            tiktoker.Tick += Tiktoker_Tick;
+        }
+
+        private void Tiktoker_Tick(object sender, EventArgs e)
+        {
+            if (emailValid)
+            {
+                btnSaveChange.Enabled = true;
+            }
+            else
+            {
+                btnSaveChange.Enabled = false;
             }
         }
     }

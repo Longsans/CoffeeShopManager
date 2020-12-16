@@ -139,6 +139,9 @@
             // 
             resources.ApplyResources(this.txtEmail, "txtEmail");
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(125, 22);
+            this.txtEmail.TabIndex = 37;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // panel1
             // 

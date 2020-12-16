@@ -89,18 +89,27 @@ namespace GUI
         {
             if (!string.IsNullOrWhiteSpace(txtEmail.Text))
             {
-                var cus = busCus.GetCustomerByEmail(txtEmail.Text, dtoCus.Shop.ID);
-                if (cus != null && cus.Email != dtoCus.Email)
+                if (EmailHelper.ValidateEmail(txtEmail.Text))
                 {
-                    err.Icon = errorIcon;
-                    err.SetError(txtEmail, "A customer with such email already exists");
-                    btnSave.Enabled = false;
+                    var cus = busCus.GetCustomerByEmail(txtEmail.Text, dtoCus.Shop.ID);
+                    if (cus != null && cus.Email != dtoCus.Email)
+                    {
+                        err.Icon = errorIcon;
+                        err.SetError(txtEmail, "A customer with such email already exists");
+                        btnSave.Enabled = false;
+                    }
+                    else
+                    {
+                        err.Icon = checkIcon;
+                        err.SetError(txtEmail, "Valid");
+                        btnSave.Enabled = true;
+                    }
                 }
                 else
                 {
-                    err.Icon = checkIcon;
-                    err.SetError(txtEmail, "Valid");
-                    btnSave.Enabled = true;
+                    err.Icon = errorIcon;
+                    err.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    btnSave.Enabled = false;
                 }
             }
             else

@@ -74,11 +74,13 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TitleBar = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
+            this.errEmail = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.TitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errEmail)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -515,6 +517,10 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // errEmail
+            // 
+            this.errEmail.ContainerControl = this;
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -535,6 +541,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.TitleBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errEmail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -586,5 +593,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ErrorProvider errEmail;
     }
 }

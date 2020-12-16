@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="ChangeLanguage.cs" />
     <Compile Include="DataGridViewNumericUpDownCell.cs" />
+    <Compile Include="EmailHelper.cs" />
     <Compile Include="FilterProperties.cs" />
     <Compile Include="frmAddStockItem.cs">
       <SubType>Form</SubType>
@@ -84,6 +85,12 @@
     </Compile>
     <Compile Include="frmAddSupplier.Designer.cs">
       <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddTable.Designer.cs">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChangeAuthCodeShop.cs">
       <SubType>Form</SubType>
@@ -310,6 +317,12 @@
     <Compile Include="UserControlTable.Designer.cs">
       <DependentUpon>UserControlTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlTableOfManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTableOfManager.Designer.cs">
+      <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlUserTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -333,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddSupplier.vi-VN.resx">
       <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTable.resx">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChangeAuthCodeShop.resx">
       <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
@@ -516,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlTable.vi-VN.resx">
       <DependentUpon>UserControlTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTableOfManager.resx">
+      <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUserTab.resx">
       <DependentUpon>UserControlUserTab.cs</DependentUpon>

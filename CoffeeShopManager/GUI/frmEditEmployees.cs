@@ -21,6 +21,9 @@ namespace GUI
         public DTO_Employee dtoEmp = new DTO_Employee();
         BUS_Employee busEmp = new BUS_Employee();
         BUS_Manager busMan = new BUS_Manager();
+        Timer tiktoker = new Timer();
+        bool emailValid = true;
+
         public frmEditEmployees()
         {
             InitializeComponent();
@@ -55,6 +58,20 @@ namespace GUI
             if (dtoEmp.Image != null)
             {
                 picboxEmpImg.Image = ImageHelper.ByteArrayToImage(dtoEmp.Image);
+            }
+            tiktoker.Interval = 200;
+            tiktoker.Tick += Tiktoker_Tick;
+        }
+
+        private void Tiktoker_Tick(object sender, EventArgs e)
+        {
+            if (emailValid)
+            {
+                btnSaveChange.Enabled = true;
+            }
+            else
+            {
+                btnSaveChange.Enabled = false;
             }
         }
 
@@ -184,6 +201,29 @@ namespace GUI
                 txtMonthJoin.ResetText();
                 txtYearJoin.ResetText();
             }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                if (EmailHelper.ValidateEmail(txtEmail.Text))
+                {
+                    errEmail.SetError(txtEmail, "");
+                    emailValid = true;
+                }
+                else
+                {
+                    errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    emailValid = false;
+                }
+            }
+            else
+            {
+                errEmail.SetError(txtEmail, "Please fill all info fields");
+                emailValid = false;
+            }
+            tiktoker.Start();
         }
     }
 }

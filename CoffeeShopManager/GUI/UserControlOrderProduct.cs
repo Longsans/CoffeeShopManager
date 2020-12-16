@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Mail;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
@@ -199,6 +200,7 @@ namespace GUI
             txtFirstName.Enabled = false;
             txtLastName.Enabled = false;
         }
+
         public int bien = 0;
         public double giatri = 0;
         public void ResetCus()
@@ -486,6 +488,57 @@ namespace GUI
                 lblGrandTotal.Text = sum.ToString()+"$";
             }
             lblGrandTotal.Text = sum.ToString()+"$";
+
+            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
+            {
+                errorProvider2.SetError(txtEmail, "");
+                txtFirstName.Enabled = true;
+                txtLastName.Enabled = true;
+                //btnAddCus.Visible = true;
+                datBirthdate.Enabled = true;
+                txtID.Visible = false;
+                btnSave.Enabled = false;
+                if (cboCustomerType.Text == "Registered")
+                {
+                    if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                    {
+                        errorProvider1.SetError(txtEmail, "Email is required");
+                    }
+                    else
+                    {
+                        if (EmailHelper.ValidateEmail(txtEmail.Text))
+                        {
+                            errorProvider1.SetError(txtEmail, "");
+                            errorProvider2.SetError(txtEmail, "Valid");
+                            btnSave.Enabled = true;
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                        }
+                    }
+                }
+                else if (cboCustomerType.Text == "Guest")
+                {
+                    btnSave.Enabled = true;
+                }
+            }
+            else if(busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
+            {
+                errorProvider1.SetError(txtEmail, "");
+                errorProvider2.SetError(txtEmail, "Valid");
+                txtID.Enabled = false;
+                txtFirstName.Enabled = false;
+                txtLastName.Enabled = false;
+                dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
+                txtID.Text = dtoCus.Id.ToString();
+                txtFirstName.Text = dtoCus.FirstName;
+                txtLastName.Text = dtoCus.LastName;
+                datBirthdate.Value = dtoCus.Birthdate;
+                //btnAddCus.Visible = false;
+                datBirthdate.Enabled = false;
+                txtID.Visible = true;
+            }
         }
         
         public void SetShopID(int id)
@@ -628,6 +681,10 @@ namespace GUI
         private void txtEmail_Click(object sender, EventArgs e)
         {
             txtEmail.Text = "";
+        }
+        public void SetTable(int id)
+        {
+            comboBox2.Text = id.ToString();
         }
     }
 }

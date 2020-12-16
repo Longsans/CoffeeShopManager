@@ -112,6 +112,7 @@ namespace GUI
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnUser.Location;
             ucUserInfo.BringToFront();
+            ucUserInfo.Reload();
             ucUserInfo.Show();
         }
 
@@ -137,6 +138,7 @@ namespace GUI
             userControlOrderProduct2.dtoEmp = frmEmployee.dtoEmp;
             userControlOrderProduct2.SetShopID(dtoShop.ID);
             userControlOrderProduct2.dtoShop = busShop.GetShopById(dtoEmp.Shop.ID);
+            ucTable.SetEmployee(dtoEmp);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

@@ -78,6 +78,10 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errEmail = new System.Windows.Forms.ErrorProvider(this.components);
             this.clmProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errEmail)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -474,6 +479,10 @@
             this.clmID.Name = "clmID";
             this.clmID.ReadOnly = true;
             // 
+            // errEmail
+            // 
+            this.errEmail.ContainerControl = this;
+            // 
             // UserControlOrderProduct
             // 
             resources.ApplyResources(this, "$this");
@@ -496,6 +505,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errEmail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,5 +563,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
         private System.Windows.Forms.DataGridViewButtonColumn clmDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmID;
+        private System.Windows.Forms.ErrorProvider errEmail;
     }
 }

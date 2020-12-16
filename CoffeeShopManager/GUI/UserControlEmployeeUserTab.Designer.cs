@@ -149,6 +149,9 @@
             // 
             resources.ApplyResources(this.txtEmail, "txtEmail");
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(125, 22);
+            this.txtEmail.TabIndex = 63;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtPhone
             // 
@@ -329,6 +332,8 @@
             this.Controls.Add(this.picEmpInfo);
             this.Controls.Add(this.lblUserInfo);
             this.Name = "UserControlEmployeeUserTab";
+            this.Size = new System.Drawing.Size(897, 583);
+            this.Load += new System.EventHandler(this.UserControlEmployeeUserTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picEmpInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
