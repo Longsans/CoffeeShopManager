@@ -43,21 +43,21 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtItemId);
             this.panel1.Controls.Add(this.lblCancel);
             this.panel1.Controls.Add(this.lblAdd);
             this.panel1.Controls.Add(this.label3);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.lblTitle);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
@@ -83,8 +83,8 @@
             // 
             // txtItemId
             // 
-            resources.ApplyResources(this.txtItemId, "txtItemId");
             this.txtItemId.ForeColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.txtItemId, "txtItemId");
             this.txtItemId.Name = "txtItemId";
             this.txtItemId.Validating += new System.ComponentModel.CancelEventHandler(this.txtItemId_Validating);
             // 
@@ -121,7 +121,6 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSmallAddStockItemToList";
-            this.Load += new System.EventHandler(this.lblAdd_MouseLeave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
