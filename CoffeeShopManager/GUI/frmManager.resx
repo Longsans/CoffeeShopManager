@@ -2199,8 +2199,7 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1137, 664</value>
   </data>
-    <value>1137, 733</value>
-  </data>
+ 
   <data name="$this.Text" xml:space="preserve">
     <value>frmHome</value>
   </data>
