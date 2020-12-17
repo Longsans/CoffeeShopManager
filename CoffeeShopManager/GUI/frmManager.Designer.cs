@@ -37,7 +37,6 @@
             this.pnlChangeTab = new System.Windows.Forms.Panel();
             this.btnShop = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
-            this.btnNoti = new System.Windows.Forms.Button();
             this.btnEvent = new System.Windows.Forms.Button();
             this.btnStatistic = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
@@ -65,7 +64,6 @@
             this.ucUserTab = new GUI.UserControlUserTab();
             this.ucCustomersTab = new GUI.UserControlCustomers();
             this.ucEventsTab = new GUI.UserControlEvents();
-            this.ucNotifications = new GUI.UserControlNotifications();
             this.ucStatisticsTab = new GUI.UserControlStatistics();
             this.ucStockTab = new GUI.UserControlStock();
             this.ucSuppliersTab = new GUI.UserControlSuppliers();
@@ -81,11 +79,10 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
-            this.pnlMenu.Controls.Add(this.btnTable);
             this.pnlMenu.Controls.Add(this.pnlChangeTab);
+            this.pnlMenu.Controls.Add(this.btnTable);
             this.pnlMenu.Controls.Add(this.btnShop);
             this.pnlMenu.Controls.Add(this.btnUser);
-            this.pnlMenu.Controls.Add(this.btnNoti);
             this.pnlMenu.Controls.Add(this.btnEvent);
             this.pnlMenu.Controls.Add(this.btnStatistic);
             this.pnlMenu.Controls.Add(this.btnCustomer);
@@ -149,16 +146,6 @@
             this.btnUser.Name = "btnUser";
             this.btnUser.UseVisualStyleBackColor = true;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
-            // 
-            // btnNoti
-            // 
-            this.btnNoti.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNoti.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnNoti, "btnNoti");
-            this.btnNoti.ImageList = this.imgListMenuButton;
-            this.btnNoti.Name = "btnNoti";
-            this.btnNoti.UseVisualStyleBackColor = true;
-            this.btnNoti.Click += new System.EventHandler(this.btnNoti_Click);
             // 
             // btnEvent
             // 
@@ -335,7 +322,6 @@
             this.pnlShow.Controls.Add(this.ucUserTab);
             this.pnlShow.Controls.Add(this.ucCustomersTab);
             this.pnlShow.Controls.Add(this.ucEventsTab);
-            this.pnlShow.Controls.Add(this.ucNotifications);
             this.pnlShow.Controls.Add(this.ucStatisticsTab);
             this.pnlShow.Controls.Add(this.ucStockTab);
             this.pnlShow.Controls.Add(this.ucSuppliersTab);
@@ -392,11 +378,35 @@
             this.ucEmployeeTab.dtoMan = dtO_Manager1;
             this.ucEmployeeTab.Name = "ucEmployeeTab";
             // 
+            // ucEmployeeTab
             // ucProductTab
+            // 
+            resources.ApplyResources(this.ucEmployeeTab, "ucEmployeeTab");
+            dtO_Manager1.Birthdate = new System.DateTime(((long)(0)));
+            dtO_Manager1.Email = null;
+            dtO_Manager1.Firstname = null;
+            dtO_Manager1.Gender = null;
+            dtO_Manager1.Id = null;
+            dtO_Manager1.Image = null;
+            dtO_Manager1.Lastname = null;
+            dtO_Manager1.Phone = null;
+            dtO_Manager1.Position = null;
+            this.ucEmployeeTab.dtoMan = dtO_Manager1;
+            this.ucEmployeeTab.Name = "ucEmployeeTab";
+            this.ucProductTab.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            resources.ApplyResources(this.ucProductTab, "ucProductTab");
+            this.ucProductTab.Name = "ucProductTab";
+            // 
+            // ucProductTab
+            // ucUserTab
             // 
             this.ucProductTab.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             resources.ApplyResources(this.ucProductTab, "ucProductTab");
             this.ucProductTab.Name = "ucProductTab";
+            this.ucUserTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucUserTab.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.ucUserTab, "ucUserTab");
+            this.ucUserTab.Name = "ucUserTab";
             // 
             // ucUserTab
             // 
@@ -418,9 +428,6 @@
             this.ucEventsTab.Name = "ucEventsTab";
             // 
             // ucNotifications
-            // 
-            resources.ApplyResources(this.ucNotifications, "ucNotifications");
-            this.ucNotifications.Name = "ucNotifications";
             // 
             // ucStatisticsTab
             // 
@@ -493,7 +500,6 @@
         private System.Windows.Forms.Panel pnlShow;
         private System.Windows.Forms.ImageList imgListMenuButton;
         private System.Windows.Forms.Button btnUser;
-        private System.Windows.Forms.Button btnNoti;
         private System.Windows.Forms.Button btnEvent;
         private System.Windows.Forms.Button btnStatistic;
         private System.Windows.Forms.Button btnCustomer;
@@ -519,7 +525,6 @@
         private UserControlSuppliers ucSuppliersTab;
         private UserControlStock ucStockTab;
         private UserControlStatistics ucStatisticsTab;
-        private UserControlNotifications ucNotifications;
         private UserControlEvents ucEventsTab;
         private UserControlHome ucHome;
         private UserControlReceiptsDetail ucReceiptDetails;

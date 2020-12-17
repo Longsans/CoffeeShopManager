@@ -35,18 +35,8 @@ namespace GUI
             }
             else
             {
-                if (table.Status == "Unavailable")
-                {
-                    btnSetUnavailable.Enabled = false;
-                    btnCheckOut.Enabled = true;
-                    btnCheckOut.BackgroundImage = global::GUI.Properties.Resources.ok_48px;
-                }
-                else
-                {
-                    btnSetUnavailable.Enabled = true;
-                    btnCheckOut.Enabled = false;
-                    btnCheckOut.BackgroundImage = global::GUI.Properties.Resources.checked_80px;
-                }
+                btnCheckOut.Enabled = false;
+                btnCheckOut.BackgroundImage = global::GUI.Properties.Resources.checked_80px;
             }
         }
 
@@ -110,23 +100,10 @@ namespace GUI
         {
 
         }
-
-        private void btnSetUnavailable_Click(object sender, EventArgs e)
-        {
-            table.Status = "Unavailable";
-            DialogResult ret = MessageBox.Show("Do you want to make this table unavailable?", "Disable table", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (ret == DialogResult.Yes) busTable.Update(table);
-            Close();
-        }
-
         private void frmShowDetailTable_FormClosed(object sender, FormClosedEventArgs e)
         {
             ucTable.LoadAllTables();
         }
 
-        private void lblTableID_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

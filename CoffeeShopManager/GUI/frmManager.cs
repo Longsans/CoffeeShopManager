@@ -207,16 +207,6 @@ namespace GUI
             ucEventsTab.BringToFront();
             Reload();
         }
-
-        private void btnNoti_Click(object sender, EventArgs e)
-        {
-            pnlChangeTab.Show();
-            pnlChangeTab.Location = btnNoti.Location;
-            ucNotifications.Show();
-            ucNotifications.BringToFront();
-            Reload();
-        }
-
         private void btnUser_Click(object sender, EventArgs e)
         {
             pnlChangeTab.Show();

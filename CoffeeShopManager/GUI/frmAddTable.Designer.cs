@@ -93,6 +93,9 @@
             this.lblTitle.Size = new System.Drawing.Size(97, 21);
             this.lblTitle.TabIndex = 7;
             this.lblTitle.Text = "Add table";
+            this.lblTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
+            this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
+            this.lblTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
             // 
             // txtTableId
             // 
@@ -115,6 +118,7 @@
             this.lblCancel.Size = new System.Drawing.Size(60, 19);
             this.lblCancel.TabIndex = 16;
             this.lblCancel.Text = "Cancel";
+            this.lblCancel.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblAdd
             // 
