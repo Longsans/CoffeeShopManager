@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using System.Threading;
+using System.Configuration;
 
 namespace GUI
 {
@@ -36,6 +38,9 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnReceipts.Location;
+            userControlOrderProduct2.dtoEmp = frmEmployee.dtoEmp;
+            userControlOrderProduct2.SetShopID(dtoShop.ID);
+            userControlOrderProduct2.dtoShop = busShop.GetShopById(dtoEmp.Shop.ID);
             userControlOrderProduct2.BringToFront();
             userControlOrderProduct2.Show();
             userControlOrderProduct2.ReloadTable();
@@ -102,6 +107,8 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnTables.Location;
+            ucTable.SetEmployee(dtoEmp);
+            ucTable.SetShopID(dtoShop.ID);
             ucTable.BringToFront();
             ucTable.Show();
             ucTable.LoadAllTables();
@@ -111,6 +118,7 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnUser.Location;
+            ucUserInfo.SetUser(dtoEmp);
             ucUserInfo.BringToFront();
             ucUserInfo.Reload();
             ucUserInfo.Show();
@@ -120,6 +128,8 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnManager.Location;
+            ucManagerInfo.SetShop(busShop.GetShopById(dtoEmp.Shop.ID));
+            ucManagerInfo.SetManager(busMan.GetById(dtoEmp.Manager.Id, dtoShop.ID));
             ucManagerInfo.BringToFront();
             ucManagerInfo.Show();
         }
@@ -140,7 +150,19 @@ namespace GUI
             userControlOrderProduct2.dtoShop = busShop.GetShopById(dtoEmp.Shop.ID);
             ucTable.SetEmployee(dtoEmp);
         }
-
+        public void ResetDCM()
+        {
+            dtoShop = dtoEmp.Shop;
+            lblWelcome.Text = "Welcome, " + dtoEmp.Firstname;
+            ucTable.SetShopID(dtoShop.ID);
+            ucManagerInfo.SetManager(busMan.GetById(dtoEmp.Manager.Id, dtoShop.ID));
+            ucManagerInfo.SetShop(busShop.GetShopById(dtoShop.ID));
+            ucUserInfo.SetUser(dtoEmp);
+            userControlOrderProduct2.dtoEmp = frmEmployee.dtoEmp;
+            userControlOrderProduct2.SetShopID(dtoShop.ID);
+            userControlOrderProduct2.dtoShop = busShop.GetShopById(dtoEmp.Shop.ID);
+            ucTable.SetEmployee(dtoEmp);
+        }
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Close();
@@ -149,6 +171,35 @@ namespace GUI
         private void frmEmployee_FormClosed(object sender, FormClosedEventArgs e)
         {
             _frmLogin.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int resultIndex = -1;
+            resultIndex = comboBox1.FindStringExact(comboBox1.Text);
+            if (comboBox1.Text == "English")
+            {
+                var changeLanguage = new ChangeLanguage();
+                changeLanguage.UpdateConfig("language", "eng");
+                var language = ConfigurationManager.AppSettings["language"];
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+                this.Controls.Clear();
+                this.InitializeComponent();
+                ResetDCM();
+                
+            }
+            else if (comboBox1.Text == "Vietnamese")
+            {
+                var changeLanguage = new ChangeLanguage();
+                changeLanguage.UpdateConfig("language", "vi-VN");
+                var language = ConfigurationManager.AppSettings["language"];
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+                this.Controls.Clear();
+                this.InitializeComponent();
+                ResetDCM();
+            }
         }
     }
 }

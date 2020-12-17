@@ -72,7 +72,7 @@ namespace GUI
 
         private void orderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmOrderForTable frmOrder = new frmOrderForTable(table.Id, ucTable.GetShopID(), dtoEmp);
+            frmOrderForTable frmOrder = new frmOrderForTable(table.Id, ucTable.GetShopID(), dtoEmp, ucTable);
             frmOrder.ShowDialog();
         }
 

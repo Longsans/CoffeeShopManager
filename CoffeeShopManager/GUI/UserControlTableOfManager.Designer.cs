@@ -241,6 +241,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserControlTableOfManager";
             this.Size = new System.Drawing.Size(897, 593);
+            this.Load += new System.EventHandler(this.UserControlTableOfManager_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

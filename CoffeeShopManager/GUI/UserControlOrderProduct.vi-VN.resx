@@ -213,21 +213,20 @@
         P////n////5/////////////////////////////
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblSelect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="comboBox1.Items" xml:space="preserve">
+    <value>Tất cả</value>
   </data>
-  <data name="lblSelect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 17</value>
+  <data name="comboBox1.Items1" xml:space="preserve">
+    <value>Thức ăn</value>
   </data>
-  <data name="lblSelect.Text" xml:space="preserve">
+  <data name="comboBox1.Items2" xml:space="preserve">
+    <value>Nước uống</value>
+  </data>
+  <data name="comboBox1.Items3" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="comboBox1.Text" xml:space="preserve">
     <value>Chọn loại sản phẩm</value>
-  </data>
-  <data name="btnSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblOr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="errorProvider2.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -767,20 +766,14 @@
         /////////////////////////////////////////////////////////////////////////////w==
 </value>
   </data>
-  <data name="lblHead.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="lblHead.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 36</value>
   </data>
   <data name="lblHead.Text" xml:space="preserve">
     <value>Đặt món</value>
   </data>
-  <data name="lblNoneName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="lblNoneName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 96</value>
+    <value>27, 96</value>
   </data>
   <data name="lblNoneName.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 21</value>
@@ -788,20 +781,20 @@
   <data name="lblNoneName.Text" xml:space="preserve">
     <value>Không cần điền</value>
   </data>
-  <data name="btnAddCus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="cboCustomerType.Items" xml:space="preserve">
+    <value>Vẵng lai</value>
   </data>
-  <data name="btnAddCus.Text" xml:space="preserve">
-    <value>Thêm khách</value>
+  <data name="cboCustomerType.Items1" xml:space="preserve">
+    <value>Đăng ký</value>
   </data>
-  <data name="lblID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="cboCustomerType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 3</value>
   </data>
-  <data name="lblLastName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 79</value>
   </data>
   <data name="lblLastName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 128</value>
+    <value>6, 128</value>
   </data>
   <data name="lblLastName.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 18</value>
@@ -809,29 +802,11 @@
   <data name="lblLastName.Text" xml:space="preserve">
     <value>Tên:</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGrandTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblTotalSum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblGrand.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="lblGrand.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 20</value>
   </data>
   <data name="lblGrand.Text" xml:space="preserve">
     <value>Tổng tất cả</value>
-  </data>
-  <data name="lblDiscount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -839,8 +814,11 @@
   <data name="lblTotal.Text" xml:space="preserve">
     <value>Tổng:</value>
   </data>
-  <data name="lblTableNumber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 79</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 139</value>
   </data>
   <data name="lblTableNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 17</value>
@@ -848,8 +826,8 @@
   <data name="lblTableNumber.Text" xml:space="preserve">
     <value>Bàn trống:</value>
   </data>
-  <data name="lblTable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblTable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 0</value>
   </data>
   <data name="lblTable.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 25</value>
@@ -857,8 +835,8 @@
   <data name="lblTable.Text" xml:space="preserve">
     <value>Bàn</value>
   </data>
-  <data name="lblBirthday.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblBirthday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 157</value>
   </data>
   <data name="lblBirthday.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 18</value>
@@ -866,14 +844,11 @@
   <data name="lblBirthday.Text" xml:space="preserve">
     <value>Ngày sinh:</value>
   </data>
-  <data name="lblEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblFirstName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 47</value>
   </data>
   <data name="lblFirstName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 103</value>
+    <value>6, 103</value>
   </data>
   <data name="lblFirstName.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 18</value>
@@ -881,23 +856,14 @@
   <data name="lblFirstName.Text" xml:space="preserve">
     <value>Họ:</value>
   </data>
-  <data name="lblCustomer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="lblCustomer.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 25</value>
   </data>
   <data name="lblCustomer.Text" xml:space="preserve">
     <value>Loại khách</value>
   </data>
-  <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Hủy</value>
-  </data>
-  <data name="btnSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
     <value>Lưu</value>

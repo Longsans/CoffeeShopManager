@@ -41,6 +41,11 @@ namespace GUI
             txtPhoneNumber.Enabled = true;
             txtShopAddress.Enabled = true;
         }
+        public void SetShop(DTO_Manager dtoMan1)
+        {
+            this.dtoMan = dtoMan1;
+            Reload();
+        }
         public void Reload()
         {
             dtoShop = busShop.GetShopById(dtoMan.Shop.ID);

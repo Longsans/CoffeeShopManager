@@ -19,15 +19,17 @@ namespace GUI
         int tableId;
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
+        UserControlTable ucTable { get; set; }
         public frmOrderForTable()
         {
             InitializeComponent();
         }
-        public frmOrderForTable(int num1, int num2, DTO_Employee dtoEmp)
+        public frmOrderForTable(int num1, int num2, DTO_Employee dtoEmp, UserControlTable u)
         {
             InitializeComponent();
             tableId = num1;
             shopId = num2;
+            ucTable = u;
             ucOrderProduct.SetShopID(shopId);
             ucOrderProduct.dtoEmp = dtoEmp;
             ucOrderProduct.dtoShop = busShop.GetShopById(shopId);
@@ -54,6 +56,7 @@ namespace GUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
+            ucTable.LoadAllTables();
         }
     }
 }

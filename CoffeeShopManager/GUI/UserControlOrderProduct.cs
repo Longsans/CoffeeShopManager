@@ -41,6 +41,7 @@ namespace GUI
         public DTO_Shop dtoShop = new DTO_Shop();
         public DTO_Employee dtoEmp = new DTO_Employee();
         int shopID;
+        int checkname, checkemail, checkbirth;
         public UserControlOrderProduct()
         {
             InitializeComponent();
@@ -58,7 +59,7 @@ namespace GUI
             {
                 comboBox2.Items.Add(lsTable[i].Id.ToString());
             }
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDown;
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //  GetData(busPro.GetAllProducts(dtoShop.ID));
@@ -190,6 +191,14 @@ namespace GUI
             {
                 datBirthdate.CustomFormat = " ";
             }
+            if (lblHead.Text == "Đặt món")
+            {
+                comboBox1.Text = "Chọn loại sản phẩm";
+            }
+            else
+            {
+                comboBox1.Text = "Select type of products";
+            }
             HideCus();
             lblNoneName.Visible = true;
             Timer t1 = new Timer();
@@ -210,14 +219,15 @@ namespace GUI
             txtLastName.Text = "";
             txtEmail.Text = "";
             txtID.Text = "";
-            datBirthdate.CustomFormat = " ";
+            datBirthdate.Value = DateTime.Now;
+           // datBirthdate.CustomFormat = " ";
             
 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int resultIndex = -1;
+            /*int resultIndex = -1;
             resultIndex = comboBox1.FindStringExact(comboBox1.Text);
             if (resultIndex == 1)
             {
@@ -238,14 +248,7 @@ namespace GUI
             {
                 flowLayoutPanel1.Controls.Clear();
                 GetData(T);
-            }
-        }
-        private void UserControlOrderProduct_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.Text == "")
-            {
-                lblSelect.Visible = true;
-            }
+            }*/
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -332,10 +335,10 @@ namespace GUI
             dtoReceipt = new DTO_Receipt();
             if (dataGridView1.Rows.Count <= 1)
             {
-                MessageBox.Show("Chua order mon");
+                MessageBox.Show("haven't ordered yet");
                 return;
             }
-            if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == string.Empty)
+            if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == string.Empty||cboCustomerType.Text=="Vẵng lai")
             {
                 if (busCus.GetNullCustomer(shopID) == null)
                 {
@@ -352,6 +355,14 @@ namespace GUI
             }
             else
             {
+                if(cboCustomerType.Text=="Registered"||cboCustomerType.Text=="Đăng ký")
+                {
+                    if (checkemail == 0|| checkname == 0|| checkbirth == 0)
+                    {
+                        MessageBox.Show("Write profile for Customer");
+                        return;
+                    }
+                }
                 if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
                 {
                     check = 0;
@@ -362,18 +373,19 @@ namespace GUI
                 }
                 if (dataGridView1.Rows.Count <= 1)
                 {
-                    MessageBox.Show("Chua order mon");
+                    MessageBox.Show("haven't ordered yet");
                     return;
                 }
-                    if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "")
+                if (check == 0&&(cboCustomerType.Text== "Registered"|| cboCustomerType.Text == "Đăng ký")&&checkname==1&&checkemail==1&&checkbirth==1)
                 {
-                    MessageBox.Show("Nhap day du thong tin customer");
-                    return;
-                }
-                    if (check == 0)
-                {
-                    MessageBox.Show("Yeu cau dang ky  khach hang");
-                    return;
+                    DateTime bdate = new DateTime();
+                    dtoCus.Email = txtEmail.Text;
+                    dtoCus.FirstName = txtFirstName.Text;
+                    dtoCus.LastName = txtLastName.Text;
+                    dtoCus.Birthdate = datBirthdate.Value;
+                    dtoCus.Shop.ID = shopID;
+                    busCus.Insert(dtoCus);
+                    dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
                 }
             }
             dtoReceipt.Customer = dtoCus;
@@ -425,27 +437,6 @@ namespace GUI
             ResetAll();
         }
         public int check = 0;
-        private void btnAddCus_Click(object sender, EventArgs e)
-        {
-                if (txtEmail.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "")
-            {
-                MessageBox.Show("Nhap day du thong tin khach hang");
-                return;
-            }
-            string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
-            DateTime bdate = new DateTime();
-            dtoCus.Email = txtEmail.Text;
-                if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
-            dtoCus.Id = Int32.Parse(txtID.Text);
-            dtoCus.FirstName = txtFirstName.Text;
-            dtoCus.LastName = txtLastName.Text;
-
-                dtoCus.Birthdate = datBirthdate.Value;
-
-            dtoCus.Shop.ID = shopID;
-            busCus.Insert(dtoCus);
-            
-        }
         public void ResetAll()
         {
             int to = dataGridView1.Rows.Count;
@@ -467,6 +458,7 @@ namespace GUI
         {
             int resultIndex = -1;
             resultIndex = comboBox1.FindStringExact(comboBox1.Text);
+
             if (resultIndex == 1)
             {
                 flowLayoutPanel1.Controls.Clear();
@@ -482,8 +474,16 @@ namespace GUI
                 flowLayoutPanel1.Controls.Clear();
                 GetData(c);
             }
-            else if (resultIndex == 0)
+            else if (resultIndex == 0||comboBox1.Text==string.Empty)
             {
+                if (lblHead.Text == "Đặt món")
+                {
+                    comboBox1.Text = "Chọn loại sản phẩm";
+                }
+                else
+                {
+                    comboBox1.Text = "Select type of products";
+                }
                 flowLayoutPanel1.Controls.Clear();
                 GetData(T);
             }
@@ -512,15 +512,16 @@ namespace GUI
                 errorProvider2.SetError(txtEmail, "");
                 txtFirstName.Enabled = true;
                 txtLastName.Enabled = true;
-                btnAddCus.Visible = true;
                 datBirthdate.Enabled = true;
                 txtID.Visible = false;
-                btnSave.Enabled = false;
-                if (cboCustomerType.Text == "Registered")
+             //   btnSave.Enabled = false;
+                if (cboCustomerType.Text == "Registered"||cboCustomerType.Text=="Đăng ký")
                 {
                     if (string.IsNullOrWhiteSpace(txtEmail.Text))
                     {
                         errorProvider1.SetError(txtEmail, "Email is required");
+                        errorProvider2.SetError(txtEmail, "");
+
                     }
                     else
                     {
@@ -528,15 +529,17 @@ namespace GUI
                         {
                             errorProvider1.SetError(txtEmail, "");
                             errorProvider2.SetError(txtEmail, "Valid");
-                            btnSave.Enabled = true;
+                            checkemail = 1;
+                           // btnSave.Enabled = true;
                         }
                         else
                         {
                             errorProvider1.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                            checkemail = 0;
                         }
                     }
                 }
-                else if (cboCustomerType.Text == "Guest")
+                else if (cboCustomerType.Text == "Guest"||cboCustomerType.Text=="Vẵng lai"||cboCustomerType.Text==string.Empty)
                 {
                     btnSave.Enabled = true;
                 }
@@ -553,9 +556,9 @@ namespace GUI
                 txtFirstName.Text = dtoCus.FirstName;
                 txtLastName.Text = dtoCus.LastName;
                 datBirthdate.Value = dtoCus.Birthdate;
-                btnAddCus.Visible = false;
                 datBirthdate.Enabled = false;
                 txtID.Visible = true;
+                btnSave.Enabled = true;
             }
         }
         
@@ -564,13 +567,6 @@ namespace GUI
             shopID = id;
             Reload();
         }
-
-        private void comboBox1_Click(object sender, EventArgs e)
-        {
-            lblSelect.Visible = false;
-
-        }
-
         private void panel1_Click(object sender, EventArgs e)
         {
 
@@ -586,8 +582,15 @@ namespace GUI
                 {
                     flowLayoutPanel1.Controls.Clear();
                     comboBox1.Enabled = false;
-                    comboBox1.Text = "All";
-                    if (txtSearchName.Text == "")
+                if (lblHead.Text == "Đặt món")
+                {
+                    comboBox1.Text = "Chọn loại sản phẩm";
+                }
+                else
+                {
+                    comboBox1.Text = "Select type of products";
+                }
+                if (txtSearchName.Text == string.Empty)
                     {
                         comboBox1.Enabled = true;
                         GetData(T);
@@ -613,6 +616,19 @@ namespace GUI
         private void datBirthdate_ValueChanged(object sender, EventArgs e)
         {
             datBirthdate.CustomFormat = "dd/MM/yyyy";
+            DateTime now = DateTime.Now;
+            if (datBirthdate.Value.Date < DateTime.Now.Date)
+            {
+                errorProvider1.SetError(datBirthdate, "");
+                errorProvider2.SetError(datBirthdate, "Accept date");
+                checkbirth = 1;
+            }
+            else
+            {
+                errorProvider1.SetError(datBirthdate, "Wrong date ?");
+                errorProvider2.SetError(datBirthdate, "");
+                checkbirth = 0;
+            }
         }
         public void HideCus()
         {
@@ -626,7 +642,6 @@ namespace GUI
             txtFirstName.Visible = false;
             txtLastName.Visible = false;
             datBirthdate.Visible = false;
-            btnAddCus.Visible = false;
             lblNoneName.Visible = true;
         }
         public void ShowCus()
@@ -641,7 +656,6 @@ namespace GUI
             txtFirstName.Visible = true;
             txtLastName.Visible = true;
             datBirthdate.Visible = true;
-            btnAddCus.Visible = true;
             lblNoneName.Visible = false;
         }
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -651,11 +665,85 @@ namespace GUI
             if (resultIndex == 0)
             {
                 HideCus();
+                btnSave.Enabled = true;
             }
             else if (resultIndex == 1)
             {
                 ResetCus();
                 ShowCus();
+            }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtEmail.Text) && (cboCustomerType.Text == "Registered" ||cboCustomerType.Text=="Đăng ký"))
+            {
+                errorProvider1.SetError(txtEmail, "Please write Email");
+                errorProvider2.SetError(txtEmail, "");
+                btnSave.Enabled = false;
+            }
+            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null && (cboCustomerType.Text != "Guest"||cboCustomerType.Text!="Vẵng lai" )&& cboCustomerType.Text != string.Empty && string.IsNullOrWhiteSpace(txtEmail.Text) == false)
+            {
+                errorProvider1.SetError(txtEmail, "Doesn't have customer, Will be registered when you click Save");
+                errorProvider2.SetError(txtEmail, "");
+                txtFirstName.Enabled = true;
+                txtLastName.Enabled = true;
+                datBirthdate.Enabled = true;
+                txtID.Visible = false;
+                check = 0;
+                btnSave.Enabled = true;
+            }
+            else if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null && cboCustomerType.Text != "Guest" && cboCustomerType.Text != "")
+            {
+                errorProvider1.SetError(txtEmail, "");
+                errorProvider2.SetError(txtEmail, "Correct");
+                txtID.Enabled = false;
+                txtFirstName.Enabled = false;
+                txtLastName.Enabled = false;
+                dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
+                txtID.Text = dtoCus.Id.ToString();
+                txtFirstName.Text = dtoCus.FirstName;
+                txtLastName.Text = dtoCus.LastName;
+                datBirthdate.Value = dtoCus.Birthdate;
+                datBirthdate.Enabled = false;
+                txtID.Visible = true;
+                check = 1;
+                btnSave.Enabled = true;
+            }
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFirstName.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtLastName, "Please Enter Name");
+                errorProvider2.SetError(txtLastName, "");
+                checkname = 0;
+            }
+            else
+            {
+                errorProvider1.SetError(txtLastName, "");
+                errorProvider2.SetError(txtLastName, "Correct");
+                checkname = 1;
+            }
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "";
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFirstName.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtFirstName, "Please Enter Name");
+                errorProvider2.SetError(txtFirstName, "");
+            }
+            else
+            {
+                errorProvider1.SetError(txtFirstName, "");
+                errorProvider2.SetError(txtFirstName, "Correct");
             }
         }
         public void SetTable(int id)
