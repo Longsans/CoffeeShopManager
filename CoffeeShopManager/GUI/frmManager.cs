@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Configuration;
 using DTO;
 using BUS;
+using System.Threading;
+
 namespace GUI
 {
 
@@ -234,6 +236,7 @@ namespace GUI
         {
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnShop.Location;
+            ucShopInfoTab.SetShop(dtoMan);
             ucShopInfoTab.Show();
             ucShopInfoTab.BringToFront();
             ucShopInfoTab.Reload();
@@ -248,13 +251,21 @@ namespace GUI
             {
                 var changeLanguage = new ChangeLanguage();
                 changeLanguage.UpdateConfig("language", "eng");
-                Application.Restart();
+                var language = ConfigurationManager.AppSettings["language"];
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+                this.Controls.Clear();
+                this.InitializeComponent();
             }
             else if (comboBox1.Text == "Vietnamese")
             {
                 var changeLanguage = new ChangeLanguage();
                 changeLanguage.UpdateConfig("language", "vi-VN");
-                Application.Restart();
+                var language = ConfigurationManager.AppSettings["language"];
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
+                this.Controls.Clear();
+                this.InitializeComponent();
             }
         }
 

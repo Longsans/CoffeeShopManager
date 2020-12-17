@@ -378,35 +378,11 @@
             this.ucEmployeeTab.dtoMan = dtO_Manager1;
             this.ucEmployeeTab.Name = "ucEmployeeTab";
             // 
-            // ucEmployeeTab
             // ucProductTab
             // 
-            resources.ApplyResources(this.ucEmployeeTab, "ucEmployeeTab");
-            dtO_Manager1.Birthdate = new System.DateTime(((long)(0)));
-            dtO_Manager1.Email = null;
-            dtO_Manager1.Firstname = null;
-            dtO_Manager1.Gender = null;
-            dtO_Manager1.Id = null;
-            dtO_Manager1.Image = null;
-            dtO_Manager1.Lastname = null;
-            dtO_Manager1.Phone = null;
-            dtO_Manager1.Position = null;
-            this.ucEmployeeTab.dtoMan = dtO_Manager1;
-            this.ucEmployeeTab.Name = "ucEmployeeTab";
             resources.ApplyResources(this.ucProductTab, "ucProductTab");
             this.ucProductTab.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ucProductTab.Name = "ucProductTab";
-            // 
-            // ucProductTab
-            // ucUserTab
-            // 
-            this.ucProductTab.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            resources.ApplyResources(this.ucProductTab, "ucProductTab");
-            this.ucProductTab.Name = "ucProductTab";
-            this.ucUserTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ucUserTab.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.ucUserTab, "ucUserTab");
-            this.ucUserTab.Name = "ucUserTab";
             // 
             // ucUserTab
             // 
