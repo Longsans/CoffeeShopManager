@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using DAL;
 using DTO;
 
@@ -12,10 +13,101 @@ namespace BUS
     public class BUS_Shop
     {
         DAL_Shop dalShop = new DAL_Shop();
+        DAL_Receipts dalrec = new DAL_Receipts();
         
         public DTO_Shop GetShopById(int id)
         {
             return dalShop.GetShopById(id);
+        }
+
+        public DataTable GetDataTableDailyIncome(int month, int year, int shopId)
+        {
+            return dalrec.GetDataTableDailyIncome(month, year, shopId);
+        }
+
+        public DataTable GetDataTableLastNDaysIncome(int numberOfDays, int shopId)
+        {
+            return dalrec.GetDataTableLastNDaysIncome(numberOfDays, shopId);
+        }
+
+        public DataTable GetDataTableMonthlyIncome(int year, int shopId)
+        {
+            return dalrec.GetDataTableMonthlyIncome(year, shopId);
+        }
+
+        public DataTable GetDataTableAnnualIncome(int shopId)
+        {
+            return dalrec.GetDataTableAnnualIncome(shopId);
+        }
+
+        public DataTable GetDataTableQuarterlyIncome(int year, int shopId)
+        {
+            return dalrec.GetDataTableQuarterlyIncome(year, shopId);
+        }
+
+        public decimal GetTotalMonthlyIncome(int month, int year, int shopId)
+        {
+            return dalrec.GetTotalMonthlyIncome(month, year, shopId);
+        }
+
+        public decimal GetTotalLastNDaysIncome(int numberOfDays, int shopId)
+        {
+            return dalrec.GetTotalLastNDaysIncome(numberOfDays, shopId);
+        }
+
+        public decimal GetTotalAnnualIncome(int year, int shopId)
+        {
+            return dalrec.GetTotalAnnualIncome(year, shopId);
+        }
+
+        public decimal GetTotalAllTimeIncome(int shopId)
+        {
+            return dalrec.GetTotalAllTimeIncome(shopId);
+        }
+
+        public decimal GetAverageDailyIncome(int month, int year, int shopId)
+        {
+            return dalrec.GetAverageDailyIncome(month, year, shopId);
+        }
+
+        public decimal GetAverageLastNDaysIncome(int numberOfDays, int shopId)
+        {
+            return dalrec.GetAverageLastNDaysIncome(numberOfDays, shopId);
+        }
+
+        public decimal GetAverageMonthlyIncome(int year, int shopId)
+        {
+            return dalrec.GetAverageMonthlyIncome(year, shopId);
+        }
+
+        public decimal GetAverageQuarterlyIncome(int year, int shopId)
+        {
+            return dalrec.GetAverageQuarterlyIncome(year, shopId);
+        }
+
+        public decimal GetAverageAnnualIncome(int shopId)
+        {
+            return dalrec.GetAverageAnnualIncome(shopId);
+        }
+
+        public DataTable GetDatatableTotalLastNDaysProductSales(int numberOfDays, int shopId)
+        {
+            return dalrec.GetDatatableTotalLastNDaysProductSales(numberOfDays, shopId);
+        }
+
+        public DataTable GetDatatableTotalMonthlyProductSales(int month, int year, int shopId)
+        {
+            return dalrec.GetDatatableTotalMonthlyProductSales(month, year, shopId);
+        }
+
+        public DataTable GetDatatableTotalAnnualProductSales(int year, int shopId)
+        {
+            return dalrec.GetDatatableTotalAnnualProductSales(year, shopId);
+        }
+
+        public DataTable GetDatatableTotalAllTimeProductSales(int shopId)
+        {
+            return dalrec.GetDatatableTotalAllTimeProductSales(shopId);
         }
 
         public int Insert(DTO_Shop shop)

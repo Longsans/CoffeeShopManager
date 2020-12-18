@@ -32,5 +32,35 @@ namespace DAL.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost; Initial Catalog=NewDB; User id=sa;Password=onetwothree;Mul" +
+            "tipleActiveResultSets=True;")]
+        public string ConnectionStringLong {
+            get {
+                return ((string)(this["ConnectionStringLong"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HDM-PC-DC54PLF;Initial Catalog=NewDB;Integrated Security=True;Multipl" +
+            "eActiveResultSets=True;")]
+        public string ConnectionStringHao {
+            get {
+                return ((string)(this["ConnectionStringHao"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-14KFC4R\\SQLEXPRESS; Initial Catalog=NewDB; User id=sa;Passwor" +
+            "d=123456;MultipleActiveResultSets=True;")]
+        public string ConnectionStringCuong {
+            get {
+                return ((string)(this["ConnectionStringCuong"]));
+            }
+        }
     }
 }

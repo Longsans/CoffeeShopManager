@@ -46,10 +46,10 @@
             // 
             // btnAdd
             // 
-            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -63,9 +63,9 @@
             // 
             // cboSearch
             // 
-            resources.ApplyResources(this.cboSearch, "cboSearch");
             this.cboSearch.BackColor = System.Drawing.Color.White;
             this.cboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cboSearch, "cboSearch");
             this.cboSearch.FormattingEnabled = true;
             this.cboSearch.Items.AddRange(new object[] {
             resources.GetString("cboSearch.Items"),
@@ -76,9 +76,9 @@
             // 
             // btnDelete
             // 
-            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnDelete.Name = "btnDelete";
@@ -87,9 +87,9 @@
             // 
             // btnEdit
             // 
-            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnEdit.Name = "btnEdit";
@@ -98,7 +98,6 @@
             // 
             // grdSup
             // 
-            resources.ApplyResources(this.grdSup, "grdSup");
             this.grdSup.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.grdSup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -115,6 +114,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdSup.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.grdSup, "grdSup");
             this.grdSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;

@@ -10,10 +10,7 @@ namespace DAL
 {
     public class DBConnection
     {
-        protected string connectionString = 
-        //Properties.Settings.Default.ConnectionString;
-        "Data Source=HDM-PC-DC54PLF;Initial Catalog=NewDB;Integrated Security=True";
-        //"Data Source=DESKTOP-14KFC4R\SQLEXPRESS; Initial Catalog=NewDB; User id=sa;Password=123456;" 
+        protected string connectionString = Properties.Settings.Default.ConnectionStringLong;
         protected SqlConnection conn = null;
 
         public DBConnection()

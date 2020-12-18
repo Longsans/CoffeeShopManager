@@ -292,6 +292,375 @@ namespace DAL
             return tab;
         }
 
+        public DataTable GetDataTableDailyIncome(int month, int year, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT * " +
+                "FROM GetDailyIncome(@month, @year, @shopId)";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+            ada.SelectCommand.Parameters.AddWithValue("@month", month);
+            ada.SelectCommand.Parameters.AddWithValue("@year", year);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable GetDataTableLastNDaysIncome(int numberOfDays, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT * " +
+                "FROM GetLastNDaysIncome(@ndays, @shopId)";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+            ada.SelectCommand.Parameters.AddWithValue("@ndays", numberOfDays);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable GetDataTableMonthlyIncome(int year, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT * " +
+                "FROM GetMonthlyIncome(@year, @shopId)";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+            ada.SelectCommand.Parameters.AddWithValue("@year", year);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable GetDataTableQuarterlyIncome(int year, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT * " +
+                "FROM GetQuarterlyIncome(@year, @shopId)";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+            ada.SelectCommand.Parameters.AddWithValue("@year", year);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable GetDataTableAnnualIncome(int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT * " +
+                "FROM GetAnnualIncome(@shopId)";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public decimal GetTotalMonthlyIncome(int month, int year, int shopId)
+        {
+            decimal sum = -1;
+            string qry = "SELECT SUM(Income) " +
+                "FROM GetDailyIncome(@month, @year, @shopId)";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@month", month);
+            cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var ret = cmd.ExecuteScalar();
+            if (ret != null)
+            {
+                sum = (decimal)ret;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return sum;
+        }
+
+        public decimal GetTotalLastNDaysIncome(int numberOfDays, int shopId)
+        {
+            decimal sum = -1;
+            string qry = "SELECT SUM(Income) " +
+                "FROM GetLastNDaysIncome(@ndays, @shopId)";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@ndays", numberOfDays);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var ret = cmd.ExecuteScalar();
+            if (ret != null)
+            {
+                sum = (decimal)ret;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return sum;
+        }
+
+        public decimal GetTotalAnnualIncome(int year, int shopId)
+        {
+            decimal sum = -1;
+            string qry = "SELECT SUM(Income) " +
+                "FROM GetQuarterlyIncome(@year, @shopId)";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var ret = cmd.ExecuteScalar();
+            if (ret != null)
+            {
+                sum = (decimal)ret;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return sum;
+        }
+
+        public decimal GetTotalAllTimeIncome(int shopId)
+        {
+            decimal sum = -1;
+            string qry = "SELECT SUM(Income) " +
+                "FROM GetAnnualIncome(@shopId)";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var ret = cmd.ExecuteScalar();
+            if (ret != null)
+            {
+                sum = (decimal)ret;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return sum;
+        }
+
+        public decimal GetAverageDailyIncome(int month, int year, int shopId)
+        {
+            decimal avg = -1;
+            string qry = "SELECT AVG(Income) " +
+                "FROM GetDailyIncome(@month, @year, @shopId)";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@month", month);
+            cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var ret = cmd.ExecuteScalar();
+            if (ret != null)
+            {
+                avg = (decimal)ret;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return avg;
+        }
+
+        public decimal GetAverageLastNDaysIncome(int numberOfDays, int shopId)
+        {
+            decimal avg = -1;
+            string qry = "SELECT AVG(Income) " +
+                "FROM GetLastNDaysIncome(@ndays, @shopId)";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@ndays", numberOfDays);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var ret = cmd.ExecuteScalar();
+            if (ret != null)
+            {
+                avg = (decimal)ret;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return avg;
+        }
+
+        public decimal GetAverageMonthlyIncome(int year, int shopId)
+        {
+            decimal avg = -1;
+            string qry = "SELECT AVG(Income) " +
+                "FROM GetMonthlyIncome(@year, @shopId)";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var ret = cmd.ExecuteScalar();
+            if (ret != null)
+            {
+                avg = (decimal)ret;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return avg;
+        }
+
+        public decimal GetAverageQuarterlyIncome(int year, int shopId)
+        {
+            decimal avg = -1;
+            string qry = "SELECT AVG(Income) " +
+                "FROM GetQuarterlyIncome(@year, @shopId)";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var ret = cmd.ExecuteScalar();
+            if (ret != null)
+            {
+                avg = (decimal)ret;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return avg;
+        }
+
+        public decimal GetAverageAnnualIncome(int shopId)
+        {
+            decimal avg = -1;
+            string qry = "SELECT AVG(Income) " +
+                "FROM GetAnnualIncome(@shopId)";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var ret = cmd.ExecuteScalar();
+            if (ret != null)
+            {
+                avg = (decimal)ret;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return avg;
+        }
+
+        public DataTable GetDatatableTotalLastNDaysProductSales(int numberOfDays, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT * " +
+                "FROM GetTotalLastNDaysProductSales(@daynum, @shopId)";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@daynum", numberOfDays);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable GetDatatableTotalMonthlyProductSales(int month, int year, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT * " +
+                "FROM GetTotalMonthlyProductSales(@month, @year, @shopId)";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@month", month);
+            ada.SelectCommand.Parameters.AddWithValue("@year", year);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable GetDatatableTotalAnnualProductSales(int year, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT * " +
+                "FROM GetTotalAnnualProductSales(@year, @shopId)";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@year", year);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable GetDatatableTotalAllTimeProductSales(int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT * " +
+                "FROM GetTotalAllTimeProductSales(@shopId)";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
         public void InsertTakeAwayReceipt(DTO_Receipt rec)
         {
             string compoundQry = "INSERT INTO RECEIPTS (CustomerId, EmployeeId, DateOfPayment, Discount, Total, Details, ShopId)" +

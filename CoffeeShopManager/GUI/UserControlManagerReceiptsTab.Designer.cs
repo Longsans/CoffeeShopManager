@@ -52,10 +52,10 @@
             // 
             // btnDelete
             // 
-            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -63,10 +63,10 @@
             // 
             // btnView
             // 
-            resources.ApplyResources(this.btnView, "btnView");
             this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnView.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnView, "btnView");
             this.btnView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnView.Name = "btnView";
             this.btnView.UseVisualStyleBackColor = false;
@@ -74,7 +74,6 @@
             // 
             // grdReceipts
             // 
-            resources.ApplyResources(this.grdReceipts, "grdReceipts");
             this.grdReceipts.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.grdReceipts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -91,6 +90,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdReceipts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.grdReceipts, "grdReceipts");
             this.grdReceipts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -118,9 +118,9 @@
             // 
             // cboSearch
             // 
-            resources.ApplyResources(this.cboSearch, "cboSearch");
             this.cboSearch.BackColor = System.Drawing.Color.White;
             this.cboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cboSearch, "cboSearch");
             this.cboSearch.FormattingEnabled = true;
             this.cboSearch.Items.AddRange(new object[] {
             resources.GetString("cboSearch.Items"),
@@ -143,23 +143,23 @@
             // 
             // ctxRightClick
             // 
-            resources.ApplyResources(this.ctxRightClick, "ctxRightClick");
             this.ctxRightClick.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ctxRightClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.ctxRightClick.Name = "ctxRightClick";
+            resources.ApplyResources(this.ctxRightClick, "ctxRightClick");
             // 
             // viewToolStripMenuItem
             // 
-            resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.btnView_Click);
             // 
             // deleteToolStripMenuItem
             // 
-            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblResetFilters
@@ -173,10 +173,10 @@
             // 
             // btnPrint
             // 
-            resources.ApplyResources(this.btnPrint, "btnPrint");
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnPrint, "btnPrint");
             this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.UseVisualStyleBackColor = false;

@@ -509,6 +509,9 @@
     <EmbeddedResource Include="UserControlReceiptsDetail.vi-VN.resx">
       <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStatistics.resx">
+      <DependentUpon>UserControlStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlStock.resx">
       <DependentUpon>UserControlStock.cs</DependentUpon>
     </EmbeddedResource>

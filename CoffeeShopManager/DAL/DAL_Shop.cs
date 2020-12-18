@@ -54,8 +54,8 @@ namespace DAL
         public int Insert(DTO_Shop shop)
         {
             int shopId;
-            string qry = "INSERT INTO SHOP (ShopName, ShopAuthCode) " +
-                "VALUES (@name, @authcode); " +
+            string qry = "INSERT INTO SHOP (ShopName, ShopAuthCode, CreationDate) " +
+                "VALUES (@name, @authcode, GETDATE()); " +
                 "SELECT Id FROM SHOP " +
                 "WHERE Id = SCOPE_IDENTITY();";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
