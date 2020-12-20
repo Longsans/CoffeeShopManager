@@ -110,6 +110,21 @@ namespace BUS
             return dalrec.GetDatatableTotalAllTimeProductSales(shopId);
         }
 
+        public int GetTotalAllProductSalesFromDataTable(DataTable dt)
+        {
+            int sales = -1;
+            foreach (DataRow row in dt.Rows)
+            {
+                if (sales == -1)
+                {
+                    sales = 0;
+                }
+                sales += (int)row["Sales"];
+            }
+
+            return sales;
+        }
+
         public int Insert(DTO_Shop shop)
         {
             return dalShop.Insert(shop);
