@@ -825,6 +825,35 @@ namespace GUI
             }
         }
 
+        private void lblGrandTotal_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMoneyCus.Text != "")
+            {
+                if (double.Parse(sum.ToString()) > double.Parse(txtMoneyCus.Text))
+                {
+                    errorProvider1.SetError(txtMoneyCus, "Wrong");
+                    errorProvider2.SetError(txtMoneyCus, "");
+                    checkmonecus = 0;
+                    txtGiveCus.Text = "";
+                }
+                else if(double.Parse(sum.ToString()) == double.Parse(txtMoneyCus.Text))
+                {
+                    errorProvider1.SetError(txtMoneyCus, "");
+                    errorProvider2.SetError(txtMoneyCus, "Can compare");
+                    checkmonecus = 1;
+                    txtGiveCus.Text = "0";
+                }
+                else
+                {
+                    errorProvider1.SetError(txtMoneyCus, "");
+                    errorProvider2.SetError(txtMoneyCus, "Can compare");
+                    checkmonecus = 1;
+                    txtGiveCus.Text = (double.Parse(txtMoneyCus.Text) - double.Parse(sum.ToString())).ToString();
+                }
+            }
+
+        }
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
