@@ -133,7 +133,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@receiptId", tabSit.Receipt.Id);
             cmd.Parameters.AddWithValue("@tableId", tabSit.Table.Id);
-            cmd.Parameters.AddWithValue("@shopId", tabSit.Receipt.Id);
+            cmd.Parameters.AddWithValue("@shopId", tabSit.Receipt.Shop.ID);
             cmd.Parameters.AddWithValue("@sitting", tabSit.Sitting);
 
             var connState = (this.conn.State == ConnectionState.Open);
