@@ -38,6 +38,8 @@ namespace DAL
                     DateOfPayMent = reader.GetDateTime(reader.GetOrdinal("DateOfPayment")),
                     Discount = (decimal)reader["Discount"],
                     Total = (decimal)reader["Total"],
+                    Cash = (decimal)reader["Cash"],
+                    Change = (decimal)reader["Change"],
                     Details = reader.GetString(reader.GetOrdinal("Details")),
                     Items = GetReceiptDetailsListById(id, shopId),
                     Shop = new DTO_Shop
@@ -88,6 +90,8 @@ namespace DAL
                     DateOfPayMent = reader.GetDateTime(reader.GetOrdinal("DateOfPayment")),
                     Discount = (decimal)reader["Discount"],
                     Total = reader.GetDecimal(reader.GetOrdinal("Total")),
+                    Cash = (decimal)reader["Cash"],
+                    Change = (decimal)reader["Change"],
                     Shop = new DTO_Shop
                     {
                         ID = reader.GetInt32(reader.GetOrdinal("ShopId"))
@@ -663,8 +667,8 @@ namespace DAL
 
         public void InsertTakeAwayReceipt(DTO_Receipt rec)
         {
-            string compoundQry = "INSERT INTO RECEIPTS (CustomerId, EmployeeId, DateOfPayment, Discount, Total, Details, ShopId)" +
-                "VALUES (@cusId, @empId, @dateofpayment, @discount, @total, @details, @shopId); " +
+            string compoundQry = "INSERT INTO RECEIPTS (CustomerId, EmployeeId, DateOfPayment, Discount, Total, Cash, Change, Details, ShopId)" +
+                "VALUES (@cusId, @empId, @dateofpayment, @discount, @total, @cash, @change, @details, @shopId); " +
                 "SELECT max(Id) " +
                 "FROM RECEIPTS " +
                 "WHERE ShopId = @shopId";
@@ -674,6 +678,8 @@ namespace DAL
             cmd.Parameters.AddWithValue("@dateofpayment", rec.DateOfPayMent);
             cmd.Parameters.AddWithValue("@discount", rec.Discount);
             cmd.Parameters.AddWithValue("@total", rec.Total);
+            cmd.Parameters.AddWithValue("@cash", rec.Cash);
+            cmd.Parameters.AddWithValue("@change", rec.Change);
             cmd.Parameters.AddWithValue("@details", rec.Details);
             cmd.Parameters.AddWithValue("@shopId", rec.Shop.ID);
 

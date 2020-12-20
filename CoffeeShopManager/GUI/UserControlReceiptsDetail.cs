@@ -65,6 +65,8 @@ namespace GUI
             lblDiscount.Text = string.Format("{0:0.00}", rec.Discount * 100);
             lblSubtotal.Text = string.Format("{0:0.00}", rec.Total / (1m - rec.Discount));
             lblTotalDisplay.Text = string.Format("{0:0.00}", rec.Total);
+            lblCash.Text = string.Format("{0:0.00}", rec.Cash);
+            lblChange.Text = string.Format("{0:0.00}", rec.Change);
             rtxtDetails.Text = rec.Details;
         }
 

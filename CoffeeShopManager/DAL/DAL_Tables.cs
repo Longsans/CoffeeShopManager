@@ -132,6 +132,12 @@ namespace DAL
             return GetTablesByStatus("Unavailable", shopId);
         }
 
+        public DTO_Table GetTableOfActiveReceipt(int receiptId, int shopId)
+        {
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            return dalTabSitting.GetTableOfActiveReceipt(receiptId, shopId);
+        }
+
         public DTO_Receipt GetCurrentReceiptOfTable(int tableId, int shopId)
         {
             DAL_TableSitting dalTabSitting = new DAL_TableSitting();
@@ -168,10 +174,9 @@ namespace DAL
 
         public void Insert(DTO_Table tab)
         {
-            string qry = "INSERT INTO [TABLES] " +
-                "VALUES (@id, @status, @shopId)";
+            string qry = "INSERT INTO [TABLES] (TableStatus, ShopId)" +
+                "VALUES (@status, @shopId)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@id", tab.Id);
             cmd.Parameters.AddWithValue("@status", tab.Status);
             cmd.Parameters.AddWithValue("@shopId", tab.Shop.ID);
 

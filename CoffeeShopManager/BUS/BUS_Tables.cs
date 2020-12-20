@@ -71,6 +71,12 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public DTO_Table GetTableOfActiveReceipt(int receiptId, int shopId)
+        {
+            return dalTables.GetTableOfActiveReceipt(receiptId, shopId);
+        }
+
         public DTO_Receipt GetCurrentReceiptOfTable(int tableId, int shopId)
         {
             try
@@ -91,7 +97,7 @@ namespace BUS
 
         public bool Insert(DTO_Table tab)
         {
-            if(dalTables.GetTableById(tab.Id,1)!=null)
+            if(dalTables.GetTableById(tab.Id, tab.Shop.ID)!=null)
             {
                 Console.WriteLine("Trung ID");
                 return false;
