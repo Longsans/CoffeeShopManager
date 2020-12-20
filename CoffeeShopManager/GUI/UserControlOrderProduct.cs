@@ -41,7 +41,7 @@ namespace GUI
         public DTO_Shop dtoShop = new DTO_Shop();
         public DTO_Employee dtoEmp = new DTO_Employee();
         int shopID;
-        int checkname, checkemail, checkbirth;
+        int checkname, checkemail, checkbirth, checkmonecus;
         public UserControlOrderProduct()
         {
             InitializeComponent();
@@ -70,7 +70,7 @@ namespace GUI
         {
             foreach (Char c in pValue)
             {
-                if (!Char.IsDigit(c))
+                if (!Char.IsDigit(c) && c != '.' && c != ',')
                     return false;
             }
             return true;
@@ -140,7 +140,7 @@ namespace GUI
                 }
             }
 
-        
+
             r1 = (DataGridViewRow)dataGridView1.Rows[0].Clone();
             //  MessageBox.Show(arrListStr[0] + "-0-" + arrListStr[1]);
             r1.Cells[0].Value = arrListStr[0].ToString();
@@ -220,8 +220,8 @@ namespace GUI
             txtEmail.Text = "";
             txtID.Text = "";
             datBirthdate.Value = DateTime.Now;
-           // datBirthdate.CustomFormat = " ";
-            
+            // datBirthdate.CustomFormat = " ";
+
 
         }
 
@@ -272,7 +272,7 @@ namespace GUI
                     r1.Cells[2].Value = (decimal.Parse(r1.Cells[2].Value.ToString()) - 1);
                     bien = (Int32.Parse(r1.Cells[2].Value.ToString()));
 
-                   var giatri = decimal.Parse(r1.Cells[4].Value.ToString()) / (bien + 1);
+                    var giatri = decimal.Parse(r1.Cells[4].Value.ToString()) / (bien + 1);
                     r1.Cells[4].Value = giatri * bien;
                 }
                 if (r1.Cells[2].Value.ToString() == "0")
@@ -297,7 +297,7 @@ namespace GUI
                 r1.Cells[4].Value = giatri * bien;
             }
 
-            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDelete"&& e.RowIndex != dataGridView1.Rows.Count - 1)
+            else if (dataGridView1.Columns[e.ColumnIndex].Name.ToString() == "clmDelete" && e.RowIndex != dataGridView1.Rows.Count - 1)
             {
                 for (int i = 0; i < strSave.Count; i++)
                 {
@@ -328,7 +328,10 @@ namespace GUI
                 e.Handled = true;
             }
         }
+        private void btnPay_Click(object sender, EventArgs e)
+        {
 
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
@@ -338,7 +341,7 @@ namespace GUI
                 MessageBox.Show("haven't ordered yet");
                 return;
             }
-            if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == string.Empty||cboCustomerType.Text=="Vẵng lai")
+            if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == string.Empty || cboCustomerType.Text == "Vẵng lai")
             {
                 if (busCus.GetNullCustomer(shopID) == null)
                 {
@@ -355,10 +358,15 @@ namespace GUI
             }
             else
             {
-                if(cboCustomerType.Text=="Registered"||cboCustomerType.Text=="Đăng ký")
+                if (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký")
                 {
-                    if (checkemail == 0|| checkname == 0|| checkbirth == 0)
+                    if (EmailHelper.ValidateEmail(txtEmail.Text))
                     {
+                        checkemail = 1;
+                    }
+                    if (checkemail == 0 || checkname == 0 || checkbirth == 0)
+                    {
+                        MessageBox.Show("" + checkemail + "-" + checkname + "-" + checkbirth);
                         MessageBox.Show("Write profile for Customer");
                         return;
                     }
@@ -376,7 +384,7 @@ namespace GUI
                     MessageBox.Show("haven't ordered yet");
                     return;
                 }
-                if (check == 0&&(cboCustomerType.Text== "Registered"|| cboCustomerType.Text == "Đăng ký")&&checkname==1&&checkemail==1&&checkbirth==1)
+                if (check == 0 && (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký") && checkname == 1 && checkemail == 1 && checkbirth == 1)
                 {
                     DateTime bdate = new DateTime();
                     dtoCus.Email = txtEmail.Text;
@@ -388,38 +396,50 @@ namespace GUI
                     dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
                 }
             }
-            dtoReceipt.Customer = dtoCus;
-            dtoReceipt.Employee = dtoEmp;
-            dtoReceipt.DateOfPayMent = now;
-            int mon = lblGrandTotal.Text.IndexOf("$");
-            if (decimal.TryParse(txtDiscount.Text, out decimal discount))
+            if (checkmonecus == 1)
             {
-                dtoReceipt.Discount = discount / 100;
-            }
-            dtoReceipt.Total = decimal.Parse(lblGrandTotal.Text.Substring(0,mon));
-            dtoReceipt.Details = "";
-            dtoReceipt.Shop = dtoShop;
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-            {
-                dtoDetail = new DTO_ReceiptDetails();//cai nay a
+                dtoReceipt.Cash = decimal.Parse(txtMoneyCus.Text);
+                dtoReceipt.Change = decimal.Parse(txtGiveCus.Text);
+                dtoReceipt.Customer = dtoCus;
+                dtoReceipt.Employee = dtoEmp;
+                dtoReceipt.DateOfPayMent = now;
+                int mon = lblGrandTotal.Text.IndexOf("$");
+                if (decimal.TryParse(txtDiscount.Text, out decimal discount))
+                {
+                    dtoReceipt.Discount = discount / 100;
+                }
+                dtoReceipt.Total = decimal.Parse(lblGrandTotal.Text.Substring(0, mon));
+                dtoReceipt.Details = "";
+                dtoReceipt.Shop = dtoShop;
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    dtoDetail = new DTO_ReceiptDetails();//cai nay a
 
-                dto_pro = busPro.GetById(dataGridView1.Rows[i].Cells[6].Value.ToString(), shopID);
-                dtoDetail.Product = dto_pro;
-                //dtoDetail.Product.Id = dto_pro.Id;
-                dtoDetail.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
-                dtoDetail.TotalPrice = decimal.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
-                dtoReceipt.Items.Add(dtoDetail);
+                    dto_pro = busPro.GetById(dataGridView1.Rows[i].Cells[6].Value.ToString(), shopID);
+                    dtoDetail.Product = dto_pro;
+                    //dtoDetail.Product.Id = dto_pro.Id;
+                    dtoDetail.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
+                    dtoDetail.TotalPrice = decimal.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                    dtoReceipt.Items.Add(dtoDetail);
+                }
             }
-            busReceipt.InsertTakeAwayReceipt(dtoReceipt);
+            else
+            {
+                MessageBox.Show("Khach dua thieu tien, thoi cc");
+                return;
+            }
             DTO_Table dtoTab = new DTO_Table();
-            if (!string.IsNullOrWhiteSpace(comboBox2.Text)) 
+            if (!string.IsNullOrWhiteSpace(comboBox2.Text))
             {
                 dtoTab.Id = Int32.Parse(comboBox2.Text);
                 dtoTab.Shop.ID = shopID;
+                busReceipt.InsertSittingReceipt(dtoReceipt, dtoTab);
                 dtoTab.Status = "Occupied";
                 busTable.Update(dtoTab);
-                
+
             }
+            else
+                busReceipt.InsertTakeAwayReceipt(dtoReceipt);
             comboBox2.Items.Clear();
             lsTable.Clear();
             lsTable = busTable.GetAvailableTables(shopID);
@@ -427,7 +447,7 @@ namespace GUI
             {
                 comboBox2.Items.Add(lsTable[i].Id.ToString());
             }
-            var resp = MessageBox.Show("Do you want to print the receipt you just saved?", "Print receipt", 
+            var resp = MessageBox.Show("Do you want to print the receipt you just saved?", "Print receipt",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resp == DialogResult.Yes)
             {
@@ -447,6 +467,8 @@ namespace GUI
             }
             strSave.Clear();
             ResetCus();
+            txtGiveCus.Text = "";
+            txtMoneyCus.Text = "";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -474,7 +496,7 @@ namespace GUI
                 flowLayoutPanel1.Controls.Clear();
                 GetData(c);
             }
-            else if (resultIndex == 0||comboBox1.Text==string.Empty)
+            else if (resultIndex == 0 || comboBox1.Text == string.Empty)
             {
                 if (lblHead.Text == "Đặt món")
                 {
@@ -499,13 +521,13 @@ namespace GUI
                 {
                     sum += double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 }
-            lblTotalSum.Text = sum.ToString()+"$";
+            lblTotalSum.Text = sum.ToString() + "$";
             if (txtDiscount.Text != "" && IsNumber(txtDiscount.Text))
             {
                 sum = sum - sum * (double.Parse(txtDiscount.Text)) / 100;
-                lblGrandTotal.Text = sum.ToString()+"$";
+                lblGrandTotal.Text = sum.ToString() + "$";
             }
-            lblGrandTotal.Text = sum.ToString()+"$";
+            lblGrandTotal.Text = sum.ToString() + "$";
 
             if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
             {
@@ -514,13 +536,14 @@ namespace GUI
                 txtLastName.Enabled = true;
                 datBirthdate.Enabled = true;
                 txtID.Visible = false;
-             //   btnSave.Enabled = false;
-                if (cboCustomerType.Text == "Registered"||cboCustomerType.Text=="Đăng ký")
+                //   btnSave.Enabled = false;
+                if (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký")
                 {
                     if (string.IsNullOrWhiteSpace(txtEmail.Text))
                     {
                         errorProvider1.SetError(txtEmail, "Email is required");
                         errorProvider2.SetError(txtEmail, "");
+                        checkemail = 0;
 
                     }
                     else
@@ -530,7 +553,7 @@ namespace GUI
                             errorProvider1.SetError(txtEmail, "");
                             errorProvider2.SetError(txtEmail, "Valid");
                             checkemail = 1;
-                           // btnSave.Enabled = true;
+                            // btnSave.Enabled = true;
                         }
                         else
                         {
@@ -539,12 +562,12 @@ namespace GUI
                         }
                     }
                 }
-                else if (cboCustomerType.Text == "Guest"||cboCustomerType.Text=="Vẵng lai"||cboCustomerType.Text==string.Empty)
+                else if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == "Vẵng lai" || cboCustomerType.Text == string.Empty)
                 {
                     btnSave.Enabled = true;
                 }
             }
-            else if(busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
+            else if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
             {
                 errorProvider1.SetError(txtEmail, "");
                 errorProvider2.SetError(txtEmail, "Valid");
@@ -558,10 +581,10 @@ namespace GUI
                 datBirthdate.Value = dtoCus.Birthdate;
                 datBirthdate.Enabled = false;
                 txtID.Visible = true;
-                btnSave.Enabled = true;
+                 btnSave.Enabled = true;
             }
         }
-        
+
         public void SetShopID(int id)
         {
             shopID = id;
@@ -578,10 +601,10 @@ namespace GUI
         }
         private void txtSearchName_TextChanged(object sender, EventArgs e)
         {
-                try
-                {
-                    flowLayoutPanel1.Controls.Clear();
-                    comboBox1.Enabled = false;
+            try
+            {
+                flowLayoutPanel1.Controls.Clear();
+                comboBox1.Enabled = false;
                 if (lblHead.Text == "Đặt món")
                 {
                     comboBox1.Text = "Chọn loại sản phẩm";
@@ -591,17 +614,17 @@ namespace GUI
                     comboBox1.Text = "Select type of products";
                 }
                 if (txtSearchName.Text == string.Empty)
-                    {
-                        comboBox1.Enabled = true;
-                        GetData(T);
-                    }
-                    else 
-                    GetData(busPro.GetProductsSearchNameFiltered(txtSearchName.Text, shopID));
-                }
-                catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    comboBox1.Enabled = true;
+                    GetData(T);
                 }
+                else
+                    GetData(busPro.GetProductsSearchNameFiltered(txtSearchName.Text, shopID));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void ReloadTable()
         {
@@ -676,13 +699,13 @@ namespace GUI
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtEmail.Text) && (cboCustomerType.Text == "Registered" ||cboCustomerType.Text=="Đăng ký"))
+            if (string.IsNullOrWhiteSpace(txtEmail.Text) && (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký"))
             {
                 errorProvider1.SetError(txtEmail, "Please write Email");
                 errorProvider2.SetError(txtEmail, "");
                 btnSave.Enabled = false;
             }
-            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null && (cboCustomerType.Text != "Guest"||cboCustomerType.Text!="Vẵng lai" )&& cboCustomerType.Text != string.Empty && string.IsNullOrWhiteSpace(txtEmail.Text) == false)
+            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null && (cboCustomerType.Text != "Guest" || cboCustomerType.Text != "Vẵng lai") && cboCustomerType.Text != string.Empty && string.IsNullOrWhiteSpace(txtEmail.Text) == false)
             {
                 errorProvider1.SetError(txtEmail, "Doesn't have customer, Will be registered when you click Save");
                 errorProvider2.SetError(txtEmail, "");
@@ -731,6 +754,109 @@ namespace GUI
         private void txtEmail_Click(object sender, EventArgs e)
         {
             txtEmail.Text = "";
+        }
+        public int checkprice = 0;
+        private void txtMoneycus_TextChanged(object sender, EventArgs e)
+        {
+            int countdoc = 0;
+            string sums = null;
+            if (txtMoneyCus.Text == string.Empty||txtMoneyCus.Text=="")
+            {
+                errorProvider1.SetError(txtMoneyCus, "Please provide Price");
+                errorProvider2.SetError(txtMoneyCus, "");
+                checkprice = 0;
+            }
+            else
+            {
+                string s = txtMoneyCus.Text.ToString();
+
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (s[i] == '.' || s[i] == ',')
+                    {
+                        countdoc++;
+                        sums += '.';
+                    }
+                    else
+                        sums += s[i];
+                }
+               // txtCopyPrice.Text = sums;
+                if (IsNumber(txtMoneyCus.Text) == true && countdoc <= 1)
+                {
+                    errorProvider2.SetError(txtMoneyCus, "Correct");
+                    errorProvider1.SetError(txtMoneyCus, "");
+                    checkmonecus = 1;
+                }
+                else
+                {
+                    errorProvider1.SetError(txtMoneyCus, "Wrong format");
+                    errorProvider2.SetError(txtMoneyCus, "");
+                    txtGiveCus.Text = "";
+
+                    checkmonecus = 0;
+                }
+                if (s[s.Length - 1] == '.' || s[s.Length - 1] == ',')
+                {
+                    errorProvider1.SetError(txtMoneyCus, "Wrong format");
+                    errorProvider2.SetError(txtMoneyCus, "");
+                    txtGiveCus.Text = "";
+
+                    checkmonecus = 0;
+                }
+            }
+            if (checkmonecus == 1&&txtMoneyCus.Text!="")
+            {
+                if (double.Parse(sum.ToString()) <= double.Parse(txtMoneyCus.Text))
+                {
+                    errorProvider1.SetError(txtMoneyCus, "");
+                    errorProvider2.SetError(txtMoneyCus, "Can compare");
+                    txtGiveCus.Text = "";
+                    checkmonecus = 1;
+                    txtGiveCus.Text = (double.Parse(txtMoneyCus.Text) - double.Parse(sum.ToString())).ToString();
+                }
+                else
+                {
+                    errorProvider1.SetError(txtMoneyCus, "Can't compare");
+                    errorProvider2.SetError(txtMoneyCus, "");
+                    txtGiveCus.Text = "";
+
+                    checkmonecus = 0;
+                }
+            }
+        }
+
+        private void lblGrandTotal_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMoneyCus.Text != "")
+            {
+                if (double.Parse(sum.ToString()) > double.Parse(txtMoneyCus.Text))
+                {
+                    errorProvider1.SetError(txtMoneyCus, "Wrong");
+                    errorProvider2.SetError(txtMoneyCus, "");
+                    checkmonecus = 0;
+                    txtGiveCus.Text = "";
+                }
+                else if(double.Parse(sum.ToString()) == double.Parse(txtMoneyCus.Text))
+                {
+                    errorProvider1.SetError(txtMoneyCus, "");
+                    errorProvider2.SetError(txtMoneyCus, "Can compare");
+                    checkmonecus = 1;
+                    txtGiveCus.Text = "0";
+                }
+                else
+                {
+                    errorProvider1.SetError(txtMoneyCus, "");
+                    errorProvider2.SetError(txtMoneyCus, "Can compare");
+                    checkmonecus = 1;
+                    txtGiveCus.Text = (double.Parse(txtMoneyCus.Text) - double.Parse(sum.ToString())).ToString();
+                }
+            }
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
