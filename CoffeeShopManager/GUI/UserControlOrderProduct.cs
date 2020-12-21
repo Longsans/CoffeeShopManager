@@ -516,14 +516,14 @@ namespace GUI
         public void Timer_Click(object sender, EventArgs e)
         {
             sum = 0;
-            txtDiscount.Text = txtDiscount.Text.Replace(',', '.');
+           // txtDiscount.Text = txtDiscount.Text.Replace(',', '.');
             if (dataGridView1.Rows.Count > 1)
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
                     sum += double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 }
             lblTotalSum.Text = sum.ToString() + "$";
-            if (double.TryParse(txtDiscount.Text, NumberStyles.Number, CultureInfo.InvariantCulture, out double d))
+            if (double.TryParse(txtDiscount.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double d))
             {
                 {
                     sum = sum - sum * (d) / 100;
@@ -765,7 +765,7 @@ namespace GUI
         {
             int countdoc = 0;
             string sums = null;
-            txtMoneyCus.Text = txtMoneyCus.Text.Replace(',', '.');
+           // txtMoneyCus.Text = txtMoneyCus.Text.Replace(',', '.');
             if (txtMoneyCus.Text == string.Empty||txtMoneyCus.Text=="")
             {
                 errorProvider1.SetError(txtMoneyCus, "Please provide Price");
@@ -776,7 +776,7 @@ namespace GUI
             {
                 double sum11 = 0;
                // txtCopyPrice.Text = sums;
-                if (double.TryParse(txtMoneyCus.Text, NumberStyles.Number, CultureInfo.InvariantCulture,out sum11))
+                if (double.TryParse(txtMoneyCus.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture,out sum11))
                 {
                     errorProvider2.SetError(txtMoneyCus, "Correct");
                     errorProvider1.SetError(txtMoneyCus, "");
@@ -791,7 +791,7 @@ namespace GUI
                     checkmonecus = 0;
                 }
             }
-            if (checkmonecus == 1&& double.TryParse(txtMoneyCus.Text, NumberStyles.Number, CultureInfo.InvariantCulture, out double d))
+            if (checkmonecus == 1&& double.TryParse(txtMoneyCus.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double d))
             {
                 if (copysum <= d)
                 {
