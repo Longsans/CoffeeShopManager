@@ -442,7 +442,7 @@ namespace DAL
                 OpenConnection();
             }
             var ret = cmd.ExecuteScalar();
-            if (ret != null)
+            if (ret != DBNull.Value)
             {
                 sum = (decimal)ret;
             }
@@ -469,7 +469,7 @@ namespace DAL
                 OpenConnection();
             }
             var ret = cmd.ExecuteScalar();
-            if (ret != null)
+            if (ret != DBNull.Value)
             {
                 sum = (decimal)ret;
             }
@@ -496,7 +496,7 @@ namespace DAL
                 OpenConnection();
             }
             var ret = cmd.ExecuteScalar();
-            if (ret != null)
+            if (ret != DBNull.Value)
             {
                 sum = (decimal)ret;
             }
@@ -522,7 +522,7 @@ namespace DAL
                 OpenConnection();
             }
             var ret = cmd.ExecuteScalar();
-            if (ret != null)
+            if (ret != DBNull.Value)
             {
                 sum = (decimal)ret;
             }
@@ -550,7 +550,7 @@ namespace DAL
                 OpenConnection();
             }
             var ret = cmd.ExecuteScalar();
-            if (ret != null)
+            if (ret != DBNull.Value)
             {
                 avg = (decimal)ret;
             }
@@ -577,7 +577,7 @@ namespace DAL
                 OpenConnection();
             }
             var ret = cmd.ExecuteScalar();
-            if (ret != null)
+            if (ret != DBNull.Value)
             {
                 avg = (decimal)ret;
             }
@@ -604,7 +604,7 @@ namespace DAL
                 OpenConnection();
             }
             var ret = cmd.ExecuteScalar();
-            if (ret != null)
+            if (ret != DBNull.Value)
             {
                 avg = (decimal)ret;
             }
@@ -631,7 +631,7 @@ namespace DAL
                 OpenConnection();
             }
             var ret = cmd.ExecuteScalar();
-            if (ret != null)
+            if (ret != DBNull.Value)
             {
                 avg = (decimal)ret;
             }
@@ -657,7 +657,7 @@ namespace DAL
                 OpenConnection();
             }
             var ret = cmd.ExecuteScalar();
-            if (ret != null)
+            if (ret != DBNull.Value)
             {
                 avg = (decimal)ret;
             }
@@ -690,6 +690,21 @@ namespace DAL
                 "FROM GetTotalMonthlyProductSales(@month, @year, @shopId)";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@month", month);
+            ada.SelectCommand.Parameters.AddWithValue("@year", year);
+            ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
+
+            ada.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable GetDatatableTotalQuarterlyProductSales(int quarter, int year, int shopId)
+        {
+            DataTable dt = new DataTable();
+            string qry = "SELECT * " +
+                "FROM GetTotalQuarterlyProductSales(@quarter, @year, @shopId)";
+            SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
+            ada.SelectCommand.Parameters.AddWithValue("@quarter", quarter);
             ada.SelectCommand.Parameters.AddWithValue("@year", year);
             ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
 
