@@ -43,11 +43,19 @@ namespace GUI
             {
                 setStatusToolStripMenuItem.Enabled = true;
                 setRepairingToolStripMenuItem.Enabled = false;
+                removeTableToolStripMenuItem.Enabled = true;
+            }
+            else if (table.Status == "Occupied")
+            {
+                setStatusToolStripMenuItem.Enabled = false;
+                setRepairingToolStripMenuItem.Enabled = false;
+                removeTableToolStripMenuItem.Enabled = false;
             }
             else
             {
                 setStatusToolStripMenuItem.Enabled = false;
                 setRepairingToolStripMenuItem.Enabled = true;
+                removeTableToolStripMenuItem.Enabled = true;
             }
             Reload();
         }
