@@ -181,6 +181,7 @@ namespace GUI
                 btnAdd.Enabled = false;
             }
         }
+
         private void txtName1_TextChanged(object sender, EventArgs e)
         {
             if (txtName1.Text == string.Empty)

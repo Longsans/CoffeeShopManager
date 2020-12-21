@@ -512,22 +512,27 @@ namespace GUI
         }
 
         public double sum = 0;
+        public double copysum = 0;
         public void Timer_Click(object sender, EventArgs e)
         {
             sum = 0;
-
+            txtDiscount.Text = txtDiscount.Text.Replace(',', '.');
             if (dataGridView1.Rows.Count > 1)
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
                     sum += double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 }
             lblTotalSum.Text = sum.ToString() + "$";
-            if (txtDiscount.Text != "" && IsNumber(txtDiscount.Text))
+            if (double.TryParse(txtDiscount.Text, NumberStyles.Number, CultureInfo.InvariantCulture, out double d))
             {
-                sum = sum - sum * (double.Parse(txtDiscount.Text)) / 100;
-                lblGrandTotal.Text = sum.ToString() + "$";
-            }
+                {
+                    sum = sum - sum * (d) / 100;
+                    lblGrandTotal.Text = sum.ToString() + "$";
+                }
+            } 
+            
             lblGrandTotal.Text = sum.ToString() + "$";
+            copysum = sum;
 
             if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
             {
@@ -760,6 +765,7 @@ namespace GUI
         {
             int countdoc = 0;
             string sums = null;
+            txtMoneyCus.Text = txtMoneyCus.Text.Replace(',', '.');
             if (txtMoneyCus.Text == string.Empty||txtMoneyCus.Text=="")
             {
                 errorProvider1.SetError(txtMoneyCus, "Please provide Price");
@@ -768,20 +774,9 @@ namespace GUI
             }
             else
             {
-                string s = txtMoneyCus.Text.ToString();
-
-                for (int i = 0; i < s.Length; i++)
-                {
-                    if (s[i] == '.' || s[i] == ',')
-                    {
-                        countdoc++;
-                        sums += '.';
-                    }
-                    else
-                        sums += s[i];
-                }
+                double sum11 = 0;
                // txtCopyPrice.Text = sums;
-                if (IsNumber(txtMoneyCus.Text) == true && countdoc <= 1)
+                if (double.TryParse(txtMoneyCus.Text, NumberStyles.Number, CultureInfo.InvariantCulture,out sum11))
                 {
                     errorProvider2.SetError(txtMoneyCus, "Correct");
                     errorProvider1.SetError(txtMoneyCus, "");
@@ -795,24 +790,16 @@ namespace GUI
 
                     checkmonecus = 0;
                 }
-                if (s[s.Length - 1] == '.' || s[s.Length - 1] == ',')
-                {
-                    errorProvider1.SetError(txtMoneyCus, "Wrong format");
-                    errorProvider2.SetError(txtMoneyCus, "");
-                    txtGiveCus.Text = "";
-
-                    checkmonecus = 0;
-                }
             }
-            if (checkmonecus == 1&&txtMoneyCus.Text!="")
+            if (checkmonecus == 1&& double.TryParse(txtMoneyCus.Text, NumberStyles.Number, CultureInfo.InvariantCulture, out double d))
             {
-                if (double.Parse(sum.ToString()) <= double.Parse(txtMoneyCus.Text))
+                if (copysum <= d)
                 {
                     errorProvider1.SetError(txtMoneyCus, "");
                     errorProvider2.SetError(txtMoneyCus, "Can compare");
                     txtGiveCus.Text = "";
                     checkmonecus = 1;
-                    txtGiveCus.Text = (double.Parse(txtMoneyCus.Text) - double.Parse(sum.ToString())).ToString();
+                    txtGiveCus.Text = (d-copysum).ToString();
                 }
                 else
                 {

@@ -463,13 +463,13 @@
     <value>9, 140</value>
   </data>
   <data name="lblExcessMon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 17</value>
+    <value>61, 17</value>
   </data>
   <data name="lblExcessMon.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="lblExcessMon.Text" xml:space="preserve">
-    <value>Give Cus</value>
+    <value>Change:</value>
   </data>
   <data name="&gt;&gt;lblExcessMon.Name" xml:space="preserve">
     <value>lblExcessMon</value>
@@ -490,13 +490,13 @@
     <value>9, 103</value>
   </data>
   <data name="lblMoneyCus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 17</value>
+    <value>44, 17</value>
   </data>
   <data name="lblMoneyCus.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="lblMoneyCus.Text" xml:space="preserve">
-    <value>Money Cus:</value>
+    <value>Cash:</value>
   </data>
   <data name="&gt;&gt;lblMoneyCus.Name" xml:space="preserve">
     <value>lblMoneyCus</value>

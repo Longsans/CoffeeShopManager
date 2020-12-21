@@ -63,6 +63,66 @@ namespace DAL
             return rec;
         }
 
+        public List<DTO_Receipt> GetAllReceiptsByProductId(string productId, int shopId)
+        {
+            List<DTO_Receipt> recList = new List<DTO_Receipt>();
+            string qry = "SELECT * " +
+                "FROM RECEIPTS " +
+                "INNER JOIN RECEIPT_DETAILS " +
+                "ON RECEIPTS.Id = RECEIPT_DETAILS.ReceiptId " +
+                "AND RECEIPTS.ShopId = RECEIPT_DETAILS.ShopId " +
+                "WHERE RECEIPT_DETAILS.ProductId = @proId " +
+                "AND RECEIPT_DETAILS.ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@proId", productId);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                var rec = new DTO_Receipt
+                {
+                    Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                    Customer = new DTO_Customer
+                    {
+                        Id = (int)reader["CustomerId"]
+                    },
+                    DateOfPayMent = reader.GetDateTime(reader.GetOrdinal("DateOfPayment")),
+                    Discount = (decimal)reader["Discount"],
+                    Total = reader.GetDecimal(reader.GetOrdinal("Total")),
+                    Cash = (decimal)reader["Cash"],
+                    Change = (decimal)reader["Change"],
+                    Shop = new DTO_Shop
+                    {
+                        ID = reader.GetInt32(reader.GetOrdinal("ShopId"))
+                    }
+                };
+                if (!reader.IsDBNull(reader.GetOrdinal("Details")))
+                {
+                    rec.Details = reader.GetString(reader.GetOrdinal("Details"));
+                }
+                if (!reader.IsDBNull(reader.GetOrdinal("EmployeeId")))
+                {
+                    rec.Employee = new DTO_Employee
+                    {
+                        Id = reader["EmployeeId"].ToString()
+                    };
+                }
+                recList.Add(rec);
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return recList;
+        }
+
         public List<DTO_Receipt> GetAllReceiptsByCustomerId(int customerId, int shopId)
         {
             List<DTO_Receipt> recList = new List<DTO_Receipt>();
