@@ -14,6 +14,8 @@ namespace DTO
         public DateTime DateOfPayMent { get; set; }
         public decimal Discount { get; set; }
         public decimal Total { get; set; }
+        public decimal Cash { get; set; }
+        public decimal Change { get; set; }
         public string Details { get; set; }
         public DTO_Shop Shop = new DTO_Shop();
         public List<DTO_ReceiptDetails> Items = new List<DTO_ReceiptDetails>();

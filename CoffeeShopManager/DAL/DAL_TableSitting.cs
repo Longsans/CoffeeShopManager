@@ -45,6 +45,41 @@ namespace DAL
             return tab;
         }
 
+        public DTO_Table GetTableOfActiveReceipt(int receiptId, int shopId)
+        {
+            DTO_Table tab = null;
+            string qry = "SELECT * " +
+                "FROM TABLE_SITTING " +
+                "WHERE ReceiptId = @recId AND ShopId = @shopId AND Sitting = 1";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@receiptId", receiptId);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                tab = new DTO_Table
+                {
+                    Id = reader.GetInt32(reader.GetOrdinal("TableId")),
+                    Shop = new DTO_Shop
+                    {
+                        ID = reader.GetInt32(reader.GetOrdinal("ShopId"))
+                    }
+                };
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return tab;
+        }
+
         public DTO_Receipt GetLatestReceiptAtTable(int tableId, int shopId)
         {
             DTO_Receipt rec = null;
@@ -53,7 +88,7 @@ namespace DAL
                 "WHERE ReceiptId >= ALL( " +
                 "SELECT ReceiptId FROM TABLE_SITTING " +
                 "WHERE TableId = @tableId AND ShopId = @shopId " +
-                ")";
+                ") AND ShopId = @shopId AND Sitting = 1";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@tableId", tableId);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -98,7 +133,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@receiptId", tabSit.Receipt.Id);
             cmd.Parameters.AddWithValue("@tableId", tabSit.Table.Id);
-            cmd.Parameters.AddWithValue("@shopId", tabSit.Receipt.Id);
+            cmd.Parameters.AddWithValue("@shopId", tabSit.Receipt.Shop.ID);
             cmd.Parameters.AddWithValue("@sitting", tabSit.Sitting);
 
             var connState = (this.conn.State == ConnectionState.Open);

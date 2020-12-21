@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chartProduct = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cboIncomeView = new System.Windows.Forms.ComboBox();
             this.cboProductView = new System.Windows.Forms.ComboBox();
@@ -46,13 +46,14 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlShowInfoIncome = new System.Windows.Forms.Panel();
-            this.lblAveIncome = new System.Windows.Forms.Label();
-            this.lblTotalIncome = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblTotalIncome = new System.Windows.Forms.Label();
+            this.lblAveIncome = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartProduct)).BeginInit();
             this.pnlShowInfoProductSales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).BeginInit();
@@ -63,17 +64,17 @@
             // 
             // chartProduct
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chartProduct.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chartProduct.Legends.Add(legend9);
+            chartArea1.Name = "ChartArea1";
+            this.chartProduct.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartProduct.Legends.Add(legend1);
             this.chartProduct.Location = new System.Drawing.Point(8, 325);
             this.chartProduct.Name = "chartProduct";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chartProduct.Series.Add(series9);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartProduct.Series.Add(series1);
             this.chartProduct.Size = new System.Drawing.Size(557, 257);
             this.chartProduct.TabIndex = 1;
             this.chartProduct.Text = "chart2";
@@ -98,12 +99,12 @@
             // 
             this.cboProductView.FormattingEnabled = true;
             this.cboProductView.Items.AddRange(new object[] {
+            "All time\t",
             "By year",
-            "By quarter",
             "By month",
-            "By last 7 days",
-            "By last 30 days"});
-            this.cboProductView.Location = new System.Drawing.Point(579, 340);
+            "Last 7 days ",
+            "Last 30 days"});
+            this.cboProductView.Location = new System.Drawing.Point(687, 334);
             this.cboProductView.Name = "cboProductView";
             this.cboProductView.Size = new System.Drawing.Size(121, 24);
             this.cboProductView.TabIndex = 5;
@@ -152,27 +153,27 @@
             // 
             // chartIncome
             // 
-            chartArea10.Name = "ChartArea1";
-            this.chartIncome.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.chartIncome.Legends.Add(legend10);
+            chartArea2.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartIncome.Legends.Add(legend2);
             this.chartIncome.Location = new System.Drawing.Point(3, 51);
             this.chartIncome.Name = "chartIncome";
             this.chartIncome.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             this.chartIncome.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))))};
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            series10.YValuesPerPoint = 2;
-            this.chartIncome.Series.Add(series10);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.YValuesPerPoint = 2;
+            this.chartIncome.Series.Add(series2);
             this.chartIncome.Size = new System.Drawing.Size(562, 257);
             this.chartIncome.TabIndex = 0;
             this.chartIncome.Text = "chart1";
-            title5.Name = "Income";
-            this.chartIncome.Titles.Add(title5);
+            title1.Name = "Income";
+            this.chartIncome.Titles.Add(title1);
             // 
             // dataGridView2
             // 
@@ -206,25 +207,15 @@
             this.pnlShowInfoIncome.Size = new System.Drawing.Size(327, 101);
             this.pnlShowInfoIncome.TabIndex = 18;
             // 
-            // lblAveIncome
+            // label3
             // 
-            this.lblAveIncome.AutoSize = true;
-            this.lblAveIncome.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAveIncome.Location = new System.Drawing.Point(200, 62);
-            this.lblAveIncome.Name = "lblAveIncome";
-            this.lblAveIncome.Size = new System.Drawing.Size(17, 19);
-            this.lblAveIncome.TabIndex = 14;
-            this.lblAveIncome.Text = "0";
-            // 
-            // lblTotalIncome
-            // 
-            this.lblTotalIncome.AutoSize = true;
-            this.lblTotalIncome.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalIncome.Location = new System.Drawing.Point(200, 12);
-            this.lblTotalIncome.Name = "lblTotalIncome";
-            this.lblTotalIncome.Size = new System.Drawing.Size(17, 19);
-            this.lblTotalIncome.TabIndex = 13;
-            this.lblTotalIncome.Text = "0";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(10, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 19);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Average income:";
             // 
             // label2
             // 
@@ -236,15 +227,25 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Total income:";
             // 
-            // label3
+            // lblTotalIncome
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 19);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Average income:";
+            this.lblTotalIncome.AutoSize = true;
+            this.lblTotalIncome.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalIncome.Location = new System.Drawing.Point(200, 12);
+            this.lblTotalIncome.Name = "lblTotalIncome";
+            this.lblTotalIncome.Size = new System.Drawing.Size(17, 19);
+            this.lblTotalIncome.TabIndex = 13;
+            this.lblTotalIncome.Text = "0";
+            // 
+            // lblAveIncome
+            // 
+            this.lblAveIncome.AutoSize = true;
+            this.lblAveIncome.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAveIncome.Location = new System.Drawing.Point(200, 62);
+            this.lblAveIncome.Name = "lblAveIncome";
+            this.lblAveIncome.Size = new System.Drawing.Size(17, 19);
+            this.lblAveIncome.TabIndex = 14;
+            this.lblAveIncome.Text = "0";
             // 
             // dateTimePicker1
             // 
@@ -274,11 +275,22 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Select date:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(582, 337);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 19);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "By:";
+            // 
             // UserControlStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
@@ -326,5 +338,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

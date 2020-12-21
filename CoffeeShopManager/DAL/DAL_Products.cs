@@ -301,6 +301,7 @@ namespace DAL
 
         public void Delete(DTO_Product dtoPro)
         {
+            
             string qry = "DELETE FROM [PRODUCTS] " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -312,6 +313,8 @@ namespace DAL
             {
                 OpenConnection();
             }
+            
+            RemoveAllItemsForProductByProductId(dtoPro.Id, dtoPro.Shop.ID);
             cmd.ExecuteNonQuery();
             if (!connState)
             {
@@ -362,6 +365,21 @@ namespace DAL
         {
             DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
             dalItemForPro.DeleteAllByProductId(productId, shopId);
+        }
+
+        public void RemoveAllReceiptsWithProductByProductId(string productId, int shopId)
+        {
+            DAL_Receipts dalRec = new DAL_Receipts();
+            var recList = dalRec.GetAllReceiptsByProductId(productId, shopId);
+            foreach (var rec in recList)
+            {
+                dalRec.DeleteReceipt(rec);
+            }
+        }
+
+        public void RemoveOnlyReceiptDetailsWithProductByProductId(string productId, int shopId)
+        {
+
         }
     }
 }

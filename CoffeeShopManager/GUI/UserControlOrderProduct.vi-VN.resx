@@ -802,6 +802,19 @@
   <data name="lblLastName.Text" xml:space="preserve">
     <value>Tên:</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtGiveCus.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lblExcessMon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="lblExcessMon.Text" xml:space="preserve">
+    <value>Thối khách:</value>
+  </data>
+  <data name="lblMoneyCus.Text" xml:space="preserve">
+    <value>Tiền khách:</value>
+  </data>
   <data name="lblGrand.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 20</value>
   </data>
@@ -815,10 +828,10 @@
     <value>Tổng:</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 79</value>
+    <value>197, 47</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 139</value>
+    <value>250, 189</value>
   </data>
   <data name="lblTableNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 17</value>

@@ -89,6 +89,12 @@ namespace GUI
             {
                 dtoPro.Name = txtName1.Text;
                 dtoPro.Price = decimal.Parse(txtCopyPrice.Text);
+                if (cbxType.Text == "Thức ăn")
+                    cbxType.Text = "Food";
+                if (cbxType.Text == "Nước uống")
+                    cbxType.Text = "Drink";
+                if (cbxType.Text == "Khác")
+                    cbxType.Text = "Others";
                 dtoPro.Type = cbxType.Text;
                 dtoPro.Detail = rtxDetail.Text;
                 dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image);

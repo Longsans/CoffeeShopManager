@@ -20,6 +20,7 @@ namespace GUI
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
         UserControlTable ucTable { get; set; }
+        Timer timer = new Timer();
         public frmOrderForTable()
         {
             InitializeComponent();
@@ -34,7 +35,16 @@ namespace GUI
             ucOrderProduct.dtoEmp = dtoEmp;
             ucOrderProduct.dtoShop = busShop.GetShopById(shopId);
             ucOrderProduct.SetTable(tableId);
+            ucOrderProduct.isOrderAtTable = true;
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (ucOrderProduct.closeFormOrderAtTable) Close();
+        }
+
         private void TitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;

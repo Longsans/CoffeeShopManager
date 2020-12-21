@@ -19,6 +19,8 @@ namespace GUI
         UserControlProductTab _ucPro;
         public DTO_Product dtoPro = new DTO_Product();
         int checkid, checkname, checktype, checkprice;
+        Point prevPoint;
+        bool dragging;
         public frmInsertProDuct(UserControlProductTab product)
         {
             _ucPro = product;
@@ -27,6 +29,8 @@ namespace GUI
         public frmInsertProDuct()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.Manual;
+
         }
 
         private void frmInsertProDuct_Load(object sender, EventArgs e)
@@ -181,6 +185,33 @@ namespace GUI
                 btnAdd.Enabled = false;
             }
         }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            prevPoint = Cursor.Position;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                this.Location = new Point(this.Location.X + Cursor.Position.X - prevPoint.X, this.Location.Y + Cursor.Position.Y - prevPoint.Y);
+                prevPoint = Cursor.Position;
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void txtName1_TextChanged(object sender, EventArgs e)
         {
             if (txtName1.Text == string.Empty)

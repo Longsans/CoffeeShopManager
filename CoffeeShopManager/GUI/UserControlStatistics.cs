@@ -147,8 +147,10 @@ namespace GUI
         }
         private void ProductChartByYear()
         {
+            DataTable dt = new DataTable();
             chartProduct.Series.Clear();
-            dataGridView2.DataSource = busShop.GetDatatableTotalAnnualProductSales(DateTime.Now.Year, shopId);
+            dt = busShop.GetDatatableTotalAnnualProductSales(year, shopId);
+            dataGridView2.DataSource = dt;
             chartProduct.Series.Add("Annual product sales");
             chartProduct.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             chartProduct.Series[0].IsValueShownAsLabel = true;
@@ -156,15 +158,29 @@ namespace GUI
             {
                 chartProduct.Series[0].Points.AddXY(dataGridView2.Rows[i].Cells[1].Value.ToString(), double.Parse(dataGridView2.Rows[i].Cells[2].Value.ToString()));
             }
+            lblTotalSales.Text = busShop.GetTotalAllProductSalesFromDataTable(dt).ToString();
         }
-        private void ProductChartByQuarter()
+        private void ProductChartAllTime()
         {
-            
+            DataTable dt = new DataTable();
+            chartProduct.Series.Clear();
+            dt = busShop.GetDatatableTotalAllTimeProductSales(shopId);
+            dataGridView2.DataSource = dt;
+            chartProduct.Series.Add("Annual product sales");
+            chartProduct.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            chartProduct.Series[0].IsValueShownAsLabel = true;
+            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            {
+                chartProduct.Series[0].Points.AddXY(dataGridView2.Rows[i].Cells[1].Value.ToString(), double.Parse(dataGridView2.Rows[i].Cells[2].Value.ToString()));
+            }
+            lblTotalSales.Text = busShop.GetTotalAllProductSalesFromDataTable(dt).ToString();
         }
         private void ProductChartByMonth()
         {
+            DataTable dt = new DataTable();
             chartProduct.Series.Clear();
-            dataGridView2.DataSource = busShop.GetDatatableTotalMonthlyProductSales(DateTime.Now.Month, DateTime.Now.Year, shopId);
+            dt = busShop.GetDatatableTotalMonthlyProductSales(month, year, shopId);
+            dataGridView2.DataSource = dt;
             chartProduct.Series.Add("Monthly product sales");
             chartProduct.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             chartProduct.Series[0].IsValueShownAsLabel = true;
@@ -172,11 +188,14 @@ namespace GUI
             {
                 chartProduct.Series[0].Points.AddXY(dataGridView2.Rows[i].Cells[1].Value.ToString(), double.Parse(dataGridView2.Rows[i].Cells[2].Value.ToString()));
             }
+            lblTotalSales.Text = busShop.GetTotalAllProductSalesFromDataTable(dt).ToString();
         }
         private void ProductChartLast7Days()
         {
+            DataTable dt = new DataTable();
             chartProduct.Series.Clear();
-            dataGridView2.DataSource = busShop.GetDatatableTotalLastNDaysProductSales(7, shopId);
+            dt = busShop.GetDatatableTotalLastNDaysProductSales(7, shopId);
+            dataGridView2.DataSource = dt;
             chartProduct.Series.Add("Product sales last 7 days");
             chartProduct.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             chartProduct.Series[0].IsValueShownAsLabel = true;
@@ -184,11 +203,14 @@ namespace GUI
             {
                 chartProduct.Series[0].Points.AddXY(dataGridView2.Rows[i].Cells[1].Value.ToString(), double.Parse(dataGridView2.Rows[i].Cells[2].Value.ToString()));
             }
+            lblTotalSales.Text = busShop.GetTotalAllProductSalesFromDataTable(dt).ToString();
         }
         private void ProductChartLast30Days()
         {
+            DataTable dt = new DataTable();
             chartProduct.Series.Clear();
-            dataGridView2.DataSource = busShop.GetDataTableQuarterlyIncome(30, shopId);
+            dt = busShop.GetDatatableTotalLastNDaysProductSales(30, shopId);
+            dataGridView2.DataSource = dt;
             chartProduct.Series.Add("Product sales last 30 days");
             chartProduct.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             chartProduct.Series[0].IsValueShownAsLabel = true;
@@ -196,10 +218,7 @@ namespace GUI
             {
                 chartProduct.Series[0].Points.AddXY(dataGridView2.Rows[i].Cells[1].Value.ToString(), double.Parse(dataGridView2.Rows[i].Cells[2].Value.ToString()));
             }
-        }
-        private void ProductChartDaily()
-        {
-
+            lblTotalSales.Text = busShop.GetTotalAllProductSalesFromDataTable(dt).ToString();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -214,10 +233,10 @@ namespace GUI
             switch (cboProductView.SelectedIndex)
             {
                 case 0:
-                    ProductChartByYear();
+                    ProductChartAllTime();
                     break;
                 case 1:
-                    ProductChartByQuarter();
+                    ProductChartByYear();
                     break;
                 case 2:
                     ProductChartByMonth();
@@ -227,9 +246,6 @@ namespace GUI
                     break;
                 case 4:
                     ProductChartLast30Days();
-                    break;
-                case 5:
-                    ProductChartDaily();
                     break;
             }
         }

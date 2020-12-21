@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlReceiptsDetail));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -66,6 +66,10 @@
             this.label17 = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.lblBack = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.lblCash = new System.Windows.Forms.Label();
+            this.lblChange = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProducts)).BeginInit();
@@ -85,7 +89,6 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label13);
@@ -95,6 +98,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtEmpId);
             this.panel1.Controls.Add(this.txtTabNum);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // label16
@@ -109,9 +113,9 @@
             // 
             // txtId
             // 
-            resources.ApplyResources(this.txtId, "txtId");
             this.txtId.BackColor = System.Drawing.Color.White;
             this.txtId.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtId, "txtId");
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             // 
@@ -132,17 +136,17 @@
             // 
             // txtEmpId
             // 
-            resources.ApplyResources(this.txtEmpId, "txtEmpId");
             this.txtEmpId.BackColor = System.Drawing.Color.White;
             this.txtEmpId.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtEmpId, "txtEmpId");
             this.txtEmpId.Name = "txtEmpId";
             this.txtEmpId.ReadOnly = true;
             // 
             // txtTabNum
             // 
-            resources.ApplyResources(this.txtTabNum, "txtTabNum");
             this.txtTabNum.BackColor = System.Drawing.Color.White;
             this.txtTabNum.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtTabNum, "txtTabNum");
             this.txtTabNum.Name = "txtTabNum";
             this.txtTabNum.ReadOnly = true;
             // 
@@ -154,7 +158,6 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel2.Controls.Add(this.datCusBirthdate);
             this.panel2.Controls.Add(this.label9);
@@ -164,6 +167,7 @@
             this.panel2.Controls.Add(this.txtCusFname);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label8);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // datCusBirthdate
@@ -183,25 +187,25 @@
             // 
             // txtCusEmail
             // 
-            resources.ApplyResources(this.txtCusEmail, "txtCusEmail");
             this.txtCusEmail.BackColor = System.Drawing.Color.White;
             this.txtCusEmail.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtCusEmail, "txtCusEmail");
             this.txtCusEmail.Name = "txtCusEmail";
             this.txtCusEmail.ReadOnly = true;
             // 
             // txtCusLname
             // 
-            resources.ApplyResources(this.txtCusLname, "txtCusLname");
             this.txtCusLname.BackColor = System.Drawing.Color.White;
             this.txtCusLname.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtCusLname, "txtCusLname");
             this.txtCusLname.Name = "txtCusLname";
             this.txtCusLname.ReadOnly = true;
             // 
             // txtCusFname
             // 
-            resources.ApplyResources(this.txtCusFname, "txtCusFname");
             this.txtCusFname.BackColor = System.Drawing.Color.White;
             this.txtCusFname.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtCusFname, "txtCusFname");
             this.txtCusFname.Name = "txtCusFname";
             this.txtCusFname.ReadOnly = true;
             // 
@@ -223,39 +227,39 @@
             // 
             // grdProducts
             // 
-            resources.ApplyResources(this.grdProducts, "grdProducts");
             this.grdProducts.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.grdProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.grdProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdProducts.BackgroundColor = System.Drawing.Color.White;
             this.grdProducts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grdProducts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.grdProducts, "grdProducts");
             this.grdProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(171)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdProducts.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(171)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdProducts.DefaultCellStyle = dataGridViewCellStyle3;
             this.grdProducts.EnableHeadersVisualStyles = false;
             this.grdProducts.Name = "grdProducts";
             this.grdProducts.ReadOnly = true;
             this.grdProducts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.grdProducts.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grdProducts.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grdProducts.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdProducts.RowTemplate.Height = 24;
             this.grdProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
@@ -267,8 +271,8 @@
             // 
             // rtxtDetails
             // 
-            resources.ApplyResources(this.rtxtDetails, "rtxtDetails");
             this.rtxtDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.rtxtDetails, "rtxtDetails");
             this.rtxtDetails.ForeColor = System.Drawing.SystemColors.WindowText;
             this.rtxtDetails.Name = "rtxtDetails";
             // 
@@ -319,11 +323,37 @@
             this.lblBack.Name = "lblBack";
             this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
             // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
+            this.label20.Name = "label20";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
+            this.label19.Name = "label19";
+            // 
+            // lblCash
+            // 
+            resources.ApplyResources(this.lblCash, "lblCash");
+            this.lblCash.Name = "lblCash";
+            // 
+            // lblChange
+            // 
+            resources.ApplyResources(this.lblChange, "lblChange");
+            this.lblChange.Name = "lblChange";
+            // 
             // UserControlReceiptsDetail
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblChange);
+            this.Controls.Add(this.lblCash);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.lblDiscount);
             this.Controls.Add(this.lblSubtotal);
@@ -389,5 +419,9 @@
         private System.Windows.Forms.TextBox txtEmpId;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblSubtotal;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblCash;
+        private System.Windows.Forms.Label lblChange;
     }
 }

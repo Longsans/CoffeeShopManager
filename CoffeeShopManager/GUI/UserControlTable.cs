@@ -117,7 +117,6 @@ namespace GUI
                     dtoReceipt = table.GetCurrentReceiptOfTable(list[i].Id, shopID);
                     if ((dtoReceipt != null) && dtoReceipt.Customer.Id == int.Parse(txtSearch.Text))
                     {
-                        MessageBox.Show(dtoReceipt.Customer.Id.ToString());
                         listTable.Add(list[i]);
                     }
                 }               
