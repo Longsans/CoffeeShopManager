@@ -136,19 +136,20 @@ namespace GUI
             dtoEmp.Firstname = txtFirstName.Text;
             dtoEmp.Lastname = txtLastName.Text;
             dtoEmp.Address = txtAddress.Text;
-            if (cboPosition.Text == "Phục vụ")
+            var resultIndex = cboPosition.FindStringExact(cboPosition.Text);
+            if (resultIndex == 0)
                 cboPosition.Text = "Waiter";
-            if (cboPosition.Text == "Thợ pha cà phê")
+            if (resultIndex == 1)
                 cboPosition.Text = "Barista";
-            if (cboPosition.Text == "Nấu ăn")
+            if (resultIndex == 2)
                 cboPosition.Text = "Cook";
-            if (cboPosition.Text == "Tiện ích")
+            if (resultIndex == 3)
                 cboPosition.Text = "Utility";
-            if (cboPosition.Text == "Vệ sinh")
+            if (resultIndex == 4)
                 cboPosition.Text = "Janitor";
-            if (cboPosition.Text == "Bảo vệ")
+            if (resultIndex == 5)
                 cboPosition.Text = "Security";
-            if (cboPosition.Text == "Khác")
+            else
                 cboPosition.Text = "Others";
             dtoEmp.Position = cboPosition.Text;
             dtoEmp.Phone = txtPhone.Text;

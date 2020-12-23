@@ -83,11 +83,13 @@ namespace GUI
                 dtoPro.Id = txtID.Text;
                 dtoPro.Name = txtName1.Text;
                 dtoPro.Price =decimal.Parse(txtCopyPrice.Text);
-                if (cbxType.Text == "Thức ăn")
+                var resultIndex = cbxType.FindStringExact(cbxType.Text);
+
+                if (resultIndex == 0)
                     cbxType.Text = "Food";
-                if (cbxType.Text == "Nước uống")
+                if (resultIndex == 1)
                     cbxType.Text = "Drink";
-                if (cbxType.Text == "Khác")
+                else
                     cbxType.Text = "Others";
                 dtoPro.Type = cbxType.Text;
                 dtoPro.Detail = rtxDetail.Text;

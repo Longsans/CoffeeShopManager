@@ -98,14 +98,16 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (cboBy.Text == "ID Table")
+            var resultIndex = cboBy.FindStringExact(cboBy.Text);
+
+            if (resultIndex==1)
             {
                 listTable = new List<DTO_Table>();
                 if (table.GetTableById(int.Parse(txtSearch.Text), shopID) != null)
                     listTable.Add(table.GetTableById(int.Parse(txtSearch.Text), shopID));
                 ReloadTable();
             }
-            else if (cboBy.Text == "ID Customer")
+            else if (resultIndex==0)
             {
                 listTable = new List<DTO_Table>();
                 List<DTO_Table> list = new List<DTO_Table>();

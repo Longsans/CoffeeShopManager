@@ -161,25 +161,27 @@ namespace GUI
             {
                 if (txtSearch.ForeColor != Color.DimGray || txtPriceSearchLower.Visible)
                 {
-                    switch (cboSearch.Text)
+                    var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+
+                    switch (resultIndex)
                     {
 
-                        case "ID":
+                        case 0:
                             this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(txtSearch.Text, dtoShop.ID);
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Name":
+                        case 1:
                             this.dataGridView1.DataSource = busPro.GetProductsSearchNameFiltered(txtSearch.Text, dtoShop.ID);
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Type":
+                        case 2:
                             this.dataGridView1.DataSource = busPro.GetProductsSearchTypeFiltered(txtSearch.Text, dtoShop.ID);
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Price":
+                        case 3:
                             if (int.Parse(txtPriceSearchLower.Text) > 0 && int.Parse(txtPriceSearchUpper.Text) > 0)
                             {
                                 if (int.Parse(txtPriceSearchLower.Text) <= int.Parse(txtPriceSearchUpper.Text))
@@ -211,7 +213,9 @@ namespace GUI
     
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboSearch.SelectedItem.ToString() == "Price")
+            var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+
+            if (resultIndex==3)
             {
                 txtSearch.Visible = false;
                 txtPriceSearchLower.Visible = true;
@@ -471,25 +475,27 @@ namespace GUI
             {
                 if (txtSearch.ForeColor != Color.DimGray)
                 {
-                    switch (cboSearch.Text)
+                    var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+
+                    switch (resultIndex)
                     {
 
-                        case "ID":
+                        case 0:
                             this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(txtSearch.Text, dtoShop.ID);
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Name":
+                        case 1:
                             this.dataGridView1.DataSource = busPro.GetProductsSearchNameFiltered(txtSearch.Text, dtoShop.ID);
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Type":
+                        case 2:
                             this.dataGridView1.DataSource = busPro.GetProductsSearchTypeFiltered(txtSearch.Text, dtoShop.ID);
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Price":
+                        case 3:
                             if (int.Parse(txtPriceSearchLower.Text) > 0 && int.Parse(txtPriceSearchUpper.Text) > 0)
                             {
                                 if (int.Parse(txtPriceSearchLower.Text) <= int.Parse(txtPriceSearchUpper.Text))

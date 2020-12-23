@@ -521,6 +521,9 @@
     <EmbeddedResource Include="UserControlStatistics.resx">
       <DependentUpon>UserControlStatistics.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStatistics.vi-VN.resx">
+      <DependentUpon>UserControlStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlStock.resx">
       <DependentUpon>UserControlStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -540,6 +543,9 @@
       <DependentUpon>UserControlTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlTableOfManager.resx">
+      <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTableOfManager.vi-VN.resx">
       <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUserTab.resx">
