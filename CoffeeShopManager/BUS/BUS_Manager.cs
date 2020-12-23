@@ -12,6 +12,7 @@ namespace BUS
     public class BUS_Manager
     {
         DAL_Manager dalManager = new DAL_Manager();
+        DAL_Workers dalWorker = new DAL_Workers();
         public DataTable GetAllManagers(int shopId)
         {
             try
@@ -46,6 +47,10 @@ namespace BUS
             {
                 throw ex;
             }
+        }
+        public DTO_Worker GetByEmail(string email,int shopid)
+        {
+            return dalWorker.GetByEmail(email, shopid);
         }
         public List<DTO_Employee> GetEmployeeList(DTO_Manager manager)
         {

@@ -366,7 +366,6 @@ namespace GUI
                     }
                     if (checkemail == 0 || checkname == 0 || checkbirth == 0)
                     {
-                        MessageBox.Show("" + checkemail + "-" + checkname + "-" + checkbirth);
                         MessageBox.Show("Write profile for Customer");
                         return;
                     }
@@ -398,6 +397,7 @@ namespace GUI
             }
             if (checkmonecus == 1)
             {
+                txtMoneyCus.Text = txtMoneyCus.Text.Replace(',', '.');
                 dtoReceipt.Cash = decimal.Parse(txtMoneyCus.Text);
                 dtoReceipt.Change = decimal.Parse(txtGiveCus.Text);
                 dtoReceipt.Customer = dtoCus;
@@ -645,7 +645,7 @@ namespace GUI
         {
             datBirthdate.CustomFormat = "dd/MM/yyyy";
             DateTime now = DateTime.Now;
-            if (datBirthdate.Value.Date < DateTime.Now.Date)
+            if ((DateTime.Now.Year-datBirthdate.Value.Year)>=1)
             {
                 errorProvider1.SetError(datBirthdate, "");
                 errorProvider2.SetError(datBirthdate, "Accept date");

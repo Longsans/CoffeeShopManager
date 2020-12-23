@@ -32,6 +32,7 @@ namespace DAL
         public DTO_Manager GetById(string id, int shopId)
         {
             DAL_Workers dalWorker = new DAL_Workers();
+            DTO_Manager dtoMan = null;
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -44,7 +45,11 @@ namespace DAL
                 CloseConnection();
             }
 
-            DTO_Manager dtoMan = new DTO_Manager(dtoWrk);
+            //  DTO_Manager dtoMan = new DTO_Manager(dtoWrk);
+            if (dtoWrk != null)
+            {
+                dtoMan = new DTO_Manager(dtoWrk);
+            }
 
             return dtoMan;
         }

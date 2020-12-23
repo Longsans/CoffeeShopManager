@@ -79,34 +79,81 @@ namespace DAL
         public DTO_Employee GetEmployeeInfoByUsername(string username)
         {
             DAL_Workers dalWorkers = new DAL_Workers();
-            DTO_Employee emp = new DTO_Employee(dalWorkers.GetByUsername(username));
-            string qry = "SELECT * FROM [EMPLOYEES] " +
+            DTO_Employee emp = null;
+            var wr = dalWorkers.GetByUsername(username);
+
+            if (wr != null)
+            {
+                emp = new DTO_Employee(wr);
+                string qry = "SELECT * FROM [EMPLOYEES] " +
+                    "WHERE Id = @id AND ShopId = @shopId";
+                SqlCommand cmd = new SqlCommand(qry, this.conn);
+                cmd.Parameters.AddWithValue("@id", emp.Id);
+                cmd.Parameters.AddWithValue("@shopId", emp.Shop.ID);
+
+                var connState = (this.conn.State == ConnectionState.Open);
+                if (!connState)
+                {
+                    OpenConnection();
+                }
+                var reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    emp.Address = reader.GetString(reader.GetOrdinal("Address"));
+
+                    var dateofjoin = reader.GetDateTime(reader.GetOrdinal("DateOfJoin"));
+                    emp.DateOfJoin = new DateTime(dateofjoin.Year, dateofjoin.Month, dateofjoin.Day);
+                    emp.Salary = decimal.Round((decimal)reader["Salary"], 2, MidpointRounding.AwayFromZero);
+
+                    emp.Account.ID = wr.Account.ID;
+                    emp.Manager.Id = reader.GetString(reader.GetOrdinal("ManagerId"));
+                }
+                if (!connState)
+                {
+                    CloseConnection();
+                }
+            }
+            
+            return emp;
+        }
+
+        public DTO_Employee GetByEmail(string email, int shopId)
+        {
+            DAL_Workers dalWorkers = new DAL_Workers();
+            DTO_Employee emp = null;
+            string qry = "SELECT * " +
+                "FROM EMPLOYEES " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@id", emp.Id);
-            cmd.Parameters.AddWithValue("@shopId", emp.Shop.ID);
 
-            var connState = (this.conn.State == ConnectionState.Open);
-            if (!connState)
+            var wr = dalWorkers.GetByEmail(email, shopId);
+            if (wr != null)
             {
-                OpenConnection();
-            }
-            var reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                emp.Address = reader.GetString(reader.GetOrdinal("Address"));
+                emp = new DTO_Employee(wr);
+                cmd.Parameters.AddWithValue("@id", wr.Id);
+                cmd.Parameters.AddWithValue("@shopId", shopId);
 
-                var dateofjoin = reader.GetDateTime(reader.GetOrdinal("DateOfJoin"));
-                emp.DateOfJoin = new DateTime(dateofjoin.Year, dateofjoin.Month, dateofjoin.Day);
-                emp.Salary = decimal.Round((decimal)reader["Salary"], 2, MidpointRounding.AwayFromZero);
+                var connState = (this.conn.State == ConnectionState.Open);
+                if (!connState)
+                {
+                    OpenConnection();
+                }
+                var reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    emp.Address = reader.GetString(reader.GetOrdinal("Address"));
 
-                var empAccount = dalWorkers.GetUserInfoByUsername(username);
-                emp.Account.ID = empAccount.ID;
-                emp.Manager.Id = reader.GetString(reader.GetOrdinal("ManagerId"));
-            }
-            if (!connState)
-            {
-                CloseConnection();
+                    var dateofjoin = reader.GetDateTime(reader.GetOrdinal("DateOfJoin"));
+                    emp.DateOfJoin = new DateTime(dateofjoin.Year, dateofjoin.Month, dateofjoin.Day);
+                    emp.Salary = decimal.Round((decimal)reader["Salary"], 2, MidpointRounding.AwayFromZero);
+
+                    emp.Account.ID = wr.Account.ID;
+                    emp.Manager.Id = reader.GetString(reader.GetOrdinal("ManagerId"));
+                }
+                if (!connState)
+                {
+                    CloseConnection();
+                }
             }
 
             return emp;

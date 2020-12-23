@@ -125,8 +125,21 @@ namespace GUI
                     else
                         dtoMan.Gender = "Female";
                 }
+                if(checkemail==1)
                 dtoMan.Email = txtEmail.Text;
+                else
+                {
+                    MessageBox.Show("Wrong email", "Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if ((DateTime.Now.Year- datBirthdate.Value.Year)>=18)
                 dtoMan.Birthdate = datBirthdate.Value;
+                else
+                {
+                    MessageBox.Show("Wrong age to work", "Age", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+
+                }
                 dtoMan.Account.Username = txtUsername.Text;
                 DialogResult ret = MessageBox.Show("Are you sure you want to save changes?", "Save changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (ret == DialogResult.Yes)
@@ -199,27 +212,51 @@ namespace GUI
                 picManagerInfo.Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
-
+        public int checkemail = 0;
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtEmail.Text))
             {
                 if (EmailHelper.ValidateEmail(txtEmail.Text))
                 {
-                    errEmail.SetError(txtEmail, "");
-                    emailValid = true;
+                    errorFalse.SetError(txtEmail, "");
+                    errorTrue.SetError(txtEmail, "Correct");
+                    if (busMan.GetByEmail(txtEmail.Text, frmManager.dtoMan.Shop.ID) == null||txtEmail.Text==dtoMan.Email)
+                    {
+                        
+                        errorFalse.SetError(txtEmail, "");
+                        errorTrue.SetError(txtEmail, "correct");
+                        checkemail = 1;
+
+                    }
+                    else
+                    {
+                        errorFalse.SetError(txtEmail, "Email had in shop");
+                        errorTrue.SetError(txtEmail, "");
+                        checkemail = 0;
+
+                    }
+                    // errEmail.SetError(txtEmail, "");
+                    //emailValid = true;
                 }
                 else
                 {
-                    errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
-                    emailValid = false;
+                    errorFalse.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    errorTrue.SetError(txtEmail, "");
+                    checkemail = 0;
                 }
             }
             else
             {
-                emailValid = false;
+                checkemail = 0;
             }
-            tiktoker.Start();
+        }
+
+        private void datBirthdate_ValueChanged(object sender, EventArgs e)
+        {
+            datBirthdate.Format = DateTimePickerFormat.Custom;
+            datBirthdate.CustomFormat = "dd/MM/yyyy";
+
         }
     }
 }
