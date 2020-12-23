@@ -198,6 +198,7 @@ namespace GUI
             pnlChangeTab.Location = btnStatistic.Location;
             ucStatisticsTab.Show();
             ucStatisticsTab.BringToFront();
+            ucStatisticsTab.SetShopID(dtoMan.Shop.ID);
             Reload();
         }
 

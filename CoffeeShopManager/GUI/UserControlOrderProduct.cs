@@ -42,6 +42,8 @@ namespace GUI
         public DTO_Employee dtoEmp = new DTO_Employee();
         int shopID;
         int checkname, checkemail, checkbirth, checkmonecus;
+        public bool isOrderAtTable = false;
+        public bool closeFormOrderAtTable = false;
         public UserControlOrderProduct()
         {
             InitializeComponent();
@@ -455,6 +457,7 @@ namespace GUI
             }
             MessageBox.Show("Done, add new receipts");
             ResetAll();
+            if (isOrderAtTable) closeFormOrderAtTable = true;
         }
         public int check = 0;
         public void ResetAll()

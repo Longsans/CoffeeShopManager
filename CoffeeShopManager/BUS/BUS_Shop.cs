@@ -100,6 +100,11 @@ namespace BUS
             return dalrec.GetDatatableTotalMonthlyProductSales(month, year, shopId);
         }
 
+        public DataTable GetDatatableTotalQuarterlyProductSales(int quarter, int year, int shopId)
+        {
+            return dalrec.GetDatatableTotalQuarterlyProductSales(quarter, year, shopId);
+        }
+
         public DataTable GetDatatableTotalAnnualProductSales(int year, int shopId)
         {
             return dalrec.GetDatatableTotalAnnualProductSales(year, shopId);

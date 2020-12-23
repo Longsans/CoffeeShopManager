@@ -108,7 +108,19 @@ namespace GUI
             }
             else if(cboBy.Text == "ID Customer")
             {
-
+                listTable = new List<DTO_Table>();
+                List<DTO_Table> list = new List<DTO_Table>();
+                list = table.GetTablesByShopId(shopID);
+                DTO_Receipt dtoReceipt = new DTO_Receipt();
+                for (int i = 0; i < list.Count; i++)
+                {
+                    dtoReceipt = table.GetCurrentReceiptOfTable(list[i].Id, shopID);
+                    if ((dtoReceipt != null) && dtoReceipt.Customer.Id == int.Parse(txtSearch.Text))
+                    {
+                        listTable.Add(list[i]);
+                    }
+                }               
+                ReloadTable();
             }
         }
         public void SetShopID(int id)
