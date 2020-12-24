@@ -27,7 +27,7 @@ namespace GUI
             btnExpand.Hide();
             LoadAllTables();
         }
-        private void ReloadTable()
+        public void ReloadTable()
         {
             flowLayoutPanel1.Controls.Clear();
             for (int i = 0; i < listTable.Count; i++)
