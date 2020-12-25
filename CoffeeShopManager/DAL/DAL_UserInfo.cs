@@ -11,6 +11,11 @@ namespace DAL
 {
     public class DAL_UserInfo : DBConnection
     {
+        public DAL_UserInfo(string connString) : base(connString)
+        {
+
+        }
+
         public DTO_User GetById(int id)
         {
             DTO_User dtoUser = null;

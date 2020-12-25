@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class frmChangeAuthCodeShop : Form
     {
-        BUS_Shop busShop = new BUS_Shop();
+        BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         public DTO_Shop dtoShop = new DTO_Shop();
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);

@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class UserControlProductTab : UserControl
     {
-        BUS_Product busPro = new BUS_Product();
+        BUS_Product busPro = new BUS_Product(ConnectionStringHelper.GetConnectionString());
         PictureBox pic;
         Label pricelb;
         Label namelb;
@@ -145,8 +145,8 @@ namespace GUI
                 if (ret == DialogResult.Yes)
                 {
                    // MessageBox.Show(dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
-                    dtoPro = busPro.GetById(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoShop.ID);
-                    busPro.Delete(dtoPro);
+                    dtoPro = busPro.GetByIdNotDeleted(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoShop.ID);
+                    busPro.FalseDelete(dtoPro);
                     Reload();
                     GetCong();
                     GetData();
@@ -240,7 +240,7 @@ namespace GUI
             {
                frmEditProduct frmEdit = new frmEditProduct(this)
                 {
-                    dtoPro = busPro.GetById(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoShop.ID)
+                    dtoPro = busPro.GetByIdNotDeleted(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoShop.ID)
                 };
                 frmEdit.ShowDialog();
             }
@@ -273,7 +273,7 @@ namespace GUI
                 Label prlabel = new Label();
                 pic.BackgroundImageLayout = ImageLayout.Stretch;
                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
-                dto_pro = busPro.GetById(row.Cells[0].Value.ToString(), dtoShop.ID);
+                dto_pro = busPro.GetByIdNotDeleted(row.Cells[0].Value.ToString(), dtoShop.ID);
                 pic.Width = 146;
                 pic.Height = 150;
                 pic.Image = ImageHelper.ByteArrayToImage(dto_pro.Image);
@@ -356,7 +356,7 @@ namespace GUI
                 frmEditProduct frmEdit = new frmEditProduct(this)
                 {
                     // dtoPro = busPro.GetByName(namelb.Text)
-                    dtoPro = busPro.GetById(((Button)sender).Tag.ToString(), dtoShop.ID)
+                    dtoPro = busPro.GetByIdNotDeleted(((Button)sender).Tag.ToString(), dtoShop.ID)
                 };
                 frmEdit.ShowDialog();
           //  }
@@ -418,7 +418,7 @@ namespace GUI
             frmEditProduct frmEdit = new frmEditProduct(this)
             {
                     // dtoPro = busPro.GetByName(namelb.Text)
-                       dtoPro = busPro.GetById(((sender as ContextMenuStrip).SourceControl as Button).Tag.ToString(), dtoShop.ID)
+                       dtoPro = busPro.GetByIdNotDeleted(((sender as ContextMenuStrip).SourceControl as Button).Tag.ToString(), dtoShop.ID)
             // dtoPro = busPro.GetById(((Button)sender).Tag.ToString(), 1)
 
                  
@@ -436,9 +436,9 @@ namespace GUI
             // MessageBox.Show(dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
             if (ret == DialogResult.Yes)
             {
-                dtoPro = busPro.GetById(((sender as ContextMenuStrip).SourceControl as Button).Tag.ToString(), dtoShop.ID);
+                dtoPro = busPro.GetByIdNotDeleted(((sender as ContextMenuStrip).SourceControl as Button).Tag.ToString(), dtoShop.ID);
 
-                busPro.Delete(dtoPro);
+                busPro.FalseDelete(dtoPro);
                 Reload();
                 GetCong();
                 GetData();

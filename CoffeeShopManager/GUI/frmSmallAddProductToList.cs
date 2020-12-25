@@ -16,8 +16,8 @@ namespace GUI
     {
         public DTO_StockItem Item = new DTO_StockItem();
         public frmEditStockItem frmEditStock { get; set; }
-        BUS_StockItems busStock = new BUS_StockItems();
-        BUS_Product busPro = new BUS_Product();
+        BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
+        BUS_Product busPro = new BUS_Product(ConnectionStringHelper.GetConnectionString());
         ErrorProvider err = new ErrorProvider();
         Icon checkIcon,
             errorIcon;
@@ -75,7 +75,7 @@ namespace GUI
 
         private void lblAdd_MouseUp(object sender, MouseEventArgs e)
         {
-            var itemForPro = new DTO_StockItemsForProducts
+            var itemForPro = new DTO_StockItemForProduct
             {
                 Item = this.Item,
                 Product = new DTO_Product
@@ -104,7 +104,7 @@ namespace GUI
         {
             if (txtProId.TextLength > 0)
             {
-                if (busPro.GetById(txtProId.Text, Item.Shop.ID) != null)
+                if (busPro.GetByIdNotDeleted(txtProId.Text, Item.Shop.ID) != null)
                 {
                     if (busPro.GetItemForProduct(Item.Id, txtProId.Text, Item.Shop.ID) != null)
                     {

@@ -10,7 +10,15 @@ namespace BUS
 {
     public class BUS_Employee
     {
-        DAL_Employee dalEmployee = new DAL_Employee();
+        private string connectionString;
+        DAL_Employee dalEmployee;
+
+        public BUS_Employee(string connString)
+        {
+            connectionString = connString;
+            dalEmployee = new DAL_Employee(connectionString);
+        }
+
         public DataTable GetAllEmployee(int shopId)
         {
             try
@@ -53,7 +61,7 @@ namespace BUS
 
         public DTO_User GetUserInfoById(string id, int shopId)
         {
-            DAL_Workers dalWr = new DAL_Workers();
+            DAL_Workers dalWr = new DAL_Workers(connectionString);
             var dtoUser = dalWr.GetUserInfoById(id, shopId);
 
             return dtoUser;
@@ -61,7 +69,7 @@ namespace BUS
 
         public DTO_User GetUserInfoByUsername(string username)
         {
-            DAL_Workers dalWr = new DAL_Workers();
+            DAL_Workers dalWr = new DAL_Workers(connectionString);
             var dtoUser = dalWr.GetUserInfoByUsername(username);
 
             return dtoUser;

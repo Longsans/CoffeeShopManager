@@ -11,7 +11,15 @@ namespace BUS
 {
    public class BUS_Product
     {
-        DAL_Products dalProduct = new DAL_Products();
+        private string connectionString;
+        DAL_Products dalProduct;
+
+        public BUS_Product(string connString)
+        {
+            connectionString = connString;
+            dalProduct = new DAL_Products(connectionString);
+        }
+
         public DataTable GetAllProductsWithImages(int shopId)
         {
             try
@@ -23,17 +31,23 @@ namespace BUS
                 throw e;
             }
         }
-        public DTO_Product GetById(string id, int shopId)
+        public DTO_Product GetByIdNotDeleted(string id, int shopId)
         {
             try
             {               
-                    return dalProduct.GetById(id, shopId);
+                return dalProduct.GetByIdNotDeleted(id, shopId);
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
+
+        public DTO_Product GetByIdDeletedAndNotDeleted(string id, int shopId)
+        {
+            return dalProduct.GetByIdDeletedAndNotDeleted(id, shopId);
+        }
+
         public DTO_Product GetByName(string name, int shopId)
         {
             try
@@ -115,17 +129,17 @@ namespace BUS
             return dalProduct.GetDataTableItemsOfProduct(productId, shopId);
         }
 
-        public DTO_StockItemsForProducts GetItemForProduct(int itemId, string productId, int shopId)
+        public DTO_StockItemForProduct GetItemForProduct(int itemId, string productId, int shopId)
         {
             return dalProduct.GetItemForProduct(itemId, productId, shopId);
         }
 
-        public void AddItemForProduct(DTO_StockItemsForProducts itemForPro)
+        public void AddItemForProduct(DTO_StockItemForProduct itemForPro)
         {
             dalProduct.AddItemForProduct(itemForPro);
         }
 
-        public void RemoveItemForProduct(DTO_StockItemsForProducts itemForPro)
+        public void RemoveItemForProduct(DTO_StockItemForProduct itemForPro)
         {
             dalProduct.RemoveItemForProduct(itemForPro);
         }
@@ -162,11 +176,11 @@ namespace BUS
                 throw ex;
             }
         }
-        public bool Delete(DTO_Product dtoPro)
+        public bool FalseDelete(DTO_Product dtoPro)
         {
             try
             {
-                    dalProduct.Delete(dtoPro);
+                    dalProduct.FalseDelete(dtoPro);
                     return true;
                // else return false;                
             }
@@ -175,11 +189,17 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public void TrueDelete(DTO_Product dtoPro)
+        {
+            dalProduct.TrueDelete(dtoPro);
+        }
+
         public bool Update(DTO_Product dtoPro)
         {
             try
             {
-                if (dalProduct.GetById(dtoPro.Id, dtoPro.Shop.ID) != null)
+                if (dalProduct.GetByIdNotDeleted(dtoPro.Id, dtoPro.Shop.ID) != null)
                 {
                     dalProduct.Update(dtoPro);
                     return true;

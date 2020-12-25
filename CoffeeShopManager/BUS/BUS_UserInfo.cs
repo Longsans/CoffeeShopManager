@@ -11,8 +11,15 @@ namespace BUS
 {
     public class BUS_UserInfo
     {
+        private string connectionString;
+        DAL_UserInfo dalUserInfo;
 
-        DAL_UserInfo dalUserInfo = new DAL_UserInfo();
+        public BUS_UserInfo(string connString)
+        {
+            connectionString = connString;
+            dalUserInfo = new DAL_UserInfo(connectionString);
+        }
+
         private string ComputeSha256Hash(string rawData)
         {
             // Create a SHA256   

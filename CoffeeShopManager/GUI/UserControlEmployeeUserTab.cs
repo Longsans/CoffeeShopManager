@@ -18,9 +18,9 @@ namespace GUI
         {
             InitializeComponent();
         }
-        BUS_UserInfo busUser = new BUS_UserInfo();
+        BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
         DTO_Employee dtoEmp = new DTO_Employee();
-        BUS_Employee busEmp = new BUS_Employee();
+        BUS_Employee busEmp = new BUS_Employee(ConnectionStringHelper.GetConnectionString());
         ErrorProvider errEmail = new ErrorProvider();
         Timer tiktoker = new Timer();
         bool emailValid = true;

@@ -17,8 +17,8 @@ namespace GUI
     {
         public DTO_Shop Shop = new DTO_Shop();
         public UserControlStock ucStock { get; set; }
-        BUS_StockItems busStock = new BUS_StockItems();
-        BUS_Suppliers busSup = new BUS_Suppliers();
+        BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
+        BUS_Suppliers busSup = new BUS_Suppliers(ConnectionStringHelper.GetConnectionString());
         string addSup = "Enter new supplier",
             existingSup = "Enter existing supplier";
         Icon checkIcon,

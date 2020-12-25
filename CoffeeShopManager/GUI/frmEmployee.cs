@@ -19,9 +19,9 @@ namespace GUI
         frmLogin _frmLogin = new frmLogin();
         static public DTO_Employee dtoEmp = new DTO_Employee();
         public DTO_Shop dtoShop = new DTO_Shop();
-        BUS_Employee busEmp = new BUS_Employee();
-        BUS_Manager busMan = new BUS_Manager();
-        BUS_Shop busShop = new BUS_Shop();
+        BUS_Employee busEmp = new BUS_Employee(ConnectionStringHelper.GetConnectionString());
+        BUS_Manager busMan = new BUS_Manager(ConnectionStringHelper.GetConnectionString());
+        BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         private bool dragging = false;
         Point startPoint = new Point(0, 0);
         public frmEmployee()

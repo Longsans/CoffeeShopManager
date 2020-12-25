@@ -11,9 +11,14 @@ namespace DAL
 {
     internal class DAL_StockItemsForProducts : DBConnection
     {
-        public DTO_StockItemsForProducts GetItemForProduct(int itemId, string productId, int shopId)
+        public DAL_StockItemsForProducts(string connString) : base(connString)
         {
-            DTO_StockItemsForProducts itemForPro = null;
+
+        }
+
+        public DTO_StockItemForProduct GetItemForProduct(int itemId, string productId, int shopId)
+        {
+            DTO_StockItemForProduct itemForPro = null;
             string qry = "SELECT * FROM STOCK_ITEMS_FOR_PRODUCTS " +
                 "WHERE ItemId = @itemId " +
                 "AND ProductId = @productId " +
@@ -31,7 +36,7 @@ namespace DAL
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                itemForPro = new DTO_StockItemsForProducts
+                itemForPro = new DTO_StockItemForProduct
                 {
                     Item = new DTO_StockItem
                     {
@@ -72,7 +77,8 @@ namespace DAL
                 "ON STOCK_ITEMS_FOR_PRODUCTS.ProductId = PRODUCTS.Id " +
                 "AND STOCK_ITEMS_FOR_PRODUCTS.ShopId = PRODUCTS.ShopId " +
                 "WHERE ItemId = @itemId " +
-                "AND STOCK_ITEMS_FOR_PRODUCTS.ShopId = @shopId";
+                "AND STOCK_ITEMS_FOR_PRODUCTS.ShopId = @shopId " +
+                "AND PRODUCTS.Deleted = 0";
             SqlDataAdapter ada = new SqlDataAdapter(qry, this.conn);
             ada.SelectCommand.Parameters.AddWithValue("@itemId", itemId);
             ada.SelectCommand.Parameters.AddWithValue("@shopId", shopId);
@@ -101,7 +107,7 @@ namespace DAL
             return dt;
         }
 
-        public void Insert(DTO_StockItemsForProducts itemForPro)
+        public void Insert(DTO_StockItemForProduct itemForPro)
         {
             string qry = "INSERT INTO STOCK_ITEMS_FOR_PRODUCTS " +
                 "VALUES (@proId, @itemId, @shopId)";
@@ -122,7 +128,7 @@ namespace DAL
             }
         }
 
-        public void Delete(DTO_StockItemsForProducts itemForPro)
+        public void Delete(DTO_StockItemForProduct itemForPro)
         {
             string qry = "DELETE FROM STOCK_ITEMS_FOR_PRODUCTS " +
                 "WHERE ProductId = @proId " +

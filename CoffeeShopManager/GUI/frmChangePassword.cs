@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class frmChangePassword : Form
     {
-        BUS_UserInfo busUser = new BUS_UserInfo();
+        BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
         public DTO_User dtoUser = new DTO_User();
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);

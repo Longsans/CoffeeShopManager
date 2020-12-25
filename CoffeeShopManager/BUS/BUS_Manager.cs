@@ -11,7 +11,15 @@ namespace BUS
 {
     public class BUS_Manager
     {
-        DAL_Manager dalManager = new DAL_Manager();
+        private string connectionString;
+        DAL_Manager dalManager;
+
+        public BUS_Manager(string connString)
+        {
+            connectionString = connString;
+            dalManager = new DAL_Manager(connectionString);
+        }
+
         public DataTable GetAllManagers(int shopId)
         {
             try
@@ -61,7 +69,7 @@ namespace BUS
 
         public DTO_User GetUserInfoById(string id, int shopId)
         {
-            DAL_Workers dalWr = new DAL_Workers();
+            DAL_Workers dalWr = new DAL_Workers(connectionString);
             var dtoUser = dalWr.GetUserInfoById(id, shopId);
 
             return dtoUser;
@@ -69,7 +77,7 @@ namespace BUS
 
         public DTO_User GetUserInfoByUsername(string username)
         {
-            DAL_Workers dalWr = new DAL_Workers();
+            DAL_Workers dalWr = new DAL_Workers(connectionString);
             var dtoUser = dalWr.GetUserInfoByUsername(username);
 
             return dtoUser;

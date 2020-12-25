@@ -15,7 +15,7 @@ namespace GUI
 {
     public partial class frmEditCustomer : Form
     {
-        BUS_Customers busCus = new BUS_Customers();
+        BUS_Customers busCus = new BUS_Customers(ConnectionStringHelper.GetConnectionString());
         public DTO_Customer dtoCus { get; set; }
         public UserControlCustomers ucCus { get; set; }
         ErrorProvider err = new ErrorProvider();

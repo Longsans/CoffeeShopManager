@@ -14,6 +14,11 @@ namespace DAL
 {
     public class DAL_Workers : DBConnection
     {
+        public DAL_Workers(string connString) : base(connString)
+        {
+
+        }
+
         public DTO_Worker GetById(string id, int shopId)
         {
             DTO_Worker dtoWorker = null;
@@ -60,7 +65,7 @@ namespace DAL
         public DTO_Worker GetByUsername(string username)
         {
             DTO_Worker dtoWorker = null;
-            DAL_UserInfo dalUser = new DAL_UserInfo();
+            DAL_UserInfo dalUser = new DAL_UserInfo(this.connectionString);
             string qry = "SELECT *" +
                 "FROM [WORKERS] " +
                 "WHERE AccountId = @accId";
@@ -102,13 +107,13 @@ namespace DAL
 
         public DTO_User GetUserInfoByUsername(string username)
         {
-            DAL_UserInfo dalUserInfo = new DAL_UserInfo();
+            DAL_UserInfo dalUserInfo = new DAL_UserInfo(this.connectionString);
             return dalUserInfo.GetByUsername(username);
         }
 
         public DTO_User GetUserInfoById(string workerId, int shopId)
         {
-            DAL_UserInfo dalUserInfo = new DAL_UserInfo();
+            DAL_UserInfo dalUserInfo = new DAL_UserInfo(this.connectionString);
             return dalUserInfo.GetById(GetById(workerId, shopId).Account.ID);
         }
 
@@ -137,8 +142,8 @@ namespace DAL
         /// <returns>The <c>Id</c> of the worker inserted</returns>
         public string Insert(DTO_Worker dtoWorker)
         {
-            DAL_UserInfo dalUserInfo = new DAL_UserInfo();
-            DAL_Shop dalShop = new DAL_Shop();
+            DAL_UserInfo dalUserInfo = new DAL_UserInfo(this.connectionString);
+            DAL_Shop dalShop = new DAL_Shop(this.connectionString);
             string qry = "INSERT INTO [WORKERS] VALUES " +
                 "(@id, @firstName, @lastName, @gender, " +
                 "@position, @phoneNumber, @email, " +
@@ -189,7 +194,7 @@ namespace DAL
 
         public void Delete(DTO_Worker dtoWorker)
         {
-            DAL_UserInfo dalUserInfo = new DAL_UserInfo();
+            DAL_UserInfo dalUserInfo = new DAL_UserInfo(this.connectionString);
             string qry = "DELETE FROM [WORKERS] WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", dtoWorker.Id);
@@ -245,7 +250,7 @@ namespace DAL
 
         public void UpdateInfoAndAccount(DTO_Worker dtoWorkerUpdated)
         {
-            DAL_UserInfo dalUserInfo = new DAL_UserInfo();
+            DAL_UserInfo dalUserInfo = new DAL_UserInfo(this.connectionString);
 
             UpdateInfo(dtoWorkerUpdated);
             dalUserInfo.Update(dtoWorkerUpdated.Account);

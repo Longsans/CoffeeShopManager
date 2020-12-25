@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class UserControlEmployeesTab : UserControl
     {
-        BUS_Employee busEmp = new BUS_Employee();
+        BUS_Employee busEmp = new BUS_Employee(ConnectionStringHelper.GetConnectionString());
         public DTO_Manager dtoMan { get; set; } = new DTO_Manager();
         public UserControlEmployeesTab()
         {

@@ -37,7 +37,7 @@
             this.txtCopyPrice = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.grdItems = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.rtxDetail = new System.Windows.Forms.RichTextBox();
@@ -101,7 +101,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.lblTitle);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
@@ -117,14 +117,14 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label6
+            // lblTitle
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Name = "label6";
-            this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
-            this.label6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
-            this.label6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
+            resources.ApplyResources(this.lblTitle, "lblTitle");
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
+            this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
+            this.lblTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
             // 
             // grdItems
             // 
@@ -303,7 +303,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.RichTextBox rtxDetail;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.ComboBox cbxType;

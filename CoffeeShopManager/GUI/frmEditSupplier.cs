@@ -15,7 +15,7 @@ namespace GUI
 {
     public partial class frmEditSupplier : Form
     {
-        BUS_Suppliers busSup = new BUS_Suppliers();
+        BUS_Suppliers busSup = new BUS_Suppliers(ConnectionStringHelper.GetConnectionString());
         ErrorProvider err = new ErrorProvider();
         Timer tiktoker = new Timer();
         bool emailValid = true;

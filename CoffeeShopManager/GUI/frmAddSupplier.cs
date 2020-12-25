@@ -15,7 +15,7 @@ namespace GUI
 {
     public partial class frmAddSupplier : Form
     {
-        BUS_Suppliers busSup = new BUS_Suppliers();
+        BUS_Suppliers busSup = new BUS_Suppliers(ConnectionStringHelper.GetConnectionString());
         ErrorProvider err = new ErrorProvider(),
             errtwo = new ErrorProvider();
         public DTO_Shop Shop = new DTO_Shop();

@@ -17,7 +17,7 @@ namespace GUI
 
     public partial class frmManager : Form
     {
-        BUS_Manager busMan = new BUS_Manager();
+        BUS_Manager busMan = new BUS_Manager(ConnectionStringHelper.GetConnectionString());
         public static DTO_Manager dtoMan = new DTO_Manager();
         private bool dragging = false;
         Point startPoint = new Point(0, 0);

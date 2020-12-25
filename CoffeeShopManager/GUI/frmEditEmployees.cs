@@ -19,8 +19,8 @@ namespace GUI
         private Point startPoint = new Point(0, 0);
         UserControlEmployeesTab _ucEmp = new UserControlEmployeesTab();
         public DTO_Employee dtoEmp = new DTO_Employee();
-        BUS_Employee busEmp = new BUS_Employee();
-        BUS_Manager busMan = new BUS_Manager();
+        BUS_Employee busEmp = new BUS_Employee(ConnectionStringHelper.GetConnectionString());
+        BUS_Manager busMan = new BUS_Manager(ConnectionStringHelper.GetConnectionString());
         Timer tiktoker = new Timer();
         bool emailValid = true;
 

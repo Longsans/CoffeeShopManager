@@ -14,8 +14,8 @@ namespace GUI
 {
     public partial class UserControlReceiptsDetail : UserControl
     {
-        private BUS_Receipts busRec = new BUS_Receipts();
-        private BUS_Customers busCus = new BUS_Customers();
+        private BUS_Receipts busRec = new BUS_Receipts(ConnectionStringHelper.GetConnectionString());
+        private BUS_Customers busCus = new BUS_Customers(ConnectionStringHelper.GetConnectionString());
         public UserControlManagerReceiptsTab UcManReceipt { get; set; }
         public DTO_Receipt rec = new DTO_Receipt();
         public string id = "";

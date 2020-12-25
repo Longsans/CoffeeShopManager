@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class frmOrderForTable : Form
     {
-        BUS_Shop busShop = new BUS_Shop();
+        BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         int shopId;
         int tableId;
         private bool dragging = false;

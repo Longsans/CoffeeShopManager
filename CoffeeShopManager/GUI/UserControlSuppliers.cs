@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class UserControlSuppliers : UserControl
     {
-        BUS_Suppliers busSup = new BUS_Suppliers();
+        BUS_Suppliers busSup = new BUS_Suppliers(ConnectionStringHelper.GetConnectionString());
         FilterProperties filProp = new FilterProperties();
         public DTO_Shop Shop = new DTO_Shop();
         public frmManager frmMan { get; set; }

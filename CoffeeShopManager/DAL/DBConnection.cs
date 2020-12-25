@@ -10,11 +10,12 @@ namespace DAL
 {
     public class DBConnection
     {
-        protected string connectionString = Properties.Settings.Default.ConnectionStringCuong;
+        protected string connectionString;
         protected SqlConnection conn = null;
 
-        public DBConnection()
+        public DBConnection(string connString)
         {
+            connectionString = connString;
             this.conn = new SqlConnection(connectionString);
         }
 

@@ -11,6 +11,11 @@ namespace DAL
 {
     internal class DAL_TableSitting : DBConnection
     {
+        public DAL_TableSitting(string connString) : base(connString)
+        {
+
+        }
+
         public DTO_Table GetTableOfReceipt(int receiptId, int shopId)
         {
             DTO_Table tab = null;
@@ -83,7 +88,7 @@ namespace DAL
         public DTO_Receipt GetLatestReceiptAtTable(int tableId, int shopId)
         {
             DTO_Receipt rec = null;
-            DAL_Receipts dalRec = new DAL_Receipts();
+            DAL_Receipts dalRec = new DAL_Receipts(this.connectionString);
             string qry = "SELECT ReceiptId FROM TABLE_SITTING " +
                 "WHERE ReceiptId >= ALL( " +
                 "SELECT ReceiptId FROM TABLE_SITTING " +

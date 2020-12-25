@@ -14,6 +14,7 @@ namespace DTO
         public byte[] Image { get; set; }
         public decimal Price { get; set; }
         public string Detail { get; set; }
+        public bool Deleted { get; set; }
 
         public DTO_Shop Shop = new DTO_Shop();
 

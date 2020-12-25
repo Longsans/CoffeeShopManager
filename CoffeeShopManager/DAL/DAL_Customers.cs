@@ -11,6 +11,11 @@ namespace DAL
 {
     public class DAL_Customers : DBConnection
     {
+        public DAL_Customers(string connString) : base(connString)
+        {
+
+        }
+
         public DataTable GetAllCustomers(int shopId)
         {
             DataTable dt = new DataTable();
@@ -239,7 +244,7 @@ namespace DAL
 
         public void Delete(DTO_Customer cus)
         {
-            DAL_Receipts dalRec = new DAL_Receipts();
+            DAL_Receipts dalRec = new DAL_Receipts(this.connectionString);
             string qry = "DELETE FROM CUSTOMERS " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);

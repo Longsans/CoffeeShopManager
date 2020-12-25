@@ -11,6 +11,11 @@ namespace DAL
 {
     public class DAL_StockItems : DBConnection
     {
+        public DAL_StockItems(string connString) : base(connString)
+        {
+
+        }
+
         public DTO_StockItem GetById(int id, int shopId)
         {
             DTO_StockItem item = null;
@@ -163,7 +168,7 @@ namespace DAL
         public DataTable GetDataTableBySupplierName(string supName, int shopId)
         {
             DataTable dt = new DataTable();
-            DAL_Suppliers dalSup = new DAL_Suppliers();
+            DAL_Suppliers dalSup = new DAL_Suppliers(this.connectionString);
             string qry = "SELECT Id AS ID, ItemName AS [Item Name], " +
                 "SupplierId AS [Supplier ID] " +
                 "FROM STOCK_ITEMS " +
@@ -185,15 +190,15 @@ namespace DAL
             return dt;
         }
 
-        public DTO_StockItemsForProducts GetItemForProduct(int itemId, string productId, int shopId)
+        public DTO_StockItemForProduct GetItemForProduct(int itemId, string productId, int shopId)
         {
-            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
+            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts(this.connectionString);
             return dalItemForPro.GetItemForProduct(itemId, productId, shopId);
         }
 
         public DataTable GetDataTableProductsUsingItem(int itemId, int shopId)
         {
-            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
+            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts(this.connectionString);
             return dalItemForPro.GetDataTableProductsUsingItem(itemId, shopId);
         }
 
@@ -262,21 +267,21 @@ namespace DAL
             }
         }
 
-        public void AddItemForProduct(DTO_StockItemsForProducts itemForPro)
+        public void AddItemForProduct(DTO_StockItemForProduct itemForPro)
         {
-            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
+            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts(this.connectionString);
             dalItemForPro.Insert(itemForPro);
         }
 
-        public void RemoveItemForProduct(DTO_StockItemsForProducts itemForPro)
+        public void RemoveItemForProduct(DTO_StockItemForProduct itemForPro)
         {
-            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
+            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts(this.connectionString);
             dalItemForPro.Delete(itemForPro);
         }
 
         public void RemoveAllItemForProductsByItemId(int itemId, int shopId)
         {
-            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts();
+            DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts(this.connectionString);
             dalItemForPro.DeleteAllByItemId(itemId, shopId);
         }
 

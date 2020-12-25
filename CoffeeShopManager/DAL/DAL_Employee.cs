@@ -13,6 +13,11 @@ namespace DAL
 {
     public class DAL_Employee : DBConnection
     {
+        public DAL_Employee(string connString) : base(connString)
+        {
+
+        }
+
         public DataTable GetAllEmployees(int shopId)
         {
             DataTable dtEmp = new DataTable();
@@ -37,7 +42,7 @@ namespace DAL
         {
             
             DTO_Employee emp = null;
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             string qry = "SELECT * FROM [EMPLOYEES] " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -78,7 +83,7 @@ namespace DAL
 
         public DTO_Employee GetEmployeeInfoByUsername(string username)
         {
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             DTO_Employee emp = new DTO_Employee(dalWorkers.GetByUsername(username));
             string qry = "SELECT * FROM [EMPLOYEES] " +
                 "WHERE Id = @id AND ShopId = @shopId";
@@ -148,7 +153,7 @@ namespace DAL
 
         public DTO_Manager GetManagerInfo(DTO_Employee emp)
         {
-            DAL_Manager dalMan = new DAL_Manager();
+            DAL_Manager dalMan = new DAL_Manager(this.connectionString);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -305,7 +310,7 @@ namespace DAL
 
         public void Insert(DTO_Employee emp)
         {
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             string qry = "INSERT INTO [EMPLOYEES] " +
                 "VALUES (@workerId, @address, @dateofjoin, @salary, @managerId, @shopId)";
             bool workerInserted = false;
@@ -345,7 +350,7 @@ namespace DAL
 
         public void Delete(DTO_Employee emp)
         {
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             string qry = "DELETE FROM [EMPLOYEES] " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -371,7 +376,7 @@ namespace DAL
         /// <param name="empUpdated">The updated employee</param>
         public void UpdateInfo(DTO_Employee empUpdated)
         {
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             string qry = "UPDATE [EMPLOYEES] " +
                 "SET Address = @address, DateOfJoin = @doj, " +
                 "Salary = @salary, ManagerId = @manId " +
@@ -398,7 +403,7 @@ namespace DAL
 
         public void UpdateInfoAndAccount(DTO_Employee empUpdated)
         {
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             string qry = "UPDATE [EMPLOYEES] " +
                 "SET Address = @address, DateOfJoin = @doj, " +
                 "Salary = @salary, ManagerId = @manId " +

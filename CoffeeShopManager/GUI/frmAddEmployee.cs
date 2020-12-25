@@ -17,8 +17,8 @@ namespace GUI
 {
     public partial class frmAddEmployee : Form
     {
-        BUS_Employee busEmp = new BUS_Employee();
-        BUS_UserInfo busUser = new BUS_UserInfo();
+        BUS_Employee busEmp = new BUS_Employee(ConnectionStringHelper.GetConnectionString());
+        BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
         UserControlEmployeesTab _ucEmp;
         Timer tiktoker = new Timer();
         private bool dragging = false;

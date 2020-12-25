@@ -19,11 +19,11 @@ namespace GUI
         DTO_ReceiptDetails dtoDetail = new DTO_ReceiptDetails();
         List<string> strSave = new List<string>();
         List<DTO_Table> lsTable = new List<DTO_Table>();
-        BUS_Product busPro = new BUS_Product();
-        BUS_Tables busTable = new BUS_Tables();
-        BUS_Receipts busReceipt = new BUS_Receipts();
-        BUS_Customers busCus = new BUS_Customers();
-        BUS_Shop busShop = new BUS_Shop();
+        BUS_Product busPro = new BUS_Product(ConnectionStringHelper.GetConnectionString());
+        BUS_Tables busTable = new BUS_Tables(ConnectionStringHelper.GetConnectionString());
+        BUS_Receipts busReceipt = new BUS_Receipts(ConnectionStringHelper.GetConnectionString());
+        BUS_Customers busCus = new BUS_Customers(ConnectionStringHelper.GetConnectionString());
+        BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         DTO_Receipt dtoReceipt = new DTO_Receipt();
         DTO_Customer dtoCus = new DTO_Customer();
         DTO_Product dto_pro;
@@ -87,7 +87,7 @@ namespace GUI
                 pricelb = new Label();
                 namelb = new Label();
                 Label prlabel = new Label();
-                dto_pro = busPro.GetById(row["Id"].ToString(), shopID);
+                dto_pro = busPro.GetByIdNotDeleted(row["Id"].ToString(), shopID);
 
                 pricelb.Text = row["Price"].ToString() + "$";
                 pricelb.BackColor = Color.FromArgb(255, 121, 121);
@@ -417,7 +417,7 @@ namespace GUI
                 {
                     dtoDetail = new DTO_ReceiptDetails();//cai nay a
 
-                    dto_pro = busPro.GetById(dataGridView1.Rows[i].Cells[6].Value.ToString(), shopID);
+                    dto_pro = busPro.GetByIdNotDeleted(dataGridView1.Rows[i].Cells[6].Value.ToString(), shopID);
                     dtoDetail.Product = dto_pro;
                     //dtoDetail.Product.Id = dto_pro.Id;
                     dtoDetail.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());

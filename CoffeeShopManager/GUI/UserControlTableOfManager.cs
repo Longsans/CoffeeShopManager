@@ -18,7 +18,7 @@ namespace GUI
             InitializeComponent();
         }
         List<DTO_Table> listTable = new List<DTO_Table>();
-        BUS_Tables table = new BUS_Tables();
+        BUS_Tables table = new BUS_Tables(ConnectionStringHelper.GetConnectionString());
         int shopID;
 
         private void UserControlTable_Load(object sender, EventArgs e)

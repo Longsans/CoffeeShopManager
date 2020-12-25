@@ -13,9 +13,9 @@ namespace GUI
 {
     public partial class frmEditProduct : Form
     {
-        BUS_Product busPro = new BUS_Product();
+        BUS_Product busPro = new BUS_Product(ConnectionStringHelper.GetConnectionString());
         public DTO_Product dtoPro = new DTO_Product();
-        BUS_UserInfo busUser = new BUS_UserInfo();
+        BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
         UserControlProductTab _ucPro;
         Point prevPoint;
         bool dragging;
@@ -160,7 +160,7 @@ namespace GUI
                 {
                     foreach (DataGridViewRow row in grdItems.SelectedRows)
                     {
-                        var itemForPro = new DTO_StockItemsForProducts
+                        var itemForPro = new DTO_StockItemForProduct
                         {
                             Item = new DTO_StockItem
                             {

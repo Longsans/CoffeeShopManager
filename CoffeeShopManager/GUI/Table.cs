@@ -17,7 +17,7 @@ namespace GUI
         string stt;
         DTO_Employee dtoEmp = new DTO_Employee();
         DTO_Table table = new DTO_Table();
-        BUS_Tables bus_table = new BUS_Tables();
+        BUS_Tables bus_table = new BUS_Tables(ConnectionStringHelper.GetConnectionString());
         UserControlTable ucTable { get; set; }
         UserControlTableOfManager ucTableManager { get; set; }
         public Table()

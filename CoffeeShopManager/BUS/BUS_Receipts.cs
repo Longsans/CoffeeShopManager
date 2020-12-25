@@ -10,7 +10,15 @@ namespace BUS
 {
     public class BUS_Receipts
     {
-        DAL_Receipts dalReceipts = new DAL_Receipts();
+        private string connectionString;
+        DAL_Receipts dalReceipts;
+
+        public BUS_Receipts(string connString)
+        {
+            connectionString = connString;
+            dalReceipts = new DAL_Receipts(connectionString);
+        }
+
         public DTO_Receipt GetReceiptById(int id, int shopId)
         {
             try

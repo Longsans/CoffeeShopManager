@@ -14,7 +14,7 @@ namespace GUI
     public partial class UserControlTable : UserControl
     {
         List<DTO_Table> listTable = new List<DTO_Table>();
-        BUS_Tables table = new BUS_Tables();
+        BUS_Tables table = new BUS_Tables(ConnectionStringHelper.GetConnectionString());
         DTO_Employee dtoEmp = new DTO_Employee();
         int shopID;
         public UserControlTable()

@@ -10,7 +10,15 @@ namespace BUS
 {
     public class BUS_Tables
     {
-        DAL_Tables dalTables = new DAL_Tables();
+        private string connectionString;
+        DAL_Tables dalTables;
+
+        public BUS_Tables(string connString)
+        {
+            connectionString = connString;
+            dalTables = new DAL_Tables(connectionString);
+        }
+
         public DTO_Table GetTableById(int tableId, int shopId)
         {
             try

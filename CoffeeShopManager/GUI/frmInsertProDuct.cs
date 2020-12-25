@@ -13,12 +13,13 @@ namespace GUI
 {
     public partial class frmInsertProDuct : Form
     {
-        BUS_Product busPro = new BUS_Product();
+        BUS_Product busPro = new BUS_Product(ConnectionStringHelper.GetConnectionString());
 
-        BUS_UserInfo busUser = new BUS_UserInfo();
+        BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
         UserControlProductTab _ucPro;
         public DTO_Product dtoPro = new DTO_Product();
-        int checkid, checkname, checktype, checkprice;
+        int checkid, checkname, checktype, checkprice,
+            checkIdDeleted, checkNameDeleted;
         Point prevPoint;
         bool dragging;
         public frmInsertProDuct(UserControlProductTab product)
@@ -163,11 +164,18 @@ namespace GUI
             }
             else
             {
-                if (busPro.GetById(txtID.Text, _ucPro.dtoShop.ID) != null)
+                if (busPro.GetByIdNotDeleted(txtID.Text, _ucPro.dtoShop.ID) != null)
                 {
                     errorProvider1.SetError(txtID, "ID trung");
                     errorProvider2.SetError(txtID, "");
                     checkid = 0;
+                }
+                else if (busPro.GetByIdDeletedAndNotDeleted(txtID.Text, _ucPro.dtoShop.ID) != null)
+                {
+                    errIdDeleted.SetError(txtID, "Info related to a product with such ID is still saved");
+                    errorProvider1.SetError(txtID, "");
+                    errorProvider2.SetError(txtID, "");
+                    checkIdDeleted = 0;
                 }
                 else
                 {

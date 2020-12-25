@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class UserControlStock : UserControl
     {
-        BUS_StockItems busStock = new BUS_StockItems();
+        BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
         FilterProperties filProp = new FilterProperties();
         ErrorProvider err = new ErrorProvider();
         public DTO_Shop Shop = new DTO_Shop();

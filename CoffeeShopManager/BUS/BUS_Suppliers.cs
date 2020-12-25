@@ -12,7 +12,14 @@ namespace BUS
 {
     public class BUS_Suppliers
     {
-        DAL_Suppliers dalSup = new DAL_Suppliers();
+        private string connectionString;
+        DAL_Suppliers dalSup;
+
+        public BUS_Suppliers(string connString)
+        {
+            connectionString = connString;
+            dalSup = new DAL_Suppliers(connectionString);
+        }
 
         public DTO_Supplier GetById(string id, int shopId)
         {

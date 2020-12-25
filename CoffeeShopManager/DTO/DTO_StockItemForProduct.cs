@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class DTO_StockItemsForProducts
+    public class DTO_StockItemForProduct
     {
         public DTO_Product Product = new DTO_Product();
         public DTO_StockItem Item = new DTO_StockItem();
