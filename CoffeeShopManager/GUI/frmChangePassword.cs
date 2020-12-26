@@ -49,7 +49,9 @@ namespace GUI
             errorProvider1.SetError(txtRetypeNewPassword, "");
             if (txtCurrentPassword.Text == "" || txtNewPassword.Text == "" || txtRetypeNewPassword.Text == "")
             {
-                MessageBox.Show("Vui lòng nhâp đầy đủ thông tin");
+                if (btnSaveChange.Text == "Lưu")
+                    MessageBox.Show("Vui lòng nhâp đầy đủ thông tin.");
+                else MessageBox.Show("Please fill into all fields.");
             }
             else
             {
@@ -57,22 +59,30 @@ namespace GUI
                 tmpUser.PassWord = txtCurrentPassword.Text;
                 if (!busUser.CheckLogin(tmpUser))
                 {
-                    errorProvider1.SetError(txtCurrentPassword, "Your password is incorrect");
+                    if (btnSaveChange.Text == "Lưu")
+                        errorProvider1.SetError(txtCurrentPassword, "Mật khẩu không chính xác");
+                    else errorProvider1.SetError(txtCurrentPassword, "Your password is incorrect");
                     return;
                 }
                 if (txtNewPassword.Text != txtRetypeNewPassword.Text)
                 {
-                    errorProvider1.SetError(txtRetypeNewPassword, "Mật khẩu không khớp");
+                    if (btnSaveChange.Text == "Lưu")
+                        errorProvider1.SetError(txtRetypeNewPassword, "Mật khẩu không khớp");
+                    else errorProvider1.SetError(txtRetypeNewPassword, "Retyped new password does not match new pass word.");
                     return;
                 }
                 if (txtNewPassword.Text == txtCurrentPassword.Text)
                 {
-                    errorProvider1.SetError(txtNewPassword, "Mật khẩu mới trùng mật khẩu cũ");
+                    if (btnSaveChange.Text == "Lưu")
+                        errorProvider1.SetError(txtNewPassword, "Mật khẩu mới trùng mật khẩu cũ.");
+                    else errorProvider1.SetError(txtNewPassword, "New password is as same as current password.");
                     return;
                 }
                 tmpUser.PassWord = txtNewPassword.Text;
                 busUser.Update(tmpUser);
-                MessageBox.Show("You have changed password successfully ");
+                if (btnSaveChange.Text == "Lưu")
+                    MessageBox.Show("Bạn đã thay đổi mật khẩu thành công");
+                else MessageBox.Show("You have changed password successfully ");
                 Close();
             }
         }

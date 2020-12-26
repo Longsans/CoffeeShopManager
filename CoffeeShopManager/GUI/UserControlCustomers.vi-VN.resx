@@ -117,16 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblCustomer.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 25.8000011pt</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblCustomer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblCustomer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 44</value>
+    <value>411, 51</value>
   </data>
   <data name="lblCustomer.Text" xml:space="preserve">
     <value>Danh sách khách hàng</value>
+  </data>
+  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="btnEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -134,23 +140,41 @@
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Sửa</value>
   </data>
+  <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="btnDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnDelete.Text" xml:space="preserve">
     <value>Xóa</value>
   </data>
+  <data name="txtSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 27</value>
+  </data>
   <data name="txtSearch.Text" xml:space="preserve">
     <value>Tìm kiếm...</value>
   </data>
+  <data name="cboSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="cboSearch.Items1" xml:space="preserve">
     <value>Tên</value>
+  </data>
+  <data name="cboSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 27</value>
+  </data>
+  <data name="lblResetFilters.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt, style=Underline</value>
   </data>
   <data name="lblResetFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblResetFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 19</value>
+    <value>126, 19</value>
   </data>
   <data name="lblResetFilters.Text" xml:space="preserve">
     <value>Khôi phục bộ lọc</value>

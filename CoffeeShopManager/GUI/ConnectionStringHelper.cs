@@ -11,7 +11,7 @@ namespace GUI
     {
         public static string GetConnectionString()
         {
-            return ConfigurationManager.ConnectionStrings["GUI.Properties.Settings.ConnectionString"].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["GUI.Properties.Settings.ConnectionStringCuong"].ConnectionString;
         }
     }
 }

@@ -45,7 +45,9 @@ namespace GUI
             if (txtSearch.TextLength == 0)
             {
                 txtSearch.ForeColor = Color.DimGray;
-                txtSearch.Text = "Search...";
+                if (btnEdit.Text == "Sửa")
+                    txtSearch.Text = "Tìm kiếm...";
+                else txtSearch.Text = "Search...";
             }
         }
 
@@ -70,7 +72,9 @@ namespace GUI
                 dataGridView1.Columns["Gender"].HeaderText = "Giới tính";
                 dataGridView1.Columns["Manager's ID"].HeaderText = "ID Quản lý";
             }
-            txtSearch.Text = "Search...";
+            if (btnEdit.Text == "Sửa")
+                txtSearch.Text = "Tìm kiếm...";
+            else txtSearch.Text = "Search...";
             cboSearch.Text = "";
         }
 
@@ -86,7 +90,10 @@ namespace GUI
             DTO_Employee dtoEmp = new DTO_Employee();
             if (dataGridView1.SelectedRows != null && !dataGridView1.Rows[dataGridView1.RowCount - 1].Selected )
             {
-                DialogResult ret = MessageBox.Show("Do you want to delete this employee?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult ret;
+                if (btnEdit.Text == "Sửa")
+                    ret = MessageBox.Show("Bạn có muốn xóa nhân viên này không?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                else ret = MessageBox.Show("Do you want to delete this employee?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ret == DialogResult.Yes)
                 {
                     dtoEmp = busEmp.GetEmployeeInfoAndManagerId(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoMan.Shop.ID);

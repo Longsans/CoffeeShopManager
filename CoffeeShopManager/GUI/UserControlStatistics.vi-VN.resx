@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cboIncomeView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="cboIncomeView.Items" xml:space="preserve">
     <value>Theo năm</value>
   </data>
@@ -135,6 +139,12 @@
   <data name="cboIncomeView.Items5" xml:space="preserve">
     <value>Theo ngày</value>
   </data>
+  <data name="cboIncomeView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 27</value>
+  </data>
+  <data name="cboProductView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="cboProductView.Items" xml:space="preserve">
     <value>Tất cả	</value>
   </data>
@@ -150,47 +160,137 @@
   <data name="cboProductView.Items4" xml:space="preserve">
     <value>1 tháng qua</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cboProductView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 27</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 19</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Tổng doanh số:</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 34</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 19.8000011pt, style=Bold</value>
+  </data>
+  <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 38</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
     <value>Thống kê</value>
   </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 19</value>
+    <value>85, 19</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Trung bình:</value>
   </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 19</value>
+    <value>103, 19</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Tổng thu nhập</value>
   </data>
+  <data name="dateTimePicker1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="dateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 27</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 19</value>
+    <value>34, 19</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Bởi</value>
   </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 19</value>
+    <value>85, 19</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Chọn ngày:</value>
   </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 19</value>
+    <value>34, 19</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Bởi</value>
+  </data>
+  <data name="lblNoDataProduct.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="lblNoDataProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 434</value>
+  </data>
+  <data name="lblNoDataProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 19</value>
+  </data>
+  <data name="lblNoDataProduct.Text" xml:space="preserve">
+    <value>Không có dữ liệu</value>
+  </data>
+  <data name="lblNoDataIncome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="lblNoDataIncome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>175, 167</value>
+  </data>
+  <data name="lblNoDataIncome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 19</value>
+  </data>
+  <data name="lblNoDataIncome.Text" xml:space="preserve">
+    <value>Không có dữ liệu</value>
+  </data>
+  <data name="cboString.Items" xml:space="preserve">
+    <value>Thu nhập hàng năm</value>
+  </data>
+  <data name="cboString.Items1" xml:space="preserve">
+    <value>Thu nhập hàng quý</value>
+  </data>
+  <data name="cboString.Items2" xml:space="preserve">
+    <value>Thu nhập hàng tháng</value>
+  </data>
+  <data name="cboString.Items3" xml:space="preserve">
+    <value>Thu nhập 1 tuần vừa qua</value>
+  </data>
+  <data name="cboString.Items4" xml:space="preserve">
+    <value>Thu nhập 30 ngày vừa qua</value>
+  </data>
+  <data name="cboString.Items5" xml:space="preserve">
+    <value>Thu nhập hàng ngày</value>
+  </data>
+  <data name="cboString.Items6" xml:space="preserve">
+    <value>Số lượng sản phẩm bán theo năm</value>
+  </data>
+  <data name="cboString.Items7" xml:space="preserve">
+    <value>Số lượng sản phẩm bán toàn thời gian</value>
+  </data>
+  <data name="cboString.Items8" xml:space="preserve">
+    <value>Số lượng sản phẩm bán theo tháng</value>
+  </data>
+  <data name="cboString.Items9" xml:space="preserve">
+    <value>Số lượng sản phẩm bán 1 tuần qua</value>
+  </data>
+  <data name="cboString.Items10" xml:space="preserve">
+    <value>Số lượng sản phẩm bán 30 ngày qua</value>
   </data>
 </root>

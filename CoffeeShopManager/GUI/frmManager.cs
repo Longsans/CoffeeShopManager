@@ -224,8 +224,13 @@ namespace GUI
         private void ucHome_Load(object sender, EventArgs e)
         {
             ucHome.SetEmpTab(ucEmployeeTab);
-            ucHome.SetButton(btnEmployee);
+            ucHome.SetButtonEmp(btnEmployee);
             ucHome.SetPanel(pnlChangeTab);
+            ucHome.SetCusTab(ucCustomersTab);
+            ucHome.SetButtonCus(btnCustomer);
+            ucHome.SetStatisticsTab(ucStatisticsTab);
+            ucHome.SetButtonStat(btnStatistic);
+            ucHome.SetFrmMan(this);
         }
 
         private void ucShopInfoTab_Load(object sender, EventArgs e)

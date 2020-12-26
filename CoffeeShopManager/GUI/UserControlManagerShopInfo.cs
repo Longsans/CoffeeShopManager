@@ -61,7 +61,9 @@ namespace GUI
             if (string.IsNullOrWhiteSpace(txtShopName.Text) || string.IsNullOrWhiteSpace(txtShopAddress.Text) ||
                     string.IsNullOrWhiteSpace(txtPhoneNumber.Text))
             {
-                MessageBox.Show("Please fill all info fields.");
+                if (btnEdit.Text == "Sửa")
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+                else MessageBox.Show("Please fill all info fields.");
             }
             else
             {
@@ -70,7 +72,9 @@ namespace GUI
                 dtoShop.Phone = txtPhoneNumber.Text;
                 busShop.Update(dtoShop);
                 DisableTextBox();
-                MessageBox.Show("You have updated shop info successfully");
+                if (btnEdit.Text == "Sửa")
+                    MessageBox.Show("Cập nhật thông tin cửa hàng thành công!");
+                else MessageBox.Show("You have updated shop info successfully");
             }
         }
         public void SetManager(DTO_Manager man)

@@ -140,9 +140,6 @@
             this.txtSupId.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSupId.ForeColor = System.Drawing.Color.DimGray;
             this.txtSupId.Name = "txtSupId";
-            this.txtSupId.Size = new System.Drawing.Size(142, 22);
-            this.txtSupId.TabIndex = 3;
-            this.txtSupId.Text = "Enter existing supplier";
             this.txtSupId.TextChanged += new System.EventHandler(this.txtSupId_TextChanged);
             // 
             // txtItemName

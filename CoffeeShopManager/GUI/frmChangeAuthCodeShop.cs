@@ -54,28 +54,38 @@ namespace GUI
             errorProvider1.SetError(txtRetypeNewPassword, "");
             if (txtCurrentPassword.Text == "" || txtNewPassword.Text == "" || txtRetypeNewPassword.Text == "")
             {
-                MessageBox.Show("Vui lòng nhâp đầy đủ thông tin");
+                if (btnSaveChange.Text == "Lưu")
+                    MessageBox.Show("Vui lòng nhâp đầy đủ thông tin.");
+                else MessageBox.Show("Please fill into all fields.");
             }
             else
             {
                 if (dtoShop.AuthCode != busShop.EncodeAuthCode(txtCurrentPassword.Text))
                 {
-                    errorProvider1.SetError(txtCurrentPassword, "Your password is incorrect");
+                    if (btnSaveChange.Text == "Lưu")
+                        errorProvider1.SetError(txtCurrentPassword, "Code không chính xác");
+                    else errorProvider1.SetError(txtCurrentPassword, "Your code is incorrect");
                     return;
                 }
                 if (txtNewPassword.Text != txtRetypeNewPassword.Text)
                 {
-                    errorProvider1.SetError(txtRetypeNewPassword, "Mật khẩu không khớp");
+                    if (btnSaveChange.Text == "Lưu")
+                        errorProvider1.SetError(txtRetypeNewPassword, "Code không khớp");
+                    else errorProvider1.SetError(txtRetypeNewPassword, "Retyped new code does not match new code.");
                     return;
                 }
                 if (txtNewPassword.Text == txtCurrentPassword.Text)
                 {
-                    errorProvider1.SetError(txtNewPassword, "Mật khẩu mới trùng mật khẩu cũ");
+                    if (btnSaveChange.Text == "Lưu")
+                        errorProvider1.SetError(txtNewPassword, "Code mới trùng code cũ.");
+                    else errorProvider1.SetError(txtNewPassword, "New code is as same as current code.");
                     return;
                 }
                 dtoShop.AuthCode = busShop.EncodeAuthCode(txtNewPassword.Text);
                 busShop.Update(dtoShop);
-                MessageBox.Show("You have changed password successfully ");
+                if (btnSaveChange.Text == "Lưu")
+                    MessageBox.Show("Bạn đã thay đổi code của shop thành công.");
+                else MessageBox.Show("You have changed code successfully. ");
                 Close();
             }
         }

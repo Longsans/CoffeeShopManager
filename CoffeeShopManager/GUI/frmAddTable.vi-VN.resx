@@ -118,49 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtStatus.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+  <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 21</value>
   </data>
-  <data name="txtStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 27</value>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Thêm bàn</value>
   </data>
-  <data name="txtCurrentReceipt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+  <data name="txtTableId.Text" xml:space="preserve">
+    <value>Nhập ID bàn</value>
   </data>
-  <data name="txtCurrentReceipt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 27</value>
+  <data name="lblCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 19</value>
   </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+  <data name="lblCancel.Text" xml:space="preserve">
+    <value>Hủy</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 19</value>
+  <data name="lblAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 19</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>ID Hóa đơn</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 19</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Trạng thái</value>
-  </data>
-  <data name="lblTableID.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
-  </data>
-  <data name="lblTableID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 19</value>
-  </data>
-  <data name="lblTableID.Text" xml:space="preserve">
-    <value>ID Bàn</value>
-  </data>
-  <data name="txtTableID.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
-  </data>
-  <data name="txtTableID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 27</value>
+  <data name="lblAdd.Text" xml:space="preserve">
+    <value>Thêm</value>
   </data>
 </root>

@@ -83,15 +83,19 @@ namespace GUI
                     err.SetError(txtItemName, "Valid");
                 }
                 else
-                {
+                {                  
                     err.Icon = errorIcon;
-                    err.SetError(txtItemName, "A stock item with such name already exists");
+                    if (btnSave.Text == "Lưu")
+                        err.SetError(txtItemName, "Tên hàng hóa này đã tồn tại.");
+                    else err.SetError(txtItemName, "A stock item with such name already exists");
                 }
             }
             else
             {
                 err.Icon = errorIcon;
-                err.SetError(txtItemName, "Please fill all info fields");
+                if (btnSave.Text == "Lưu")
+                    err.SetError(txtItemName, "Vui lòng nhập đầy đủ thông tin");
+                else err.SetError(txtItemName, "Please fill all info fields");
             }
             tiktoker.Start();
         }
@@ -103,18 +107,24 @@ namespace GUI
                 if (busSup.GetById(txtSupId.Text, Item.Shop.ID) != null)
                 {
                     errtwo.Icon = checkIcon;
-                    errtwo.SetError(txtSupId, "Valid");
+                    if (btnSave.Text == "Lưu")
+                        errtwo.SetError(txtSupId, "Hợp lệ");
+                    else errtwo.SetError(txtSupId, "Valid");
                 }
                 else
                 {
                     errtwo.Icon = errorIcon;
-                    errtwo.SetError(txtSupId, "A supplier with such ID does not exist");
+                    if (btnSave.Text == "Lưu")
+                        errtwo.SetError(txtSupId, "ID nhà cung cấp này không tồn tại.");
+                    else errtwo.SetError(txtSupId, "A supplier with such ID does not exist");
                 }
             }
             else
             {
                 errtwo.Icon = errorIcon;
-                errtwo.SetError(txtSupId, "Please fill all info fields");
+                if (btnSave.Text == "Lưu")
+                    errtwo.SetError(txtSupId, "Vui lòng nhập đầy đủ thông tin");
+                else errtwo.SetError(txtSupId, "Please fill all info fields");
             }
             tiktoker.Start();
         }
@@ -142,24 +152,49 @@ namespace GUI
             lblRemoveFromList.ForeColor = SystemColors.ControlText;
             if (grdProds.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("Remove these products from the list?", "Remove products"
-                , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (btnSave.Text == "Lưu")
                 {
-                    foreach (DataGridViewRow row in grdProds.SelectedRows)
+                    if (MessageBox.Show("Xóa những sản phẩm này khỏi danh sách?", "Xóa sản phẩm"
+                , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        var itemForPro = new DTO_StockItemForProduct
+                        foreach (DataGridViewRow row in grdProds.SelectedRows)
                         {
-                            Item = this.Item,
-                            Product = new DTO_Product
+                            var itemForPro = new DTO_StockItemForProduct
                             {
-                                Id = (int)row.Cells["Product ID"].Value,
+                                Item = this.Item,
+                                Product = new DTO_Product
+                                {
+                                    Id = (int)row.Cells["Product ID"].Value,
+                                    Shop = this.Item.Shop
+                                },
                                 Shop = this.Item.Shop
-                            },
-                            Shop = this.Item.Shop
-                        };
-                        busStock.RemoveItemForProduct(itemForPro);
+                            };
+                            busStock.RemoveItemForProduct(itemForPro);
+                        }
+                        ReloadGridView();
                     }
-                    ReloadGridView();
+                }
+                else
+                {
+                    if (MessageBox.Show("Remove these products from the list?", "Remove products"
+                , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        foreach (DataGridViewRow row in grdProds.SelectedRows)
+                        {
+                            var itemForPro = new DTO_StockItemForProduct
+                            {
+                                Item = this.Item,
+                                Product = new DTO_Product
+                                {
+                                    Id = (int)row.Cells["Product ID"].Value,
+                                    Shop = this.Item.Shop
+                                },
+                                Shop = this.Item.Shop
+                            };
+                            busStock.RemoveItemForProduct(itemForPro);
+                        }
+                        ReloadGridView();
+                    }
                 }
             }
         }

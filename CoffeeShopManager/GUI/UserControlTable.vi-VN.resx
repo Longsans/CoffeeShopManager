@@ -128,14 +128,20 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Danh sách bàn</value>
   </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 19</value>
+    <value>62, 17</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Các loại:</value>
+  </data>
+  <data name="btnAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
   </data>
   <data name="btnAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -143,11 +149,17 @@
   <data name="btnAll.Text" xml:space="preserve">
     <value>Tất cả</value>
   </data>
+  <data name="btnAvailable.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
   <data name="btnAvailable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnAvailable.Text" xml:space="preserve">
     <value>Còn trống</value>
+  </data>
+  <data name="btnOccupied.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
   </data>
   <data name="btnOccupied.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -155,11 +167,17 @@
   <data name="btnOccupied.Text" xml:space="preserve">
     <value>Đã ngồi</value>
   </data>
+  <data name="btnUnavailable.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
   <data name="btnUnavailable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="btnUnavailable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>426, 99</value>
+  </data>
   <data name="btnUnavailable.Text" xml:space="preserve">
-    <value>Không dùng được</value>
+    <value>Đang sửa</value>
   </data>
   <data name="cboBy.Items" xml:space="preserve">
     <value>ID Khách hàng</value>
@@ -167,20 +185,26 @@
   <data name="cboBy.Items1" xml:space="preserve">
     <value>ID Bàn</value>
   </data>
+  <data name="lblBy.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
   <data name="lblBy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblBy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 19</value>
+    <value>45, 17</value>
   </data>
   <data name="lblBy.Text" xml:space="preserve">
     <value>Bằng:</value>
+  </data>
+  <data name="lblSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
   </data>
   <data name="lblSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 19</value>
+    <value>68, 17</value>
   </data>
   <data name="lblSearch.Text" xml:space="preserve">
     <value>Tìm kiếm:</value>

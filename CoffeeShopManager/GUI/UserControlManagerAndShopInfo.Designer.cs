@@ -69,7 +69,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
             this.splitContainer1.Panel1.Controls.Add(this.txtEmail);
             this.splitContainer1.Panel1.Controls.Add(this.txtPosition);
             this.splitContainer1.Panel1.Controls.Add(this.txtGender);
@@ -91,7 +90,6 @@
             // 
             // splitContainer1.Panel2
             // 
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
             this.splitContainer1.Panel2.Controls.Add(this.txtShopPhone);
             this.splitContainer1.Panel2.Controls.Add(this.label11);
             this.splitContainer1.Panel2.Controls.Add(this.label12);
@@ -102,57 +100,57 @@
             // 
             // txtEmail
             // 
-            resources.ApplyResources(this.txtEmail, "txtEmail");
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtEmail, "txtEmail");
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             // 
             // txtPosition
             // 
-            resources.ApplyResources(this.txtPosition, "txtPosition");
             this.txtPosition.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtPosition, "txtPosition");
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.ReadOnly = true;
             // 
             // txtGender
             // 
-            resources.ApplyResources(this.txtGender, "txtGender");
             this.txtGender.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtGender, "txtGender");
             this.txtGender.Name = "txtGender";
             this.txtGender.ReadOnly = true;
             // 
             // txtFirstName
             // 
-            resources.ApplyResources(this.txtFirstName, "txtFirstName");
             this.txtFirstName.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtFirstName, "txtFirstName");
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
             // 
             // txtBirthDate
             // 
-            resources.ApplyResources(this.txtBirthDate, "txtBirthDate");
             this.txtBirthDate.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtBirthDate, "txtBirthDate");
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.ReadOnly = true;
             // 
             // txtLastName
             // 
-            resources.ApplyResources(this.txtLastName, "txtLastName");
             this.txtLastName.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtLastName, "txtLastName");
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
             // 
             // txtManPhoneNumer
             // 
-            resources.ApplyResources(this.txtManPhoneNumer, "txtManPhoneNumer");
             this.txtManPhoneNumer.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtManPhoneNumer, "txtManPhoneNumer");
             this.txtManPhoneNumer.Name = "txtManPhoneNumer";
             this.txtManPhoneNumer.ReadOnly = true;
             // 
             // txtManID
             // 
-            resources.ApplyResources(this.txtManID, "txtManID");
             this.txtManID.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtManID, "txtManID");
             this.txtManID.Name = "txtManID";
             this.txtManID.ReadOnly = true;
             // 
@@ -168,8 +166,8 @@
             // 
             // picMan
             // 
-            resources.ApplyResources(this.picMan, "picMan");
             this.picMan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.picMan, "picMan");
             this.picMan.Name = "picMan";
             this.picMan.TabStop = false;
             // 
@@ -210,8 +208,8 @@
             // 
             // txtShopPhone
             // 
-            resources.ApplyResources(this.txtShopPhone, "txtShopPhone");
             this.txtShopPhone.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtShopPhone, "txtShopPhone");
             this.txtShopPhone.Name = "txtShopPhone";
             this.txtShopPhone.ReadOnly = true;
             // 
@@ -232,8 +230,8 @@
             // 
             // txtShopAddress
             // 
-            resources.ApplyResources(this.txtShopAddress, "txtShopAddress");
             this.txtShopAddress.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtShopAddress, "txtShopAddress");
             this.txtShopAddress.Name = "txtShopAddress";
             this.txtShopAddress.ReadOnly = true;
             // 
@@ -244,8 +242,8 @@
             // 
             // txtShopName
             // 
-            resources.ApplyResources(this.txtShopName, "txtShopName");
             this.txtShopName.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtShopName, "txtShopName");
             this.txtShopName.Name = "txtShopName";
             this.txtShopName.ReadOnly = true;
             // 

@@ -117,50 +117,69 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblTable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtStatus.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+  <data name="lblTable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 17</value>
   </data>
-  <data name="txtStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 27</value>
+  <data name="lblTable.Text" xml:space="preserve">
+    <value>Bàn 1</value>
   </data>
-  <data name="txtCurrentReceipt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+  <data name="lblStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="txtCurrentReceipt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 27</value>
+  <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 17</value>
   </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Có sẵn</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 19</value>
+  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 24</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>ID Hóa đơn</value>
+  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Chi tiết</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+  <data name="orderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 24</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 19</value>
+  <data name="orderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Đặt bàn</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Trạng thái</value>
+  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 52</value>
   </data>
-  <data name="lblTableID.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+  <data name="setStatusToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 24</value>
   </data>
-  <data name="lblTableID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 19</value>
+  <data name="setStatusToolStripMenuItem.Text" xml:space="preserve">
+    <value>Chuyển thành sẵn có</value>
   </data>
-  <data name="lblTableID.Text" xml:space="preserve">
-    <value>ID Bàn</value>
+  <data name="setRepairingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 24</value>
   </data>
-  <data name="txtTableID.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+  <data name="setRepairingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Chuyển trạng thái sửa</value>
   </data>
-  <data name="txtTableID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 27</value>
+  <data name="removeTableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 24</value>
+  </data>
+  <data name="removeTableToolStripMenuItem.Text" xml:space="preserve">
+    <value>Xóa bàn</value>
+  </data>
+  <data name="contextMenuStrip2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 104</value>
+  </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 125</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 165</value>
   </data>
 </root>

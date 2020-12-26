@@ -73,8 +73,17 @@ namespace GUI
         {
             if (!checkNameDeleted)
             {
-                var ret = MessageBox.Show("There are data related to a deleted product with this name. Do you want to view it for restoring instead?",
-                    "Cannot insert a duplicate product name", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult ret;
+                if (btnAdd.Text == "Thêm")
+                {
+                    ret = MessageBox.Show("Có dữ liệu liên quan đến 1 tên sản phẩm bị xóa. Bạn có muốn xem nó và khôi phục không?",
+                      "Không thể thêm sản phẩm trùng tên", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    ret = MessageBox.Show("There are data related to a deleted product with this name. Do you want to view it for restoring instead?",
+                      "Cannot insert a duplicate product name", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
                 if (ret == DialogResult.Yes)
                 {
                     frmRestoreProduct res = new frmRestoreProduct(_ucPro, this, busPro.GetByNameDeletedAndNotDeleted(txtName1.Text, _ucPro.dtoShop.ID));
@@ -87,7 +96,9 @@ namespace GUI
             }
             if (checkname == 0 || checktype == 0 || checkprice == 0)
             {
-                MessageBox.Show("Wrong format","Insert product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (btnAdd.Text == "Thêm")
+                    MessageBox.Show("Sai định dạng","Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else MessageBox.Show("Wrong format","Insert product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 btnAdd.Enabled = false;
                 return;
             }
@@ -115,12 +126,16 @@ namespace GUI
                         busPro.InsertWithoutImage(dtoPro);
                         Reload();
                         _ucPro.Reload();
-                        MessageBox.Show("Thêm thành công.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (btnAdd.Text == "Thêm")
+                            MessageBox.Show("Thêm thành công", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else MessageBox.Show("Add successfully", "Add product", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         txtName1.ResetText();
-                        MessageBox.Show("Trùng tên thức ăn đã có sẵn");
+                        if (btnAdd.Text == "Thêm")
+                            MessageBox.Show("Trùng tên thức ăn đã có sẵn");
+                        else MessageBox.Show("A product with this name has already existed.");
                     }
                    // MessageBox.Show("Vui lòng chọn hình ảnh", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -132,12 +147,16 @@ namespace GUI
                         busPro.InsertWithImage(dtoPro);
                         Reload();
                         _ucPro.Reload();
-                        MessageBox.Show("Thêm thành công.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (btnAdd.Text == "Thêm")
+                            MessageBox.Show("Thêm thành công.", "Thêm sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else MessageBox.Show("Add successfully", "Add product", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         txtName1.ResetText();
-                        MessageBox.Show("Trùng tên thức ăn đã có sẵn");
+                        if (btnAdd.Text == "Thêm")
+                            MessageBox.Show("Trùng tên thức ăn đã có sẵn");
+                        else MessageBox.Show("A product with this name has already existed.");
                     }
                 }
             }
@@ -200,7 +219,9 @@ namespace GUI
             var matchedPro = busPro.GetByNameDeletedAndNotDeleted(txtName1.Text, _ucPro.dtoShop.ID);
             if (txtName1.Text == string.Empty)
             {
-                errorProvider1.SetError(txtName1, "Name is required");
+                if (btnAdd.Text == "Thêm")
+                    errorProvider1.SetError(txtName1, "Vui lòng nhập tên sản phẩm");
+                else errorProvider1.SetError(txtName1, "Name is required");
                 errorProvider2.SetError(txtName1, "");
                 errNameDeleted.SetError(txtName1, "");
                 checkname = 0;
@@ -209,13 +230,17 @@ namespace GUI
             {
                 if (matchedPro.Deleted)
                 {
-                    errNameDeleted.SetError(txtName1, "There is existing info related to a product with such name");
+                    if (btnAdd.Text == "Thêm")
+                        errNameDeleted.SetError(txtName1, "Đã có thông tin liên quan đến tên sản phẩm này");
+                    else errNameDeleted.SetError(txtName1, "There is existing info related to a product with such name");
                     errorProvider2.SetError(txtName1, "");
                     checkNameDeleted = false;
                 }
                 else
                 {
-                    errorProvider1.SetError(txtName1, "A product with such name already exists");
+                    if (btnAdd.Text == "Thêm")
+                        errorProvider1.SetError(txtName1, "Tên sản phẩm đã tồn tại.");
+                    else errorProvider1.SetError(txtName1, "A product with such name already exists");
                     errorProvider2.SetError(txtName1, "");
                     errNameDeleted.SetError(txtName1, "");
                     checkname = 0;
@@ -224,7 +249,9 @@ namespace GUI
             else
             {
                 errorProvider1.SetError(txtName1, "");
-                errorProvider2.SetError(txtName1, "Valid");
+                if (btnAdd.Text == "Thêm")
+                    errorProvider2.SetError(txtName1, "Hợp lệ");
+                else errorProvider2.SetError(txtName1, "Valid");
                 errNameDeleted.SetError(txtName1, "");
                 checkname = 1;
                 checkNameDeleted = true;
@@ -244,14 +271,18 @@ namespace GUI
         {
             if (cbxType.Text == string.Empty)
             {
-                errorProvider1.SetError(cbxType, "Please choose");
+                if (btnAdd.Text == "Thêm")
+                    errorProvider1.SetError(cbxType, "Vui lòng chọn");
+                else errorProvider1.SetError(cbxType, "Please choose");
                 errorProvider2.SetError(cbxType, "");
                 checktype = 0;
             }
             else
             {
                 errorProvider1.SetError(cbxType, "");
-                errorProvider2.SetError(cbxType, "Correct");
+                if (btnAdd.Text == "Thêm")
+                    errorProvider2.SetError(cbxType, "Hợp lệ");
+                else errorProvider2.SetError(cbxType, "Correct");
                 checktype = 1;
             }
             if (checkname == 1 && checktype == 1 && checkprice == 1)
@@ -270,7 +301,9 @@ namespace GUI
             string sums = null;
             if (txtPrice.Text == string.Empty)
             {
-                errorProvider1.SetError(txtPrice, "Please provide Price");
+                if (btnAdd.Text == "Thêm")
+                    errorProvider1.SetError(txtPrice, "Vui lòng nhập giá");
+                else errorProvider1.SetError(txtPrice, "Please provide Price");
                 errorProvider2.SetError(txtPrice, "");
                 checkprice = 0;
             }
@@ -291,19 +324,25 @@ namespace GUI
                 txtCopyPrice.Text = sums;
                 if (IsNumber(txtPrice.Text) == true && countdoc <= 1)
                 {
-                    errorProvider2.SetError(txtPrice, "Correct");
+                    if (btnAdd.Text == "Thêm")
+                        errorProvider2.SetError(txtPrice, "Hợp lệ");
+                    else errorProvider2.SetError(txtPrice, "Correct");
                     errorProvider1.SetError(txtPrice, "");
                     checkprice = 1;
                 }
                 else
                 {
-                    errorProvider1.SetError(txtPrice, "Wrong format");
+                    if (btnAdd.Text == "Thêm")
+                        errorProvider1.SetError(txtPrice, "Sai định dạng");
+                    else errorProvider1.SetError(txtPrice, "Wrong format");
                     errorProvider2.SetError(txtPrice, "");
                     checkprice = 0;
                 }
                 if (s[s.Length - 1] == '.' || s[s.Length - 1] == ',')
                 {
-                    errorProvider1.SetError(txtPrice, "Wrong format");
+                    if (btnAdd.Text == "Thêm")
+                        errorProvider1.SetError(txtPrice, "Sai định dạng");
+                    else errorProvider1.SetError(txtPrice, "Wrong format");
                     errorProvider2.SetError(txtPrice, "");
                     checkprice = 0;
                 }

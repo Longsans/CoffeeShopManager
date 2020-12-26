@@ -118,25 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
+  </data>
+  <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 8</value>
+  </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 21</value>
+    <value>211, 22</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Thêm hàng vào danh sách</value>
   </data>
+  <data name="txtItemId.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="txtItemId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 66</value>
+  </data>
+  <data name="txtItemId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 27</value>
+  </data>
   <data name="txtItemId.Text" xml:space="preserve">
     <value>ID mặt hàng trong kho</value>
   </data>
+  <data name="lblCancel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="lblCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 119</value>
+  </data>
   <data name="lblCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 19</value>
+    <value>37, 19</value>
   </data>
   <data name="lblCancel.Text" xml:space="preserve">
     <value>Hủy</value>
   </data>
+  <data name="lblAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="lblAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 19</value>
+    <value>47, 19</value>
   </data>
   <data name="lblAdd.Text" xml:space="preserve">
     <value>Thêm</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 69</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 19</value>
   </data>
 </root>

@@ -64,7 +64,7 @@
     <ManifestKeyFile>GUI_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -377,10 +377,19 @@
     <EmbeddedResource Include="frmAddTable.resx">
       <DependentUpon>frmAddTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTable.vi-VN.resx">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangeAuthCodeShop.resx">
       <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeAuthCodeShop.vi-VN.resx">
+      <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.vi-VN.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditCustomer.resx">
@@ -474,6 +483,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Table.resx">
+      <DependentUpon>Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table.vi-VN.resx">
       <DependentUpon>Table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">

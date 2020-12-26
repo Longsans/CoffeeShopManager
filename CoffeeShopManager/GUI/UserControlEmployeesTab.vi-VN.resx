@@ -118,11 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 16.2pt</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 23</value>
+    <value>245, 33</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Danh sách nhân viên</value>
+  </data>
+  <data name="cboSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="cboSearch.Items1" xml:space="preserve">
     <value>Tên</value>
@@ -139,17 +145,41 @@
   <data name="cboSearch.Items6" xml:space="preserve">
     <value>ID Quản lý</value>
   </data>
+  <data name="cboSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 27</value>
+  </data>
+  <data name="txtSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 27</value>
+  </data>
   <data name="txtSearch.Text" xml:space="preserve">
     <value>Tìm kiếm...</value>
+  </data>
+  <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="btnDelete.Text" xml:space="preserve">
     <value>Xóa</value>
   </data>
+  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Sửa</value>
   </data>
+  <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Thêm</value>
+  </data>
+  <data name="btnShowAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="btnShowAll.Text" xml:space="preserve">
+    <value>Tất cả</value>
   </data>
   <data name="btnSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -472,8 +502,5 @@
         XU3ar5evaeL+hfy5PZm7SX7CPXKl/ExOkJeH2xDdzy8CGwQAoIpqtdraWZY9R5P7NlocvEK21vcLBwcH
         13D/fZHZIAAAKDcbBAAAZbbTwP8Ph1uqgxUIdmAAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="btnShowAll.Text" xml:space="preserve">
-    <value>Tất cả</value>
   </data>
 </root>

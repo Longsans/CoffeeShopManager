@@ -117,67 +117,138 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblUserInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="comboBox1.Items" xml:space="preserve">
+    <value>Vui lòng nhập đầy đủ thông tin.</value>
+  </data>
+  <data name="comboBox1.Items1" xml:space="preserve">
+    <value>Tên tài khoản đã tồn tại, vui lòng nhập tên tài khoản khác.</value>
+  </data>
+  <data name="comboBox1.Items2" xml:space="preserve">
+    <value>Email sai</value>
+  </data>
+  <data name="comboBox1.Items4" xml:space="preserve">
+    <value>Độ tuổi đi làm không phù hợp</value>
+  </data>
+  <data name="comboBox1.Items5" xml:space="preserve">
+    <value>Tuổi</value>
+  </data>
+  <data name="comboBox1.Items6" xml:space="preserve">
+    <value>Bạn có chắc chắn lưu thay đổi?</value>
+  </data>
+  <data name="comboBox1.Items7" xml:space="preserve">
+    <value>Lưu thay đổi</value>
+  </data>
+  <data name="comboBox1.Items8" xml:space="preserve">
+    <value>Tên tài khoản không hợp lệ</value>
+  </data>
+  <data name="comboBox1.Items9" xml:space="preserve">
+    <value>Một lỗi đã xảy ra</value>
+  </data>
+  <data name="comboBox1.Items10" xml:space="preserve">
+    <value>Hợp lệ</value>
+  </data>
+  <data name="comboBox1.Items11" xml:space="preserve">
+    <value>Email tồn tại</value>
+  </data>
+  <data name="comboBox1.Items12" xml:space="preserve">
+    <value>Email phải theo định dạng  'example@example.example' và không được có bất kỳ khoảng trắng nào</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblUserInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>396, 44</value>
+  <data name="lblManInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 16.2pt</value>
   </data>
-  <data name="lblUserInfo.Text" xml:space="preserve">
-    <value>Thông tin người dùng</value>
+  <data name="lblManInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 28</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblManInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 33</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 19</value>
+  <data name="lblManInfo.Text" xml:space="preserve">
+    <value>      Quản lý</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Điện thoại</value>
-  </data>
-  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 19</value>
+    <value>64, 19</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>Chức vụ</value>
   </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="radFemale.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="radFemale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 23</value>
+  </data>
+  <data name="radFemale.Text" xml:space="preserve">
+    <value>Nữ</value>
+  </data>
+  <data name="radMale.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="radMale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 23</value>
+  </data>
+  <data name="radMale.Text" xml:space="preserve">
+    <value>Nam</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 19</value>
+    <value>34, 19</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Tên</value>
   </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 19</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Điện thoại</value>
+  </data>
+  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 19</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 19</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 19</value>
+    <value>70, 19</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Giới tính</value>
   </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 19</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 19</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Họ</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Tên đăng nhập</value>
   </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 19</value>
@@ -185,8 +256,33 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Ngày sinh</value>
   </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnBrowse.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="btnBrowse.Text" xml:space="preserve">
+    <value>Tìm ảnh</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 19</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Họ</value>
+  </data>
+  <data name="btnSaveChange.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSaveChange.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="btnSaveChange.Text" xml:space="preserve">
+    <value>Lưu thay đổi</value>
+  </data>
+  <data name="btnChangePassword.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="btnChangePassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -194,61 +290,111 @@
   <data name="btnChangePassword.Text" xml:space="preserve">
     <value>Thay đổi mật khẩu</value>
   </data>
-  <data name="btnSaveChange.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="errorTrue.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAADAE
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErCjHFKw4v5SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v5SsOMbwAAAAAAAAAAAAAAAAAAAABKw4v0XMmW/3/Vrf9/1a3/f9Wt/3/V
+        rf9/1a3/f9Wt/3/Vrf9/1a3/XMmW/0rDi/IAAAAAAAAAAAAAAAAAAAAASsOL/3/Vrf/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/3/Vrf9Kw4v/AAAAAAAAAAAAAAAAAAAAAErDi/9/1a3/6fjx/+n4
+        8f/P6Nz/eLWS/+n48f/p+PH/6fjx/+n48f9/1a3/SsOL/wAAAAAAAAAAAAAAAAAAAABKw4v/f9Wt/+n4
+        8f/c8Of/RZho/y+LVf+Hvp//6fjx/+n48f/p+PH/f9Wt/0rDi/8AAAAAAAAAAAAAAAAAAAAASsOL/3/V
+        rf/e8ej/WKJ3/0GVZP92tJD/L4tV/5fIrP/p+PH/6fjx/3/Vrf9Kw4v/AAAAAAAAAAAAAAAAAAAAAErD
+        i/9/1a3/v+DN/06ecP/S6t7/6fjx/4K8m/8vi1X/l8is/+n48f9/1a3/SsOL/wAAAAAAAAAAAAAAAAAA
+        AABKw4v/f9Wt/+n48f/n9/D/6fjx/+n48f/p+PH/i8Gi/y+LVf+y2MP/f9Wt/0rDi/8AAAAAAAAAAAAA
+        AAAAAAAASsOL/3/Vrf/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f+w1sD/5/fw/3/Vrf9Kw4v/AAAAAAAA
+        AAAAAAAAAAAAAErDi/9/1a3/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f9/1a3/SsOL/wAA
+        AAAAAAAAAAAAAAAAAABKw4v0XMmW/3/Vrf9/1a3/f9Wt/3/Vrf9/1a3/f9Wt/3/Vrf9/1a3/XMmW/0rD
+        i/IAAAAAAAAAAAAAAAAAAAAASsKMcUvDi/NKw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0vD
+        i/NKw4xvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA4AcAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMAD
+        AADAAwAAwAMAAMADAADgBwAA//8AAP//AAAoAAAAIAAAAEAAAAABACAAAAAAAIAQAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEvD
+        jGZKw4vcSsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/S8KL20rCjGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABKw4xdSsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rEi1oAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAErDi9ZKw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/S8OM1AAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAASsOL/UrDi/9Kw4v/kdu5/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm
+        0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+R27n/SsOL/0rDi/9Kw4v8AAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rD
+        i/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm0P/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/tObQ/0rD
+        i/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL/0rDi/9Kw4v/tObQ/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/8nm1//p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f+05tD/SsOL/0rDi/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rD
+        i/+05tD/6fjx/+n48f/p+PH/6fjx/+n48f+cy7H/MItW/365lv/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErD
+        i/9Kw4v/SsOL/7Tm0P/p+PH/6fjx/+n48f/p+PH/o861/y+LVf8vi1X/L4tV/4e+nv/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAASsOL/0rDi/9Kw4v/tObQ/+n48f/p+PH/6fjx/73fzP84kFz/L4tV/y+LVf8vi1X/MYxW/6HO
+        tf/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f+05tD/SsOL/0rDi/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f+938z/OZFd/y+LVf8vi1X/T55w/y+L
+        Vf8vi1X/MYxW/6HOtf/p+PH/6fjx/+n48f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm0P/p+PH/vt/N/zmRXf8vi1X/L4tV/3m2
+        k//n+O//gLqZ/y+LVf8vi1X/MYxW/6HOtf/p+PH/6fjx/+n48f/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL/0rDi/9Kw4v/tObQ/+f37/9Rn3H/L4tV/y+L
+        Vf+Fvp7/6fjx/+n48f/o+PD/ebaT/y+LVf8vi1X/MYxW/6HOtf/p+PH/6fjx/+n48f+05tD/SsOL/0rD
+        i/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/9Hq
+        3f9FmGj/gLua/+j48P/p+PH/6fjx/+n48f/o+PD/ebaT/y+LVf8vi1X/MYxW/6HOtP/p+PH/6fjx/7Tm
+        0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm
+        0P/p+PH/6fjx/9/y6f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/o+PD/eLaS/y+LVf8vi1X/MYxW/6HO
+        tP/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL/0rD
+        i/9Kw4v/tObQ/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/gryb/y+L
+        Vf8vi1X/Yah//+f37/+05tD/SsOL/0rDi/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/n9/D/eLWT/1qkef/f8un/6fjx/7Tm0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm0P/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/5fXt/+n48f/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAASsOL/0rDi/9Kw4v/tObQ/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f+05tD/SsOL/0rDi/9Kw4v/AAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rD
+        i/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/1Kw4v/SsOL/5Hbuf+05tD/tObQ/7Tm
+        0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/kdu5/0rD
+        i/9Kw4v/SsOL/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL1krDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Lw4zUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKxIxoSsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0vDjGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABLw4xmSsOL1krDi/lKw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL+UrDi9ZKwoxkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/////////////////////8AAA/+AAAH/AAAA/wAAAP8AAAD/AA
+        AA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AA
+        AA/wAAAP+AAAH/wAAD//////////////////////
+</value>
+  </data>
+  <data name="lblUserInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 25.8000011pt</value>
+  </data>
+  <data name="lblUserInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnSaveChange.Text" xml:space="preserve">
-    <value>Lưu thay đổi</value>
+  <data name="lblUserInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>397, 51</value>
   </data>
-  <data name="radMale.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="radMale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 21</value>
-  </data>
-  <data name="radMale.Text" xml:space="preserve">
-    <value>Nam</value>
-  </data>
-  <data name="radFemale.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="radFemale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 21</value>
-  </data>
-  <data name="radFemale.Text" xml:space="preserve">
-    <value>Nữ</value>
-  </data>
-  <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Tìm ảnh</value>
-  </data>
-  <data name="lblManInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblManInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 31</value>
-  </data>
-  <data name="lblManInfo.Text" xml:space="preserve">
-    <value>      Quản lý</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 19</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Tên đăng nhập</value>
-  </data>
-  <data name="btnEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Sửa</value>
-  </data>
-  <data name="picManagerInfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblUserInfo.Text" xml:space="preserve">
+    <value>Thông tin người dùng</value>
   </data>
 </root>

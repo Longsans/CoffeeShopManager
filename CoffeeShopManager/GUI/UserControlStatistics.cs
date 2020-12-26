@@ -41,7 +41,7 @@ namespace GUI
         {
             chartIncome.Series.Clear();
             dataGridView1.DataSource = busShop.GetDataTableAnnualIncome(shopId);
-            chartIncome.Series.Add("Annual income");
+            chartIncome.Series.Add(cboString.Items[0].ToString());
             if (dataGridView1.Rows.Count - 1 > 1)
             chartIncome.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
@@ -59,7 +59,7 @@ namespace GUI
         {
             chartIncome.Series.Clear();
             dataGridView1.DataSource = busShop.GetDataTableQuarterlyIncome(year, shopId);
-            chartIncome.Series.Add("Income quarterly");
+            chartIncome.Series.Add(cboString.Items[1].ToString());
             if (dataGridView1.Rows.Count - 1 > 1)
                 chartIncome.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
@@ -77,7 +77,7 @@ namespace GUI
         {
             chartIncome.Series.Clear();
             dataGridView1.DataSource = busShop.GetDataTableMonthlyIncome(year, shopId);
-            chartIncome.Series.Add("Income monthly");
+            chartIncome.Series.Add(cboString.Items[2].ToString());
             if (dataGridView1.Rows.Count - 1 > 1)
                 chartIncome.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
@@ -95,7 +95,7 @@ namespace GUI
         {
             chartIncome.Series.Clear();
             dataGridView1.DataSource = busShop.GetDataTableLastNDaysIncome(7, shopId);
-            chartIncome.Series.Add("Income last 7 days");
+            chartIncome.Series.Add(cboString.Items[3].ToString());
             if (dataGridView1.Rows.Count - 1 > 1)
                 chartIncome.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
@@ -113,7 +113,7 @@ namespace GUI
         {
             chartIncome.Series.Clear();
             dataGridView1.DataSource = busShop.GetDataTableLastNDaysIncome(30, shopId);
-            chartIncome.Series.Add("Income last 30 days");
+            chartIncome.Series.Add(cboString.Items[4].ToString());
             if (dataGridView1.Rows.Count - 1 > 1)
                 chartIncome.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             for (int i = 0; i < dataGridView1.Rows.Count - 1 ; i++)
@@ -131,7 +131,7 @@ namespace GUI
         {
             chartIncome.Series.Clear();
             dataGridView1.DataSource = busShop.GetDataTableDailyIncome(month, year, shopId);
-            chartIncome.Series.Add("Income daily");
+            chartIncome.Series.Add(cboString.Items[5].ToString());
             if (dataGridView1.Rows.Count - 1 > 1)
                 chartIncome.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
@@ -155,7 +155,7 @@ namespace GUI
             chartProduct.Series.Clear();
             dt = busShop.GetDatatableTotalAnnualProductSales(year, shopId);
             dataGridView2.DataSource = dt;
-            chartProduct.Series.Add("Annual product sales");
+            chartProduct.Series.Add(cboString.Items[6].ToString());
             chartProduct.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             chartProduct.Series[0].IsValueShownAsLabel = true;
             for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
@@ -172,7 +172,7 @@ namespace GUI
             chartProduct.Series.Clear();
             dt = busShop.GetDatatableTotalAllTimeProductSales(shopId);
             dataGridView2.DataSource = dt;
-            chartProduct.Series.Add("Annual product sales");
+            chartProduct.Series.Add(cboString.Items[7].ToString());
             chartProduct.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             chartProduct.Series[0].IsValueShownAsLabel = true;
             for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
@@ -189,7 +189,7 @@ namespace GUI
             chartProduct.Series.Clear();
             dt = busShop.GetDatatableTotalMonthlyProductSales(month, year, shopId);
             dataGridView2.DataSource = dt;
-            chartProduct.Series.Add("Monthly product sales");
+            chartProduct.Series.Add(cboString.Items[8].ToString());
             chartProduct.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             chartProduct.Series[0].IsValueShownAsLabel = true;
             for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
@@ -206,7 +206,7 @@ namespace GUI
             chartProduct.Series.Clear();
             dt = busShop.GetDatatableTotalLastNDaysProductSales(7, shopId);
             dataGridView2.DataSource = dt;
-            chartProduct.Series.Add("Product sales last 7 days");
+            chartProduct.Series.Add(cboString.Items[9].ToString());
             chartProduct.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             chartProduct.Series[0].IsValueShownAsLabel = true;
             for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
@@ -223,7 +223,7 @@ namespace GUI
             chartProduct.Series.Clear();
             dt = busShop.GetDatatableTotalLastNDaysProductSales(30, shopId);
             dataGridView2.DataSource = dt;
-            chartProduct.Series.Add("Product sales last 30 days");
+            chartProduct.Series.Add(cboString.Items[10].ToString());
             chartProduct.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             chartProduct.Series[0].IsValueShownAsLabel = true;
             for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
