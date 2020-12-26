@@ -11,5 +11,6 @@ namespace DTO
         public int Id { get; set; }
         public string Status { get; set; }
         public DTO_Shop Shop = new DTO_Shop();
+        public bool Deleted { get; set; }
     }
 }

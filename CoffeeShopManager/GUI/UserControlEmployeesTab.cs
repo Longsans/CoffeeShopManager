@@ -34,7 +34,7 @@ namespace GUI
             {
                 frmEditEmployees frmEditEmployees = new frmEditEmployees(this)
                 {
-                    dtoEmp = busEmp.GetEmployeeInfoAndManagerId(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoMan.Shop.ID)
+                    dtoEmp = busEmp.GetInfoByIdNotDeleted(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoMan.Shop.ID)
                 };
                 frmEditEmployees.ShowDialog();
             }
@@ -89,8 +89,15 @@ namespace GUI
                 DialogResult ret = MessageBox.Show("Do you want to delete this employee?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ret == DialogResult.Yes)
                 {
-                    dtoEmp = busEmp.GetEmployeeInfoAndManagerId(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoMan.Shop.ID);
-                    busEmp.DeleteEmployee(dtoEmp);
+                    dtoEmp = busEmp.GetInfoByIdNotDeleted(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoMan.Shop.ID);
+                    if (busEmp.CheckReceiptExists(dtoEmp))
+                    {
+                        busEmp.FalseDelete(dtoEmp);
+                    }
+                    else
+                    {
+                        busEmp.TrueDelete(dtoEmp);
+                    }
                     Reload();
                 }
             }

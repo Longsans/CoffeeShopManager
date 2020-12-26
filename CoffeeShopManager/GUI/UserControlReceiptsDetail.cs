@@ -36,7 +36,7 @@ namespace GUI
             rec.Customer = busCus.GetCustomerById(rec.Customer.Id, rec.Shop.ID);
             txtId.Text = rec.Id.ToString();
             datDop.Format = DateTimePickerFormat.Custom;
-            datDop.CustomFormat = "dd/MM/yyyy";
+            datDop.CustomFormat = "dd/MM/yyyy hh:mm tt";
             datDop.Value = rec.DateOfPayMent;
             if (busRec.GetTableOfReceipt(rec.Id, rec.Shop.ID) != null)
             {
@@ -50,7 +50,7 @@ namespace GUI
             txtCusLname.Text = rec.Customer.LastName;
             txtCusEmail.Text = rec.Customer.Email;
             datCusBirthdate.Format = DateTimePickerFormat.Custom;
-            datCusBirthdate.CustomFormat = datDop.CustomFormat;
+            datCusBirthdate.CustomFormat = "dd/MM/yyyy";
             datCusBirthdate.Value = rec.Customer.Birthdate;
             if (rec.Employee != null)
             {

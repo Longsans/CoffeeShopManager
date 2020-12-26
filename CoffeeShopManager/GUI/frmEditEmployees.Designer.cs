@@ -156,7 +156,6 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label3);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
@@ -307,12 +306,14 @@
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Name = "label3";
             // 
             // TitleBar
             // 
             this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.TitleBar.Controls.Add(this.btnExit);
+            this.TitleBar.Controls.Add(this.label3);
             resources.ApplyResources(this.TitleBar, "TitleBar");
             this.TitleBar.Name = "TitleBar";
             this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
@@ -347,6 +348,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).EndInit();
             this.TitleBar.ResumeLayout(false);
+            this.TitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errEmail)).EndInit();
             this.ResumeLayout(false);
 

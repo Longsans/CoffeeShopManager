@@ -45,10 +45,10 @@ namespace BUS
                 return false;
             try
             {
-                DTO_User accountnew1=  dalUserInfo.GetByUsername(account.Username);
+                DTO_User dbaccount=  dalUserInfo.GetByUsername(account.Username);
                 account.PassWord = ComputeSha256Hash(account.PassWord);
-                if (accountnew1 == null) return false;
-                if (accountnew1.PassWord == account.PassWord)
+                if (dbaccount == null || dbaccount.Deleted) return false;
+                if (dbaccount.PassWord == account.PassWord)
                     return true;
                 else
                     return false;
@@ -109,7 +109,7 @@ namespace BUS
         {
             try
             {
-                dalUserInfo.Delete(account);
+                dalUserInfo.FalseDelete(account);
             }
             catch (Exception ex)
             {

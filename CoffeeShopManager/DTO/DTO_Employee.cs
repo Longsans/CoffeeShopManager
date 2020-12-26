@@ -13,6 +13,7 @@ namespace DTO
         public string Address { get; set; }
         public decimal Salary { get; set; }
         public DTO_Manager Manager { get; set; } = new DTO_Manager();
+        public bool Deleted { get; set; }
         public DTO_Employee() { }
         public DTO_Employee(DTO_Worker dtoWr)
         {

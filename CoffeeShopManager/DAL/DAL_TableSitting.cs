@@ -91,8 +91,8 @@ namespace DAL
             DAL_Receipts dalRec = new DAL_Receipts(this.connectionString);
             string qry = "SELECT ReceiptId FROM TABLE_SITTING " +
                 "WHERE ReceiptId >= ALL( " +
-                "SELECT ReceiptId FROM TABLE_SITTING " +
-                "WHERE TableId = @tableId AND ShopId = @shopId " +
+                "   SELECT ReceiptId FROM TABLE_SITTING " +
+                "   WHERE TableId = @tableId AND ShopId = @shopId " +
                 ") AND ShopId = @shopId AND Sitting = 1";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@tableId", tableId);

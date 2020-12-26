@@ -73,7 +73,7 @@ namespace GUI
         {
             if (!checkNameDeleted)
             {
-                var ret = MessageBox.Show("There are data related to a deleted product with this name. Do you want to view it for restoring instead?",
+                var ret = MessageBox.Show("There are data related to a deleted product with this name. Do you want to review it for restoring instead?",
                     "Cannot insert a duplicate product name", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ret == DialogResult.Yes)
                 {
@@ -209,7 +209,7 @@ namespace GUI
             {
                 if (matchedPro.Deleted)
                 {
-                    errNameDeleted.SetError(txtName1, "There is existing info related to a product with such name");
+                    errNameDeleted.SetError(txtName1, "There are existing data related to a product with such name");
                     errorProvider2.SetError(txtName1, "");
                     checkNameDeleted = false;
                 }

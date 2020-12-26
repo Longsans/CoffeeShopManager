@@ -17,12 +17,15 @@ namespace GUI
         Point prevPoint;
         bool dragging;
         Icon checkIcon,
-            errorIcon;
+            errorIcon,
+            warningIcon;
         ErrorProvider err = new ErrorProvider();
         BUS_Tables busTable = new BUS_Tables(ConnectionStringHelper.GetConnectionString());
         BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         UserControlTableOfManager ucTableManager { get; set; }
         int shopId;
+        bool checkDeleted = true;
+
         public frmAddTable(int num, UserControlTableOfManager _ucTableManager)
         {
             InitializeComponent();
@@ -34,6 +37,8 @@ namespace GUI
         {
             checkIcon = new Icon(GUI.Properties.Resources.check1, err.Icon.Size);
             errorIcon = new Icon(GUI.Properties.Resources.cancel, err.Icon.Size);
+            warningIcon = new Icon(GUI.Properties.Resources.warning, err.Icon.Size);
+            err.SetIconPadding(txtTableId, 3);
             txtTableId.GotFocus += TxtTableId_GotFocus;
             txtTableId.LostFocus += TxtTableId_LostFocus;
         }
@@ -76,15 +81,33 @@ namespace GUI
 
         private void lblAdd_MouseUp(object sender, MouseEventArgs e)
         {
-            DTO_Table table = new DTO_Table();
-            table.Id = int.Parse(txtTableId.Text);
-            table.Status = "Available";
-            table.Shop = busShop.GetShopById(shopId);
-            busTable.Insert(table);
-            err.SetError(txtTableId, "");
-            ResetInput();
-            ucTableManager.LoadAllTables();
-            MessageBox.Show("New table added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DTO_Table table = new DTO_Table
+            {
+                Id = int.Parse(txtTableId.Text),
+                Shop = busShop.GetShopById(shopId)
+            };
+
+            if (checkDeleted)
+            {
+                table.Status = "Available";
+                busTable.Insert(table);
+                err.SetError(txtTableId, "");
+                ResetInput();
+                ucTableManager.LoadAllTables();
+                MessageBox.Show("New table added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                var ret = MessageBox.Show("There are data related to a table with this ID. Do you want to restore it?", "Cannot add a duplicate table",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (ret == DialogResult.Yes)
+                {
+                    busTable.RestoreDeletedTable(table);
+                    ResetInput();
+                    ucTableManager.LoadAllTables();
+                    MessageBox.Show("Deleted table restored.", "Restore successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void ResetInput()
@@ -119,32 +142,50 @@ namespace GUI
                 {
                     if (int.TryParse(txtTableId.Text, out int id))
                     {
-                        if (busTable.GetTableById(id, shopId) == null)
+                        var dbtab = busTable.GetTableByIdDeletedAndNotDeleted(id, shopId);
+                        if (dbtab == null)
                         {
                             err.Icon = checkIcon;
                             err.SetError(txtTableId, "Valid");
                             lblAdd.Enabled = true;
+                            checkDeleted = true;
+                        }
+                        else if (dbtab.Deleted)
+                        {
+                            checkDeleted = false;
+                            throw new Exception("There are data related to a table with such ID");
                         }
                         else
                         {
+                            checkDeleted = true;
                             throw new Exception("A table with such ID has already been added to the list");
                         }
                     }
                     else
                     {
+                        checkDeleted = true;
                         throw new Exception("A table ID must be a natural number");
                     }
                 }
                 else
                 {
+                    checkDeleted = true;
                     throw new Exception("Please fill all info fields");
                 }
             }
             catch (Exception ex)
             {
-                err.Icon = errorIcon;
+                if (!checkDeleted)
+                {
+                    err.Icon = warningIcon;
+                    lblAdd.Enabled = true;
+                }
+                else
+                {
+                    err.Icon = errorIcon;
+                    lblAdd.Enabled = false;
+                }
                 err.SetError(txtTableId, ex.Message);
-                lblAdd.Enabled = false;
             }
         }
 
