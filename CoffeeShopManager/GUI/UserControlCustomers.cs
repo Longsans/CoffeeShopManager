@@ -15,7 +15,7 @@ namespace GUI
 {
     public partial class UserControlCustomers : UserControl
     {
-        BUS_Customers busCus = new BUS_Customers();
+        BUS_Customers busCus = new BUS_Customers(ConnectionStringHelper.GetConnectionString());
         FilterProperties filProp = new FilterProperties();
         public frmManager frmMan { get; set; }
         public DTO_Shop dtoShop = new DTO_Shop();
@@ -56,7 +56,9 @@ namespace GUI
         {
             if (!(string.IsNullOrWhiteSpace(filProp.CurrentFilter) || string.IsNullOrWhiteSpace(filProp.CurrentFilterText)))
             {
-                switch(filProp.CurrentFilter)
+                //                var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+
+                switch (filProp.CurrentFilter)
                 {
                     case "ID":
                         {
@@ -78,6 +80,11 @@ namespace GUI
                     case "Email":
                         {
                             grdCustomers.DataSource = busCus.GetCustomerSearchEmailFiltered(filProp.CurrentFilterText, dtoShop.ID);
+                        }
+                        break;
+                    case "Tên":
+                        {
+                            grdCustomers.DataSource = busCus.GetCustomersSearchNameFiltered(filProp.CurrentFilterText, dtoShop.ID);
                         }
                         break;
                 }
@@ -151,9 +158,10 @@ namespace GUI
         {
             if (!string.IsNullOrWhiteSpace(cboSearch.Text))
             {
-                switch (cboSearch.Text)
+                var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+                switch (resultIndex)
                 {
-                    case "ID":
+                    case 0:
                         {
                             if (int.TryParse(txtSearch.Text, out int id))
                             {
@@ -165,12 +173,12 @@ namespace GUI
                             }
                         }
                         break;
-                    case "Name":
+                    case 1:
                         {
                             grdCustomers.DataSource = busCus.GetCustomersSearchNameFiltered(txtSearch.Text, dtoShop.ID);
                         }
                         break;
-                    case "Email":
+                    case 2:
                         {
                             grdCustomers.DataSource = busCus.GetCustomerSearchEmailFiltered(txtSearch.Text, dtoShop.ID);
                         }

@@ -39,6 +39,7 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtCopyemail = new System.Windows.Forms.TextBox();
             this.datJoin = new System.Windows.Forms.DateTimePicker();
             this.datBirth = new System.Windows.Forms.DateTimePicker();
             this.picboxEmpImg = new System.Windows.Forms.PictureBox();
@@ -65,7 +66,6 @@
             this.TitleBar = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.errEmail = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtCopyemail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).BeginInit();
@@ -160,6 +160,11 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
+            // txtCopyemail
+            // 
+            resources.ApplyResources(this.txtCopyemail, "txtCopyemail");
+            this.txtCopyemail.Name = "txtCopyemail";
+            // 
             // datJoin
             // 
             resources.ApplyResources(this.datJoin, "datJoin");
@@ -202,7 +207,6 @@
             // 
             // cboPosition
             // 
-            this.cboPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPosition.FormattingEnabled = true;
             this.cboPosition.Items.AddRange(new object[] {
             resources.GetString("cboPosition.Items"),
@@ -327,11 +331,6 @@
             // errEmail
             // 
             this.errEmail.ContainerControl = this;
-            // 
-            // txtCopyemail
-            // 
-            resources.ApplyResources(this.txtCopyemail, "txtCopyemail");
-            this.txtCopyemail.Name = "txtCopyemail";
             // 
             // frmEditEmployees
             // 

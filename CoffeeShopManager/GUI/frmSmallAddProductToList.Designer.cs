@@ -43,13 +43,13 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtProId);
             this.panel1.Controls.Add(this.lblCancel);
             this.panel1.Controls.Add(this.lblAdd);
             this.panel1.Controls.Add(this.label3);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
@@ -57,9 +57,9 @@
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.lblTitle);
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
@@ -85,10 +85,10 @@
             // 
             // txtProId
             // 
-            this.txtProId.ForeColor = System.Drawing.Color.DimGray;
             resources.ApplyResources(this.txtProId, "txtProId");
+            this.txtProId.ForeColor = System.Drawing.Color.DimGray;
             this.txtProId.Name = "txtProId";
-            this.txtProId.Validating += new System.ComponentModel.CancelEventHandler(this.txtProId_Validating);
+            this.txtProId.TextChanged += new System.EventHandler(this.txtProId_TextChanged);
             // 
             // lblCancel
             // 

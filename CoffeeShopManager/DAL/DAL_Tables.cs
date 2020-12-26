@@ -11,6 +11,11 @@ namespace DAL
 {
     public class DAL_Tables : DBConnection
     {
+        public DAL_Tables(string connString) : base(connString)
+        {
+
+        }
+
         public DTO_Table GetTableById(int tableId, int shopId)
         {
             DTO_Table tab = null;
@@ -134,13 +139,13 @@ namespace DAL
 
         public DTO_Table GetTableOfActiveReceipt(int receiptId, int shopId)
         {
-            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
             return dalTabSitting.GetTableOfActiveReceipt(receiptId, shopId);
         }
 
         public DTO_Receipt GetCurrentReceiptOfTable(int tableId, int shopId)
         {
-            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
             DTO_Table tab = GetTableById(tableId, shopId);
             DTO_Receipt rec = null;
 
@@ -157,7 +162,7 @@ namespace DAL
 
         public DataTable GetCurrentReceiptIdsAtTable(int tableId, int shopId)
         {
-            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
             DataTable dt = new DataTable();
             DTO_Table tab = GetTableById(tableId, shopId);
 
@@ -174,9 +179,10 @@ namespace DAL
 
         public void Insert(DTO_Table tab)
         {
-            string qry = "INSERT INTO [TABLES] (TableStatus, ShopId)" +
-                "VALUES (@status, @shopId)";
+            string qry = "INSERT INTO [TABLES] (Id, TableStatus, ShopId)" +
+                "VALUES (@id, @status, @shopId)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", tab.Id);
             cmd.Parameters.AddWithValue("@status", tab.Status);
             cmd.Parameters.AddWithValue("@shopId", tab.Shop.ID);
 
@@ -194,7 +200,7 @@ namespace DAL
 
         public void Delete(DTO_Table tab)
         {
-            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
             string qry = "DELETE FROM [TABLES] " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -216,7 +222,7 @@ namespace DAL
 
         public void Update(DTO_Table tabUpdated)
         {
-            DAL_TableSitting dalTabSit = new DAL_TableSitting();
+            DAL_TableSitting dalTabSit = new DAL_TableSitting(this.connectionString);
             string qry = "UPDATE [TABLES] " +
                 "SET TableStatus = @status " +
                 "WHERE Id = @id AND ShopId = @shopId";

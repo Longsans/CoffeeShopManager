@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class UserControlStock : UserControl
     {
-        BUS_StockItems busStock = new BUS_StockItems();
+        BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
         FilterProperties filProp = new FilterProperties();
         ErrorProvider err = new ErrorProvider();
         public DTO_Shop Shop = new DTO_Shop();
@@ -99,6 +99,21 @@ namespace GUI
                         grdStock.DataSource = busStock.GetDataTableBySupplierName(filProp.CurrentFilterText, Shop.ID);
                     }
                     break;
+                case "Tên":
+                    {
+                        grdStock.DataSource = busStock.GetDataTableByName(filProp.CurrentFilterText, Shop.ID);
+                    }
+                    break;
+                case "ID nhà cung":
+                    {
+                        grdStock.DataSource = busStock.GetDataTableBySupplierId(filProp.CurrentFilterText, Shop.ID);
+                    }
+                    break;
+                case "Tên nhà cung":
+                    {
+                        grdStock.DataSource = busStock.GetDataTableBySupplierName(filProp.CurrentFilterText, Shop.ID);
+                    }
+                    break;
                 default:
                     {
                         grdStock.DataSource = busStock.GetAllStockItems(Shop.ID);
@@ -117,9 +132,10 @@ namespace GUI
             if (!string.IsNullOrWhiteSpace(cboSearch.Text))
             {
                 err.SetError(txtSearch, "");
-                switch (cboSearch.Text)
+                var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+                switch (resultIndex)
                 {
-                    case "ID":
+                    case 0:
                         {
                             if (int.TryParse(txtSearch.Text, out int id))
                             {
@@ -131,17 +147,17 @@ namespace GUI
                             }
                         }
                         break;
-                    case "Name":
+                    case 1:
                         {
                             grdStock.DataSource = busStock.GetDataTableByName(txtSearch.Text, Shop.ID);
                         }
                         break;
-                    case "Supplier ID":
+                    case 2:
                         {
                             grdStock.DataSource = busStock.GetDataTableBySupplierId(txtSearch.Text, Shop.ID);
                         }
                         break;
-                    case "Supplier Name":
+                    case 3:
                         {
                             grdStock.DataSource = busStock.GetDataTableBySupplierName(txtSearch.Text, Shop.ID);
                         }
@@ -170,17 +186,37 @@ namespace GUI
         {
             foreach (DataGridViewRow row in grdStock.SelectedRows)
             {
-                var item = new DTO_StockItem
+                if (lblStock.Text == "Stock")
                 {
-                    Id = (int)row.Cells["ID"].Value,
-                    Name = row.Cells["Item Name"].Value.ToString(),
-                    Shop = this.Shop,
-                    Supplier = new DTO_Supplier
+
+                    var item = new DTO_StockItem
                     {
-                        Id = row.Cells["Supplier ID"].Value.ToString()
-                    }
-                };
-                busStock.Delete(item);
+                        Id = (int)row.Cells["ID"].Value,
+                        Name = row.Cells["Item Name"].Value.ToString(),
+                        Shop = this.Shop,
+                        Supplier = new DTO_Supplier
+                        {
+                            Id = row.Cells["ID Nhà cung"].Value.ToString()
+                        }
+                    };
+
+                    busStock.Delete(item);
+                }
+                else
+                {
+                    var item = new DTO_StockItem
+                    {
+                        Id = (int)row.Cells["ID"].Value,
+                        Name = row.Cells["Tên sản phẩm"].Value.ToString(),
+                        Shop = this.Shop,
+                        Supplier = new DTO_Supplier
+                        {
+                            Id = row.Cells["Supplier ID"].Value.ToString()
+                        }
+                    };
+
+                    busStock.Delete(item);
+                }
             }
             ReloadGridView();
         }
@@ -204,8 +240,10 @@ namespace GUI
             DataGridViewRow row = grdStock.SelectedRows[0];
             frmEditStockItem frmEdit = new frmEditStockItem
             {
+
                 Item = new DTO_StockItem
                 {
+                    
                     Id = (int)row.Cells["ID"].Value,
                     Name = row.Cells["Item Name"].Value.ToString(),
                     Shop = this.Shop,

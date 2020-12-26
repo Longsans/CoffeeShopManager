@@ -16,8 +16,8 @@ namespace GUI
     {
         public UserControlStock ucStock { get; set; }
         public DTO_StockItem Item = new DTO_StockItem();
-        BUS_StockItems busStock = new BUS_StockItems();
-        BUS_Suppliers busSup = new BUS_Suppliers();
+        BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
+        BUS_Suppliers busSup = new BUS_Suppliers(ConnectionStringHelper.GetConnectionString());
         ErrorProvider err = new ErrorProvider(),
             errtwo = new ErrorProvider();
         Timer tiktoker = new Timer();
@@ -147,12 +147,12 @@ namespace GUI
                 {
                     foreach (DataGridViewRow row in grdProds.SelectedRows)
                     {
-                        var itemForPro = new DTO_StockItemsForProducts
+                        var itemForPro = new DTO_StockItemForProduct
                         {
                             Item = this.Item,
                             Product = new DTO_Product
                             {
-                                Id = row.Cells["Product ID"].Value.ToString(),
+                                Id = (int)row.Cells["Product ID"].Value,
                                 Shop = this.Item.Shop
                             },
                             Shop = this.Item.Shop

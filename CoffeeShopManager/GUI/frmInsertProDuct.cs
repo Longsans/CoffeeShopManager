@@ -13,14 +13,16 @@ namespace GUI
 {
     public partial class frmInsertProDuct : Form
     {
-        BUS_Product busPro = new BUS_Product();
+        BUS_Product busPro = new BUS_Product(ConnectionStringHelper.GetConnectionString());
 
-        BUS_UserInfo busUser = new BUS_UserInfo();
+        BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
         UserControlProductTab _ucPro;
         public DTO_Product dtoPro = new DTO_Product();
-        int checkid, checkname, checktype, checkprice;
+        int checkname, checktype, checkprice;
+        bool checkNameDeleted = true;
         Point prevPoint;
         bool dragging;
+
         public frmInsertProDuct(UserControlProductTab product)
         {
             _ucPro = product;
@@ -51,12 +53,10 @@ namespace GUI
         }
         private void Reload()
         {
-            txtID.Text = "";
             txtName1.Text = "";
             txtPrice.Text = "";
             rtxDetail.Text = "";
             pictureBox1.Image = null;
-            cbxType.Items.Clear();
             cbxType.Text = "";
             _ucPro.Reload();
         }
@@ -71,7 +71,21 @@ namespace GUI
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (checkname == 0 || checkid == 0 || checktype == 0 || checkprice == 0)
+            if (!checkNameDeleted)
+            {
+                var ret = MessageBox.Show("There are data related to a deleted product with this name. Do you want to view it for restoring instead?",
+                    "Cannot insert a duplicate product name", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (ret == DialogResult.Yes)
+                {
+                    frmRestoreProduct res = new frmRestoreProduct(_ucPro, this, busPro.GetByNameDeletedAndNotDeleted(txtName1.Text, _ucPro.dtoShop.ID));
+                    this.Reload();
+                    this.Hide();
+                    res.TopMost = true;
+                    res.Show();
+                }
+                return;
+            }
+            if (checkname == 0 || checktype == 0 || checkprice == 0)
             {
                 MessageBox.Show("Wrong format","Insert product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 btnAdd.Enabled = false;
@@ -80,21 +94,22 @@ namespace GUI
             else
             {
                 DTO_Product dtoPro = new DTO_Product();
-                dtoPro.Id = txtID.Text;
                 dtoPro.Name = txtName1.Text;
                 dtoPro.Price =decimal.Parse(txtCopyPrice.Text);
-                if (cbxType.Text == "Thức ăn")
+                var resultIndex = cbxType.FindStringExact(cbxType.Text);
+
+                if (resultIndex == 0)
                     cbxType.Text = "Food";
-                if (cbxType.Text == "Nước uống")
+                if (resultIndex == 1)
                     cbxType.Text = "Drink";
-                if (cbxType.Text == "Khác")
+                else
                     cbxType.Text = "Others";
                 dtoPro.Type = cbxType.Text;
-                dtoPro.Detail = rtxDetail.Text;
+                dtoPro.Details = rtxDetail.Text;
                 dtoPro.Shop = _ucPro.dtoShop;
                 if (this.pictureBox1.Image == null)
                 {
-                    if (busPro.GetByName(dtoPro.Name, dtoPro.Shop.ID) == null)
+                    if (busPro.GetByNameNotDeleted(dtoPro.Name, dtoPro.Shop.ID) == null)
                     {
                    //     dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image);
                         busPro.InsertWithoutImage(dtoPro);
@@ -111,7 +126,7 @@ namespace GUI
                 }
                 else
                 {
-                    if (busPro.GetByName(dtoPro.Name, dtoPro.Shop.ID) == null)
+                    if (busPro.GetByNameNotDeleted(dtoPro.Name, dtoPro.Shop.ID) == null)
                     {
                         dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image);
                         busPro.InsertWithImage(dtoPro);
@@ -153,38 +168,6 @@ namespace GUI
         {
             this.Close();
         }
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-            if (txtID.Text == string.Empty)
-            {
-                errorProvider1.SetError(txtID, "Please Enter ID");
-                errorProvider2.SetError(txtID, "");
-                checkid = 0;
-            }
-            else
-            {
-                if (busPro.GetById(txtID.Text, _ucPro.dtoShop.ID) != null)
-                {
-                    errorProvider1.SetError(txtID, "ID trung");
-                    errorProvider2.SetError(txtID, "");
-                    checkid = 0;
-                }
-                else
-                {
-                    errorProvider1.SetError(txtID, "");
-                    errorProvider2.SetError(txtID, "Correct");
-                    checkid = 1;
-                }
-            }
-            if (checkname == 1 && checkid == 1 && checktype == 1 && checkprice == 1)
-            {
-                btnAdd.Enabled = true;
-            }
-            else
-            {
-                btnAdd.Enabled = false;
-            }
-        }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -214,26 +197,40 @@ namespace GUI
 
         private void txtName1_TextChanged(object sender, EventArgs e)
         {
+            var matchedPro = busPro.GetByNameDeletedAndNotDeleted(txtName1.Text, _ucPro.dtoShop.ID);
             if (txtName1.Text == string.Empty)
             {
-                errorProvider1.SetError(txtName1, "Please Enter Name");
+                errorProvider1.SetError(txtName1, "Name is required");
                 errorProvider2.SetError(txtName1, "");
+                errNameDeleted.SetError(txtName1, "");
                 checkname = 0;
             }
-            if (busPro.GetByName(txtName1.Text, _ucPro.dtoShop.ID) != null)
+            else if (matchedPro != null)
             {
-                errorProvider1.SetError(txtName1, "Had name before");
-                errorProvider2.SetError(txtName1, "");
-                checkname = 0;
+                if (matchedPro.Deleted)
+                {
+                    errNameDeleted.SetError(txtName1, "There is existing info related to a product with such name");
+                    errorProvider2.SetError(txtName1, "");
+                    checkNameDeleted = false;
+                }
+                else
+                {
+                    errorProvider1.SetError(txtName1, "A product with such name already exists");
+                    errorProvider2.SetError(txtName1, "");
+                    errNameDeleted.SetError(txtName1, "");
+                    checkname = 0;
+                }
             }
             else
             {
-
                 errorProvider1.SetError(txtName1, "");
-                errorProvider2.SetError(txtName1, "Correct");
+                errorProvider2.SetError(txtName1, "Valid");
+                errNameDeleted.SetError(txtName1, "");
                 checkname = 1;
+                checkNameDeleted = true;
             }
-            if (checkname == 1 && checkid == 1 && checktype == 1 && checkprice == 1)
+
+            if (checkname == 1 && checktype == 1 && checkprice == 1)
             {
                 btnAdd.Enabled = true;
         }
@@ -257,7 +254,7 @@ namespace GUI
                 errorProvider2.SetError(cbxType, "Correct");
                 checktype = 1;
             }
-            if (checkname == 1 && checkid == 1 && checktype == 1 && checkprice == 1)
+            if (checkname == 1 && checktype == 1 && checkprice == 1)
             {
                 btnAdd.Enabled = true;
             }
@@ -311,7 +308,7 @@ namespace GUI
                     checkprice = 0;
                 }
             }
-            if (checkname == 1 && checkid == 1 && checktype == 1 && checkprice == 1)
+            if (checkname == 1 && checktype == 1 && checkprice == 1)
             {
                 btnAdd.Enabled = true;
             }

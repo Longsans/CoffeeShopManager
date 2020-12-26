@@ -120,6 +120,15 @@
   <data name="txtSearch.Text" xml:space="preserve">
     <value>Tìm kiếm...</value>
   </data>
+  <data name="cboSearch.Items1" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="cboSearch.Items2" xml:space="preserve">
+    <value>ID nhà cung</value>
+  </data>
+  <data name="cboSearch.Items3" xml:space="preserve">
+    <value>Tên nhà cung</value>
+  </data>
   <data name="btnDelete.Text" xml:space="preserve">
     <value>Xóa</value>
   </data>

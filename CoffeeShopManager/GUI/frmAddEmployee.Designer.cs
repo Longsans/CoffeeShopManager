@@ -149,7 +149,6 @@
             // 
             // cbboxPosition
             // 
-            this.cbboxPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbboxPosition.FormattingEnabled = true;
             this.cbboxPosition.Items.AddRange(new object[] {
             resources.GetString("cbboxPosition.Items"),
@@ -161,6 +160,7 @@
             resources.GetString("cbboxPosition.Items6")});
             resources.ApplyResources(this.cbboxPosition, "cbboxPosition");
             this.cbboxPosition.Name = "cbboxPosition";
+            this.cbboxPosition.SelectedIndexChanged += new System.EventHandler(this.cbboxPosition_SelectedIndexChanged);
             // 
             // picboxEmpImg
             // 

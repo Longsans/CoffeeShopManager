@@ -11,6 +11,11 @@ namespace DAL
 {
     public class DAL_Shop : DBConnection
     {
+        public DAL_Shop(string connString) : base(connString)
+        {
+
+        }
+
         public DTO_Shop GetShopById(int id)
         {
             DTO_Shop shop = null;

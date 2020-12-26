@@ -11,8 +11,15 @@ namespace BUS
 {
     public class BUS_Manager
     {
-        DAL_Manager dalManager = new DAL_Manager();
-        DAL_Workers dalWorker = new DAL_Workers();
+        private string connectionString;
+        DAL_Manager dalManager;
+
+        public BUS_Manager(string connString)
+        {
+            connectionString = connString;
+            dalManager = new DAL_Manager(connectionString);
+        }
+
         public DataTable GetAllManagers(int shopId)
         {
             try
@@ -48,10 +55,13 @@ namespace BUS
                 throw ex;
             }
         }
+
         public DTO_Worker GetByEmail(string email,int shopid)
         {
+            DAL_Workers dalWorker = new DAL_Workers(connectionString);
             return dalWorker.GetByEmail(email, shopid);
         }
+
         public List<DTO_Employee> GetEmployeeList(DTO_Manager manager)
         {
             try
@@ -66,7 +76,7 @@ namespace BUS
 
         public DTO_User GetUserInfoById(string id, int shopId)
         {
-            DAL_Workers dalWr = new DAL_Workers();
+            DAL_Workers dalWr = new DAL_Workers(connectionString);
             var dtoUser = dalWr.GetUserInfoById(id, shopId);
 
             return dtoUser;
@@ -74,7 +84,7 @@ namespace BUS
 
         public DTO_User GetUserInfoByUsername(string username)
         {
-            DAL_Workers dalWr = new DAL_Workers();
+            DAL_Workers dalWr = new DAL_Workers(connectionString);
             var dtoUser = dalWr.GetUserInfoByUsername(username);
 
             return dtoUser;

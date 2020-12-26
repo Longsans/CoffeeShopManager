@@ -16,8 +16,8 @@ namespace GUI
 {
     public partial class UserControlUserTab : UserControl
     {
-        BUS_UserInfo busUser = new BUS_UserInfo();
-        BUS_Manager busMan = new BUS_Manager();
+        BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
+        BUS_Manager busMan = new BUS_Manager(ConnectionStringHelper.GetConnectionString());
         DTO_Manager dtoMan = new DTO_Manager();
         ErrorProvider errEmail = new ErrorProvider();
         Timer tiktoker = new Timer();

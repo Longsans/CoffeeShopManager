@@ -17,8 +17,8 @@ namespace GUI
 {
     public partial class frmAddEmployee : Form
     {
-        BUS_Employee busEmp = new BUS_Employee();
-        BUS_UserInfo busUser = new BUS_UserInfo();
+        BUS_Employee busEmp = new BUS_Employee(ConnectionStringHelper.GetConnectionString());
+        BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
         UserControlEmployeesTab _ucEmp;
         Timer tiktoker = new Timer();
         private bool dragging = false;
@@ -68,19 +68,20 @@ namespace GUI
                     dtoEmp.Firstname = txtFirstName.Text;
                     dtoEmp.Lastname = txtLastName.Text;
                     dtoEmp.Address = txtAddress.Text;
-                    if (cbboxPosition.Text == "Phục vụ")
+                    int resultIndex = cbboxPosition.FindStringExact(cbboxPosition.Text);
+                    if (resultIndex == 0)
                         cbboxPosition.Text = "Waiter";
-                    if (cbboxPosition.Text == "Thợ pha cà phê")
+                    if (resultIndex == 1)
                         cbboxPosition.Text = "Barista";
-                    if (cbboxPosition.Text == "Nấu ăn")
+                    if (resultIndex == 2)
                         cbboxPosition.Text = "Cook";
-                    if (cbboxPosition.Text == "Tiện ích")
+                    if (resultIndex == 3)
                         cbboxPosition.Text = "Utility";
-                    if (cbboxPosition.Text == "Vệ sinh")
+                    if (resultIndex == 4)
                         cbboxPosition.Text = "Janitor";
-                    if (cbboxPosition.Text == "Bảo vệ")
+                    if (resultIndex == 5)
                         cbboxPosition.Text = "Security";
-                    if (cbboxPosition.Text == "Khác")
+                    else
                         cbboxPosition.Text = "Others";
                     dtoEmp.Position = cbboxPosition.Text;
                     dtoEmp.Phone = txtPhone.Text;
@@ -331,6 +332,12 @@ namespace GUI
             }
         }
         public int checksalary=0,checkidmanager=0;
+
+        private void cbboxPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           var resultIndex = cbboxPosition.FindStringExact(cbboxPosition.Text);
+        }
+
         private void txtSalary_TextChanged(object sender, EventArgs e)
         {
             if (double.TryParse(txtSalary.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala))

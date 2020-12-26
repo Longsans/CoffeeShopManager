@@ -11,6 +11,10 @@ namespace DAL
 {
     public class DAL_Suppliers : DBConnection
     {
+        public DAL_Suppliers(string connString) : base(connString)
+        {
+
+        }
 
         public DTO_Supplier GetById(string id, int shopId)
         {
@@ -208,7 +212,7 @@ namespace DAL
 
         public void Delete(DTO_Supplier sup)
         {
-            DAL_StockItems dalStock = new DAL_StockItems();
+            DAL_StockItems dalStock = new DAL_StockItems(this.connectionString);
             string qry = "DELETE FROM SUPPLIERS " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);

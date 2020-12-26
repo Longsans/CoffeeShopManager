@@ -66,46 +66,47 @@
             // 
             // btnAll
             // 
+            resources.ApplyResources(this.btnAll, "btnAll");
             this.btnAll.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAll.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnAll, "btnAll");
             this.btnAll.Name = "btnAll";
             this.btnAll.UseVisualStyleBackColor = false;
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // btnDrink
             // 
+            resources.ApplyResources(this.btnDrink, "btnDrink");
             this.btnDrink.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnDrink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDrink.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnDrink, "btnDrink");
             this.btnDrink.Name = "btnDrink";
             this.btnDrink.UseVisualStyleBackColor = false;
             this.btnDrink.Click += new System.EventHandler(this.btnDrink_Click);
             // 
             // btnFood
             // 
+            resources.ApplyResources(this.btnFood, "btnFood");
             this.btnFood.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnFood.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFood.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnFood, "btnFood");
             this.btnFood.Name = "btnFood";
             this.btnFood.UseVisualStyleBackColor = false;
             this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
             // 
             // btnOthers
             // 
+            resources.ApplyResources(this.btnOthers, "btnOthers");
             this.btnOthers.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnOthers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOthers.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnOthers, "btnOthers");
             this.btnOthers.Name = "btnOthers";
             this.btnOthers.UseVisualStyleBackColor = false;
             this.btnOthers.Click += new System.EventHandler(this.btnOther_Click);
             // 
             // dataGridView1
             // 
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -122,7 +123,6 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -143,20 +143,20 @@
             // 
             // btnEdit
             // 
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -170,8 +170,8 @@
             // 
             // cboSearch
             // 
-            this.cboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.cboSearch, "cboSearch");
+            this.cboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSearch.FormattingEnabled = true;
             this.cboSearch.Items.AddRange(new object[] {
             resources.GetString("cboSearch.Items"),
@@ -183,10 +183,10 @@
             // 
             // btnInsert
             // 
+            resources.ApplyResources(this.btnInsert, "btnInsert");
             this.btnInsert.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsert.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnInsert, "btnInsert");
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
@@ -267,25 +267,25 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::GUI.Properties.Resources.squared_menu_32px;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Image = global::GUI.Properties.Resources.squared_menu_32px;
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::GUI.Properties.Resources.list_50px;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.btnSearch, "btnSearch");
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.Name = "btnSearch";
@@ -294,20 +294,20 @@
             // 
             // button6
             // 
+            resources.ApplyResources(this.button6, "button6");
             this.button6.BackColor = System.Drawing.SystemColors.Control;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.button6, "button6");
             this.button6.Image = global::GUI.Properties.Resources.view_details_26px;
             this.button6.Name = "button6";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
+            resources.ApplyResources(this.button5, "button5");
             this.button5.BackColor = System.Drawing.SystemColors.Control;
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.button5, "button5");
             this.button5.Image = global::GUI.Properties.Resources.view_details_26px;
             this.button5.Name = "button5";
             this.button5.UseVisualStyleBackColor = false;

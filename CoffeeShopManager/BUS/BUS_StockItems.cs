@@ -12,7 +12,14 @@ namespace BUS
 {
     public class BUS_StockItems
     {
-        DAL_StockItems dalStock = new DAL_StockItems();
+        private string connectionString;
+        DAL_StockItems dalStock;
+
+        public BUS_StockItems(string connString)
+        {
+            connectionString = connString;
+            dalStock = new DAL_StockItems(connectionString);
+        }
 
         public DTO_StockItem GetById(int id, int shopId)
         {
@@ -54,17 +61,17 @@ namespace BUS
             return dalStock.GetDataTableProductsUsingItem(itemId, shopId);
         }
 
-        public DTO_StockItemsForProducts GetItemForProduct(int itemId, string productId, int shopId)
+        public DTO_StockItemForProduct GetItemForProduct(int itemId, int productId, int shopId)
         {
             return dalStock.GetItemForProduct(itemId, productId, shopId);
         }
 
-        public void AddItemForProduct(DTO_StockItemsForProducts itemForPro)
+        public void AddItemForProduct(DTO_StockItemForProduct itemForPro)
         {
             dalStock.AddItemForProduct(itemForPro);
         }
 
-        public void RemoveItemForProduct(DTO_StockItemsForProducts itemForPro)
+        public void RemoveItemForProduct(DTO_StockItemForProduct itemForPro)
         {
             dalStock.RemoveItemForProduct(itemForPro);
         }

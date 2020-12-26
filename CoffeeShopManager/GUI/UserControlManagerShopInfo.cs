@@ -15,7 +15,7 @@ namespace GUI
     public partial class UserControlManagerShopInfo : UserControl
     {
         DTO_Shop dtoShop = new DTO_Shop();
-        BUS_Shop busShop = new BUS_Shop();
+        BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         public DTO_Manager dtoMan = new DTO_Manager();
         
         public UserControlManagerShopInfo()

@@ -11,6 +11,11 @@ namespace DAL
 {
     public class DAL_Receipts : DBConnection
     {
+        public DAL_Receipts(string connString) : base(connString)
+        {
+
+        }
+
         public DTO_Receipt GetReceiptById(int id, int shopId)
         {
             DTO_Receipt rec = null;
@@ -63,7 +68,7 @@ namespace DAL
             return rec;
         }
 
-        public List<DTO_Receipt> GetAllReceiptsByProductId(string productId, int shopId)
+        public List<DTO_Receipt> GetAllReceiptsByProductId(int productId, int shopId)
         {
             List<DTO_Receipt> recList = new List<DTO_Receipt>();
             string qry = "SELECT * " +
@@ -202,7 +207,7 @@ namespace DAL
                 {
                     Product = new DTO_Product
                     {
-                        Id = reader.GetString(reader.GetOrdinal("ProductId")),
+                        Id = (int)reader["ProductId"],
                         Name = reader["Name"].ToString(),
                         Shop = new DTO_Shop
                         {
@@ -349,7 +354,7 @@ namespace DAL
 
         public DTO_Table GetTableOfReceipt(int receiptId, int shopId)
         {
-            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
             DTO_Table tab = null;
             tab = dalTabSitting.GetTableOfReceipt(receiptId, shopId);
 
@@ -773,7 +778,7 @@ namespace DAL
 
         public void InsertSittingReceipt(DTO_Receipt rec, DTO_Table tab)
         {
-            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
             DTO_TableSitting tabSit = new DTO_TableSitting
             {
                 Receipt = rec,
@@ -822,7 +827,7 @@ namespace DAL
 
         public void DeleteReceipt(DTO_Receipt rec)
         {
-            DAL_TableSitting dalTabSitting = new DAL_TableSitting();
+            DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
             string qry = "DELETE FROM RECEIPTS " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);

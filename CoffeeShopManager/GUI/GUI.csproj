@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\zzPublish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,10 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -47,6 +48,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9CFC88A449E6B76F365FCF79041F05EB89C6A0C5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GUI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -58,6 +77,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -71,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChangeLanguage.cs" />
+    <Compile Include="ConnectionStringHelper.cs" />
     <Compile Include="DataGridViewNumericUpDownCell.cs" />
     <Compile Include="EmailHelper.cs" />
     <Compile Include="FilterProperties.cs" />
@@ -109,6 +130,12 @@
     </Compile>
     <Compile Include="frmOrderForTable.Designer.cs">
       <DependentUpon>frmOrderForTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestoreProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestoreProduct.Designer.cs">
+      <DependentUpon>frmRestoreProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="frmShowDetailTable.cs">
       <SubType>Form</SubType>
@@ -420,6 +447,9 @@
     <EmbeddedResource Include="frmRegister.vi-VN.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreProduct.resx">
+      <DependentUpon>frmRestoreProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmShowDetailTable.resx">
       <DependentUpon>frmShowDetailTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -521,6 +551,9 @@
     <EmbeddedResource Include="UserControlStatistics.resx">
       <DependentUpon>UserControlStatistics.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStatistics.vi-VN.resx">
+      <DependentUpon>UserControlStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlStock.resx">
       <DependentUpon>UserControlStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -542,13 +575,18 @@
     <EmbeddedResource Include="UserControlTableOfManager.resx">
       <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTableOfManager.vi-VN.resx">
+      <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlUserTab.resx">
       <DependentUpon>UserControlUserTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUserTab.vi-VN.resx">
       <DependentUpon>UserControlUserTab.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -733,6 +771,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\coffeeflat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

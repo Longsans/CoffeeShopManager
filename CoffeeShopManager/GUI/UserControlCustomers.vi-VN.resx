@@ -143,6 +143,9 @@
   <data name="txtSearch.Text" xml:space="preserve">
     <value>Tìm kiếm...</value>
   </data>
+  <data name="cboSearch.Items1" xml:space="preserve">
+    <value>Tên</value>
+  </data>
   <data name="lblResetFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>

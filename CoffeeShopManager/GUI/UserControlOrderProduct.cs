@@ -19,11 +19,11 @@ namespace GUI
         DTO_ReceiptDetails dtoDetail = new DTO_ReceiptDetails();
         List<string> strSave = new List<string>();
         List<DTO_Table> lsTable = new List<DTO_Table>();
-        BUS_Product busPro = new BUS_Product();
-        BUS_Tables busTable = new BUS_Tables();
-        BUS_Receipts busReceipt = new BUS_Receipts();
-        BUS_Customers busCus = new BUS_Customers();
-        BUS_Shop busShop = new BUS_Shop();
+        BUS_Product busPro = new BUS_Product(ConnectionStringHelper.GetConnectionString());
+        BUS_Tables busTable = new BUS_Tables(ConnectionStringHelper.GetConnectionString());
+        BUS_Receipts busReceipt = new BUS_Receipts(ConnectionStringHelper.GetConnectionString());
+        BUS_Customers busCus = new BUS_Customers(ConnectionStringHelper.GetConnectionString());
+        BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         DTO_Receipt dtoReceipt = new DTO_Receipt();
         DTO_Customer dtoCus = new DTO_Customer();
         DTO_Product dto_pro;
@@ -87,7 +87,7 @@ namespace GUI
                 pricelb = new Label();
                 namelb = new Label();
                 Label prlabel = new Label();
-                dto_pro = busPro.GetById(row["Id"].ToString(), shopID);
+                dto_pro = busPro.GetByIdNotDeleted((int)row["Id"], shopID);
 
                 pricelb.Text = row["Price"].ToString() + "$";
                 pricelb.BackColor = Color.FromArgb(255, 121, 121);
@@ -336,88 +336,90 @@ namespace GUI
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DateTime now = DateTime.Now;
-            dtoReceipt = new DTO_Receipt();
-            if (dataGridView1.Rows.Count <= 1)
+            try
             {
-                MessageBox.Show("haven't ordered yet");
-                return;
-            }
-            if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == string.Empty || cboCustomerType.Text == "Vẵng lai")
-            {
-                if (busCus.GetNullCustomer(shopID) == null)
-                {
-                    var nullCus = new DTO_Customer
-                    {
-                        Shop = new DTO_Shop
-                        {
-                            ID = shopID
-                        }
-                    };
-                    busCus.InsertNullCustomer(nullCus);
-                }
-                dtoCus = busCus.GetNullCustomer(shopID);
-            }
-            else
-            {
-                if (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký")
-                {
-                    if (EmailHelper.ValidateEmail(txtEmail.Text))
-                    {
-                        checkemail = 1;
-                    }
-                    if (checkemail == 0 || checkname == 0 || checkbirth == 0)
-                    {
-                        MessageBox.Show("Write profile for Customer");
-                        return;
-                    }
-                }
-                if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
-                {
-                    check = 0;
-                }
-                if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
-                {
-                    check = 1;
-                }
+                DateTime now = DateTime.Now;
+                dtoReceipt = new DTO_Receipt();
                 if (dataGridView1.Rows.Count <= 1)
                 {
                     MessageBox.Show("haven't ordered yet");
                     return;
                 }
-                if (check == 0 && (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký") && checkname == 1 && checkemail == 1 && checkbirth == 1)
+                if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == string.Empty || cboCustomerType.Text == "Vẵng lai")
                 {
-                    DateTime bdate = new DateTime();
-                    dtoCus.Email = txtEmail.Text;
-                    dtoCus.FirstName = txtFirstName.Text;
-                    dtoCus.LastName = txtLastName.Text;
-                    dtoCus.Birthdate = datBirthdate.Value;
-                    dtoCus.Shop.ID = shopID;
-                    busCus.Insert(dtoCus);
-                    dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
+                    if (busCus.GetNullCustomer(shopID) == null)
+                    {
+                        var nullCus = new DTO_Customer
+                        {
+                            Shop = new DTO_Shop
+                            {
+                                ID = shopID
+                            }
+                        };
+                        busCus.InsertNullCustomer(nullCus);
+                    }
+                    dtoCus = busCus.GetNullCustomer(shopID);
                 }
-            }
-            if (checkmonecus == 1)
-            {
-                txtMoneyCus.Text = txtMoneyCus.Text.Replace(',', '.');
-                dtoReceipt.Cash = decimal.Parse(txtMoneyCus.Text);
-                dtoReceipt.Change = decimal.Parse(txtGiveCus.Text);
-                dtoReceipt.Customer = dtoCus;
-                dtoReceipt.Employee = dtoEmp;
-                dtoReceipt.DateOfPayMent = now;
-                int mon = lblGrandTotal.Text.IndexOf("$");
-                if (decimal.TryParse(txtDiscount.Text, out decimal discount))
+                else
                 {
-                    dtoReceipt.Discount = discount / 100;
+                    if (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký")
+                    {
+                        if (EmailHelper.ValidateEmail(txtEmail.Text))
+                        {
+                            checkemail = 1;
+                        }
+                        if (checkemail == 0 || checkname == 0 || checkbirth == 0)
+                        {
+                            MessageBox.Show("Write profile for Customer");
+                            return;
+                        }
+                    }
+                    if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
+                    {
+                        check = 0;
+                    }
+                    if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
+                    {
+                        check = 1;
+                    }
+                    if (dataGridView1.Rows.Count <= 1)
+                    {
+                        MessageBox.Show("haven't ordered yet");
+                        return;
+                    }
+                    if (check == 0 && (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký") && checkname == 1 && checkemail == 1 && checkbirth == 1)
+                    {
+                        DateTime bdate = new DateTime();
+                        dtoCus.Email = txtEmail.Text;
+                        dtoCus.FirstName = txtFirstName.Text;
+                        dtoCus.LastName = txtLastName.Text;
+                        dtoCus.Birthdate = datBirthdate.Value;
+                        dtoCus.Shop.ID = shopID;
+                        busCus.Insert(dtoCus);
+                        dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
+                    }
                 }
-                dtoReceipt.Total = decimal.Parse(lblGrandTotal.Text.Substring(0, mon));
-                dtoReceipt.Details = "";
-                dtoReceipt.Shop = dtoShop;
-                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                if (checkmonecus == 1)
                 {
-                    dtoDetail = new DTO_ReceiptDetails();//cai nay a
+                    txtMoneyCus.Text = txtMoneyCus.Text.Replace(',', '.');
+                    dtoReceipt.Cash = decimal.Parse(txtMoneyCus.Text);
+                    dtoReceipt.Change = decimal.Parse(txtGiveCus.Text);
+                    dtoReceipt.Customer = dtoCus;
+                    dtoReceipt.Employee = dtoEmp;
+                    dtoReceipt.DateOfPayMent = now;
+                    int mon = lblGrandTotal.Text.IndexOf("$");
+                    if (decimal.TryParse(txtDiscount.Text, out decimal discount))
+                    {
+                        dtoReceipt.Discount = discount / 100;
+                    }
+                    dtoReceipt.Total = decimal.Parse(lblGrandTotal.Text.Substring(0, mon));
+                    dtoReceipt.Details = "";
+                    dtoReceipt.Shop = dtoShop;
+                    for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                    {
+                        dtoDetail = new DTO_ReceiptDetails();//cai nay a
 
-                    dto_pro = busPro.GetById(dataGridView1.Rows[i].Cells[6].Value.ToString(), shopID);
+                    dto_pro = busPro.GetByIdNotDeleted(Convert.ToInt32(dataGridView1.Rows[i].Cells[6].Value), shopID);
                     dtoDetail.Product = dto_pro;
                     //dtoDetail.Product.Id = dto_pro.Id;
                     dtoDetail.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
@@ -439,25 +441,34 @@ namespace GUI
                 dtoTab.Status = "Occupied";
                 busTable.Update(dtoTab);
 
+                }
+                else
+                    busReceipt.InsertTakeAwayReceipt(dtoReceipt);
+                comboBox2.Items.Clear();
+                lsTable.Clear();
+                lsTable = busTable.GetAvailableTables(shopID);
+                for (int i = 0; i < lsTable.Count; i++)
+                {
+                    comboBox2.Items.Add(lsTable[i].Id.ToString());
+                }
+                var resp = MessageBox.Show("Do you want to print the receipt you just saved?", "Print receipt",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resp == DialogResult.Yes)
+                {
+                    PDFPrinter.PrintReceipt(dtoReceipt);
+                }
+                MessageBox.Show("Done, add new receipts");
+                ResetAll();
+                if (isOrderAtTable) closeFormOrderAtTable = true;
             }
-            else
-                busReceipt.InsertTakeAwayReceipt(dtoReceipt);
-            comboBox2.Items.Clear();
-            lsTable.Clear();
-            lsTable = busTable.GetAvailableTables(shopID);
-            for (int i = 0; i < lsTable.Count; i++)
+            catch (Exception ex)
             {
-                comboBox2.Items.Add(lsTable[i].Id.ToString());
+                MessageBox.Show("An error occurred, tab will reload now.", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Reload();
+                comboBox2.Items.Clear();
+                lsTable.Clear();
+                lsTable = busTable.GetAvailableTables(shopID);
             }
-            var resp = MessageBox.Show("Do you want to print the receipt you just saved?", "Print receipt",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resp == DialogResult.Yes)
-            {
-                PDFPrinter.PrintReceipt(dtoReceipt);
-            }
-            MessageBox.Show("Done, add new receipts");
-            ResetAll();
-            if (isOrderAtTable) closeFormOrderAtTable = true;
         }
         public int check = 0;
         public void ResetAll()

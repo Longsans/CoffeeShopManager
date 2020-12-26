@@ -16,8 +16,8 @@ namespace GUI
     {
         public DTO_Product Product = new DTO_Product();
         public frmEditProduct frmEditPro { get; set; }
-        BUS_Product busPro = new BUS_Product();
-        BUS_StockItems busStock = new BUS_StockItems();
+        BUS_Product busPro = new BUS_Product(ConnectionStringHelper.GetConnectionString());
+        BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
         ErrorProvider err = new ErrorProvider();
         Icon checkIcon,
             errorIcon;
@@ -75,7 +75,7 @@ namespace GUI
 
         private void lblAdd_MouseUp(object sender, MouseEventArgs e)
         {
-            var itemForPro = new DTO_StockItemsForProducts
+            var itemForPro = new DTO_StockItemForProduct
             {
                 Item = new DTO_StockItem
                 {
@@ -100,11 +100,27 @@ namespace GUI
             lblAdd.Enabled = false;
         }
 
-        private void txtItemId_Validating(object sender, CancelEventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            prevPoint = Cursor.Position;
+        }
+
+        private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void txtItemId_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if (txtItemId.TextLength > 0)
+                if (txtItemId.TextLength > 0 && txtItemId.ForeColor != Color.DimGray)
                 {
                     if (int.TryParse(txtItemId.Text, out int id))
                     {
@@ -142,22 +158,6 @@ namespace GUI
                 err.SetError(txtItemId, ex.Message);
                 lblAdd.Enabled = false;
             }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
-        {
-            dragging = true;
-            prevPoint = Cursor.Position;
-        }
-
-        private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)
-        {
-            dragging = false;
         }
 
         private void pnlTitleBar_MouseMove(object sender, MouseEventArgs e)

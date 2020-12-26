@@ -16,7 +16,7 @@ namespace GUI
     {
         public UserControlTable ucTable { get; set; }
         DTO_Table table = new DTO_Table();
-        BUS_Tables busTable = new BUS_Tables();
+        BUS_Tables busTable = new BUS_Tables(ConnectionStringHelper.GetConnectionString());
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
         public frmShowDetailTable()

@@ -161,6 +161,12 @@
   <data name="btnUnavailable.Text" xml:space="preserve">
     <value>Không dùng được</value>
   </data>
+  <data name="cboBy.Items" xml:space="preserve">
+    <value>ID Khách hàng</value>
+  </data>
+  <data name="cboBy.Items1" xml:space="preserve">
+    <value>ID Bàn</value>
+  </data>
   <data name="lblBy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>

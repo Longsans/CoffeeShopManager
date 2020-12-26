@@ -14,9 +14,9 @@ namespace GUI
 {
     public partial class frmLogin : Form
     {
-        BUS_UserInfo busUser = new BUS_UserInfo();
-        BUS_Employee busEmp = new BUS_Employee();
-        BUS_Manager busMan = new BUS_Manager();
+        BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
+        BUS_Employee busEmp = new BUS_Employee(ConnectionStringHelper.GetConnectionString());
+        BUS_Manager busMan = new BUS_Manager(ConnectionStringHelper.GetConnectionString());
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
         public frmLogin()

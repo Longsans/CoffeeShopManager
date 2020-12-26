@@ -19,8 +19,8 @@ namespace GUI
         Icon checkIcon,
             errorIcon;
         ErrorProvider err = new ErrorProvider();
-        BUS_Tables busTable = new BUS_Tables();
-        BUS_Shop busShop = new BUS_Shop();
+        BUS_Tables busTable = new BUS_Tables(ConnectionStringHelper.GetConnectionString());
+        BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         UserControlTableOfManager ucTableManager { get; set; }
         int shopId;
         public frmAddTable(int num, UserControlTableOfManager _ucTableManager)

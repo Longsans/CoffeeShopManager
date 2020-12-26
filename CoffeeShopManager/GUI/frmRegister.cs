@@ -16,9 +16,9 @@ namespace GUI
     
     public partial class frmRegister : Form
     {
-        BUS_UserInfo busUser = new BUS_UserInfo();
-        BUS_Manager busMan = new BUS_Manager();
-        BUS_Shop busShop = new BUS_Shop();
+        BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
+        BUS_Manager busMan = new BUS_Manager(ConnectionStringHelper.GetConnectionString());
+        BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         frmLogin _frmLogin = new frmLogin();
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);

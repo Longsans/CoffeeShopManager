@@ -14,7 +14,7 @@ namespace GUI
     public partial class UserControlStatistics : UserControl
     {
         int shopId;
-        BUS_Shop busShop = new BUS_Shop();
+        BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         //DataGridView dataGridView2 = new DataGridView();
         //DataGridView dataGridView1 = new DataGridView();
         int year, month;

@@ -19,11 +19,12 @@ namespace GUI
         frmLogin _frmLogin = new frmLogin();
         static public DTO_Employee dtoEmp = new DTO_Employee();
         public DTO_Shop dtoShop = new DTO_Shop();
-        BUS_Employee busEmp = new BUS_Employee();
-        BUS_Manager busMan = new BUS_Manager();
-        BUS_Shop busShop = new BUS_Shop();
+        BUS_Employee busEmp = new BUS_Employee(ConnectionStringHelper.GetConnectionString());
+        BUS_Manager busMan = new BUS_Manager(ConnectionStringHelper.GetConnectionString());
+        BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         private bool dragging = false;
         Point startPoint = new Point(0, 0);
+        System.Windows.Forms.Timer t1 = new System.Windows.Forms.Timer();
         public frmEmployee()
         {
             InitializeComponent();
@@ -149,7 +150,23 @@ namespace GUI
             userControlOrderProduct2.SetShopID(dtoShop.ID);
             userControlOrderProduct2.dtoShop = busShop.GetShopById(dtoEmp.Shop.ID);
             ucTable.SetEmployee(dtoEmp);
+            t1.Interval = 1000;
+            t1.Start();
+            t1.Tick += Timer_Click;
         }
+        public void Timer_Click(object sender, EventArgs e)
+        {
+            if (busEmp.GetEmployeeInfoAndManagerId(dtoEmp.Id, dtoShop.ID) == null)
+            {
+                t1.Stop();
+                if(btnLogout.Text=="Log out")
+                MessageBox.Show("Yêu cầu đăng nhập lại", "Đăng nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    MessageBox.Show("Log in again","Log in again", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+            }
+        }
+
         public void ResetDCM()
         {
             dtoShop = dtoEmp.Shop;

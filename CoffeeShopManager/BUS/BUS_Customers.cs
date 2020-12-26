@@ -10,7 +10,14 @@ namespace BUS
 {
     public class BUS_Customers
     {
-        DAL_Customers dalCus = new DAL_Customers();
+        private string connectionString;
+        DAL_Customers dalCus;
+
+        public BUS_Customers(string connString)
+        {
+            connectionString = connString;
+            dalCus = new DAL_Customers(connectionString);
+        }
 
         public DataTable GetAllCustomers(int shopId)
         {

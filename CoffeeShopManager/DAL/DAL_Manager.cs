@@ -11,9 +11,14 @@ namespace DAL
 {
     public class DAL_Manager : DBConnection
     {
+        public DAL_Manager(string connString) : base(connString)
+        {
+
+        }
+
         public DataTable GetAllManagers(int shopId)
         {
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -31,7 +36,7 @@ namespace DAL
 
         public DTO_Manager GetById(string id, int shopId)
         {
-            DAL_Workers dalWorker = new DAL_Workers();
+            DAL_Workers dalWorker = new DAL_Workers(this.connectionString);
             DTO_Manager dtoMan = null;
 
             var connState = (this.conn.State == ConnectionState.Open);
@@ -57,7 +62,7 @@ namespace DAL
         public DTO_Manager GetByUsername(string username)
         {
             DTO_Manager man;
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             DTO_Worker dtoWorker = dalWorkers.GetByUsername(username);
             try
             {
@@ -73,7 +78,7 @@ namespace DAL
 
         public List<DTO_Employee> GetEmployeeList(DTO_Manager manager)
         {
-            DAL_Employee dalEmp = new DAL_Employee();
+            DAL_Employee dalEmp = new DAL_Employee(this.connectionString);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
@@ -91,7 +96,7 @@ namespace DAL
 
         public string Insert(DTO_Manager dtoMan)
         {
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             string qry = "INSERT INTO [MANAGERS] VALUES (@workerId, @shopId)";
             bool workerInserted = false;
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -127,7 +132,7 @@ namespace DAL
 
         public void Delete(DTO_Manager dtoMan)
         {
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             string qry = "DELETE FROM [MANAGERS] " +
                 "WHERE Id = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
@@ -153,7 +158,7 @@ namespace DAL
         /// <param name="dtoManUpdated">The updated user</param>
         public void UpdateInfo(DTO_Manager dtoManUpdated)
         {
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
             {
@@ -168,7 +173,7 @@ namespace DAL
 
         public void UpdateInfoAndAccount(DTO_Manager dtoManUpdated)
         {
-            DAL_Workers dalWorkers = new DAL_Workers();
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)
             {

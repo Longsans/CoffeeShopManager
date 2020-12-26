@@ -12,9 +12,17 @@ namespace BUS
 {
     public class BUS_Shop
     {
-        DAL_Shop dalShop = new DAL_Shop();
-        DAL_Receipts dalrec = new DAL_Receipts();
-        
+        private string connectionString;
+        DAL_Shop dalShop;
+        DAL_Receipts dalrec;
+
+        public BUS_Shop(string connString)
+        {
+            connectionString = connString;
+            dalShop = new DAL_Shop(connectionString);
+            dalrec = new DAL_Receipts(connectionString);
+        }
+
         public DTO_Shop GetShopById(int id)
         {
             return dalShop.GetShopById(id);
