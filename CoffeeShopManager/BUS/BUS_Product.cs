@@ -31,7 +31,7 @@ namespace BUS
                 throw e;
             }
         }
-        public DTO_Product GetByIdNotDeleted(string id, int shopId)
+        public DTO_Product GetByIdNotDeleted(int id, int shopId)
         {
             try
             {               
@@ -43,22 +43,33 @@ namespace BUS
             }
         }
 
-        public DTO_Product GetByIdDeletedAndNotDeleted(string id, int shopId)
+        public DTO_Product GetByIdDeletedAndNotDeleted(int id, int shopId)
         {
             return dalProduct.GetByIdDeletedAndNotDeleted(id, shopId);
         }
 
-        public DTO_Product GetByName(string name, int shopId)
+        public DTO_Product GetByNameNotDeleted(string name, int shopId)
         {
             try
             {
-                return dalProduct.GetByName(name, shopId);
+                return dalProduct.GetByNameNotDeleted(name, shopId);
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
+
+        public DTO_Product GetByNameDeletedAndNotDeleted(string name, int shopId)
+        {
+            return dalProduct.GetByNameDeletedAndNotDeleted(name, shopId);
+        }
+
+        public bool CheckProductReceiptsExist(DTO_Product dtopro)
+        {
+            return dalProduct.CheckReceiptDetailsExist(dtopro);
+        }
+
         private DataTable GetAllProductsOfType(string type, int shopId)
         {
             try
@@ -104,7 +115,7 @@ namespace BUS
             }
         }
 
-        public DataTable GetProductsSearchIDFiltered(string id, int shopId)
+        public DataTable GetProductsSearchIDFiltered(int id, int shopId)
         {
             return dalProduct.GetProductsSearchIDFiltered(id, shopId);
         }
@@ -124,12 +135,12 @@ namespace BUS
             return dalProduct.GetProductsSearchPriceFiltered(lowerBound, upperBound, shopId);
         }
 
-        public DataTable GetDataTableItemsOfProduct(string productId, int shopId)
+        public DataTable GetDataTableItemsOfProduct(int productId, int shopId)
         {
             return dalProduct.GetDataTableItemsOfProduct(productId, shopId);
         }
 
-        public DTO_StockItemForProduct GetItemForProduct(int itemId, string productId, int shopId)
+        public DTO_StockItemForProduct GetItemForProduct(int itemId, int productId, int shopId)
         {
             return dalProduct.GetItemForProduct(itemId, productId, shopId);
         }
@@ -144,7 +155,7 @@ namespace BUS
             dalProduct.RemoveItemForProduct(itemForPro);
         }
 
-        public void RemoveAllItemsForProductByProductId(string productId, int shopId)
+        public void RemoveAllItemsForProductByProductId(int productId, int shopId)
         {
             dalProduct.RemoveAllItemsForProductByProductId(productId, shopId);
         }
@@ -153,7 +164,7 @@ namespace BUS
         {
             try
             {
-                if (dalProduct.GetByName(dtoPro.Name, dtoPro.Shop.ID) == null)
+                if (dalProduct.GetByNameDeletedAndNotDeleted(dtoPro.Name, dtoPro.Shop.ID) == null)
                 {
                     dalProduct.InsertWithoutImage(dtoPro);
                     return true;
@@ -193,6 +204,11 @@ namespace BUS
         public void TrueDelete(DTO_Product dtoPro)
         {
             dalProduct.TrueDelete(dtoPro);
+        }
+
+        public void RestoreDeletedProduct(DTO_Product dtoPro)
+        {
+            dalProduct.RestoreDeletedProduct(dtoPro);
         }
 
         public bool Update(DTO_Product dtoPro)

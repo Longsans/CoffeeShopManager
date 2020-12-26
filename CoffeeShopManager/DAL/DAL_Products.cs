@@ -64,7 +64,7 @@ namespace DAL
             return dt;
         }
 
-        public DTO_Product GetByIdNotDeleted(string id, int shopId)
+        public DTO_Product GetByIdNotDeleted(int id, int shopId)
         {
             DTO_Product dtoPro = null;
             string qry = "SELECT * " +
@@ -88,7 +88,7 @@ namespace DAL
                     Name = reader.GetString(reader.GetOrdinal("Name")),
                     Type = reader.GetString(reader.GetOrdinal("Type")),
                     Price = decimal.Round((decimal)reader["Price"], 2, MidpointRounding.AwayFromZero),
-                    Detail = reader.GetString(reader.GetOrdinal("Details")),
+                    Details = reader.GetString(reader.GetOrdinal("Details")),
                     Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[],
                     Deleted = (bool)reader["Deleted"]
                 };
@@ -102,7 +102,7 @@ namespace DAL
             return dtoPro;
         }
 
-        public DTO_Product GetByIdDeletedAndNotDeleted(string id, int shopId)
+        public DTO_Product GetByIdDeletedAndNotDeleted(int id, int shopId)
         {
             DTO_Product dtoPro = null;
             string qry = "SELECT * " +
@@ -126,7 +126,7 @@ namespace DAL
                     Name = reader.GetString(reader.GetOrdinal("Name")),
                     Type = reader.GetString(reader.GetOrdinal("Type")),
                     Price = decimal.Round((decimal)reader["Price"], 2, MidpointRounding.AwayFromZero),
-                    Detail = reader.GetString(reader.GetOrdinal("Details")),
+                    Details = reader.GetString(reader.GetOrdinal("Details")),
                     Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[],
                     Deleted = (bool)reader["Deleted"]
                 };
@@ -140,7 +140,45 @@ namespace DAL
             return dtoPro;
         }
 
-        public DTO_Product GetByName(string name, int shopId)
+        public DTO_Product GetByNameNotDeleted(string name, int shopId)
+        {
+            DTO_Product dtoPro = null;
+            string qry = "SELECT * " +
+                "FROM [PRODUCTS] " +
+                "WHERE Name = @name AND ShopId = @shopId AND Deleted = 0";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                dtoPro = new DTO_Product
+                {
+                    Id = (int)reader["Id"],
+                    Name = name,
+                    Type = reader.GetString(reader.GetOrdinal("Type")),
+                    Price = decimal.Round((decimal)reader["Price"], 2, MidpointRounding.AwayFromZero),
+                    Details = reader.GetString(reader.GetOrdinal("Details")),
+                    Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[],
+                    Deleted = (bool)reader["Deleted"]
+                };
+                dtoPro.Shop.ID = shopId;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return dtoPro;
+        }
+
+        public DTO_Product GetByNameDeletedAndNotDeleted(string name, int shopId)
         {
             DTO_Product dtoPro = null;
             string qry = "SELECT * " +
@@ -160,11 +198,11 @@ namespace DAL
             {
                 dtoPro = new DTO_Product
                 {
-                    Id = reader.GetString(reader.GetOrdinal("Id")),
+                    Id = (int)reader["Id"],
                     Name = name,
                     Type = reader.GetString(reader.GetOrdinal("Type")),
                     Price = decimal.Round((decimal)reader["Price"], 2, MidpointRounding.AwayFromZero),
-                    Detail = reader.GetString(reader.GetOrdinal("Details")),
+                    Details = reader.GetString(reader.GetOrdinal("Details")),
                     Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[],
                     Deleted = (bool)reader["Deleted"]
                 };
@@ -176,6 +214,39 @@ namespace DAL
             }
 
             return dtoPro;
+        }
+
+        public bool CheckReceiptDetailsExist(DTO_Product dtoPro)
+        {
+            bool result = false;
+            string qry = "SELECT * " +
+                "FROM (" +
+                "   SELECT * " +
+                "   FROM PRODUCTS " +
+                "   WHERE Id = @id AND ShopId = @shopId " +
+                ") p " +
+                "INNER JOIN RECEIPT_DETAILS rd " +
+                "ON p.Id = rd.ProductId AND p.ShopId = rd.ShopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", dtoPro.Id);
+            cmd.Parameters.AddWithValue("@shopId", dtoPro.Shop.ID);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                result = true;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return result;
         }
 
         public DataTable GetAllProductsOfType(string type, int shopId)
@@ -217,7 +288,7 @@ namespace DAL
             return GetAllProductsOfType("Others", shopId);
         }
 
-        public DataTable GetProductsSearchIDFiltered(string id, int shopId)
+        public DataTable GetProductsSearchIDFiltered(int id, int shopId)
         {
             DataTable dtProFiltered = new DataTable();
             string qry = "SELECT Id, Name, Type, cast(Price as decimal(10, 2)) AS Price " +
@@ -282,13 +353,13 @@ namespace DAL
             return dtProFiltered;
         }
 
-        public DataTable GetDataTableItemsOfProduct(string productId, int shopId)
+        public DataTable GetDataTableItemsOfProduct(int productId, int shopId)
         {
             DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts(this.connectionString);
             return dalItemForPro.GetDataTableItemsOfProduct(productId, shopId);
         }
 
-        public DTO_StockItemForProduct GetItemForProduct(int itemId, string productId, int shopId)
+        public DTO_StockItemForProduct GetItemForProduct(int itemId, int productId, int shopId)
         {
             DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts(this.connectionString);
             return dalItemForPro.GetItemForProduct(itemId, productId, shopId);
@@ -297,14 +368,13 @@ namespace DAL
         public void InsertWithoutImage(DTO_Product dtoPro)
         {
             string qry = "INSERT INTO [PRODUCTS] " +
-                "(Id, Name, Type, cast(Price as decimal(10, 2)) AS Price, Details, Deleted) " +
-                "VALUES (@id, @name, @type, @price, @details, @shopId, @del)";
+                "(Name, Type, cast(Price as decimal(10, 2)) AS Price, Details, Deleted) " +
+                "VALUES (@name, @type, @price, @details, @shopId, @del)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@id", dtoPro.Id);
             cmd.Parameters.AddWithValue("@name", dtoPro.Name);
             cmd.Parameters.AddWithValue("@type", dtoPro.Type);
             cmd.Parameters.AddWithValue("@price", dtoPro.Price);
-            cmd.Parameters.AddWithValue("@details", dtoPro.Detail);
+            cmd.Parameters.AddWithValue("@details", dtoPro.Details);
             cmd.Parameters.AddWithValue("@shopId", dtoPro.Shop.ID);
             cmd.Parameters.AddWithValue("@del", 0);
 
@@ -322,15 +392,14 @@ namespace DAL
 
         public void InsertWithImage(DTO_Product dtoPro)
         {
-            string qry = "INSERT INTO [PRODUCTS] " +
-                "VALUES (@id, @name, @type, @image, @price, @details, @shopId, @del)";
+            string qry = "INSERT INTO [PRODUCTS] (Name, Type, Image, Price, Details, ShopId, Deleted)" +
+                "VALUES (@name, @type, @image, @price, @details, @shopId, @del)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@id", dtoPro.Id);
             cmd.Parameters.AddWithValue("@name", dtoPro.Name);
             cmd.Parameters.AddWithValue("@type", dtoPro.Type);
             cmd.Parameters.AddWithValue("@image", dtoPro.Image);
             cmd.Parameters.AddWithValue("@price", dtoPro.Price);
-            cmd.Parameters.AddWithValue("@details", dtoPro.Detail);
+            cmd.Parameters.AddWithValue("@details", dtoPro.Details);
             cmd.Parameters.AddWithValue("@shopId", dtoPro.Shop.ID);
             cmd.Parameters.AddWithValue("@del", 0);
 
@@ -390,6 +459,27 @@ namespace DAL
             }
         }
 
+        public void RestoreDeletedProduct(DTO_Product dtoPro)
+        {
+            string qry = "UPDATE [PRODUCTS] " +
+                "SET Deleted = 0 " +
+                "WHERE Id = @id AND ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", dtoPro.Id);
+            cmd.Parameters.AddWithValue("@shopId", dtoPro.Shop.ID);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
+        }
+
         public void Update(DTO_Product dtoPro)
         {
             string qry = "UPDATE [PRODUCTS] SET " +
@@ -401,7 +491,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@type", dtoPro.Type);
             cmd.Parameters.AddWithValue("@image", dtoPro.Image);
             cmd.Parameters.AddWithValue("@price", dtoPro.Price);
-            cmd.Parameters.AddWithValue("@details", dtoPro.Detail);
+            cmd.Parameters.AddWithValue("@details", dtoPro.Details);
             cmd.Parameters.AddWithValue("@id", dtoPro.Id);
             cmd.Parameters.AddWithValue("@shopId", dtoPro.Shop.ID);
 
@@ -429,13 +519,13 @@ namespace DAL
             dalItemForPro.Delete(itemForPro);
         }
 
-        public void RemoveAllItemsForProductByProductId(string productId, int shopId)
+        public void RemoveAllItemsForProductByProductId(int productId, int shopId)
         {
             DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts(this.connectionString);
             dalItemForPro.DeleteAllByProductId(productId, shopId);
         }
 
-        public void RemoveAllReceiptsWithProductByProductId(string productId, int shopId)
+        public void RemoveAllReceiptsWithProductByProductId(int productId, int shopId)
         {
             DAL_Receipts dalRec = new DAL_Receipts(this.connectionString);
             var recList = dalRec.GetAllReceiptsByProductId(productId, shopId);
@@ -443,11 +533,6 @@ namespace DAL
             {
                 dalRec.DeleteReceipt(rec);
             }
-        }
-
-        public void RemoveOnlyReceiptDetailsWithProductByProductId(string productId, int shopId)
-        {
-
         }
     }
 }

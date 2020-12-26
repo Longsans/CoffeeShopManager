@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditCustomer));
             this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -45,15 +46,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorFalse = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorTrue = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlTitleBar.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorFalse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTrue)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitleBar
             // 
-            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.pnlTitleBar.Controls.Add(this.btnExit);
+            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
@@ -70,7 +75,6 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.datBirthdate);
             this.panel1.Controls.Add(this.btnCancel);
@@ -85,6 +89,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // datBirthdate
@@ -95,10 +100,10 @@
             // 
             // btnCancel
             // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -106,10 +111,10 @@
             // 
             // btnSave
             // 
-            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnSave.Name = "btnSave";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -123,22 +128,22 @@
             // 
             // txtLastName
             // 
-            resources.ApplyResources(this.txtLastName, "txtLastName");
             this.txtLastName.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtLastName, "txtLastName");
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
             // 
             // txtFirstName
             // 
-            resources.ApplyResources(this.txtFirstName, "txtFirstName");
             this.txtFirstName.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtFirstName, "txtFirstName");
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
             // 
             // txtId
             // 
-            resources.ApplyResources(this.txtId, "txtId");
             this.txtId.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtId, "txtId");
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             // 
@@ -173,6 +178,15 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.label1.Name = "label1";
             // 
+            // errorFalse
+            // 
+            this.errorFalse.ContainerControl = this;
+            // 
+            // errorTrue
+            // 
+            this.errorTrue.ContainerControl = this;
+            resources.ApplyResources(this.errorTrue, "errorTrue");
+            // 
             // frmEditCustomer
             // 
             resources.ApplyResources(this, "$this");
@@ -186,6 +200,8 @@
             this.pnlTitleBar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorFalse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTrue)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,5 +224,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorFalse;
+        private System.Windows.Forms.ErrorProvider errorTrue;
     }
 }

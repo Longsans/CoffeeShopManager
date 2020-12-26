@@ -86,7 +86,7 @@
             this.txtItemId.ForeColor = System.Drawing.Color.DimGray;
             resources.ApplyResources(this.txtItemId, "txtItemId");
             this.txtItemId.Name = "txtItemId";
-            this.txtItemId.Validating += new System.ComponentModel.CancelEventHandler(this.txtItemId_Validating);
+            this.txtItemId.TextChanged += new System.EventHandler(this.txtItemId_TextChanged);
             // 
             // lblCancel
             // 
@@ -121,6 +121,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSmallAddStockItemToList";
+            this.Load += new System.EventHandler(this.frmSmallAddStockItemToList_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -70,19 +70,28 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            dtoCus = new DTO_Customer
+            if ((DateTime.Now.Year - datBirthdate.Value.Year) >= 5)
             {
-                Id = dtoCus.Id,
-                FirstName = dtoCus.FirstName,
-                LastName = dtoCus.LastName,
-                Email = txtEmail.Text,
-                Birthdate = datBirthdate.Value,
-            };
+                dtoCus = new DTO_Customer
+                {
+                    Id = dtoCus.Id,
+                    FirstName = dtoCus.FirstName,
+                    LastName = dtoCus.LastName,
+                    Email = txtEmail.Text,
+                    Birthdate = datBirthdate.Value,
+                };
 
-            busCus.Update(dtoCus);
-            MessageBox.Show("Update successful.", "Edit success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-            ucCus.ReloadGridView();
+                busCus.Update(dtoCus);
+                MessageBox.Show("Update successful.", "Edit success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                ucCus.ReloadGridView();
+            }
+            else
+            {
+                MessageBox.Show("Wrong age", "Age", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)

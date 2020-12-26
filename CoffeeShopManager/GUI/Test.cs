@@ -73,7 +73,7 @@ namespace GUI
                  pic.Height = 150;
                  pic.Image = ImageHelper.ByteArrayToImage(dto_pro.Image);
                  pic.Tag = row["Id"];*/
-                dto_pro = busPro.GetByIdNotDeleted(row["Id"].ToString(), 1);
+                dto_pro = busPro.GetByIdNotDeleted((int)row["Id"], 1);
 
                 pricelb.Text = row["Price"].ToString() + "$";
                 pricelb.BackColor = Color.FromArgb(255, 121, 121);
@@ -376,7 +376,7 @@ namespace GUI
 
                 dto_pro = new DTO_Product
                 {
-                    Id = dataGridView1.Rows[i].Cells[6].Value.ToString()
+                    Id = (int)dataGridView1.Rows[i].Cells[6].Value
                 };
                 dtoDetail.Product = dto_pro;
                 //dtoDetail.Product.Id = dto_pro.Id;

@@ -138,19 +138,24 @@ namespace GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DTO_Product dtoPro = new DTO_Product();
             if (dataGridView1.SelectedRows != null)
             {
                 DialogResult ret = MessageBox.Show("Do you want to delete this product?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ret == DialogResult.Yes)
                 {
                    // MessageBox.Show(dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
-                    dtoPro = busPro.GetByIdNotDeleted(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoShop.ID);
-                    busPro.FalseDelete(dtoPro);
+                    DTO_Product dtoPro = busPro.GetByIdNotDeleted((int)dataGridView1.SelectedRows[0].Cells[0].Value, dtoShop.ID);
+                    if (busPro.CheckProductReceiptsExist(dtoPro))
+                    {
+                        busPro.FalseDelete(dtoPro);
+                    }
+                    else
+                    {
+                        busPro.TrueDelete(dtoPro);
+                    }
                     Reload();
                     GetCong();
                     GetData();
-
                 }
             }
         }
@@ -161,25 +166,34 @@ namespace GUI
             {
                 if (txtSearch.ForeColor != Color.DimGray || txtPriceSearchLower.Visible)
                 {
-                    switch (cboSearch.Text)
+                    var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+
+                    switch (resultIndex)
                     {
 
-                        case "ID":
-                            this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(txtSearch.Text, dtoShop.ID);
+                        case 0:
+                            if (int.TryParse(txtSearch.Text, out int id))
+                            {
+                                this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(id, dtoShop.ID);
+                            }
+                            else
+                            {
+                                this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(-1, dtoShop.ID);
+                            }
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Name":
+                        case 1:
                             this.dataGridView1.DataSource = busPro.GetProductsSearchNameFiltered(txtSearch.Text, dtoShop.ID);
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Type":
+                        case 2:
                             this.dataGridView1.DataSource = busPro.GetProductsSearchTypeFiltered(txtSearch.Text, dtoShop.ID);
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Price":
+                        case 3:
                             if (int.Parse(txtPriceSearchLower.Text) > 0 && int.Parse(txtPriceSearchUpper.Text) > 0)
                             {
                                 if (int.Parse(txtPriceSearchLower.Text) <= int.Parse(txtPriceSearchUpper.Text))
@@ -211,7 +225,9 @@ namespace GUI
     
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboSearch.SelectedItem.ToString() == "Price")
+            var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+
+            if (resultIndex==3)
             {
                 txtSearch.Visible = false;
                 txtPriceSearchLower.Visible = true;
@@ -240,7 +256,7 @@ namespace GUI
             {
                frmEditProduct frmEdit = new frmEditProduct(this)
                 {
-                    dtoPro = busPro.GetByIdNotDeleted(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoShop.ID)
+                    dtoPro = busPro.GetByIdNotDeleted((int)dataGridView1.SelectedRows[0].Cells[0].Value, dtoShop.ID)
                 };
                 frmEdit.ShowDialog();
             }
@@ -261,7 +277,6 @@ namespace GUI
         }
         public void GetData()
         {
-            
             dto_pro = new DTO_Product();
             int dem = 0;
             foreach (DataGridViewRow row in this.dataGridView1.Rows)
@@ -273,7 +288,7 @@ namespace GUI
                 Label prlabel = new Label();
                 pic.BackgroundImageLayout = ImageLayout.Stretch;
                 pic.SizeMode = PictureBoxSizeMode.StretchImage;
-                dto_pro = busPro.GetByIdNotDeleted(row.Cells[0].Value.ToString(), dtoShop.ID);
+                dto_pro = busPro.GetByIdNotDeleted((int)row.Cells[0].Value, dtoShop.ID);
                 pic.Width = 146;
                 pic.Height = 150;
                 pic.Image = ImageHelper.ByteArrayToImage(dto_pro.Image);
@@ -356,7 +371,7 @@ namespace GUI
                 frmEditProduct frmEdit = new frmEditProduct(this)
                 {
                     // dtoPro = busPro.GetByName(namelb.Text)
-                    dtoPro = busPro.GetByIdNotDeleted(((Button)sender).Tag.ToString(), dtoShop.ID)
+                    dtoPro = busPro.GetByIdNotDeleted(Convert.ToInt32(((Button)sender).Tag), dtoShop.ID)
                 };
                 frmEdit.ShowDialog();
           //  }
@@ -396,7 +411,6 @@ namespace GUI
             //   Reload();
             // GetData();
 
-              MessageBox.Show("1234" + lblSumTotal.Text);
             //Button btn;
             /*  foreach (Control item in flowLayoutPanel1.Controls)
               {
@@ -418,7 +432,7 @@ namespace GUI
             frmEditProduct frmEdit = new frmEditProduct(this)
             {
                     // dtoPro = busPro.GetByName(namelb.Text)
-                       dtoPro = busPro.GetByIdNotDeleted(((sender as ContextMenuStrip).SourceControl as Button).Tag.ToString(), dtoShop.ID)
+                       dtoPro = busPro.GetByIdNotDeleted(Convert.ToInt32(((sender as ContextMenuStrip).SourceControl as Button).Tag), dtoShop.ID)
             // dtoPro = busPro.GetById(((Button)sender).Tag.ToString(), 1)
 
                  
@@ -436,7 +450,7 @@ namespace GUI
             // MessageBox.Show(dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
             if (ret == DialogResult.Yes)
             {
-                dtoPro = busPro.GetByIdNotDeleted(((sender as ContextMenuStrip).SourceControl as Button).Tag.ToString(), dtoShop.ID);
+                dtoPro = busPro.GetByIdNotDeleted(Convert.ToInt32(((sender as ContextMenuStrip).SourceControl as Button).Tag), dtoShop.ID);
 
                 busPro.FalseDelete(dtoPro);
                 Reload();
@@ -471,25 +485,34 @@ namespace GUI
             {
                 if (txtSearch.ForeColor != Color.DimGray)
                 {
-                    switch (cboSearch.Text)
+                    var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+
+                    switch (resultIndex)
                     {
 
-                        case "ID":
-                            this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(txtSearch.Text, dtoShop.ID);
+                        case 0:
+                            if (int.TryParse(txtSearch.Text, out int id))
+                            {
+                                this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(id, dtoShop.ID);
+                            }
+                            else
+                            {
+                                this.dataGridView1.DataSource = busPro.GetProductsSearchIDFiltered(-1, dtoShop.ID);
+                            }
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Name":
+                        case 1:
                             this.dataGridView1.DataSource = busPro.GetProductsSearchNameFiltered(txtSearch.Text, dtoShop.ID);
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Type":
+                        case 2:
                             this.dataGridView1.DataSource = busPro.GetProductsSearchTypeFiltered(txtSearch.Text, dtoShop.ID);
                             flowLayoutPanel1.Controls.Clear();
                             GetData();
                             break;
-                        case "Price":
+                        case 3:
                             if (int.Parse(txtPriceSearchLower.Text) > 0 && int.Parse(txtPriceSearchUpper.Text) > 0)
                             {
                                 if (int.Parse(txtPriceSearchLower.Text) <= int.Parse(txtPriceSearchUpper.Text))

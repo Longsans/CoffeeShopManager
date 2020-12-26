@@ -26,6 +26,7 @@ namespace DTO
             this.Birthdate = dtoWr.Birthdate;
             this.Image = dtoWr.Image;
             this.Shop.ID = dtoWr.Shop.ID;
+            this.Account = dtoWr.Account;
         }
         public DTO_Employee(int year,int month,int day)
         {

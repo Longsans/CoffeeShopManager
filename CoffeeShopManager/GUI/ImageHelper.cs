@@ -22,8 +22,12 @@ namespace GUI
 
         public static Image ByteArrayToImage(byte[] bytes)
         {
-            MemoryStream ms = new MemoryStream(bytes);
-            Image img = Image.FromStream(ms);
+            Image img = null;
+            if (bytes != null)
+            {
+                MemoryStream ms = new MemoryStream(bytes);
+                img = Image.FromStream(ms);
+            }
 
             return img;
         }

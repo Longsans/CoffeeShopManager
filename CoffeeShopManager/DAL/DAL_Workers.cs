@@ -70,7 +70,55 @@ namespace DAL
                 "FROM [WORKERS] " +
                 "WHERE AccountId = @accId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
-            cmd.Parameters.AddWithValue("@accId", dalUser.GetByUsername(username).ID);
+
+            var user = dalUser.GetByUsername(username);
+            if (user != null)
+            {
+                cmd.Parameters.AddWithValue("@accId", user.ID);
+
+                var connState = (this.conn.State == ConnectionState.Open);
+                if (!connState)
+                {
+                    OpenConnection();
+                }
+                var reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    dtoWorker = new DTO_Worker
+                    {
+                        Id = reader.GetString(reader.GetOrdinal("Id")),
+                        Firstname = reader.GetString(reader.GetOrdinal("FirstName")),
+                        Lastname = reader.GetString(reader.GetOrdinal("LastName")),
+                        Gender = reader.GetString(reader.GetOrdinal("Gender")),
+                        Position = reader.GetString(reader.GetOrdinal("Position")),
+                        Phone = reader.GetString(reader.GetOrdinal("PhoneNumber")),
+                        Email = reader.GetString(reader.GetOrdinal("EmailAddress")),
+                        Image = reader.GetValue(reader.GetOrdinal("Image")) as byte[]
+                    };
+
+                    var bdate = reader.GetDateTime(reader.GetOrdinal("Birthdate"));
+                    dtoWorker.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
+                    dtoWorker.Account.ID = reader.GetInt32(reader.GetOrdinal("AccountId"));
+                    dtoWorker.Shop.ID = reader.GetInt32(reader.GetOrdinal("ShopId"));
+                }
+                if (!connState)
+                {
+                    CloseConnection();
+                }
+            }
+            
+            return dtoWorker;
+        }
+
+        public DTO_Worker GetByEmail(string email, int shopId)
+        {
+            DTO_Worker dtoWorker = null;
+            string qry = "SELECT * " +
+                "FROM WORKERS " +
+                "WHERE EmailAddress = @email AND ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
 
             var connState = (this.conn.State == ConnectionState.Open);
             if (!connState)

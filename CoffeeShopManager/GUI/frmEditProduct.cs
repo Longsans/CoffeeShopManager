@@ -32,12 +32,12 @@ namespace GUI
         }
         private void frmEditProduct_Load(object sender, EventArgs e)
         {
-            txtID.Text = dtoPro.Id;
-            txtName1.Text = dtoPro.Name;
+            txtID.Text = dtoPro.Id.ToString();
             savename = dtoPro.Name;
+            txtName1.Text = dtoPro.Name;
             txtPrice.Text = dtoPro.Price.ToString();
             cbxType.Text = dtoPro.Type;
-            rtxDetail.Text = dtoPro.Detail;
+            rtxDetail.Text = dtoPro.Details;
             lblListCaption.Text += $"{dtoPro.Name}:";
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             if (dtoPro.Image != null)
@@ -89,16 +89,18 @@ namespace GUI
             {
                 dtoPro.Name = txtName1.Text;
                 dtoPro.Price = decimal.Parse(txtCopyPrice.Text);
-                if (cbxType.Text == "Thức ăn")
+                var resultIndex = cbxType.FindStringExact(cbxType.Text);
+
+                if (resultIndex==0)
                     cbxType.Text = "Food";
-                if (cbxType.Text == "Nước uống")
+                if (resultIndex == 1)
                     cbxType.Text = "Drink";
-                if (cbxType.Text == "Khác")
+                else
                     cbxType.Text = "Others";
                 dtoPro.Type = cbxType.Text;
-                dtoPro.Detail = rtxDetail.Text;
+                dtoPro.Details = rtxDetail.Text;
                 dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image);
-                if (busPro.GetByName(dtoPro.Name, dtoPro.Shop.ID) == null||savename==txtName1.Text)
+                if (busPro.GetByNameDeletedAndNotDeleted(dtoPro.Name, dtoPro.Shop.ID) == null||savename==txtName1.Text)
                 {
                     dtoPro.Image = ImageHelper.ImageToByteArray(this.pictureBox1.Image); ;
                     busPro.Update(dtoPro);
@@ -112,7 +114,7 @@ namespace GUI
                 else if (savename != txtName1.Text)
                 {
                     txtName1.ResetText();
-                    MessageBox.Show("Trùng tên thức ăn đã có sẵn");
+                    MessageBox.Show("Please ensure that product name has not been used", "Duplicate product name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -202,7 +204,7 @@ namespace GUI
             string sums=null;
             if (txtPrice.Text == string.Empty)
             {
-                errorProvider1.SetError(txtPrice, "Please provide Price");
+                errorProvider1.SetError(txtPrice, "Price is required");
                 errorProvider2.SetError(txtPrice, "");
             }
             else
@@ -222,7 +224,7 @@ namespace GUI
                 txtCopyPrice.Text = sums;
                 if (IsNumber(txtPrice.Text) == true&&countdoc<=1)
                 {
-                    errorProvider2.SetError(txtPrice, "Correct");
+                    errorProvider2.SetError(txtPrice, "Valid");
                     errorProvider1.SetError(txtPrice, "");
                     checkprice = 1;
                 }
@@ -239,22 +241,102 @@ namespace GUI
             }
         }
 
+        private void txtCopyPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grdItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void rtxDetail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblType_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblListCaption_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRemove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblID_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtName1_TextChanged(object sender, EventArgs e)
         {
-            if (busPro.GetByName(txtName1.Text, dtoPro.Shop.ID) != null && savename != txtName1.Text)
-            {
-                errorProvider1.SetError(txtName1, "Had name before");
-                errorProvider2.SetError(txtName1, "");
-            }
             if (txtName1.Text == string.Empty)
             {
-                errorProvider1.SetError(txtName1, "Please Enter Name");
+                errorProvider1.SetError(txtName1, "Name is required");
+                errorProvider2.SetError(txtName1, "");
+            }
+            else if (busPro.GetByNameDeletedAndNotDeleted(txtName1.Text, dtoPro.Shop.ID) != null && savename != txtName1.Text)
+            {
+                errorProvider1.SetError(txtName1, "There is existing info related to a product with such name");
                 errorProvider2.SetError(txtName1, "");
             }
             else
             {
                 errorProvider1.SetError(txtName1, "");
-                errorProvider2.SetError(txtName1, "Correct");
+                errorProvider2.SetError(txtName1, "Valid");
                 checkname = 1;
             }
         }

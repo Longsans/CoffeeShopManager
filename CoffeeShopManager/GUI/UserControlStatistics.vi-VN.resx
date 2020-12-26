@@ -117,81 +117,80 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="cboIncomeView.Items" xml:space="preserve">
+    <value>Theo năm</value>
+  </data>
+  <data name="cboIncomeView.Items1" xml:space="preserve">
+    <value>Phần tư</value>
+  </data>
+  <data name="cboIncomeView.Items2" xml:space="preserve">
+    <value>Theo tháng</value>
+  </data>
+  <data name="cboIncomeView.Items3" xml:space="preserve">
+    <value>1 tuần qua</value>
+  </data>
+  <data name="cboIncomeView.Items4" xml:space="preserve">
+    <value>1 tháng qua</value>
+  </data>
+  <data name="cboIncomeView.Items5" xml:space="preserve">
+    <value>Theo ngày</value>
+  </data>
+  <data name="cboProductView.Items" xml:space="preserve">
+    <value>Tất cả	</value>
+  </data>
+  <data name="cboProductView.Items1" xml:space="preserve">
+    <value>Theo năm</value>
+  </data>
+  <data name="cboProductView.Items2" xml:space="preserve">
+    <value>Theo tháng</value>
+  </data>
+  <data name="cboProductView.Items3" xml:space="preserve">
+    <value>1 tuần qua</value>
+  </data>
+  <data name="cboProductView.Items4" xml:space="preserve">
+    <value>1 tháng qua</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 34</value>
+    <value>112, 19</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Danh sách bàn</value>
+    <value>Tổng doanh số:</value>
   </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 34</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Thống kê</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 19</value>
+    <value>84, 19</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Các loại:</value>
+    <value>Trung bình:</value>
   </data>
-  <data name="btnAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 19</value>
   </data>
-  <data name="btnAll.Text" xml:space="preserve">
-    <value>Tất cả</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Tổng thu nhập</value>
   </data>
-  <data name="btnAvailable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 19</value>
   </data>
-  <data name="btnAvailable.Text" xml:space="preserve">
-    <value>Còn trống</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Bởi</value>
   </data>
-  <data name="btnOccupied.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 19</value>
   </data>
-  <data name="btnOccupied.Text" xml:space="preserve">
-    <value>Đã ngồi</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Chọn ngày:</value>
   </data>
-  <data name="btnUnavailable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 19</value>
   </data>
-  <data name="btnUnavailable.Text" xml:space="preserve">
-    <value>Không dùng được</value>
-  </data>
-  <data name="cboBy.Items" xml:space="preserve">
-    <value>ID Khách hàng</value>
-  </data>
-  <data name="cboBy.Items1" xml:space="preserve">
-    <value>ID Bàn</value>
-  </data>
-  <data name="lblBy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblBy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 19</value>
-  </data>
-  <data name="lblBy.Text" xml:space="preserve">
-    <value>Bằng:</value>
-  </data>
-  <data name="lblSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 19</value>
-  </data>
-  <data name="lblSearch.Text" xml:space="preserve">
-    <value>Tìm kiếm:</value>
-  </data>
-  <data name="btnCollapse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnExpand.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Bởi</value>
   </data>
 </root>

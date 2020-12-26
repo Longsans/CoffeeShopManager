@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlUserTab));
             this.lblUserInfo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +59,11 @@
             this.datBirthdate = new System.Windows.Forms.DateTimePicker();
             this.btnEdit = new System.Windows.Forms.Button();
             this.picManagerInfo = new System.Windows.Forms.PictureBox();
+            this.errorTrue = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorFalse = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picManagerInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTrue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorFalse)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserInfo
@@ -108,8 +113,8 @@
             // 
             // txtID
             // 
-            resources.ApplyResources(this.txtID, "txtID");
             this.txtID.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtID, "txtID");
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             // 
@@ -125,8 +130,8 @@
             // 
             // txtPosition
             // 
-            resources.ApplyResources(this.txtPosition, "txtPosition");
             this.txtPosition.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtPosition, "txtPosition");
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.ReadOnly = true;
             // 
@@ -139,37 +144,35 @@
             // 
             resources.ApplyResources(this.txtEmail, "txtEmail");
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(125, 22);
-            this.txtEmail.TabIndex = 37;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnChangePassword
             // 
-            resources.ApplyResources(this.btnChangePassword, "btnChangePassword");
             this.btnChangePassword.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangePassword.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnChangePassword, "btnChangePassword");
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.Firebrick;
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // btnSaveChange
             // 
-            resources.ApplyResources(this.btnSaveChange, "btnSaveChange");
             this.btnSaveChange.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnSaveChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnSaveChange, "btnSaveChange");
             this.btnSaveChange.FlatAppearance.BorderSize = 0;
             this.btnSaveChange.Name = "btnSaveChange";
             this.btnSaveChange.UseVisualStyleBackColor = false;
@@ -191,9 +194,9 @@
             // 
             // btnBrowse
             // 
-            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.FlatAppearance.BorderSize = 0;
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.UseVisualStyleBackColor = false;
@@ -202,7 +205,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // lblManInfo
             // 
@@ -226,10 +228,10 @@
             // 
             // btnEdit
             // 
-            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.ForeColor = System.Drawing.Color.DarkRed;
             this.btnEdit.Image = global::GUI.Properties.Resources.edit_30px;
             this.btnEdit.Name = "btnEdit";
@@ -238,10 +240,19 @@
             // 
             // picManagerInfo
             // 
-            resources.ApplyResources(this.picManagerInfo, "picManagerInfo");
             this.picManagerInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.picManagerInfo, "picManagerInfo");
             this.picManagerInfo.Name = "picManagerInfo";
             this.picManagerInfo.TabStop = false;
+            // 
+            // errorTrue
+            // 
+            this.errorTrue.ContainerControl = this;
+            resources.ApplyResources(this.errorTrue, "errorTrue");
+            // 
+            // errorFalse
+            // 
+            this.errorFalse.ContainerControl = this;
             // 
             // UserControlUserTab
             // 
@@ -280,6 +291,8 @@
             this.Name = "UserControlUserTab";
             this.Load += new System.EventHandler(this.UserControlUserTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picManagerInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorTrue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorFalse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,5 +329,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker datBirthdate;
+        private System.Windows.Forms.ErrorProvider errorTrue;
+        private System.Windows.Forms.ErrorProvider errorFalse;
     }
 }

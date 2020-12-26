@@ -16,7 +16,7 @@ namespace DAL
 
         }
 
-        public DTO_StockItemForProduct GetItemForProduct(int itemId, string productId, int shopId)
+        public DTO_StockItemForProduct GetItemForProduct(int itemId, int productId, int shopId)
         {
             DTO_StockItemForProduct itemForPro = null;
             string qry = "SELECT * FROM STOCK_ITEMS_FOR_PRODUCTS " +
@@ -48,7 +48,7 @@ namespace DAL
                     },
                     Product = new DTO_Product
                     {
-                        Id = reader["ProductId"].ToString(),
+                        Id = (int)reader["ProductId"],
                         Shop = new DTO_Shop
                         {
                             ID = (int)reader["ShopId"]
@@ -88,7 +88,7 @@ namespace DAL
             return dt;
         }
 
-        public DataTable GetDataTableItemsOfProduct(string productId, int shopId)
+        public DataTable GetDataTableItemsOfProduct(int productId, int shopId)
         {
             DataTable dt = new DataTable();
             string qry = "SELECT ItemId AS [Item ID], ItemName AS [Item Name] " +
@@ -151,7 +151,7 @@ namespace DAL
             }
         }
 
-        public void DeleteAllByProductId(string productId, int shopId)
+        public void DeleteAllByProductId(int productId, int shopId)
         {
             string qry = "DELETE FROM STOCK_ITEMS_FOR_PRODUCTS " +
                 "WHERE ProductId = @proId " +

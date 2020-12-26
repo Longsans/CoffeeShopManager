@@ -190,7 +190,7 @@ namespace DAL
             return dt;
         }
 
-        public DTO_StockItemForProduct GetItemForProduct(int itemId, string productId, int shopId)
+        public DTO_StockItemForProduct GetItemForProduct(int itemId, int productId, int shopId)
         {
             DAL_StockItemsForProducts dalItemForPro = new DAL_StockItemsForProducts(this.connectionString);
             return dalItemForPro.GetItemForProduct(itemId, productId, shopId);

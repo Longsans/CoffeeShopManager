@@ -74,6 +74,10 @@ namespace BUS
 
             return dtoUser;
         }
+        public DTO_Employee GetByEmail(string email, int shopId)
+        {
+            return dalEmployee.GetByEmail(email, shopId);
+        }
 
         public void AddEmployee(DTO_Employee emp)
         {

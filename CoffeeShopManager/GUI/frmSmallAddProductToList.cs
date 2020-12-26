@@ -80,7 +80,7 @@ namespace GUI
                 Item = this.Item,
                 Product = new DTO_Product
                 {
-                    Id = txtProId.Text,
+                    Id = int.Parse(txtProId.Text),
                     Shop = this.Item.Shop
                 },
                 Shop = this.Item.Shop
@@ -100,13 +100,29 @@ namespace GUI
             lblAdd.Enabled = false;
         }
 
-        private void txtProId_Validating(object sender, CancelEventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            prevPoint = Cursor.Position;
+        }
+
+        private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        private void txtProId_TextChanged(object sender, EventArgs e)
         {
             if (txtProId.TextLength > 0)
             {
-                if (busPro.GetByIdNotDeleted(txtProId.Text, Item.Shop.ID) != null)
+                if (int.TryParse(txtProId.Text, out int id) && busPro.GetByIdNotDeleted(id, Item.Shop.ID) != null)
                 {
-                    if (busPro.GetItemForProduct(Item.Id, txtProId.Text, Item.Shop.ID) != null)
+                    if (busPro.GetItemForProduct(Item.Id, id, Item.Shop.ID) != null)
                     {
                         err.Icon = errorIcon;
                         err.SetError(txtProId, "A product with such ID has already been added to the list");
@@ -132,22 +148,6 @@ namespace GUI
                 err.SetError(txtProId, "Please fill all info fields");
                 lblAdd.Enabled = false;
             }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
-        {
-            dragging = true;
-            prevPoint = Cursor.Position;
-        }
-
-        private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)
-        {
-            dragging = false;
         }
 
         private void pnlTitleBar_MouseMove(object sender, MouseEventArgs e)

@@ -68,7 +68,7 @@ namespace DAL
             return rec;
         }
 
-        public List<DTO_Receipt> GetAllReceiptsByProductId(string productId, int shopId)
+        public List<DTO_Receipt> GetAllReceiptsByProductId(int productId, int shopId)
         {
             List<DTO_Receipt> recList = new List<DTO_Receipt>();
             string qry = "SELECT * " +
@@ -207,7 +207,7 @@ namespace DAL
                 {
                     Product = new DTO_Product
                     {
-                        Id = reader.GetString(reader.GetOrdinal("ProductId")),
+                        Id = (int)reader["ProductId"],
                         Name = reader["Name"].ToString(),
                         Shop = new DTO_Shop
                         {

@@ -102,27 +102,29 @@ namespace GUI
             {
                 if (txtSearch.ForeColor != Color.DimGray)
                 {
-                    switch (cboSearch.Text)
+                    var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+
+                    switch (resultIndex)
                     {
-                        case "ID":
+                        case 0:
                             this.dataGridView1.DataSource = busEmp.GetEmployeesSearchIDFiltered(txtSearch.Text, dtoMan.Shop.ID);
                             break;
-                        case "Name":
+                        case 1:
                             this.dataGridView1.DataSource = busEmp.GetEmployeesSearchNameFiltered(txtSearch.Text, dtoMan.Shop.ID);
                             break;
-                        case "Gender":
+                        case 2:
                             this.dataGridView1.DataSource = busEmp.GetEmployeesSearchGenderFiltered(txtSearch.Text, dtoMan.Shop.ID);
                             break;
-                        case "Position":
+                        case 3:
                             this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPositionFiltered(txtSearch.Text, dtoMan.Shop.ID);
                             break;
-                        case "Phone number":
+                        case 4:
                             this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPhoneFiltered(txtSearch.Text, dtoMan.Shop.ID);
                             break;
-                        case "Email":
+                        case 5:
                             this.dataGridView1.DataSource = busEmp.GetEmployeesSearchEmailFiltered(txtSearch.Text, dtoMan.Shop.ID);
                             break;
-                        case "Manager's ID":
+                        case 6:
                             this.dataGridView1.DataSource = busEmp.GetEmployeesSearchManIDFiltered(txtSearch.Text, dtoMan.Shop.ID);
                             break;
                     }

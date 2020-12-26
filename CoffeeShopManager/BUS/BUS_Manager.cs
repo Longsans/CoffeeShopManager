@@ -55,6 +55,13 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public DTO_Worker GetByEmail(string email,int shopid)
+        {
+            DAL_Workers dalWorker = new DAL_Workers(connectionString);
+            return dalWorker.GetByEmail(email, shopid);
+        }
+
         public List<DTO_Employee> GetEmployeeList(DTO_Manager manager)
         {
             try

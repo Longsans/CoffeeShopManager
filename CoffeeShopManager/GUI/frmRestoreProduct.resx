@@ -117,110 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnSaveChange.Text" xml:space="preserve">
-    <value>Lưu thay đổi</value>
-  </data>
-  <data name="btnChooseImage.Text" xml:space="preserve">
-    <value>Tìm ảnh</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Hủy bỏ</value>
-  </data>
-  <data name="cboPosition.Items" xml:space="preserve">
-    <value>Phục vụ</value>
-  </data>
-  <data name="cboPosition.Items1" xml:space="preserve">
-    <value>Thợ pha cà phê</value>
-  </data>
-  <data name="cboPosition.Items2" xml:space="preserve">
-    <value>Nấu ăn</value>
-  </data>
-  <data name="cboPosition.Items3" xml:space="preserve">
-    <value>Tiện ích</value>
-  </data>
-  <data name="cboPosition.Items4" xml:space="preserve">
-    <value>Vệ sinh</value>
-  </data>
-  <data name="cboPosition.Items5" xml:space="preserve">
-    <value>Bảo vệ</value>
-  </data>
-  <data name="cboPosition.Items6" xml:space="preserve">
-    <value>Khác</value>
-  </data>
+  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>327, 17</value>
+  </metadata>
+  <metadata name="errorProvider2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>482, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="radMale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 21</value>
-  </data>
-  <data name="radMale.Text" xml:space="preserve">
-    <value>Nam</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 19</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>ID Quản lý</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 19</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Ngày vào</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 19</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Lương</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 19</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Ngày sinh</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 19</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Điện thoại</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 19</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Chức vụ</value>
-  </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 19</value>
-  </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>Địa chỉ</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 19</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Tên</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 19</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Giới tính</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 19</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Họ</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 23</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Sửa nhân viên</value>
-  </data>
-  <data name="errorProvider1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="errorProvider2.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAADAE
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -314,11 +218,5 @@
         AA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AA
         AA/wAAAP+AAAH/wAAD//////////////////////
 </value>
-  </data>
-  <data name="radFemale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 21</value>
-  </data>
-  <data name="radFemale.Text" xml:space="preserve">
-    <value>Nữ</value>
   </data>
 </root>

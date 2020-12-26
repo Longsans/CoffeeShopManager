@@ -39,7 +39,6 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.cbxType = new System.Windows.Forms.ComboBox();
             this.txtName1 = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -48,28 +47,27 @@
             this.lblType = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errIdDeleted = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errNameDeleted = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errIdDeleted)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errNameDeleted)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtCopyPrice);
             this.panel1.Controls.Add(this.rtxDetail);
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.cbxType);
             this.panel1.Controls.Add(this.txtName1);
-            this.panel1.Controls.Add(this.txtID);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnBrowse);
@@ -78,7 +76,6 @@
             this.panel1.Controls.Add(this.lblType);
             this.panel1.Controls.Add(this.lblPrice);
             this.panel1.Controls.Add(this.lblName);
-            this.panel1.Controls.Add(this.lblID);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
@@ -92,6 +89,8 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnExit);
             resources.ApplyResources(this.panel2, "panel2");
+            this.errorProvider1.SetIconAlignment(this.panel2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel2.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.panel2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel2.IconAlignment1"))));
             this.panel2.Name = "panel2";
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -101,6 +100,8 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.errorProvider2.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment1"))));
             this.label1.Name = "label1";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -110,6 +111,8 @@
             // 
             resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.FlatAppearance.BorderSize = 0;
+            this.errorProvider2.SetIconAlignment(this.btnExit, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnExit.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.btnExit, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnExit.IconAlignment1"))));
             this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
             this.btnExit.Name = "btnExit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -117,11 +120,15 @@
             // 
             // txtCopyPrice
             // 
+            this.errorProvider2.SetIconAlignment(this.txtCopyPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtCopyPrice.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.txtCopyPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtCopyPrice.IconAlignment1"))));
             resources.ApplyResources(this.txtCopyPrice, "txtCopyPrice");
             this.txtCopyPrice.Name = "txtCopyPrice";
             // 
             // rtxDetail
             // 
+            this.errorProvider2.SetIconAlignment(this.rtxDetail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rtxDetail.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.rtxDetail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rtxDetail.IconAlignment1"))));
             resources.ApplyResources(this.rtxDetail, "rtxDetail");
             this.rtxDetail.Name = "rtxDetail";
             // 
@@ -133,7 +140,6 @@
             // 
             // cbxType
             // 
-            this.cbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxType.FormattingEnabled = true;
             this.cbxType.Items.AddRange(new object[] {
             resources.GetString("cbxType.Items"),
@@ -149,16 +155,12 @@
             this.txtName1.Name = "txtName1";
             this.txtName1.TextChanged += new System.EventHandler(this.txtName1_TextChanged);
             // 
-            // txtID
-            // 
-            resources.ApplyResources(this.txtID, "txtID");
-            this.txtID.Name = "txtID";
-            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
-            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.errorProvider2.SetIconAlignment(this.btnCancel, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCancel.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.btnCancel, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCancel.IconAlignment1"))));
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -168,6 +170,8 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.errorProvider2.SetIconAlignment(this.btnAdd, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnAdd.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.btnAdd, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnAdd.IconAlignment1"))));
             resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -177,6 +181,8 @@
             // 
             this.btnBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.errorProvider2.SetIconAlignment(this.btnBrowse, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnBrowse.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.btnBrowse, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnBrowse.IconAlignment1"))));
             resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.UseVisualStyleBackColor = false;
@@ -185,6 +191,8 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.errorProvider1.SetIconAlignment(this.pictureBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox1.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.pictureBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox1.IconAlignment1"))));
             this.pictureBox1.Image = global::GUI.Properties.Resources.select_none_80px;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
@@ -193,27 +201,30 @@
             // lblDetails
             // 
             resources.ApplyResources(this.lblDetails, "lblDetails");
+            this.errorProvider2.SetIconAlignment(this.lblDetails, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblDetails.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblDetails, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblDetails.IconAlignment1"))));
             this.lblDetails.Name = "lblDetails";
             // 
             // lblType
             // 
             resources.ApplyResources(this.lblType, "lblType");
+            this.errorProvider2.SetIconAlignment(this.lblType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblType.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblType.IconAlignment1"))));
             this.lblType.Name = "lblType";
             // 
             // lblPrice
             // 
             resources.ApplyResources(this.lblPrice, "lblPrice");
+            this.errorProvider2.SetIconAlignment(this.lblPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblPrice.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblPrice.IconAlignment1"))));
             this.lblPrice.Name = "lblPrice";
             // 
             // lblName
             // 
             resources.ApplyResources(this.lblName, "lblName");
+            this.errorProvider2.SetIconAlignment(this.lblName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblName.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.lblName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblName.IconAlignment1"))));
             this.lblName.Name = "lblName";
-            // 
-            // lblID
-            // 
-            resources.ApplyResources(this.lblID, "lblID");
-            this.lblID.Name = "lblID";
             // 
             // errorProvider1
             // 
@@ -226,10 +237,10 @@
             this.errorProvider2.ContainerControl = this;
             resources.ApplyResources(this.errorProvider2, "errorProvider2");
             // 
-            // errIdDeleted
+            // errNameDeleted
             // 
-            this.errIdDeleted.ContainerControl = this;
-            resources.ApplyResources(this.errIdDeleted, "errIdDeleted");
+            this.errNameDeleted.ContainerControl = this;
+            resources.ApplyResources(this.errNameDeleted, "errNameDeleted");
             // 
             // frmInsertProDuct
             // 
@@ -247,7 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errIdDeleted)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errNameDeleted)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,14 +266,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.RichTextBox rtxDetail;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.ComboBox cbxType;
         private System.Windows.Forms.TextBox txtName1;
-        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBrowse;
@@ -275,6 +284,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ErrorProvider errIdDeleted;
+        private System.Windows.Forms.ErrorProvider errNameDeleted;
     }
 }

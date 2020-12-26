@@ -24,6 +24,7 @@ namespace GUI
         BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         private bool dragging = false;
         Point startPoint = new Point(0, 0);
+        System.Windows.Forms.Timer t1 = new System.Windows.Forms.Timer();
         public frmEmployee()
         {
             InitializeComponent();
@@ -149,7 +150,23 @@ namespace GUI
             userControlOrderProduct2.SetShopID(dtoShop.ID);
             userControlOrderProduct2.dtoShop = busShop.GetShopById(dtoEmp.Shop.ID);
             ucTable.SetEmployee(dtoEmp);
+            t1.Interval = 1000;
+            t1.Start();
+            t1.Tick += Timer_Click;
         }
+        public void Timer_Click(object sender, EventArgs e)
+        {
+            if (busEmp.GetEmployeeInfoAndManagerId(dtoEmp.Id, dtoShop.ID) == null)
+            {
+                t1.Stop();
+                if(btnLogout.Text=="Log out")
+                MessageBox.Show("Yêu cầu đăng nhập lại", "Đăng nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    MessageBox.Show("Log in again","Log in again", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+            }
+        }
+
         public void ResetDCM()
         {
             dtoShop = dtoEmp.Shop;

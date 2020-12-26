@@ -66,8 +66,8 @@ namespace GUI
             }
             if (lblSuppliers.Text != "Suppliers")
             {
-                grdSup.Columns["Name"].HeaderText = "Tên nhà cung";
-                grdSup.Columns["Phone Number"].HeaderText = "Điện thoại";
+               // grdSup.Columns["Name"].HeaderText = "Tên nhà cung";
+               // grdSup.Columns["Phone Number"].HeaderText = "Điện thoại";
             }
         }
 
@@ -148,24 +148,25 @@ namespace GUI
         {
             if (!string.IsNullOrWhiteSpace(cboSearch.Text))
             {
-                switch (cboSearch.Text)
+                var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+                switch (resultIndex)
                 {
-                    case "ID":
+                    case 0:
                         {
                             grdSup.DataSource = busSup.GetDataTableById(txtSearch.Text, Shop.ID);
                         }
                         break;
-                    case "Name":
+                    case 1:
                         {
                             grdSup.DataSource = busSup.GetDataTableByName(txtSearch.Text, Shop.ID);
                         }
                         break;
-                    case "Email":
+                    case 2:
                         {
                             grdSup.DataSource = busSup.GetDataTableByEmail(txtSearch.Text, Shop.ID);
                         }
                         break;
-                    case "Phone Number":
+                    case 3:
                         {
                             grdSup.DataSource = busSup.GetDataTableByPhoneNumber(txtSearch.Text, Shop.ID);
                         }

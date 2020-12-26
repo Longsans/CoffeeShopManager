@@ -124,6 +124,21 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Danh sách nhân viên</value>
   </data>
+  <data name="cboSearch.Items1" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="cboSearch.Items2" xml:space="preserve">
+    <value>Giới tính</value>
+  </data>
+  <data name="cboSearch.Items3" xml:space="preserve">
+    <value>Chức vụ</value>
+  </data>
+  <data name="cboSearch.Items4" xml:space="preserve">
+    <value>Điện thoại</value>
+  </data>
+  <data name="cboSearch.Items6" xml:space="preserve">
+    <value>ID Quản lý</value>
+  </data>
   <data name="txtSearch.Text" xml:space="preserve">
     <value>Tìm kiếm...</value>
   </data>

@@ -74,33 +74,78 @@ namespace GUI
         }
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmShowDetailTable frmShowDetail = new frmShowDetailTable(table, ucTable);
-            frmShowDetail.ShowDialog();
+            try
+            {
+                frmShowDetailTable frmShowDetail = new frmShowDetailTable(table, ucTable);
+                frmShowDetail.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred, tab will reload now.", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ucTable.ReloadTable();
+            }
         }
 
         private void orderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmOrderForTable frmOrder = new frmOrderForTable(table.Id, ucTable.GetShopID(), dtoEmp, ucTable);
-            frmOrder.ShowDialog();
+            try
+            {
+                frmOrderForTable frmOrder = new frmOrderForTable(table.Id, ucTable.GetShopID(), dtoEmp, ucTable);
+                frmOrder.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred, tab will reload now.", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ucTable.ReloadTable();
+            }
         }
 
         private void setRepairingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            table.Status = "Unavailable";
-            bus_table.Update(table);
+            try
+            {
+                table.Status = "Unavailable";
+                if (bus_table.GetTableById(table.Id, table.Shop.ID) == null)
+                {
+                    throw new Exception();
+                }
+                bus_table.Update(table);
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred, tab will reload now.", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             ucTableManager.LoadAllTables();
         }
 
         private void setStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            table.Status = "Available";
-            bus_table.Update(table);
+            try
+            {
+                table.Status = "Available";
+                if (bus_table.GetTableById(table.Id, table.Shop.ID) == null)
+                {
+                    throw new Exception();
+                }
+                bus_table.Update(table);
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred, tab will reload now.", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             ucTableManager.LoadAllTables();
         }
 
         private void removeTableToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bus_table.Delete(table);
+            try
+            {
+                bus_table.Delete(table);
+            }
+            catch
+            {
+                MessageBox.Show("An error occurred, tab will reload now.", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             ucTableManager.LoadAllTables();
         }
     }
