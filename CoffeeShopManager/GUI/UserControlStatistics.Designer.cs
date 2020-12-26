@@ -54,6 +54,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblNoDataProduct = new System.Windows.Forms.Label();
+            this.lblNoDataIncome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartProduct)).BeginInit();
             this.pnlShowInfoProductSales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartIncome)).BeginInit();
@@ -184,6 +186,7 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(62, 36);
             this.dataGridView2.TabIndex = 7;
+            this.dataGridView2.Visible = false;
             // 
             // dataGridView1
             // 
@@ -194,6 +197,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(54, 61);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.Visible = false;
             // 
             // pnlShowInfoIncome
             // 
@@ -285,11 +289,33 @@
             this.label7.TabIndex = 25;
             this.label7.Text = "By:";
             // 
+            // lblNoDataProduct
+            // 
+            this.lblNoDataProduct.AutoSize = true;
+            this.lblNoDataProduct.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoDataProduct.Location = new System.Drawing.Point(206, 435);
+            this.lblNoDataProduct.Name = "lblNoDataProduct";
+            this.lblNoDataProduct.Size = new System.Drawing.Size(82, 21);
+            this.lblNoDataProduct.TabIndex = 26;
+            this.lblNoDataProduct.Text = "No data";
+            // 
+            // lblNoDataIncome
+            // 
+            this.lblNoDataIncome.AutoSize = true;
+            this.lblNoDataIncome.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoDataIncome.Location = new System.Drawing.Point(206, 165);
+            this.lblNoDataIncome.Name = "lblNoDataIncome";
+            this.lblNoDataIncome.Size = new System.Drawing.Size(82, 21);
+            this.lblNoDataIncome.TabIndex = 27;
+            this.lblNoDataIncome.Text = "No data";
+            // 
             // UserControlStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Controls.Add(this.lblNoDataIncome);
+            this.Controls.Add(this.lblNoDataProduct);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -339,5 +365,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblNoDataProduct;
+        private System.Windows.Forms.Label lblNoDataIncome;
     }
 }
