@@ -27,7 +27,7 @@ namespace DAL
                 "FROM [WORKERS] INNER JOIN [EMPLOYEES] " +
                 "ON WORKERS.Id = EMPLOYEES.Id " +
                 "AND WORKERS.ShopId = EMPLOYEES.ShopId " +
-                "WHERE EMPLOYEES.ShopId = @shopId";
+                "WHERE EMPLOYEES.ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@shopId", shopId);
             SqlDataAdapter ada = new SqlDataAdapter(cmd);
@@ -38,9 +38,8 @@ namespace DAL
         }
 
         /// <summary>Gets the employee with the specified <c>Id</c> and only the <c>Id</c> of the <c>Manager</c> property; returns <returns>null</returns> if no employee with such <c>Id</c> exists</summary>
-        public DTO_Employee GetEmployeeInfoAndManagerId(string id, int shopId) // Only gets the manager's id, which is already included in [EMPLOYEES] table
+        public DTO_Employee GetInfoByIdDeletedAndNotDeleted(string id, int shopId) // Only gets the manager's id, which is already included in [EMPLOYEES] table
         {
-            
             DTO_Employee emp = null;
             DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             string qry = "SELECT * FROM [EMPLOYEES] " +
@@ -64,14 +63,58 @@ namespace DAL
                     Manager = new DTO_Manager
                     {
                         Id = reader.GetString(reader.GetOrdinal("ManagerId"))
-                    }
+                    },
+                    Deleted = (bool)reader["Deleted"]
                 };
 
                 var dateofjoin = reader.GetDateTime(reader.GetOrdinal("DateOfJoin"));
                 emp.DateOfJoin = new DateTime(dateofjoin.Year, dateofjoin.Month, dateofjoin.Day);
 
                 var empAccount = dalWorkers.GetUserInfoById(emp.Id, shopId);
-                emp.Account.ID = empAccount.ID;
+                emp.Account = empAccount;
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return emp;
+        }
+
+        public DTO_Employee GetInfoByIdNotDeleted(string id, int shopId)
+        {
+            DTO_Employee emp = null;
+            DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
+            string qry = "SELECT * FROM [EMPLOYEES] " +
+                "WHERE Id = @id AND ShopId = @shopId AND Deleted = 0";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@Id", id);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                emp = new DTO_Employee(dalWorkers.GetById(reader.GetString(reader.GetOrdinal("Id")), shopId))
+                {
+                    Address = reader.GetString(reader.GetOrdinal("Address")),
+                    Salary = decimal.Round((decimal)reader["Salary"], 2, MidpointRounding.AwayFromZero),
+                    Manager = new DTO_Manager
+                    {
+                        Id = reader.GetString(reader.GetOrdinal("ManagerId"))
+                    },
+                    Deleted = (bool)reader["Deleted"]
+                };
+
+                var dateofjoin = reader.GetDateTime(reader.GetOrdinal("DateOfJoin"));
+                emp.DateOfJoin = new DateTime(dateofjoin.Year, dateofjoin.Month, dateofjoin.Day);
+
+                var empAccount = dalWorkers.GetUserInfoById(emp.Id, shopId);
+                emp.Account = empAccount;
             }
             if (!connState)
             {
@@ -173,7 +216,7 @@ namespace DAL
         {
             List<DTO_Employee> empList = new List<DTO_Employee>();
             string qry = "SELECT Id FROM [EMPLOYEES] " +
-                "WHERE ManagerId = @manId AND ShopId = @shopId";
+                "WHERE ManagerId = @manId AND ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@manId", managerId);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -186,7 +229,7 @@ namespace DAL
             var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                var emp = GetEmployeeInfoAndManagerId(reader.GetString(reader.GetOrdinal("Id")), shopId);
+                var emp = GetInfoByIdNotDeleted(reader.GetString(reader.GetOrdinal("Id")), shopId);
                 empList.Add(emp);
             }
             if (!connState)
@@ -224,7 +267,7 @@ namespace DAL
                "FROM [EMPLOYEES] INNER JOIN [WORKERS] " +
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "AND EMPLOYEES.ShopId = WORKERS.ShopId " +
-               "WHERE [EMPLOYEES].Id = @id AND EMPLOYEES.ShopId = @shopId";
+               "WHERE [EMPLOYEES].Id = @id AND EMPLOYEES.ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -244,7 +287,7 @@ namespace DAL
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "AND EMPLOYEES.ShopId = WORKERS.ShopId " +
                "WHERE CONCAT(FirstName, ' ', LastName) LIKE '%' + @nameSubstr + '%' " +
-               "AND EMPLOYEES.ShopId = @shopId";
+               "AND EMPLOYEES.ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@nameSubstr", nameSubstr);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -264,7 +307,7 @@ namespace DAL
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "AND EMPLOYEES.ShopId = WORKERS.ShopId " +
                "WHERE Gender = @gender " +
-               "AND EMPLOYEES.ShopId = @shopId";
+               "AND EMPLOYEES.ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@gender", gender);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -284,7 +327,7 @@ namespace DAL
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "AND EMPLOYEES.ShopId = WORKERS.ShopId " +
                "WHERE Position = @position " +
-               "AND EMPLOYEES.ShopId = @shopId";
+               "AND EMPLOYEES.ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@position", position);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -304,7 +347,7 @@ namespace DAL
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "AND EMPLOYEES.ShopId = WORKERS.ShopId " +
                "WHERE PhoneNumber = @phone " +
-               "AND EMPLOYEES.ShopId = @shopId";
+               "AND EMPLOYEES.ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@phone", phone);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -323,7 +366,7 @@ namespace DAL
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "AND EMPLOYEES.ShopId = WORKERS.ShopId " +
                "WHERE EmailAddress = @email " +
-               "AND EMPLOYEES.ShopId = @shopId";
+               "AND EMPLOYEES.ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -343,7 +386,7 @@ namespace DAL
                "ON [EMPLOYEES].Id = [WORKERS].Id " +
                "AND EMPLOYEES.ShopId = WORKERS.ShopId " +
                "WHERE ManagerId = @manId " +
-               "AND EMPLOYEES.ShopId = @shopId";
+               "AND EMPLOYEES.ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@manId", manId);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -354,12 +397,50 @@ namespace DAL
             return dtEmpFiltered;
         }
 
+        public bool CheckReceiptExists(DTO_Employee emp)
+        {
+            bool res;
+            string qry = "SELECT * " +
+                "FROM ( " +
+                "   SELECT * " +
+                "   FROM EMPLOYEES " +
+                "   WHERE Id = @id AND ShopId = @shopId " +
+                ") e " +
+                "INNER JOIN RECEIPTS r " +
+                "ON e.Id = r.EmployeeId AND e.ShopId = r.ShopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", emp.Id);
+            cmd.Parameters.AddWithValue("@shopId", emp.Shop.ID);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                res = true;
+            }
+            else
+            {
+                res = false;
+            }
+
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return res;
+        }
 
         public void Insert(DTO_Employee emp)
         {
             DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             string qry = "INSERT INTO [EMPLOYEES] " +
-                "VALUES (@workerId, @address, @dateofjoin, @salary, @managerId, @shopId)";
+                "VALUES (@workerId, @address, @dateofjoin, @salary, @managerId, @shopId, @del)";
             bool workerInserted = false;
             SqlCommand cmd = new SqlCommand(qry, this.conn);
 
@@ -373,6 +454,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@salary", emp.Salary);
                 cmd.Parameters.AddWithValue("@managerId", emp.Manager.Id);
                 cmd.Parameters.AddWithValue("@shopId", emp.Shop.ID);
+                cmd.Parameters.AddWithValue("@del", 0);
 
                 var connState = (this.conn.State == ConnectionState.Open);
                 if (!connState)
@@ -395,7 +477,30 @@ namespace DAL
             }
         }
 
-        public void Delete(DTO_Employee emp)
+        public void FalseDelete(DTO_Employee emp)
+        {
+            DAL_UserInfo dalUser = new DAL_UserInfo(this.connectionString);
+            string qry = "UPDATE [EMPLOYEES] " +
+                "SET Deleted = 1 " +
+                "WHERE Id = @id AND ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", emp.Id);
+            cmd.Parameters.AddWithValue("@shopId", emp.Shop.ID);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            dalUser.FalseDelete(emp.Account);
+            cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
+        }
+
+        public void TrueDelete(DTO_Employee emp)
         {
             DAL_Workers dalWorkers = new DAL_Workers(this.connectionString);
             string qry = "DELETE FROM [EMPLOYEES] " +
@@ -411,6 +516,29 @@ namespace DAL
             }
             cmd.ExecuteNonQuery();
             dalWorkers.Delete(emp);
+            if (!connState)
+            {
+                CloseConnection();
+            }
+        }
+
+        public void RestoreDeletedEmployee(DTO_Employee emp)
+        {
+            DAL_UserInfo dalUser = new DAL_UserInfo(this.connectionString);
+            string qry = "UPDATE [EMPLOYEES] " +
+                "SET Deleted = 0 " +
+                "WHERE Id = @id AND ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", emp.Id);
+            cmd.Parameters.AddWithValue("@shopId", emp.Shop.ID);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            dalUser.RestoreDeletedUser(emp.Account);
+            cmd.ExecuteNonQuery();
             if (!connState)
             {
                 CloseConnection();

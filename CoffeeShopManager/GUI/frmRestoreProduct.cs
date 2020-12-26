@@ -66,9 +66,9 @@ namespace GUI
                 if (ret == DialogResult.Yes)
                 {
                     busPro.RestoreDeletedProduct(dtoPro);
+                    ucPro.Reload();
                     MessageBox.Show("Deleted product restored.", "Restore successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                    ucPro.Reload();
                     frmInsPro.Show();
                 }
             }

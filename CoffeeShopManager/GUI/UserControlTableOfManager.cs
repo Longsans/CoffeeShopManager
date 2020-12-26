@@ -103,8 +103,8 @@ namespace GUI
             if (resultIndex==1)
             {
                 listTable = new List<DTO_Table>();
-                if (table.GetTableById(int.Parse(txtSearch.Text), shopID) != null)
-                    listTable.Add(table.GetTableById(int.Parse(txtSearch.Text), shopID));
+                if (table.GetTableByIdNotDeleted(int.Parse(txtSearch.Text), shopID) != null)
+                    listTable.Add(table.GetTableByIdNotDeleted(int.Parse(txtSearch.Text), shopID));
                 ReloadTable();
             }
             else if (resultIndex==0)
@@ -124,6 +124,7 @@ namespace GUI
                 ReloadTable();
             }
         }
+
         public void SetShopID(int id)
         {
             shopID = id;

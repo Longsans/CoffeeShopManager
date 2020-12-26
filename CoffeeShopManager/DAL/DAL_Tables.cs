@@ -16,7 +16,43 @@ namespace DAL
 
         }
 
-        public DTO_Table GetTableById(int tableId, int shopId)
+        public DTO_Table GetTableByIdNotDeleted(int tableId, int shopId)
+        {
+            DTO_Table tab = null;
+            string qry = "SELECT * FROM [TABLES] " +
+                "WHERE Id = @id AND ShopId = @shopId AND Deleted = 0";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", tableId);
+            cmd.Parameters.AddWithValue("@shopId", shopId);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                tab = new DTO_Table
+                {
+                    Id = tableId,
+                    Status = reader.GetString(reader.GetOrdinal("TableStatus")),
+                    Shop = new DTO_Shop
+                    {
+                        ID = reader.GetInt32(reader.GetOrdinal("ShopId"))
+                    },
+                    Deleted = (bool)reader["Deleted"]
+                };
+            }
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return tab;
+        }
+
+        public DTO_Table GetTableByIdDeletedAndNotDeleted(int tableId, int shopId)
         {
             DTO_Table tab = null;
             string qry = "SELECT * FROM [TABLES] " +
@@ -40,7 +76,8 @@ namespace DAL
                     Shop = new DTO_Shop
                     {
                         ID = reader.GetInt32(reader.GetOrdinal("ShopId"))
-                    }
+                    },
+                    Deleted = (bool)reader["Deleted"]
                 };
             }
             if (!connState)
@@ -51,11 +88,11 @@ namespace DAL
             return tab;
         }
 
-        public List<DTO_Table> GetTablesByShopId(int shopId)
+        public List<DTO_Table> GetAllNotDeletedTablesByShopId(int shopId)
         {
             List<DTO_Table> tabList = new List<DTO_Table>();
             string qry = "SELECT * FROM [TABLES] " +
-                "WHERE ShopId = @shopId";
+                "WHERE ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@shopId", shopId);
 
@@ -74,7 +111,8 @@ namespace DAL
                     Shop = new DTO_Shop
                     {
                         ID = shopId
-                    }
+                    },
+                    Deleted = (bool)reader["Deleted"]
                 };
                 tabList.Add(table);
             }
@@ -86,11 +124,11 @@ namespace DAL
             return tabList;
         }
 
-        private List<DTO_Table> GetTablesByStatus(string status, int shopId)
+        private List<DTO_Table> GetNotDeletedTablesByStatus(string status, int shopId)
         {
             List<DTO_Table> tabList = new List<DTO_Table>();
             string qry = "SELECT * FROM [TABLES] " +
-                "WHERE TableStatus = @status AND ShopId = @shopId";
+                "WHERE TableStatus = @status AND ShopId = @shopId AND Deleted = 0";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@status", status);
             cmd.Parameters.AddWithValue("@shopId", shopId);
@@ -110,7 +148,8 @@ namespace DAL
                     Shop = new DTO_Shop
                     {
                         ID = shopId
-                    }
+                    },
+                    Deleted = (bool)reader["Deleted"]
                 };
                 tabList.Add(table);
             }
@@ -124,17 +163,17 @@ namespace DAL
 
         public List<DTO_Table> GetAvailableTables(int shopId)
         {
-            return GetTablesByStatus("Available", shopId);
+            return GetNotDeletedTablesByStatus("Available", shopId);
         }
 
         public List<DTO_Table> GetOccupiedTables(int shopId)
         {
-            return GetTablesByStatus("Occupied", shopId);
+            return GetNotDeletedTablesByStatus("Occupied", shopId);
         }
 
         public List<DTO_Table> GetUnavailableTables(int shopId)
         {
-            return GetTablesByStatus("Unavailable", shopId);
+            return GetNotDeletedTablesByStatus("Unavailable", shopId);
         }
 
         public DTO_Table GetTableOfActiveReceipt(int receiptId, int shopId)
@@ -146,7 +185,7 @@ namespace DAL
         public DTO_Receipt GetCurrentReceiptOfTable(int tableId, int shopId)
         {
             DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
-            DTO_Table tab = GetTableById(tableId, shopId);
+            DTO_Table tab = GetTableByIdNotDeleted(tableId, shopId);
             DTO_Receipt rec = null;
 
             if (tab != null)
@@ -164,7 +203,7 @@ namespace DAL
         {
             DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
             DataTable dt = new DataTable();
-            DTO_Table tab = GetTableById(tableId, shopId);
+            DTO_Table tab = GetTableByIdDeletedAndNotDeleted(tableId, shopId);
 
             if (tab != null)
             {
@@ -177,13 +216,69 @@ namespace DAL
             return dt;
         }
 
+        public bool CheckReceiptExists(DTO_Table tab)
+        {
+            bool res;
+            string qry = "SELECT * " +
+                "FROM TABLE_SITTING " +
+                "WHERE TableId = @tabId AND ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@tabId", tab.Id);
+            cmd.Parameters.AddWithValue("@shopId", tab.Shop.ID);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                res = true;
+            }
+            else
+            {
+                res = false;
+            }
+
+            if (!connState)
+            {
+                CloseConnection();
+            }
+
+            return res;
+        }
+
         public void Insert(DTO_Table tab)
         {
-            string qry = "INSERT INTO [TABLES] (Id, TableStatus, ShopId)" +
-                "VALUES (@id, @status, @shopId)";
+            string qry = "INSERT INTO [TABLES] (Id, TableStatus, ShopId, Deleted) " +
+                "VALUES (@id, @status, @shopId, @del)";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", tab.Id);
             cmd.Parameters.AddWithValue("@status", tab.Status);
+            cmd.Parameters.AddWithValue("@shopId", tab.Shop.ID);
+            cmd.Parameters.AddWithValue("@del", 0);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
+            cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
+        }
+
+        public void FalseDelete(DTO_Table tab)
+        {
+            string qry = "UPDATE [TABLES] " +
+                "SET Deleted = 1 " +
+                "WHERE Id = @id AND ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", tab.Id);
             cmd.Parameters.AddWithValue("@shopId", tab.Shop.ID);
 
             var connState = (this.conn.State == ConnectionState.Open);
@@ -198,7 +293,7 @@ namespace DAL
             }
         }
 
-        public void Delete(DTO_Table tab)
+        public void TrueDelete(DTO_Table tab)
         {
             DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
             string qry = "DELETE FROM [TABLES] " +
@@ -213,6 +308,27 @@ namespace DAL
                 OpenConnection();
             }
             dalTabSitting.DeleteAllSittingsAtTable(tab);
+            cmd.ExecuteNonQuery();
+            if (!connState)
+            {
+                CloseConnection();
+            }
+        }
+
+        public void RestoreDeletedTable(DTO_Table tab)
+        {
+            string qry = "UPDATE [TABLES] " +
+                "SET Deleted = 0 " +
+                "WHERE Id = @id AND ShopId = @shopId";
+            SqlCommand cmd = new SqlCommand(qry, this.conn);
+            cmd.Parameters.AddWithValue("@id", tab.Id);
+            cmd.Parameters.AddWithValue("@shopId", tab.Shop.ID);
+
+            var connState = (this.conn.State == ConnectionState.Open);
+            if (!connState)
+            {
+                OpenConnection();
+            }
             cmd.ExecuteNonQuery();
             if (!connState)
             {

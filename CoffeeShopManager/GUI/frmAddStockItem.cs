@@ -25,7 +25,6 @@ namespace GUI
             errorIcon;
         List<ErrorProvider> errs = new List<ErrorProvider>();
         Timer tiktoker = new Timer(),
-            timerItemId = new Timer(),
             timerSupId = new Timer(),
             timerSupEmail = new Timer();
         Point prevPoint;
@@ -40,25 +39,22 @@ namespace GUI
 
         private void frmAddStockItem_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 3; ++i)
+            for (int i = 0; i < 2; ++i)
             {
                 var newErr = new ErrorProvider();
                 errs.Add(newErr);
             }
 
             this.FormClosing += FrmAddStockItem_FormClosing;
-            errs[0].SetIconPadding(txtItemName, 5);
-            errs[1].SetIconPadding(txtSupId, 5);
-            errs[2].SetIconPadding(txtEmail, 5);
+            errs[0].SetIconPadding(txtSupId, 5);
+            errs[1].SetIconPadding(txtEmail, 5);
             lblEnterSup.Location = lblAddSup.Location;
             checkIcon = new Icon(GUI.Properties.Resources.check1, errs[0].Icon.Size);
             errorIcon = new Icon(GUI.Properties.Resources.cancel, errs[0].Icon.Size);
-            txtId.Text = busStock.GetNextItemId(Shop.ID).ToString();
             txtSupId.GotFocus += TxtSupId_GotFocus;
             txtSupId.LostFocus += TxtSupId_LostFocus;
-            tiktoker.Interval = timerItemId.Interval = timerSupId.Interval = timerSupEmail.Interval = 200;
+            tiktoker.Interval = timerSupId.Interval = timerSupEmail.Interval = 200;
             tiktoker.Tick += Tiktoker_Tick;
-            timerItemId.Tick += TimerItemId_Tick;
             timerSupId.Tick += TimerSupId_Tick;
             timerSupEmail.Tick += TimerSupEmail_Tick;
             tiktoker.Start();
@@ -67,7 +63,6 @@ namespace GUI
         private void FrmAddStockItem_FormClosing(object sender, FormClosingEventArgs e)
         {
             tiktoker.Dispose();
-            timerItemId.Dispose();
             timerSupId.Dispose();
             timerSupEmail.Dispose();
         }
@@ -78,27 +73,27 @@ namespace GUI
             {
                 if (busSup.GetByEmail(txtEmail.Text, Shop.ID) != null)
                 {
-                    errs[2].Icon = errorIcon;
-                    errs[2].SetError(txtEmail, "A supplier with such email already exists");
+                    errs[1].Icon = errorIcon;
+                    errs[1].SetError(txtEmail, "A supplier with such email already exists");
                 }
                 else
                 {
                     if (EmailHelper.ValidateEmail(txtEmail.Text))
                     {
-                        errs[2].Icon = checkIcon;
-                        errs[2].SetError(txtEmail, "Valid");
+                        errs[1].Icon = checkIcon;
+                        errs[1].SetError(txtEmail, "Valid");
                     }
                     else
                     {
-                        errs[2].Icon = errorIcon;
-                        errs[2].SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                        errs[1].Icon = errorIcon;
+                        errs[1].SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
                     }
                 }
             }
             else
             {
-                errs[2].Icon = errorIcon;
-                errs[2].SetError(txtEmail, "Please fill all info fields");
+                errs[1].Icon = errorIcon;
+                errs[1].SetError(txtEmail, "Please fill all info fields");
             }
         }
 
@@ -110,53 +105,39 @@ namespace GUI
                 {
                     if (busSup.GetById(txtSupId.Text, Shop.ID) != null)
                     {
-                        errs[1].Icon = errorIcon;
-                        errs[1].SetError(txtSupId, "A supplier with such ID already exists");
+                        errs[0].Icon = errorIcon;
+                        errs[0].SetError(txtSupId, "A supplier with such ID already exists");
                     }
                     else
                     {
-                        errs[1].Icon = checkIcon;
-                        errs[1].SetError(txtSupId, "Valid");
+                        errs[0].Icon = checkIcon;
+                        errs[0].SetError(txtSupId, "Valid");
                     }
                 }
                 else if (lblAddSup.Visible)
                 {
                     if (busSup.GetById(txtSupId.Text, Shop.ID) == null)
                     {
-                        errs[1].Icon = errorIcon;
-                        errs[1].SetError(txtSupId, "A supplier with such ID does not exist");
+                        errs[0].Icon = errorIcon;
+                        errs[0].SetError(txtSupId, "A supplier with such ID does not exist");
                     }
                     else
                     {
-                        errs[1].Icon = checkIcon;
-                        errs[1].SetError(txtSupId, "Valid");
+                        errs[0].Icon = checkIcon;
+                        errs[0].SetError(txtSupId, "Valid");
                     }
                 }
             }
             else
             {
-                errs[1].Icon = errorIcon;
-                errs[1].SetError(txtSupId, "Please fill all info fields");
-            }
-        }
-
-        private void TimerItemId_Tick(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtItemName.Text))
-            {
-                errs[0].Icon = checkIcon;
-                errs[0].SetError(txtItemName, "Valid");
-            }
-            else
-            {
                 errs[0].Icon = errorIcon;
-                errs[0].SetError(txtItemName, "Please fill all info fields");
+                errs[0].SetError(txtSupId, "Please fill all info fields");
             }
         }
 
         private void Tiktoker_Tick(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtId.Text) || string.IsNullOrWhiteSpace(txtItemName.Text) || txtSupId.ForeColor == Color.DimGray ||
+            if (string.IsNullOrWhiteSpace(txtItemName.Text) || txtSupId.ForeColor == Color.DimGray ||
                 lblEnterSup.Visible && (string.IsNullOrWhiteSpace(txtSupName.Text) || 
                 string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text)))
             {
@@ -293,18 +274,15 @@ namespace GUI
 
         private void ClearTextboxes()
         {
-            txtId.Text = busStock.GetNextItemId(Shop.ID).ToString();
             txtItemName.Clear();
             txtSupName.Clear();
             txtEmail.Clear();
             txtPhone.Clear();
             txtSupId.ForeColor = Color.DimGray;
-            timerItemId.Stop();
             timerSupId.Stop();
             timerSupEmail.Stop();
-            errs[0].SetError(txtItemName, "");
-            errs[1].SetError(txtSupId, "");
-            errs[2].SetError(txtEmail, "");
+            errs[0].SetError(txtSupId, "");
+            errs[1].SetError(txtEmail, "");
 
             if (lblAddSup.Visible)
             {
@@ -328,11 +306,6 @@ namespace GUI
         {
             dragging = true;
             prevPoint = Cursor.Position;
-        }
-
-        private void txtItemName_Validating(object sender, CancelEventArgs e)
-        {
-            timerItemId.Start();
         }
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)

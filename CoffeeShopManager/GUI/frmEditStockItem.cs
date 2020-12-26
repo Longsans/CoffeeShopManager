@@ -18,8 +18,7 @@ namespace GUI
         public DTO_StockItem Item = new DTO_StockItem();
         BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
         BUS_Suppliers busSup = new BUS_Suppliers(ConnectionStringHelper.GetConnectionString());
-        ErrorProvider err = new ErrorProvider(),
-            errtwo = new ErrorProvider();
+        ErrorProvider errtwo = new ErrorProvider();
         Timer tiktoker = new Timer();
         Icon checkIcon,
             errorIcon;
@@ -39,11 +38,9 @@ namespace GUI
 
         private void frmEditStockItem_Load(object sender, EventArgs e)
         {
-            checkIcon = new Icon(GUI.Properties.Resources.check1, err.Icon.Size);
+            checkIcon = new Icon(GUI.Properties.Resources.check1, errtwo.Icon.Size);
             errorIcon = new Icon(GUI.Properties.Resources.cancel, errtwo.Icon.Size);
-            err.Icon = checkIcon;
             errtwo.Icon = checkIcon;
-            err.SetIconPadding(txtItemName, 5);
             errtwo.SetIconPadding(txtSupId, 5);
             txtId.Text = Item.Id.ToString();
             txtItemName.Text = Item.Name;
@@ -51,6 +48,8 @@ namespace GUI
             lblListCaption.Text += $"{Item.Name}:";
             tiktoker.Interval = 200;
             tiktoker.Tick += Tiktoker_Tick;
+            txtItemName.TextChanged += this.txtItemName_TextChanged;
+            txtSupId.TextChanged += this.txtSupId_TextChanged;
             ReloadGridView();
         }
 
@@ -202,7 +201,7 @@ namespace GUI
         private void Tiktoker_Tick(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtItemName.Text) || string.IsNullOrWhiteSpace(txtSupId.Text) ||
-                err.Icon != checkIcon || errtwo.Icon != checkIcon)
+                errtwo.Icon != checkIcon)
             {
                 btnSave.Enabled = false;
             }
@@ -223,9 +222,37 @@ namespace GUI
             prevPoint = Cursor.Position;
         }
 
+        private void txtSupId_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtSupId.Text))
+            {
+                if (busSup.GetById(txtSupId.Text, Item.Shop.ID) != null)
+                {
+                    errtwo.Icon = checkIcon;
+                    errtwo.SetError(txtSupId, "Valid");
+                }
+                else
+                {
+                    errtwo.Icon = errorIcon;
+                    errtwo.SetError(txtSupId, "A supplier with such ID does not exist");
+                }
+            }
+            else
+            {
+                errtwo.Icon = errorIcon;
+                errtwo.SetError(txtSupId, "Please fill all info fields");
+            }
+            tiktoker.Start();
+        }
+
         private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void txtItemName_TextChanged(object sender, EventArgs e)
+        {
+            tiktoker.Start();
         }
 
         private void pnlTitleBar_MouseMove(object sender, MouseEventArgs e)

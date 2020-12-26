@@ -198,7 +198,7 @@ namespace GUI
                         Shop = this.Shop,
                         Supplier = new DTO_Supplier
                         {
-                            Id = row.Cells["ID Nhà cung"].Value.ToString()
+                            Id = row.Cells["Supplier ID"].Value.ToString()
                         }
                     };
 
@@ -213,7 +213,7 @@ namespace GUI
                         Shop = this.Shop,
                         Supplier = new DTO_Supplier
                         {
-                            Id = row.Cells["Supplier ID"].Value.ToString()
+                            Id = row.Cells["ID Nhà cung"].Value.ToString()
                         }
                     };
 

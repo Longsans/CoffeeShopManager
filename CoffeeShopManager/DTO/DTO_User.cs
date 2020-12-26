@@ -13,6 +13,7 @@ namespace DTO
         public string PassWord { get; set; }
 
         public string TypeId { get; set; }
+        public bool Deleted { get; set; }
         public DTO_User() { }
         public DTO_User(string username, string password)
         {

@@ -19,23 +19,28 @@ namespace BUS
             dalTables = new DAL_Tables(connectionString);
         }
 
-        public DTO_Table GetTableById(int tableId, int shopId)
+        public DTO_Table GetTableByIdNotDeleted(int tableId, int shopId)
         {
             try
             {
-                return dalTables.GetTableById(tableId, shopId);
+                return dalTables.GetTableByIdNotDeleted(tableId, shopId);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
                 throw ex;
             }
         }
+
+        public DTO_Table GetTableByIdDeletedAndNotDeleted(int tableId, int shopId)
+        {
+            return dalTables.GetTableByIdDeletedAndNotDeleted(tableId, shopId);
+        }
+
         public List<DTO_Table> GetTablesByShopId(int shopId)
         {
             try
             {
-                return dalTables.GetTablesByShopId(shopId);
+                return dalTables.GetAllNotDeletedTablesByShopId(shopId);
             }
             catch (Exception ex)
             {
@@ -103,11 +108,15 @@ namespace BUS
             return dalTables.GetCurrentReceiptIdsAtTable(tableId, shopId);
         }
 
+        public bool CheckReceiptExists(DTO_Table tab)
+        {
+            return dalTables.CheckReceiptExists(tab);
+        }
+
         public bool Insert(DTO_Table tab)
         {
-            if(dalTables.GetTableById(tab.Id, tab.Shop.ID)!=null)
+            if(dalTables.GetTableByIdDeletedAndNotDeleted(tab.Id, tab.Shop.ID)!=null)
             {
-                Console.WriteLine("Trung ID");
                 return false;
             }
             else
@@ -125,25 +134,30 @@ namespace BUS
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
                 throw ex;
             }
         }
-        public void Delete(DTO_Table table)
+
+        public void FalseDelete(DTO_Table table)
+        {
+            dalTables.FalseDelete(table);
+        }
+
+        public void TrueDelete(DTO_Table table)
         {
             try
             {
-                dalTables.Delete(table);
+                dalTables.TrueDelete(table);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
                 throw ex;
             }
         }
 
-
-
-
+        public void RestoreDeletedTable(DTO_Table tab)
+        {
+            dalTables.RestoreDeletedTable(tab);
+        }
     }
 }

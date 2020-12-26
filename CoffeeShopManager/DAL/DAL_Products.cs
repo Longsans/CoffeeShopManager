@@ -220,13 +220,8 @@ namespace DAL
         {
             bool result = false;
             string qry = "SELECT * " +
-                "FROM (" +
-                "   SELECT * " +
-                "   FROM PRODUCTS " +
-                "   WHERE Id = @id AND ShopId = @shopId " +
-                ") p " +
-                "INNER JOIN RECEIPT_DETAILS rd " +
-                "ON p.Id = rd.ProductId AND p.ShopId = rd.ShopId";
+                "FROM RECEIPT_DETAILS " +
+                "WHERE ProductId = @id AND ShopId = @shopId";
             SqlCommand cmd = new SqlCommand(qry, this.conn);
             cmd.Parameters.AddWithValue("@id", dtoPro.Id);
             cmd.Parameters.AddWithValue("@shopId", dtoPro.Shop.ID);

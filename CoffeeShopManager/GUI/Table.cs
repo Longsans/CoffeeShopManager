@@ -105,7 +105,7 @@ namespace GUI
             try
             {
                 table.Status = "Unavailable";
-                if (bus_table.GetTableById(table.Id, table.Shop.ID) == null)
+                if (bus_table.GetTableByIdNotDeleted(table.Id, table.Shop.ID) == null)
                 {
                     throw new Exception();
                 }
@@ -123,7 +123,7 @@ namespace GUI
             try
             {
                 table.Status = "Available";
-                if (bus_table.GetTableById(table.Id, table.Shop.ID) == null)
+                if (bus_table.GetTableByIdNotDeleted(table.Id, table.Shop.ID) == null)
                 {
                     throw new Exception();
                 }
@@ -140,7 +140,14 @@ namespace GUI
         {
             try
             {
-                bus_table.Delete(table);
+                if (bus_table.CheckReceiptExists(table))
+                {
+                    bus_table.FalseDelete(table);
+                }
+                else
+                {
+                    bus_table.TrueDelete(table);
+                }
             }
             catch
             {

@@ -24,6 +24,8 @@ namespace GUI
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
         public int checkbirth,checkjoin;
+        private bool checkIdDeleted = true;
+
         public frmAddEmployee()
         {
             InitializeComponent();
@@ -44,7 +46,22 @@ namespace GUI
             }
             else
             {
-                if (txtID.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
+                if (!checkIdDeleted)
+                {
+                    var ret = MessageBox.Show("There are data related to an employee with this ID. Do you want to review them for restoring instead?",
+                        "Cannot insert a duplicate employee ID", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (ret == DialogResult.Yes)
+                    {
+                        frmRestoreEmployee frmRes = new frmRestoreEmployee(_ucEmp, this,
+                            busEmp.GetInfoByIdDeletedAndNotDeleted(txtID.Text, frmManager.dtoMan.Shop.ID));
+                        this.Hide();
+                        this.Reload();
+                        frmRes.Show();
+                        frmRes.TopMost = true;
+                    }
+
+                }
+                else if (txtID.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
                     cbboxPosition.Text == "" || txtPhone.Text == "" || txtEmail.Text == ""
                     || txtSalary.Text == "" || txtUsername.Text == "" || txtPassword.Text == ""
                    || (radFemale.Checked == false &&
@@ -150,8 +167,8 @@ namespace GUI
             txtFirstName.Text = "";
             txtLastName.Text = "";
             txtAddress.Text = "";
-            cbboxPosition.Items.Clear();
-            cbboxPosition.Text = "";
+            cbboxPosition.Text = string.Empty;
+            cbboxPosition.SelectedIndex = -1;
             txtPhone.Text = "";
             txtEmail.Text = "";
 
@@ -282,21 +299,48 @@ namespace GUI
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
-            if (busEmp.GetEmployeeInfoAndManagerId(txtID.Text, frmManager.dtoMan.Shop.ID) != null)
+            var emp = busEmp.GetInfoByIdDeletedAndNotDeleted(txtID.Text, frmManager.dtoMan.Shop.ID);
+            if (string.IsNullOrWhiteSpace(txtID.Text))
             {
                 checkid = 0;
-                errEmail.SetError(txtID, "Id had in shop");
+                checkIdDeleted = true;
+                errEmail.SetError(txtID, "Please fill all info fields");
                 errorProvider1.SetError(txtID, "");
-
+                errIdDeleted.SetError(txtID, "");
+            }
+            else if (emp != null)
+            {
+                if (!emp.Deleted)
+                {
+                    checkid = 0;
+                    checkIdDeleted = true;
+                    errEmail.SetError(txtID, "An employee with such ID already exists");
+                    errorProvider1.SetError(txtID, "");
+                    errIdDeleted.SetError(txtID, "");
+                }
+                else
+                {
+                    checkIdDeleted = false;
+                    checkid = 1;
+                    errEmail.SetError(txtID, "");
+                    errorProvider1.SetError(txtID, "");
+                    errIdDeleted.SetError(txtID, "There are existing data related to an employee with such ID");
+                }
             }
             else
             {
                 checkid = 1;
+                checkIdDeleted = true;
                 errEmail.SetError(txtID, "");
-                errorProvider1.SetError(txtID, "Correct");
+                errIdDeleted.SetError(txtID, "");
+                errorProvider1.SetError(txtID, "Valid");
 
             }
             if (checkidmanager == 1 && checkmail == 1 && checkbirth == 1 && checkjoin == 1 && checkuser == 1 && checksalary == 1 && checkid == 1)
+            {
+                btnAdd.Enabled = true;
+            }
+            else if (!checkIdDeleted)
             {
                 btnAdd.Enabled = true;
             }
