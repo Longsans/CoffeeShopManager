@@ -304,6 +304,7 @@
   </data>
   <data name="&gt;&gt;datDop.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>

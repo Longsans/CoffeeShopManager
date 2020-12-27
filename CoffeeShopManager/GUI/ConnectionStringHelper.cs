@@ -11,7 +11,8 @@ namespace GUI
     {
         public static string GetConnectionString()
         {
-            return ConfigurationManager.ConnectionStrings["GUI.Properties.Settings.ConnectionStringHao"].ConnectionString;
+            //return ConfigurationManager.ConnectionStrings["GUI.Properties.Settings.ConnectionString"].ConnectionString;
+            return "Data Source=localhost; Initial Catalog=NewDB; User id=sa;Password=onetwothree;MultipleActiveResultSets=True;";
         }
     }
 }
