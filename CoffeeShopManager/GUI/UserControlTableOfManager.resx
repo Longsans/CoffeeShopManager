@@ -127,10 +127,6 @@
   <data name="lblSearch.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
   <data name="&gt;&gt;lblBy.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -143,6 +139,7 @@
   <data name="&gt;&gt;btnCollapse.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAll.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
@@ -312,14 +309,17 @@
   <data name="lblBy.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="btnAddTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 529</value>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 123</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, -1</value>
   </data>
   <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>590, 9</value>
+  </data>
+  <data name="&gt;&gt;lblBy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UserControlTableOfManager</value>
@@ -354,6 +354,9 @@
   <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="btnOccupied.Location" type="System.Drawing.Point, System.Drawing">
+    <value>331, 79</value>
+  </data>
   <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 22</value>
   </data>
@@ -372,9 +375,6 @@
   <data name="btnExpand.Location" type="System.Drawing.Point, System.Drawing">
     <value>754, 9</value>
   </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 123</value>
-  </data>
   <data name="cboBy.Location" type="System.Drawing.Point, System.Drawing">
     <value>590, 47</value>
   </data>
@@ -384,8 +384,8 @@
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;lblBy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnCollapse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -396,8 +396,8 @@
   <data name="btnAvailable.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="btnOccupied.Location" type="System.Drawing.Point, System.Drawing">
-    <value>331, 79</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
   <data name="btnOccupied.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 28</value>
@@ -431,6 +431,9 @@
   </data>
   <data name="btnExpand.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="btnAddTable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 529</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -497,9 +500,6 @@
   </data>
   <data name="btnAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 28</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnExpand.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

@@ -159,7 +159,7 @@ namespace GUI
             if (busEmp.GetInfoByIdNotDeleted(dtoEmp.Id, dtoShop.ID) == null)
             {
                 t1.Stop();
-                if(btnLogout.Text=="Log out")
+                if(btnLogout.Text=="Đăng xuất")
                 MessageBox.Show("Yêu cầu đăng nhập lại", "Đăng nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                     MessageBox.Show("You have been logged out. Please log in again","Log in again", MessageBoxButtons.OK, MessageBoxIcon.Warning);

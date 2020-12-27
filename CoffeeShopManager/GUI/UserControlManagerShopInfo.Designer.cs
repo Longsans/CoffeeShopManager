@@ -118,7 +118,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnSaveChange);
             this.Controls.Add(this.btnChangeAuthCode);

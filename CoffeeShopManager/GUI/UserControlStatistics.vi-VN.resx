@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cboIncomeView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="cboIncomeView.Items" xml:space="preserve">
     <value>Theo năm</value>
@@ -139,11 +139,8 @@
   <data name="cboIncomeView.Items5" xml:space="preserve">
     <value>Theo ngày</value>
   </data>
-  <data name="cboIncomeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 27</value>
-  </data>
   <data name="cboProductView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="cboProductView.Items" xml:space="preserve">
     <value>Tất cả	</value>
@@ -160,102 +157,117 @@
   <data name="cboProductView.Items4" xml:space="preserve">
     <value>1 tháng qua</value>
   </data>
-  <data name="cboProductView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 27</value>
-  </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 19</value>
+    <value>106, 17</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Tổng doanh số:</value>
+  </data>
+  <data name="lblTotalSales.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="lblTotalSales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 17</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 19.8000011pt, style=Bold</value>
+    <value>Tahoma, 18pt, style=Bold</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 38</value>
+    <value>154, 36</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Thống kê</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 19</value>
+    <value>80, 17</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Trung bình:</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 19</value>
+    <value>100, 17</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Tổng thu nhập</value>
   </data>
+  <data name="lblTotalIncome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="lblTotalIncome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 17</value>
+  </data>
+  <data name="lblAveIncome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="lblAveIncome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 17</value>
+  </data>
   <data name="dateTimePicker1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="dateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 27</value>
+    <value>200, 23</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 19</value>
+    <value>26, 17</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Bởi</value>
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 19</value>
+    <value>81, 17</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Chọn ngày:</value>
   </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 19</value>
+    <value>26, 17</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Bởi</value>
   </data>
   <data name="lblNoDataProduct.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblNoDataProduct.Location" type="System.Drawing.Point, System.Drawing">
     <value>185, 434</value>
   </data>
   <data name="lblNoDataProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 19</value>
+    <value>111, 17</value>
   </data>
   <data name="lblNoDataProduct.Text" xml:space="preserve">
     <value>Không có dữ liệu</value>
   </data>
   <data name="lblNoDataIncome.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblNoDataIncome.Location" type="System.Drawing.Point, System.Drawing">
     <value>175, 167</value>
   </data>
   <data name="lblNoDataIncome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 19</value>
+    <value>111, 17</value>
   </data>
   <data name="lblNoDataIncome.Text" xml:space="preserve">
     <value>Không có dữ liệu</value>

@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -129,13 +129,13 @@
     <value>Thêm</value>
   </data>
   <data name="txtSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 27</value>
+  <data name="txtSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm...</value>
   </data>
   <data name="cboSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="cboSearch.Items1" xml:space="preserve">
     <value>Tên</value>
@@ -144,10 +144,10 @@
     <value>SĐT</value>
   </data>
   <data name="cboSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 27</value>
+    <value>142, 24</value>
   </data>
   <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -156,7 +156,7 @@
     <value>Xóa</value>
   </data>
   <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -165,7 +165,7 @@
     <value>Sửa</value>
   </data>
   <data name="lblSuppliers.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 25.8000011pt</value>
+    <value>Tahoma, 22.2pt</value>
   </data>
   <data name="lblSuppliers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -174,7 +174,7 @@
     <value>51, 55</value>
   </data>
   <data name="lblSuppliers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 102</value>
+    <value>250, 92</value>
   </data>
   <data name="lblSuppliers.Text" xml:space="preserve">
     <value>Nhà cung cấp
@@ -182,13 +182,13 @@
 </value>
   </data>
   <data name="lblResetFilters.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt, style=Underline</value>
+    <value>Tahoma, 7.8pt, style=Underline</value>
   </data>
   <data name="lblResetFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblResetFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 19</value>
+    <value>99, 17</value>
   </data>
   <data name="lblResetFilters.Text" xml:space="preserve">
     <value>Khởi tạo bộ lọc</value>

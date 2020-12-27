@@ -39,6 +39,16 @@ namespace GUI
 
         private void frmAddStockItem_Load(object sender, EventArgs e)
         {
+            if (btnAdd.Text == "Thêm")
+            {
+                addSup = "Nhập nhà cung cấp mới";
+                existingSup = "Nhập nhà cung cấp hiện có";
+            }
+            else
+            {
+                addSup = "Enter new supplier";
+                existingSup = "Enter existing supplier";
+            }
             for (int i = 0; i < 2; ++i)
             {
                 var newErr = new ErrorProvider();
@@ -74,26 +84,34 @@ namespace GUI
                 if (busSup.GetByEmail(txtEmail.Text, Shop.ID) != null)
                 {
                     errs[1].Icon = errorIcon;
-                    errs[1].SetError(txtEmail, "A supplier with such email already exists");
+                    if (btnAdd.Text == "Thêm")
+                        errs[1].SetError(txtEmail, "Email nhà cung cấp đã tồn tại");
+                    else errs[1].SetError(txtEmail, "A supplier with such email already exists");
                 }
                 else
                 {
                     if (EmailHelper.ValidateEmail(txtEmail.Text))
                     {
                         errs[1].Icon = checkIcon;
-                        errs[1].SetError(txtEmail, "Valid");
+                        if (btnAdd.Text == "Thêm")
+                            errs[1].SetError(txtEmail, "Hợp lệ");
+                        else errs[1].SetError(txtEmail, "Valid");
                     }
                     else
                     {
                         errs[1].Icon = errorIcon;
-                        errs[1].SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                        if (btnAdd.Text == "Thêm")
+                            errs[1].SetError(txtEmail, "Email phải theo định dạng 'example@example.example' và không được có bất kỳ khoảng trắng nào");
+                        else errs[1].SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
                     }
                 }
             }
             else
             {
                 errs[1].Icon = errorIcon;
-                errs[1].SetError(txtEmail, "Please fill all info fields");
+                if (btnAdd.Text == "Thêm")
+                    errs[1].SetError(txtEmail, "Vui lòng nhập đầy đủ thông tin");
+                else errs[1].SetError(txtEmail, "Please fill all info fields");
             }
         }
 
@@ -106,12 +124,16 @@ namespace GUI
                     if (busSup.GetById(txtSupId.Text, Shop.ID) != null)
                     {
                         errs[0].Icon = errorIcon;
-                        errs[0].SetError(txtSupId, "A supplier with such ID already exists");
+                        if (btnAdd.Text == "Thêm")
+                            errs[0].SetError(txtSupId, "ID nhà cung cấp đã tồn tại");
+                        else errs[0].SetError(txtSupId, "A supplier with such ID already exists");
                     }
                     else
                     {
                         errs[0].Icon = checkIcon;
-                        errs[0].SetError(txtSupId, "Valid");
+                        if (btnAdd.Text == "Thêm")
+                            errs[0].SetError(txtSupId, "Hợp lệ");
+                        else errs[0].SetError(txtSupId, "Valid");
                     }
                 }
                 else if (lblAddSup.Visible)
@@ -119,19 +141,25 @@ namespace GUI
                     if (busSup.GetById(txtSupId.Text, Shop.ID) == null)
                     {
                         errs[0].Icon = errorIcon;
-                        errs[0].SetError(txtSupId, "A supplier with such ID does not exist");
+                        if (btnAdd.Text == "Thêm")
+                            errs[0].SetError(txtSupId, "ID nhà cung cấp không tồn tại");
+                        else errs[0].SetError(txtSupId, "A supplier with such ID does not exist");
                     }
                     else
                     {
                         errs[0].Icon = checkIcon;
-                        errs[0].SetError(txtSupId, "Valid");
+                        if (btnAdd.Text == "Thêm")
+                            errs[0].SetError(txtSupId, "Hợp lệ");
+                        else errs[0].SetError(txtSupId, "Valid");
                     }
                 }
             }
             else
             {
                 errs[0].Icon = errorIcon;
-                errs[0].SetError(txtSupId, "Please fill all info fields");
+                if (btnAdd.Text == "Thêm")
+                    errs[0].SetError(txtSupId, "Vui lòng nhập đầy đủ thông tin");
+                else errs[0].SetError(txtSupId, "Please fill all info fields");
             }
         }
 
@@ -269,7 +297,9 @@ namespace GUI
             busStock.Insert(item);
             ucStock.ReloadGridView();
             ClearTextboxes();
-            MessageBox.Show("New stock item added.", "Insert successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (btnAdd.Text == "Thêm")
+                MessageBox.Show("Một hàng hóa mới đã được thêm.", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("New stock item added.", "Insert successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ClearTextboxes()

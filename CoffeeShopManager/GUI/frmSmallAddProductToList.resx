@@ -125,6 +125,9 @@
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
+  <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
+    <value>btnExit</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="grdProds.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>29</value>
@@ -154,7 +157,7 @@
     <value>Add product to list</value>
   </data>
   <data name="lblCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 297</value>
+    <value>170, 119</value>
   </data>
   <data name="lblCancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -242,6 +245,9 @@
   </data>
   <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
     <value>panel2</value>
+  </data>
+  <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="&gt;&gt;btnExit.Parent" xml:space="preserve">
     <value>panel2</value>

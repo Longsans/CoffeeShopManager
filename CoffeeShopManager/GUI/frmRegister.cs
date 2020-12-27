@@ -184,7 +184,9 @@ namespace GUI
                     (lblShopName.Visible && txtShopName.ForeColor == Color.DimGray) || (!lblShopName.Visible && txtShopId.ForeColor == Color.DimGray) ||
                     txtAuthCode.ForeColor == Color.DimGray)
                 {
-                    MessageBox.Show("Please fill all info fields.", "More information is required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (btnBrowseImg.Text == "Tìm ảnh")
+                            MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Yêu cầu nhiều thông tin hơn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else MessageBox.Show("Please fill all info fields.", "More information is required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (txtPass.Text != txtConfirm.Text) errorProvider1.SetError(txtConfirm, "Xác nhận mật khẩu không đúng");
                 else
@@ -231,8 +233,10 @@ namespace GUI
 
                         if (this.picboxManImg.Image == null)
                         {
-                            MessageBox.Show("Vui lòng chọn hình ảnh.", "Chọn hình ảnh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
+                            if (btnBrowseImg.Text == "Tìm ảnh")
+                                MessageBox.Show("Vui lòng chọn hình ảnh.", "Chọn hình ảnh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            else MessageBox.Show("Please choose image", "Choose image", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            throw new Exception();
                         }
                         else
                         {
@@ -252,16 +256,31 @@ namespace GUI
 
                             if (!busShop.VerifyShop(dtoMan.Shop))
                             {
-                                errorProvider1.SetError(txtShopId, "Incorrect shop ID or authentication code.");
-                                errorProvider1.SetError(txtAuthCode, "Incorrect shop ID or authentication code.");
+                                if (btnBrowseImg.Text == "Tìm ảnh")
+                                {
+                                    errorProvider1.SetError(txtShopId, "ID shop hoặc mã xác thực không chính xác.");
+                                    errorProvider1.SetError(txtAuthCode, "ID shop hoặc mã xác thực không chính xác.");
+                                }
+                                else
+                                {
+                                    errorProvider1.SetError(txtShopId, "Incorrect shop ID or authentication code.");
+                                    errorProvider1.SetError(txtAuthCode, "Incorrect shop ID or authentication code.");
+                                }
                                 throw new Exception();
                             }
                         }
                         Reload();
                         busMan.Insert(dtoMan);
-                        MessageBox.Show("Bạn đã đăng ký thành công");
+                        if (btnBrowseImg.Text == "Tìm ảnh")
+                            MessageBox.Show("Bạn đã đăng ký thành công");
+                        else MessageBox.Show("You have registered successfully.");
                     }
-                    else MessageBox.Show("Tên đăng nhập đã tồn tại");
+                    else
+                    {
+                        if (btnBrowseImg.Text == "Tìm ảnh")
+                            MessageBox.Show("Tên đăng nhập đã tồn tại");
+                        else MessageBox.Show("Username has already existed");
+                    }
                 }
             }
             catch (Exception ex)
@@ -373,7 +392,9 @@ namespace GUI
                 txtShopId.Font = new Font(new FontFamily("Constantia"), txtShopId.Font.Size);
                 txtShopId.ForeColor = Color.DimGray;
                 fpnlCreateNew.Visible = false;
-                txtShopId.Text = "Enter existing shop ID or...";
+                if (btnBrowseImg.Text == "Tìm ảnh")
+                    txtShopId.Text = "Nhập ID shop đã có hoặc .....";
+                else txtShopId.Text = "Enter existing shop ID or...";
             }
         }
 
@@ -400,7 +421,9 @@ namespace GUI
             {
                 txtShopName.Font = new Font(new FontFamily("Constantia"), txtShopName.Font.Size);
                 txtShopName.ForeColor = Color.DimGray;
-                txtShopName.Text = "Enter new shop name";
+                if (btnBrowseImg.Text == "Tìm ảnh")
+                    txtShopName.Text = "Nhập tên shop mới";
+                else txtShopName.Text = "Enter new shop name";
             }
         }
 
@@ -422,10 +445,14 @@ namespace GUI
                 txtAuthCode.ForeColor = Color.DimGray;
                 if (lblShopName.Visible)
                 {
-                    txtAuthCode.Text = "Enter new password";
+                    if (btnBrowseImg.Text == "Tìm ảnh")
+                        txtAuthCode.Text = "Nhập mật khẩu mới";
+                    else txtAuthCode.Text = "Enter new password";
                 }
                 else
                 {
+                    if (btnBrowseImg.Text == "Tìm ảnh")
+                        txtAuthCode.Text = "Nhập mật khẩu";
                     txtAuthCode.Text = "Enter password";
                 }
             }
@@ -470,7 +497,9 @@ namespace GUI
             txtAuthCode.Location = new Point(txtShopName.Location.X, datBirthdate.Location.Y);
             txtAuthCode.Font = new Font(new FontFamily("Constantia"), txtAuthCode.Font.Size);
             txtAuthCode.ForeColor = Color.DimGray;
-            txtAuthCode.Text = "Enter new password";
+            if (btnBrowseImg.Text == "Tìm ảnh")
+                txtAuthCode.Text = "Nhập mật khẩu";
+            else txtAuthCode.Text = "Enter new password";
             txtShopName.Focus();
         }
 
@@ -485,7 +514,9 @@ namespace GUI
             lblAuthCode.Location = lblShopName.Location;
             txtAuthCode.Location = txtShopName.Location;
             txtAuthCode.ForeColor = Color.DimGray;
-            txtAuthCode.Text = "Enter password";
+            if (btnBrowseImg.Text == "Tìm ảnh")
+                txtAuthCode.Text = "Nhập mật khẩu";
+            else txtAuthCode.Text = "Enter new password";
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)

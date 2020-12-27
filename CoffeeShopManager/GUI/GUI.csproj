@@ -168,12 +168,6 @@
       <DependentUpon>frmSmallAddStockItemToList.cs</DependentUpon>
     </Compile>
     <Compile Include="PDFPrinter.cs" />
-    <Compile Include="Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,12 +242,6 @@
     <Compile Include="Table.Designer.cs">
       <DependentUpon>Table.cs</DependentUpon>
     </Compile>
-    <Compile Include="Thanhtoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Thanhtoan.Designer.cs">
-      <DependentUpon>Thanhtoan.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlCustomers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -313,12 +301,6 @@
     </Compile>
     <Compile Include="UserControlProductTab.Designer.cs">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlReceipts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlReceipts.Designer.cs">
-      <DependentUpon>UserControlReceipts.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlReceiptsDetail.cs">
       <SubType>UserControl</SubType>
@@ -465,7 +447,13 @@
     <EmbeddedResource Include="frmRestoreEmployee.resx">
       <DependentUpon>frmRestoreEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreEmployee.vi-VN.resx">
+      <DependentUpon>frmRestoreEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRestoreProduct.resx">
+      <DependentUpon>frmRestoreProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreProduct.vi-VN.resx">
       <DependentUpon>frmRestoreProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowDetailTable.resx">
@@ -496,12 +484,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Table.vi-VN.resx">
       <DependentUpon>Table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Thanhtoan.resx">
-      <DependentUpon>Thanhtoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlCustomers.resx">
       <DependentUpon>UserControlCustomers.cs</DependentUpon>
@@ -559,12 +541,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlProductTab.vi-VN.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlReceipts.resx">
-      <DependentUpon>UserControlReceipts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlReceipts.vi-VN.resx">
-      <DependentUpon>UserControlReceipts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlReceiptsDetail.resx">
       <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>

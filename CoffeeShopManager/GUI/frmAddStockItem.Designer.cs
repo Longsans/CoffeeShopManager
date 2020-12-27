@@ -53,6 +53,7 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblEnterSup);
             this.panel1.Controls.Add(this.lblAddSup);
@@ -68,7 +69,6 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Controls.Add(this.label3);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // lblEnterSup
@@ -93,10 +93,10 @@
             // 
             // btnCancel
             // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -104,9 +104,9 @@
             // 
             // btnAdd
             // 
+            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnAdd.Name = "btnAdd";
@@ -126,22 +126,22 @@
             // 
             // txtSupName
             // 
-            this.txtSupName.Cursor = System.Windows.Forms.Cursors.IBeam;
             resources.ApplyResources(this.txtSupName, "txtSupName");
+            this.txtSupName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSupName.Name = "txtSupName";
             // 
             // txtSupId
             // 
+            resources.ApplyResources(this.txtSupId, "txtSupId");
             this.txtSupId.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSupId.ForeColor = System.Drawing.Color.DimGray;
-            resources.ApplyResources(this.txtSupId, "txtSupId");
             this.txtSupId.Name = "txtSupId";
             this.txtSupId.TextChanged += new System.EventHandler(this.txtSupId_TextChanged);
             // 
             // txtItemName
             // 
-            this.txtItemName.Cursor = System.Windows.Forms.Cursors.IBeam;
             resources.ApplyResources(this.txtItemName, "txtItemName");
+            this.txtItemName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtItemName.Name = "txtItemName";
             // 
             // lblPhone
@@ -180,10 +180,10 @@
             // 
             // pnlTitleBar
             // 
+            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.pnlTitleBar.Controls.Add(this.btnExit);
             this.pnlTitleBar.Controls.Add(this.label1);
-            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);

@@ -143,9 +143,6 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="&gt;&gt;btnChangePassword.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="txtPhone.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -155,20 +152,11 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnSaveChange.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtUsername.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPosition.Parent" xml:space="preserve">
-    <value>panel1</value>
   </data>
   <data name="txtLastName.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -187,9 +175,6 @@
   </data>
   <data name="lblUserInfo.Error1" xml:space="preserve">
     <value />
-  </data>
-  <data name="lblUserInfo.Text" xml:space="preserve">
-    <value>User's Info</value>
   </data>
   <data name="lblManInfo.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -221,11 +206,14 @@
   <data name="&gt;&gt;txtUsername.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="comboBox1.Items2" xml:space="preserve">
+    <value>Wrong email</value>
+  </data>
   <data name="btnEdit.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="panel1.Error" xml:space="preserve">
-    <value />
+  <data name="txtLastName.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
   </data>
   <data name="radFemale.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -233,6 +221,12 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="datBirthdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
+  </data>
+  <data name="picManagerInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 80</value>
+  </data>
+  <data name="&gt;&gt;txtFirstName.Name" xml:space="preserve">
+    <value>txtFirstName</value>
   </data>
   <data name="lblManInfo.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -261,14 +255,11 @@
   <data name="txtID.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="btnChangePassword.Text" xml:space="preserve">
-    <value>Change password</value>
-  </data>
   <data name="btnBrowse.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+  <data name="panel1.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="btnChangePassword.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -287,6 +278,9 @@
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>panel1</value>
+  </data>
+  <data name="txtEmail.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>250, 218</value>
@@ -309,6 +303,9 @@
   <data name="txtLastName.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="label2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="lblUserInfo.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -330,14 +327,17 @@
   <data name="datBirthdate.Error1" xml:space="preserve">
     <value />
   </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
+  </data>
   <data name="txtFirstName.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="txtLastName.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="txtEmail.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnSaveChange.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="errorTrue.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -443,9 +443,6 @@
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>580, 24</value>
   </data>
-  <data name="label14.Error" xml:space="preserve">
-    <value />
-  </data>
   <data name="txtUsername.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -454,6 +451,9 @@
   </data>
   <data name="txtPhone.Location" type="System.Drawing.Point, System.Drawing">
     <value>344, 256</value>
+  </data>
+  <data name="btnEdit.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="btnBrowse.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -476,8 +476,8 @@
   <data name="&gt;&gt;lblUserInfo.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtID.Name" xml:space="preserve">
-    <value>txtID</value>
+  <data name="lblUserInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 22pt</value>
   </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
@@ -490,9 +490,6 @@
   </data>
   <data name="txtID.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtLastName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 19</value>
@@ -515,8 +512,11 @@
   <data name="lblManInfo.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 24</value>
+  </data>
+  <data name="&gt;&gt;txtUsername.Name" xml:space="preserve">
+    <value>txtUsername</value>
   </data>
   <data name="$this.Error1" xml:space="preserve">
     <value />
@@ -530,8 +530,8 @@
   <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
     <value>btnEdit</value>
   </data>
-  <data name="panel1.Error1" xml:space="preserve">
-    <value />
+  <data name="txtFirstName.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtFirstName.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -550,6 +550,9 @@
   </data>
   <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblManInfo.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="radFemale.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -590,17 +593,17 @@
   <data name="&gt;&gt;lblManInfo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="radMale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 21</value>
+  <data name="panel1.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="datBirthdate.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="txtUsername.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="datBirthdate.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="txtPosition.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
     <value>comboBox1</value>
@@ -614,8 +617,8 @@
   <data name="radFemale.Text" xml:space="preserve">
     <value>Female</value>
   </data>
-  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 24</value>
+  <data name="picManagerInfo.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="label8.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -653,9 +656,6 @@
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;lblUserInfo.Name" xml:space="preserve">
-    <value>lblUserInfo</value>
-  </data>
   <data name="txtFirstName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -664,9 +664,6 @@
   </data>
   <data name="txtPhone.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="label8.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;txtPhone.ZOrder" xml:space="preserve">
     <value>11</value>
@@ -698,6 +695,9 @@
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
   </data>
@@ -710,8 +710,8 @@
   <data name="&gt;&gt;txtPosition.Name" xml:space="preserve">
     <value>txtPosition</value>
   </data>
-  <data name="txtUsername.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="btnChangePassword.Text" xml:space="preserve">
+    <value>Change password</value>
   </data>
   <data name="txtUsername.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -758,6 +758,9 @@
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
+  <data name="txtUsername.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
   </data>
@@ -769,12 +772,6 @@
   </data>
   <data name="radFemale.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
-  </data>
-  <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>panel1</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -791,8 +788,8 @@
   <data name="btnChangePassword.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="label2.Error" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;btnChangePassword.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 19</value>
@@ -805,6 +802,9 @@
   </data>
   <data name="$this.Error" xml:space="preserve">
     <value />
+  </data>
+  <data name="panel1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="comboBox1.Error" xml:space="preserve">
     <value />
@@ -824,6 +824,12 @@
   <data name="btnEdit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>First name</value>
+  </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -841,9 +847,6 @@
   </data>
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="txtLastName.Error1" xml:space="preserve">
-    <value />
   </data>
   <data name="txtUsername.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -872,17 +875,20 @@
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
+  <data name="radFemale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 216</value>
+  </data>
   <data name="label4.Error" xml:space="preserve">
     <value />
-  </data>
-  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="txtEmail.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 19</value>
+  </data>
+  <data name="comboBox1.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="radMale.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -893,23 +899,26 @@
   <data name="&gt;&gt;txtPhone.Name" xml:space="preserve">
     <value>txtPhone</value>
   </data>
+  <data name="label2.Error" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;lblManInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtID.Location" type="System.Drawing.Point, System.Drawing">
     <value>344, 93</value>
   </data>
-  <data name="&gt;&gt;datBirthdate.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>512, 137</value>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Birthdate</value>
   </data>
-  <data name="picManagerInfo.Error1" xml:space="preserve">
-    <value />
+  <data name="label3.Text" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="btnChangePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>495, 473</value>
   </data>
   <data name="btnBrowse.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -920,17 +929,11 @@
   <data name="radMale.Location" type="System.Drawing.Point, System.Drawing">
     <value>341, 216</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="picManagerInfo.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 10.2pt</value>
   </data>
   <data name="btnBrowse.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -944,6 +947,9 @@
   <data name="&gt;&gt;lblManInfo.Name" xml:space="preserve">
     <value>lblManInfo</value>
   </data>
+  <data name="label6.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblUserInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -956,14 +962,14 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Email Address</value>
   </data>
-  <data name="btnSaveChange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 39</value>
+  <data name="comboBox1.Items8" xml:space="preserve">
+    <value>Invalid username</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>233, 22</value>
   </data>
-  <data name="txtID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
+  <data name="&gt;&gt;txtPosition.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="comboBox1.Items" xml:space="preserve">
     <value>Please fill all info fields.</value>
@@ -983,8 +989,8 @@
   <data name="radFemale.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="btnSaveChange.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
   </data>
   <data name="txtEmail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -992,14 +998,17 @@
   <data name="&gt;&gt;txtID.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
   </data>
   <data name="label1.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 19</value>
+  <data name="comboBox1.Items4" xml:space="preserve">
+    <value>Wrong age to work</value>
+  </data>
+  <data name="txtPhone.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
   </data>
   <data name="label3.Error1" xml:space="preserve">
     <value />
@@ -1010,8 +1019,8 @@
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="btnChangePassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 473</value>
+  <data name="txtID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
   </data>
   <data name="&gt;&gt;errorTrue.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1019,14 +1028,14 @@
   <data name="txtUsername.Location" type="System.Drawing.Point, System.Drawing">
     <value>630, 218</value>
   </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="label1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Position</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>250, 259</value>
@@ -1040,17 +1049,20 @@
   <data name="txtID.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
+  <data name="lblManInfo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="btnSaveChange.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="panel1.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtLastName.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 19</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
   <data name="picManagerInfo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1073,8 +1085,8 @@
   <data name="label5.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>First name</value>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="radMale.Error" xml:space="preserve">
     <value />
@@ -1094,17 +1106,20 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UserControlUserTab</value>
   </data>
+  <data name="txtFirstName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="txtEmail.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnSaveChange.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
+  <data name="&gt;&gt;txtLastName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
+  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="label5.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1112,14 +1127,14 @@
   <data name="txtPhone.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;txtFirstName.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="txtPhone.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+  <data name="&gt;&gt;lblUserInfo.Name" xml:space="preserve">
+    <value>lblUserInfo</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1130,8 +1145,11 @@
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="txtID.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtID.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="label4.Error1" xml:space="preserve">
     <value />
@@ -1145,9 +1163,6 @@
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="comboBox1.Items5" xml:space="preserve">
-    <value>Age</value>
-  </data>
   <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>46, 265</value>
   </data>
@@ -1157,11 +1172,11 @@
   <data name="comboBox1.Items1" xml:space="preserve">
     <value>Username already exists, please choose a different username.</value>
   </data>
-  <data name="&gt;&gt;lblManInfo.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;txtUsername.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panel1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label8.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="lblManInfo.Error1" xml:space="preserve">
     <value />
@@ -1193,11 +1208,8 @@
   <data name="txtID.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="btnSaveChange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 473</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="radMale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 21</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Gender</value>
@@ -1208,14 +1220,8 @@
   <data name="lblUserInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 44</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
   <data name="btnChangePassword.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;txtID.ZOrder" xml:space="preserve">
     <value>22</value>
@@ -1229,11 +1235,8 @@
   <data name="&gt;&gt;datBirthdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnEdit.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnChangePassword.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="txtLastName.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="btnSaveChange.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1241,8 +1244,8 @@
   <data name="txtPhone.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label14.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10.2pt</value>
   </data>
   <data name="label1.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1262,14 +1265,14 @@
   <data name="txtEmail.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnSaveChange.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 39</value>
   </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="txtUsername.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtPosition.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="radFemale.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1283,8 +1286,8 @@
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Username</value>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>512, 137</value>
   </data>
   <data name="&gt;&gt;picManagerInfo.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1316,11 +1319,14 @@
   <data name="comboBox1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="comboBox1.Items2" xml:space="preserve">
-    <value>Wrong email</value>
+  <data name="btnSaveChange.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 473</value>
   </data>
   <data name="label5.Error" xml:space="preserve">
     <value />
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 96</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1331,11 +1337,14 @@
   <data name="datBirthdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>630, 177</value>
   </data>
-  <data name="btnSaveChange.Error1" xml:space="preserve">
-    <value />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
   </data>
   <data name="radFemale.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="&gt;&gt;picManagerInfo.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1352,20 +1361,17 @@
   <data name="&gt;&gt;btnSaveChange.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblManInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 31</value>
-  </data>
   <data name="txtLastName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;txtFirstName.Name" xml:space="preserve">
-    <value>txtFirstName</value>
+  <data name="&gt;&gt;txtLastName.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="datBirthdate.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;picManagerInfo.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="comboBox1.Items5" xml:space="preserve">
+    <value>Age</value>
   </data>
   <data name="picManagerInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 172</value>
@@ -1379,14 +1385,14 @@
   <data name="&gt;&gt;radMale.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="lblManInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>27, 30</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Edit</value>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
   </data>
   <data name="comboBox1.Items11" xml:space="preserve">
     <value>Email had in shop</value>
@@ -1406,11 +1412,11 @@
   <data name="datBirthdate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
-    <value>19</value>
+  <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblManInfo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 19</value>
   </data>
   <data name="&gt;&gt;picManagerInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1424,23 +1430,23 @@
   <data name="&gt;&gt;radMale.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="comboBox1.Items4" xml:space="preserve">
-    <value>Wrong age to work</value>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="label14.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="txtLastName.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
   </data>
-  <data name="label6.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
   </data>
   <data name="label6.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="radFemale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 216</value>
+  <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="btnBrowse.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1448,11 +1454,11 @@
   <data name="btnBrowse.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="comboBox1.Items8" xml:space="preserve">
-    <value>Invalid username</value>
+  <data name="lblManInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 31</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnChangePassword.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -1463,11 +1469,11 @@
   <data name="btnBrowse.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="txtID.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="comboBox1.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;txtID.Name" xml:space="preserve">
+    <value>txtID</value>
   </data>
   <data name="btnEdit.Error1" xml:space="preserve">
     <value />
@@ -1475,8 +1481,8 @@
   <data name="&gt;&gt;errorFalse.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtID.Error1" xml:space="preserve">
-    <value />
+  <data name="txtEmail.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -1487,11 +1493,8 @@
   <data name="radMale.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="txtPosition.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblUserInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 22pt</value>
+  <data name="&gt;&gt;datBirthdate.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label6.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1502,8 +1505,8 @@
   <data name="label14.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 96</value>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 104</value>
@@ -1526,8 +1529,8 @@
   <data name="radMale.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
+  <data name="&gt;&gt;txtFirstName.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="txtPosition.Location" type="System.Drawing.Point, System.Drawing">
     <value>630, 93</value>
@@ -1550,8 +1553,8 @@
   <data name="label7.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="txtFirstName.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="label3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="lblManInfo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 15pt</value>
@@ -1559,14 +1562,11 @@
   <data name="lblManInfo.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="txtLastName.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Position</value>
   </data>
-  <data name="txtPhone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
-  </data>
-  <data name="picManagerInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 80</value>
+  <data name="lblUserInfo.Text" xml:space="preserve">
+    <value>User's Info</value>
   </data>
   <data name="label6.Error" xml:space="preserve">
     <value />
@@ -1580,8 +1580,8 @@
   <data name="comboBox1.Items9" xml:space="preserve">
     <value>An error occurred</value>
   </data>
-  <data name="&gt;&gt;txtUsername.Name" xml:space="preserve">
-    <value>txtUsername</value>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtLastName.Name" xml:space="preserve">
     <value>txtLastName</value>
@@ -1592,8 +1592,8 @@
   <data name="btnEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="txtEmail.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="txtPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -1607,11 +1607,11 @@
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="txtFirstName.IconPadding" type="System.Int32, mscorlib">
+  <data name="label14.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtPosition.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label14.Name" xml:space="preserve">
     <value>label14</value>

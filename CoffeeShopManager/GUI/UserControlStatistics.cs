@@ -33,9 +33,10 @@ namespace GUI
             year = DateTime.Now.Year;
             month = DateTime.Now.Month;
         }
-        private void Reload()
+        public void Reload()
         {
-
+            ReloadIncomeChart();
+            ReloadProductChart();
         }
         private void IncomeChartByYear()
         {
@@ -52,7 +53,7 @@ namespace GUI
             lblAveIncome.Text = busShop.GetAverageAnnualIncome(shopId).ToString();
             if (lblTotalIncome.Text == "-1") lblTotalIncome.Text = "0";
             if (lblAveIncome.Text == "-1") lblAveIncome.Text = "0";
-            if (lblTotalIncome.Text == "0") lblNoDataIncome.Show();
+            if (double.Parse(lblTotalIncome.Text) == 0 || double.Parse(lblAveIncome.Text) == 0) lblNoDataIncome.Show();
             else lblNoDataIncome.Hide();
         }
         private void IncomeChartByQuarter()
@@ -70,7 +71,7 @@ namespace GUI
             lblAveIncome.Text = busShop.GetAverageQuarterlyIncome(year, shopId).ToString();
             if (lblTotalIncome.Text == "-1") lblTotalIncome.Text = "0";
             if (lblAveIncome.Text == "-1") lblAveIncome.Text = "0";
-            if (lblTotalIncome.Text == "0") lblNoDataIncome.Show();
+            if (double.Parse(lblTotalIncome.Text) == 0 || double.Parse(lblAveIncome.Text) == 0) lblNoDataIncome.Show();
             else lblNoDataIncome.Hide();
         }
         private void IncomeChartByMonth()
@@ -88,7 +89,7 @@ namespace GUI
             lblAveIncome.Text = busShop.GetAverageMonthlyIncome(year, shopId).ToString();
             if (lblTotalIncome.Text == "-1") lblTotalIncome.Text = "0";
             if (lblAveIncome.Text == "-1") lblAveIncome.Text = "0";
-            if (lblTotalIncome.Text == "0") lblNoDataIncome.Show();
+            if (double.Parse(lblTotalIncome.Text) == 0 || double.Parse(lblAveIncome.Text) == 0) lblNoDataIncome.Show();
             else lblNoDataIncome.Hide();
         }
         private void IncomeChartLast7Days()
@@ -106,7 +107,7 @@ namespace GUI
             lblAveIncome.Text = busShop.GetAverageLastNDaysIncome(7, shopId).ToString();
             if (lblTotalIncome.Text == "-1") lblTotalIncome.Text = "0";
             if (lblAveIncome.Text == "-1") lblAveIncome.Text = "0";
-            if (lblTotalIncome.Text == "0") lblNoDataIncome.Show();
+            if (double.Parse(lblTotalIncome.Text) == 0 || double.Parse(lblAveIncome.Text) == 0) lblNoDataIncome.Show();
             else lblNoDataIncome.Hide();
         }
         private void IncomeChartLast30Days()
@@ -124,7 +125,7 @@ namespace GUI
             lblAveIncome.Text = busShop.GetAverageLastNDaysIncome(30, shopId).ToString();
             if (lblTotalIncome.Text == "-1") lblTotalIncome.Text = "0";
             if (lblAveIncome.Text == "-1") lblAveIncome.Text = "0";
-            if (lblTotalIncome.Text == "0") lblNoDataIncome.Show();
+            if (double.Parse(lblTotalIncome.Text) == 0 || double.Parse(lblAveIncome.Text) == 0) lblNoDataIncome.Show();
             else lblNoDataIncome.Hide();
         }
         private void IncomeChartDaily()
@@ -142,7 +143,7 @@ namespace GUI
             lblAveIncome.Text = busShop.GetAverageDailyIncome(month, year, shopId).ToString();
             if (lblTotalIncome.Text == "-1") lblTotalIncome.Text = "0";
             if (lblAveIncome.Text == "-1") lblAveIncome.Text = "0";
-            if (lblTotalIncome.Text == "0") lblNoDataIncome.Show();
+            if (double.Parse(lblTotalIncome.Text) == 0 || double.Parse(lblAveIncome.Text) == 0) lblNoDataIncome.Show();
             else lblNoDataIncome.Hide();
         }
         private void cboIncomeView_SelectedIndexChanged(object sender, EventArgs e)
@@ -163,7 +164,7 @@ namespace GUI
                 chartProduct.Series[0].Points.AddXY(dataGridView2.Rows[i].Cells[1].Value.ToString(), double.Parse(dataGridView2.Rows[i].Cells[2].Value.ToString()));
             }
             lblTotalSales.Text = busShop.GetTotalAllProductSalesFromDataTable(dt).ToString();
-            if (lblTotalSales.Text == "0") lblNoDataProduct.Show();
+            if (lblTotalSales.Text == "0" || lblTotalSales.Text == "-1") lblNoDataProduct.Show();
             else lblNoDataProduct.Hide();
         }
         private void ProductChartAllTime()
@@ -180,7 +181,7 @@ namespace GUI
                 chartProduct.Series[0].Points.AddXY(dataGridView2.Rows[i].Cells[1].Value.ToString(), double.Parse(dataGridView2.Rows[i].Cells[2].Value.ToString()));
             }
             lblTotalSales.Text = busShop.GetTotalAllProductSalesFromDataTable(dt).ToString();
-            if (lblTotalSales.Text == "0") lblNoDataProduct.Show();
+            if (lblTotalSales.Text == "0" || lblTotalSales.Text == "-1") lblNoDataProduct.Show();
             else lblNoDataProduct.Hide();
         }
         private void ProductChartByMonth()
@@ -197,7 +198,7 @@ namespace GUI
                 chartProduct.Series[0].Points.AddXY(dataGridView2.Rows[i].Cells[1].Value.ToString(), double.Parse(dataGridView2.Rows[i].Cells[2].Value.ToString()));
             }
             lblTotalSales.Text = busShop.GetTotalAllProductSalesFromDataTable(dt).ToString();
-            if (lblTotalSales.Text == "0") lblNoDataProduct.Show();
+            if (lblTotalSales.Text == "0" || lblTotalSales.Text == "-1") lblNoDataProduct.Show();
             else lblNoDataProduct.Hide();
         }
         private void ProductChartLast7Days()
@@ -214,7 +215,7 @@ namespace GUI
                 chartProduct.Series[0].Points.AddXY(dataGridView2.Rows[i].Cells[1].Value.ToString(), double.Parse(dataGridView2.Rows[i].Cells[2].Value.ToString()));
             }
             lblTotalSales.Text = busShop.GetTotalAllProductSalesFromDataTable(dt).ToString();
-            if (lblTotalSales.Text == "0") lblNoDataProduct.Show();
+            if (lblTotalSales.Text == "0" || lblTotalSales.Text == "-1") lblNoDataProduct.Show();
             else lblNoDataProduct.Hide();
         }
         private void ProductChartLast30Days()
@@ -231,7 +232,7 @@ namespace GUI
                 chartProduct.Series[0].Points.AddXY(dataGridView2.Rows[i].Cells[1].Value.ToString(), double.Parse(dataGridView2.Rows[i].Cells[2].Value.ToString()));
             }
             lblTotalSales.Text = busShop.GetTotalAllProductSalesFromDataTable(dt).ToString();
-            if (lblTotalSales.Text == "0") lblNoDataProduct.Show();
+            if (lblTotalSales.Text == "0" || lblTotalSales.Text == "-1") lblNoDataProduct.Show();
             else lblNoDataProduct.Hide();
         }
 

@@ -77,7 +77,12 @@ namespace GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "" || txtUsername.Text == "") MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+            if (txtPassword.Text == "" || txtUsername.Text == "")
+            {
+                if (btnLogin.Text == "Đăng nhập")
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                else MessageBox.Show("Please fill into all fields");
+            }
             else
             {
                 DTO_User dtoUser = new DTO_User() { Username = txtUsername.Text, PassWord = txtPassword.Text };
@@ -102,7 +107,9 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Thông tin đăng nhập không chính xác");
+                    if (btnLogin.Text == "Đăng nhập")
+                        MessageBox.Show("Thông tin đăng nhập không chính xác");
+                    else MessageBox.Show("Username or password is incorrect");
                 }
             }
         }
