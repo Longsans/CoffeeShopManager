@@ -176,18 +176,11 @@ namespace GUI
             dtoEmp.Phone = txtPhone.Text;
             if (radMale.Checked == true)
             {
-                if (radMale.Text != "Nam")
-                    dtoEmp.Gender = radMale.Text;
-                else
-                    dtoEmp.Gender = "Male";
-
+                dtoEmp.Gender = "Male";
             }
             else
             {
-                if (radFemale.Text != "Nữ")
-                    dtoEmp.Gender = radMale.Text;
-                else
-                    dtoEmp.Gender = "Female";
+                dtoEmp.Gender = "Female";
             }
             if (checkjoin==1&&checkbirth==1)
             {

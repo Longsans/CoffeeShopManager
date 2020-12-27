@@ -30,7 +30,6 @@ namespace GUI
             txtSearch.GotFocus += TxtSearch_GotFocus;
             txtSearch.LostFocus += TxtSearch_LostFocus;
             btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
             ReloadGridView();
         }
 
@@ -207,12 +206,10 @@ namespace GUI
                 {
                     btnEdit.Enabled = false;
                 }
-                btnDelete.Enabled = true;
             }
             else
             {
                 btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
             }
         }
 

@@ -229,6 +229,7 @@ namespace GUI
             ucStatisticsTab.Show();
             ucStatisticsTab.BringToFront();
             ucStatisticsTab.SetShopID(dtoMan.Shop.ID);
+            ucStatisticsTab.Reload();
             Reload();
         }
 

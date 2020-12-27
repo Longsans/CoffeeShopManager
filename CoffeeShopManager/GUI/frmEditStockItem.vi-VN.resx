@@ -200,7 +200,7 @@
     <value>184, 18</value>
   </data>
   <data name="lblListCaption.Text" xml:space="preserve">
-    <value>Danh sách sản phẩm dùng</value>
+    <value>Danh sách sản phẩm dùng </value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 7.8pt</value>

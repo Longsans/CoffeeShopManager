@@ -31,6 +31,12 @@ namespace BUS
                 throw e;
             }
         }
+
+        public DataTable GetAllProductsWithoutImages(int shopId)
+        {
+            return dalProduct.GetAllProductsWithoutImages(shopId);
+        }
+
         public DTO_Product GetByIdNotDeleted(int id, int shopId)
         {
             try

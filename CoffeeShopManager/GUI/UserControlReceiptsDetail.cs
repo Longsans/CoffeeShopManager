@@ -25,12 +25,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void lblBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            UcManReceipt.Show();
-        }
-
         private void Reload()
         {
             rec.Customer = busCus.GetCustomerById(rec.Customer.Id, rec.Shop.ID);
@@ -68,6 +62,14 @@ namespace GUI
             lblCash.Text = string.Format("{0:0.00}", rec.Cash);
             lblChange.Text = string.Format("{0:0.00}", rec.Change);
             rtxtDetails.Text = rec.Details;
+
+            if (lblPrint.Text != "Print")
+            {
+                grdProducts.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Regular);
+                grdProducts.Columns[1].HeaderText = "Tên";
+                grdProducts.Columns[2].HeaderText = "Số lượng";
+                grdProducts.Columns[3].HeaderText = "Tổng";
+            }
         }
 
         private void UserControlReceiptsDetail_Load(object sender, EventArgs e)
@@ -78,6 +80,51 @@ namespace GUI
         private void Shown(object sender, EventArgs e)
         {
             Reload();
+        }
+
+        private void lblBack_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblBack.ForeColor = SystemColors.Highlight;
+        }
+
+        private void lblBack_MouseUp(object sender, MouseEventArgs e)
+        {
+            lblBack.ForeColor = Color.FromArgb(86, 56, 46);
+            this.Hide();
+            UcManReceipt.Show();
+        }
+
+        private void lblPrint_MouseEnter(object sender, EventArgs e)
+        {
+            lblPrint.ForeColor = SystemColors.Highlight;
+        }
+
+        private void lblPrint_MouseLeave(object sender, EventArgs e)
+        {
+            lblPrint.ForeColor = Color.FromArgb(86, 56, 46);
+        }
+
+        private void lblPrint_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblPrint.ForeColor = SystemColors.ControlText;
+        }
+
+        private void lblPrint_MouseUp(object sender, MouseEventArgs e)
+        {
+            DialogResult ret;
+            if (lblPrint.Text == "Print")
+            {
+                ret = MessageBox.Show("Print this receipt?", "Print receipt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+            else
+            {
+                ret = MessageBox.Show("In hóa đơn này?", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+
+            if (ret == DialogResult.Yes)
+            {
+                PDFPrinter.PrintReceipt(rec);
+            }
         }
     }
 }

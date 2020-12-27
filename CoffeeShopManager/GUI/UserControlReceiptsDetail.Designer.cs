@@ -70,6 +70,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.lblCash = new System.Windows.Forms.Label();
             this.lblChange = new System.Windows.Forms.Label();
+            this.lblPrint = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProducts)).BeginInit();
@@ -89,6 +90,7 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label13);
@@ -98,7 +100,6 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtEmpId);
             this.panel1.Controls.Add(this.txtTabNum);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // label16
@@ -113,9 +114,9 @@
             // 
             // txtId
             // 
+            resources.ApplyResources(this.txtId, "txtId");
             this.txtId.BackColor = System.Drawing.Color.White;
             this.txtId.Cursor = System.Windows.Forms.Cursors.No;
-            resources.ApplyResources(this.txtId, "txtId");
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             // 
@@ -136,17 +137,17 @@
             // 
             // txtEmpId
             // 
+            resources.ApplyResources(this.txtEmpId, "txtEmpId");
             this.txtEmpId.BackColor = System.Drawing.Color.White;
             this.txtEmpId.Cursor = System.Windows.Forms.Cursors.No;
-            resources.ApplyResources(this.txtEmpId, "txtEmpId");
             this.txtEmpId.Name = "txtEmpId";
             this.txtEmpId.ReadOnly = true;
             // 
             // txtTabNum
             // 
+            resources.ApplyResources(this.txtTabNum, "txtTabNum");
             this.txtTabNum.BackColor = System.Drawing.Color.White;
             this.txtTabNum.Cursor = System.Windows.Forms.Cursors.No;
-            resources.ApplyResources(this.txtTabNum, "txtTabNum");
             this.txtTabNum.Name = "txtTabNum";
             this.txtTabNum.ReadOnly = true;
             // 
@@ -158,6 +159,7 @@
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel2.Controls.Add(this.datCusBirthdate);
             this.panel2.Controls.Add(this.label9);
@@ -167,7 +169,6 @@
             this.panel2.Controls.Add(this.txtCusFname);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label8);
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // datCusBirthdate
@@ -187,25 +188,25 @@
             // 
             // txtCusEmail
             // 
+            resources.ApplyResources(this.txtCusEmail, "txtCusEmail");
             this.txtCusEmail.BackColor = System.Drawing.Color.White;
             this.txtCusEmail.Cursor = System.Windows.Forms.Cursors.No;
-            resources.ApplyResources(this.txtCusEmail, "txtCusEmail");
             this.txtCusEmail.Name = "txtCusEmail";
             this.txtCusEmail.ReadOnly = true;
             // 
             // txtCusLname
             // 
+            resources.ApplyResources(this.txtCusLname, "txtCusLname");
             this.txtCusLname.BackColor = System.Drawing.Color.White;
             this.txtCusLname.Cursor = System.Windows.Forms.Cursors.No;
-            resources.ApplyResources(this.txtCusLname, "txtCusLname");
             this.txtCusLname.Name = "txtCusLname";
             this.txtCusLname.ReadOnly = true;
             // 
             // txtCusFname
             // 
+            resources.ApplyResources(this.txtCusFname, "txtCusFname");
             this.txtCusFname.BackColor = System.Drawing.Color.White;
             this.txtCusFname.Cursor = System.Windows.Forms.Cursors.No;
-            resources.ApplyResources(this.txtCusFname, "txtCusFname");
             this.txtCusFname.Name = "txtCusFname";
             this.txtCusFname.ReadOnly = true;
             // 
@@ -227,6 +228,7 @@
             // 
             // grdProducts
             // 
+            resources.ApplyResources(this.grdProducts, "grdProducts");
             this.grdProducts.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
             this.grdProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -271,8 +273,8 @@
             // 
             // rtxtDetails
             // 
-            this.rtxtDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.rtxtDetails, "rtxtDetails");
+            this.rtxtDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtxtDetails.ForeColor = System.Drawing.SystemColors.WindowText;
             this.rtxtDetails.Name = "rtxtDetails";
             // 
@@ -321,7 +323,8 @@
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.lblBack.Image = global::GUI.Properties.Resources.back_32px;
             this.lblBack.Name = "lblBack";
-            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
+            this.lblBack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblBack_MouseDown);
+            this.lblBack.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblBack_MouseUp);
             // 
             // label20
             // 
@@ -345,11 +348,23 @@
             resources.ApplyResources(this.lblChange, "lblChange");
             this.lblChange.Name = "lblChange";
             // 
+            // lblPrint
+            // 
+            resources.ApplyResources(this.lblPrint, "lblPrint");
+            this.lblPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
+            this.lblPrint.Name = "lblPrint";
+            this.lblPrint.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblPrint_MouseDown);
+            this.lblPrint.MouseEnter += new System.EventHandler(this.lblPrint_MouseEnter);
+            this.lblPrint.MouseLeave += new System.EventHandler(this.lblPrint_MouseLeave);
+            this.lblPrint.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblPrint_MouseUp);
+            // 
             // UserControlReceiptsDetail
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblPrint);
             this.Controls.Add(this.lblChange);
             this.Controls.Add(this.lblCash);
             this.Controls.Add(this.label19);
@@ -423,5 +438,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label lblCash;
         private System.Windows.Forms.Label lblChange;
+        private System.Windows.Forms.Label lblPrint;
     }
 }

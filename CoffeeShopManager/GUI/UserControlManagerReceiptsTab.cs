@@ -29,7 +29,6 @@ namespace GUI
         private void UserControlManagerReceiptsTab_Load(object sender, EventArgs e)
         {
             btnView.Enabled = false;
-            btnDelete.Enabled = false;
             btnPrint.Enabled = false;
             datSearch.Visible = false;
             txtSearch.GotFocus += TxtSearch_GotFocus;
@@ -115,20 +114,6 @@ namespace GUI
             ucRecDetails.BringToFront();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            foreach(DataGridViewRow row in grdReceipts.SelectedRows)
-            {
-                DTO_Receipt rec = new DTO_Receipt
-                {
-                    Id = (int)row.Cells["ID"].Value,
-                    Shop = dtoShop
-                };
-                busRec.DeleteReceipt(rec);
-            }
-            ReloadGridView();
-        }
-
         private void grdReceipts_SelectionChanged(object sender, EventArgs e)
         {
             if (grdReceipts.SelectedRows != null)
@@ -141,13 +126,11 @@ namespace GUI
                 {
                     btnView.Enabled = false;
                 }
-                btnDelete.Enabled = true;
                 btnPrint.Enabled = true;
             }
             else
             {
                 btnView.Enabled = false;
-                btnDelete.Enabled = false;
                 btnPrint.Enabled = false;
             }
         }
@@ -157,7 +140,7 @@ namespace GUI
             if (txtSearch.TextLength == 0)
             {
                 txtSearch.ForeColor = Color.DimGray;
-                if (btnDelete.Text == "Xóa")
+                if (btnView.Text == "Chi tiết")
                 txtSearch.Text = "Tìm kiếm...";
                 else txtSearch.Text = "Search...";
             }
@@ -203,6 +186,8 @@ namespace GUI
         {
             if (e.RowIndex != -1)
             {
+                grdReceipts.ClearSelection();
+                grdReceipts.Rows[e.RowIndex].Selected = true;
                 if (e.Button == MouseButtons.Right)
                 {
                     ctxRightClick.Show(Cursor.Position);

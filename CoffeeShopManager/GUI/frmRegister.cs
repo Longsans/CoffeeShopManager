@@ -22,6 +22,11 @@ namespace GUI
         frmLogin _frmLogin = new frmLogin();
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
+        private bool checkEmail, checkShop, checkId;
+        private Timer tiktoker,
+            timerEmail,
+            timerShop,
+            timerId;
 
         public frmRegister()
         {
@@ -32,10 +37,138 @@ namespace GUI
             _frmLogin = frm;
             InitializeComponent();
             DoubleBuffered = true;
+            tiktoker = new Timer();
+            tiktoker.Interval = 300;
+            tiktoker.Tick += Tiktoker_Tick;
+            timerEmail = new Timer();
+            timerEmail.Tick += TimerEmail_Tick;
+            timerShop = new Timer();
+            timerShop.Tick += TimerShop_Tick;
+            timerId = new Timer();
+            timerId.Tick += TimerId_Tick;
+            timerId.Interval = timerShop.Interval = timerEmail.Interval = 200;
+            tiktoker.Start();
+        }
+
+        private void TimerId_Tick(object sender, EventArgs e)
+        {
+            if (txtID.TextLength == 0)
+            {
+                checkId = false;
+                errManId.SetError(txtID, "ID is required");
+            }
+            else if (checkShop)
+            {
+                if (int.TryParse(txtShopId.Text, out int id))
+                {
+                    if (busMan.GetById(txtID.Text, id) != null)
+                    {
+                        checkId = false;
+                        errManId.SetError(txtID, "A worker with such ID already exists in the specified shop");
+                    }
+                    else
+                    {
+                        checkId = true;
+                        errManId.SetError(txtID, "");
+                    }
+                }
+            }
+        }
+
+        private void TimerShop_Tick(object sender, EventArgs e)
+        {
+            if (txtShopId.ForeColor != Color.DimGray)
+            {
+                if (txtShopId.TextLength == 0)
+                {
+                    checkShop = false;
+                    errShop.SetError(txtShopId, "");
+                }
+                else
+                {
+                    if (int.TryParse(txtShopId.Text, out int id))
+                    {
+                        if (busShop.GetShopById(id) == null)
+                        {
+                            checkShop = false;
+                            errShop.SetError(txtShopId, "A shop with such ID does not exist");
+                        }
+                        else
+                        {
+                            checkShop = true;
+                            errShop.SetError(txtShopId, "");
+                        }
+                    }
+                    else
+                    {
+                        checkShop = false;
+                        errShop.SetError(txtShopId, "Shop ID must be a natural number");
+                    }
+                }
+            }
+            else if (!txtShopId.Visible)
+            {
+                checkShop = true;
+            }
+            else
+            {
+                checkShop = false;
+            }
+        }
+
+        private void TimerEmail_Tick(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                checkEmail = false;
+                errEmail.SetError(txtEmail, "Email is required");
+            }
+            else
+            {
+                if (!lblShopName.Visible && checkShop)
+                {
+                    if (int.TryParse(txtShopId.Text, out int id))
+                    {
+                        if (busMan.GetByEmail(txtEmail.Text, id) != null)
+                        {
+                            checkEmail = false;
+                            errEmail.SetError(txtEmail, "A worker with such email already exists in the specified shop");
+                            return;
+                        }
+                    }
+                }
+
+                if (EmailHelper.ValidateEmail(txtEmail.Text))
+                {
+                    checkEmail = true;
+                    errEmail.SetError(txtEmail, "");
+                }
+                else
+                {
+                    checkEmail = false;
+                    errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                }
+            }
+        }
+
+        private void Tiktoker_Tick(object sender, EventArgs e)
+        {
+            if (checkEmail && checkShop && checkId)
+            {
+                btnSignUp.Enabled = true;
+            }
+            else
+            {
+                btnSignUp.Enabled = false;
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            tiktoker.Dispose();
+            timerEmail.Dispose();
+            timerShop.Dispose();
+            timerId.Dispose();
             Close();
             _frmLogin.Show();
         }
@@ -46,8 +179,7 @@ namespace GUI
             {
                 errorProvider1.SetError(txtConfirm, "");
 
-                if (txtUsername.Text == "" || txtPass.Text == "" || txtConfirm.Text == "" || txtDayBD.Text == "" ||
-                    txtMonthBD.Text == "" || txtYearBD.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" ||
+                if (txtUsername.Text == "" || txtPass.Text == "" || txtConfirm.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" ||
                     txtPhone.Text == "" || txtEmail.Text == "" || (radFemale.Checked == false && radMale.Checked == false) ||
                     (lblShopName.Visible && txtShopName.ForeColor == Color.DimGray) || (!lblShopName.Visible && txtShopId.ForeColor == Color.DimGray) ||
                     txtAuthCode.ForeColor == Color.DimGray)
@@ -88,11 +220,14 @@ namespace GUI
                                 dtoMan.Gender = "Female";
                         }
 
-                        string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
-                        if (DateTime.TryParseExact(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text,
-                            formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out bdate))
+                        if (DateTime.Now.Year - datBirthdate.Value.Year < 18)
                         {
-                            dtoMan.Birthdate = bdate;
+                            MessageBox.Show("Age must be greater than 18.", "Invalid age", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        else
+                        {
+                            dtoMan.Birthdate = datBirthdate.Value;
                         }
                         dtoMan.Account = busUser.EncodePass(dtoMan);
 
@@ -134,7 +269,7 @@ namespace GUI
                                 throw new Exception();
                             }
                         }
-
+                        Reload();
                         busMan.Insert(dtoMan);
                         if (btnBrowseImg.Text == "Tìm ảnh")
                             MessageBox.Show("Bạn đã đăng ký thành công");
@@ -195,12 +330,40 @@ namespace GUI
             lblShopName.Visible = false;
             txtShopName.Visible = false;
             btnBack.Visible = false;
+            datBirthdate.Format = DateTimePickerFormat.Custom;
+            datBirthdate.CustomFormat = "dd/MM/yyyy";
             txtShopId.GotFocus += txtShop_Click;
             txtShopId.LostFocus += txtShop_Leave;
             txtShopName.GotFocus += TxtShopName_GotFocus;
             txtShopName.LostFocus += TxtShopName_LostFocus;
             txtAuthCode.GotFocus += TxtAuthCode_GotFocus;
             txtAuthCode.LostFocus += TxtAuthCode_LostFocus;
+        }
+
+        private void Reload()
+        {
+            txtUsername.Clear();
+            txtPass.Clear();
+            txtConfirm.Clear();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            radMale.Checked = false;
+            radFemale.Checked = false;
+            txtPhone.Clear();
+            txtEmail.Clear();
+            txtID.Clear();
+            txtShopId.Clear();
+            txtShopName.Clear();
+            txtAuthCode.Clear();
+            errorProvider1.SetError(txtShopId, "");
+            errorProvider1.SetError(txtAuthCode, "");
+            errShop.SetError(txtShopId, "");
+            errEmail.SetError(txtEmail, "");
+            timerEmail.Stop();
+            timerShop.Stop();
+            timerId.Stop();
+            checkEmail = false;
+            checkShop = false;
         }
 
         private void txtShop_Click(object sender, EventArgs e)
@@ -248,6 +411,8 @@ namespace GUI
             {
                 fpnlCreateNew.Visible = false;
             }
+
+            timerShop.Start();
         }
 
         private void TxtShopName_LostFocus(object sender, EventArgs e)
@@ -293,6 +458,11 @@ namespace GUI
             }
         }
 
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            timerId.Start();
+        }
+
         private void TxtAuthCode_GotFocus(object sender, EventArgs e)
         {
             if (txtAuthCode.ForeColor == Color.DimGray)
@@ -324,12 +494,13 @@ namespace GUI
             txtShopName.Visible = true;
             btnBack.Visible = true;
             lblAuthCode.Location = new Point(lblShopName.Location.X, lblBirthdate.Location.Y);
-            txtAuthCode.Location = new Point(txtShopName.Location.X, txtYearBD.Location.Y);
+            txtAuthCode.Location = new Point(txtShopName.Location.X, datBirthdate.Location.Y);
             txtAuthCode.Font = new Font(new FontFamily("Constantia"), txtAuthCode.Font.Size);
             txtAuthCode.ForeColor = Color.DimGray;
             if (btnBrowseImg.Text == "Tìm ảnh")
                 txtAuthCode.Text = "Nhập mật khẩu";
             else txtAuthCode.Text = "Enter new password";
+            txtShopName.Focus();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -339,11 +510,18 @@ namespace GUI
             txtShopId.Visible = true;
             lblShopName.Visible = false;
             txtShopName.Visible = false;
+            txtShopName.Clear();
             lblAuthCode.Location = lblShopName.Location;
             txtAuthCode.Location = txtShopName.Location;
+            txtAuthCode.ForeColor = Color.DimGray;
             if (btnBrowseImg.Text == "Tìm ảnh")
                 txtAuthCode.Text = "Nhập mật khẩu";
             else txtAuthCode.Text = "Enter new password";
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            timerEmail.Start();
         }
     }
 }

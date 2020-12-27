@@ -18,9 +18,6 @@ namespace GUI
         public frmEditStockItem frmEditStock { get; set; }
         BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
         BUS_Product busPro = new BUS_Product(ConnectionStringHelper.GetConnectionString());
-        ErrorProvider err = new ErrorProvider();
-        Icon checkIcon,
-            errorIcon;
         Point prevPoint;
         bool dragging;
 
@@ -32,30 +29,28 @@ namespace GUI
 
         private void frmSmallAddProductToList_Load(object sender, EventArgs e)
         {
-            checkIcon = new Icon(GUI.Properties.Resources.check1, err.Icon.Size);
-            errorIcon = new Icon(GUI.Properties.Resources.cancel, err.Icon.Size);
-            err.SetIconPadding(txtProId, 5);
-            txtProId.GotFocus += TxtProId_GotFocus;
-            txtProId.LostFocus += TxtProId_LostFocus;
+            txtSearch.GotFocus += TxtSearch_GotFocus;
+            txtSearch.LostFocus += TxtSearch_LostFocus;
+            ResetInput();
         }
 
-        private void TxtProId_LostFocus(object sender, EventArgs e)
+        private void TxtSearch_LostFocus(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtProId.Text))
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                txtProId.ForeColor = Color.DimGray;
-                if (lblAdd.Text == "Thêm")
-                txtProId.Text = "Enter product ID";
-                else txtProId.Text = "Nhập ID sản phẩm";
+                txtSearch.ForeColor = Color.DimGray;
+                if (lblAdd.Text == "Add")
+                txtSearch.Text = "Search...";
+                else txtSearch.Text = "Tìm...";
             }
         }
 
-        private void TxtProId_GotFocus(object sender, EventArgs e)
+        private void TxtSearch_GotFocus(object sender, EventArgs e)
         {
-            if (txtProId.ForeColor == Color.DimGray)
+            if (txtSearch.ForeColor == Color.DimGray)
             {
-                txtProId.Clear();
-                txtProId.ForeColor = SystemColors.WindowText;
+                txtSearch.Clear();
+                txtSearch.ForeColor = SystemColors.WindowText;
             }
         }
 
@@ -79,34 +74,90 @@ namespace GUI
         {
             var itemForPro = new DTO_StockItemForProduct
             {
-                Item = this.Item,
+                Item = Item,
                 Product = new DTO_Product
                 {
-                    Id = int.Parse(txtProId.Text),
-                    Shop = this.Item.Shop
+                    Id = Convert.ToInt32(grdProds.SelectedRows[0].Cells[0].Value)
                 },
-                Shop = this.Item.Shop
+                Shop = Item.Shop
             };
-            busStock.AddItemForProduct(itemForPro);
-            ResetInput();
-            frmEditStock.ReloadGridView();
+
+            if (busStock.GetItemForProduct(itemForPro.Item.Id, itemForPro.Product.Id, itemForPro.Shop.ID) != null)
+            {
+                if (lblAdd.Text == "Add")
+                {
+                    MessageBox.Show("This product has already been added to list.", "Product already added", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Sản phẩm này đã được thêm từ trước.", "Sản phẩm đã có sẵn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                busStock.AddItemForProduct(itemForPro);
+                ResetInput();
+                frmEditStock.ReloadGridView();
+                if (lblAdd.Text == "Thêm")
+                    MessageBox.Show("Sản phẩm mới đã được thêm vào danh sách", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("New product added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ReloadGridView()
+        {
+            if (txtSearch.ForeColor != Color.DimGray)
+            {
+                switch (cboSearch.SelectedIndex)
+                {
+                    case 0:
+                        if (string.IsNullOrWhiteSpace(txtSearch.Text))
+                        {
+                            grdProds.DataSource = busPro.GetAllProductsWithoutImages(Item.Shop.ID);
+                        }
+                        else if (int.TryParse(txtSearch.Text, out int id))
+                        {
+                            grdProds.DataSource = busPro.GetProductsSearchIDFiltered(id, Item.Shop.ID);
+                        }
+                        else
+                        {
+                            grdProds.DataSource = busPro.GetProductsSearchIDFiltered(-1, Item.Shop.ID);
+                        }
+                        break;
+                    case 1:
+                        grdProds.DataSource = busPro.GetProductsSearchNameFiltered(txtSearch.Text, Item.Shop.ID);
+                        break;
+                }
+            }
+            else
+            {
+                grdProds.DataSource = busPro.GetAllProductsWithoutImages(Item.Shop.ID);
+            }
+
             if (lblAdd.Text == "Thêm")
-                MessageBox.Show("Sản phẩm mới đã được thêm vào danh sách", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else MessageBox.Show("New product added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                grdProds.Columns[1].HeaderText = "Tên sản phẩm";
+                grdProds.Columns[2].HeaderText = "Loại";
+                grdProds.Columns[3].HeaderText = "Giá bán";
+            }
         }
 
         private void ResetInput()
         {
-            txtProId.ForeColor = Color.DimGray;
+            txtSearch.ForeColor = Color.DimGray;
             if (lblAdd.Text == "Thêm")
-                txtProId.Text = "Enter product ID";
-            else txtProId.Text = "Nhập ID sản phẩm";
-            err.Icon = errorIcon;
-            err.SetError(txtProId, "");
-            lblAdd.Enabled = false;
+                txtSearch.Text = "Tìm...";
+            else txtSearch.Text = "Search...";
+            cboSearch.SelectedIndex = 0;
+            ReloadGridView();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lblCancel_MouseUp(object sender, MouseEventArgs e)
         {
             this.Close();
         }
@@ -124,44 +175,7 @@ namespace GUI
 
         private void txtProId_TextChanged(object sender, EventArgs e)
         {
-            if (txtProId.TextLength > 0)
-            {
-                if (int.TryParse(txtProId.Text, out int id) && busPro.GetByIdNotDeleted(id, Item.Shop.ID) != null)
-                {
-                    if (busPro.GetItemForProduct(Item.Id, id, Item.Shop.ID) != null)
-                    {
-                        err.Icon = errorIcon;
-                        if (lblAdd.Text == "Thêm")
-                        err.SetError(txtProId, "Sản phẩm với ID này đã được thêm vào danh sách rồi");
-                        else err.SetError(txtProId, "A product with such ID has already been added to the list");
-                        lblAdd.Enabled = false;
-                    }
-                    else
-                    {
-                        err.Icon = checkIcon;
-                        if (lblAdd.Text == "Thêm")
-                            err.SetError(txtProId, "Hợp lệ");
-                        err.SetError(txtProId, "Valid");
-                        lblAdd.Enabled = true;
-                    }
-                }
-                else
-                {
-                    err.Icon = errorIcon;
-                    if (lblAdd.Text == "Thêm")
-                        err.SetError(txtProId, "Sản phẩm có ID này không tồn tại");
-                    else err.SetError(txtProId, "A product with such ID does not exist");
-                    lblAdd.Enabled = false;
-                }
-            }
-            else
-            {
-                err.Icon = errorIcon;
-                if (lblAdd.Text == "Thêm")
-                    err.SetError(txtProId, "Vui lòng nhập đầy đủ thông tin");
-                else err.SetError(txtProId, "Please fill all info fields");
-                lblAdd.Enabled = false;
-            }
+            ReloadGridView();
         }
 
         private void pnlTitleBar_MouseMove(object sender, MouseEventArgs e)
@@ -170,6 +184,31 @@ namespace GUI
             {
                 this.Location = new Point(this.Location.X + Cursor.Position.X - prevPoint.X, this.Location.Y + Cursor.Position.Y - prevPoint.Y);
                 prevPoint = Cursor.Position;
+            }
+        }
+
+        private void grdProds_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grdProds.SelectedRows.Count > 0)
+            {
+                lblAdd.Enabled = true;
+            }
+            else
+            {
+                lblAdd.Enabled = false;
+            }
+        }
+
+        private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReloadGridView();
+            if (grdProds.SelectedRows.Count > 0)
+            {
+                lblAdd.Enabled = true;
+            }
+            else
+            {
+                lblAdd.Enabled = false;
             }
         }
     }
