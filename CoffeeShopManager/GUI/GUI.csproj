@@ -308,6 +308,12 @@
     <Compile Include="UserControlReceiptsDetail.Designer.cs">
       <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlSettingsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSettingsTab.Designer.cs">
+      <DependentUpon>UserControlSettingsTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlStatistics.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -549,6 +555,9 @@
     <EmbeddedResource Include="UserControlReceiptsDetail.vi-VN.resx">
       <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSettingsTab.resx">
+      <DependentUpon>UserControlSettingsTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlStatistics.resx">
       <DependentUpon>UserControlStatistics.cs</DependentUpon>
     </EmbeddedResource>
@@ -787,6 +796,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openfolder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openfolder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

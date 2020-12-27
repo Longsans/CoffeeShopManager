@@ -55,22 +55,30 @@ namespace GUI
             if (txtID.TextLength == 0)
             {
                 checkId = false;
-                errManId.SetError(txtID, "ID is required");
+                errManId.SetError(txtID, cboErrMsg.Items[0].ToString());
             }
             else if (checkShop)
             {
-                if (int.TryParse(txtShopId.Text, out int id))
+                if (txtShopId.Visible)
                 {
-                    if (busMan.GetById(txtID.Text, id) != null)
+                    if (int.TryParse(txtShopId.Text, out int id))
                     {
-                        checkId = false;
-                        errManId.SetError(txtID, "A worker with such ID already exists in the specified shop");
+                        if (busMan.GetById(txtID.Text, id) != null)
+                        {
+                            checkId = false;
+                            errManId.SetError(txtID, cboErrMsg.Items[1].ToString());
+                        }
+                        else
+                        {
+                            checkId = true;
+                            errManId.SetError(txtID, "");
+                        }
                     }
-                    else
-                    {
-                        checkId = true;
-                        errManId.SetError(txtID, "");
-                    }
+                }
+                else
+                {
+                    checkId = true;
+                    errManId.SetError(txtID, "");
                 }
             }
         }
@@ -91,7 +99,7 @@ namespace GUI
                         if (busShop.GetShopById(id) == null)
                         {
                             checkShop = false;
-                            errShop.SetError(txtShopId, "A shop with such ID does not exist");
+                            errShop.SetError(txtShopId, cboErrMsg.Items[2].ToString());
                         }
                         else
                         {
@@ -102,7 +110,7 @@ namespace GUI
                     else
                     {
                         checkShop = false;
-                        errShop.SetError(txtShopId, "Shop ID must be a natural number");
+                        errShop.SetError(txtShopId, cboErrMsg.Items[3].ToString());
                     }
                 }
             }
@@ -121,7 +129,7 @@ namespace GUI
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
             {
                 checkEmail = false;
-                errEmail.SetError(txtEmail, "Email is required");
+                errEmail.SetError(txtEmail, cboErrMsg.Items[4].ToString());
             }
             else
             {
@@ -132,7 +140,7 @@ namespace GUI
                         if (busMan.GetByEmail(txtEmail.Text, id) != null)
                         {
                             checkEmail = false;
-                            errEmail.SetError(txtEmail, "A worker with such email already exists in the specified shop");
+                            errEmail.SetError(txtEmail, cboErrMsg.Items[5].ToString());
                             return;
                         }
                     }
@@ -146,7 +154,7 @@ namespace GUI
                 else
                 {
                     checkEmail = false;
-                    errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    errEmail.SetError(txtEmail, cboErrMsg.Items[6].ToString());
                 }
             }
         }
@@ -196,7 +204,6 @@ namespace GUI
                     if (busUser.CheckUsername(txtUsername.Text))
                     {
                         DTO_Manager dtoMan = new DTO_Manager();
-                        DateTime bdate = new DateTime();
                         dtoMan.Account = dtoUser;
                         dtoMan.Id = txtID.Text;
                         dtoMan.Firstname = txtFirstName.Text;
@@ -222,7 +229,14 @@ namespace GUI
 
                         if (DateTime.Now.Year - datBirthdate.Value.Year < 18)
                         {
-                            MessageBox.Show("Age must be greater than 18.", "Invalid age", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            if (btnBrowseImg.Text == "Browse")
+                            {
+                                MessageBox.Show("Age must be greater than or equal to 18.", "Invalid age", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Tuổi phải lớn hơn hoặc bằng 18.", "Tuổi không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                             return;
                         }
                         else

@@ -26,7 +26,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Because you haven't selected a default save location yet, the default location of the save dialog will be Desktop.",
+                MessageBox.Show("Because you haven't selected a save file location yet, the default location of the save dialog will be Desktop.",
                     "Default save location not selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 save.InitialDirectory = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}";
             }
