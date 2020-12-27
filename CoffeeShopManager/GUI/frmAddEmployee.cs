@@ -106,6 +106,16 @@ namespace GUI
                     dtoEmp.Account.Username = txtUsername.Text;
                     dtoEmp.Account.PassWord = txtPassword.Text;
                     txtSalary.Text = txtSalary.Text.Replace(',', '.');
+                    if (double.TryParse(txtSalary.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala)==false)
+                    {
+                        if (label3.Text == "Add employee")
+                        {
+                            MessageBox.Show("Wrong salary", "Salary", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                            MessageBox.Show("Sai tiền lương","tiền lương", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     dtoEmp.Salary = decimal.Parse(txtSalary.Text);
                     dtoEmp.Manager = frmManager.dtoMan;
                     dtoEmp.Shop.ID = frmManager.dtoMan.Shop.ID;
@@ -152,6 +162,7 @@ namespace GUI
                             errorProvider1.SetError(cbboxPosition, "");
                             MessageBox.Show(cboString.Items[12].ToString(), cboString.Items[4].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                        this.Close();
                     }
                     else
                     {
@@ -401,7 +412,7 @@ namespace GUI
         {
             datJoin.CustomFormat = "dd/MM/yyyy";
             DateTime now = DateTime.Now;
-            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18)
+            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datBirth.Value.Year <= 2078 && datJoin.Value.Year <= 2078 && datBirth.Value.Year >= 1910 && datJoin.Value.Year >= 1910  )
             {
                 checkjoin = 1;
                 checkbirth = 1;
@@ -434,7 +445,7 @@ namespace GUI
         {
             datBirth.CustomFormat = "dd/MM/yyyy";
             DateTime now = DateTime.Now;
-            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18)
+            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datBirth.Value.Year <= 2078 && datJoin.Value.Year <= 2078&& datBirth.Value.Year>=1910 &&datJoin.Value.Year>=1910)
             {
                 checkbirth = 1;
                 checkjoin = 1;

@@ -58,33 +58,37 @@
             // btnAll
             // 
             resources.ApplyResources(this.btnAll, "btnAll");
+            this.btnAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnAll.FlatAppearance.BorderSize = 0;
             this.btnAll.Name = "btnAll";
-            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.UseVisualStyleBackColor = false;
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // btnAvailable
             // 
             resources.ApplyResources(this.btnAvailable, "btnAvailable");
+            this.btnAvailable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnAvailable.FlatAppearance.BorderSize = 0;
             this.btnAvailable.Name = "btnAvailable";
-            this.btnAvailable.UseVisualStyleBackColor = true;
+            this.btnAvailable.UseVisualStyleBackColor = false;
             this.btnAvailable.Click += new System.EventHandler(this.btnAvailable_Click);
             // 
             // btnOccupied
             // 
             resources.ApplyResources(this.btnOccupied, "btnOccupied");
+            this.btnOccupied.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnOccupied.FlatAppearance.BorderSize = 0;
             this.btnOccupied.Name = "btnOccupied";
-            this.btnOccupied.UseVisualStyleBackColor = true;
+            this.btnOccupied.UseVisualStyleBackColor = false;
             this.btnOccupied.Click += new System.EventHandler(this.btnOccupied_Click);
             // 
             // btnUnavailable
             // 
             resources.ApplyResources(this.btnUnavailable, "btnUnavailable");
+            this.btnUnavailable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnUnavailable.FlatAppearance.BorderSize = 0;
             this.btnUnavailable.Name = "btnUnavailable";
-            this.btnUnavailable.UseVisualStyleBackColor = true;
+            this.btnUnavailable.UseVisualStyleBackColor = false;
             this.btnUnavailable.Click += new System.EventHandler(this.btnUnavailable_Click);
             // 
             // flowLayoutPanel1
