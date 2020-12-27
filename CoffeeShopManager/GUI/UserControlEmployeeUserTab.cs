@@ -247,6 +247,13 @@ namespace GUI
             }
             else
             {
+                if (btnBrowse.Text == "Browse") {
+                    errEmail.SetError(txtEmail, "Please fill all info fields");
+                }
+                else
+                {
+                    errEmail.SetError(txtEmail, "Vui lòng nhập đủ thông tin");
+                }
                 emailValid = false;
             }
             tiktoker.Start();

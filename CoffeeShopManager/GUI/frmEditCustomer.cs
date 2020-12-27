@@ -86,6 +86,7 @@ namespace GUI
                     LastName = dtoCus.LastName,
                     Email = txtEmail.Text,
                     Birthdate = datBirthdate.Value,
+                    Shop = dtoCus.Shop
                 };
 
                 busCus.Update(dtoCus);

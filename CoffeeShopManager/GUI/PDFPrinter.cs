@@ -20,7 +20,7 @@ namespace GUI
             SaveFileDialog save = new SaveFileDialog();
             save.Filter = "PDF File | *.pdf";
             save.DefaultExt = "pdf";
-            if (Properties.Settings.Default.ReceiptSaveFileLocation != string.Empty)
+            if (Properties.Settings.Default.ReceiptSaveFileLocation != string.Empty && Directory.Exists(Properties.Settings.Default.ReceiptSaveFileLocation))
             {
                 save.InitialDirectory = Properties.Settings.Default.ReceiptSaveFileLocation;
             }
@@ -188,6 +188,10 @@ namespace GUI
                 doc.Add(finTable);
                 doc.Close();
                 writer.Close();
+
+                // Save path for later ops
+                Properties.Settings.Default.ReceiptSaveFileLocation = Path.GetDirectoryName(save.FileName);
+                Properties.Settings.Default.Save();
 
                 return save.FileName;
             }
