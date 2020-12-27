@@ -99,7 +99,18 @@ namespace GUI
                 dtoEmp.Firstname = txtFirstName.Text;
                 dtoEmp.Lastname = txtLastName.Text;
                 dtoEmp.Address = txtAddress.Text;
-                dtoEmp.DateOfJoin = datDateOfJoin.Value;
+                if ((datDateOfJoin.Value.Year - datBirthdate.Value.Year) >= 18 && datBirthdate.Value.Year <= 2078 && datDateOfJoin.Value.Year <= 2078 && datBirthdate.Value.Year >= 1910 && datDateOfJoin.Value.Year >= 1910)
+                {
+                    dtoEmp.DateOfJoin = datDateOfJoin.Value;         
+                    dtoEmp.Birthdate = datBirthdate.Value;
+                }
+                else
+                {
+                    if (btnBrowse.Text == "Tìm ảnh")
+                        MessageBox.Show("Sai định dạng ngày", "Ngày vào làm, ngày sinh nhật", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else MessageBox.Show("Wrong format date", "Date of join, birthdate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 if (picEmpInfo.Image != null)
                     dtoEmp.Image = ImageHelper.ImageToByteArray(picEmpInfo.Image);
                 dtoEmp.Phone = txtPhone.Text;
@@ -119,7 +130,6 @@ namespace GUI
                         dtoEmp.Gender = "Female";
                 }
                 dtoEmp.Email = txtEmail.Text;
-                dtoEmp.Birthdate = datBirthdate.Value;
                 dtoEmp.Account.Username = txtUsername.Text;
                 DialogResult ret;
                 if (btnBrowse.Text == "Tìm ảnh")

@@ -248,6 +248,8 @@ namespace GUI
             }
             else
             {
+                errorFalse.SetError(txtEmail, comboBox1.Items[0].ToString());
+                errorTrue.SetError(txtEmail, "");
                 checkemail = 0;
             }
         }

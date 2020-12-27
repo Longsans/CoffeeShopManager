@@ -122,10 +122,10 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnEng.Location" type="System.Drawing.Point, System.Drawing">
-    <value>333, 498</value>
+    <value>327, 498</value>
   </data>
   <data name="btnEng.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 25</value>
+    <value>99, 25</value>
   </data>
   <data name="btnEng.Text" xml:space="preserve">
     <value>Tiếng anh</value>
@@ -138,10 +138,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnVie.Location" type="System.Drawing.Point, System.Drawing">
-    <value>255, 498</value>
+    <value>227, 498</value>
   </data>
   <data name="btnVie.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 25</value>
+    <value>103, 25</value>
   </data>
   <data name="btnVie.Text" xml:space="preserve">
     <value>Tiếng việt</value>
@@ -150,7 +150,7 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 503</value>
+    <value>163, 502</value>
   </data>
   <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 17</value>

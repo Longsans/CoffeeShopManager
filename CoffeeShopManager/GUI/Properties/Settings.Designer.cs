@@ -12,7 +12,7 @@ namespace GUI.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -49,24 +49,10 @@ namespace GUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.0.131.2\\SQLEXPRESS,1433;Database=NewDB;User ID=sa;Password=123456;Multi" +
-            "pleActiveResultSets=True;")]
-        public string ConnectionStringCuong {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HDM-PC-DC54PLF;Initial Catalog=NewDB;Integrated Security=True;")]
+        public string ConnectionStringHao {
             get {
-                return ((string)(this["ConnectionStringCuong"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.0.131.2\\SQLEXPRESS,1433;Database=NewDB;User ID=sa;Password=123456;Multi" +
-            "pleActiveResultSets=True;")]
-        public string ConnStr {
-            get {
-                return ((string)(this["ConnStr"]));
-            }
-            set {
-                this["ConnStr"] = value;
+                return ((string)(this["ConnectionStringHao"]));
             }
         }
     }

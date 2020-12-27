@@ -82,7 +82,11 @@ namespace GUI
         {
             if (txtName1.Text == "" || txtPrice.Text == "" || cbxType.Text == "")
             {
+                if(lblName.Text=="Tên")
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Insert product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    MessageBox.Show("Fill enough infomation", "Insert product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 return;
             }
             if (checkname == 1 && checktype == 1 && checkprice == 1)
@@ -108,12 +112,19 @@ namespace GUI
                     _ucPro.Reload();
                     _ucPro.GetCong();
                     _ucPro.GetData();
-                    MessageBox.Show("Edit thành công.", "Products", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (lblName.Text == "Tên")
+                        MessageBox.Show("Edit thành công.", "Products", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("Edit successful", "Products", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     this.Close();
                 }
                 else if (savename != txtName1.Text)
                 {
                     txtName1.ResetText();
+                    if (lblName.Text == "Tên")
+                        MessageBox.Show("Nhập tên không được trùng tên có sẵn", "Tên sản phẩm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else
                     MessageBox.Show("Please ensure that product name has not been used", "Duplicate product name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -204,8 +215,16 @@ namespace GUI
             string sums=null;
             if (txtPrice.Text == string.Empty)
             {
-                errorProvider1.SetError(txtPrice, "Price is required");
-                errorProvider2.SetError(txtPrice, "");
+                if (lblName.Text == "Tên")
+                {
+                    errorProvider1.SetError(txtPrice, "Price is required");
+                    errorProvider2.SetError(txtPrice, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtPrice, "Price is required");
+                    errorProvider2.SetError(txtPrice, "");
+                }
             }
             else
             {
@@ -224,8 +243,16 @@ namespace GUI
                 txtCopyPrice.Text = sums;
                 if (IsNumber(txtPrice.Text) == true&&countdoc<=1)
                 {
-                    errorProvider2.SetError(txtPrice, "Valid");
-                    errorProvider1.SetError(txtPrice, "");
+                    if (lblName.Text == "Tên")
+                    {
+                        errorProvider2.SetError(txtPrice, "Đã có");
+                        errorProvider1.SetError(txtPrice, "");
+                    }
+                    else
+                    {
+                        errorProvider2.SetError(txtPrice, "Valid");
+                        errorProvider1.SetError(txtPrice, "");
+                    }
                     checkprice = 1;
                 }
                 else 
@@ -325,13 +352,29 @@ namespace GUI
         {
             if (txtName1.Text == string.Empty)
             {
-                errorProvider1.SetError(txtName1, "Name is required");
-                errorProvider2.SetError(txtName1, "");
+                if (lblName.Text == "Tên")
+                {
+                    errorProvider1.SetError(txtName1, "Bắt buộc");
+                    errorProvider2.SetError(txtName1, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtName1, "Name is required");
+                    errorProvider2.SetError(txtName1, "");
+                }
             }
             else if (busPro.GetByNameDeletedAndNotDeleted(txtName1.Text, dtoPro.Shop.ID) != null && savename != txtName1.Text)
             {
-                errorProvider1.SetError(txtName1, "There is existing info related to a product with such name");
-                errorProvider2.SetError(txtName1, "");
+                if (lblName.Text == "Tên")
+                {
+                    errorProvider1.SetError(txtName1, "Có thông tin hiện có liên quan đến một sản phẩm có tên như vậy");
+                    errorProvider2.SetError(txtName1, "");
+                }
+                else
+                {
+                    errorProvider1.SetError(txtName1, "There is existing info related to a product with such name");
+                    errorProvider2.SetError(txtName1, "");
+                }
             }
             else
             {

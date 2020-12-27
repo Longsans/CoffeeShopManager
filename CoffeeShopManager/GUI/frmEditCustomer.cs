@@ -70,7 +70,7 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if ((DateTime.Now.Year - datBirthdate.Value.Year) >= 5)
+            if ((DateTime.Now.Year - datBirthdate.Value.Year) >= 5 && datBirthdate.Value.Year <= 2078 && datBirthdate.Value.Year >= 1910)
             {
                 dtoCus = new DTO_Customer
                 {
@@ -92,6 +92,7 @@ namespace GUI
             {
                 if (btnSave.Text == "Lưu")
                     MessageBox.Show("Sai tuổi", "Tuổi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
                 MessageBox.Show("Wrong age", "Age", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
 

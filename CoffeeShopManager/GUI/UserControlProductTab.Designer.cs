@@ -67,7 +67,7 @@
             // btnAll
             // 
             resources.ApplyResources(this.btnAll, "btnAll");
-            this.btnAll.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAll.FlatAppearance.BorderSize = 0;
             this.btnAll.Name = "btnAll";
@@ -77,7 +77,7 @@
             // btnDrink
             // 
             resources.ApplyResources(this.btnDrink, "btnDrink");
-            this.btnDrink.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDrink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnDrink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDrink.FlatAppearance.BorderSize = 0;
             this.btnDrink.Name = "btnDrink";
@@ -87,7 +87,7 @@
             // btnFood
             // 
             resources.ApplyResources(this.btnFood, "btnFood");
-            this.btnFood.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnFood.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFood.FlatAppearance.BorderSize = 0;
             this.btnFood.Name = "btnFood";
@@ -97,7 +97,7 @@
             // btnOthers
             // 
             resources.ApplyResources(this.btnOthers, "btnOthers");
-            this.btnOthers.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnOthers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnOthers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOthers.FlatAppearance.BorderSize = 0;
             this.btnOthers.Name = "btnOthers";
@@ -144,7 +144,7 @@
             // btnEdit
             // 
             resources.ApplyResources(this.btnEdit, "btnEdit");
-            this.btnEdit.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.Name = "btnEdit";
@@ -154,7 +154,7 @@
             // btnDelete
             // 
             resources.ApplyResources(this.btnDelete, "btnDelete");
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.Name = "btnDelete";
@@ -184,7 +184,7 @@
             // btnInsert
             // 
             resources.ApplyResources(this.btnInsert, "btnInsert");
-            this.btnInsert.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnInsert.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.Name = "btnInsert";

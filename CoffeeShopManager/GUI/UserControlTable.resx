@@ -144,9 +144,6 @@
   <data name="&gt;&gt;btnCollapse.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
-    <value>btnSearch</value>
-  </data>
   <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
     <value>flowLayoutPanel1</value>
   </data>
@@ -231,6 +228,9 @@
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="btnUnavailable.Text" xml:space="preserve">
+    <value>Unavailable</value>
+  </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>43, 99</value>
   </data>
@@ -242,6 +242,9 @@
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="btnAll.Text" xml:space="preserve">
+    <value>All</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 34</value>
@@ -294,8 +297,8 @@
   <data name="lblSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>501, 28</value>
   </data>
-  <data name="lblSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 19</value>
+  <data name="&gt;&gt;cboBy.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="btnExpand.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -312,8 +315,8 @@
   <data name="lblBy.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;cboBy.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Filter by:</value>
@@ -326,6 +329,9 @@
   </data>
   <data name="&gt;&gt;btnExpand.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="btnExpand.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -345,17 +351,8 @@
   <data name="&gt;&gt;btnAvailable.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 22</value>
-  </data>
   <data name="lblBy.Location" type="System.Drawing.Point, System.Drawing">
     <value>501, 67</value>
-  </data>
-  <data name="cboBy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>580, 67</value>
-  </data>
-  <data name="&gt;&gt;btnAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnUnavailable.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 28</value>
@@ -365,9 +362,6 @@
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="btnAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 99</value>
   </data>
   <data name="btnOccupied.Text" xml:space="preserve">
     <value>Occupied</value>
@@ -399,17 +393,20 @@
   <data name="btnUnavailable.Location" type="System.Drawing.Point, System.Drawing">
     <value>414, 99</value>
   </data>
-  <data name="btnUnavailable.Text" xml:space="preserve">
-    <value>Unavailable</value>
+  <data name="&gt;&gt;cboBy.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 19</value>
+  <data name="lblSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 19</value>
+  </data>
+  <data name="cboBy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>580, 67</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>887, 550</value>
   </data>
-  <data name="btnAll.Text" xml:space="preserve">
-    <value>All</value>
+  <data name="btnAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 99</value>
   </data>
   <data name="btnAll.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -441,8 +438,11 @@
   <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
     <value>txtSearch</value>
   </data>
-  <data name="&gt;&gt;cboBy.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
+    <value>btnSearch</value>
+  </data>
+  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 22</value>
   </data>
   <data name="&gt;&gt;lblBy.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -462,8 +462,8 @@
   <data name="&gt;&gt;cboBy.Name" xml:space="preserve">
     <value>cboBy</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnUnavailable.Parent" xml:space="preserve">
     <value>$this</value>
@@ -483,8 +483,8 @@
   <data name="lblBy.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 19</value>
   </data>
-  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 19</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

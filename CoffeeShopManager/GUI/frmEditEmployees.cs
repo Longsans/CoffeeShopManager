@@ -161,6 +161,16 @@ namespace GUI
                 return;
             }
             txtSalary.Text = txtSalary.Text.Replace(',', '.');
+            if (double.TryParse(txtSalary.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala) == false)
+            {
+                if (label3.Text == "Add employee")
+                {
+                    MessageBox.Show("Wrong salary", "Salary", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show("Sai tiền lương", "tiền lương", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             dtoEmp.Salary = decimal.Parse(txtSalary.Text);
             dtoEmp.Manager = busMan.GetById(txtManagerID.Text, dtoEmp.Shop.ID);
             dtoEmp.Phone = txtPhone.Text;
@@ -295,7 +305,7 @@ namespace GUI
         {
             datBirth.CustomFormat = "dd/MM/yyyy";
             DateTime now = DateTime.Now;
-            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18)
+            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datBirth.Value.Year <= 2078 && datJoin.Value.Year <= 2078 && datBirth.Value.Year >= 1910 && datJoin.Value.Year >= 1910)
             {
                 checkbirth = 1;
                 checkjoin = 1;
@@ -327,7 +337,7 @@ namespace GUI
         {
             datJoin.CustomFormat = "dd/MM/yyyy";
             DateTime now = DateTime.Now;
-            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18)
+            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datBirth.Value.Year <= 2078 && datJoin.Value.Year <= 2078 && datBirth.Value.Year >= 1910 && datJoin.Value.Year >= 1910)
             {
                 checkjoin = 1;
                 checkbirth = 1;
