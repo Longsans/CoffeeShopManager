@@ -91,6 +91,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOrderForTable";
             this.Text = "frmOrderForTable";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOrderForTable_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOrderForTable_FormClosed);
             this.TitleBar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

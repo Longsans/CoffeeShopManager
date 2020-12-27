@@ -232,15 +232,6 @@ namespace GUI
             ucStatisticsTab.Reload();
             Reload();
         }
-
-        private void btnEvent_Click(object sender, EventArgs e)
-        {
-            pnlChangeTab.Show();
-            pnlChangeTab.Location = btnEvent.Location;
-            ucEventsTab.Show();
-            ucEventsTab.BringToFront();
-            Reload();
-        }
         private void btnUser_Click(object sender, EventArgs e)
         {
             pnlChangeTab.Show();

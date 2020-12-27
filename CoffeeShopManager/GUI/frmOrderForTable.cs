@@ -65,7 +65,16 @@ namespace GUI
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            Close();    
+        }
+
+        private void frmOrderForTable_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ucTable.LoadAllTables();
+        }
+
+        private void frmOrderForTable_FormClosing(object sender, FormClosingEventArgs e)
+        {
             ucTable.LoadAllTables();
         }
     }
