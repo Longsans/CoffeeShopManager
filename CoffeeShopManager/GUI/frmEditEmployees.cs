@@ -310,16 +310,29 @@ namespace GUI
                 checkbirth = 1;
                 checkjoin = 1;
                 errEmail.SetError(datBirth, "");
-                errorProvider1.SetError(datBirth, "Correct");
+                if(label5.Text=="Tên")
+                    errorProvider1.SetError(datBirth, "Luôn đúng");
+                else
+                    errorProvider1.SetError(datBirth, "Correct");
+
                 errEmail.SetError(datJoin, "");
+                if (label5.Text == "Tên")
+                    errorProvider1.SetError(datJoin, "Chính xác");
+                else
                 errorProvider1.SetError(datJoin, "Correct");
             }
             else
             {
                 checkjoin = 0;
+                if (label5.Text == "Tên")
+                    errEmail.SetError(datBirth, "Không đủ tuổi làm viêc");
+                else
                 errEmail.SetError(datBirth, "Age not enough to work");
                 errorProvider1.SetError(datBirth, "");
                 errEmail.SetError(datJoin, "");
+                if (label5.Text == "Tên")
+                    errorProvider1.SetError(datJoin, "Chính xác");
+                else
                 errorProvider1.SetError(datJoin, "Correct");
                 checkbirth = 0;
             }
@@ -342,14 +355,26 @@ namespace GUI
                 checkjoin = 1;
                 checkbirth = 1;
                 errEmail.SetError(datBirth, "");
+                if(label5.Text=="Tên")
+                    errorProvider1.SetError(datBirth, "Chính xác");
+                else
                 errorProvider1.SetError(datBirth, "Correct");
                 errEmail.SetError(datJoin, "");
+                if(label5.Text=="Tên")
+                    errorProvider1.SetError(datJoin, "Chính xác");
+                else
                 errorProvider1.SetError(datJoin, "Correct");
             }
             else
             {
+                if(label5.Text=="Tên")
+                    errEmail.SetError(datBirth, "Không đủ tuổi đi làm");
+                else
                 errEmail.SetError(datBirth, "Age not enough to work");
                 errorProvider1.SetError(datBirth, "");
+                if(label5.Text=="Tên")
+                    errEmail.SetError(datJoin, "Không đủ tuổi đi làm");
+                else
                 errEmail.SetError(datJoin, "Age not enough to work");
                 errorProvider1.SetError(datJoin, "");
                 checkjoin = 0;

@@ -302,7 +302,7 @@
   <data name="lblTotalDisplay.Location" type="System.Drawing.Point, System.Drawing">
     <value>721, 370</value>
   </data>
-  <data name="&gt;&gt;datDop.ZOrder" xml:space="preserve">
+	<data name="&gt;&gt;datDop.ZOrder" xml:space="preserve">
     <value>3</value>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1229,4 +1229,5 @@
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>vi-VN</value>
   </metadata>
+	  </data>
 </root>

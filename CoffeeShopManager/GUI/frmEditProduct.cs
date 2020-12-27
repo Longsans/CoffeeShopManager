@@ -217,7 +217,7 @@ namespace GUI
             {
                 if (lblName.Text == "Tên")
                 {
-                    errorProvider1.SetError(txtPrice, "Price is required");
+                    errorProvider1.SetError(txtPrice, "Yêu cầu giá");
                     errorProvider2.SetError(txtPrice, "");
                 }
                 else
@@ -388,6 +388,9 @@ namespace GUI
         {
             if (cbxType.Text == string.Empty)
             {
+                if (lblName.Text == "Tên")
+                    errorProvider1.SetError(cbxType, "Làm ơn chọn");
+                else
                 errorProvider1.SetError(cbxType, "Please choose");
                 errorProvider2.SetError(cbxType, "");
             }
