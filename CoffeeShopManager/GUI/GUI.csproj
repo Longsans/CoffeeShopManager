@@ -536,6 +536,9 @@
     <EmbeddedResource Include="UserControlManagerReceiptsTab.vi-VN.resx">
       <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerReceiptsTab.vi.resx">
+      <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlManagerShopInfo.resx">
       <DependentUpon>UserControlManagerShopInfo.cs</DependentUpon>
     </EmbeddedResource>

@@ -71,34 +71,6 @@ namespace GUI
             MessageBox.Show("Stock item updated.", "Update successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void txtItemName_Validating(object sender, CancelEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtItemName.Text))
-            {
-                var stockItem = busStock.GetByName(txtItemName.Text, Item.Shop.ID);
-                if (stockItem == null || stockItem.Id == this.Item.Id)
-                {
-                    err.Icon = checkIcon;
-                    err.SetError(txtItemName, "Valid");
-                }
-                else
-                {                  
-                    err.Icon = errorIcon;
-                    if (btnSave.Text == "Lưu")
-                        err.SetError(txtItemName, "Tên hàng hóa này đã tồn tại.");
-                    else err.SetError(txtItemName, "A stock item with such name already exists");
-                }
-            }
-            else
-            {
-                err.Icon = errorIcon;
-                if (btnSave.Text == "Lưu")
-                    err.SetError(txtItemName, "Vui lòng nhập đầy đủ thông tin");
-                else err.SetError(txtItemName, "Please fill all info fields");
-            }
-            tiktoker.Start();
-        }
-
         private void txtSupId_Validating(object sender, CancelEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtSupId.Text))
