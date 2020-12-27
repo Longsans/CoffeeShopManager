@@ -220,17 +220,29 @@ namespace GUI
         {
             if (!string.IsNullOrWhiteSpace(txtEmail.Text))
             {
-                if (EmailHelper.ValidateEmail(txtEmail.Text))
-                {
-                    errEmail.SetError(txtEmail, "");
-                    emailValid = true;
-                }
-                else
+                if (!EmailHelper.ValidateEmail(txtEmail.Text))
                 {
                     if (btnBrowse.Text == "Tìm ảnh")
                         errEmail.SetError(txtEmail, "Email phải theo đinh dạng 'example@example.example' và không được có bất kỳ khoảng trắng nào");
                     else errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
                     emailValid = false;
+                }
+                else if (busEmp.GetByEmail(txtEmail.Text, dtoEmp.Shop.ID) != null && txtEmail.Text != dtoEmp.Email)
+                {
+                    if (btnBrowse.Text == "Browse")
+                    {
+                        errEmail.SetError(txtEmail, "A worker with such email already exists");
+                    }
+                    else
+                    {
+                        errEmail.SetError(txtEmail, "Email đã tồn tại");
+                    }
+                    emailValid = false;
+                }
+                else
+                {
+                    errEmail.SetError(txtEmail, "");
+                    emailValid = true;
                 }
             }
             else

@@ -40,11 +40,14 @@ namespace GUI
             txtName.Text = sup.Name;
             txtEmail.Text = sup.Email;
             txtPhone.Text = sup.Phone;
+            txtName.TextChanged += Textboxes_TextChanged;
+            txtEmail.TextChanged += Textboxes_TextChanged;
+            txtPhone.TextChanged += Textboxes_TextChanged;
         }
 
         private void Tiktoker_Tick(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text)) && emailValid)
+            if (!(string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtPhone.Text)) && emailValid)
             {
                 btnSave.Enabled = true;
             }
@@ -59,7 +62,7 @@ namespace GUI
             this.Close();
         }
 
-        private void Textboxes_Validating(object sender, CancelEventArgs e)
+        private void Textboxes_TextChanged(object sender, EventArgs e)
         {
             err.SetIconPadding((TextBox)sender, 3);
             if (string.IsNullOrWhiteSpace(((TextBox)sender).Text))
@@ -67,6 +70,11 @@ namespace GUI
                 if (btnSave.Text == "Lưu")
                 err.SetError((TextBox)sender, "Vui lòng nhập đầy đủ thông tin");
                 else err.SetError((TextBox)sender, "Please fill all info fields");
+
+                if (sender == txtEmail)
+                {
+                    emailValid = false;
+                }
             }
             else
             {
@@ -82,7 +90,23 @@ namespace GUI
                     }
                     else
                     {
-                        emailValid = true;
+                        if (busSup.GetByEmail(txtEmail.Text, sup.Shop.ID) != null)
+                        {
+                            if (btnSave.Text == "Save")
+                            {
+                                err.SetError((TextBox)sender, "A supplier with such ID already exists");
+                            }
+                            else
+                            {
+                                err.SetError((TextBox)sender, "Đã có nhà cung cấp khác có email này");
+                            }
+                            emailValid = false;
+                        }
+                        else
+                        {
+                            err.SetError((TextBox)sender, "");
+                            emailValid = true;
+                        }
                     }
                 }
             }

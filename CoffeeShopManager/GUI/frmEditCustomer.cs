@@ -56,6 +56,13 @@ namespace GUI
                 datBirthdate.CustomFormat = " ";
             }
             btnSave.Enabled = false;
+
+            if (dtoCus.Email == "N/A")
+            {
+                txtEmail.Enabled = false;
+                datBirthdate.Enabled = false;
+                err.SetError(txtEmail, "");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

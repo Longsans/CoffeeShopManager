@@ -105,7 +105,6 @@
             this.errEmail.SetIconAlignment(this.txtPhone, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtPhone.IconAlignment"))));
             this.errEmail.SetIconPadding(this.txtPhone, ((int)(resources.GetObject("txtPhone.IconPadding"))));
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.Textboxes_Validating);
             // 
             // txtEmail
             // 
@@ -114,7 +113,6 @@
             this.errEmail.SetIconAlignment(this.txtEmail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtEmail.IconAlignment"))));
             this.errEmail.SetIconPadding(this.txtEmail, ((int)(resources.GetObject("txtEmail.IconPadding"))));
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.Textboxes_Validating);
             // 
             // txtName
             // 
@@ -124,7 +122,6 @@
             this.errEmail.SetIconAlignment(this.txtName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtName.IconAlignment"))));
             this.errEmail.SetIconPadding(this.txtName, ((int)(resources.GetObject("txtName.IconPadding"))));
             this.txtName.Name = "txtName";
-            this.txtName.Validating += new System.ComponentModel.CancelEventHandler(this.Textboxes_Validating);
             // 
             // label4
             // 

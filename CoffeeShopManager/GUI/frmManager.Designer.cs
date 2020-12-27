@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
-            DTO.DTO_Manager dtO_Manager6 = new DTO.DTO_Manager();
+            DTO.DTO_Manager dtO_Manager2 = new DTO.DTO_Manager();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlChangeTab = new System.Windows.Forms.Panel();
             this.btnTable = new System.Windows.Forms.Button();
@@ -128,7 +128,6 @@
             this.imgListMenuButton.Images.SetKeyName(9, "user_account_50px.png");
             this.imgListMenuButton.Images.SetKeyName(10, "shop_32px.png");
             this.imgListMenuButton.Images.SetKeyName(11, "table_32px.png");
-            this.imgListMenuButton.Images.SetKeyName(12, "");
             // 
             // btnShop
             // 
@@ -371,16 +370,16 @@
             // 
             this.ucEmployeeTab.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.ucEmployeeTab, "ucEmployeeTab");
-            dtO_Manager6.Birthdate = new System.DateTime(((long)(0)));
-            dtO_Manager6.Email = null;
-            dtO_Manager6.Firstname = null;
-            dtO_Manager6.Gender = null;
-            dtO_Manager6.Id = null;
-            dtO_Manager6.Image = null;
-            dtO_Manager6.Lastname = null;
-            dtO_Manager6.Phone = null;
-            dtO_Manager6.Position = null;
-            this.ucEmployeeTab.dtoMan = dtO_Manager6;
+            dtO_Manager2.Birthdate = new System.DateTime(((long)(0)));
+            dtO_Manager2.Email = null;
+            dtO_Manager2.Firstname = null;
+            dtO_Manager2.Gender = null;
+            dtO_Manager2.Id = null;
+            dtO_Manager2.Image = null;
+            dtO_Manager2.Lastname = null;
+            dtO_Manager2.Phone = null;
+            dtO_Manager2.Position = null;
+            this.ucEmployeeTab.dtoMan = dtO_Manager2;
             this.ucEmployeeTab.Name = "ucEmployeeTab";
             // 
             // ucProductTab
