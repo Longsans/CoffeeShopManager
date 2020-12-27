@@ -160,7 +160,9 @@ namespace GUI
         public void Reload()
         {
             BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
-            lblWelcome.Text = "Welcome, " + dtoMan.Firstname;
+            if (btnLogout.Text == "Đăng xuất")
+                lblWelcome.Text = "Xin chào, " + dtoMan.Firstname;
+            else lblWelcome.Text = "Welcome, " + dtoMan.Firstname;
             DTO_Shop dtoShop = busShop.GetShopById(dtoMan.Shop.ID);
             if (string.IsNullOrEmpty(dtoShop.ShopAddress) || string.IsNullOrEmpty(dtoShop.Phone))
             {

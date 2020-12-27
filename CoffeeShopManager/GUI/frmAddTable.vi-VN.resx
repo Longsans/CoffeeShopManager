@@ -118,25 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 10.2pt</value>
+  </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 21</value>
+    <value>84, 21</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Thêm bàn</value>
   </data>
+  <data name="txtTableId.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtTableId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 23</value>
+  </data>
   <data name="txtTableId.Text" xml:space="preserve">
     <value>Nhập ID bàn</value>
   </data>
+  <data name="lblCancel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="lblCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 119</value>
+  </data>
   <data name="lblCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 19</value>
+    <value>33, 17</value>
   </data>
   <data name="lblCancel.Text" xml:space="preserve">
     <value>Hủy</value>
   </data>
+  <data name="lblAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <data name="lblAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 19</value>
+    <value>43, 17</value>
   </data>
   <data name="lblAdd.Text" xml:space="preserve">
     <value>Thêm</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 17</value>
   </data>
 </root>

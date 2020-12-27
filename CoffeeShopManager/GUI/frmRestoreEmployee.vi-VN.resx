@@ -118,7 +118,187 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="errorProvider2.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRestore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>Khôi phục</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 12pt</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 5</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 24</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Khôi phục nhân viên</value>
+  </data>
+  <data name="datBirth.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="datBirth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 23</value>
+  </data>
+  <data name="btnCancel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="cboPosition.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="radFemale.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="radFemale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="radFemale.Text" xml:space="preserve">
+    <value>Nữ</value>
+  </data>
+  <data name="radMale.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="radMale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 21</value>
+  </data>
+  <data name="radMale.Text" xml:space="preserve">
+    <value>Nam</value>
+  </data>
+  <data name="txtPhone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtAddress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtLastName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtFirstName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtManagerID.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtSalary.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtEmail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtID.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 17</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>ID Quản lý</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 17</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Ngày vào làm</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Lương</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Ngày sinh</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 17</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 17</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Chức vụ</value>
+  </data>
+  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 17</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Họ</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Giới tính</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 17</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 17</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Địa chỉ email</value>
+  </data>
+  <data name="errorProvider1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAADAE
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -213,127 +393,10 @@
         AA/wAAAP+AAAH/wAAD//////////////////////
 </value>
   </data>
-  <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 12pt</value>
-  </data>
-  <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 8</value>
-  </data>
-  <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 24</value>
-  </data>
-  <data name="lblTitle.Text" xml:space="preserve">
-    <value>Cập nhật sản phẩm</value>
-  </data>
-  <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="datJoin.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Lưu</value>
-  </data>
-  <data name="rtxDetail.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="txtPrice.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="txtPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
-  </data>
-  <data name="cbxType.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="txtName1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="txtName1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
-  </data>
-  <data name="txtID.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="txtID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
-  </data>
-  <data name="btnCancel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Hủy</value>
-  </data>
-  <data name="btnBrowse.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Tìm ảnh</value>
-  </data>
-  <data name="lblDetails.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblDetails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 17</value>
-  </data>
-  <data name="lblDetails.Text" xml:space="preserve">
-    <value>Chi tiết</value>
-  </data>
-  <data name="lblType.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 17</value>
-  </data>
-  <data name="lblType.Text" xml:space="preserve">
-    <value>Loại</value>
-  </data>
-  <data name="lblListCaption.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblListCaption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 17</value>
-  </data>
-  <data name="lblListCaption.Text" xml:space="preserve">
-    <value>Danh sách hàng trong kho được dùng</value>
-  </data>
-  <data name="lblRemove.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 17</value>
-  </data>
-  <data name="lblRemove.Text" xml:space="preserve">
-    <value>       Xóa khỏi danh sách</value>
-  </data>
-  <data name="lblAdd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 17</value>
-  </data>
-  <data name="lblAdd.Text" xml:space="preserve">
-    <value>       Thêm vào danh sách</value>
-  </data>
-  <data name="lblPrice.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 17</value>
-  </data>
-  <data name="lblPrice.Text" xml:space="preserve">
-    <value>Giá</value>
-  </data>
-  <data name="lblName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 17</value>
-  </data>
-  <data name="lblName.Text" xml:space="preserve">
-    <value>Tên</value>
-  </data>
-  <data name="lblID.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 17</value>
+  <data name="datJoin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 23</value>
   </data>
 </root>

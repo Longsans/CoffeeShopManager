@@ -220,19 +220,16 @@
     <value>320, 8</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 24</value>
+    <value>190, 24</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
-    <value>Cập nhật sản phẩm</value>
+    <value>Khôi phục sản phẩm</value>
   </data>
-  <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnRestore.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Lưu</value>
-  </data>
-  <data name="rtxDetail.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>Khôi phục</value>
   </data>
   <data name="txtPrice.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
@@ -240,13 +237,16 @@
   <data name="txtPrice.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 23</value>
   </data>
-  <data name="cbxType.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="txtType.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="txtName1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="txtType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 23</value>
+  </data>
+  <data name="txtName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="txtName1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 23</value>
   </data>
   <data name="txtID.Font" type="System.Drawing.Font, System.Drawing">
@@ -260,12 +260,6 @@
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Hủy</value>
-  </data>
-  <data name="btnBrowse.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Tìm ảnh</value>
   </data>
   <data name="lblDetails.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
@@ -289,28 +283,10 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblListCaption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 17</value>
+    <value>191, 17</value>
   </data>
   <data name="lblListCaption.Text" xml:space="preserve">
-    <value>Danh sách hàng trong kho được dùng</value>
-  </data>
-  <data name="lblRemove.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 17</value>
-  </data>
-  <data name="lblRemove.Text" xml:space="preserve">
-    <value>       Xóa khỏi danh sách</value>
-  </data>
-  <data name="lblAdd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 17</value>
-  </data>
-  <data name="lblAdd.Text" xml:space="preserve">
-    <value>       Thêm vào danh sách</value>
+    <value>Danh sách mặt hàng sử dụng</value>
   </data>
   <data name="lblPrice.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>

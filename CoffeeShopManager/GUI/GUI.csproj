@@ -314,12 +314,6 @@
     <Compile Include="UserControlProductTab.Designer.cs">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlReceipts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlReceipts.Designer.cs">
-      <DependentUpon>UserControlReceipts.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlReceiptsDetail.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -465,7 +459,13 @@
     <EmbeddedResource Include="frmRestoreEmployee.resx">
       <DependentUpon>frmRestoreEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreEmployee.vi-VN.resx">
+      <DependentUpon>frmRestoreEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRestoreProduct.resx">
+      <DependentUpon>frmRestoreProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreProduct.vi-VN.resx">
       <DependentUpon>frmRestoreProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowDetailTable.resx">
@@ -556,12 +556,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlProductTab.vi-VN.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlReceipts.resx">
-      <DependentUpon>UserControlReceipts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlReceipts.vi-VN.resx">
-      <DependentUpon>UserControlReceipts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlReceiptsDetail.resx">
       <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>

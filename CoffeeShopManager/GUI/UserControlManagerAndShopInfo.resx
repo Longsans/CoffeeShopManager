@@ -337,7 +337,7 @@
     <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 139</value>
+    <value>286, 142</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 19</value>
@@ -450,8 +450,11 @@
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 208</value>
+    <value>286, 211</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 19</value>
@@ -481,7 +484,7 @@
     <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 104</value>
+    <value>286, 107</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 19</value>
@@ -541,7 +544,7 @@
     <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 171</value>
+    <value>286, 174</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 19</value>
@@ -571,7 +574,7 @@
     <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 75</value>
+    <value>286, 78</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 19</value>
@@ -607,7 +610,7 @@
     <value>0</value>
   </data>
   <data name="txtShopPhone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 133</value>
+    <value>395, 133</value>
   </data>
   <data name="txtShopPhone.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 22</value>
@@ -634,7 +637,7 @@
     <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 92</value>
+    <value>275, 92</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 19</value>
@@ -664,7 +667,7 @@
     <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 176</value>
+    <value>275, 176</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 19</value>
@@ -694,7 +697,7 @@
     <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 136</value>
+    <value>275, 136</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 19</value>
@@ -718,7 +721,7 @@
     <value>3</value>
   </data>
   <data name="txtShopAddress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 176</value>
+    <value>395, 176</value>
   </data>
   <data name="txtShopAddress.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 22</value>
@@ -769,7 +772,7 @@
     <value>5</value>
   </data>
   <data name="txtShopName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 92</value>
+    <value>395, 92</value>
   </data>
   <data name="txtShopName.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 22</value>

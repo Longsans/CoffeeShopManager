@@ -128,25 +128,22 @@
   <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
     <value>btnExit</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Add stock item to list</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="lblCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 119</value>
   </data>
-  <data name="lblCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmSmallAddStockItemToList</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
@@ -174,26 +171,23 @@
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;lblAdd.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>334, 150</value>
+  <data name="lblCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>77, 69</value>
   </data>
   <data name="&gt;&gt;lblCancel.Name" xml:space="preserve">
     <value>lblCancel</value>
+  </data>
+  <data name="lblCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="lblAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>102, 119</value>
@@ -222,6 +216,9 @@
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
+  <data name="lblAdd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="txtItemId.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
@@ -246,6 +243,9 @@
   <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
+  <data name="&gt;&gt;txtItemId.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;lblAdd.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -264,8 +264,8 @@
   <data name="lblCancel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblAdd.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtItemId.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -285,9 +285,6 @@
   <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
     <value>301, 0</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frmSmallAddStockItemToList</value>
-  </data>
   <data name="&gt;&gt;lblAdd.Name" xml:space="preserve">
     <value>lblAdd</value>
   </data>
@@ -297,14 +294,11 @@
   <data name="lblAdd.Text" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="lblCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="&gt;&gt;lblAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 19</value>
@@ -315,14 +309,14 @@
   <data name="&gt;&gt;lblCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtItemId.Text" xml:space="preserve">
-    <value>Enter stock item ID</value>
+  <data name="&gt;&gt;lblAdd.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 21</value>
   </data>
-  <data name="&gt;&gt;txtItemId.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>frmSmallAddStockItemToList</value>
@@ -339,11 +333,14 @@
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>334, 150</value>
+  </data>
   <data name="&gt;&gt;txtItemId.Name" xml:space="preserve">
     <value>txtItemId</value>
   </data>
-  <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -353,6 +350,9 @@
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="txtItemId.Text" xml:space="preserve">
+    <value>Enter stock item ID</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

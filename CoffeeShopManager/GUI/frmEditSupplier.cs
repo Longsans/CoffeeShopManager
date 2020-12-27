@@ -64,7 +64,9 @@ namespace GUI
             err.SetIconPadding((TextBox)sender, 3);
             if (string.IsNullOrWhiteSpace(((TextBox)sender).Text))
             {
-                err.SetError((TextBox)sender, "Please fill all info fields");
+                if (btnSave.Text == "Lưu")
+                err.SetError((TextBox)sender, "Vui lòng nhập đầy đủ thông tin");
+                else err.SetError((TextBox)sender, "Please fill all info fields");
             }
             else
             {
@@ -73,7 +75,9 @@ namespace GUI
                 {
                     if (!EmailHelper.ValidateEmail(txtEmail.Text))
                     {
-                        err.SetError((TextBox)sender, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                        if (btnSave.Text == "Lưu")
+                            err.SetError((TextBox)sender, "Email phải theo định dạng 'example@example.example' và không có bất kỳ khoảng trắng nào");
+                        else err.SetError((TextBox)sender, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
                         emailValid = false;
                     }
                     else
@@ -97,7 +101,9 @@ namespace GUI
             };
 
             busSup.Update(updatedSup);
-            MessageBox.Show("Update successful.", "Update supplier", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (btnSave.Text == "Lưu")
+                MessageBox.Show("Update successful.", "Update supplier", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("Cập nhật thành công", "Cập nhật nhà cung cấp", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
             ucSup.ReloadGridView();
         }

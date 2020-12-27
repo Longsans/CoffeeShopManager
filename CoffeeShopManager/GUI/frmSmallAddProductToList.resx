@@ -121,9 +121,15 @@
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
+  <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
+    <value>btnExit</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtProId.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
+  </data>
+  <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
@@ -138,11 +144,8 @@
   <data name="lblCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 119</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frmSmallAddProductToList</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="lblCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -177,8 +180,8 @@
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>77, 69</value>
@@ -225,6 +228,9 @@
   <data name="&gt;&gt;txtProId.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
+  <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
   <data name="&gt;&gt;btnExit.Parent" xml:space="preserve">
     <value>panel2</value>
   </data>
@@ -243,8 +249,8 @@
   <data name="label3.Text" xml:space="preserve">
     <value>ID</value>
   </data>
-  <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
+  <data name="txtProId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
   </data>
   <data name="&gt;&gt;lblAdd.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -291,9 +297,6 @@
   <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
     <value>panel2</value>
   </data>
-  <data name="txtProId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
-  </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
@@ -321,8 +324,8 @@
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 21</value>
   </data>
-  <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
-    <value>btnExit</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>frmSmallAddProductToList</value>
@@ -333,14 +336,11 @@
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>334, 150</value>
   </data>
-  <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmSmallAddProductToList</value>
   </data>
   <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
     <value>panel1</value>

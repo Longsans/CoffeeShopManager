@@ -50,7 +50,8 @@ namespace GUI
             if (string.IsNullOrWhiteSpace(txtTableId.Text))
             {
                 txtTableId.ForeColor = Color.DimGray;
-                txtTableId.Text = "Enter table ID";
+                if (lblAdd.Text == "Thêm") txtTableId.Text = "Nhập ID bàn";
+                else txtTableId.Text = "Enter table ID";
             }
         }
 
@@ -94,18 +95,25 @@ namespace GUI
                 err.SetError(txtTableId, "");
                 ResetInput();
                 ucTableManager.LoadAllTables();
-                MessageBox.Show("New table added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (lblAdd.Text == "Thêm")
+                    MessageBox.Show("Bàn mới đã được thêm vào danh sách", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("New table added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                var ret = MessageBox.Show("There are data related to a table with this ID. Do you want to restore it?", "Cannot add a duplicate table",
+                DialogResult ret;
+                if (lblAdd.Text == "Thêm") ret = MessageBox.Show("Có dữ liệu liên quan đến bàn này. Bạn có muốn khôi phục nó?", "Không thể thêm bản sao bàn",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                else ret = MessageBox.Show("There are data related to a table with this ID. Do you want to restore it?", "Cannot add a duplicate table",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ret == DialogResult.Yes)
                 {
                     busTable.RestoreDeletedTable(table);
                     ResetInput();
                     ucTableManager.LoadAllTables();
-                    MessageBox.Show("Deleted table restored.", "Restore successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (lblAdd.Text == "Thêm")
+                        MessageBox.Show("Khôi phục bàn đã bị xóa", "Khôi phục thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else MessageBox.Show("Deleted table restored.", "Restore successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -113,7 +121,8 @@ namespace GUI
         private void ResetInput()
         {
             txtTableId.ForeColor = Color.DimGray;
-            txtTableId.Text = "Enter table ID";
+            if (lblAdd.Text == "Thêm") txtTableId.Text = "Nhập ID bàn";
+            else txtTableId.Text = "Enter table ID";
             err.Icon = errorIcon;
             err.SetError(txtTableId, "");
             lblAdd.Enabled = false;
@@ -146,31 +155,42 @@ namespace GUI
                         if (dbtab == null)
                         {
                             err.Icon = checkIcon;
-                            err.SetError(txtTableId, "Valid");
+                            if (lblAdd.Text == "Thêm")
+                                err.SetError(txtTableId, "Hợp lệ");
+                            else err.SetError(txtTableId, "Valid");
                             lblAdd.Enabled = true;
                             checkDeleted = true;
                         }
                         else if (dbtab.Deleted)
                         {
                             checkDeleted = false;
-                            throw new Exception("There are data related to a table with such ID");
+                            if (lblAdd.Text == "Thêm")
+                                throw new Exception("Có dữ liệu liên quan đến bàn này");
+                            else throw new Exception("There are data related to a table with such ID");
                         }
                         else
                         {
                             checkDeleted = true;
-                            throw new Exception("A table with such ID has already been added to the list");
+                            if (lblAdd.Text == "Thêm")
+                                throw new Exception("Bàn có ID này đã được thêm vào danh sách từ trước");
+                            else throw new Exception("A table with such ID has already been added to the list");
                         }
                     }
                     else
                     {
                         checkDeleted = true;
+                        if (lblAdd.Text == "Thêm")
+                            throw new Exception("ID bàn phải là số tự nhiên");
+                        else 
                         throw new Exception("A table ID must be a natural number");
                     }
                 }
                 else
                 {
                     checkDeleted = true;
-                    throw new Exception("Please fill all info fields");
+                    if (lblAdd.Text == "Thêm")
+                        throw new Exception("Vui lòng nhập đủ thông tin");
+                    else throw new Exception("Please fill all info fields");
                 }
             }
             catch (Exception ex)

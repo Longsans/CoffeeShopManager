@@ -135,7 +135,9 @@ namespace GUI
                             if (busStock.GetItemForProduct(id, Product.Id, Product.Shop.ID) == null)
                             {
                                 err.Icon = checkIcon;
-                                err.SetError(txtItemId, "Valid");
+                                if (lblAdd.Text == "Thêm")
+                                    err.SetError(txtItemId, "Hợp lệ");
+                                else err.SetError(txtItemId, "Valid");
                                 lblAdd.Enabled = true;
                             }
                             else
@@ -148,22 +150,22 @@ namespace GUI
                         else
                         {
                             if (lblAdd.Text == "Thêm")
-                                throw new Exception("A stock item with such ID does not exist");
-                            else throw new Exception("ID hàng hóa này không tồn tại.");
+                                throw new Exception("ID hàng hóa này không tồn tại.");
+                            else throw new Exception("A stock item with such ID does not exist");
                         }
                     }
                     else
                     {
                         if (lblAdd.Text == "Thêm")
-                            throw new Exception("Stock item ID must be a natural number");
-                        else throw new Exception("ID hàng hóa phải là số tự nhiên");
+                            throw new Exception("ID hàng hóa phải là số tự nhiên");
+                        else throw new Exception("Stock item ID must be a natural number");
                     }
                 }
                 else
                 {
                     if (lblAdd.Text == "Thêm")
-                        throw new Exception("Please fill all info fields");
-                    else throw new Exception("Vui lòng nhập đầy đủ thông tin.");
+                        throw new Exception("Vui lòng nhập đầy đủ thông tin.");
+                    else throw new Exception("Please fill all info fields");
                 }
             }
             catch (Exception ex)

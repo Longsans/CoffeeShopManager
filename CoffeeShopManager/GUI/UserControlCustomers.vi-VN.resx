@@ -119,20 +119,20 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblCustomer.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 25.8000011pt</value>
+    <value>Tahoma, 22.2pt</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblCustomer.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblCustomer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>411, 51</value>
+    <value>402, 46</value>
   </data>
   <data name="lblCustomer.Text" xml:space="preserve">
     <value>Danh sách khách hàng</value>
   </data>
   <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -141,7 +141,7 @@
     <value>Sửa</value>
   </data>
   <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -150,31 +150,28 @@
     <value>Xóa</value>
   </data>
   <data name="txtSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
-  </data>
-  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 27</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="txtSearch.Text" xml:space="preserve">
     <value>Tìm kiếm...</value>
   </data>
   <data name="cboSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="cboSearch.Items1" xml:space="preserve">
     <value>Tên</value>
   </data>
   <data name="cboSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 27</value>
+    <value>88, 24</value>
   </data>
   <data name="lblResetFilters.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt, style=Underline</value>
+    <value>Tahoma, 7.8pt, style=Underline</value>
   </data>
   <data name="lblResetFilters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblResetFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 19</value>
+    <value>110, 17</value>
   </data>
   <data name="lblResetFilters.Text" xml:space="preserve">
     <value>Khôi phục bộ lọc</value>

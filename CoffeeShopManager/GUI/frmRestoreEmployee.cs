@@ -99,19 +99,24 @@ namespace GUI
         {
             try
             {
-                var ret = MessageBox.Show("Restore this employee?", "Restore employee", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ret;
+                if (btnCancel.Text == "Hủy") ret = MessageBox.Show("Bạn có muốn khôi phục nhân viên này không?", "Khôi phục nhân viên", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                else ret = MessageBox.Show("Restore this employee?", "Restore employee", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (ret == DialogResult.Yes)
                 {
                     busEmp.RestoreDeletedEmployee(dtoEmp);
                     ucEmp.Reload();
-                    MessageBox.Show("Deleted employee restored.", "Restore successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (btnCancel.Text == "Hủy") MessageBox.Show("Nhân viên bị xóa đã được khôi phục", "Khôi phục thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else MessageBox.Show("Deleted employee restored.", "Restore successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                     frmAddEmp.Show();
                 }
             }
             catch
             {
-                MessageBox.Show("An error occurred, tab will reload now.", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (btnCancel.Text == "Hủy")
+                    MessageBox.Show("Một lỗi đã xảy ra, trang này sẽ được làm mới lại", "Một lỗi đã xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show("An error occurred, tab will reload now.", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -36,9 +36,7 @@
             this.radFemale = new System.Windows.Forms.RadioButton();
             this.radMale = new System.Windows.Forms.RadioButton();
             this.btnSaveChange = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnChangePassword = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lblEmpInfo = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -66,7 +64,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.picEmpInfo = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picEmpInfo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // datBirthdate
@@ -86,9 +86,9 @@
             // 
             // btnBrowse
             // 
+            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.FlatAppearance.BorderSize = 0;
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.UseVisualStyleBackColor = false;
@@ -110,35 +110,23 @@
             // 
             // btnSaveChange
             // 
+            resources.ApplyResources(this.btnSaveChange, "btnSaveChange");
             this.btnSaveChange.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnSaveChange.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btnSaveChange, "btnSaveChange");
             this.btnSaveChange.FlatAppearance.BorderSize = 0;
             this.btnSaveChange.Name = "btnSaveChange";
             this.btnSaveChange.UseVisualStyleBackColor = false;
             this.btnSaveChange.Click += new System.EventHandler(this.btnSaveChange_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Firebrick;
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            // 
             // btnChangePassword
             // 
+            resources.ApplyResources(this.btnChangePassword, "btnChangePassword");
             this.btnChangePassword.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangePassword.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnChangePassword, "btnChangePassword");
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Firebrick;
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
             // 
             // lblEmpInfo
             // 
@@ -158,8 +146,8 @@
             // 
             // txtPosition
             // 
-            this.txtPosition.Cursor = System.Windows.Forms.Cursors.No;
             resources.ApplyResources(this.txtPosition, "txtPosition");
+            this.txtPosition.Cursor = System.Windows.Forms.Cursors.No;
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.ReadOnly = true;
             // 
@@ -175,8 +163,8 @@
             // 
             // txtID
             // 
-            this.txtID.Cursor = System.Windows.Forms.Cursors.No;
             resources.ApplyResources(this.txtID, "txtID");
+            this.txtID.Cursor = System.Windows.Forms.Cursors.No;
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             // 
@@ -228,6 +216,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // label9
             // 
@@ -271,10 +260,10 @@
             // 
             // btnEdit
             // 
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.ForeColor = System.Drawing.Color.DarkRed;
             this.btnEdit.Image = global::GUI.Properties.Resources.edit_30px;
             this.btnEdit.Name = "btnEdit";
@@ -283,54 +272,61 @@
             // 
             // picEmpInfo
             // 
-            this.picEmpInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.picEmpInfo, "picEmpInfo");
+            this.picEmpInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picEmpInfo.Name = "picEmpInfo";
             this.picEmpInfo.TabStop = false;
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblEmpInfo);
+            this.panel1.Controls.Add(this.txtAddress);
+            this.panel1.Controls.Add(this.picEmpInfo);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.datDateOfJoin);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.datBirthdate);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtSalary);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtUsername);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtID);
+            this.panel1.Controls.Add(this.btnBrowse);
+            this.panel1.Controls.Add(this.txtFirstName);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.txtLastName);
+            this.panel1.Controls.Add(this.radFemale);
+            this.panel1.Controls.Add(this.txtPosition);
+            this.panel1.Controls.Add(this.radMale);
+            this.panel1.Controls.Add(this.txtPhone);
+            this.panel1.Controls.Add(this.txtManagerID);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Name = "panel1";
             // 
             // UserControlEmployeeUserTab
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.datDateOfJoin);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.datBirthdate);
-            this.Controls.Add(this.txtSalary);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnBrowse);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.radFemale);
-            this.Controls.Add(this.radMale);
-            this.Controls.Add(this.btnSaveChange);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblEmpInfo);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtManagerID);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtPosition);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.picEmpInfo);
+            this.Controls.Add(this.btnSaveChange);
+            this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.lblUserInfo);
             this.Name = "UserControlEmployeeUserTab";
             this.Load += new System.EventHandler(this.UserControlEmployeeUserTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picEmpInfo)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,9 +342,7 @@
         private System.Windows.Forms.RadioButton radFemale;
         private System.Windows.Forms.RadioButton radMale;
         private System.Windows.Forms.Button btnSaveChange;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnChangePassword;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblEmpInfo;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
@@ -375,5 +369,6 @@
         private System.Windows.Forms.DateTimePicker datDateOfJoin;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel1;
     }
 }

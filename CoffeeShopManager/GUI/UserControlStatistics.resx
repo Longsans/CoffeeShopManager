@@ -120,8 +120,9 @@
   <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblTotalSales.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblTotalIncome.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
@@ -142,9 +143,11 @@
   <data name="dataGridView2.Location" type="System.Drawing.Point, System.Drawing">
     <value>945, 83</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblTotalSales.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="chartProduct.Size" type="System.Drawing.Size, System.Drawing">
     <value>557, 257</value>
@@ -209,11 +212,14 @@
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 19</value>
   </data>
-  <data name="lblTotalIncome.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>581, 19</value>
+  <data name="&gt;&gt;cboString.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="cboString.Items1" xml:space="preserve">
+    <value>Income quarterly</value>
   </data>
   <data name="cboProductView.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 24</value>
@@ -227,8 +233,8 @@
   <data name="&gt;&gt;pnlShowInfoProductSales.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblTotalSales.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblNoDataProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>206, 435</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -263,6 +269,9 @@
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
+  <data name="lblNoDataIncome.Text" xml:space="preserve">
+    <value>No data</value>
+  </data>
   <data name="&gt;&gt;cboIncomeView.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -272,11 +281,14 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>
-  <data name="&gt;&gt;chartIncome.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataVisualization.Charting.Chart, System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
+  <data name="chartIncome.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 19</value>
+  </data>
+  <data name="&gt;&gt;pnlShowInfoIncome.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="lblAveIncome.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -286,6 +298,9 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Average income:</value>
+  </data>
+  <data name="lblNoDataProduct.Text" xml:space="preserve">
+    <value>No data</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>By:</value>
@@ -304,6 +319,9 @@
   </data>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
     <value>953, 125</value>
+  </data>
+  <data name="pnlShowInfoProductSales.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 482</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>$this</value>
@@ -326,6 +344,9 @@
   <data name="chartIncome.Text" xml:space="preserve">
     <value>chart1</value>
   </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 61</value>
+  </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -337,9 +358,6 @@
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 19</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Total sales:</value>
   </data>
   <data name="&gt;&gt;cboString.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -362,14 +380,17 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UserControlStatistics</value>
   </data>
+  <data name="lblAveIncome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
+  </data>
   <data name="dateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
     <value>687, 65</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
   </data>
-  <data name="&gt;&gt;cboProductView.Name" xml:space="preserve">
-    <value>cboProductView</value>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;cboProductView.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -379,9 +400,6 @@
   </data>
   <data name="&gt;&gt;pnlShowInfoProductSales.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblTotalIncome.Parent" xml:space="preserve">
-    <value>pnlShowInfoIncome</value>
   </data>
   <data name="&gt;&gt;lblNoDataIncome.Parent" xml:space="preserve">
     <value>$this</value>
@@ -401,9 +419,6 @@
   <data name="cboProductView.Items" xml:space="preserve">
     <value>All time	</value>
   </data>
-  <data name="lblNoDataProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 435</value>
-  </data>
   <data name="lblNoDataIncome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 10.2pt</value>
   </data>
@@ -413,17 +428,14 @@
   <data name="&gt;&gt;dateTimePicker1.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblNoDataIncome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 21</value>
-  </data>
   <data name="&gt;&gt;lblTotalSales.Parent" xml:space="preserve">
     <value>pnlShowInfoProductSales</value>
   </data>
   <data name="cboProductView.Location" type="System.Drawing.Point, System.Drawing">
     <value>687, 334</value>
   </data>
-  <data name="lblNoDataProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 21</value>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>581, 19</value>
   </data>
   <data name="&gt;&gt;lblNoDataIncome.Name" xml:space="preserve">
     <value>lblNoDataIncome</value>
@@ -446,15 +458,6 @@
   <data name="&gt;&gt;dateTimePicker1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1041, 607</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
-  </data>
-  <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
   <data name="dateTimePicker1.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
@@ -464,14 +467,11 @@
   <data name="lblTotalIncome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;dataGridView2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblNoDataProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 21</value>
   </data>
   <data name="lblNoDataProduct.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Total income:</value>
   </data>
   <data name="&gt;&gt;cboString.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -515,11 +515,14 @@
   <data name="lblNoDataIncome.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
   <data name="cboString.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 24</value>
   </data>
-  <data name="&gt;&gt;pnlShowInfoIncome.ZOrder" xml:space="preserve">
-    <value>13</value>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1041, 607</value>
   </data>
   <data name="cboIncomeView.Items" xml:space="preserve">
     <value>By year</value>
@@ -533,8 +536,8 @@
   <data name="&gt;&gt;dateTimePicker1.Name" xml:space="preserve">
     <value>dateTimePicker1</value>
   </data>
-  <data name="chartIncome.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;dataGridView2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;label7.Parent" xml:space="preserve">
     <value>$this</value>
@@ -557,8 +560,8 @@
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
   </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 61</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Total income:</value>
   </data>
   <data name="pnlShowInfoIncome.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -575,9 +578,6 @@
   <data name="pnlShowInfoIncome.Location" type="System.Drawing.Point, System.Drawing">
     <value>579, 218</value>
   </data>
-  <data name="chartProduct.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
@@ -590,8 +590,8 @@
   <data name="chartProduct.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 325</value>
   </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;cboProductView.Name" xml:space="preserve">
+    <value>cboProductView</value>
   </data>
   <data name="&gt;&gt;chartProduct.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataVisualization.Charting.Chart, System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
@@ -602,9 +602,6 @@
   <data name="&gt;&gt;chartProduct.Name" xml:space="preserve">
     <value>chartProduct</value>
   </data>
-  <data name="cboString.Items" xml:space="preserve">
-    <value>Annual income</value>
-  </data>
   <data name="&gt;&gt;lblNoDataIncome.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -614,8 +611,8 @@
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;lblNoDataProduct.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Total sales:</value>
   </data>
   <data name="&gt;&gt;chartIncome.Parent" xml:space="preserve">
     <value>$this</value>
@@ -638,8 +635,8 @@
   <data name="&gt;&gt;lblTotalIncome.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblNoDataProduct.Text" xml:space="preserve">
-    <value>No data</value>
+  <data name="lblNoDataIncome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 21</value>
   </data>
   <data name="chartProduct.Text" xml:space="preserve">
     <value>chart2</value>
@@ -695,8 +692,8 @@
   <data name="dataGridView1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;cboString.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="chartProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="lblTotalIncome.Location" type="System.Drawing.Point, System.Drawing">
     <value>200, 12</value>
@@ -707,14 +704,17 @@
   <data name="&gt;&gt;lblAveIncome.Parent" xml:space="preserve">
     <value>pnlShowInfoIncome</value>
   </data>
-  <data name="cboString.Items1" xml:space="preserve">
-    <value>Income quarterly</value>
+  <data name="cboString.Items" xml:space="preserve">
+    <value>Annual income</value>
   </data>
   <data name="&gt;&gt;cboProductView.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblTotalSales.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblAveIncome.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 19</value>
@@ -725,8 +725,8 @@
   <data name="lblTotalSales.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="pnlShowInfoProductSales.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 482</value>
+  <data name="&gt;&gt;lblTotalIncome.Parent" xml:space="preserve">
+    <value>pnlShowInfoIncome</value>
   </data>
   <data name="cboString.Items4" xml:space="preserve">
     <value>Income last 30 days</value>
@@ -737,11 +737,11 @@
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
+  <data name="&gt;&gt;lblNoDataProduct.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
-  </data>
-  <data name="cboString.Items10" xml:space="preserve">
-    <value>Product sales last 30 days</value>
   </data>
   <data name="&gt;&gt;lblAveIncome.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -749,8 +749,8 @@
   <data name="pnlShowInfoProductSales.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="lblNoDataIncome.Text" xml:space="preserve">
-    <value>No data</value>
+  <data name="&gt;&gt;chartIncome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataVisualization.Charting.Chart, System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</value>
   </data>
   <data name="lblAveIncome.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -758,8 +758,8 @@
   <data name="&gt;&gt;pnlShowInfoProductSales.Name" xml:space="preserve">
     <value>pnlShowInfoProductSales</value>
   </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+  <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>582, 65</value>
@@ -770,8 +770,8 @@
   <data name="lblAveIncome.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblAveIncome.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
+  <data name="cboString.Items10" xml:space="preserve">
+    <value>Product sales last 30 days</value>
   </data>
   <data name="lblTotalSales.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

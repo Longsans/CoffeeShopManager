@@ -185,7 +185,7 @@ namespace GUI
 
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboSearch.Text == "Date of Payment")
+            if (cboSearch.Text == "Date of Payment" || cboSearch.Text == "Ngày trả")
             {
                 datSearch.Format = DateTimePickerFormat.Custom;
                 datSearch.CustomFormat = "dd/MM/yyyy";

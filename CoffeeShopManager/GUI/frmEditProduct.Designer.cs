@@ -104,8 +104,8 @@
             // txtCopyPrice
             // 
             resources.ApplyResources(this.txtCopyPrice, "txtCopyPrice");
-            this.errorProvider2.SetError(this.txtCopyPrice, resources.GetString("txtCopyPrice.Error"));
-            this.errorProvider1.SetError(this.txtCopyPrice, resources.GetString("txtCopyPrice.Error1"));
+            this.errorProvider1.SetError(this.txtCopyPrice, resources.GetString("txtCopyPrice.Error"));
+            this.errorProvider2.SetError(this.txtCopyPrice, resources.GetString("txtCopyPrice.Error1"));
             this.errorProvider1.SetIconAlignment(this.txtCopyPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtCopyPrice.IconAlignment"))));
             this.errorProvider2.SetIconAlignment(this.txtCopyPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtCopyPrice.IconAlignment1"))));
             this.errorProvider1.SetIconPadding(this.txtCopyPrice, ((int)(resources.GetObject("txtCopyPrice.IconPadding"))));
@@ -134,8 +134,8 @@
             // btnExit
             // 
             resources.ApplyResources(this.btnExit, "btnExit");
-            this.errorProvider2.SetError(this.btnExit, resources.GetString("btnExit.Error"));
-            this.errorProvider1.SetError(this.btnExit, resources.GetString("btnExit.Error1"));
+            this.errorProvider1.SetError(this.btnExit, resources.GetString("btnExit.Error"));
+            this.errorProvider2.SetError(this.btnExit, resources.GetString("btnExit.Error1"));
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.errorProvider2.SetIconAlignment(this.btnExit, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnExit.IconAlignment"))));
             this.errorProvider1.SetIconAlignment(this.btnExit, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnExit.IconAlignment1"))));
@@ -149,13 +149,13 @@
             // lblTitle
             // 
             resources.ApplyResources(this.lblTitle, "lblTitle");
-            this.errorProvider2.SetError(this.lblTitle, resources.GetString("lblTitle.Error"));
-            this.errorProvider1.SetError(this.lblTitle, resources.GetString("lblTitle.Error1"));
+            this.errorProvider1.SetError(this.lblTitle, resources.GetString("lblTitle.Error"));
+            this.errorProvider2.SetError(this.lblTitle, resources.GetString("lblTitle.Error1"));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.errorProvider2.SetIconAlignment(this.lblTitle, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTitle.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.lblTitle, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTitle.IconAlignment1"))));
-            this.errorProvider1.SetIconPadding(this.lblTitle, ((int)(resources.GetObject("lblTitle.IconPadding"))));
-            this.errorProvider2.SetIconPadding(this.lblTitle, ((int)(resources.GetObject("lblTitle.IconPadding1"))));
+            this.errorProvider1.SetIconAlignment(this.lblTitle, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTitle.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.lblTitle, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblTitle.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.lblTitle, ((int)(resources.GetObject("lblTitle.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.lblTitle, ((int)(resources.GetObject("lblTitle.IconPadding1"))));
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             this.lblTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
@@ -191,10 +191,10 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grdItems.DefaultCellStyle = dataGridViewCellStyle3;
             this.grdItems.EnableHeadersVisualStyles = false;
-            this.errorProvider2.SetError(this.grdItems, resources.GetString("grdItems.Error"));
-            this.errorProvider1.SetError(this.grdItems, resources.GetString("grdItems.Error1"));
-            this.errorProvider2.SetIconAlignment(this.grdItems, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("grdItems.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.grdItems, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("grdItems.IconAlignment1"))));
+            this.errorProvider1.SetError(this.grdItems, resources.GetString("grdItems.Error"));
+            this.errorProvider2.SetError(this.grdItems, resources.GetString("grdItems.Error1"));
+            this.errorProvider1.SetIconAlignment(this.grdItems, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("grdItems.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.grdItems, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("grdItems.IconAlignment1"))));
             this.errorProvider1.SetIconPadding(this.grdItems, ((int)(resources.GetObject("grdItems.IconPadding"))));
             this.errorProvider2.SetIconPadding(this.grdItems, ((int)(resources.GetObject("grdItems.IconPadding1"))));
             this.grdItems.Name = "grdItems";
@@ -209,8 +209,8 @@
             resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errorProvider2.SetError(this.btnSave, resources.GetString("btnSave.Error"));
-            this.errorProvider1.SetError(this.btnSave, resources.GetString("btnSave.Error1"));
+            this.errorProvider1.SetError(this.btnSave, resources.GetString("btnSave.Error"));
+            this.errorProvider2.SetError(this.btnSave, resources.GetString("btnSave.Error1"));
             this.errorProvider2.SetIconAlignment(this.btnSave, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSave.IconAlignment"))));
             this.errorProvider1.SetIconAlignment(this.btnSave, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSave.IconAlignment1"))));
             this.errorProvider1.SetIconPadding(this.btnSave, ((int)(resources.GetObject("btnSave.IconPadding"))));
@@ -222,20 +222,20 @@
             // rtxDetail
             // 
             resources.ApplyResources(this.rtxDetail, "rtxDetail");
-            this.errorProvider2.SetError(this.rtxDetail, resources.GetString("rtxDetail.Error"));
-            this.errorProvider1.SetError(this.rtxDetail, resources.GetString("rtxDetail.Error1"));
+            this.errorProvider1.SetError(this.rtxDetail, resources.GetString("rtxDetail.Error"));
+            this.errorProvider2.SetError(this.rtxDetail, resources.GetString("rtxDetail.Error1"));
             this.errorProvider1.SetIconAlignment(this.rtxDetail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rtxDetail.IconAlignment"))));
             this.errorProvider2.SetIconAlignment(this.rtxDetail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rtxDetail.IconAlignment1"))));
-            this.errorProvider2.SetIconPadding(this.rtxDetail, ((int)(resources.GetObject("rtxDetail.IconPadding"))));
-            this.errorProvider1.SetIconPadding(this.rtxDetail, ((int)(resources.GetObject("rtxDetail.IconPadding1"))));
+            this.errorProvider1.SetIconPadding(this.rtxDetail, ((int)(resources.GetObject("rtxDetail.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.rtxDetail, ((int)(resources.GetObject("rtxDetail.IconPadding1"))));
             this.rtxDetail.Name = "rtxDetail";
             this.rtxDetail.TextChanged += new System.EventHandler(this.rtxDetail_TextChanged);
             // 
             // txtPrice
             // 
             resources.ApplyResources(this.txtPrice, "txtPrice");
-            this.errorProvider2.SetError(this.txtPrice, resources.GetString("txtPrice.Error"));
-            this.errorProvider1.SetError(this.txtPrice, resources.GetString("txtPrice.Error1"));
+            this.errorProvider1.SetError(this.txtPrice, resources.GetString("txtPrice.Error"));
+            this.errorProvider2.SetError(this.txtPrice, resources.GetString("txtPrice.Error1"));
             this.errorProvider1.SetIconAlignment(this.txtPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtPrice.IconAlignment"))));
             this.errorProvider2.SetIconAlignment(this.txtPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtPrice.IconAlignment1"))));
             this.errorProvider1.SetIconPadding(this.txtPrice, ((int)(resources.GetObject("txtPrice.IconPadding"))));
@@ -246,13 +246,13 @@
             // cbxType
             // 
             resources.ApplyResources(this.cbxType, "cbxType");
-            this.errorProvider2.SetError(this.cbxType, resources.GetString("cbxType.Error"));
-            this.errorProvider1.SetError(this.cbxType, resources.GetString("cbxType.Error1"));
+            this.errorProvider1.SetError(this.cbxType, resources.GetString("cbxType.Error"));
+            this.errorProvider2.SetError(this.cbxType, resources.GetString("cbxType.Error1"));
             this.cbxType.FormattingEnabled = true;
-            this.errorProvider2.SetIconAlignment(this.cbxType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbxType.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.cbxType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbxType.IconAlignment1"))));
-            this.errorProvider1.SetIconPadding(this.cbxType, ((int)(resources.GetObject("cbxType.IconPadding"))));
-            this.errorProvider2.SetIconPadding(this.cbxType, ((int)(resources.GetObject("cbxType.IconPadding1"))));
+            this.errorProvider1.SetIconAlignment(this.cbxType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbxType.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.cbxType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cbxType.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.cbxType, ((int)(resources.GetObject("cbxType.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.cbxType, ((int)(resources.GetObject("cbxType.IconPadding1"))));
             this.cbxType.Items.AddRange(new object[] {
             resources.GetString("cbxType.Items"),
             resources.GetString("cbxType.Items1"),
@@ -264,8 +264,8 @@
             // txtName1
             // 
             resources.ApplyResources(this.txtName1, "txtName1");
-            this.errorProvider2.SetError(this.txtName1, resources.GetString("txtName1.Error"));
-            this.errorProvider1.SetError(this.txtName1, resources.GetString("txtName1.Error1"));
+            this.errorProvider1.SetError(this.txtName1, resources.GetString("txtName1.Error"));
+            this.errorProvider2.SetError(this.txtName1, resources.GetString("txtName1.Error1"));
             this.errorProvider1.SetIconAlignment(this.txtName1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtName1.IconAlignment"))));
             this.errorProvider2.SetIconAlignment(this.txtName1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtName1.IconAlignment1"))));
             this.errorProvider1.SetIconPadding(this.txtName1, ((int)(resources.GetObject("txtName1.IconPadding"))));
@@ -276,8 +276,8 @@
             // txtID
             // 
             resources.ApplyResources(this.txtID, "txtID");
-            this.errorProvider2.SetError(this.txtID, resources.GetString("txtID.Error"));
-            this.errorProvider1.SetError(this.txtID, resources.GetString("txtID.Error1"));
+            this.errorProvider1.SetError(this.txtID, resources.GetString("txtID.Error"));
+            this.errorProvider2.SetError(this.txtID, resources.GetString("txtID.Error1"));
             this.errorProvider1.SetIconAlignment(this.txtID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtID.IconAlignment"))));
             this.errorProvider2.SetIconAlignment(this.txtID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtID.IconAlignment1"))));
             this.errorProvider1.SetIconPadding(this.txtID, ((int)(resources.GetObject("txtID.IconPadding"))));
@@ -290,8 +290,8 @@
             resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errorProvider2.SetError(this.btnCancel, resources.GetString("btnCancel.Error"));
-            this.errorProvider1.SetError(this.btnCancel, resources.GetString("btnCancel.Error1"));
+            this.errorProvider1.SetError(this.btnCancel, resources.GetString("btnCancel.Error"));
+            this.errorProvider2.SetError(this.btnCancel, resources.GetString("btnCancel.Error1"));
             this.errorProvider2.SetIconAlignment(this.btnCancel, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCancel.IconAlignment"))));
             this.errorProvider1.SetIconAlignment(this.btnCancel, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCancel.IconAlignment1"))));
             this.errorProvider1.SetIconPadding(this.btnCancel, ((int)(resources.GetObject("btnCancel.IconPadding"))));
@@ -305,8 +305,8 @@
             resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errorProvider2.SetError(this.btnBrowse, resources.GetString("btnBrowse.Error"));
-            this.errorProvider1.SetError(this.btnBrowse, resources.GetString("btnBrowse.Error1"));
+            this.errorProvider1.SetError(this.btnBrowse, resources.GetString("btnBrowse.Error"));
+            this.errorProvider2.SetError(this.btnBrowse, resources.GetString("btnBrowse.Error1"));
             this.errorProvider2.SetIconAlignment(this.btnBrowse, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnBrowse.IconAlignment"))));
             this.errorProvider1.SetIconAlignment(this.btnBrowse, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnBrowse.IconAlignment1"))));
             this.errorProvider1.SetIconPadding(this.btnBrowse, ((int)(resources.GetObject("btnBrowse.IconPadding"))));
@@ -319,10 +319,10 @@
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.errorProvider2.SetError(this.pictureBox1, resources.GetString("pictureBox1.Error"));
-            this.errorProvider1.SetError(this.pictureBox1, resources.GetString("pictureBox1.Error1"));
-            this.errorProvider2.SetIconAlignment(this.pictureBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox1.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.pictureBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox1.IconAlignment1"))));
+            this.errorProvider1.SetError(this.pictureBox1, resources.GetString("pictureBox1.Error"));
+            this.errorProvider2.SetError(this.pictureBox1, resources.GetString("pictureBox1.Error1"));
+            this.errorProvider1.SetIconAlignment(this.pictureBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox1.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.pictureBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox1.IconAlignment1"))));
             this.errorProvider1.SetIconPadding(this.pictureBox1, ((int)(resources.GetObject("pictureBox1.IconPadding"))));
             this.errorProvider2.SetIconPadding(this.pictureBox1, ((int)(resources.GetObject("pictureBox1.IconPadding1"))));
             this.pictureBox1.Name = "pictureBox1";
@@ -332,36 +332,36 @@
             // lblDetails
             // 
             resources.ApplyResources(this.lblDetails, "lblDetails");
-            this.errorProvider2.SetError(this.lblDetails, resources.GetString("lblDetails.Error"));
-            this.errorProvider1.SetError(this.lblDetails, resources.GetString("lblDetails.Error1"));
-            this.errorProvider2.SetIconAlignment(this.lblDetails, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblDetails.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.lblDetails, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblDetails.IconAlignment1"))));
-            this.errorProvider1.SetIconPadding(this.lblDetails, ((int)(resources.GetObject("lblDetails.IconPadding"))));
-            this.errorProvider2.SetIconPadding(this.lblDetails, ((int)(resources.GetObject("lblDetails.IconPadding1"))));
+            this.errorProvider1.SetError(this.lblDetails, resources.GetString("lblDetails.Error"));
+            this.errorProvider2.SetError(this.lblDetails, resources.GetString("lblDetails.Error1"));
+            this.errorProvider1.SetIconAlignment(this.lblDetails, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblDetails.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.lblDetails, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblDetails.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.lblDetails, ((int)(resources.GetObject("lblDetails.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.lblDetails, ((int)(resources.GetObject("lblDetails.IconPadding1"))));
             this.lblDetails.Name = "lblDetails";
             this.lblDetails.Click += new System.EventHandler(this.lblDetails_Click);
             // 
             // lblType
             // 
             resources.ApplyResources(this.lblType, "lblType");
-            this.errorProvider2.SetError(this.lblType, resources.GetString("lblType.Error"));
-            this.errorProvider1.SetError(this.lblType, resources.GetString("lblType.Error1"));
-            this.errorProvider2.SetIconAlignment(this.lblType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblType.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.lblType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblType.IconAlignment1"))));
-            this.errorProvider1.SetIconPadding(this.lblType, ((int)(resources.GetObject("lblType.IconPadding"))));
-            this.errorProvider2.SetIconPadding(this.lblType, ((int)(resources.GetObject("lblType.IconPadding1"))));
+            this.errorProvider1.SetError(this.lblType, resources.GetString("lblType.Error"));
+            this.errorProvider2.SetError(this.lblType, resources.GetString("lblType.Error1"));
+            this.errorProvider1.SetIconAlignment(this.lblType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblType.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.lblType, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblType.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.lblType, ((int)(resources.GetObject("lblType.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.lblType, ((int)(resources.GetObject("lblType.IconPadding1"))));
             this.lblType.Name = "lblType";
             this.lblType.Click += new System.EventHandler(this.lblType_Click);
             // 
             // lblListCaption
             // 
             resources.ApplyResources(this.lblListCaption, "lblListCaption");
-            this.errorProvider2.SetError(this.lblListCaption, resources.GetString("lblListCaption.Error"));
-            this.errorProvider1.SetError(this.lblListCaption, resources.GetString("lblListCaption.Error1"));
-            this.errorProvider2.SetIconAlignment(this.lblListCaption, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblListCaption.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.lblListCaption, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblListCaption.IconAlignment1"))));
-            this.errorProvider1.SetIconPadding(this.lblListCaption, ((int)(resources.GetObject("lblListCaption.IconPadding"))));
-            this.errorProvider2.SetIconPadding(this.lblListCaption, ((int)(resources.GetObject("lblListCaption.IconPadding1"))));
+            this.errorProvider1.SetError(this.lblListCaption, resources.GetString("lblListCaption.Error"));
+            this.errorProvider2.SetError(this.lblListCaption, resources.GetString("lblListCaption.Error1"));
+            this.errorProvider1.SetIconAlignment(this.lblListCaption, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblListCaption.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.lblListCaption, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblListCaption.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.lblListCaption, ((int)(resources.GetObject("lblListCaption.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.lblListCaption, ((int)(resources.GetObject("lblListCaption.IconPadding1"))));
             this.lblListCaption.Name = "lblListCaption";
             this.lblListCaption.Click += new System.EventHandler(this.lblListCaption_Click);
             // 
@@ -369,12 +369,12 @@
             // 
             resources.ApplyResources(this.lblRemove, "lblRemove");
             this.lblRemove.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errorProvider2.SetError(this.lblRemove, resources.GetString("lblRemove.Error"));
-            this.errorProvider1.SetError(this.lblRemove, resources.GetString("lblRemove.Error1"));
-            this.errorProvider2.SetIconAlignment(this.lblRemove, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblRemove.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.lblRemove, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblRemove.IconAlignment1"))));
-            this.errorProvider1.SetIconPadding(this.lblRemove, ((int)(resources.GetObject("lblRemove.IconPadding"))));
-            this.errorProvider2.SetIconPadding(this.lblRemove, ((int)(resources.GetObject("lblRemove.IconPadding1"))));
+            this.errorProvider1.SetError(this.lblRemove, resources.GetString("lblRemove.Error"));
+            this.errorProvider2.SetError(this.lblRemove, resources.GetString("lblRemove.Error1"));
+            this.errorProvider1.SetIconAlignment(this.lblRemove, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblRemove.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.lblRemove, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblRemove.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.lblRemove, ((int)(resources.GetObject("lblRemove.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.lblRemove, ((int)(resources.GetObject("lblRemove.IconPadding1"))));
             this.lblRemove.Image = global::GUI.Properties.Resources.minus;
             this.lblRemove.Name = "lblRemove";
             this.lblRemove.Click += new System.EventHandler(this.lblRemove_Click);
@@ -385,12 +385,12 @@
             // 
             resources.ApplyResources(this.lblAdd, "lblAdd");
             this.lblAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errorProvider2.SetError(this.lblAdd, resources.GetString("lblAdd.Error"));
-            this.errorProvider1.SetError(this.lblAdd, resources.GetString("lblAdd.Error1"));
-            this.errorProvider2.SetIconAlignment(this.lblAdd, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblAdd.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.lblAdd, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblAdd.IconAlignment1"))));
-            this.errorProvider1.SetIconPadding(this.lblAdd, ((int)(resources.GetObject("lblAdd.IconPadding"))));
-            this.errorProvider2.SetIconPadding(this.lblAdd, ((int)(resources.GetObject("lblAdd.IconPadding1"))));
+            this.errorProvider1.SetError(this.lblAdd, resources.GetString("lblAdd.Error"));
+            this.errorProvider2.SetError(this.lblAdd, resources.GetString("lblAdd.Error1"));
+            this.errorProvider1.SetIconAlignment(this.lblAdd, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblAdd.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.lblAdd, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblAdd.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.lblAdd, ((int)(resources.GetObject("lblAdd.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.lblAdd, ((int)(resources.GetObject("lblAdd.IconPadding1"))));
             this.lblAdd.Image = global::GUI.Properties.Resources.plus_not_circle;
             this.lblAdd.Name = "lblAdd";
             this.lblAdd.Click += new System.EventHandler(this.lblAdd_Click);
@@ -400,36 +400,36 @@
             // lblPrice
             // 
             resources.ApplyResources(this.lblPrice, "lblPrice");
-            this.errorProvider2.SetError(this.lblPrice, resources.GetString("lblPrice.Error"));
-            this.errorProvider1.SetError(this.lblPrice, resources.GetString("lblPrice.Error1"));
-            this.errorProvider2.SetIconAlignment(this.lblPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblPrice.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.lblPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblPrice.IconAlignment1"))));
-            this.errorProvider1.SetIconPadding(this.lblPrice, ((int)(resources.GetObject("lblPrice.IconPadding"))));
-            this.errorProvider2.SetIconPadding(this.lblPrice, ((int)(resources.GetObject("lblPrice.IconPadding1"))));
+            this.errorProvider1.SetError(this.lblPrice, resources.GetString("lblPrice.Error"));
+            this.errorProvider2.SetError(this.lblPrice, resources.GetString("lblPrice.Error1"));
+            this.errorProvider1.SetIconAlignment(this.lblPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblPrice.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.lblPrice, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblPrice.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.lblPrice, ((int)(resources.GetObject("lblPrice.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.lblPrice, ((int)(resources.GetObject("lblPrice.IconPadding1"))));
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Click += new System.EventHandler(this.lblPrice_Click);
             // 
             // lblName
             // 
             resources.ApplyResources(this.lblName, "lblName");
-            this.errorProvider2.SetError(this.lblName, resources.GetString("lblName.Error"));
-            this.errorProvider1.SetError(this.lblName, resources.GetString("lblName.Error1"));
-            this.errorProvider2.SetIconAlignment(this.lblName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblName.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.lblName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblName.IconAlignment1"))));
-            this.errorProvider1.SetIconPadding(this.lblName, ((int)(resources.GetObject("lblName.IconPadding"))));
-            this.errorProvider2.SetIconPadding(this.lblName, ((int)(resources.GetObject("lblName.IconPadding1"))));
+            this.errorProvider1.SetError(this.lblName, resources.GetString("lblName.Error"));
+            this.errorProvider2.SetError(this.lblName, resources.GetString("lblName.Error1"));
+            this.errorProvider1.SetIconAlignment(this.lblName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblName.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.lblName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblName.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.lblName, ((int)(resources.GetObject("lblName.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.lblName, ((int)(resources.GetObject("lblName.IconPadding1"))));
             this.lblName.Name = "lblName";
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // lblID
             // 
             resources.ApplyResources(this.lblID, "lblID");
-            this.errorProvider2.SetError(this.lblID, resources.GetString("lblID.Error"));
-            this.errorProvider1.SetError(this.lblID, resources.GetString("lblID.Error1"));
-            this.errorProvider2.SetIconAlignment(this.lblID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblID.IconAlignment"))));
-            this.errorProvider1.SetIconAlignment(this.lblID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblID.IconAlignment1"))));
-            this.errorProvider1.SetIconPadding(this.lblID, ((int)(resources.GetObject("lblID.IconPadding"))));
-            this.errorProvider2.SetIconPadding(this.lblID, ((int)(resources.GetObject("lblID.IconPadding1"))));
+            this.errorProvider1.SetError(this.lblID, resources.GetString("lblID.Error"));
+            this.errorProvider2.SetError(this.lblID, resources.GetString("lblID.Error1"));
+            this.errorProvider1.SetIconAlignment(this.lblID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblID.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.lblID, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblID.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.lblID, ((int)(resources.GetObject("lblID.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.lblID, ((int)(resources.GetObject("lblID.IconPadding1"))));
             this.lblID.Name = "lblID";
             this.lblID.Click += new System.EventHandler(this.lblID_Click);
             // 

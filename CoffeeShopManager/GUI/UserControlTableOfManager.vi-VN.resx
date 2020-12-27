@@ -119,13 +119,13 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 27</value>
+    <value>158, 23</value>
   </data>
   <data name="cboBy.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="cboBy.Items" xml:space="preserve">
     <value>ID Khách hàng</value>
@@ -133,56 +133,53 @@
   <data name="cboBy.Items1" xml:space="preserve">
     <value>ID Bàn</value>
   </data>
-  <data name="cboBy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 27</value>
-  </data>
   <data name="lblBy.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblBy.Location" type="System.Drawing.Point, System.Drawing">
     <value>505, 53</value>
   </data>
   <data name="lblBy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 19</value>
+    <value>31, 17</value>
   </data>
   <data name="lblBy.Text" xml:space="preserve">
     <value>Bởi:</value>
   </data>
   <data name="lblSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>505, 14</value>
   </data>
   <data name="lblSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 19</value>
+    <value>67, 17</value>
   </data>
   <data name="lblSearch.Text" xml:space="preserve">
     <value>Tìm kiếm:</value>
   </data>
   <data name="btnUnavailable.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnUnavailable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>442, 79</value>
+    <value>422, 79</value>
   </data>
   <data name="btnUnavailable.Text" xml:space="preserve">
     <value>Hư hỏng</value>
   </data>
   <data name="btnOccupied.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnOccupied.Location" type="System.Drawing.Point, System.Drawing">
     <value>317, 79</value>
   </data>
   <data name="btnOccupied.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
+    <value>99, 28</value>
   </data>
   <data name="btnOccupied.Text" xml:space="preserve">
     <value>Đã ngồi</value>
   </data>
   <data name="btnAvailable.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnAvailable.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 79</value>
@@ -191,10 +188,10 @@
     <value>81, 28</value>
   </data>
   <data name="btnAvailable.Text" xml:space="preserve">
-    <value>Trống</value>
+    <value>Còn trống</value>
   </data>
   <data name="btnAll.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>140, 79</value>
@@ -206,31 +203,31 @@
     <value>Tất cả</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 10.2pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 85</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 19</value>
+    <value>62, 21</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Lọc bởi</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 19.8000011pt, style=Bold</value>
+    <value>Tahoma, 18pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 10</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 38</value>
+    <value>213, 36</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Danh sách bàn</value>
   </data>
   <data name="btnAddTable.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnAddTable.Text" xml:space="preserve">
     <value>Thêm bàn</value>
