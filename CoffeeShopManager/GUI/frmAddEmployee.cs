@@ -24,6 +24,8 @@ namespace GUI
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
         public int checkbirth,checkjoin;
+        private bool checkIdDeleted = true;
+
         public frmAddEmployee()
         {
             InitializeComponent();
@@ -39,23 +41,38 @@ namespace GUI
         {
             if (checkid == 0)
             {
-                MessageBox.Show("Wrong id");
+                MessageBox.Show(cboString.Items[0].ToString());
                 return;
             }
             else
             {
-                if (txtID.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
+                if (!checkIdDeleted)
+                {
+                    var ret = MessageBox.Show(cboString.Items[1].ToString(),
+                        cboString.Items[2].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (ret == DialogResult.Yes)
+                    {
+                        frmRestoreEmployee frmRes = new frmRestoreEmployee(_ucEmp, this,
+                            busEmp.GetInfoByIdDeletedAndNotDeleted(txtID.Text, frmManager.dtoMan.Shop.ID));
+                        this.Hide();
+                        this.Reload();
+                        frmRes.Show();
+                        frmRes.TopMost = true;
+                    }
+
+                }
+                else if (txtID.Text == "" || txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" ||
                     cbboxPosition.Text == "" || txtPhone.Text == "" || txtEmail.Text == ""
                     || txtSalary.Text == "" || txtUsername.Text == "" || txtPassword.Text == ""
                    || (radFemale.Checked == false &&
                     radMale.Checked == false))
                 {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(cboString.Items[3].ToString(), cboString.Items[4].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (cbboxPosition.Text == "Manager")
                 {
-                    MessageBox.Show("Employee's position cannot be \"Manager\".", "Invalid employee position", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    errorProvider1.SetError(cbboxPosition, "Position can't be \"Manager\"");
+                    MessageBox.Show(cboString.Items[5].ToString(), cboString.Items[6].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    errorProvider1.SetError(cbboxPosition, cboString.Items[7].ToString());
                 }
                 else
                 {
@@ -96,7 +113,7 @@ namespace GUI
 
                     if (!busUser.CheckUsername(dtoEmp.Account.Username))
                     {
-                        MessageBox.Show("Username has already existed.", "Username taken", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show(cboString.Items[8].ToString(), cboString.Items[9].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtEmail.ResetText();
                         return;
                     }
@@ -125,7 +142,7 @@ namespace GUI
 
                         if (this.picboxEmpImg.Image == null)
                         {
-                            MessageBox.Show("Please select a picture.", "Picture not selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show(cboString.Items[10].ToString(), cboString.Items[11].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
@@ -133,12 +150,12 @@ namespace GUI
                             busEmp.AddEmployee(dtoEmp);
                             Reload();
                             errorProvider1.SetError(cbboxPosition, "");
-                            MessageBox.Show("New employee added.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(cboString.Items[12].ToString(), cboString.Items[4].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please enter valid date fields.", "Invalid date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(cboString.Items[13].ToString(), cboString.Items[14].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -150,8 +167,8 @@ namespace GUI
             txtFirstName.Text = "";
             txtLastName.Text = "";
             txtAddress.Text = "";
-            cbboxPosition.Items.Clear();
-            cbboxPosition.Text = "";
+            cbboxPosition.Text = string.Empty;
+            cbboxPosition.SelectedIndex = -1;
             txtPhone.Text = "";
             txtEmail.Text = "";
 
@@ -184,7 +201,7 @@ namespace GUI
         {
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
             {
-                errEmail.SetError(txtEmail, "Email is required");
+                errEmail.SetError(txtEmail, cboString.Items[15].ToString());
                 errorProvider1.SetError(txtEmail, "");
                 checkmail = 0;
                 btnAdd.Enabled = false;
@@ -196,13 +213,13 @@ namespace GUI
                     if (busEmp.GetByEmail(txtEmail.Text, frmManager.dtoMan.Shop.ID) == null)
                     {
                         errEmail.SetError(txtEmail, "");
-                        errorProvider1.SetError(txtEmail, "correct");
+                        errorProvider1.SetError(txtEmail, cboString.Items[16].ToString());
                         checkmail = 1;
                         btnAdd.Enabled = true;
                     }
                     else
                     {
-                        errEmail.SetError(txtEmail, "Email had in shop");
+                        errEmail.SetError(txtEmail, cboString.Items[17].ToString());
                         errorProvider1.SetError(txtEmail, "");
                         checkmail = 0;
                         btnAdd.Enabled = false;
@@ -210,7 +227,7 @@ namespace GUI
                 }
                 else
                 {
-                    errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    errEmail.SetError(txtEmail, cboString.Items[18].ToString());
                     errorProvider1.SetError(txtEmail, "");
                     checkmail = 0;
                     btnAdd.Enabled = false;
@@ -221,16 +238,6 @@ namespace GUI
         private void TxtEmail_LostFocus(object sender, EventArgs e)
         {
             tiktoker.Start();
-        }
-
-        private void txtDayBD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtYearBD_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtAddress_TextChanged(object sender, EventArgs e)
@@ -282,21 +289,48 @@ namespace GUI
 
         private void txtID_TextChanged(object sender, EventArgs e)
         {
-            if (busEmp.GetEmployeeInfoAndManagerId(txtID.Text, frmManager.dtoMan.Shop.ID) != null)
+            var emp = busEmp.GetInfoByIdDeletedAndNotDeleted(txtID.Text, frmManager.dtoMan.Shop.ID);
+            if (string.IsNullOrWhiteSpace(txtID.Text))
             {
                 checkid = 0;
-                errEmail.SetError(txtID, "Id had in shop");
+                checkIdDeleted = true;
+                errEmail.SetError(txtID, cboString.Items[3].ToString());
                 errorProvider1.SetError(txtID, "");
-
+                errIdDeleted.SetError(txtID, "");
+            }
+            else if (emp != null)
+            {
+                if (!emp.Deleted)
+                {
+                    checkid = 0;
+                    checkIdDeleted = true;
+                    errEmail.SetError(txtID, cboString.Items[19].ToString());
+                    errorProvider1.SetError(txtID, "");
+                    errIdDeleted.SetError(txtID, "");
+                }
+                else
+                {
+                    checkIdDeleted = false;
+                    checkid = 1;
+                    errEmail.SetError(txtID, "");
+                    errorProvider1.SetError(txtID, "");
+                    errIdDeleted.SetError(txtID, cboString.Items[20].ToString());
+                }
             }
             else
             {
                 checkid = 1;
+                checkIdDeleted = true;
                 errEmail.SetError(txtID, "");
-                errorProvider1.SetError(txtID, "Correct");
+                errIdDeleted.SetError(txtID, "");
+                errorProvider1.SetError(txtID, cboString.Items[21].ToString());
 
             }
             if (checkidmanager == 1 && checkmail == 1 && checkbirth == 1 && checkjoin == 1 && checkuser == 1 && checksalary == 1 && checkid == 1)
+            {
+                btnAdd.Enabled = true;
+            }
+            else if (!checkIdDeleted)
             {
                 btnAdd.Enabled = true;
             }
@@ -311,7 +345,7 @@ namespace GUI
             if (busEmp.GetEmployeeInfoByUsername(txtUsername.Text) != null)
             {
                 checkuser = 1;
-                errEmail.SetError(txtUsername, "Username had in shop");
+                errEmail.SetError(txtUsername, cboString.Items[22].ToString());
                 errorProvider1.SetError(txtUsername, "");
 
             }
@@ -319,7 +353,7 @@ namespace GUI
             {
                 checkuser = 0;
                 errEmail.SetError(txtUsername, "");
-                errorProvider1.SetError(txtUsername, "Correct");
+                errorProvider1.SetError(txtUsername, cboString.Items[16].ToString());
 
             }
             if (checkidmanager == 1 && checkmail == 1 && checkbirth == 1 && checkjoin == 1 &&checkuser==1&& checksalary == 1 && checkid == 1)
@@ -343,12 +377,12 @@ namespace GUI
             if (double.TryParse(txtSalary.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala))
             {
                 errEmail.SetError(txtSalary, "");
-                errorProvider1.SetError(txtSalary, "correct");
+                errorProvider1.SetError(txtSalary, cboString.Items[16].ToString());
                 checksalary = 1;
             }
             else
             {
-                errEmail.SetError(txtSalary, "Wrong format");
+                errEmail.SetError(txtSalary, cboString.Items[23].ToString());
                 errorProvider1.SetError(txtSalary, "");
                 checksalary = 0;
             }
@@ -372,15 +406,15 @@ namespace GUI
                 checkjoin = 1;
                 checkbirth = 1;
                 errEmail.SetError(datBirth, "");
-                errorProvider1.SetError(datBirth, "Correct");
+                errorProvider1.SetError(datBirth, cboString.Items[16].ToString());
                 errEmail.SetError(datJoin, "");
-                errorProvider1.SetError(datJoin, "Correct");
+                errorProvider1.SetError(datJoin, cboString.Items[16].ToString());
             }
             else
             {
-                errEmail.SetError(datBirth, "Age not enough to work");
+                errEmail.SetError(datBirth, cboString.Items[24].ToString());
                 errorProvider1.SetError(datBirth, "");
-                errEmail.SetError(datJoin, "Age not enough to work");
+                errEmail.SetError(datJoin, cboString.Items[24].ToString());
                 errorProvider1.SetError(datJoin, "");
                 checkjoin = 0;
                 checkbirth = 0;
@@ -405,17 +439,17 @@ namespace GUI
                 checkbirth = 1;
                 checkjoin = 1;
                 errEmail.SetError(datBirth, "");
-                errorProvider1.SetError(datBirth, "Correct");
+                errorProvider1.SetError(datBirth, cboString.Items[16].ToString());
                 errEmail.SetError(datJoin, "");
-                errorProvider1.SetError(datJoin, "Correct");
+                errorProvider1.SetError(datJoin, cboString.Items[16].ToString());
             }
             else
             {
                 checkjoin = 0;
-                errEmail.SetError(datBirth, "Age not enough to work");
+                errEmail.SetError(datBirth, cboString.Items[24].ToString());
                 errorProvider1.SetError(datBirth, "");
                 errEmail.SetError(datJoin, "");
-                errorProvider1.SetError(datJoin, "Correct");
+                errorProvider1.SetError(datJoin, cboString.Items[16].ToString());
                 checkbirth = 0;
             }
             if (checkidmanager == 1 && checkmail == 1 && checkbirth == 1 && checkjoin == 1 && checkuser == 1 && checksalary == 1 && checkid == 1)

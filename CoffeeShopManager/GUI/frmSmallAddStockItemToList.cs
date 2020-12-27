@@ -45,7 +45,9 @@ namespace GUI
             if (string.IsNullOrWhiteSpace(txtItemId.Text))
             {
                 txtItemId.ForeColor = Color.DimGray;
-                txtItemId.Text = "Enter product ID";
+                if(lblAdd.Text == "Thêm")
+                txtItemId.Text = "Nhập ID sản phẩm";
+                else txtItemId.Text = "Enter product ID";
             }
         }
         private void TxtItemId_GotFocus(object sender, EventArgs e)
@@ -88,13 +90,17 @@ namespace GUI
             busPro.AddItemForProduct(itemForPro);
             ResetInput();
             frmEditPro.ReloadGridView();
-            MessageBox.Show("New item added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (lblAdd.Text == "Thêm")
+                MessageBox.Show("Hàng hóa mới đã được thêm vào danh sách", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("New item added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ResetInput()
         {
             txtItemId.ForeColor = Color.DimGray;
-            txtItemId.Text = "Enter product ID";
+            if (lblAdd.Text == "Thêm")
+                txtItemId.Text = "Nhập ID sản phẩm";
+            else txtItemId.Text = "Enter product ID";
             err.Icon = errorIcon;
             err.SetError(txtItemId, "");
             lblAdd.Enabled = false;
@@ -129,27 +135,37 @@ namespace GUI
                             if (busStock.GetItemForProduct(id, Product.Id, Product.Shop.ID) == null)
                             {
                                 err.Icon = checkIcon;
-                                err.SetError(txtItemId, "Valid");
+                                if (lblAdd.Text == "Thêm")
+                                    err.SetError(txtItemId, "Hợp lệ");
+                                else err.SetError(txtItemId, "Valid");
                                 lblAdd.Enabled = true;
                             }
                             else
                             {
-                                throw new Exception("A stock item with such ID has already been added to the list");
+                                if (lblAdd.Text == "Thêm")
+                                throw new Exception("Hàng hóa với ID này đã được thêm vào danh sách rồi.");
+                                else throw new Exception("A stock item with such ID has already been added to the list");
                             }
                         }
                         else
                         {
-                            throw new Exception("A stock item with such ID does not exist");
+                            if (lblAdd.Text == "Thêm")
+                                throw new Exception("ID hàng hóa này không tồn tại.");
+                            else throw new Exception("A stock item with such ID does not exist");
                         }
                     }
                     else
                     {
-                        throw new Exception("Stock item ID must be a natural number");
+                        if (lblAdd.Text == "Thêm")
+                            throw new Exception("ID hàng hóa phải là số tự nhiên");
+                        else throw new Exception("Stock item ID must be a natural number");
                     }
                 }
                 else
                 {
-                    throw new Exception("Please fill all info fields");
+                    if (lblAdd.Text == "Thêm")
+                        throw new Exception("Vui lòng nhập đầy đủ thông tin.");
+                    else throw new Exception("Please fill all info fields");
                 }
             }
             catch (Exception ex)

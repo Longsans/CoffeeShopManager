@@ -52,9 +52,9 @@
             // 
             // TitleBar
             // 
+            resources.ApplyResources(this.TitleBar, "TitleBar");
             this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.TitleBar.Controls.Add(this.btnExit);
-            resources.ApplyResources(this.TitleBar, "TitleBar");
             this.TitleBar.Name = "TitleBar";
             this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
             this.TitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
@@ -71,6 +71,7 @@
             // 
             // panel3
             // 
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(134)))), ((int)(((byte)(102)))));
             this.panel3.Controls.Add(this.btnEng);
             this.panel3.Controls.Add(this.btnVie);
@@ -84,7 +85,6 @@
             this.panel3.Controls.Add(this.btnLogin);
             this.panel3.Controls.Add(this.txtPassword);
             this.panel3.Controls.Add(this.txtUsername);
-            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
             // btnEng
@@ -108,8 +108,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.coffee;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.coffee;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
@@ -145,10 +145,10 @@
             // 
             // btnLogin
             // 
+            resources.ApplyResources(this.btnLogin, "btnLogin");
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnLogin, "btnLogin");
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -167,9 +167,9 @@
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
             this.panel2.BackgroundImage = global::GUI.Properties.Resources.it_s_always_coffee_time_quote_slogan_typography_7201_31;
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // frmLogin

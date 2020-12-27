@@ -95,13 +95,13 @@ namespace GUI
                     string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) ||
                     string.IsNullOrWhiteSpace(txtUsername.Text))
                 {
-                    throw new Exception("Please fill all info fields.");
+                    throw new Exception(comboBox1.Items[0].ToString());
                 }
                 else if (txtUsername.Text != dtoMan.Account.Username)
                 {
                     if (!busUser.CheckUsername(txtUsername.Text))
                     {
-                        throw new InvalidOperationException("Username already exists, please choose a different username.");
+                        throw new InvalidOperationException(comboBox1.Items[1].ToString());
                     }
                 }
 
@@ -129,19 +129,19 @@ namespace GUI
                 dtoMan.Email = txtEmail.Text;
                 else
                 {
-                    MessageBox.Show("Wrong email", "Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(comboBox1.Items[2].ToString(), comboBox1.Items[3].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 if ((DateTime.Now.Year- datBirthdate.Value.Year)>=18)
                 dtoMan.Birthdate = datBirthdate.Value;
                 else
                 {
-                    MessageBox.Show("Wrong age to work", "Age", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(comboBox1.Items[4].ToString(), comboBox1.Items[5].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
 
                 }
                 dtoMan.Account.Username = txtUsername.Text;
-                DialogResult ret = MessageBox.Show("Are you sure you want to save changes?", "Save changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ret = MessageBox.Show(comboBox1.Items[6].ToString(), comboBox1.Items[7].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (ret == DialogResult.Yes)
                 {
                     busMan.UpdateInfoAndAccount(dtoMan);
@@ -161,11 +161,11 @@ namespace GUI
             }
             catch (InvalidOperationException ex)
             {
-                MessageBox.Show(ex.Message, "Invalid username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, comboBox1.Items[8].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, comboBox1.Items[9].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -220,18 +220,18 @@ namespace GUI
                 if (EmailHelper.ValidateEmail(txtEmail.Text))
                 {
                     errorFalse.SetError(txtEmail, "");
-                    errorTrue.SetError(txtEmail, "Correct");
+                    errorTrue.SetError(txtEmail, comboBox1.Items[10].ToString());
                     if (busMan.GetByEmail(txtEmail.Text, frmManager.dtoMan.Shop.ID) == null||txtEmail.Text==dtoMan.Email)
                     {
                         
                         errorFalse.SetError(txtEmail, "");
-                        errorTrue.SetError(txtEmail, "correct");
+                        errorTrue.SetError(txtEmail, comboBox1.Items[10].ToString());
                         checkemail = 1;
 
                     }
                     else
                     {
-                        errorFalse.SetError(txtEmail, "Email had in shop");
+                        errorFalse.SetError(txtEmail, comboBox1.Items[11].ToString());
                         errorTrue.SetError(txtEmail, "");
                         checkemail = 0;
 
@@ -241,7 +241,7 @@ namespace GUI
                 }
                 else
                 {
-                    errorFalse.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    errorFalse.SetError(txtEmail, comboBox1.Items[12].ToString());
                     errorTrue.SetError(txtEmail, "");
                     checkemail = 0;
                 }

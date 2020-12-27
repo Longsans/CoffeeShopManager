@@ -67,12 +67,34 @@ namespace GUI
                             }
                         }
                         break;
+                    case "ID Khách hàng":
+                        {
+                            if (int.TryParse(txtSearch.Text, out int cusId))
+                            {
+                                grdReceipts.DataSource = busRec.GetReceiptSearchCustomersIdFiltered(cusId, dtoShop.ID);
+                            }
+                            else
+                            {
+                                ((DataTable)grdReceipts.DataSource).Clear();
+                            }
+                        }
+                        break;
                     case "Employee ID":
                         {
                             grdReceipts.DataSource = busRec.GetReceiptSearchEmployeesIdFiltered(filProp.CurrentFilterText, dtoShop.ID);
                         }
                         break;
+                    case "ID Nhân viên":
+                        {
+                            grdReceipts.DataSource = busRec.GetReceiptSearchEmployeesIdFiltered(filProp.CurrentFilterText, dtoShop.ID);
+                        }
+                        break;
                     case "Date of Payment":
+                        {
+                            grdReceipts.DataSource = busRec.GetReceiptSearchDateOfPaymentFiltered(datSearch.Value, dtoShop.ID);
+                        }
+                        break;
+                    case "Ngày trả":
                         {
                             grdReceipts.DataSource = busRec.GetReceiptSearchDateOfPaymentFiltered(datSearch.Value, dtoShop.ID);
                         }
@@ -135,7 +157,9 @@ namespace GUI
             if (txtSearch.TextLength == 0)
             {
                 txtSearch.ForeColor = Color.DimGray;
-                txtSearch.Text = "Search...";
+                if (btnDelete.Text == "Xóa")
+                txtSearch.Text = "Tìm kiếm...";
+                else txtSearch.Text = "Search...";
             }
         }
 
@@ -161,7 +185,7 @@ namespace GUI
 
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboSearch.Text == "Date of Payment")
+            if (cboSearch.Text == "Date of Payment" || cboSearch.Text == "Ngày trả")
             {
                 datSearch.Format = DateTimePickerFormat.Custom;
                 datSearch.CustomFormat = "dd/MM/yyyy";

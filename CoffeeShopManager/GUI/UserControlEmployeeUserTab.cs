@@ -82,13 +82,17 @@ namespace GUI
                     string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) ||
                     string.IsNullOrWhiteSpace(txtUsername.Text))
                 {
-                    throw new Exception("Please fill all info fields.");
+                    if (btnBrowse.Text == "Tìm ảnh")
+                    throw new Exception("Vui lòng nhập đầy đủ thông tin");
+                    else throw new Exception("Please fill all info fields.");
                 }
                 else if (txtUsername.Text != dtoEmp.Account.Username)
                 {
                     if (!busUser.CheckUsername(txtUsername.Text))
                     {
-                        throw new InvalidOperationException("Username already exists, please choose a different username.");
+                        if (btnBrowse.Text == "Tìm ảnh")
+                            throw new InvalidOperationException("Tên tài khoản đã tồn tại, hãy chọn tên tài khoản khác.");
+                        else throw new InvalidOperationException("Username already exists, please choose a different username.");
                     }
                 }
 
@@ -117,7 +121,10 @@ namespace GUI
                 dtoEmp.Email = txtEmail.Text;
                 dtoEmp.Birthdate = datBirthdate.Value;
                 dtoEmp.Account.Username = txtUsername.Text;
-                DialogResult ret = MessageBox.Show("Are you sure you want to save changes?", "Save changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ret;
+                if (btnBrowse.Text == "Tìm ảnh")
+                    ret = MessageBox.Show("Bạn có muốn lưu thay đổi không?", "Lưu thay đổi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                else ret = MessageBox.Show("Are you sure you want to save changes?", "Save changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (ret == DialogResult.Yes)
                 {
                     busEmp.EditEmployeeAndAccount(dtoEmp);
@@ -137,11 +144,15 @@ namespace GUI
             }
             catch (InvalidOperationException ex)
             {
-                MessageBox.Show(ex.Message, "Invalid username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (btnBrowse.Text == "Tìm ảnh")
+                    MessageBox.Show(ex.Message, "Tên tài khoản không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else MessageBox.Show(ex.Message, "Invalid username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (btnBrowse.Text == "Tìm ảnh")
+                    MessageBox.Show(ex.Message, "Một lỗi đã xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -206,7 +217,9 @@ namespace GUI
                 }
                 else
                 {
-                    errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    if (btnBrowse.Text == "Tìm ảnh")
+                        errEmail.SetError(txtEmail, "Email phải theo đinh dạng 'example@example.example' và không được có bất kỳ khoảng trắng nào");
+                    else errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
                     emailValid = false;
                 }
             }

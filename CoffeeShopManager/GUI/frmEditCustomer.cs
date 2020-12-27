@@ -82,12 +82,16 @@ namespace GUI
                 };
 
                 busCus.Update(dtoCus);
-                MessageBox.Show("Update successful.", "Edit success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (btnSave.Text == "Lưu")
+                    MessageBox.Show("Cập nhật thành công.", "Sửa thành công ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Update successful.", "Edit success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 ucCus.ReloadGridView();
             }
             else
             {
+                if (btnSave.Text == "Lưu")
+                    MessageBox.Show("Sai tuổi", "Tuổi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MessageBox.Show("Wrong age", "Age", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
 
@@ -104,27 +108,35 @@ namespace GUI
                     if (cus != null && cus.Email != dtoCus.Email)
                     {
                         err.Icon = errorIcon;
-                        err.SetError(txtEmail, "A customer with such email already exists");
+                        if (btnSave.Text == "Lưu")
+                            err.SetError(txtEmail, "Khách hàng với email này đã tồn tại.");
+                        else err.SetError(txtEmail, "A customer with such email already exists");
                         btnSave.Enabled = false;
                     }
                     else
                     {
                         err.Icon = checkIcon;
-                        err.SetError(txtEmail, "Valid");
+                        if (btnSave.Text == "Lưu") 
+                            err.SetError(txtEmail, "Hợp lệ");
+                        else err.SetError(txtEmail, "Valid");
                         btnSave.Enabled = true;
                     }
                 }
                 else
                 {
                     err.Icon = errorIcon;
-                    err.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    if (btnSave.Text == "Lưu")
+                        err.SetError(txtEmail, "Email phải theo mẫu 'example@example.example' và không được có bất kỳ khoảng trắng nào.");
+                    else err.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
                     btnSave.Enabled = false;
                 }
             }
             else
             {
                 err.Icon = errorIcon;
-                err.SetError(txtEmail, "Please fill all info fields");
+                if (btnSave.Text == "Lưu")
+                    err.SetError(txtEmail, "Vui lòng nhập đầy đủ thông tin");
+                else err.SetError(txtEmail, "Please fill all info fields");
                 btnSave.Enabled = false;
             }
         }

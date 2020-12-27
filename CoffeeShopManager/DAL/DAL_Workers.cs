@@ -234,7 +234,7 @@ namespace DAL
             {
                 if (userInserted)
                 {
-                    dalUserInfo.Delete(dtoWorker.Account);
+                    dalUserInfo.TrueDelete(dtoWorker.Account);
                 }
                 throw e;
             }
@@ -254,7 +254,7 @@ namespace DAL
                 OpenConnection();
             }
             cmd.ExecuteNonQuery();
-            dalUserInfo.Delete(dtoWorker.Account);
+            dalUserInfo.TrueDelete(dtoWorker.Account);
             if (!connState)
             {
                 CloseConnection();

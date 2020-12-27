@@ -156,13 +156,13 @@ namespace GUI
         }
         public void Timer_Click(object sender, EventArgs e)
         {
-            if (busEmp.GetEmployeeInfoAndManagerId(dtoEmp.Id, dtoShop.ID) == null)
+            if (busEmp.GetInfoByIdNotDeleted(dtoEmp.Id, dtoShop.ID) == null)
             {
                 t1.Stop();
-                if(btnLogout.Text=="Log out")
+                if(btnLogout.Text=="Đăng xuất")
                 MessageBox.Show("Yêu cầu đăng nhập lại", "Đăng nhập lại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
-                    MessageBox.Show("Log in again","Log in again", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("You have been logged out. Please log in again","Log in again", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.Close();
             }
         }
@@ -187,6 +187,7 @@ namespace GUI
 
         private void frmEmployee_FormClosed(object sender, FormClosedEventArgs e)
         {
+            t1.Dispose();
             _frmLogin.Show();
         }
 

@@ -41,11 +41,9 @@
             this.txtItemName = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblSupName = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -68,11 +66,9 @@
             this.panel1.Controls.Add(this.txtItemName);
             this.panel1.Controls.Add(this.lblPhone);
             this.panel1.Controls.Add(this.lblSupName);
-            this.panel1.Controls.Add(this.txtId);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lblEmail);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Name = "panel1";
             // 
             // lblEnterSup
@@ -140,9 +136,6 @@
             this.txtSupId.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSupId.ForeColor = System.Drawing.Color.DimGray;
             this.txtSupId.Name = "txtSupId";
-            this.txtSupId.Size = new System.Drawing.Size(142, 22);
-            this.txtSupId.TabIndex = 3;
-            this.txtSupId.Text = "Enter existing supplier";
             this.txtSupId.TextChanged += new System.EventHandler(this.txtSupId_TextChanged);
             // 
             // txtItemName
@@ -150,7 +143,6 @@
             resources.ApplyResources(this.txtItemName, "txtItemName");
             this.txtItemName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Validating += new System.ComponentModel.CancelEventHandler(this.txtItemName_Validating);
             // 
             // lblPhone
             // 
@@ -161,13 +153,6 @@
             // 
             resources.ApplyResources(this.lblSupName, "lblSupName");
             this.lblSupName.Name = "lblSupName";
-            // 
-            // txtId
-            // 
-            resources.ApplyResources(this.txtId, "txtId");
-            this.txtId.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
             // 
             // label6
             // 
@@ -183,11 +168,6 @@
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
             // 
             // label1
             // 
@@ -220,6 +200,7 @@
             // 
             // frmAddStockItem
             // 
+            this.AcceptButton = this.btnAdd;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -245,10 +226,8 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtItemName;
         private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlTitleBar;
         private System.Windows.Forms.Button btnExit;

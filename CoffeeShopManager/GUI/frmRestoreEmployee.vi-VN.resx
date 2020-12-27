@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnRestore.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>Khôi phục</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 12pt</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 5</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 24</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Khôi phục nhân viên</value>
+  </data>
+  <data name="datBirth.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="datBirth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 23</value>
+  </data>
+  <data name="btnCancel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="cboPosition.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="radFemale.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="radFemale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="radFemale.Text" xml:space="preserve">
+    <value>Nữ</value>
+  </data>
+  <data name="radMale.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="radMale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 21</value>
+  </data>
+  <data name="radMale.Text" xml:space="preserve">
+    <value>Nam</value>
+  </data>
+  <data name="txtPhone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtAddress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtLastName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtFirstName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtManagerID.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtSalary.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtEmail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtID.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 17</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>ID Quản lý</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 17</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Ngày vào làm</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Lương</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Ngày sinh</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 17</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 17</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Chức vụ</value>
+  </data>
+  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 17</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Họ</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Giới tính</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 17</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 17</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Địa chỉ email</value>
+  </data>
+  <data name="errorProvider1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAADAE
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErCjHFKw4v5SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v5SsOMbwAAAAAAAAAAAAAAAAAAAABKw4v0XMmW/3/Vrf9/1a3/f9Wt/3/V
+        rf9/1a3/f9Wt/3/Vrf9/1a3/XMmW/0rDi/IAAAAAAAAAAAAAAAAAAAAASsOL/3/Vrf/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/3/Vrf9Kw4v/AAAAAAAAAAAAAAAAAAAAAErDi/9/1a3/6fjx/+n4
+        8f/P6Nz/eLWS/+n48f/p+PH/6fjx/+n48f9/1a3/SsOL/wAAAAAAAAAAAAAAAAAAAABKw4v/f9Wt/+n4
+        8f/c8Of/RZho/y+LVf+Hvp//6fjx/+n48f/p+PH/f9Wt/0rDi/8AAAAAAAAAAAAAAAAAAAAASsOL/3/V
+        rf/e8ej/WKJ3/0GVZP92tJD/L4tV/5fIrP/p+PH/6fjx/3/Vrf9Kw4v/AAAAAAAAAAAAAAAAAAAAAErD
+        i/9/1a3/v+DN/06ecP/S6t7/6fjx/4K8m/8vi1X/l8is/+n48f9/1a3/SsOL/wAAAAAAAAAAAAAAAAAA
+        AABKw4v/f9Wt/+n48f/n9/D/6fjx/+n48f/p+PH/i8Gi/y+LVf+y2MP/f9Wt/0rDi/8AAAAAAAAAAAAA
+        AAAAAAAASsOL/3/Vrf/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f+w1sD/5/fw/3/Vrf9Kw4v/AAAAAAAA
+        AAAAAAAAAAAAAErDi/9/1a3/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f9/1a3/SsOL/wAA
+        AAAAAAAAAAAAAAAAAABKw4v0XMmW/3/Vrf9/1a3/f9Wt/3/Vrf9/1a3/f9Wt/3/Vrf9/1a3/XMmW/0rD
+        i/IAAAAAAAAAAAAAAAAAAAAASsKMcUvDi/NKw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0vD
+        i/NKw4xvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA4AcAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMAD
+        AADAAwAAwAMAAMADAADgBwAA//8AAP//AAAoAAAAIAAAAEAAAAABACAAAAAAAIAQAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEvD
+        jGZKw4vcSsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/S8KL20rCjGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABKw4xdSsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rEi1oAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAErDi9ZKw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/S8OM1AAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAASsOL/UrDi/9Kw4v/kdu5/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm
+        0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+R27n/SsOL/0rDi/9Kw4v8AAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rD
+        i/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm0P/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/tObQ/0rD
+        i/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL/0rDi/9Kw4v/tObQ/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/8nm1//p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f+05tD/SsOL/0rDi/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rD
+        i/+05tD/6fjx/+n48f/p+PH/6fjx/+n48f+cy7H/MItW/365lv/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErD
+        i/9Kw4v/SsOL/7Tm0P/p+PH/6fjx/+n48f/p+PH/o861/y+LVf8vi1X/L4tV/4e+nv/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAASsOL/0rDi/9Kw4v/tObQ/+n48f/p+PH/6fjx/73fzP84kFz/L4tV/y+LVf8vi1X/MYxW/6HO
+        tf/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f+05tD/SsOL/0rDi/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f+938z/OZFd/y+LVf8vi1X/T55w/y+L
+        Vf8vi1X/MYxW/6HOtf/p+PH/6fjx/+n48f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm0P/p+PH/vt/N/zmRXf8vi1X/L4tV/3m2
+        k//n+O//gLqZ/y+LVf8vi1X/MYxW/6HOtf/p+PH/6fjx/+n48f/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL/0rDi/9Kw4v/tObQ/+f37/9Rn3H/L4tV/y+L
+        Vf+Fvp7/6fjx/+n48f/o+PD/ebaT/y+LVf8vi1X/MYxW/6HOtf/p+PH/6fjx/+n48f+05tD/SsOL/0rD
+        i/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/9Hq
+        3f9FmGj/gLua/+j48P/p+PH/6fjx/+n48f/o+PD/ebaT/y+LVf8vi1X/MYxW/6HOtP/p+PH/6fjx/7Tm
+        0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm
+        0P/p+PH/6fjx/9/y6f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/o+PD/eLaS/y+LVf8vi1X/MYxW/6HO
+        tP/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL/0rD
+        i/9Kw4v/tObQ/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/gryb/y+L
+        Vf8vi1X/Yah//+f37/+05tD/SsOL/0rDi/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/n9/D/eLWT/1qkef/f8un/6fjx/7Tm0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm0P/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/5fXt/+n48f/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAASsOL/0rDi/9Kw4v/tObQ/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f+05tD/SsOL/0rDi/9Kw4v/AAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rD
+        i/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/1Kw4v/SsOL/5Hbuf+05tD/tObQ/7Tm
+        0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/kdu5/0rD
+        i/9Kw4v/SsOL/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL1krDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Lw4zUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKxIxoSsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0vDjGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABLw4xmSsOL1krDi/lKw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL+UrDi9ZKwoxkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/////////////////////8AAA/+AAAH/AAAA/wAAAP8AAAD/AA
+        AA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AA
+        AA/wAAAP+AAAH/wAAD//////////////////////
+</value>
+  </data>
+  <data name="datJoin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="datJoin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 23</value>
+  </data>
+</root>

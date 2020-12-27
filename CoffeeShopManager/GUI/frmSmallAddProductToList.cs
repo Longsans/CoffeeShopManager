@@ -44,7 +44,9 @@ namespace GUI
             if (string.IsNullOrWhiteSpace(txtProId.Text))
             {
                 txtProId.ForeColor = Color.DimGray;
+                if (lblAdd.Text == "Thêm")
                 txtProId.Text = "Enter product ID";
+                else txtProId.Text = "Nhập ID sản phẩm";
             }
         }
 
@@ -88,13 +90,17 @@ namespace GUI
             busStock.AddItemForProduct(itemForPro);
             ResetInput();
             frmEditStock.ReloadGridView();
-            MessageBox.Show("New product added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (lblAdd.Text == "Thêm")
+                MessageBox.Show("Sản phẩm mới đã được thêm vào danh sách", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("New product added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ResetInput()
         {
             txtProId.ForeColor = Color.DimGray;
-            txtProId.Text = "Enter product ID";
+            if (lblAdd.Text == "Thêm")
+                txtProId.Text = "Enter product ID";
+            else txtProId.Text = "Nhập ID sản phẩm";
             err.Icon = errorIcon;
             err.SetError(txtProId, "");
             lblAdd.Enabled = false;
@@ -125,12 +131,16 @@ namespace GUI
                     if (busPro.GetItemForProduct(Item.Id, id, Item.Shop.ID) != null)
                     {
                         err.Icon = errorIcon;
-                        err.SetError(txtProId, "A product with such ID has already been added to the list");
+                        if (lblAdd.Text == "Thêm")
+                        err.SetError(txtProId, "Sản phẩm với ID này đã được thêm vào danh sách rồi");
+                        else err.SetError(txtProId, "A product with such ID has already been added to the list");
                         lblAdd.Enabled = false;
                     }
                     else
                     {
                         err.Icon = checkIcon;
+                        if (lblAdd.Text == "Thêm")
+                            err.SetError(txtProId, "Hợp lệ");
                         err.SetError(txtProId, "Valid");
                         lblAdd.Enabled = true;
                     }
@@ -138,14 +148,18 @@ namespace GUI
                 else
                 {
                     err.Icon = errorIcon;
-                    err.SetError(txtProId, "A product with such ID does not exist");
+                    if (lblAdd.Text == "Thêm")
+                        err.SetError(txtProId, "Sản phẩm có ID này không tồn tại");
+                    else err.SetError(txtProId, "A product with such ID does not exist");
                     lblAdd.Enabled = false;
                 }
             }
             else
             {
                 err.Icon = errorIcon;
-                err.SetError(txtProId, "Please fill all info fields");
+                if (lblAdd.Text == "Thêm")
+                    err.SetError(txtProId, "Vui lòng nhập đầy đủ thông tin");
+                else err.SetError(txtProId, "Please fill all info fields");
                 lblAdd.Enabled = false;
             }
         }

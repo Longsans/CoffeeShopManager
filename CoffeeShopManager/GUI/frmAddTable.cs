@@ -17,12 +17,15 @@ namespace GUI
         Point prevPoint;
         bool dragging;
         Icon checkIcon,
-            errorIcon;
+            errorIcon,
+            warningIcon;
         ErrorProvider err = new ErrorProvider();
         BUS_Tables busTable = new BUS_Tables(ConnectionStringHelper.GetConnectionString());
         BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
         UserControlTableOfManager ucTableManager { get; set; }
         int shopId;
+        bool checkDeleted = true;
+
         public frmAddTable(int num, UserControlTableOfManager _ucTableManager)
         {
             InitializeComponent();
@@ -34,6 +37,8 @@ namespace GUI
         {
             checkIcon = new Icon(GUI.Properties.Resources.check1, err.Icon.Size);
             errorIcon = new Icon(GUI.Properties.Resources.cancel, err.Icon.Size);
+            warningIcon = new Icon(GUI.Properties.Resources.warning, err.Icon.Size);
+            err.SetIconPadding(txtTableId, 3);
             txtTableId.GotFocus += TxtTableId_GotFocus;
             txtTableId.LostFocus += TxtTableId_LostFocus;
         }
@@ -45,7 +50,8 @@ namespace GUI
             if (string.IsNullOrWhiteSpace(txtTableId.Text))
             {
                 txtTableId.ForeColor = Color.DimGray;
-                txtTableId.Text = "Enter table ID";
+                if (lblAdd.Text == "Thêm") txtTableId.Text = "Nhập ID bàn";
+                else txtTableId.Text = "Enter table ID";
             }
         }
 
@@ -76,21 +82,47 @@ namespace GUI
 
         private void lblAdd_MouseUp(object sender, MouseEventArgs e)
         {
-            DTO_Table table = new DTO_Table();
-            table.Id = int.Parse(txtTableId.Text);
-            table.Status = "Available";
-            table.Shop = busShop.GetShopById(shopId);
-            busTable.Insert(table);
-            err.SetError(txtTableId, "");
-            ResetInput();
-            ucTableManager.LoadAllTables();
-            MessageBox.Show("New table added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DTO_Table table = new DTO_Table
+            {
+                Id = int.Parse(txtTableId.Text),
+                Shop = busShop.GetShopById(shopId)
+            };
+
+            if (checkDeleted)
+            {
+                table.Status = "Available";
+                busTable.Insert(table);
+                err.SetError(txtTableId, "");
+                ResetInput();
+                ucTableManager.LoadAllTables();
+                if (lblAdd.Text == "Thêm")
+                    MessageBox.Show("Bàn mới đã được thêm vào danh sách", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("New table added to list.", "Add successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult ret;
+                if (lblAdd.Text == "Thêm") ret = MessageBox.Show("Có dữ liệu liên quan đến bàn này. Bạn có muốn khôi phục nó?", "Không thể thêm bản sao bàn",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                else ret = MessageBox.Show("There are data related to a table with this ID. Do you want to restore it?", "Cannot add a duplicate table",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (ret == DialogResult.Yes)
+                {
+                    busTable.RestoreDeletedTable(table);
+                    ResetInput();
+                    ucTableManager.LoadAllTables();
+                    if (lblAdd.Text == "Thêm")
+                        MessageBox.Show("Khôi phục bàn đã bị xóa", "Khôi phục thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else MessageBox.Show("Deleted table restored.", "Restore successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void ResetInput()
         {
             txtTableId.ForeColor = Color.DimGray;
-            txtTableId.Text = "Enter table ID";
+            if (lblAdd.Text == "Thêm") txtTableId.Text = "Nhập ID bàn";
+            else txtTableId.Text = "Enter table ID";
             err.Icon = errorIcon;
             err.SetError(txtTableId, "");
             lblAdd.Enabled = false;
@@ -119,32 +151,61 @@ namespace GUI
                 {
                     if (int.TryParse(txtTableId.Text, out int id))
                     {
-                        if (busTable.GetTableById(id, shopId) == null)
+                        var dbtab = busTable.GetTableByIdDeletedAndNotDeleted(id, shopId);
+                        if (dbtab == null)
                         {
                             err.Icon = checkIcon;
-                            err.SetError(txtTableId, "Valid");
+                            if (lblAdd.Text == "Thêm")
+                                err.SetError(txtTableId, "Hợp lệ");
+                            else err.SetError(txtTableId, "Valid");
                             lblAdd.Enabled = true;
+                            checkDeleted = true;
+                        }
+                        else if (dbtab.Deleted)
+                        {
+                            checkDeleted = false;
+                            if (lblAdd.Text == "Thêm")
+                                throw new Exception("Có dữ liệu liên quan đến bàn này");
+                            else throw new Exception("There are data related to a table with such ID");
                         }
                         else
                         {
-                            throw new Exception("A table with such ID has already been added to the list");
+                            checkDeleted = true;
+                            if (lblAdd.Text == "Thêm")
+                                throw new Exception("Bàn có ID này đã được thêm vào danh sách từ trước");
+                            else throw new Exception("A table with such ID has already been added to the list");
                         }
                     }
                     else
                     {
+                        checkDeleted = true;
+                        if (lblAdd.Text == "Thêm")
+                            throw new Exception("ID bàn phải là số tự nhiên");
+                        else 
                         throw new Exception("A table ID must be a natural number");
                     }
                 }
                 else
                 {
-                    throw new Exception("Please fill all info fields");
+                    checkDeleted = true;
+                    if (lblAdd.Text == "Thêm")
+                        throw new Exception("Vui lòng nhập đủ thông tin");
+                    else throw new Exception("Please fill all info fields");
                 }
             }
             catch (Exception ex)
             {
-                err.Icon = errorIcon;
+                if (!checkDeleted)
+                {
+                    err.Icon = warningIcon;
+                    lblAdd.Enabled = true;
+                }
+                else
+                {
+                    err.Icon = errorIcon;
+                    lblAdd.Enabled = false;
+                }
                 err.SetError(txtTableId, ex.Message);
-                lblAdd.Enabled = false;
             }
         }
 

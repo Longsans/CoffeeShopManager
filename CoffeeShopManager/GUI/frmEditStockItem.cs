@@ -18,8 +18,7 @@ namespace GUI
         public DTO_StockItem Item = new DTO_StockItem();
         BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
         BUS_Suppliers busSup = new BUS_Suppliers(ConnectionStringHelper.GetConnectionString());
-        ErrorProvider err = new ErrorProvider(),
-            errtwo = new ErrorProvider();
+        ErrorProvider errtwo = new ErrorProvider();
         Timer tiktoker = new Timer();
         Icon checkIcon,
             errorIcon;
@@ -39,11 +38,9 @@ namespace GUI
 
         private void frmEditStockItem_Load(object sender, EventArgs e)
         {
-            checkIcon = new Icon(GUI.Properties.Resources.check1, err.Icon.Size);
+            checkIcon = new Icon(GUI.Properties.Resources.check1, errtwo.Icon.Size);
             errorIcon = new Icon(GUI.Properties.Resources.cancel, errtwo.Icon.Size);
-            err.Icon = checkIcon;
             errtwo.Icon = checkIcon;
-            err.SetIconPadding(txtItemName, 5);
             errtwo.SetIconPadding(txtSupId, 5);
             txtId.Text = Item.Id.ToString();
             txtItemName.Text = Item.Name;
@@ -51,6 +48,8 @@ namespace GUI
             lblListCaption.Text += $"{Item.Name}:";
             tiktoker.Interval = 200;
             tiktoker.Tick += Tiktoker_Tick;
+            txtItemName.TextChanged += this.txtItemName_TextChanged;
+            txtSupId.TextChanged += this.txtSupId_TextChanged;
             ReloadGridView();
         }
 
@@ -69,55 +68,11 @@ namespace GUI
             busStock.Update(Item);
             this.Close();
             ucStock.ReloadGridView();
-            MessageBox.Show("Stock item updated.", "Update successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (btnSave.Text == "Lưu")
+                MessageBox.Show("Hàng hóa đã được cập nhật", "Cập nhật thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("Stock item updated.", "Update successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void txtItemName_Validating(object sender, CancelEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtItemName.Text))
-            {
-                var stockItem = busStock.GetByName(txtItemName.Text, Item.Shop.ID);
-                if (stockItem == null || stockItem.Id == this.Item.Id)
-                {
-                    err.Icon = checkIcon;
-                    err.SetError(txtItemName, "Valid");
-                }
-                else
-                {
-                    err.Icon = errorIcon;
-                    err.SetError(txtItemName, "A stock item with such name already exists");
-                }
-            }
-            else
-            {
-                err.Icon = errorIcon;
-                err.SetError(txtItemName, "Please fill all info fields");
-            }
-            tiktoker.Start();
-        }
-
-        private void txtSupId_Validating(object sender, CancelEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtSupId.Text))
-            {
-                if (busSup.GetById(txtSupId.Text, Item.Shop.ID) != null)
-                {
-                    errtwo.Icon = checkIcon;
-                    errtwo.SetError(txtSupId, "Valid");
-                }
-                else
-                {
-                    errtwo.Icon = errorIcon;
-                    errtwo.SetError(txtSupId, "A supplier with such ID does not exist");
-                }
-            }
-            else
-            {
-                errtwo.Icon = errorIcon;
-                errtwo.SetError(txtSupId, "Please fill all info fields");
-            }
-            tiktoker.Start();
-        }
 
         private void lblRemoveFromList_MouseDown(object sender, MouseEventArgs e)
         {
@@ -142,24 +97,49 @@ namespace GUI
             lblRemoveFromList.ForeColor = SystemColors.ControlText;
             if (grdProds.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("Remove these products from the list?", "Remove products"
-                , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (btnSave.Text == "Lưu")
                 {
-                    foreach (DataGridViewRow row in grdProds.SelectedRows)
+                    if (MessageBox.Show("Xóa những sản phẩm này khỏi danh sách?", "Xóa sản phẩm"
+                , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        var itemForPro = new DTO_StockItemForProduct
+                        foreach (DataGridViewRow row in grdProds.SelectedRows)
                         {
-                            Item = this.Item,
-                            Product = new DTO_Product
+                            var itemForPro = new DTO_StockItemForProduct
                             {
-                                Id = (int)row.Cells["Product ID"].Value,
+                                Item = this.Item,
+                                Product = new DTO_Product
+                                {
+                                    Id = (int)row.Cells["Product ID"].Value,
+                                    Shop = this.Item.Shop
+                                },
                                 Shop = this.Item.Shop
-                            },
-                            Shop = this.Item.Shop
-                        };
-                        busStock.RemoveItemForProduct(itemForPro);
+                            };
+                            busStock.RemoveItemForProduct(itemForPro);
+                        }
+                        ReloadGridView();
                     }
-                    ReloadGridView();
+                }
+                else
+                {
+                    if (MessageBox.Show("Remove these products from the list?", "Remove products"
+                , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        foreach (DataGridViewRow row in grdProds.SelectedRows)
+                        {
+                            var itemForPro = new DTO_StockItemForProduct
+                            {
+                                Item = this.Item,
+                                Product = new DTO_Product
+                                {
+                                    Id = (int)row.Cells["Product ID"].Value,
+                                    Shop = this.Item.Shop
+                                },
+                                Shop = this.Item.Shop
+                            };
+                            busStock.RemoveItemForProduct(itemForPro);
+                        }
+                        ReloadGridView();
+                    }
                 }
             }
         }
@@ -167,7 +147,7 @@ namespace GUI
         private void Tiktoker_Tick(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtItemName.Text) || string.IsNullOrWhiteSpace(txtSupId.Text) ||
-                err.Icon != checkIcon || errtwo.Icon != checkIcon)
+                errtwo.Icon != checkIcon)
             {
                 btnSave.Enabled = false;
             }
@@ -188,9 +168,43 @@ namespace GUI
             prevPoint = Cursor.Position;
         }
 
+        private void txtSupId_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtSupId.Text))
+            {
+                if (busSup.GetById(txtSupId.Text, Item.Shop.ID) != null)
+                {
+                    errtwo.Icon = checkIcon;
+                    if (btnSave.Text == "Lưu")
+                        errtwo.SetError(txtSupId, "Hợp lệ");
+                    else errtwo.SetError(txtSupId, "Valid");
+                }
+                else
+                {
+                    errtwo.Icon = errorIcon;
+                    if (btnSave.Text == "Lưu")
+                        errtwo.SetError(txtSupId, "Nhà cung cấp có ID này không tồn tại.");
+                    else errtwo.SetError(txtSupId, "A supplier with such ID does not exist");
+                }
+            }
+            else
+            {
+                errtwo.Icon = errorIcon;
+                if (btnSave.Text == "Lưu")
+                    errtwo.SetError(txtSupId, "Vui lòng nhập đầy đủ thông tin.");
+                else errtwo.SetError(txtSupId, "Please fill all info fields");
+            }
+            tiktoker.Start();
+        }
+
         private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void txtItemName_TextChanged(object sender, EventArgs e)
+        {
+            tiktoker.Start();
         }
 
         private void pnlTitleBar_MouseMove(object sender, MouseEventArgs e)

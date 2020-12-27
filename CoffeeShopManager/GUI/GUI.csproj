@@ -131,6 +131,12 @@
     <Compile Include="frmOrderForTable.Designer.cs">
       <DependentUpon>frmOrderForTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRestoreEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestoreEmployee.Designer.cs">
+      <DependentUpon>frmRestoreEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRestoreProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,12 +314,6 @@
     <Compile Include="UserControlProductTab.Designer.cs">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlReceipts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlReceipts.Designer.cs">
-      <DependentUpon>UserControlReceipts.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlReceiptsDetail.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -377,10 +377,19 @@
     <EmbeddedResource Include="frmAddTable.resx">
       <DependentUpon>frmAddTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTable.vi-VN.resx">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangeAuthCodeShop.resx">
       <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeAuthCodeShop.vi-VN.resx">
+      <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.vi-VN.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditCustomer.resx">
@@ -447,7 +456,16 @@
     <EmbeddedResource Include="frmRegister.vi-VN.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreEmployee.resx">
+      <DependentUpon>frmRestoreEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreEmployee.vi-VN.resx">
+      <DependentUpon>frmRestoreEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRestoreProduct.resx">
+      <DependentUpon>frmRestoreProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreProduct.vi-VN.resx">
       <DependentUpon>frmRestoreProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowDetailTable.resx">
@@ -474,6 +492,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Table.resx">
+      <DependentUpon>Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table.vi-VN.resx">
       <DependentUpon>Table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
@@ -535,12 +556,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlProductTab.vi-VN.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlReceipts.resx">
-      <DependentUpon>UserControlReceipts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlReceipts.vi-VN.resx">
-      <DependentUpon>UserControlReceipts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlReceiptsDetail.resx">
       <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
@@ -783,6 +798,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

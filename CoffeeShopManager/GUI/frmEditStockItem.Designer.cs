@@ -150,13 +150,11 @@
             // 
             resources.ApplyResources(this.txtItemName, "txtItemName");
             this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Validating += new System.ComponentModel.CancelEventHandler(this.txtItemName_Validating);
             // 
             // txtSupId
             // 
             resources.ApplyResources(this.txtSupId, "txtSupId");
             this.txtSupId.Name = "txtSupId";
-            this.txtSupId.Validating += new System.ComponentModel.CancelEventHandler(this.txtSupId_Validating);
             // 
             // txtId
             // 

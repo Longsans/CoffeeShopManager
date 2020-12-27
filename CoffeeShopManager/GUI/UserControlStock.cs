@@ -104,12 +104,12 @@ namespace GUI
                         grdStock.DataSource = busStock.GetDataTableByName(filProp.CurrentFilterText, Shop.ID);
                     }
                     break;
-                case "ID nhà cung":
+                case "ID nhà cung cấp":
                     {
                         grdStock.DataSource = busStock.GetDataTableBySupplierId(filProp.CurrentFilterText, Shop.ID);
                     }
                     break;
-                case "Tên nhà cung":
+                case "Tên nhà cung cấp":
                     {
                         grdStock.DataSource = busStock.GetDataTableBySupplierName(filProp.CurrentFilterText, Shop.ID);
                     }
@@ -143,7 +143,9 @@ namespace GUI
                             }
                             else
                             {
-                                err.SetError(txtSearch, "Stock item ID must be a natural number");
+                                if (btnEdit.Text == "Sửa")
+                                err.SetError(txtSearch, "ID hàng hóa phải là số tự nhiên");
+                                else err.SetError(txtSearch, "Stock item ID must be a natural number");
                             }
                         }
                         break;
@@ -196,7 +198,7 @@ namespace GUI
                         Shop = this.Shop,
                         Supplier = new DTO_Supplier
                         {
-                            Id = row.Cells["ID Nhà cung"].Value.ToString()
+                            Id = row.Cells["Supplier ID"].Value.ToString()
                         }
                     };
 
@@ -211,7 +213,7 @@ namespace GUI
                         Shop = this.Shop,
                         Supplier = new DTO_Supplier
                         {
-                            Id = row.Cells["Supplier ID"].Value.ToString()
+                            Id = row.Cells["ID Nhà cung"].Value.ToString()
                         }
                     };
 

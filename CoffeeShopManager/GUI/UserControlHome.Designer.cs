@@ -73,6 +73,7 @@
             this.picStatistics.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picStatistics.Name = "picStatistics";
             this.picStatistics.TabStop = false;
+            this.picStatistics.Click += new System.EventHandler(this.picStatistics_Click);
             // 
             // picEmployees
             // 
@@ -92,11 +93,13 @@
             this.picCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picCustomer.Name = "picCustomer";
             this.picCustomer.TabStop = false;
+            this.picCustomer.Click += new System.EventHandler(this.picCustomer_Click);
             // 
             // UserControlHome
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);

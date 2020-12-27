@@ -117,22 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtEmail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="txtPosition.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 202</value>
+  </data>
+  <data name="txtPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="txtGender.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtGender.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 171</value>
+  </data>
+  <data name="txtGender.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="txtFirstName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtFirstName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 103</value>
+  </data>
+  <data name="txtFirstName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="txtBirthDate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtBirthDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="txtLastName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtLastName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 136</value>
+  </data>
+  <data name="txtLastName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="txtManPhoneNumer.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtManPhoneNumer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="txtManID.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtManID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 72</value>
+  </data>
+  <data name="txtManID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>565, 78</value>
+  </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 19</value>
+    <value>74, 17</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Điện thoại:</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 19</value>
+    <value>36, 17</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Tên:</value>
@@ -140,91 +212,178 @@
   <data name="picMan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 16.2pt</value>
+  </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 17</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 34</value>
+    <value>233, 34</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Thông tin quản lý</value>
   </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>565, 110</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 17</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 19</value>
+    <value>61, 17</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Chức vụ</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 19</value>
+    <value>30, 17</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Họ:</value>
   </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>565, 139</value>
+  </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 19</value>
+    <value>73, 17</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Ngày sinh:</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 19</value>
+    <value>61, 17</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Giới tính:</value>
   </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 17</value>
+  </data>
+  <data name="txtShopPhone.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtShopPhone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 133</value>
+  </data>
+  <data name="txtShopPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 92</value>
+  </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 19</value>
+    <value>98, 17</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Tên cửa hàng:</value>
   </data>
+  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 176</value>
+  </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 19</value>
+    <value>87, 17</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Địa chỉ shop:</value>
   </data>
+  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>302, 136</value>
+  </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 19</value>
+    <value>39, 17</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>SĐT:</value>
   </data>
+  <data name="txtShopAddress.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtShopAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 176</value>
+  </data>
+  <data name="txtShopAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 16.2pt</value>
+  </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 26</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 34</value>
+    <value>258, 34</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Thông tin Shop</value>
+    <value>Thông tin cửa hàng</value>
+  </data>
+  <data name="txtShopName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtShopName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 92</value>
+  </data>
+  <data name="txtShopName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
   </data>
 </root>

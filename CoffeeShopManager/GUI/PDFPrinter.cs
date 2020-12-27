@@ -77,7 +77,7 @@ namespace GUI
                 {
                     metaTexts.Add($"Employee No: ");
                 }
-                metaTexts.Add(rec.DateOfPayMent.ToString("dd/MM/yyyy hh:mm:ss tt"));
+                metaTexts.Add(rec.DateOfPayMent.ToString("dd/MM/yyyy hh:mm tt"));
                 metaTexts.Add($"Customer No: {rec.Customer.Id}");
 
                 for (int i = 0; i < metaTexts.Count; ++i)
@@ -151,11 +151,12 @@ namespace GUI
                 sumTable.SetWidths(sumWidths);
                 string[] summary = { "Subtotal:", $"${string.Format("{0:0.00}", rec.Total / (1m - rec.Discount))}",
                     "Discount:", $"{string.Format("{0:0.00}", rec.Discount * 100)}%", 
-                    "Grand Total:", $"${string.Format("{0:0.00}", rec.Total)}" };
+                    "Grand Total:", $"${string.Format("{0:0.00}", rec.Total)}", " ", " ", 
+                    "Cash:", $"${string.Format("{0:0.00}", rec.Cash)}", "Change:", $"${string.Format("{0:0.00}", rec.Change)}" };
                 for (int i = 0; i < summary.Length; ++i)
                 {
                     PdfPCell cell;
-                    if (i == summary.Length - 1)
+                    if (i == summary.Length - 7)
                     {
                         cell = new PdfPCell(new Phrase(summary[i], FontFactory.GetFont("Courier", 7f, iTextSharp.text.Font.BOLD)));
                     }

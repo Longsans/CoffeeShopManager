@@ -62,19 +62,26 @@ namespace GUI
         {
             try
             {
-                var ret = MessageBox.Show("Restore this product?", "Restore product", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult ret;
+                if (btnCancel.Text == "Hủy")
+                 ret = MessageBox.Show("Bạn có muốn khôi phục sản phẩm này không?", "Khôi phục sản phẩm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                else ret = MessageBox.Show("Restore this product?", "Restore product", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (ret == DialogResult.Yes)
                 {
                     busPro.RestoreDeletedProduct(dtoPro);
-                    MessageBox.Show("Deleted product restored.", "Restore successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
                     ucPro.Reload();
+                    if (btnCancel.Text == "Hủy")
+                        MessageBox.Show("Sản phẩm bị xóa đã được khôi phục", "Khôi phục thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else MessageBox.Show("Deleted product restored.", "Restore successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                     frmInsPro.Show();
                 }
             }
             catch
             {
-                MessageBox.Show("An error occurred, tab will reload now.", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (btnCancel.Text == "Hủy")
+                    MessageBox.Show("Một lỗi đã xảy ra, trang này sẽ được làm mới lại", "Một lỗi đã xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show("An error occurred, tab will reload now.", "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

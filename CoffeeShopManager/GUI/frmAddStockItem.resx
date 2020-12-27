@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 148</value>
-  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 19</value>
   </data>
@@ -140,11 +137,12 @@
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pnlTitleBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="&gt;&gt;lblSupName.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
     <value>555, 0</value>
@@ -152,8 +150,11 @@
   <data name="lblPhone.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="txtId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 54</value>
+  <data name="pnlTitleBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>586, 35</value>
+  </data>
+  <data name="&gt;&gt;lblAddSup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnlTitleBar.Parent" xml:space="preserve">
     <value>$this</value>
@@ -167,27 +168,17 @@
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnExit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="lblAddSup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>panel1</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 19</value>
   </data>
   <data name="lblEmail.Text" xml:space="preserve">
     <value>Email</value>
@@ -201,8 +192,8 @@
   <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>586, 357</value>
   </data>
   <data name="lblEmail.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -213,14 +204,17 @@
   <data name="lblAddSup.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="txtPhone.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="lblSupName.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 19</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>frmAddStockItem</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 21</value>
   </data>
   <data name="lblPhone.Location" type="System.Drawing.Point, System.Drawing">
     <value>310, 194</value>
@@ -231,7 +225,7 @@
   <data name="lblEnterSup.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="txtId.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="txtSupId.TabIndex" type="System.Int32, mscorlib">
@@ -249,8 +243,11 @@
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="lblAddSup.Text" xml:space="preserve">
-    <value>       Add a new supplier</value>
+  <data name="txtEmail.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblEmail.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
@@ -264,23 +261,20 @@
   <data name="&gt;&gt;lblSupName.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="lblSupName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 194</value>
+  <data name="&gt;&gt;btnExit.Parent" xml:space="preserve">
+    <value>pnlTitleBar</value>
   </data>
-  <data name="pnlTitleBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>586, 35</value>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Add</value>
   </data>
   <data name="&gt;&gt;txtPhone.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;txtPhone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 259</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="lblEnterSup.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;txtSupName.Name" xml:space="preserve">
     <value>txtSupName</value>
@@ -297,14 +291,14 @@
   <data name="lblPhone.Text" xml:space="preserve">
     <value>Phone</value>
   </data>
-  <data name="&gt;&gt;lblAddSup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblAddSup.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>15</value>
+  <data name="&gt;&gt;txtItemName.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="txtItemName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>407, 54</value>
+    <value>133, 56</value>
   </data>
   <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
     <value>btnAdd</value>
@@ -315,23 +309,17 @@
   <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtId.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
   <data name="pnlTitleBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;txtId.Name" xml:space="preserve">
-    <value>txtId</value>
+  <data name="lblAddSup.Text" xml:space="preserve">
+    <value>       Add a new supplier</value>
   </data>
   <data name="txtSupName.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
-  </data>
-  <data name="&gt;&gt;txtId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
     <value>btnCancel</value>
@@ -354,8 +342,8 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmAddStockItem</value>
   </data>
-  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="txtSupName.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;lblAddSup.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -372,9 +360,6 @@
   <data name="pnlTitleBar.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="lblAddSup.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -383,9 +368,6 @@
   </data>
   <data name="lblEnterSup.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="txtSupName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 22</value>
   </data>
   <data name="&gt;&gt;lblSupName.Name" xml:space="preserve">
     <value>lblSupName</value>
@@ -405,23 +387,17 @@
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblEnterSup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>191, 112</value>
+  <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;pnlTitleBar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="pnlTitleBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="&gt;&gt;lblAddSup.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="lblSupName.Text" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="&gt;&gt;txtSupName.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -429,11 +405,8 @@
   <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;txtId.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;txtItemName.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;txtPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPhone.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -441,11 +414,14 @@
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;btnExit.Parent" xml:space="preserve">
-    <value>pnlTitleBar</value>
+  <data name="lblSupName.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="lblPhone.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 19</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Add Stock Item</value>
   </data>
   <data name="lblAddSup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -467,11 +443,11 @@
   <data name="&gt;&gt;txtSupName.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblPhone.Name" xml:space="preserve">
-    <value>lblPhone</value>
+  <data name="lblEnterSup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>191, 112</value>
   </data>
-  <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -480,7 +456,7 @@
     <value>6</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 57</value>
+    <value>36, 59</value>
   </data>
   <data name="lblEmail.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -497,6 +473,12 @@
   <data name="txtItemName.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;lblAddSup.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
   <data name="lblEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 19</value>
   </data>
@@ -506,11 +488,11 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtItemName.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 22</value>
@@ -527,11 +509,8 @@
   <data name="lblAddSup.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="lblSupName.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblSupName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 194</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -539,14 +518,8 @@
   <data name="lblEnterSup.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 31</value>
-  </data>
-  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 35</value>
@@ -560,14 +533,14 @@
   <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
     <value>407, 145</value>
   </data>
-  <data name="txtSupName.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;lblAddSup.Name" xml:space="preserve">
+    <value>lblAddSup</value>
   </data>
   <data name="lblSupName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 21</value>
+  <data name="lblAddSup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 19</value>
   </data>
   <data name="&gt;&gt;lblEnterSup.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -578,8 +551,8 @@
   <data name="&gt;&gt;lblEmail.Name" xml:space="preserve">
     <value>lblEmail</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Add Stock Item</value>
+  <data name="&gt;&gt;lblPhone.Name" xml:space="preserve">
+    <value>lblPhone</value>
   </data>
   <data name="lblPhone.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -599,26 +572,14 @@
   <data name="txtSupId.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 22</value>
   </data>
-  <data name="&gt;&gt;lblEmail.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;lblAddSup.Name" xml:space="preserve">
-    <value>lblAddSup</value>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 31</value>
   </data>
-  <data name="txtPhone.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="txtPhone.Location" type="System.Drawing.Point, System.Drawing">
     <value>407, 191</value>
-  </data>
-  <data name="lblEnterSup.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lblSupName.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -629,17 +590,11 @@
   <data name="lblPhone.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 57</value>
-  </data>
   <data name="lblAddSup.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>586, 357</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>586, 322</value>
+  <data name="txtSupName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
   </data>
   <data name="txtSupId.Text" xml:space="preserve">
     <value>Enter existing supplier</value>
@@ -651,7 +606,10 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lblPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>pnlTitleBar</value>
@@ -677,7 +635,7 @@
     <value>Flat</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>318, 259</value>
@@ -685,29 +643,20 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;lblPhone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="lblSupName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
   <data name="&gt;&gt;lblEmail.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="lblAddSup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 19</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
     <value>btnExit</value>
   </data>
-  <data name="txtEmail.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 148</value>
   </data>
   <data name="&gt;&gt;txtEmail.Name" xml:space="preserve">
     <value>txtEmail</value>
@@ -718,8 +667,8 @@
   <data name="lblAddSup.Location" type="System.Drawing.Point, System.Drawing">
     <value>36, 112</value>
   </data>
-  <data name="txtId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 22</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>586, 322</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -729,5 +678,8 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>vi-VN</value>
   </metadata>
 </root>

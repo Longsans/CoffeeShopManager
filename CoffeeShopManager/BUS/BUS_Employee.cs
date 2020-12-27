@@ -30,12 +30,19 @@ namespace BUS
             catch(Exception ex)
             {
                 throw ex;
-            }   
+            }
         }
-        public DTO_Employee GetEmployeeInfoAndManagerId(string id, int shopId)
+
+        public DTO_Employee GetInfoByIdDeletedAndNotDeleted(string id, int shopId)
         {
-            return dalEmployee.GetEmployeeInfoAndManagerId(id, shopId);
+            return dalEmployee.GetInfoByIdDeletedAndNotDeleted(id, shopId);
         }
+
+        public DTO_Employee GetInfoByIdNotDeleted(string id, int shopId)
+        {
+            return dalEmployee.GetInfoByIdNotDeleted(id, shopId);
+        }
+
         public DTO_Manager GetManagerInfo(DTO_Employee emp)
         {
             try
@@ -85,22 +92,41 @@ namespace BUS
             {
                 dalEmployee.Insert(emp);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public void DeleteEmployee(DTO_Employee emp)
+
+        public void FalseDelete(DTO_Employee emp)
         {
             try
             {
-                dalEmployee.Delete(emp);
+                dalEmployee.FalseDelete(emp);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+
+        public void TrueDelete(DTO_Employee emp)
+        {
+            try
+            {
+                dalEmployee.TrueDelete(emp);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void RestoreDeletedEmployee(DTO_Employee emp)
+        {
+            dalEmployee.RestoreDeletedEmployee(emp);
+        }
+
         public void EditEmployee(DTO_Employee emp)
         {
             try
@@ -170,6 +196,11 @@ namespace BUS
         public DataTable GetEmployeesSearchManIDFiltered(string manId, int shopId)
         {
             return dalEmployee.GetEmployeesSearchManIDFiltered(manId, shopId);
+        }
+
+        public bool CheckReceiptExists(DTO_Employee emp)
+        {
+            return dalEmployee.CheckReceiptExists(emp);
         }
     }
 }

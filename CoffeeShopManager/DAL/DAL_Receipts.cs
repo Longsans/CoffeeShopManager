@@ -355,8 +355,7 @@ namespace DAL
         public DTO_Table GetTableOfReceipt(int receiptId, int shopId)
         {
             DAL_TableSitting dalTabSitting = new DAL_TableSitting(this.connectionString);
-            DTO_Table tab = null;
-            tab = dalTabSitting.GetTableOfReceipt(receiptId, shopId);
+            DTO_Table tab = dalTabSitting.GetTableOfReceipt(receiptId, shopId);
 
             return tab;
         }

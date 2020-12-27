@@ -39,7 +39,9 @@ namespace GUI
             if (txtSearch.TextLength == 0)
             {
                 txtSearch.ForeColor = Color.DimGray;
-                txtSearch.Text = "Search...";
+                if (btnEdit.Text == "Sửa")
+                    txtSearch.Text = "Tìm kiếm...";
+                else txtSearch.Text = "Search...";
             }
         }
 
@@ -136,7 +138,9 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (btnEdit.Text == "Sửa")
+                MessageBox.Show(ex.Message, "Một lỗi đã xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

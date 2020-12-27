@@ -117,35 +117,190 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="datBirthdate.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="datBirthdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 23</value>
+  </data>
+  <data name="btnCancel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Hủy</value>
+  </data>
+  <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
     <value>Lưu</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtEmail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 23</value>
+  </data>
+  <data name="txtLastName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtLastName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 23</value>
+  </data>
+  <data name="txtFirstName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtFirstName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 23</value>
+  </data>
+  <data name="txtId.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 23</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 19</value>
+    <value>68, 17</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Ngày sinh</value>
   </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 17</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 19</value>
+    <value>31, 17</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Tên</value>
   </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 19</value>
+    <value>25, 17</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Họ</value>
   </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 17</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 12pt</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>258, 23</value>
+    <value>238, 24</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Sửa thông tin khách hàng</value>
+  </data>
+  <data name="errorTrue.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAADAE
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErCjHFKw4v5SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v5SsOMbwAAAAAAAAAAAAAAAAAAAABKw4v0XMmW/3/Vrf9/1a3/f9Wt/3/V
+        rf9/1a3/f9Wt/3/Vrf9/1a3/XMmW/0rDi/IAAAAAAAAAAAAAAAAAAAAASsOL/3/Vrf/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/3/Vrf9Kw4v/AAAAAAAAAAAAAAAAAAAAAErDi/9/1a3/6fjx/+n4
+        8f/P6Nz/eLWS/+n48f/p+PH/6fjx/+n48f9/1a3/SsOL/wAAAAAAAAAAAAAAAAAAAABKw4v/f9Wt/+n4
+        8f/c8Of/RZho/y+LVf+Hvp//6fjx/+n48f/p+PH/f9Wt/0rDi/8AAAAAAAAAAAAAAAAAAAAASsOL/3/V
+        rf/e8ej/WKJ3/0GVZP92tJD/L4tV/5fIrP/p+PH/6fjx/3/Vrf9Kw4v/AAAAAAAAAAAAAAAAAAAAAErD
+        i/9/1a3/v+DN/06ecP/S6t7/6fjx/4K8m/8vi1X/l8is/+n48f9/1a3/SsOL/wAAAAAAAAAAAAAAAAAA
+        AABKw4v/f9Wt/+n48f/n9/D/6fjx/+n48f/p+PH/i8Gi/y+LVf+y2MP/f9Wt/0rDi/8AAAAAAAAAAAAA
+        AAAAAAAASsOL/3/Vrf/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f+w1sD/5/fw/3/Vrf9Kw4v/AAAAAAAA
+        AAAAAAAAAAAAAErDi/9/1a3/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f9/1a3/SsOL/wAA
+        AAAAAAAAAAAAAAAAAABKw4v0XMmW/3/Vrf9/1a3/f9Wt/3/Vrf9/1a3/f9Wt/3/Vrf9/1a3/XMmW/0rD
+        i/IAAAAAAAAAAAAAAAAAAAAASsKMcUvDi/NKw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0vD
+        i/NKw4xvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAA4AcAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMAD
+        AADAAwAAwAMAAMADAADgBwAA//8AAP//AAAoAAAAIAAAAEAAAAABACAAAAAAAIAQAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEvD
+        jGZKw4vcSsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/S8KL20rCjGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABKw4xdSsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rEi1oAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAErDi9ZKw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/S8OM1AAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAASsOL/UrDi/9Kw4v/kdu5/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm
+        0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+R27n/SsOL/0rDi/9Kw4v8AAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rD
+        i/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm0P/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/tObQ/0rD
+        i/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL/0rDi/9Kw4v/tObQ/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/8nm1//p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f+05tD/SsOL/0rDi/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rD
+        i/+05tD/6fjx/+n48f/p+PH/6fjx/+n48f+cy7H/MItW/365lv/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErD
+        i/9Kw4v/SsOL/7Tm0P/p+PH/6fjx/+n48f/p+PH/o861/y+LVf8vi1X/L4tV/4e+nv/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAASsOL/0rDi/9Kw4v/tObQ/+n48f/p+PH/6fjx/73fzP84kFz/L4tV/y+LVf8vi1X/MYxW/6HO
+        tf/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f+05tD/SsOL/0rDi/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f+938z/OZFd/y+LVf8vi1X/T55w/y+L
+        Vf8vi1X/MYxW/6HOtf/p+PH/6fjx/+n48f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm0P/p+PH/vt/N/zmRXf8vi1X/L4tV/3m2
+        k//n+O//gLqZ/y+LVf8vi1X/MYxW/6HOtf/p+PH/6fjx/+n48f/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL/0rDi/9Kw4v/tObQ/+f37/9Rn3H/L4tV/y+L
+        Vf+Fvp7/6fjx/+n48f/o+PD/ebaT/y+LVf8vi1X/MYxW/6HOtf/p+PH/6fjx/+n48f+05tD/SsOL/0rD
+        i/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/9Hq
+        3f9FmGj/gLua/+j48P/p+PH/6fjx/+n48f/o+PD/ebaT/y+LVf8vi1X/MYxW/6HOtP/p+PH/6fjx/7Tm
+        0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm
+        0P/p+PH/6fjx/9/y6f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/o+PD/eLaS/y+LVf8vi1X/MYxW/6HO
+        tP/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL/0rD
+        i/9Kw4v/tObQ/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/gryb/y+L
+        Vf8vi1X/Yah//+f37/+05tD/SsOL/0rDi/9Kw4v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/n9/D/eLWT/1qkef/f8un/6fjx/7Tm0P9Kw4v/SsOL/0rDi/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAErDi/9Kw4v/SsOL/7Tm0P/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/5fXt/+n48f/p+PH/tObQ/0rDi/9Kw4v/SsOL/wAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAASsOL/0rDi/9Kw4v/tObQ/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f+05tD/SsOL/0rDi/9Kw4v/AAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKw4v/SsOL/0rDi/+05tD/6fjx/+n48f/p+PH/6fjx/+n4
+        8f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/+n48f/p+PH/6fjx/7Tm0P9Kw4v/SsOL/0rD
+        i/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDi/1Kw4v/SsOL/5Hbuf+05tD/tObQ/7Tm
+        0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/tObQ/7Tm0P+05tD/kdu5/0rD
+        i/9Kw4v/SsOL/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOL1krDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Lw4zUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKxIxoSsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0vDjGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABLw4xmSsOL1krDi/lKw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rDi/9Kw4v/SsOL/0rD
+        i/9Kw4v/SsOL/0rDi/9Kw4v/SsOL+UrDi9ZKwoxkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/////////////////////8AAA/+AAAH/AAAA/wAAAP8AAAD/AA
+        AA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AA
+        AA/wAAAP+AAAH/wAAD//////////////////////
+</value>
   </data>
 </root>

@@ -74,7 +74,9 @@ namespace GUI
 
             busSup.Insert(sup);
             ucSup.ReloadGridView();
-            MessageBox.Show("Insert successful.", "Add supplier", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (btnAdd.Text == "Thêm")
+            MessageBox.Show("Thêm thành công", "Thêm hàng hóa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("Insert successful.", "Add supplier", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ResetTextboxes();
         }
 
@@ -104,18 +106,24 @@ namespace GUI
                 if (busSup.GetById(txtId.Text, Shop.ID) != null)
                 {
                     err.Icon = errorIcon;
-                    err.SetError(txtId, "A supplier with such ID already exists");
+                    if (btnAdd.Text == "Thêm")
+                        err.SetError(txtId, "ID nhà cung cấp đã tồn tại");
+                    else err.SetError(txtId, "A supplier with such ID already exists");
                 }
                 else
                 {
                     err.Icon = checkIcon;
-                    err.SetError(txtId, "Valid");
+                    if (btnAdd.Text == "Thêm")
+                        err.SetError(txtId, "Hợp lệ");
+                    else err.SetError(txtId, "Valid");
                 }
             }
             else
             {
                 err.Icon = errorIcon;
-                err.SetError(txtId, "Please fill all info fields");
+                if (btnAdd.Text == "Thêm")
+                    err.SetError(txtId, "Vui lòng nhập đầy đủ thông tin");
+                else err.SetError(txtId, "Please fill all info fields");
             }
         }
 
@@ -126,26 +134,34 @@ namespace GUI
                 if (busSup.GetByEmail(txtEmail.Text, Shop.ID) != null)
                 {
                     errtwo.Icon = errorIcon;
-                    errtwo.SetError(txtEmail, "A supplier with such email already exists");
+                    if (btnAdd.Text == "Thêm")
+                        errtwo.SetError(txtEmail, "Email nhà cung cấp đã tồn tại");
+                    else errtwo.SetError(txtEmail, "A supplier with such email already exists");
                 }
                 else
                 {
                     if (EmailHelper.ValidateEmail(txtEmail.Text))
                     {
                         errtwo.Icon = checkIcon;
-                        errtwo.SetError(txtEmail, "Valid");
+                        if (btnAdd.Text == "Thêm")
+                            errtwo.SetError(txtEmail, "Hợp lệ");
+                        else errtwo.SetError(txtEmail, "Valid");
                     }
                     else
                     {
                         errtwo.Icon = errorIcon;
-                        errtwo.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                        if (btnAdd.Text == "Thêm")
+                            errtwo.SetError(txtEmail, "Email phải theo định dạng 'example@example.example' và không có bất kỳ khoảng trắng nào");
+                        else errtwo.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
                     }
                 }
             }
             else
             {
                 errtwo.Icon = errorIcon;
-                errtwo.SetError(txtEmail, "Please fill all info fields");
+                if (btnAdd.Text == "Thêm")
+                    errtwo.SetError(txtEmail, "Vui lòng nhập đầy đủ thông tin");
+                else errtwo.SetError(txtEmail, "Please fill all info fields");
             }
         }
 

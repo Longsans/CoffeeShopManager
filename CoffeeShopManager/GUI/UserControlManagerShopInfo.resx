@@ -127,8 +127,8 @@
   <data name="txtID.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 22</value>
   </data>
-  <data name="txtShopName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 22</value>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>780, 499</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtID.Enabled" type="System.Boolean, mscorlib">
@@ -152,6 +152,9 @@
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
+  <data name="btnSaveChange.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
   <data name="btnChangeAuthCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 39</value>
   </data>
@@ -170,6 +173,9 @@
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;txtPhoneNumber.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 17</value>
   </data>
@@ -187,9 +193,6 @@
   </data>
   <data name="txtShopName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
-  </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Edit</value>
   </data>
   <data name="txtPhoneNumber.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -212,8 +215,11 @@
   <data name="btnChangeAuthCode.Text" xml:space="preserve">
     <value>Change Auth Code</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
+    <value>btnEdit</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 17</value>
@@ -249,12 +255,6 @@
   <data name="&gt;&gt;txtPhoneNumber.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 10.2pt</value>
-  </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
   </data>
@@ -267,11 +267,17 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Phone number:</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Shop address:</value>
+  </data>
   <data name="&gt;&gt;btnChangeAuthCode.Name" xml:space="preserve">
     <value>btnChangeAuthCode</value>
   </data>
-  <data name="txtID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 151</value>
+  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 39</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtShopAddress.Location" type="System.Drawing.Point, System.Drawing">
     <value>289, 252</value>
@@ -285,12 +291,6 @@
   <data name="&gt;&gt;txtPhoneNumber.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;btnChangeAuthCode.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -302,6 +302,9 @@
   </data>
   <data name="txtShopName.Location" type="System.Drawing.Point, System.Drawing">
     <value>289, 201</value>
+  </data>
+  <data name="btnChangeAuthCode.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -315,6 +318,9 @@
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;txtShopAddress.Name" xml:space="preserve">
     <value>txtShopAddress</value>
   </data>
@@ -327,14 +333,8 @@
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
-  <data name="&gt;&gt;txtID.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;btnSaveChange.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>289, 151</value>
   </data>
   <data name="btnEdit.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
@@ -348,17 +348,20 @@
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 151</value>
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>780, 499</value>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Shop name:</value>
   </data>
-  <data name="btnSaveChange.TabIndex" type="System.Int32, mscorlib">
-    <value>46</value>
+  <data name="&gt;&gt;txtID.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;txtPhoneNumber.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;txtShopName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 201</value>
@@ -375,14 +378,11 @@
   <data name="&gt;&gt;txtPhoneNumber.Name" xml:space="preserve">
     <value>txtPhoneNumber</value>
   </data>
-  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 39</value>
+  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10.2pt</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Shop address:</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnChangeAuthCode.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;btnSaveChange.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -390,14 +390,14 @@
   <data name="&gt;&gt;txtShopAddress.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;txtShopName.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="txtShopName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 22</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="btnChangeAuthCode.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;btnSaveChange.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -408,13 +408,16 @@
   <data name="&gt;&gt;txtID.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
-    <value>btnEdit</value>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtPhoneNumber.Location" type="System.Drawing.Point, System.Drawing">
     <value>289, 297</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>vi-VN</value>
   </metadata>
 </root>

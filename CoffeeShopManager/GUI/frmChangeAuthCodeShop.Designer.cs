@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChangeAuthCodeShop));
             this.TitleBar = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,32 +48,32 @@
             // 
             // TitleBar
             // 
+            resources.ApplyResources(this.TitleBar, "TitleBar");
             this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.TitleBar.Controls.Add(this.btnExit);
-            this.TitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TitleBar.Location = new System.Drawing.Point(0, 0);
+            this.errorProvider1.SetError(this.TitleBar, resources.GetString("TitleBar.Error"));
+            this.errorProvider1.SetIconAlignment(this.TitleBar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("TitleBar.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.TitleBar, ((int)(resources.GetObject("TitleBar.IconPadding"))));
             this.TitleBar.Name = "TitleBar";
-            this.TitleBar.Size = new System.Drawing.Size(520, 30);
-            this.TitleBar.TabIndex = 3;
             this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
             this.TitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
             this.TitleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseUp);
             // 
             // btnExit
             // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            resources.ApplyResources(this.btnExit, "btnExit");
+            this.errorProvider1.SetError(this.btnExit, resources.GetString("btnExit.Error"));
             this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.errorProvider1.SetIconAlignment(this.btnExit, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnExit.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnExit, ((int)(resources.GetObject("btnExit.IconPadding"))));
             this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
-            this.btnExit.Location = new System.Drawing.Point(489, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(31, 30);
-            this.btnExit.TabIndex = 6;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(134)))), ((int)(((byte)(102)))));
             this.panel1.Controls.Add(this.btnSaveChange);
             this.panel1.Controls.Add(this.label2);
@@ -81,99 +82,89 @@
             this.panel1.Controls.Add(this.txtNewPassword);
             this.panel1.Controls.Add(this.lblPassword);
             this.panel1.Controls.Add(this.txtCurrentPassword);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.errorProvider1.SetError(this.panel1, resources.GetString("panel1.Error"));
+            this.errorProvider1.SetIconAlignment(this.panel1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.panel1, ((int)(resources.GetObject("panel1.IconPadding"))));
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(520, 294);
-            this.panel1.TabIndex = 2;
             // 
             // btnSaveChange
             // 
+            resources.ApplyResources(this.btnSaveChange, "btnSaveChange");
             this.btnSaveChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnSaveChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.errorProvider1.SetError(this.btnSaveChange, resources.GetString("btnSaveChange.Error"));
             this.btnSaveChange.FlatAppearance.BorderSize = 0;
-            this.btnSaveChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveChange.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveChange.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSaveChange.Location = new System.Drawing.Point(204, 213);
+            this.errorProvider1.SetIconAlignment(this.btnSaveChange, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSaveChange.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.btnSaveChange, ((int)(resources.GetObject("btnSaveChange.IconPadding"))));
             this.btnSaveChange.Name = "btnSaveChange";
-            this.btnSaveChange.Size = new System.Drawing.Size(144, 35);
-            this.btnSaveChange.TabIndex = 10;
-            this.btnSaveChange.Text = "Save change";
             this.btnSaveChange.UseVisualStyleBackColor = false;
             this.btnSaveChange.Click += new System.EventHandler(this.btnSaveChange_Click);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 161);
+            resources.ApplyResources(this.label2, "label2");
+            this.errorProvider1.SetError(this.label2, resources.GetString("label2.Error"));
+            this.errorProvider1.SetIconAlignment(this.label2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label2.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label2, ((int)(resources.GetObject("label2.IconPadding"))));
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 19);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Retype new code:";
             // 
             // txtRetypeNewPassword
             // 
-            this.txtRetypeNewPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRetypeNewPassword.Location = new System.Drawing.Point(180, 154);
+            resources.ApplyResources(this.txtRetypeNewPassword, "txtRetypeNewPassword");
+            this.errorProvider1.SetError(this.txtRetypeNewPassword, resources.GetString("txtRetypeNewPassword.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtRetypeNewPassword, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtRetypeNewPassword.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtRetypeNewPassword, ((int)(resources.GetObject("txtRetypeNewPassword.IconPadding"))));
             this.txtRetypeNewPassword.Name = "txtRetypeNewPassword";
-            this.txtRetypeNewPassword.Size = new System.Drawing.Size(212, 26);
-            this.txtRetypeNewPassword.TabIndex = 9;
             this.txtRetypeNewPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 114);
+            resources.ApplyResources(this.label1, "label1");
+            this.errorProvider1.SetError(this.label1, resources.GetString("label1.Error"));
+            this.errorProvider1.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding"))));
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 19);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "New code:";
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.Location = new System.Drawing.Point(180, 107);
+            resources.ApplyResources(this.txtNewPassword, "txtNewPassword");
+            this.errorProvider1.SetError(this.txtNewPassword, resources.GetString("txtNewPassword.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtNewPassword, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtNewPassword.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtNewPassword, ((int)(resources.GetObject("txtNewPassword.IconPadding"))));
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(212, 26);
-            this.txtNewPassword.TabIndex = 7;
             this.txtNewPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(12, 66);
+            resources.ApplyResources(this.lblPassword, "lblPassword");
+            this.errorProvider1.SetError(this.lblPassword, resources.GetString("lblPassword.Error"));
+            this.errorProvider1.SetIconAlignment(this.lblPassword, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblPassword.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lblPassword, ((int)(resources.GetObject("lblPassword.IconPadding"))));
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(105, 19);
-            this.lblPassword.TabIndex = 4;
-            this.lblPassword.Text = "Current code:";
             // 
             // txtCurrentPassword
             // 
-            this.txtCurrentPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurrentPassword.Location = new System.Drawing.Point(180, 59);
+            resources.ApplyResources(this.txtCurrentPassword, "txtCurrentPassword");
+            this.errorProvider1.SetError(this.txtCurrentPassword, resources.GetString("txtCurrentPassword.Error"));
+            this.errorProvider1.SetIconAlignment(this.txtCurrentPassword, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtCurrentPassword.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.txtCurrentPassword, ((int)(resources.GetObject("txtCurrentPassword.IconPadding"))));
             this.txtCurrentPassword.Name = "txtCurrentPassword";
-            this.txtCurrentPassword.Size = new System.Drawing.Size(212, 26);
-            this.txtCurrentPassword.TabIndex = 5;
             this.txtCurrentPassword.UseSystemPasswordChar = true;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            resources.ApplyResources(this.errorProvider1, "errorProvider1");
             // 
             // frmChangeAuthCodeShop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 294);
             this.Controls.Add(this.TitleBar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmChangeAuthCodeShop";
-            this.Text = "frmChangeAuthCodeShop";
             this.TitleBar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
