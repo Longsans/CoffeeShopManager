@@ -56,5 +56,18 @@ namespace GUI.Properties {
                 return ((string)(this["ConnectionStringCuong"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.0.131.2\\SQLEXPRESS,1433;Database=NewDB;User ID=sa;Password=123456;Multi" +
+            "pleActiveResultSets=True;")]
+        public string ConnStr {
+            get {
+                return ((string)(this["ConnStr"]));
+            }
+            set {
+                this["ConnStr"] = value;
+            }
+        }
     }
 }

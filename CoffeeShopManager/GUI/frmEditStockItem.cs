@@ -68,65 +68,11 @@ namespace GUI
             busStock.Update(Item);
             this.Close();
             ucStock.ReloadGridView();
-            MessageBox.Show("Stock item updated.", "Update successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (btnSave.Text == "Lưu")
+                MessageBox.Show("Hàng hóa đã được cập nhật", "Cập nhật thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("Stock item updated.", "Update successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void txtItemName_Validating(object sender, CancelEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtItemName.Text))
-            {
-                var stockItem = busStock.GetByName(txtItemName.Text, Item.Shop.ID);
-                if (stockItem == null || stockItem.Id == this.Item.Id)
-                {
-                    err.Icon = checkIcon;
-                    err.SetError(txtItemName, "Valid");
-                }
-                else
-                {                  
-                    err.Icon = errorIcon;
-                    if (btnSave.Text == "Lưu")
-                        err.SetError(txtItemName, "Tên hàng hóa này đã tồn tại.");
-                    else err.SetError(txtItemName, "A stock item with such name already exists");
-                }
-            }
-            else
-            {
-                err.Icon = errorIcon;
-                if (btnSave.Text == "Lưu")
-                    err.SetError(txtItemName, "Vui lòng nhập đầy đủ thông tin");
-                else err.SetError(txtItemName, "Please fill all info fields");
-            }
-            tiktoker.Start();
-        }
-
-        private void txtSupId_Validating(object sender, CancelEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtSupId.Text))
-            {
-                if (busSup.GetById(txtSupId.Text, Item.Shop.ID) != null)
-                {
-                    errtwo.Icon = checkIcon;
-                    if (btnSave.Text == "Lưu")
-                        errtwo.SetError(txtSupId, "Hợp lệ");
-                    else errtwo.SetError(txtSupId, "Valid");
-                }
-                else
-                {
-                    errtwo.Icon = errorIcon;
-                    if (btnSave.Text == "Lưu")
-                        errtwo.SetError(txtSupId, "ID nhà cung cấp này không tồn tại.");
-                    else errtwo.SetError(txtSupId, "A supplier with such ID does not exist");
-                }
-            }
-            else
-            {
-                errtwo.Icon = errorIcon;
-                if (btnSave.Text == "Lưu")
-                    errtwo.SetError(txtSupId, "Vui lòng nhập đầy đủ thông tin");
-                else errtwo.SetError(txtSupId, "Please fill all info fields");
-            }
-            tiktoker.Start();
-        }
 
         private void lblRemoveFromList_MouseDown(object sender, MouseEventArgs e)
         {
@@ -229,18 +175,24 @@ namespace GUI
                 if (busSup.GetById(txtSupId.Text, Item.Shop.ID) != null)
                 {
                     errtwo.Icon = checkIcon;
-                    errtwo.SetError(txtSupId, "Valid");
+                    if (btnSave.Text == "Lưu")
+                        errtwo.SetError(txtSupId, "Hợp lệ");
+                    else errtwo.SetError(txtSupId, "Valid");
                 }
                 else
                 {
                     errtwo.Icon = errorIcon;
-                    errtwo.SetError(txtSupId, "A supplier with such ID does not exist");
+                    if (btnSave.Text == "Lưu")
+                        errtwo.SetError(txtSupId, "Nhà cung cấp có ID này không tồn tại.");
+                    else errtwo.SetError(txtSupId, "A supplier with such ID does not exist");
                 }
             }
             else
             {
                 errtwo.Icon = errorIcon;
-                errtwo.SetError(txtSupId, "Please fill all info fields");
+                if (btnSave.Text == "Lưu")
+                    errtwo.SetError(txtSupId, "Vui lòng nhập đầy đủ thông tin.");
+                else errtwo.SetError(txtSupId, "Please fill all info fields");
             }
             tiktoker.Start();
         }
