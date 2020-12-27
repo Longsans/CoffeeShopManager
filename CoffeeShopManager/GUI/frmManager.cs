@@ -22,6 +22,7 @@ namespace GUI
         private bool dragging = false;
         Point startPoint = new Point(0, 0);
         frmLogin _frmLogin = new frmLogin();
+        System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
         public frmManager()
         {
             InitializeComponent();
@@ -141,13 +142,40 @@ namespace GUI
             
             dtoMan = busMan.GetByUsername(_frmLogin.GetUsername());
             dtoMan.Account = busMan.GetUserInfoByUsername(_frmLogin.GetUsername());
-            lblWelcome.Text = "Welcome, " + dtoMan.Firstname;
             ucHome.dtoMan = dtoMan;
             ucShopInfoTab.SetManager(dtoMan);
+            t.Enabled = true;
+            t.Interval = 50;
+            t.Tick += T_Tick;
+            Reload();
+            
+            
         }
+
+        private void T_Tick(object sender, EventArgs e)
+        {
+            Reload();
+        }
+
         public void Reload()
         {
-            lblWelcome.Text = "Welcome, " + dtoMan.Lastname;
+            BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
+            lblWelcome.Text = "Welcome, " + dtoMan.Firstname;
+            DTO_Shop dtoShop = busShop.GetShopById(dtoMan.Shop.ID);
+            if (string.IsNullOrEmpty(dtoShop.ShopAddress) || string.IsNullOrEmpty(dtoShop.Phone))
+            {
+                if (btnLogout.Text == "Đăng xuất")
+                    err.SetError(btnShop, "Vui lòng nhập đầy đủ thông tin của shop để có thể sử dụng các chức năng khác");
+                else err.SetError(btnShop, "Please provide full info of shop to use another feature!");
+                btnEmployee.Enabled = false;
+                btnProduct.Enabled = false;
+            }
+            else
+            {
+                err.SetError(btnShop, "");
+                btnEmployee.Enabled = true;
+                btnProduct.Enabled = true;
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)

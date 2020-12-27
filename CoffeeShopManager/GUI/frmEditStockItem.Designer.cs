@@ -55,6 +55,7 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblRemoveFromList);
             this.panel1.Controls.Add(this.lblAddToList);
@@ -68,7 +69,6 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblListCaption);
             this.panel1.Controls.Add(this.label2);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // lblRemoveFromList
@@ -91,6 +91,7 @@
             // 
             // grdProds
             // 
+            resources.ApplyResources(this.grdProds, "grdProds");
             this.grdProds.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.grdProds.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -107,7 +108,6 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdProds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.grdProds, "grdProds");
             this.grdProds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -126,10 +126,10 @@
             // 
             // btnCancel
             // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -137,9 +137,9 @@
             // 
             // btnSave
             // 
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnSave.Name = "btnSave";
@@ -158,8 +158,8 @@
             // 
             // txtId
             // 
-            this.txtId.Cursor = System.Windows.Forms.Cursors.No;
             resources.ApplyResources(this.txtId, "txtId");
+            this.txtId.Cursor = System.Windows.Forms.Cursors.No;
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             // 
@@ -194,10 +194,10 @@
             // 
             // pnlTitleBar
             // 
+            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.pnlTitleBar.Controls.Add(this.btnExit);
             this.pnlTitleBar.Controls.Add(this.label1);
-            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);

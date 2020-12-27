@@ -152,8 +152,8 @@
   <data name="&gt;&gt;lblCash.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 10.2pt, style=Bold</value>
@@ -164,11 +164,14 @@
   <data name="&gt;&gt;label15.Name" xml:space="preserve">
     <value>label15</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="lblPrint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>765, 63</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>Change:</value>
+  </data>
+  <data name="datCusBirthdate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 19</value>
@@ -203,11 +206,14 @@
   <data name="txtCusFname.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 22</value>
   </data>
-  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>635, 402</value>
+  <data name="&gt;&gt;lblPrint.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblBack.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 17</value>
   </data>
   <data name="lblPrint.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -260,8 +266,8 @@
   <data name="txtCusFname.Location" type="System.Drawing.Point, System.Drawing">
     <value>151, 14</value>
   </data>
-  <data name="grdProducts.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="lblBack.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 19</value>
@@ -290,8 +296,8 @@
   <data name="lblBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 21</value>
   </data>
-  <data name="lblBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 20</value>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="lblTotalDisplay.Location" type="System.Drawing.Point, System.Drawing">
     <value>721, 370</value>
@@ -306,14 +312,8 @@
   <data name="lblPrint.Text" xml:space="preserve">
     <value>Print</value>
   </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
-  </data>
   <data name="&gt;&gt;label11.Name" xml:space="preserve">
     <value>label11</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 160</value>
   </data>
   <data name="&gt;&gt;txtEmpId.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -323,9 +323,6 @@
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 19</value>
-  </data>
-  <data name="lblPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 23</value>
   </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -342,8 +339,8 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblBack.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10.2pt</value>
   </data>
   <data name="&gt;&gt;datDop.Name" xml:space="preserve">
     <value>datDop</value>
@@ -363,11 +360,14 @@
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 10.2pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="lblPrint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 23</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>21</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
@@ -387,8 +387,11 @@
   <data name="&gt;&gt;label17.Name" xml:space="preserve">
     <value>label17</value>
   </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Employee ID:</value>
+  <data name="grdProducts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>387, 169</value>
+  </data>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="txtTabNum.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -444,14 +447,17 @@
   <data name="lblChange.Text" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;txtTabNum.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="lblBack.Text" xml:space="preserve">
     <value>      Receipts</value>
   </data>
-  <data name="&gt;&gt;lblChange.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblTotalDisplay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 7.8pt</value>
@@ -462,8 +468,8 @@
   <data name="lblSubtotal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;lblBack.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 125</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -507,8 +513,8 @@
   <data name="&gt;&gt;lblPrint.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblBack.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 10.2pt</value>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>ID:</value>
@@ -537,9 +543,6 @@
   <data name="label17.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -567,11 +570,8 @@
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 50</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 125</value>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -624,8 +624,8 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Receipt Details</value>
   </data>
-  <data name="&gt;&gt;txtEmpId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label19.Name" xml:space="preserve">
+    <value>label19</value>
   </data>
   <data name="&gt;&gt;txtCusLname.Parent" xml:space="preserve">
     <value>panel2</value>
@@ -633,14 +633,11 @@
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 19</value>
   </data>
-  <data name="lblChange.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
   <data name="&gt;&gt;txtCusLname.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;datDop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtCusEmail.Parent" xml:space="preserve">
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;label13.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -654,8 +651,8 @@
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="grdProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>387, 169</value>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>635, 402</value>
   </data>
   <data name="&gt;&gt;lblBack.Name" xml:space="preserve">
     <value>lblBack</value>
@@ -723,14 +720,17 @@
   <data name="label19.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="lblDiscount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 23</value>
+  <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10.2pt, style=Bold</value>
   </data>
   <data name="lblChange.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 7.8pt</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
     <value>16</value>
+  </data>
+  <data name="&gt;&gt;txtEmpId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Discount:</value>
@@ -747,11 +747,8 @@
   <data name="&gt;&gt;lblTotalDisplay.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblPrint.Location" type="System.Drawing.Point, System.Drawing">
-    <value>765, 63</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="lblChange.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
   <data name="lblSubtotal.Text" xml:space="preserve">
     <value>0</value>
@@ -777,11 +774,8 @@
   <data name="label8.Text" xml:space="preserve">
     <value>First name:</value>
   </data>
-  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 89</value>
+  <data name="lblDiscount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 23</value>
   </data>
   <data name="txtEmpId.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 22</value>
@@ -803,6 +797,9 @@
   </data>
   <data name="lblSubtotal.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
+  </data>
+  <data name="lblDiscount.Text" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -828,17 +825,14 @@
   <data name="&gt;&gt;lblDiscount.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Total:</value>
+  </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 52</value>
   </data>
   <data name="&gt;&gt;lblPrint.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="datDop.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -852,8 +846,8 @@
   <data name="&gt;&gt;lblDiscount.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblPrint.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 391</value>
@@ -864,6 +858,9 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Receipt info</value>
   </data>
+  <data name="&gt;&gt;lblBack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;grdProducts.Name" xml:space="preserve">
     <value>grdProducts</value>
   </data>
@@ -873,17 +870,14 @@
   <data name="&gt;&gt;label13.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 16.2pt, style=Bold</value>
+  </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 134</value>
-  </data>
   <data name="label17.Text" xml:space="preserve">
     <value>Subtotal:</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
   </data>
   <data name="datCusBirthdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>151, 120</value>
@@ -921,6 +915,9 @@
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;datDop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="label20.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
@@ -942,11 +939,8 @@
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
   </data>
-  <data name="&gt;&gt;txtCusEmail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPrint.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="grdProducts.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -954,8 +948,8 @@
   <data name="&gt;&gt;panel2.Name" xml:space="preserve">
     <value>panel2</value>
   </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;label19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -974,9 +968,6 @@
   </data>
   <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1008,23 +999,20 @@
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 19</value>
   </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 19</value>
   </data>
-  <data name="lblPrint.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="lblCash.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 402</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCusEmail.Parent" xml:space="preserve">
-    <value>panel2</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>904, 589</value>
@@ -1047,8 +1035,11 @@
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="lblDiscount.Text" xml:space="preserve">
-    <value>0</value>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 89</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
   <data name="&gt;&gt;label20.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1062,17 +1053,26 @@
   <data name="&gt;&gt;grdProducts.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 16.2pt, style=Bold</value>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Birthdate: </value>
   </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 134</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
   <data name="lblBack.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblBack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 20</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
     <value>607, 343</value>
@@ -1107,8 +1107,8 @@
   <data name="&gt;&gt;lblCash.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblBack.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Employee ID:</value>
   </data>
   <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 10.2pt, style=Bold</value>
@@ -1116,8 +1116,8 @@
   <data name="label10.Text" xml:space="preserve">
     <value>Email:</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
+  <data name="&gt;&gt;txtCusEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label9.Parent" xml:space="preserve">
     <value>panel2</value>
@@ -1134,8 +1134,8 @@
   <data name="&gt;&gt;lblDiscount.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="datCusBirthdate.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 160</value>
   </data>
   <data name="lblBack.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1146,14 +1146,14 @@
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 10.2pt, style=Bold</value>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 10.2pt, style=Bold</value>
   </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 17</value>
+  <data name="&gt;&gt;lblChange.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtTabNum.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1167,8 +1167,8 @@
   <data name="&gt;&gt;rtxtDetails.Name" xml:space="preserve">
     <value>rtxtDetails</value>
   </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Total:</value>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 50</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 19</value>

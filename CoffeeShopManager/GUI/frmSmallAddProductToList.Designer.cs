@@ -29,15 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSmallAddProductToList));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.grdProds = new System.Windows.Forms.DataGridView();
+            this.cboSearch = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.txtProId = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblCancel = new System.Windows.Forms.Label();
             this.lblAdd = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProds)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,15 +50,63 @@
             // 
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.grdProds);
+            this.panel1.Controls.Add(this.cboSearch);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.txtProId);
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.lblCancel);
             this.panel1.Controls.Add(this.lblAdd);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Name = "panel1";
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
+            // 
+            // grdProds
+            // 
+            resources.ApplyResources(this.grdProds, "grdProds");
+            this.grdProds.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.grdProds.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdProds.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdProds.BackgroundColor = System.Drawing.Color.White;
+            this.grdProds.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.grdProds.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grdProds.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdProds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.grdProds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(171)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdProds.DefaultCellStyle = dataGridViewCellStyle3;
+            this.grdProds.EnableHeadersVisualStyles = false;
+            this.grdProds.Name = "grdProds";
+            this.grdProds.ReadOnly = true;
+            this.grdProds.RowHeadersVisible = false;
+            this.grdProds.RowTemplate.Height = 24;
+            this.grdProds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdProds.SelectionChanged += new System.EventHandler(this.grdProds_SelectionChanged);
+            // 
+            // cboSearch
+            // 
+            resources.ApplyResources(this.cboSearch, "cboSearch");
+            this.cboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSearch.FormattingEnabled = true;
+            this.cboSearch.Items.AddRange(new object[] {
+            resources.GetString("cboSearch.Items"),
+            resources.GetString("cboSearch.Items1")});
+            this.cboSearch.Name = "cboSearch";
+            this.cboSearch.SelectedIndexChanged += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -83,22 +136,22 @@
             this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.lblTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
             // 
-            // txtProId
+            // txtSearch
             // 
-            resources.ApplyResources(this.txtProId, "txtProId");
-            this.txtProId.ForeColor = System.Drawing.Color.DimGray;
-            this.txtProId.Name = "txtProId";
-            this.txtProId.TextChanged += new System.EventHandler(this.txtProId_TextChanged);
+            resources.ApplyResources(this.txtSearch, "txtSearch");
+            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtProId_TextChanged);
             // 
             // lblCancel
             // 
             resources.ApplyResources(this.lblCancel, "lblCancel");
             this.lblCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCancel.Name = "lblCancel";
-            this.lblCancel.Click += new System.EventHandler(this.btnExit_Click);
             this.lblCancel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblAdd_MouseDown);
             this.lblCancel.MouseEnter += new System.EventHandler(this.lblAdd_MouseEnter);
             this.lblCancel.MouseLeave += new System.EventHandler(this.lblAdd_MouseLeave);
+            this.lblCancel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblCancel_MouseUp);
             // 
             // lblAdd
             // 
@@ -109,11 +162,6 @@
             this.lblAdd.MouseEnter += new System.EventHandler(this.lblAdd_MouseEnter);
             this.lblAdd.MouseLeave += new System.EventHandler(this.lblAdd_MouseLeave);
             this.lblAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblAdd_MouseUp);
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
             // 
             // frmSmallAddProductToList
             // 
@@ -129,6 +177,7 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdProds)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -141,9 +190,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox txtProId;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblCancel;
         private System.Windows.Forms.Label lblAdd;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboSearch;
+        private System.Windows.Forms.DataGridView grdProds;
     }
 }

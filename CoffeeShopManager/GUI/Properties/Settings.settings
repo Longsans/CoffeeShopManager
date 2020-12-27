@@ -19,5 +19,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Server=10.0.131.2\SQLEXPRESS,1433;Database=NewDB;User ID=sa;Password=123456;MultipleActiveResultSets=True;</Value>
     </Setting>
+    <Setting Name="ConnStr" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=10.0.131.2\SQLEXPRESS,1433;Database=NewDB;User ID=sa;Password=123456;MultipleActiveResultSets=True;</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

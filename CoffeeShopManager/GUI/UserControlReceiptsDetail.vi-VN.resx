@@ -237,10 +237,10 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 17</value>
+    <value>73, 17</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Ngày sinh</value>
+    <value>Ngày sinh:</value>
   </data>
   <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
