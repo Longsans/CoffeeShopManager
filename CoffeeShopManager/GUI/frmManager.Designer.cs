@@ -30,14 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
-            DTO.DTO_Manager dtO_Manager2 = new DTO.DTO_Manager();
+            DTO.DTO_Manager dtO_Manager3 = new DTO.DTO_Manager();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlChangeTab = new System.Windows.Forms.Panel();
             this.btnTable = new System.Windows.Forms.Button();
             this.imgListMenuButton = new System.Windows.Forms.ImageList(this.components);
             this.btnShop = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
-            this.btnEvent = new System.Windows.Forms.Button();
             this.btnStatistic = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnReceipts = new System.Windows.Forms.Button();
@@ -63,7 +62,6 @@
             this.ucProductTab = new GUI.UserControlProductTab();
             this.ucUserTab = new GUI.UserControlUserTab();
             this.ucCustomersTab = new GUI.UserControlCustomers();
-            this.ucEventsTab = new GUI.UserControlEvents();
             this.ucStatisticsTab = new GUI.UserControlStatistics();
             this.ucStockTab = new GUI.UserControlStock();
             this.ucSuppliersTab = new GUI.UserControlSuppliers();
@@ -85,7 +83,6 @@
             this.pnlMenu.Controls.Add(this.btnTable);
             this.pnlMenu.Controls.Add(this.btnShop);
             this.pnlMenu.Controls.Add(this.btnUser);
-            this.pnlMenu.Controls.Add(this.btnEvent);
             this.pnlMenu.Controls.Add(this.btnStatistic);
             this.pnlMenu.Controls.Add(this.btnCustomer);
             this.pnlMenu.Controls.Add(this.btnReceipts);
@@ -148,16 +145,6 @@
             this.btnUser.Name = "btnUser";
             this.btnUser.UseVisualStyleBackColor = true;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
-            // 
-            // btnEvent
-            // 
-            this.btnEvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEvent.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnEvent, "btnEvent");
-            this.btnEvent.ImageList = this.imgListMenuButton;
-            this.btnEvent.Name = "btnEvent";
-            this.btnEvent.UseVisualStyleBackColor = true;
-            this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click);
             // 
             // btnStatistic
             // 
@@ -323,7 +310,6 @@
             this.pnlShow.Controls.Add(this.ucProductTab);
             this.pnlShow.Controls.Add(this.ucUserTab);
             this.pnlShow.Controls.Add(this.ucCustomersTab);
-            this.pnlShow.Controls.Add(this.ucEventsTab);
             this.pnlShow.Controls.Add(this.ucStatisticsTab);
             this.pnlShow.Controls.Add(this.ucStockTab);
             this.pnlShow.Controls.Add(this.ucSuppliersTab);
@@ -370,16 +356,16 @@
             // 
             this.ucEmployeeTab.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.ucEmployeeTab, "ucEmployeeTab");
-            dtO_Manager2.Birthdate = new System.DateTime(((long)(0)));
-            dtO_Manager2.Email = null;
-            dtO_Manager2.Firstname = null;
-            dtO_Manager2.Gender = null;
-            dtO_Manager2.Id = null;
-            dtO_Manager2.Image = null;
-            dtO_Manager2.Lastname = null;
-            dtO_Manager2.Phone = null;
-            dtO_Manager2.Position = null;
-            this.ucEmployeeTab.dtoMan = dtO_Manager2;
+            dtO_Manager3.Birthdate = new System.DateTime(((long)(0)));
+            dtO_Manager3.Email = null;
+            dtO_Manager3.Firstname = null;
+            dtO_Manager3.Gender = null;
+            dtO_Manager3.Id = null;
+            dtO_Manager3.Image = null;
+            dtO_Manager3.Lastname = null;
+            dtO_Manager3.Phone = null;
+            dtO_Manager3.Position = null;
+            this.ucEmployeeTab.dtoMan = dtO_Manager3;
             this.ucEmployeeTab.Name = "ucEmployeeTab";
             // 
             // ucProductTab
@@ -401,11 +387,6 @@
             resources.ApplyResources(this.ucCustomersTab, "ucCustomersTab");
             this.ucCustomersTab.frmMan = null;
             this.ucCustomersTab.Name = "ucCustomersTab";
-            // 
-            // ucEventsTab
-            // 
-            resources.ApplyResources(this.ucEventsTab, "ucEventsTab");
-            this.ucEventsTab.Name = "ucEventsTab";
             // 
             // ucStatisticsTab
             // 
@@ -485,7 +466,6 @@
         private System.Windows.Forms.Panel pnlShow;
         private System.Windows.Forms.ImageList imgListMenuButton;
         private System.Windows.Forms.Button btnUser;
-        private System.Windows.Forms.Button btnEvent;
         private System.Windows.Forms.Button btnStatistic;
         private System.Windows.Forms.Button btnCustomer;
         private System.Windows.Forms.Button btnReceipts;
@@ -510,7 +490,6 @@
         private UserControlSuppliers ucSuppliersTab;
         private UserControlStock ucStockTab;
         private UserControlStatistics ucStatisticsTab;
-        private UserControlEvents ucEventsTab;
         private UserControlHome ucHome;
         private UserControlReceiptsDetail ucReceiptDetails;
         private System.Windows.Forms.Button btnShop;
