@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
-            DTO.DTO_Manager dtO_Manager1 = new DTO.DTO_Manager();
+            DTO.DTO_Manager dtO_Manager6 = new DTO.DTO_Manager();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlChangeTab = new System.Windows.Forms.Panel();
             this.btnTable = new System.Windows.Forms.Button();
@@ -54,10 +54,6 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlShow = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.ucHome = new GUI.UserControlHome();
             this.ucTable = new GUI.UserControlTableOfManager();
             this.ucShopInfoTab = new GUI.UserControlManagerShopInfo();
@@ -71,6 +67,10 @@
             this.ucStatisticsTab = new GUI.UserControlStatistics();
             this.ucStockTab = new GUI.UserControlStock();
             this.ucSuppliersTab = new GUI.UserControlSuppliers();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlShow.SuspendLayout();
@@ -80,7 +80,6 @@
             // 
             // pnlMenu
             // 
-            resources.ApplyResources(this.pnlMenu, "pnlMenu");
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
             this.pnlMenu.Controls.Add(this.pnlChangeTab);
             this.pnlMenu.Controls.Add(this.btnTable);
@@ -94,28 +93,20 @@
             this.pnlMenu.Controls.Add(this.btnStock);
             this.pnlMenu.Controls.Add(this.btnProduct);
             this.pnlMenu.Controls.Add(this.btnEmployee);
-            this.err.SetError(this.pnlMenu, resources.GetString("pnlMenu.Error"));
-            this.err.SetIconAlignment(this.pnlMenu, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pnlMenu.IconAlignment"))));
-            this.err.SetIconPadding(this.pnlMenu, ((int)(resources.GetObject("pnlMenu.IconPadding"))));
+            resources.ApplyResources(this.pnlMenu, "pnlMenu");
             this.pnlMenu.Name = "pnlMenu";
             // 
             // pnlChangeTab
             // 
-            resources.ApplyResources(this.pnlChangeTab, "pnlChangeTab");
             this.pnlChangeTab.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.err.SetError(this.pnlChangeTab, resources.GetString("pnlChangeTab.Error"));
-            this.err.SetIconAlignment(this.pnlChangeTab, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pnlChangeTab.IconAlignment"))));
-            this.err.SetIconPadding(this.pnlChangeTab, ((int)(resources.GetObject("pnlChangeTab.IconPadding"))));
+            resources.ApplyResources(this.pnlChangeTab, "pnlChangeTab");
             this.pnlChangeTab.Name = "pnlChangeTab";
             // 
             // btnTable
             // 
-            resources.ApplyResources(this.btnTable, "btnTable");
             this.btnTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnTable, resources.GetString("btnTable.Error"));
             this.btnTable.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnTable, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnTable.IconAlignment"))));
-            this.err.SetIconPadding(this.btnTable, ((int)(resources.GetObject("btnTable.IconPadding"))));
+            resources.ApplyResources(this.btnTable, "btnTable");
             this.btnTable.ImageList = this.imgListMenuButton;
             this.btnTable.Name = "btnTable";
             this.btnTable.UseVisualStyleBackColor = true;
@@ -137,15 +128,13 @@
             this.imgListMenuButton.Images.SetKeyName(9, "user_account_50px.png");
             this.imgListMenuButton.Images.SetKeyName(10, "shop_32px.png");
             this.imgListMenuButton.Images.SetKeyName(11, "table_32px.png");
+            this.imgListMenuButton.Images.SetKeyName(12, "");
             // 
             // btnShop
             // 
-            resources.ApplyResources(this.btnShop, "btnShop");
             this.btnShop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnShop, resources.GetString("btnShop.Error"));
             this.btnShop.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnShop, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnShop.IconAlignment"))));
-            this.err.SetIconPadding(this.btnShop, ((int)(resources.GetObject("btnShop.IconPadding"))));
+            resources.ApplyResources(this.btnShop, "btnShop");
             this.btnShop.ImageList = this.imgListMenuButton;
             this.btnShop.Name = "btnShop";
             this.btnShop.UseVisualStyleBackColor = true;
@@ -153,12 +142,9 @@
             // 
             // btnUser
             // 
-            resources.ApplyResources(this.btnUser, "btnUser");
             this.btnUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnUser, resources.GetString("btnUser.Error"));
             this.btnUser.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnUser, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnUser.IconAlignment"))));
-            this.err.SetIconPadding(this.btnUser, ((int)(resources.GetObject("btnUser.IconPadding"))));
+            resources.ApplyResources(this.btnUser, "btnUser");
             this.btnUser.ImageList = this.imgListMenuButton;
             this.btnUser.Name = "btnUser";
             this.btnUser.UseVisualStyleBackColor = true;
@@ -166,12 +152,9 @@
             // 
             // btnEvent
             // 
-            resources.ApplyResources(this.btnEvent, "btnEvent");
             this.btnEvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnEvent, resources.GetString("btnEvent.Error"));
             this.btnEvent.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnEvent, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnEvent.IconAlignment"))));
-            this.err.SetIconPadding(this.btnEvent, ((int)(resources.GetObject("btnEvent.IconPadding"))));
+            resources.ApplyResources(this.btnEvent, "btnEvent");
             this.btnEvent.ImageList = this.imgListMenuButton;
             this.btnEvent.Name = "btnEvent";
             this.btnEvent.UseVisualStyleBackColor = true;
@@ -179,12 +162,9 @@
             // 
             // btnStatistic
             // 
-            resources.ApplyResources(this.btnStatistic, "btnStatistic");
             this.btnStatistic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnStatistic, resources.GetString("btnStatistic.Error"));
             this.btnStatistic.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnStatistic, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnStatistic.IconAlignment"))));
-            this.err.SetIconPadding(this.btnStatistic, ((int)(resources.GetObject("btnStatistic.IconPadding"))));
+            resources.ApplyResources(this.btnStatistic, "btnStatistic");
             this.btnStatistic.ImageList = this.imgListMenuButton;
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.UseVisualStyleBackColor = true;
@@ -192,12 +172,9 @@
             // 
             // btnCustomer
             // 
-            resources.ApplyResources(this.btnCustomer, "btnCustomer");
             this.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnCustomer, resources.GetString("btnCustomer.Error"));
             this.btnCustomer.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnCustomer, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCustomer.IconAlignment"))));
-            this.err.SetIconPadding(this.btnCustomer, ((int)(resources.GetObject("btnCustomer.IconPadding"))));
+            resources.ApplyResources(this.btnCustomer, "btnCustomer");
             this.btnCustomer.ImageList = this.imgListMenuButton;
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.UseVisualStyleBackColor = true;
@@ -205,12 +182,9 @@
             // 
             // btnReceipts
             // 
-            resources.ApplyResources(this.btnReceipts, "btnReceipts");
             this.btnReceipts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnReceipts, resources.GetString("btnReceipts.Error"));
             this.btnReceipts.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnReceipts, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnReceipts.IconAlignment"))));
-            this.err.SetIconPadding(this.btnReceipts, ((int)(resources.GetObject("btnReceipts.IconPadding"))));
+            resources.ApplyResources(this.btnReceipts, "btnReceipts");
             this.btnReceipts.ImageList = this.imgListMenuButton;
             this.btnReceipts.Name = "btnReceipts";
             this.btnReceipts.UseVisualStyleBackColor = true;
@@ -218,12 +192,9 @@
             // 
             // btnSupplier
             // 
-            resources.ApplyResources(this.btnSupplier, "btnSupplier");
             this.btnSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnSupplier, resources.GetString("btnSupplier.Error"));
             this.btnSupplier.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnSupplier, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSupplier.IconAlignment"))));
-            this.err.SetIconPadding(this.btnSupplier, ((int)(resources.GetObject("btnSupplier.IconPadding"))));
+            resources.ApplyResources(this.btnSupplier, "btnSupplier");
             this.btnSupplier.ImageList = this.imgListMenuButton;
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.UseVisualStyleBackColor = true;
@@ -231,12 +202,9 @@
             // 
             // btnStock
             // 
-            resources.ApplyResources(this.btnStock, "btnStock");
             this.btnStock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnStock, resources.GetString("btnStock.Error"));
             this.btnStock.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnStock, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnStock.IconAlignment"))));
-            this.err.SetIconPadding(this.btnStock, ((int)(resources.GetObject("btnStock.IconPadding"))));
+            resources.ApplyResources(this.btnStock, "btnStock");
             this.btnStock.ImageList = this.imgListMenuButton;
             this.btnStock.Name = "btnStock";
             this.btnStock.UseVisualStyleBackColor = true;
@@ -244,12 +212,9 @@
             // 
             // btnProduct
             // 
-            resources.ApplyResources(this.btnProduct, "btnProduct");
             this.btnProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnProduct, resources.GetString("btnProduct.Error"));
             this.btnProduct.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnProduct, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnProduct.IconAlignment"))));
-            this.err.SetIconPadding(this.btnProduct, ((int)(resources.GetObject("btnProduct.IconPadding"))));
+            resources.ApplyResources(this.btnProduct, "btnProduct");
             this.btnProduct.ImageList = this.imgListMenuButton;
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.UseVisualStyleBackColor = true;
@@ -257,12 +222,9 @@
             // 
             // btnEmployee
             // 
-            resources.ApplyResources(this.btnEmployee, "btnEmployee");
             this.btnEmployee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnEmployee, resources.GetString("btnEmployee.Error"));
             this.btnEmployee.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnEmployee, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnEmployee.IconAlignment"))));
-            this.err.SetIconPadding(this.btnEmployee, ((int)(resources.GetObject("btnEmployee.IconPadding"))));
+            resources.ApplyResources(this.btnEmployee, "btnEmployee");
             this.btnEmployee.ImageList = this.imgListMenuButton;
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.UseVisualStyleBackColor = true;
@@ -270,7 +232,6 @@
             // 
             // pnlTitleBar
             // 
-            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(138)))), ((int)(((byte)(93)))));
             this.pnlTitleBar.Controls.Add(this.comboBox1);
             this.pnlTitleBar.Controls.Add(this.btnHome);
@@ -278,9 +239,7 @@
             this.pnlTitleBar.Controls.Add(this.btnMinimize);
             this.pnlTitleBar.Controls.Add(this.btnMaximize);
             this.pnlTitleBar.Controls.Add(this.btnCancel);
-            this.err.SetError(this.pnlTitleBar, resources.GetString("pnlTitleBar.Error"));
-            this.err.SetIconAlignment(this.pnlTitleBar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pnlTitleBar.IconAlignment"))));
-            this.err.SetIconPadding(this.pnlTitleBar, ((int)(resources.GetObject("pnlTitleBar.IconPadding"))));
+            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
@@ -288,24 +247,18 @@
             // 
             // comboBox1
             // 
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.err.SetError(this.comboBox1, resources.GetString("comboBox1.Error"));
             this.comboBox1.FormattingEnabled = true;
-            this.err.SetIconAlignment(this.comboBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboBox1.IconAlignment"))));
-            this.err.SetIconPadding(this.comboBox1, ((int)(resources.GetObject("comboBox1.IconPadding"))));
             this.comboBox1.Items.AddRange(new object[] {
             resources.GetString("comboBox1.Items")});
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnHome
             // 
-            resources.ApplyResources(this.btnHome, "btnHome");
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnHome, resources.GetString("btnHome.Error"));
+            resources.ApplyResources(this.btnHome, "btnHome");
             this.btnHome.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnHome, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnHome.IconAlignment"))));
-            this.err.SetIconPadding(this.btnHome, ((int)(resources.GetObject("btnHome.IconPadding"))));
             this.btnHome.ImageList = this.imgListWindowButton;
             this.btnHome.Name = "btnHome";
             this.btnHome.UseVisualStyleBackColor = true;
@@ -324,12 +277,9 @@
             // 
             // btnMenu
             // 
-            resources.ApplyResources(this.btnMenu, "btnMenu");
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnMenu, resources.GetString("btnMenu.Error"));
+            resources.ApplyResources(this.btnMenu, "btnMenu");
             this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnMenu, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnMenu.IconAlignment"))));
-            this.err.SetIconPadding(this.btnMenu, ((int)(resources.GetObject("btnMenu.IconPadding"))));
             this.btnMenu.ImageList = this.imgListWindowButton;
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.UseVisualStyleBackColor = true;
@@ -338,10 +288,7 @@
             // btnMinimize
             // 
             resources.ApplyResources(this.btnMinimize, "btnMinimize");
-            this.err.SetError(this.btnMinimize, resources.GetString("btnMinimize.Error"));
             this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnMinimize, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnMinimize.IconAlignment"))));
-            this.err.SetIconPadding(this.btnMinimize, ((int)(resources.GetObject("btnMinimize.IconPadding"))));
             this.btnMinimize.ImageList = this.imgListWindowButton;
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.UseVisualStyleBackColor = true;
@@ -350,10 +297,7 @@
             // btnMaximize
             // 
             resources.ApplyResources(this.btnMaximize, "btnMaximize");
-            this.err.SetError(this.btnMaximize, resources.GetString("btnMaximize.Error"));
             this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnMaximize, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnMaximize.IconAlignment"))));
-            this.err.SetIconPadding(this.btnMaximize, ((int)(resources.GetObject("btnMaximize.IconPadding"))));
             this.btnMaximize.ImageList = this.imgListWindowButton;
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.UseVisualStyleBackColor = true;
@@ -362,10 +306,7 @@
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.err.SetError(this.btnCancel, resources.GetString("btnCancel.Error"));
             this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnCancel, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCancel.IconAlignment"))));
-            this.err.SetIconPadding(this.btnCancel, ((int)(resources.GetObject("btnCancel.IconPadding"))));
             this.btnCancel.ImageList = this.imgListWindowButton;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -373,7 +314,6 @@
             // 
             // pnlShow
             // 
-            resources.ApplyResources(this.pnlShow, "pnlShow");
             this.pnlShow.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnlShow.Controls.Add(this.ucHome);
             this.pnlShow.Controls.Add(this.ucTable);
@@ -389,30 +329,119 @@
             this.pnlShow.Controls.Add(this.ucStockTab);
             this.pnlShow.Controls.Add(this.ucSuppliersTab);
             this.pnlShow.Controls.Add(this.panel1);
-            this.err.SetError(this.pnlShow, resources.GetString("pnlShow.Error"));
-            this.err.SetIconAlignment(this.pnlShow, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pnlShow.IconAlignment"))));
-            this.err.SetIconPadding(this.pnlShow, ((int)(resources.GetObject("pnlShow.IconPadding"))));
+            resources.ApplyResources(this.pnlShow, "pnlShow");
             this.pnlShow.Name = "pnlShow";
+            // 
+            // ucHome
+            // 
+            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.ucHome, "ucHome");
+            this.ucHome.dtoMan = null;
+            this.ucHome.Name = "ucHome";
+            this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
+            // 
+            // ucTable
+            // 
+            this.ucTable.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.ucTable, "ucTable");
+            this.ucTable.Name = "ucTable";
+            // 
+            // ucShopInfoTab
+            // 
+            this.ucShopInfoTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            resources.ApplyResources(this.ucShopInfoTab, "ucShopInfoTab");
+            this.ucShopInfoTab.Name = "ucShopInfoTab";
+            this.ucShopInfoTab.Load += new System.EventHandler(this.ucShopInfoTab_Load);
+            // 
+            // ucReceiptDetails
+            // 
+            this.ucReceiptDetails.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.ucReceiptDetails, "ucReceiptDetails");
+            this.ucReceiptDetails.Name = "ucReceiptDetails";
+            this.ucReceiptDetails.UcManReceipt = this.ucReceipts;
+            // 
+            // ucReceipts
+            // 
+            this.ucReceipts.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.ucReceipts, "ucReceipts");
+            this.ucReceipts.Name = "ucReceipts";
+            this.ucReceipts.ucRecDetails = null;
+            // 
+            // ucEmployeeTab
+            // 
+            this.ucEmployeeTab.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.ucEmployeeTab, "ucEmployeeTab");
+            dtO_Manager6.Birthdate = new System.DateTime(((long)(0)));
+            dtO_Manager6.Email = null;
+            dtO_Manager6.Firstname = null;
+            dtO_Manager6.Gender = null;
+            dtO_Manager6.Id = null;
+            dtO_Manager6.Image = null;
+            dtO_Manager6.Lastname = null;
+            dtO_Manager6.Phone = null;
+            dtO_Manager6.Position = null;
+            this.ucEmployeeTab.dtoMan = dtO_Manager6;
+            this.ucEmployeeTab.Name = "ucEmployeeTab";
+            // 
+            // ucProductTab
+            // 
+            this.ucProductTab.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            resources.ApplyResources(this.ucProductTab, "ucProductTab");
+            this.ucProductTab.Name = "ucProductTab";
+            // 
+            // ucUserTab
+            // 
+            this.ucUserTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucUserTab.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.ucUserTab, "ucUserTab");
+            this.ucUserTab.Name = "ucUserTab";
+            // 
+            // ucCustomersTab
+            // 
+            this.ucCustomersTab.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.ucCustomersTab, "ucCustomersTab");
+            this.ucCustomersTab.frmMan = null;
+            this.ucCustomersTab.Name = "ucCustomersTab";
+            // 
+            // ucEventsTab
+            // 
+            resources.ApplyResources(this.ucEventsTab, "ucEventsTab");
+            this.ucEventsTab.Name = "ucEventsTab";
+            // 
+            // ucStatisticsTab
+            // 
+            this.ucStatisticsTab.BackColor = System.Drawing.Color.LavenderBlush;
+            resources.ApplyResources(this.ucStatisticsTab, "ucStatisticsTab");
+            this.ucStatisticsTab.Name = "ucStatisticsTab";
+            // 
+            // ucStockTab
+            // 
+            this.ucStockTab.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.ucStockTab, "ucStockTab");
+            this.ucStockTab.frmMan = null;
+            this.ucStockTab.Name = "ucStockTab";
+            // 
+            // ucSuppliersTab
+            // 
+            this.ucSuppliersTab.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.ucSuppliersTab, "ucSuppliersTab");
+            this.ucSuppliersTab.frmMan = null;
+            this.ucSuppliersTab.Name = "ucSuppliersTab";
+            this.ucSuppliersTab.UcStock = null;
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.lblWelcome);
-            this.err.SetError(this.panel1, resources.GetString("panel1.Error"));
-            this.err.SetIconAlignment(this.panel1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel1.IconAlignment"))));
-            this.err.SetIconPadding(this.panel1, ((int)(resources.GetObject("panel1.IconPadding"))));
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnLogout
             // 
             resources.ApplyResources(this.btnLogout, "btnLogout");
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.err.SetError(this.btnLogout, resources.GetString("btnLogout.Error"));
             this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.err.SetIconAlignment(this.btnLogout, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnLogout.IconAlignment"))));
-            this.err.SetIconPadding(this.btnLogout, ((int)(resources.GetObject("btnLogout.IconPadding"))));
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -420,149 +449,12 @@
             // lblWelcome
             // 
             resources.ApplyResources(this.lblWelcome, "lblWelcome");
-            this.err.SetError(this.lblWelcome, resources.GetString("lblWelcome.Error"));
-            this.err.SetIconAlignment(this.lblWelcome, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblWelcome.IconAlignment"))));
-            this.err.SetIconPadding(this.lblWelcome, ((int)(resources.GetObject("lblWelcome.IconPadding"))));
             this.lblWelcome.Name = "lblWelcome";
             // 
             // err
             // 
             this.err.ContainerControl = this;
             resources.ApplyResources(this.err, "err");
-            // 
-            // ucHome
-            // 
-            resources.ApplyResources(this.ucHome, "ucHome");
-            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ucHome.dtoMan = null;
-            this.err.SetError(this.ucHome, resources.GetString("ucHome.Error"));
-            this.err.SetIconAlignment(this.ucHome, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucHome.IconAlignment"))));
-            this.err.SetIconPadding(this.ucHome, ((int)(resources.GetObject("ucHome.IconPadding"))));
-            this.ucHome.Name = "ucHome";
-            this.ucHome.Load += new System.EventHandler(this.ucHome_Load);
-            // 
-            // ucTable
-            // 
-            resources.ApplyResources(this.ucTable, "ucTable");
-            this.err.SetError(this.ucTable, resources.GetString("ucTable.Error"));
-            this.err.SetIconAlignment(this.ucTable, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucTable.IconAlignment"))));
-            this.err.SetIconPadding(this.ucTable, ((int)(resources.GetObject("ucTable.IconPadding"))));
-            this.ucTable.Name = "ucTable";
-            // 
-            // ucShopInfoTab
-            // 
-            resources.ApplyResources(this.ucShopInfoTab, "ucShopInfoTab");
-            this.ucShopInfoTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.err.SetError(this.ucShopInfoTab, resources.GetString("ucShopInfoTab.Error"));
-            this.err.SetIconAlignment(this.ucShopInfoTab, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucShopInfoTab.IconAlignment"))));
-            this.err.SetIconPadding(this.ucShopInfoTab, ((int)(resources.GetObject("ucShopInfoTab.IconPadding"))));
-            this.ucShopInfoTab.Name = "ucShopInfoTab";
-            this.ucShopInfoTab.Load += new System.EventHandler(this.ucShopInfoTab_Load);
-            // 
-            // ucReceiptDetails
-            // 
-            resources.ApplyResources(this.ucReceiptDetails, "ucReceiptDetails");
-            this.ucReceiptDetails.BackColor = System.Drawing.Color.White;
-            this.err.SetError(this.ucReceiptDetails, resources.GetString("ucReceiptDetails.Error"));
-            this.err.SetIconAlignment(this.ucReceiptDetails, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucReceiptDetails.IconAlignment"))));
-            this.err.SetIconPadding(this.ucReceiptDetails, ((int)(resources.GetObject("ucReceiptDetails.IconPadding"))));
-            this.ucReceiptDetails.Name = "ucReceiptDetails";
-            this.ucReceiptDetails.UcManReceipt = this.ucReceipts;
-            // 
-            // ucReceipts
-            // 
-            resources.ApplyResources(this.ucReceipts, "ucReceipts");
-            this.ucReceipts.BackColor = System.Drawing.Color.White;
-            this.err.SetError(this.ucReceipts, resources.GetString("ucReceipts.Error"));
-            this.err.SetIconAlignment(this.ucReceipts, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucReceipts.IconAlignment"))));
-            this.err.SetIconPadding(this.ucReceipts, ((int)(resources.GetObject("ucReceipts.IconPadding"))));
-            this.ucReceipts.Name = "ucReceipts";
-            this.ucReceipts.ucRecDetails = null;
-            // 
-            // ucEmployeeTab
-            // 
-            resources.ApplyResources(this.ucEmployeeTab, "ucEmployeeTab");
-            dtO_Manager1.Birthdate = new System.DateTime(((long)(0)));
-            dtO_Manager1.Email = null;
-            dtO_Manager1.Firstname = null;
-            dtO_Manager1.Gender = null;
-            dtO_Manager1.Id = null;
-            dtO_Manager1.Image = null;
-            dtO_Manager1.Lastname = null;
-            dtO_Manager1.Phone = null;
-            dtO_Manager1.Position = null;
-            this.ucEmployeeTab.dtoMan = dtO_Manager1;
-            this.err.SetError(this.ucEmployeeTab, resources.GetString("ucEmployeeTab.Error"));
-            this.err.SetIconAlignment(this.ucEmployeeTab, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucEmployeeTab.IconAlignment"))));
-            this.err.SetIconPadding(this.ucEmployeeTab, ((int)(resources.GetObject("ucEmployeeTab.IconPadding"))));
-            this.ucEmployeeTab.Name = "ucEmployeeTab";
-            // 
-            // ucProductTab
-            // 
-            resources.ApplyResources(this.ucProductTab, "ucProductTab");
-            this.ucProductTab.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.err.SetError(this.ucProductTab, resources.GetString("ucProductTab.Error"));
-            this.err.SetIconAlignment(this.ucProductTab, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucProductTab.IconAlignment"))));
-            this.err.SetIconPadding(this.ucProductTab, ((int)(resources.GetObject("ucProductTab.IconPadding"))));
-            this.ucProductTab.Name = "ucProductTab";
-            // 
-            // ucUserTab
-            // 
-            resources.ApplyResources(this.ucUserTab, "ucUserTab");
-            this.ucUserTab.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ucUserTab.Cursor = System.Windows.Forms.Cursors.Default;
-            this.err.SetError(this.ucUserTab, resources.GetString("ucUserTab.Error"));
-            this.err.SetIconAlignment(this.ucUserTab, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucUserTab.IconAlignment"))));
-            this.err.SetIconPadding(this.ucUserTab, ((int)(resources.GetObject("ucUserTab.IconPadding"))));
-            this.ucUserTab.Name = "ucUserTab";
-            // 
-            // ucCustomersTab
-            // 
-            resources.ApplyResources(this.ucCustomersTab, "ucCustomersTab");
-            this.ucCustomersTab.BackColor = System.Drawing.Color.White;
-            this.err.SetError(this.ucCustomersTab, resources.GetString("ucCustomersTab.Error"));
-            this.ucCustomersTab.frmMan = null;
-            this.err.SetIconAlignment(this.ucCustomersTab, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucCustomersTab.IconAlignment"))));
-            this.err.SetIconPadding(this.ucCustomersTab, ((int)(resources.GetObject("ucCustomersTab.IconPadding"))));
-            this.ucCustomersTab.Name = "ucCustomersTab";
-            // 
-            // ucEventsTab
-            // 
-            resources.ApplyResources(this.ucEventsTab, "ucEventsTab");
-            this.err.SetError(this.ucEventsTab, resources.GetString("ucEventsTab.Error"));
-            this.err.SetIconAlignment(this.ucEventsTab, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucEventsTab.IconAlignment"))));
-            this.err.SetIconPadding(this.ucEventsTab, ((int)(resources.GetObject("ucEventsTab.IconPadding"))));
-            this.ucEventsTab.Name = "ucEventsTab";
-            // 
-            // ucStatisticsTab
-            // 
-            resources.ApplyResources(this.ucStatisticsTab, "ucStatisticsTab");
-            this.ucStatisticsTab.BackColor = System.Drawing.Color.LavenderBlush;
-            this.err.SetError(this.ucStatisticsTab, resources.GetString("ucStatisticsTab.Error"));
-            this.err.SetIconAlignment(this.ucStatisticsTab, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucStatisticsTab.IconAlignment"))));
-            this.err.SetIconPadding(this.ucStatisticsTab, ((int)(resources.GetObject("ucStatisticsTab.IconPadding"))));
-            this.ucStatisticsTab.Name = "ucStatisticsTab";
-            // 
-            // ucStockTab
-            // 
-            resources.ApplyResources(this.ucStockTab, "ucStockTab");
-            this.ucStockTab.BackColor = System.Drawing.Color.White;
-            this.err.SetError(this.ucStockTab, resources.GetString("ucStockTab.Error"));
-            this.ucStockTab.frmMan = null;
-            this.err.SetIconAlignment(this.ucStockTab, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucStockTab.IconAlignment"))));
-            this.err.SetIconPadding(this.ucStockTab, ((int)(resources.GetObject("ucStockTab.IconPadding"))));
-            this.ucStockTab.Name = "ucStockTab";
-            // 
-            // ucSuppliersTab
-            // 
-            resources.ApplyResources(this.ucSuppliersTab, "ucSuppliersTab");
-            this.ucSuppliersTab.BackColor = System.Drawing.Color.White;
-            this.err.SetError(this.ucSuppliersTab, resources.GetString("ucSuppliersTab.Error"));
-            this.ucSuppliersTab.frmMan = null;
-            this.err.SetIconAlignment(this.ucSuppliersTab, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucSuppliersTab.IconAlignment"))));
-            this.err.SetIconPadding(this.ucSuppliersTab, ((int)(resources.GetObject("ucSuppliersTab.IconPadding"))));
-            this.ucSuppliersTab.Name = "ucSuppliersTab";
-            this.ucSuppliersTab.UcStock = null;
             // 
             // frmManager
             // 
