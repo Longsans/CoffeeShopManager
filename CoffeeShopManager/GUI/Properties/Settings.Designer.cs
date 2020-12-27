@@ -25,7 +25,7 @@ namespace GUI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public string ReceiptSaveFileLocation {
             get {
                 return ((string)(this["ReceiptSaveFileLocation"]));
@@ -53,6 +53,19 @@ namespace GUI.Properties {
         public string ConnectionStringHao {
             get {
                 return ((string)(this["ConnectionStringHao"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.0.131.2\\SQLEXPRESS,1433;Database=NewDB;User ID=sa;Password=123456;Multi" +
+            "pleActiveResultSets=True;")]
+        public string ConnStr {
+            get {
+                return ((string)(this["ConnStr"]));
+            }
+            set {
+                this["ConnStr"] = value;
             }
         }
     }
