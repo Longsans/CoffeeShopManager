@@ -414,13 +414,15 @@ namespace GUI
                 if (checkmonecus == 1)
                 {
                     txtMoneyCus.Text = txtMoneyCus.Text.Replace(',', '.');
-                    dtoReceipt.Cash = decimal.Parse(txtMoneyCus.Text);
-                    dtoReceipt.Change = decimal.Parse(txtGiveCus.Text);
+                    if (double.TryParse(txtMoneyCus.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala))
+                        dtoReceipt.Cash = (decimal)sala;
+                    if (double.TryParse(txtGiveCus.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala1))
+                        dtoReceipt.Change = (decimal)sala1;
                     dtoReceipt.Customer = dtoCus;
                     dtoReceipt.Employee = dtoEmp;
                     dtoReceipt.DateOfPayMent = now;
                     int mon = lblGrandTotal.Text.IndexOf("$");
-                    if (decimal.TryParse(txtDiscount.Text, out decimal discount))
+                    if (int.TryParse(txtDiscount.Text, out int discount))
                     {
                         dtoReceipt.Discount = discount / 100;
                     }
@@ -565,7 +567,7 @@ namespace GUI
                     sum += double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 }
             lblTotalSum.Text = sum.ToString() + "$";
-            if (double.TryParse(txtDiscount.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double d))
+            if (int.TryParse(txtDiscount.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out int d))
             {
                 {
                     sum = sum - sum * (d) / 100;

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using System.Globalization;
+
 namespace GUI
 {
     public partial class frmEditProduct : Form
@@ -92,7 +94,19 @@ namespace GUI
             if (checkname == 1 && checktype == 1 && checkprice == 1)
             {
                 dtoPro.Name = txtName1.Text;
-                dtoPro.Price = decimal.Parse(txtCopyPrice.Text);
+                txtPrice.Text = txtPrice.Text.Replace(',', '.');
+                if (double.TryParse(txtPrice.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala) == false)
+                {
+                    if (btnSave.Text != "Lưu")
+                    {
+                        MessageBox.Show("Wrong money", "Money", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                        MessageBox.Show("Sai tiền", "tiền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (double.TryParse(txtPrice.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out sala))
+                    dtoPro.Price = (decimal)sala;
                 var resultIndex = cbxType.FindStringExact(cbxType.Text);
 
                 if (resultIndex==0)
@@ -219,51 +233,32 @@ namespace GUI
                 {
                     errorProvider1.SetError(txtPrice, "Yêu cầu giá");
                     errorProvider2.SetError(txtPrice, "");
+                    checkprice = 0;
                 }
                 else
                 {
                     errorProvider1.SetError(txtPrice, "Price is required");
                     errorProvider2.SetError(txtPrice, "");
+                    checkprice = 0;
                 }
             }
             else
             {
-                string s = txtPrice.Text.ToString();
-
-                for(int i=0;i<s.Length;i++)
+                if (double.TryParse(txtPrice.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala))
                 {
-                    if (s[i] == '.' || s[i] == ',')
-                    {
-                        countdoc++;
-                        sums += '.';
-                    }
-                    else
-                        sums += s[i];
-                }
-                txtCopyPrice.Text = sums;
-                if (IsNumber(txtPrice.Text) == true&&countdoc<=1)
-                {
-                    if (lblName.Text == "Tên")
-                    {
-                        errorProvider2.SetError(txtPrice, "Đã có");
-                        errorProvider1.SetError(txtPrice, "");
-                    }
-                    else
-                    {
-                        errorProvider2.SetError(txtPrice, "Valid");
-                        errorProvider1.SetError(txtPrice, "");
-                    }
+                    if (btnSave.Text == "Lưu")
+                        errorProvider2.SetError(txtPrice, "Hợp lệ");
+                    else errorProvider2.SetError(txtPrice, "Correct");
+                    errorProvider1.SetError(txtPrice, "");
                     checkprice = 1;
                 }
-                else 
+                else
                 {
-                    errorProvider1.SetError(txtPrice, "Wrong format");
+                    if (btnSave.Text == "Lưu")
+                        errorProvider1.SetError(txtPrice, "Sai định dạng");
+                    else errorProvider1.SetError(txtPrice, "Wrong format");
                     errorProvider2.SetError(txtPrice, "");
-                }
-                if (s[s.Length - 1] == '.' || s[s.Length - 1] == ',')
-                {
-                    errorProvider1.SetError(txtPrice, "Wrong format");
-                    errorProvider2.SetError(txtPrice, "");
+                    checkprice = 0;
                 }
             }
         }

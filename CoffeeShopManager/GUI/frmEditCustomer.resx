@@ -131,18 +131,24 @@
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 162</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label4.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label3.Error1" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label6.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtFirstName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtLastName.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -167,6 +173,9 @@
   </data>
   <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
     <value>550, 0</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -204,14 +213,14 @@
   <data name="btnCancel.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtLastName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="txtFirstName.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>panel1</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
   <data name="label6.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -225,8 +234,8 @@
   <data name="btnCancel.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="txtId.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label2.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label1.Error1" xml:space="preserve">
     <value />
@@ -347,6 +356,9 @@
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
+  <data name="txtEmail.Error1" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -356,20 +368,14 @@
   <data name="txtEmail.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="datBirthdate.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;datBirthdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 275</value>
-  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
-  </data>
-  <data name="&gt;&gt;pnlTitleBar.Name" xml:space="preserve">
-    <value>pnlTitleBar</value>
   </data>
   <data name="pnlTitleBar.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -389,9 +395,6 @@
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnCancel.Error1" xml:space="preserve">
-    <value />
-  </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -401,8 +404,8 @@
   <data name="txtLastName.Location" type="System.Drawing.Point, System.Drawing">
     <value>138, 204</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="txtId.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="btnExit.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -422,6 +425,9 @@
   <data name="datBirthdate.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="pnlTitleBar.Error" xml:space="preserve">
+    <value />
+  </data>
   <data name="label4.Error" xml:space="preserve">
     <value />
   </data>
@@ -429,6 +435,9 @@
     <value>0</value>
   </data>
   <data name="btnSave.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
@@ -446,14 +455,14 @@
   <data name="&gt;&gt;txtFirstName.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;txtId.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="pnlTitleBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="label6.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -469,9 +478,6 @@
   </data>
   <data name="&gt;&gt;txtId.Name" xml:space="preserve">
     <value>txtId</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 30</value>
@@ -503,8 +509,11 @@
   <data name="btnCancel.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="txtFirstName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 159</value>
+  <data name="btnSave.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -542,17 +551,11 @@
   <data name="&gt;&gt;errorFalse.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label6.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 19</value>
   </data>
   <data name="datBirthdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
-  </data>
-  <data name="label1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -566,11 +569,17 @@
   <data name="txtId.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
+  <data name="btnExit.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="txtId.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>panel1</value>
+  </data>
+  <data name="btnSave.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -581,17 +590,20 @@
   <data name="txtFirstName.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
+  <data name="txtId.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
-  </data>
-  <data name="datBirthdate.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
   <data name="&gt;&gt;txtLastName.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>581, 336</value>
@@ -602,6 +614,9 @@
   <data name="&gt;&gt;txtId.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="&gt;&gt;errorFalse.Name" xml:space="preserve">
+    <value>errorFalse</value>
+  </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
@@ -611,26 +626,20 @@
   <data name="txtFirstName.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="txtFirstName.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtLastName.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;txtFirstName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="btnCancel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
-    <value>panel1</value>
   </data>
   <data name="datBirthdate.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;errorTrue.Name" xml:space="preserve">
     <value>errorTrue</value>
@@ -641,8 +650,8 @@
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="txtFirstName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="btnExit.Error" xml:space="preserve">
     <value />
@@ -656,8 +665,8 @@
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 162</value>
   </data>
-  <data name="btnExit.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="label2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -677,11 +686,8 @@
   <data name="txtEmail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label2.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 31</value>
+  <data name="label4.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="btnExit.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -692,14 +698,11 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="label4.Error1" xml:space="preserve">
-    <value />
+  <data name="txtLastName.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="btnCancel.Error" xml:space="preserve">
     <value />
-  </data>
-  <data name="txtId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 22</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -713,8 +716,8 @@
   <data name="panel1.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="btnSave.Error1" xml:space="preserve">
-    <value />
+  <data name="datBirthdate.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -737,8 +740,11 @@
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 31</value>
   </data>
-  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="btnCancel.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="datBirthdate.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;txtFirstName.Name" xml:space="preserve">
     <value>txtFirstName</value>
@@ -752,6 +758,9 @@
   <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 30</value>
   </data>
+  <data name="pnlTitleBar.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;pnlTitleBar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -761,17 +770,11 @@
   <data name="txtLastName.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
-  <data name="datBirthdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 159</value>
-  </data>
   <data name="label6.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
     <value>416, 113</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -779,8 +782,8 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 23</value>
   </data>
-  <data name="label3.Error1" xml:space="preserve">
-    <value />
+  <data name="label1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="label3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -788,8 +791,8 @@
   <data name="txtId.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 275</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
@@ -803,11 +806,11 @@
   <data name="label5.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="txtLastName.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtFirstName.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
@@ -815,11 +818,11 @@
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 19</value>
   </data>
-  <data name="btnSave.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="txtFirstName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 159</value>
   </data>
-  <data name="txtEmail.Error1" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtFirstName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -827,8 +830,8 @@
   <data name="&gt;&gt;errorTrue.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label6.Error1" xml:space="preserve">
-    <value />
+  <data name="datBirthdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>416, 159</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>41, 116</value>
@@ -839,14 +842,11 @@
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 19</value>
-  </data>
   <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="pnlTitleBar.Error" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;pnlTitleBar.Name" xml:space="preserve">
+    <value>pnlTitleBar</value>
   </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
@@ -857,8 +857,8 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>581, 366</value>
   </data>
-  <data name="txtId.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="label6.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
@@ -869,11 +869,14 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 12pt</value>
+  </data>
   <data name="txtLastName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="panel1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnExit.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -890,8 +893,8 @@
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>324, 275</value>
   </data>
-  <data name="label2.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label2.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="label1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -911,26 +914,23 @@
   <data name="pnlTitleBar.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="datBirthdate.Error1" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="datBirthdate.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="txtLastName.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 19</value>
   </data>
   <data name="txtLastName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="pnlTitleBar.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 31</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -941,20 +941,20 @@
   <data name="panel1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label4.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>334, 162</value>
   </data>
   <data name="&gt;&gt;txtEmail.Name" xml:space="preserve">
     <value>txtEmail</value>
   </data>
-  <data name="&gt;&gt;errorFalse.Name" xml:space="preserve">
-    <value>errorFalse</value>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Last Name</value>
   </data>
-  <data name="label6.Error" xml:space="preserve">
-    <value />
+  <data name="txtId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 22</value>
   </data>
   <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
     <value>2</value>

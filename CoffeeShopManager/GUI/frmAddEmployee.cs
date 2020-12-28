@@ -116,7 +116,8 @@ namespace GUI
                             MessageBox.Show("Sai tiền lương","tiền lương", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    dtoEmp.Salary = decimal.Parse(txtSalary.Text);
+                    if (double.TryParse(txtSalary.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out sala))
+                        dtoEmp.Salary = (decimal)sala;
                     dtoEmp.Manager = frmManager.dtoMan;
                     dtoEmp.Shop.ID = frmManager.dtoMan.Shop.ID;
                     dtoEmp.Account = busUser.EncodePass(dtoEmp);

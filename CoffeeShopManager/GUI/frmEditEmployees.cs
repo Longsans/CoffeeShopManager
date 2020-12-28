@@ -171,8 +171,8 @@ namespace GUI
                     MessageBox.Show("Sai tiền lương", "tiền lương", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            dtoEmp.Salary = decimal.Parse(txtSalary.Text);
-            dtoEmp.Manager = busMan.GetById(txtManagerID.Text, dtoEmp.Shop.ID);
+            if (double.TryParse(txtSalary.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out sala))
+                dtoEmp.Salary = (decimal)sala; dtoEmp.Manager = busMan.GetById(txtManagerID.Text, dtoEmp.Shop.ID);
             dtoEmp.Phone = txtPhone.Text;
             if (radMale.Checked == true)
             {
