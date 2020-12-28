@@ -245,6 +245,7 @@ namespace GUI
 
         private void ucHome_Load(object sender, EventArgs e)
         {
+            ucHome.dtoMan = dtoMan;
             ucHome.SetEmpTab(ucEmployeeTab);
             ucHome.SetButtonEmp(btnEmployee);
             ucHome.SetPanel(pnlChangeTab);
@@ -253,6 +254,7 @@ namespace GUI
             ucHome.SetStatisticsTab(ucStatisticsTab);
             ucHome.SetButtonStat(btnStatistic);
             ucHome.SetFrmMan(this);
+
         }
 
         private void ucShopInfoTab_Load(object sender, EventArgs e)

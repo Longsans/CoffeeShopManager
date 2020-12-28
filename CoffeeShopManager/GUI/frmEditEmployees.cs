@@ -130,9 +130,19 @@ namespace GUI
 
         private void btnSaveChange_Click(object sender, EventArgs e)
         {
-            DateTime bdate = new DateTime();
-            DateTime doj = new DateTime();
-            string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
+            if (string.IsNullOrWhiteSpace(txtFirstName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text) 
+                || string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtAddress.Text))
+            {
+                if (btnCancel.Text == "Cancel")
+                {
+                    MessageBox.Show("Please fill all info fields.", "More information is required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Nhập đủ thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return;
+            }
             dtoEmp.Firstname = txtFirstName.Text;
             dtoEmp.Lastname = txtLastName.Text;
             dtoEmp.Address = txtAddress.Text;
@@ -152,12 +162,32 @@ namespace GUI
             else
                 cboPosition.Text = "Others";
             dtoEmp.Position = cboPosition.Text;
+
+            if (!long.TryParse(txtPhone.Text, out long phone))
+            {
+                if (btnCancel.Text == "Cancel")
+                {
+                    MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return;
+            }
             dtoEmp.Phone = txtPhone.Text;
             if(checkemail==1)
             dtoEmp.Email = txtEmail.Text;
             else
             {
-                MessageBox.Show("Email trung hoac sai", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (btnCancel.Text == "Cancel")
+                {
+                    MessageBox.Show("Email is already taken or is in invalid format", "Invalid email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Email trùng hoặc sai", "Email không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 return;
             }
             txtSalary.Text = txtSalary.Text.Replace(',', '.');
@@ -212,11 +242,11 @@ namespace GUI
                 if (EmailHelper.ValidateEmail(txtEmail.Text))
                 {
                     errEmail.SetError(txtEmail, "");
-                    errorProvider1.SetError(txtEmail, "Correct");
+                    errorProvider1.SetError(txtEmail, "Valid");
                     if (busEmp.GetByEmail(txtEmail.Text, frmManager.dtoMan.Shop.ID) == null||txtEmail.Text==dtoEmp.Email)
                     {
                         errEmail.SetError(txtEmail, "");
-                        errorProvider1.SetError(txtEmail, "correct");
+                        errorProvider1.SetError(txtEmail, "Valid");
                         checkemail = 1;
 
                     }

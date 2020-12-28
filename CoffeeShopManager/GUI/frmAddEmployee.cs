@@ -74,6 +74,17 @@ namespace GUI
                     MessageBox.Show(cboString.Items[5].ToString(), cboString.Items[6].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     errorProvider1.SetError(cbboxPosition, cboString.Items[7].ToString());
                 }
+                else if (!long.TryParse(txtPhone.Text, out long phone))
+                {
+                    if (btnAdd.Text == "Add")
+                    {
+                        MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
                 else
                 {
                     DateTime bdate = new DateTime();
