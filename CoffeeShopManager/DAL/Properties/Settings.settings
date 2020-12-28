@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DAL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=DESKTOP-14KFC4R\SQLEXPRESS; Initial Catalog=NewDB; User id=sa;Password=123456;</Value>
+    </Setting>
+    <Setting Name="ConnectionStringLong" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=localhost; Initial Catalog=NewDB; User id=sa;Password=onetwothree;MultipleActiveResultSets=True;</Value>
+    </Setting>
+    <Setting Name="ConnectionStringHao" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=HDM-PC-DC54PLF;Initial Catalog=NewDB;Integrated Security=True;MultipleActiveResultSets=True;</Value>
+    </Setting>
+    <Setting Name="ConnectionStringCuong" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=DESKTOP-14KFC4R\SQLEXPRESS; Initial Catalog=NewDB; User id=sa;Password=123456;MultipleActiveResultSets=True;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

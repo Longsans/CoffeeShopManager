@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\zzPublish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,10 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -47,10 +48,37 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9CFC88A449E6B76F365FCF79041F05EB89C6A0C5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GUI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +90,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeLanguage.cs" />
+    <Compile Include="ConnectionStringHelper.cs" />
+    <Compile Include="DataGridViewNumericUpDownCell.cs" />
+    <Compile Include="EmailHelper.cs" />
+    <Compile Include="FilterProperties.cs" />
+    <Compile Include="frmAddStockItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddStockItem.Designer.cs">
+      <DependentUpon>frmAddStockItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSupplier.Designer.cs">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddTable.Designer.cs">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangeAuthCodeShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangeAuthCodeShop.Designer.cs">
+      <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditStockItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditStockItem.Designer.cs">
+      <DependentUpon>frmEditStockItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderForTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderForTable.Designer.cs">
+      <DependentUpon>frmOrderForTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestoreEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestoreEmployee.Designer.cs">
+      <DependentUpon>frmRestoreEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestoreProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestoreProduct.Designer.cs">
+      <DependentUpon>frmRestoreProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowDetailTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowDetailTable.Designer.cs">
+      <DependentUpon>frmShowDetailTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditSupplier.Designer.cs">
+      <DependentUpon>frmEditSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSmallAddProductToList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSmallAddProductToList.Designer.cs">
+      <DependentUpon>frmSmallAddProductToList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSmallAddStockItemToList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSmallAddStockItemToList.Designer.cs">
+      <DependentUpon>frmSmallAddStockItemToList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDFPrinter.cs" />
     <Compile Include="frmAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +179,12 @@
     </Compile>
     <Compile Include="frmChangePassword.Designer.cs">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditCustomer.Designer.cs">
+      <DependentUpon>frmEditCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEditEmployees.cs">
       <SubType>Form</SubType>
@@ -86,11 +198,17 @@
     <Compile Include="frmEditProduct.Designer.cs">
       <DependentUpon>frmEditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHome.cs">
+    <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHome.Designer.cs">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <Compile Include="frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManager.Designer.cs">
+      <DependentUpon>frmManager.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInsertProDuct.cs">
       <SubType>Form</SubType>
@@ -118,11 +236,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ucOrderHistorycs.cs">
+    <Compile Include="Table.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucOrderHistorycs.Designer.cs">
-      <DependentUpon>ucOrderHistorycs.cs</DependentUpon>
+    <Compile Include="Table.Designer.cs">
+      <DependentUpon>Table.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlCustomers.cs">
       <SubType>UserControl</SubType>
@@ -136,6 +254,12 @@
     <Compile Include="UserControlEmployeesTab.Designer.cs">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlEmployeeUserTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlEmployeeUserTab.Designer.cs">
+      <DependentUpon>UserControlEmployeeUserTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlEvents.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,17 +272,47 @@
     <Compile Include="UserControlHome.Designer.cs">
       <DependentUpon>UserControlHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlNotifications.cs">
+    <Compile Include="UserControlManagerAndShopInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlNotifications.Designer.cs">
-      <DependentUpon>UserControlNotifications.cs</DependentUpon>
+    <Compile Include="UserControlManagerAndShopInfo.Designer.cs">
+      <DependentUpon>UserControlManagerAndShopInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlManagerReceiptsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlManagerReceiptsTab.Designer.cs">
+      <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlManagerShopInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlManagerShopInfo.Designer.cs">
+      <DependentUpon>UserControlManagerShopInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlOrderProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlOrderProduct.Designer.cs">
+      <DependentUpon>UserControlOrderProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlProductTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlProductTab.Designer.cs">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlReceiptsDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlReceiptsDetail.Designer.cs">
+      <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSettingsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSettingsTab.Designer.cs">
+      <DependentUpon>UserControlSettingsTab.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlStatistics.cs">
       <SubType>UserControl</SubType>
@@ -178,6 +332,18 @@
     <Compile Include="UserControlSuppliers.Designer.cs">
       <DependentUpon>UserControlSuppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTable.Designer.cs">
+      <DependentUpon>UserControlTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlTableOfManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTableOfManager.Designer.cs">
+      <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlUserTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,17 +353,83 @@
     <EmbeddedResource Include="frmAddEmployee.resx">
       <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEmployee.vi-VN.resx">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStockItem.resx">
+      <DependentUpon>frmAddStockItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStockItem.vi-VN.resx">
+      <DependentUpon>frmAddStockItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSupplier.resx">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSupplier.vi-VN.resx">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTable.resx">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTable.vi-VN.resx">
+      <DependentUpon>frmAddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeAuthCodeShop.resx">
+      <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeAuthCodeShop.vi-VN.resx">
+      <DependentUpon>frmChangeAuthCodeShop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.vi-VN.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditCustomer.resx">
+      <DependentUpon>frmEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditCustomer.vi-VN.resx">
+      <DependentUpon>frmEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditEmployees.resx">
+      <DependentUpon>frmEditEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditEmployees.vi-VN.resx">
       <DependentUpon>frmEditEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditProduct.resx">
       <DependentUpon>frmEditProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHome.resx">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <EmbeddedResource Include="frmEditProduct.vi-VN.resx">
+      <DependentUpon>frmEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditStockItem.resx">
+      <DependentUpon>frmEditStockItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditStockItem.vi-VN.resx">
+      <DependentUpon>frmEditStockItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditSupplier.resx">
+      <DependentUpon>frmEditSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditSupplier.vi-VN.resx">
+      <DependentUpon>frmEditSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployee.vi-VN.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsertProDuct.vi-VN.resx">
+      <DependentUpon>frmInsertProDuct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.vi-VN.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManager.resx">
+      <DependentUpon>frmManager.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInsertProDuct.resx">
@@ -206,32 +438,165 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManager.vi-VN.resx">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderForTable.resx">
+      <DependentUpon>frmOrderForTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegister.vi-VN.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreEmployee.resx">
+      <DependentUpon>frmRestoreEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreEmployee.vi-VN.resx">
+      <DependentUpon>frmRestoreEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreProduct.resx">
+      <DependentUpon>frmRestoreProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestoreProduct.vi-VN.resx">
+      <DependentUpon>frmRestoreProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowDetailTable.resx">
+      <DependentUpon>frmShowDetailTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowDetailTable.vi-VN.resx">
+      <DependentUpon>frmShowDetailTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSmallAddProductToList.resx">
+      <DependentUpon>frmSmallAddProductToList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSmallAddProductToList.vi-VN.resx">
+      <DependentUpon>frmSmallAddProductToList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSmallAddStockItemToList.resx">
+      <DependentUpon>frmSmallAddStockItemToList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSmallAddStockItemToList.vi-VN.resx">
+      <DependentUpon>frmSmallAddStockItemToList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucOrderHistorycs.resx">
-      <DependentUpon>ucOrderHistorycs.cs</DependentUpon>
+    <EmbeddedResource Include="Table.resx">
+      <DependentUpon>Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table.vi-VN.resx">
+      <DependentUpon>Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlCustomers.resx">
+      <DependentUpon>UserControlCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlCustomers.vi-VN.resx">
+      <DependentUpon>UserControlCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlEmployeesTab.resx">
       <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEmployeesTab.vi-VN.resx">
+      <DependentUpon>UserControlEmployeesTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEmployeeUserTab.resx">
+      <DependentUpon>UserControlEmployeeUserTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEmployeeUserTab.vi-VN.resx">
+      <DependentUpon>UserControlEmployeeUserTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlHome.resx">
       <DependentUpon>UserControlHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlHome.vi-VN.resx">
+      <DependentUpon>UserControlHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerAndShopInfo.resx">
+      <DependentUpon>UserControlManagerAndShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerAndShopInfo.vi-VN.resx">
+      <DependentUpon>UserControlManagerAndShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerReceiptsTab.vi-VN.resx">
+      <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerReceiptsTab.vi.resx">
+      <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerShopInfo.resx">
+      <DependentUpon>UserControlManagerShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerShopInfo.vi-VN.resx">
+      <DependentUpon>UserControlManagerShopInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlOrderProduct.resx">
+      <DependentUpon>UserControlOrderProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagerReceiptsTab.resx">
+      <DependentUpon>UserControlManagerReceiptsTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlOrderProduct.vi-VN.resx">
+      <DependentUpon>UserControlOrderProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlProductTab.resx">
       <DependentUpon>UserControlProductTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlProductTab.vi-VN.resx">
+      <DependentUpon>UserControlProductTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlReceiptsDetail.resx">
+      <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlReceiptsDetail.vi-VN.resx">
+      <DependentUpon>UserControlReceiptsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSettingsTab.resx">
+      <DependentUpon>UserControlSettingsTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStatistics.resx">
+      <DependentUpon>UserControlStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStatistics.vi-VN.resx">
+      <DependentUpon>UserControlStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlStock.resx">
       <DependentUpon>UserControlStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStock.vi-VN.resx">
+      <DependentUpon>UserControlStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSuppliers.resx">
+      <DependentUpon>UserControlSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSuppliers.vi-VN.resx">
+      <DependentUpon>UserControlSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTable.resx">
+      <DependentUpon>UserControlTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTable.vi-VN.resx">
+      <DependentUpon>UserControlTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTableOfManager.resx">
+      <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTableOfManager.vi-VN.resx">
+      <DependentUpon>UserControlTableOfManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUserTab.resx">
       <DependentUpon>UserControlUserTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUserTab.vi-VN.resx">
+      <DependentUpon>UserControlUserTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="GUI_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -278,6 +643,165 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_left_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_right_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\25444.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2020-11-08 205640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\squared_menu_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_new_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addPng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dinner-table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_bin_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_in_list_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_in_list_100px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_128px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_128px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_group_man_man_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_200px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_128px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_100px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user_group_man_man_100px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_in_list_100px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_200px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_200px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_200px3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_200px4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-removebg-preview.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error-icon-png-23.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\construction_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hammer_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffeecupicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffeeflat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openfolder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openfolder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

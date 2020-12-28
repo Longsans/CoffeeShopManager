@@ -14,7 +14,8 @@ namespace GUI
 {
     public partial class UserControlEmployeesTab : UserControl
     {
-        BUS_Employee busEmp = new BUS_Employee();
+        BUS_Employee busEmp = new BUS_Employee(ConnectionStringHelper.GetConnectionString());
+        public DTO_Manager dtoMan { get; set; } = new DTO_Manager();
         public UserControlEmployeesTab()
         {
             InitializeComponent();
@@ -33,20 +34,54 @@ namespace GUI
             {
                 frmEditEmployees frmEditEmployees = new frmEditEmployees(this)
                 {
-                    dtoEmp = busEmp.GetEmployeeInfoByEmail(dataGridView1.SelectedRows[0].Cells[6].Value.ToString())
+                    dtoEmp = busEmp.GetInfoByIdNotDeleted(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoMan.Shop.ID)
                 };
                 frmEditEmployees.ShowDialog();
             }
         }
+
+        private void TxtSearch_LostFocus(object sender, EventArgs e)
+        {
+            if (txtSearch.TextLength == 0)
+            {
+                txtSearch.ForeColor = Color.DimGray;
+                if (btnEdit.Text == "Sửa")
+                    txtSearch.Text = "Tìm kiếm...";
+                else txtSearch.Text = "Search...";
+            }
+        }
+
+        private void TxtSearch_GotFocus(object sender, EventArgs e)
+        {
+            if (txtSearch.ForeColor == Color.DimGray)
+            {
+                txtSearch.Clear();
+                txtSearch.ForeColor = SystemColors.WindowText;
+            }
+        }
+
         public void Reload()
         {
-            dataGridView1.DataSource = busEmp.GetAllEmployee();
-            txtSearch.Text = "";
+            dataGridView1.DataSource = busEmp.GetAllEmployee(dtoMan.Shop.ID);
+            if (btnShowAll.Text != "Show All")
+            {
+                dataGridView1.Columns["First Name"].HeaderText = "Họ";
+                dataGridView1.Columns["Last Name"].HeaderText = "Tên";
+                dataGridView1.Columns["Position"].HeaderText = "Chức vụ";
+                dataGridView1.Columns["Phone"].HeaderText = "SĐT";
+                dataGridView1.Columns["Gender"].HeaderText = "Giới tính";
+                dataGridView1.Columns["Manager's ID"].HeaderText = "ID Quản lý";
+            }
+            if (btnEdit.Text == "Sửa")
+                txtSearch.Text = "Tìm kiếm...";
+            else txtSearch.Text = "Search...";
             cboSearch.Text = "";
         }
 
         private void UserControlEmployeesTab_Load(object sender, EventArgs e)
         {
+            txtSearch.GotFocus += TxtSearch_GotFocus;
+            txtSearch.LostFocus += TxtSearch_LostFocus;
             Reload();
         }
 
@@ -55,11 +90,21 @@ namespace GUI
             DTO_Employee dtoEmp = new DTO_Employee();
             if (dataGridView1.SelectedRows != null && !dataGridView1.Rows[dataGridView1.RowCount - 1].Selected )
             {
-                DialogResult ret = MessageBox.Show("Do you want to delete this employee?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult ret;
+                if (btnEdit.Text == "Sửa")
+                    ret = MessageBox.Show("Bạn có muốn xóa nhân viên này không?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                else ret = MessageBox.Show("Do you want to delete this employee?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ret == DialogResult.Yes)
                 {
-                    dtoEmp = busEmp.GetEmployeeInfoByEmail(dataGridView1.SelectedRows[0].Cells[6].Value.ToString());
-                    busEmp.DeleteEmployee(dtoEmp);
+                    dtoEmp = busEmp.GetInfoByIdNotDeleted(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoMan.Shop.ID);
+                    if (busEmp.CheckReceiptExists(dtoEmp))
+                    {
+                        busEmp.FalseDelete(dtoEmp);
+                    }
+                    else
+                    {
+                        busEmp.TrueDelete(dtoEmp);
+                    }
                     Reload();
                 }
             }
@@ -69,29 +114,34 @@ namespace GUI
         {
             try
             {
-                switch (cboSearch.Text)
+                if (txtSearch.ForeColor != Color.DimGray)
                 {
-                    case "ID":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchIDFiltered(Int32.Parse(txtSearch.Text));
-                        break;
-                    case "Name":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchNameFiltered(txtSearch.Text);
-                        break;
-                    case "Gender":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchGenderFiltered(txtSearch.Text);
-                        break;
-                    case "Position":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPositionFiltered(txtSearch.Text);
-                        break;
-                    case "Phone number":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPhoneFiltered(txtSearch.Text);
-                        break;
-                    case "Email":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchEmailFiltered(txtSearch.Text);
-                        break;
-                    case "Manager's ID":
-                        this.dataGridView1.DataSource = busEmp.GetEmployeesSearchManIDFiltered(Int32.Parse(txtSearch.Text));
-                        break;
+                    var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
+
+                    switch (resultIndex)
+                    {
+                        case 0:
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchIDFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case 1:
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchNameFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case 2:
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchGenderFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case 3:
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPositionFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case 4:
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchPhoneFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case 5:
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchEmailFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                        case 6:
+                            this.dataGridView1.DataSource = busEmp.GetEmployeesSearchManIDFiltered(txtSearch.Text, dtoMan.Shop.ID);
+                            break;
+                    }
                 }
             }
             catch (Exception ex)
@@ -104,6 +154,11 @@ namespace GUI
         private void btnShowAll_Click(object sender, EventArgs e)
         {
             Reload();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

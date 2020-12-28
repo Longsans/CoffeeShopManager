@@ -9,19 +9,20 @@ namespace DTO
     public class DTO_User
     {
         public int ID { get; set; }
-        public string Email { get; set; }
+        public string Username { get; set; }
         public string PassWord { get; set; }
 
         public string TypeId { get; set; }
+        public bool Deleted { get; set; }
         public DTO_User() { }
-        public DTO_User(string email,string password)
+        public DTO_User(string username, string password)
         {
-            this.Email = email;
+            this.Username = username;
             this.PassWord = password;
         }
-        public DTO_User(string email,string password,string typeid)
+        public DTO_User(string username,string password,string typeid)
         {
-            this.Email = email;
+            this.Username = username;
             this.PassWord = password;
             this.TypeId = typeid;
         }

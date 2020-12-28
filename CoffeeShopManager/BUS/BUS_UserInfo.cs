@@ -11,8 +11,15 @@ namespace BUS
 {
     public class BUS_UserInfo
     {
+        private string connectionString;
+        DAL_UserInfo dalUserInfo;
 
-        DAL_UserInfo dalUserInfo = new DAL_UserInfo();
+        public BUS_UserInfo(string connString)
+        {
+            connectionString = connString;
+            dalUserInfo = new DAL_UserInfo(connectionString);
+        }
+
         private string ComputeSha256Hash(string rawData)
         {
             // Create a SHA256   
@@ -32,16 +39,16 @@ namespace BUS
         }
         public bool CheckLogin(DTO_User account)
         {
-            if (account.Email == "")
+            if (account.Username == "")
                 return false;
             if (account.PassWord == "")
                 return false;
             try
             {
-                DTO_User accountnew1=  dalUserInfo.GetByEmail(account.Email);
+                DTO_User dbaccount=  dalUserInfo.GetByUsername(account.Username);
                 account.PassWord = ComputeSha256Hash(account.PassWord);
-                if (accountnew1 == null) return false;
-                if (accountnew1.PassWord == account.PassWord)
+                if (dbaccount == null || dbaccount.Deleted) return false;
+                if (dbaccount.PassWord == account.PassWord)
                     return true;
                 else
                     return false;
@@ -51,16 +58,15 @@ namespace BUS
                 throw ex;
             }
         }
-        public bool CheckUsername(string email)
+        public bool CheckUsername(string username)
         {
-            if (email == "")
+            if (username == "")
                 return false;
             try
             {
-                DTO_User accountnew1 = dalUserInfo.GetByEmail(email);
+                DTO_User accountnew1 = dalUserInfo.GetByUsername(username);
                 if (accountnew1 == null) return true;
                 return false;
-
             }
             catch (Exception ex)
             {
@@ -84,7 +90,7 @@ namespace BUS
         {
             try
             {
-                if (CheckUsername(account.Email))
+                if (CheckUsername(account.Username))
                 {
                     //mã hóa trước khi insert;
                     account.PassWord = ComputeSha256Hash(account.PassWord);
@@ -103,7 +109,7 @@ namespace BUS
         {
             try
             {
-                dalUserInfo.Delete(account);
+                dalUserInfo.FalseDelete(account);
             }
             catch (Exception ex)
             {
@@ -128,6 +134,11 @@ namespace BUS
         {
             dtoMan.Account.PassWord = ComputeSha256Hash(dtoMan.Account.PassWord);
             return dtoMan.Account;
+        }
+        public DTO_User EncodePass(DTO_Employee dtoEmp)
+        {
+            dtoEmp.Account.PassWord = ComputeSha256Hash(dtoEmp.Account.PassWord);
+            return dtoEmp.Account;
         }
     }
 }

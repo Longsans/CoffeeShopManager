@@ -13,8 +13,11 @@ namespace DTO
         public string Type { get; set; }
         public byte[] Image { get; set; }
         public decimal Price { get; set; }
-        public string Detail { get; set; }
-        
+        public string Details { get; set; }
+        public bool Deleted { get; set; }
+
+        public DTO_Shop Shop = new DTO_Shop();
+
         public DTO_Product()
         {
 
@@ -26,7 +29,7 @@ namespace DTO
             this.Name = name;
             this.Type = type;
             this.Price = money;
-            this.Detail = detail;
+            this.Details = detail;
         }
         public DTO_Product(byte[] image)
         {

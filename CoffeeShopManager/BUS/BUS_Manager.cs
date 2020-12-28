@@ -11,13 +11,21 @@ namespace BUS
 {
     public class BUS_Manager
     {
-        DAL_Manager dalManager = new DAL_Manager();
-        public DataTable GetAllManagers()
+        private string connectionString;
+        DAL_Manager dalManager;
+
+        public BUS_Manager(string connString)
+        {
+            connectionString = connString;
+            dalManager = new DAL_Manager(connectionString);
+        }
+
+        public DataTable GetAllManagers(int shopId)
         {
             try
             {
                 DataTable dtb = new DataTable();
-                dtb = dalManager.GetAllManagers();
+                dtb = dalManager.GetAllManagers(shopId);
                 return dtb;
             }
             catch (Exception ex)
@@ -25,28 +33,35 @@ namespace BUS
                 throw ex;
             }
         }
-        public DTO_Manager GetById(int id)
+        public DTO_Manager GetById(string id, int shopId)
         {
             try
             {
-                return dalManager.GetById(id);
+                return dalManager.GetById(id, shopId);
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
-        public DTO_Manager GetByEmail(string email)
+        public DTO_Manager GetByUsername(string username)
         {
             try
             {
-                return dalManager.GetByEmail(email);
+                return dalManager.GetByUsername(username);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+
+        public DTO_Worker GetByEmail(string email,int shopid)
+        {
+            DAL_Workers dalWorker = new DAL_Workers(connectionString);
+            return dalWorker.GetByEmail(email, shopid);
+        }
+
         public List<DTO_Employee> GetEmployeeList(DTO_Manager manager)
         {
             try
@@ -58,18 +73,24 @@ namespace BUS
                 throw ex;
             }
         }
-        public DTO_User GetUserInfoById(int id)
+
+        public DTO_User GetUserInfoById(string id, int shopId)
         {
-            try
-            {
-                return dalManager.GetUserInfoById(id);
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
+            DAL_Workers dalWr = new DAL_Workers(connectionString);
+            var dtoUser = dalWr.GetUserInfoById(id, shopId);
+
+            return dtoUser;
         }
-        public int Insert(DTO_Manager dtoMan)
+
+        public DTO_User GetUserInfoByUsername(string username)
+        {
+            DAL_Workers dalWr = new DAL_Workers(connectionString);
+            var dtoUser = dalWr.GetUserInfoByUsername(username);
+
+            return dtoUser;
+        }
+
+        public string Insert(DTO_Manager dtoMan)
         {
             try
             {
@@ -91,11 +112,11 @@ namespace BUS
                 throw ex;
             }
         }
-        public void Update(DTO_Manager dtoman)
+        public void UpdateInfo(DTO_Manager dtoman)
         {
             try
             {
-                dalManager.Update(dtoman);
+                dalManager.UpdateInfo(dtoman);
             }
             catch(Exception ex)
             {
@@ -103,6 +124,16 @@ namespace BUS
             }
         }
 
-
+        public void UpdateInfoAndAccount(DTO_Manager dtoman)
+        {
+            try
+            {
+                dalManager.UpdateInfoAndAccount(dtoman);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -10,24 +10,39 @@ namespace BUS
 {
     public class BUS_Employee
     {
-        DAL_Employee dalEmployee = new DAL_Employee();
-        public DataTable GetAllEmployee()
+        private string connectionString;
+        DAL_Employee dalEmployee;
+
+        public BUS_Employee(string connString)
+        {
+            connectionString = connString;
+            dalEmployee = new DAL_Employee(connectionString);
+        }
+
+        public DataTable GetAllEmployee(int shopId)
         {
             try
             {
                 DataTable dtb = new DataTable();
-                dtb = dalEmployee.GetAllEmployees();
+                dtb = dalEmployee.GetAllEmployees(shopId);
                 return dtb;
             }
             catch(Exception ex)
             {
                 throw ex;
-            }   
+            }
         }
-        public DTO_Employee GetEmployeeInfoAndManagerId(int id)
+
+        public DTO_Employee GetInfoByIdDeletedAndNotDeleted(string id, int shopId)
         {
-            return dalEmployee.GetEmployeeInfoAndManagerId(id);
+            return dalEmployee.GetInfoByIdDeletedAndNotDeleted(id, shopId);
         }
+
+        public DTO_Employee GetInfoByIdNotDeleted(string id, int shopId)
+        {
+            return dalEmployee.GetInfoByIdNotDeleted(id, shopId);
+        }
+
         public DTO_Manager GetManagerInfo(DTO_Employee emp)
         {
             try
@@ -39,68 +54,96 @@ namespace BUS
                 throw ex;
             }
         }
-        public List<DTO_Employee> GetEmployeesThroughManagerId(int managerId)
+        public List<DTO_Employee> GetEmployeesThroughManagerId(string managerId, int shopId)
         {
             try
             {
-                return dalEmployee.GetEmployeesThroughManagerId(managerId);
+                return dalEmployee.GetEmployeesThroughManagerId(managerId, shopId);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        } 
+        }
+
+        public DTO_User GetUserInfoById(string id, int shopId)
+        {
+            DAL_Workers dalWr = new DAL_Workers(connectionString);
+            var dtoUser = dalWr.GetUserInfoById(id, shopId);
+
+            return dtoUser;
+        }
+
+        public DTO_User GetUserInfoByUsername(string username)
+        {
+            DAL_Workers dalWr = new DAL_Workers(connectionString);
+            var dtoUser = dalWr.GetUserInfoByUsername(username);
+
+            return dtoUser;
+        }
+        public DTO_Employee GetByEmail(string email, int shopId)
+        {
+            return dalEmployee.GetByEmail(email, shopId);
+        }
+
         public void AddEmployee(DTO_Employee emp)
         {
             try
             {
                 dalEmployee.Insert(emp);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public void DeleteEmployee(DTO_Employee emp)
+
+        public void FalseDelete(DTO_Employee emp)
         {
             try
             {
-                dalEmployee.Delete(emp);
+                dalEmployee.FalseDelete(emp);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+
+        public void TrueDelete(DTO_Employee emp)
+        {
+            try
+            {
+                dalEmployee.TrueDelete(emp);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void RestoreDeletedEmployee(DTO_Employee emp)
+        {
+            dalEmployee.RestoreDeletedEmployee(emp);
+        }
+
         public void EditEmployee(DTO_Employee emp)
         {
             try
             {
-                dalEmployee.Update(emp);
+                dalEmployee.UpdateInfo(emp);
             }
             catch(Exception ex)
             {
                 throw ex;
             }
         }
-        public DTO_Employee GetEmployeeInfoByEmail(string email)
+
+        public void EditEmployeeAndAccount(DTO_Employee emp)
         {
             try
             {
-                return dalEmployee.GetEmployeeInfoByEmail(email);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public int GetNextEmployeeID()
-        {
-            
-            try
-            {
-                DAL_Workers dalWor = new DAL_Workers();
-                return dalWor.GetNextWorkerId();
+                dalEmployee.UpdateInfoAndAccount(emp);
             }
             catch (Exception ex)
             {
@@ -108,39 +151,56 @@ namespace BUS
             }
         }
 
-        public DataTable GetEmployeesSearchIDFiltered(int id)
+        public DTO_Employee GetEmployeeInfoByUsername(string username)
         {
-            return dalEmployee.GetEmployeesSearchIDFiltered(id);
+            try
+            {
+                return dalEmployee.GetEmployeeInfoByUsername(username);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public DataTable GetEmployeesSearchNameFiltered(string nameSubstr)
+        public DataTable GetEmployeesSearchIDFiltered(string id, int shopId)
         {
-            return dalEmployee.GetEmployeesSearchNameFiltered(nameSubstr);
+            return dalEmployee.GetEmployeesSearchIDFiltered(id, shopId);
         }
 
-        public DataTable GetEmployeesSearchGenderFiltered(string gender)
+        public DataTable GetEmployeesSearchNameFiltered(string nameSubstr, int shopId)
         {
-            return dalEmployee.GetEmployeesSearchGenderFiltered(gender);
+            return dalEmployee.GetEmployeesSearchNameFiltered(nameSubstr, shopId);
         }
 
-        public DataTable GetEmployeesSearchPositionFiltered(string position)
+        public DataTable GetEmployeesSearchGenderFiltered(string gender, int shopId)
         {
-            return dalEmployee.GetEmployeesSearchPositionFiltered(position);
+            return dalEmployee.GetEmployeesSearchGenderFiltered(gender, shopId);
         }
 
-        public DataTable GetEmployeesSearchPhoneFiltered(string phone)
+        public DataTable GetEmployeesSearchPositionFiltered(string position, int shopId)
         {
-            return dalEmployee.GetEmployeesSearchPhoneFiltered(phone);
+            return dalEmployee.GetEmployeesSearchPositionFiltered(position, shopId);
         }
 
-        public DataTable GetEmployeesSearchEmailFiltered(string email)
+        public DataTable GetEmployeesSearchPhoneFiltered(string phone, int shopId)
         {
-            return dalEmployee.GetEmployeesSearchEmailFiltered(email);
+            return dalEmployee.GetEmployeesSearchPhoneFiltered(phone, shopId);
         }
 
-        public DataTable GetEmployeesSearchManIDFiltered(int manId)
+        public DataTable GetEmployeesSearchEmailFiltered(string email, int shopId)
         {
-            return dalEmployee.GetEmployeesSearchManIDFiltered(manId);
+            return dalEmployee.GetEmployeesSearchEmailFiltered(email, shopId);
+        }
+
+        public DataTable GetEmployeesSearchManIDFiltered(string manId, int shopId)
+        {
+            return dalEmployee.GetEmployeesSearchManIDFiltered(manId, shopId);
+        }
+
+        public bool CheckReceiptExists(DTO_Employee emp)
+        {
+            return dalEmployee.CheckReceiptExists(emp);
         }
     }
 }

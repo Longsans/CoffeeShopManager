@@ -19,8 +19,11 @@ namespace GUI
         private Point startPoint = new Point(0, 0);
         UserControlEmployeesTab _ucEmp = new UserControlEmployeesTab();
         public DTO_Employee dtoEmp = new DTO_Employee();
-        BUS_Employee busEmp = new BUS_Employee();
-        BUS_Manager busMan = new BUS_Manager();
+        BUS_Employee busEmp = new BUS_Employee(ConnectionStringHelper.GetConnectionString());
+        BUS_Manager busMan = new BUS_Manager(ConnectionStringHelper.GetConnectionString());
+        Timer tiktoker = new Timer();
+        bool emailValid = true;
+
         public frmEditEmployees()
         {
             InitializeComponent();
@@ -30,9 +33,14 @@ namespace GUI
             _ucEmp = ucEmp;
             InitializeComponent();
         }
-
+        public string copyemail;
         private void frmEditEmployees_Load(object sender, EventArgs e)
         {
+            datBirth.Format = DateTimePickerFormat.Custom;
+            datBirth.CustomFormat = "dd/MM/yyyy";
+            datJoin.Format = DateTimePickerFormat.Custom;
+            datJoin.CustomFormat = "dd/MM/yyyy";
+
             txtFirstName.Focus();
             txtID.Text = dtoEmp.Id.ToString();
             txtFirstName.Text = dtoEmp.Firstname;
@@ -41,13 +49,10 @@ namespace GUI
             else radFemale.Checked = true;
             cboPosition.Text = dtoEmp.Position;
             txtPhone.Text = dtoEmp.Phone;
-            txtEmail.Text = dtoEmp.Account.Email;
-            txtDayBD.Text = dtoEmp.Birthdate.Day.ToString();
-            txtMonthBD.Text = dtoEmp.Birthdate.Month.ToString();
-            txtYearBD.Text = dtoEmp.Birthdate.Year.ToString();
-            txtDayJoin.Text = dtoEmp.DateOfJoin.Day.ToString();
-            txtMonthJoin.Text = dtoEmp.DateOfJoin.Month.ToString();
-            txtYearJoin.Text = dtoEmp.DateOfJoin.Year.ToString();
+            txtEmail.Text = dtoEmp.Email;
+            txtCopyemail.Text = dtoEmp.Email;
+            datBirth.Value = dtoEmp.Birthdate;
+            datJoin.Value = dtoEmp.DateOfJoin;
             txtAddress.Text = dtoEmp.Address;
             txtSalary.Text = dtoEmp.Salary.ToString();
             txtManagerID.Text = dtoEmp.Manager.Id.ToString();
@@ -55,6 +60,20 @@ namespace GUI
             if (dtoEmp.Image != null)
             {
                 picboxEmpImg.Image = ImageHelper.ByteArrayToImage(dtoEmp.Image);
+            }
+            tiktoker.Interval = 200;
+            tiktoker.Tick += Tiktoker_Tick;
+        }
+
+        private void Tiktoker_Tick(object sender, EventArgs e)
+        {
+            if (emailValid)
+            {
+                btnSaveChange.Enabled = true;
+            }
+            else
+            {
+                btnSaveChange.Enabled = false;
             }
         }
 
@@ -111,29 +130,92 @@ namespace GUI
 
         private void btnSaveChange_Click(object sender, EventArgs e)
         {
-            DateTime bdate = new DateTime();
-            DateTime doj = new DateTime();
-            string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
-            errorProvider1.SetError(txtYearBD, "");
-            errorProvider1.SetError(txtYearJoin, "");
+            if (string.IsNullOrWhiteSpace(txtFirstName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text) 
+                || string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtAddress.Text))
+            {
+                if (btnCancel.Text == "Cancel")
+                {
+                    MessageBox.Show("Please fill all info fields.", "More information is required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Nhập đủ thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return;
+            }
             dtoEmp.Firstname = txtFirstName.Text;
             dtoEmp.Lastname = txtLastName.Text;
             dtoEmp.Address = txtAddress.Text;
+            var resultIndex = cboPosition.FindStringExact(cboPosition.Text);
+            if (resultIndex == 0)
+                cboPosition.Text = "Waiter";
+            if (resultIndex == 1)
+                cboPosition.Text = "Barista";
+            if (resultIndex == 2)
+                cboPosition.Text = "Cook";
+            if (resultIndex == 3)
+                cboPosition.Text = "Utility";
+            if (resultIndex == 4)
+                cboPosition.Text = "Janitor";
+            if (resultIndex == 5)
+                cboPosition.Text = "Security";
+            else
+                cboPosition.Text = "Others";
             dtoEmp.Position = cboPosition.Text;
-            dtoEmp.Phone = txtPhone.Text;
-            dtoEmp.Account.Email = txtEmail.Text;
-            dtoEmp.Salary = decimal.Parse(txtSalary.Text);
-            dtoEmp.Manager = busMan.GetById(int.Parse(txtManagerID.Text));
-            dtoEmp.Phone = txtPhone.Text;
-            if (radMale.Checked == true) dtoEmp.Gender = radMale.Text;
-            else dtoEmp.Gender = radFemale.Text;
-            if (DateTime.TryParseExact(txtDayJoin.Text + "/" + txtMonthJoin.Text + "/" + txtYearJoin.Text,
-                formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out doj)
-                && DateTime.TryParseExact(txtDayBD.Text + "/" + txtMonthBD.Text + "/" + txtYearBD.Text,
-                formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out bdate))
+
+            if (!long.TryParse(txtPhone.Text, out long phone))
             {
-                dtoEmp.Birthdate = new DateTime(bdate.Year, bdate.Month, bdate.Day);
-                dtoEmp.DateOfJoin = new DateTime(doj.Year, doj.Month, doj.Day);
+                if (btnCancel.Text == "Cancel")
+                {
+                    MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return;
+            }
+            dtoEmp.Phone = txtPhone.Text;
+            if(checkemail==1)
+            dtoEmp.Email = txtEmail.Text;
+            else
+            {
+                if (btnCancel.Text == "Cancel")
+                {
+                    MessageBox.Show("Email is already taken or is in invalid format", "Invalid email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Email trùng hoặc sai", "Email không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return;
+            }
+            txtSalary.Text = txtSalary.Text.Replace(',', '.');
+            if (double.TryParse(txtSalary.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala) == false)
+            {
+                if (label3.Text == "Add employee")
+                {
+                    MessageBox.Show("Wrong salary", "Salary", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show("Sai tiền lương", "tiền lương", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (double.TryParse(txtSalary.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out sala))
+                dtoEmp.Salary = (decimal)sala; dtoEmp.Manager = busMan.GetById(txtManagerID.Text, dtoEmp.Shop.ID);
+            dtoEmp.Phone = txtPhone.Text;
+            if (radMale.Checked == true)
+            {
+                dtoEmp.Gender = "Male";
+            }
+            else
+            {
+                dtoEmp.Gender = "Female";
+            }
+            if (checkjoin==1&&checkbirth==1)
+            {
+                dtoEmp.Birthdate = datBirth.Value;
+                dtoEmp.DateOfJoin = datJoin.Value;
                 if (this.picboxEmpImg.Image == null)
                 {
                     MessageBox.Show("Vui lòng chọn hình ảnh", "Edit employees", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -150,12 +232,203 @@ namespace GUI
             else
             {
                 MessageBox.Show("Vui lòng nhập ngày hợp lệ.", "Add employees", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtDayBD.ResetText();
-                txtMonthBD.ResetText();
-                txtYearBD.ResetText();
-                txtDayJoin.ResetText();
-                txtMonthJoin.ResetText();
-                txtYearJoin.ResetText();
+            }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                if (EmailHelper.ValidateEmail(txtEmail.Text))
+                {
+                    errEmail.SetError(txtEmail, "");
+                    errorProvider1.SetError(txtEmail, "Valid");
+                    if (busEmp.GetByEmail(txtEmail.Text, frmManager.dtoMan.Shop.ID) == null||txtEmail.Text==dtoEmp.Email)
+                    {
+                        errEmail.SetError(txtEmail, "");
+                        errorProvider1.SetError(txtEmail, "Valid");
+                        checkemail = 1;
+
+                    }
+                    else
+                    {
+                        errEmail.SetError(txtEmail, "Email had in shop");
+                        errorProvider1.SetError(txtEmail, "");
+                        checkemail = 0;
+
+                    }
+                }
+                else
+                {
+                    errEmail.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                    errorProvider1.SetError(txtEmail, "");
+                    checkemail = 0;
+                }
+            }
+            else
+            {
+                errEmail.SetError(txtEmail, "Please fill all info fields");
+                errorProvider1.SetError(txtEmail, "");
+                checkemail = 0;
+            }
+            if (checkidmanager == 1 && checkemail == 1 && checkbirth == 1 && checkjoin == 1 && checksalary == 1)
+            {
+                btnSaveChange.Enabled = true;
+            }
+            else
+            {
+                btnSaveChange.Enabled = false;
+            }
+        }
+        public int checkbirth, checkjoin, checkemail, checkidmanager,checksalary;
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(txtSalary.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala))
+            {
+                errEmail.SetError(txtSalary, "");
+                errorProvider1.SetError(txtSalary, "correct");
+                checksalary = 1;
+            }
+            else
+            {
+                errEmail.SetError(txtSalary, "Wrong format");
+                errorProvider1.SetError(txtSalary, "");
+                checksalary = 0;
+            }
+            if (checkidmanager == 1 && checkemail == 1 && checkbirth == 1 && checkjoin == 1&&checksalary==1)
+            {
+                btnSaveChange.Enabled = true;
+            }
+            else
+            {
+                btnSaveChange.Enabled = false;
+            }
+
+        }
+
+        private void txtManagerID_TextChanged(object sender, EventArgs e)
+        {
+            if (busMan.GetById(txtManagerID.Text, dtoEmp.Shop.ID) != null)
+            {
+                checkidmanager = 1;
+                errEmail.SetError(txtManagerID, "");
+                errorProvider1.SetError(txtManagerID, "Correct");
+            }
+            else
+            {
+                checkidmanager = 0;
+                errEmail.SetError(txtManagerID, "Haven't manager in shop");
+                errorProvider1.SetError(txtManagerID, "");
+            }
+            if (checkidmanager == 1 && checkemail == 1 && checkbirth == 1 && checkjoin == 1 && checksalary == 1)
+            {
+                btnSaveChange.Enabled = true;
+            }
+            else
+            {
+                btnSaveChange.Enabled = false;
+            }
+        }
+
+        private void datBirth_ValueChanged(object sender, EventArgs e)
+        {
+            datBirth.CustomFormat = "dd/MM/yyyy";
+            DateTime now = DateTime.Now;
+            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datBirth.Value.Year <= 2078 && datJoin.Value.Year <= 2078 && datBirth.Value.Year >= 1910 && datJoin.Value.Year >= 1910)
+            {
+                checkbirth = 1;
+                checkjoin = 1;
+                errEmail.SetError(datBirth, "");
+                if(label5.Text=="Tên")
+                    errorProvider1.SetError(datBirth, "Luôn đúng");
+                else
+                    errorProvider1.SetError(datBirth, "Correct");
+
+                errEmail.SetError(datJoin, "");
+                if (label5.Text == "Tên")
+                    errorProvider1.SetError(datJoin, "Chính xác");
+                else
+                errorProvider1.SetError(datJoin, "Correct");
+            }
+            else
+            {
+                checkjoin = 0;
+                if (label5.Text == "Tên")
+                    errEmail.SetError(datBirth, "Không đủ tuổi làm viêc");
+                else
+                errEmail.SetError(datBirth, "Age not enough to work");
+                errorProvider1.SetError(datBirth, "");
+                errEmail.SetError(datJoin, "");
+                if (label5.Text == "Tên")
+                    errorProvider1.SetError(datJoin, "Chính xác");
+                else
+                errorProvider1.SetError(datJoin, "Correct");
+                checkbirth = 0;
+            }
+            if (checkidmanager == 1 && checkemail == 1 && checkbirth == 1 && checkjoin == 1 && checksalary == 1)
+            {
+                btnSaveChange.Enabled = true;
+            }
+            else
+            {
+                btnSaveChange.Enabled = false;
+            }
+        }
+
+        private void datJoin_ValueChanged(object sender, EventArgs e)
+        {
+            datJoin.CustomFormat = "dd/MM/yyyy";
+            DateTime now = DateTime.Now;
+            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datBirth.Value.Year <= 2078 && datJoin.Value.Year <= 2078 && datBirth.Value.Year >= 1910 && datJoin.Value.Year >= 1910)
+            {
+                checkjoin = 1;
+                checkbirth = 1;
+                errEmail.SetError(datBirth, "");
+                if(label5.Text=="Tên")
+                    errorProvider1.SetError(datBirth, "Chính xác");
+                else
+                errorProvider1.SetError(datBirth, "Correct");
+                errEmail.SetError(datJoin, "");
+                if(label5.Text=="Tên")
+                    errorProvider1.SetError(datJoin, "Chính xác");
+                else
+                errorProvider1.SetError(datJoin, "Correct");
+            }
+            else
+            {
+                if(label5.Text=="Tên")
+                    errEmail.SetError(datBirth, "Không đủ tuổi đi làm");
+                else
+                errEmail.SetError(datBirth, "Age not enough to work");
+                errorProvider1.SetError(datBirth, "");
+                if(label5.Text=="Tên")
+                    errEmail.SetError(datJoin, "Không đủ tuổi đi làm");
+                else
+                errEmail.SetError(datJoin, "Age not enough to work");
+                errorProvider1.SetError(datJoin, "");
+                checkjoin = 0;
+                checkbirth = 0;
+            }
+            /* if ((DateTime.Now.Year - datBirth.Value.Year) >= 18)
+             {
+                 errEmail.SetError(datBirth, "");
+                 errorProvider1.SetError(datBirth, "Correct");
+                 checkbirth = 1;
+             }
+             else
+             {
+                 errEmail.SetError(datBirth, "Age not enough to work");
+                 errorProvider1.SetError(datBirth, "");
+                 checkbirth = 0;
+             }*/
+            if (checkidmanager == 1 && checkemail == 1 && checkbirth == 1 && checkjoin == 1 && checksalary == 1)
+            {
+                btnSaveChange.Enabled = true;
+            }
+            else
+            {
+                btnSaveChange.Enabled = false;
             }
         }
     }

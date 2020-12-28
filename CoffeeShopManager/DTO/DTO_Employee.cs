@@ -12,7 +12,8 @@ namespace DTO
         public DateTime DateOfJoin { get; set; }
         public string Address { get; set; }
         public decimal Salary { get; set; }
-        public DTO_Manager Manager { get; set; }
+        public DTO_Manager Manager { get; set; } = new DTO_Manager();
+        public bool Deleted { get; set; }
         public DTO_Employee() { }
         public DTO_Employee(DTO_Worker dtoWr)
         {
@@ -22,9 +23,11 @@ namespace DTO
             this.Gender = dtoWr.Gender;
             this.Position = dtoWr.Position;
             this.Phone = dtoWr.Phone;
-            this.Account.Email = dtoWr.Account.Email;
+            this.Email = dtoWr.Email;
             this.Birthdate = dtoWr.Birthdate;
             this.Image = dtoWr.Image;
+            this.Shop.ID = dtoWr.Shop.ID;
+            this.Account = dtoWr.Account;
         }
         public DTO_Employee(int year,int month,int day)
         {
