@@ -10,11 +10,13 @@ namespace GUI
     {
         public string CurrentFilter { get; set; }
         public string CurrentFilterText { get; set; }
+        public int CurrentFilterIndex { get; set; }
 
         public FilterProperties()
         {
             CurrentFilter = null;
             CurrentFilterText = null;
+            CurrentFilterIndex = -1;
         }
 
         public FilterProperties(string filter, string filtertext)

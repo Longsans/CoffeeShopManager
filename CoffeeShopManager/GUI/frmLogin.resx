@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblCoffeeShop.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 84</value>
   </data>
@@ -131,8 +128,8 @@
   <data name="&gt;&gt;btnEng.Parent" xml:space="preserve">
     <value>panel3</value>
   </data>
-  <data name="lblPassword.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;txtUsername.Name" xml:space="preserve">
+    <value>txtUsername</value>
   </data>
   <data name="&gt;&gt;btnEng.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -155,6 +152,9 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
+  </data>
+  <data name="TitleBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="lblRemind.Text" xml:space="preserve">
     <value>Don't have account?</value>
@@ -183,9 +183,6 @@
   <data name="&gt;&gt;btnLogin.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblUsername.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="&gt;&gt;lblLanguage.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -195,14 +192,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>frmLogin</value>
   </data>
-  <data name="&gt;&gt;lblUsername.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
   <data name="&gt;&gt;btnVie.Name" xml:space="preserve">
     <value>btnVie</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 31</value>
+    <value>174, 31</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>192, 504</value>
@@ -237,6 +231,9 @@
   <data name="btnEng.Text" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="lblRegister.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 432</value>
+  </data>
   <data name="&gt;&gt;panel3.Name" xml:space="preserve">
     <value>panel3</value>
   </data>
@@ -261,14 +258,20 @@
   <data name="&gt;&gt;btnLogin.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;txtUsername.Name" xml:space="preserve">
-    <value>txtUsername</value>
+  <data name="lblRegister.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="lblCoffeeShop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 118</value>
+    <value>86, 118</value>
+  </data>
+  <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 30</value>
   </data>
   <data name="btnVie.Location" type="System.Drawing.Point, System.Drawing">
     <value>270, 500</value>
+  </data>
+  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="&gt;&gt;TitleBar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -287,6 +290,9 @@
   </data>
   <data name="&gt;&gt;panel2.Name" xml:space="preserve">
     <value>panel2</value>
+  </data>
+  <data name="lblPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -370,7 +376,7 @@
     <value>Century Gothic, 9pt</value>
   </data>
   <data name="lblRemind.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 432</value>
+    <value>112, 432</value>
   </data>
   <data name="txtPassword.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -405,8 +411,8 @@
   <data name="&gt;&gt;btnVie.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>252, 432</value>
+  <data name="&gt;&gt;lblUsername.Parent" xml:space="preserve">
+    <value>panel3</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
     <value>pictureBox1</value>
@@ -462,8 +468,8 @@
   <data name="TitleBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>799, 30</value>
   </data>
-  <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 30</value>
+  <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
   </data>
   <data name="&gt;&gt;btnEng.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -486,9 +492,6 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="btnLogin.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
   <data name="&gt;&gt;txtPassword.Parent" xml:space="preserve">
     <value>panel3</value>
   </data>
@@ -510,14 +513,11 @@
   <data name="btnLogin.Text" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>799, 553</value>
   </data>
-  <data name="TitleBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;lblUsername.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;lblCoffeeShop.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -534,8 +534,8 @@
   <data name="&gt;&gt;lblRegister.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
+  <data name="lblCoffeeShop.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="txtUsername.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -556,10 +556,10 @@
     <value>panel3</value>
   </data>
   <data name="btnLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 294</value>
+    <value>110, 294</value>
   </data>
-  <data name="lblRegister.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnLogin.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>

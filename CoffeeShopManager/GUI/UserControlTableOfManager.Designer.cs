@@ -80,6 +80,7 @@
             // 
             resources.ApplyResources(this.btnUnavailable, "btnUnavailable");
             this.btnUnavailable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
+            this.btnUnavailable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUnavailable.FlatAppearance.BorderSize = 0;
             this.btnUnavailable.Name = "btnUnavailable";
             this.btnUnavailable.UseVisualStyleBackColor = false;
@@ -89,6 +90,7 @@
             // 
             resources.ApplyResources(this.btnOccupied, "btnOccupied");
             this.btnOccupied.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
+            this.btnOccupied.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOccupied.FlatAppearance.BorderSize = 0;
             this.btnOccupied.Name = "btnOccupied";
             this.btnOccupied.UseVisualStyleBackColor = false;
@@ -98,6 +100,7 @@
             // 
             resources.ApplyResources(this.btnAvailable, "btnAvailable");
             this.btnAvailable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
+            this.btnAvailable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAvailable.FlatAppearance.BorderSize = 0;
             this.btnAvailable.Name = "btnAvailable";
             this.btnAvailable.UseVisualStyleBackColor = false;
@@ -107,6 +110,7 @@
             // 
             resources.ApplyResources(this.btnAll, "btnAll");
             this.btnAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
+            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAll.FlatAppearance.BorderSize = 0;
             this.btnAll.Name = "btnAll";
             this.btnAll.UseVisualStyleBackColor = false;
@@ -135,7 +139,7 @@
             // btnCollapse
             // 
             resources.ApplyResources(this.btnCollapse, "btnCollapse");
-            this.btnCollapse.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCollapse.BackColor = System.Drawing.Color.White;
             this.btnCollapse.FlatAppearance.BorderSize = 0;
             this.btnCollapse.Image = global::GUI.Properties.Resources.sort_right_24px;
             this.btnCollapse.Name = "btnCollapse";
@@ -145,7 +149,7 @@
             // btnExpand
             // 
             resources.ApplyResources(this.btnExpand, "btnExpand");
-            this.btnExpand.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExpand.BackColor = System.Drawing.Color.White;
             this.btnExpand.FlatAppearance.BorderSize = 0;
             this.btnExpand.Image = global::GUI.Properties.Resources.sort_left_24px;
             this.btnExpand.Name = "btnExpand";
@@ -155,7 +159,7 @@
             // btnSearch
             // 
             resources.ApplyResources(this.btnSearch, "btnSearch");
-            this.btnSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearch.BackColor = System.Drawing.Color.White;
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.Image = global::GUI.Properties.Resources.search_24px;
             this.btnSearch.Name = "btnSearch";

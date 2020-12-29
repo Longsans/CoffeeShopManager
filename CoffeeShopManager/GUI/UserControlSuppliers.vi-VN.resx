@@ -188,10 +188,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblResetFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 17</value>
+    <value>110, 17</value>
   </data>
   <data name="lblResetFilters.Text" xml:space="preserve">
-    <value>Khởi tạo bộ lọc</value>
+    <value>Khôi phục bộ lọc</value>
   </data>
   <data name="btnSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

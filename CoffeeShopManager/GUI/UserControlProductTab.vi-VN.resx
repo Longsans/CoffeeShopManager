@@ -125,6 +125,9 @@
   <data name="btnAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="btnAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 69</value>
+  </data>
   <data name="btnAll.Text" xml:space="preserve">
     <value>Tất cả</value>
   </data>
@@ -134,14 +137,20 @@
   <data name="btnDrink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="btnDrink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 69</value>
+  </data>
   <data name="btnDrink.Text" xml:space="preserve">
-    <value>Nước uống</value>
+    <value>Đồ uống</value>
   </data>
   <data name="btnFood.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnFood.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="btnFood.Location" type="System.Drawing.Point, System.Drawing">
+    <value>212, 69</value>
   </data>
   <data name="btnFood.Text" xml:space="preserve">
     <value>Thức ăn</value>
@@ -152,6 +161,9 @@
   <data name="btnOthers.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="btnOthers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>309, 69</value>
+  </data>
   <data name="btnOthers.Text" xml:space="preserve">
     <value>Khác</value>
   </data>
@@ -160,6 +172,9 @@
   </data>
   <data name="btnEdit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 136</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Sửa</value>
@@ -172,6 +187,9 @@
   </data>
   <data name="btnDelete.Text" xml:space="preserve">
     <value>Xóa</value>
+  </data>
+  <data name="txtSearch.Text" xml:space="preserve">
+    <value>Tìm kiếm...</value>
   </data>
   <data name="cboSearch.Items1" xml:space="preserve">
     <value>Tên</value>
@@ -194,20 +212,41 @@
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="lblProducts.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 16.2pt</value>
+  </data>
   <data name="lblProducts.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 33</value>
+    <value>141, 34</value>
   </data>
   <data name="lblProducts.Text" xml:space="preserve">
     <value>Sản phẩm</value>
   </data>
-  <data name="lblLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblTotal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lblTotal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 10.2pt, style=Bold</value>
+  </data>
+  <data name="lblTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 21</value>
+  </data>
+  <data name="lblTotal.Text" xml:space="preserve">
+    <value>Tất cả:</value>
+  </data>
+  <data name="lblTotal.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <data name="lblSumTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="lblSumTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 505</value>
   </data>
   <data name="btnImageadd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

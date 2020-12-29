@@ -140,13 +140,26 @@ namespace GUI
         {
             try
             {
-                if (bus_table.CheckReceiptExists(table))
+                DialogResult ret;
+                if (contextMenuStrip2.Items[2].Text == "Remove table")
                 {
-                    bus_table.FalseDelete(table);
+                    ret = MessageBox.Show("Do you want to remove this table?", "Remove table", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    bus_table.TrueDelete(table);
+                    ret = MessageBox.Show("Bạn có muốn xóa bàn này?", "Xóa bàn", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+
+                if (ret == DialogResult.Yes)
+                {
+                    if (bus_table.CheckReceiptExists(table))
+                    {
+                        bus_table.FalseDelete(table);
+                    }
+                    else
+                    {
+                        bus_table.TrueDelete(table);
+                    }
                 }
             }
             catch

@@ -383,6 +383,7 @@
             this.errorTrue.SetIconAlignment(this.datBirthdate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("datBirthdate.IconAlignment1"))));
             this.errorFalse.SetIconPadding(this.datBirthdate, ((int)(resources.GetObject("datBirthdate.IconPadding"))));
             this.errorTrue.SetIconPadding(this.datBirthdate, ((int)(resources.GetObject("datBirthdate.IconPadding1"))));
+            this.datBirthdate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.datBirthdate.Name = "datBirthdate";
             // 
             // lblManInfo

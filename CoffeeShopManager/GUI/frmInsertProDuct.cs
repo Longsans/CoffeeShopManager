@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,7 +107,17 @@ namespace GUI
             {
                 DTO_Product dtoPro = new DTO_Product();
                 dtoPro.Name = txtName1.Text;
-                dtoPro.Price =decimal.Parse(txtCopyPrice.Text);
+                txtPrice.Text = txtPrice.Text.Replace(',', '.');
+                if (double.TryParse(txtPrice.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala)==false)
+                {
+                    if(lblName.Text=="Tên")
+                        MessageBox.Show("Sai tiền", "tiền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else
+                        MessageBox.Show("Wrong money", "money", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+                if (double.TryParse(txtPrice.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out sala))
+                    dtoPro.Price = (decimal)sala;
                 var resultIndex = cbxType.FindStringExact(cbxType.Text);
 
                 if (resultIndex == 0)
@@ -309,25 +320,12 @@ namespace GUI
             }
             else
             {
-                string s = txtPrice.Text.ToString();
-
-                for (int i = 0; i < s.Length; i++)
-                {
-                    if (s[i] == '.' || s[i] == ',')
-                    {
-                        countdoc++;
-                        sums += '.';
-                    }
-                    else
-                        sums += s[i];
-                }
-                txtCopyPrice.Text = sums;
-                if (IsNumber(txtPrice.Text) == true && countdoc <= 1)
+                if (double.TryParse(txtPrice.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double sala))
                 {
                     if (btnAdd.Text == "Thêm")
                         errorProvider2.SetError(txtPrice, "Hợp lệ");
                     else errorProvider2.SetError(txtPrice, "Correct");
-                    errorProvider1.SetError(txtPrice, "");
+                        errorProvider1.SetError(txtPrice, "");
                     checkprice = 1;
                 }
                 else
@@ -338,14 +336,7 @@ namespace GUI
                     errorProvider2.SetError(txtPrice, "");
                     checkprice = 0;
                 }
-                if (s[s.Length - 1] == '.' || s[s.Length - 1] == ',')
-                {
-                    if (btnAdd.Text == "Thêm")
-                        errorProvider1.SetError(txtPrice, "Sai định dạng");
-                    else errorProvider1.SetError(txtPrice, "Wrong format");
-                    errorProvider2.SetError(txtPrice, "");
-                    checkprice = 0;
-                }
+
             }
             if (checkname == 1 && checktype == 1 && checkprice == 1)
             {

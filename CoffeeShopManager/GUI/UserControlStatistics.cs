@@ -32,6 +32,8 @@ namespace GUI
         {
             year = DateTime.Now.Year;
             month = DateTime.Now.Month;
+            datStats.Format = DateTimePickerFormat.Custom;
+            datStats.CustomFormat = "dd/MM/yyyy";
         }
         public void Reload()
         {
@@ -238,8 +240,8 @@ namespace GUI
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            year = dateTimePicker1.Value.Year;
-            month = dateTimePicker1.Value.Month;
+            year = datStats.Value.Year;
+            month = datStats.Value.Month;
             ReloadIncomeChart();
             ReloadProductChart();
 

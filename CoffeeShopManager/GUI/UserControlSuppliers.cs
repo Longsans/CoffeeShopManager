@@ -36,24 +36,24 @@ namespace GUI
         {
             if (!(string.IsNullOrWhiteSpace(filProp.CurrentFilter) || string.IsNullOrWhiteSpace(filProp.CurrentFilterText)))
             {
-                switch(filProp.CurrentFilter)
+                switch(filProp.CurrentFilterIndex)
                 {
-                    case "ID":
+                    case 0:
                         {
                             grdSup.DataSource = busSup.GetDataTableById(filProp.CurrentFilterText, Shop.ID);
                         }
                         break;
-                    case "Name":
+                    case 1:
                         {
                             grdSup.DataSource = busSup.GetDataTableByName(filProp.CurrentFilterText, Shop.ID);
                         }
                         break;
-                    case "Email":
+                    case 2:
                         {
                             grdSup.DataSource = busSup.GetDataTableByEmail(filProp.CurrentFilterText, Shop.ID);
                         }
                         break;
-                    case "Phone Number":
+                    case 3:
                         {
                             grdSup.DataSource = busSup.GetDataTableByPhoneNumber(filProp.CurrentFilterText, Shop.ID);
                         }
@@ -64,10 +64,11 @@ namespace GUI
             {
                 grdSup.DataSource = busSup.GetAllSuppliers(Shop.ID);
             }
+
             if (lblSuppliers.Text != "Suppliers")
             {
-               // grdSup.Columns["Name"].HeaderText = "Tên nhà cung";
-               // grdSup.Columns["Phone Number"].HeaderText = "Điện thoại";
+                grdSup.Columns["Name"].HeaderText = "Tên nhà cung";
+                grdSup.Columns["Phone Number"].HeaderText = "Điện thoại";
             }
         }
 
@@ -76,7 +77,14 @@ namespace GUI
             if (txtSearch.TextLength == 0)
             {
                 txtSearch.ForeColor = Color.DimGray;
-                txtSearch.Text = "Search...";
+                if (btnDelete.Text == "Delete")
+                {
+                    txtSearch.Text = "Search...";
+                }
+                else
+                {
+                    txtSearch.Text = "Tìm kiếm...";
+                }
             }
         }
 
@@ -120,7 +128,7 @@ namespace GUI
             frmAdd.Location = new Point(frmMan.Location.X + frmMan.Width / 2 - frmAdd.Width / 2,
                     frmMan.Location.Y + frmMan.Height / 2 - frmAdd.Height / 2);
             
-            frmAdd.Show();
+            frmAdd.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -130,10 +138,10 @@ namespace GUI
             {
                 sup = new DTO_Supplier
                 {
-                    Id = row.Cells["ID"].Value.ToString(),
-                    Name = row.Cells["Name"].Value.ToString(),
-                    Email = row.Cells["Email"].Value.ToString(),
-                    Phone = row.Cells["Phone Number"].Value.ToString(),
+                    Id = row.Cells[0].Value.ToString(),
+                    Name = row.Cells[1].Value.ToString(),
+                    Email = row.Cells[2].Value.ToString(),
+                    Phone = row.Cells[3].Value.ToString(),
                     Shop = this.Shop
                 },
                 ucSup = this
@@ -141,58 +149,54 @@ namespace GUI
 
             frmEditSup.Location = new Point(frmMan.Location.X + frmMan.Width / 2 - frmEditSup.Width / 2,
                     frmMan.Location.Y + frmMan.Height / 2 - frmEditSup.Height / 2);
-            frmEditSup.Show();
+            frmEditSup.ShowDialog();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(cboSearch.Text))
+            if (!string.IsNullOrWhiteSpace(cboSearch.Text) && txtSearch.ForeColor != Color.DimGray)
             {
-                var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
-                switch (resultIndex)
-                {
-                    case 0:
-                        {
-                            grdSup.DataSource = busSup.GetDataTableById(txtSearch.Text, Shop.ID);
-                        }
-                        break;
-                    case 1:
-                        {
-                            grdSup.DataSource = busSup.GetDataTableByName(txtSearch.Text, Shop.ID);
-                        }
-                        break;
-                    case 2:
-                        {
-                            grdSup.DataSource = busSup.GetDataTableByEmail(txtSearch.Text, Shop.ID);
-                        }
-                        break;
-                    case 3:
-                        {
-                            grdSup.DataSource = busSup.GetDataTableByPhoneNumber(txtSearch.Text, Shop.ID);
-                        }
-                        break;
-                }
-
+                filProp.CurrentFilterIndex = cboSearch.SelectedIndex;
                 filProp.CurrentFilter = cboSearch.Text;
                 filProp.CurrentFilterText = txtSearch.Text;
                 lblResetFilters.Visible = true;
+                ReloadGridView();
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow row in grdSup.SelectedRows)
+            if (grdSup.SelectedRows.Count > 0)
             {
-                var sup = new DTO_Supplier
-                {
-                    Id = row.Cells["ID"].Value.ToString(),
-                    Shop = this.Shop
-                };
+                DialogResult ret;
 
-                busSup.Delete(sup);
+                if (btnDelete.Text == "Delete")
+                {
+                    ret = MessageBox.Show("Deleting this supplier will also delete all stock items that they provide, are you sure you want to continue?",
+                        "Delete supplier", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    ret = MessageBox.Show("Xóa nhà cung cấp này cũng xóa tất cả hàng hóa được họ cung cấp, bạn có muốn tiếp tục?",
+                        "Xóa nhà cung cấp", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+
+                if (ret == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in grdSup.SelectedRows)
+                    {
+                        var sup = new DTO_Supplier
+                        {
+                            Id = row.Cells[0].Value.ToString(),
+                            Shop = this.Shop
+                        };
+
+                        busSup.Delete(sup);
+                    }
+                    ReloadGridView();
+                    UcStock.ReloadGridView();
+                }
             }
-            ReloadGridView();
-            UcStock.ReloadGridView();
         }
 
         private void lblResetFilters_MouseDown(object sender, MouseEventArgs e)
@@ -205,6 +209,7 @@ namespace GUI
             lblResetFilters.ForeColor = SystemColors.Highlight;
             filProp.CurrentFilter = null;
             filProp.CurrentFilterText = null;
+            filProp.CurrentFilterIndex = -1;
             lblResetFilters.Visible = false;
             ReloadGridView();
         }

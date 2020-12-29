@@ -118,24 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblRemoveFromList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 19</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 19</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pnlTitleBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblRemoveFromList.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 19</value>
+  <data name="btnSave.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
     <value>715, 0</value>
@@ -170,9 +176,6 @@
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>panel1</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 19</value>
   </data>
   <data name="&gt;&gt;txtSupId.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -225,17 +228,11 @@
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
   <data name="lblListCaption.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
-  </data>
-  <data name="&gt;&gt;pnlTitleBar.Name" xml:space="preserve">
-    <value>pnlTitleBar</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 19</value>
@@ -243,11 +240,11 @@
   <data name="lblListCaption.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 20</value>
   </data>
-  <data name="lblRemoveFromList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>566, 317</value>
+  <data name="pnlTitleBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>746, 35</value>
   </data>
-  <data name="lblRemoveFromList.Text" xml:space="preserve">
-    <value>      Remove from list</value>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 35</value>
@@ -339,8 +336,8 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmEditStockItem</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -360,8 +357,8 @@
   <data name="&gt;&gt;lblListCaption.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 19</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -369,8 +366,8 @@
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 174</value>
   </data>
-  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 286</value>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -381,17 +378,14 @@
   <data name="lblRemoveFromList.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;lblAddToList.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="lblRemoveFromList.Text" xml:space="preserve">
+    <value>      Remove from list</value>
   </data>
   <data name="lblAddToList.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>746, 377</value>
-  </data>
-  <data name="btnSave.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
   </data>
   <data name="&gt;&gt;txtId.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -423,8 +417,8 @@
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;lblAddToList.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
     <value>Save</value>
@@ -474,9 +468,6 @@
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 31</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 35</value>
   </data>
@@ -486,8 +477,8 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="lblRemoveFromList.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="&gt;&gt;lblListCaption.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 21</value>
@@ -495,8 +486,8 @@
   <data name="&gt;&gt;lblListCaption.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 286</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
@@ -528,20 +519,17 @@
   <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="&gt;&gt;lblListCaption.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAddToList.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;pnlTitleBar.Name" xml:space="preserve">
+    <value>pnlTitleBar</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 86</value>
   </data>
+  <data name="lblRemoveFromList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 19</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>746, 412</value>
-  </data>
-  <data name="pnlTitleBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>746, 35</value>
   </data>
   <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -567,17 +555,29 @@
   <data name="lblListCaption.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>191, 286</value>
+  <data name="&gt;&gt;lblAddToList.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="btnSave.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblRemoveFromList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>566, 317</value>
+  </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 31</value>
   </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>191, 286</value>
+  </data>
   <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
     <value>btnExit</value>
+  </data>
+  <data name="lblRemoveFromList.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -585,8 +585,8 @@
   <data name="txtId.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
-  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

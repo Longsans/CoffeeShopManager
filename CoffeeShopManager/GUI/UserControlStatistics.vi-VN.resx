@@ -122,34 +122,34 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="cboIncomeView.Items" xml:space="preserve">
-    <value>Theo năm</value>
+    <value>Năm</value>
   </data>
   <data name="cboIncomeView.Items1" xml:space="preserve">
     <value>Phần tư</value>
   </data>
   <data name="cboIncomeView.Items2" xml:space="preserve">
-    <value>Theo tháng</value>
+    <value>Tháng</value>
   </data>
   <data name="cboIncomeView.Items3" xml:space="preserve">
-    <value>1 tuần qua</value>
+    <value>Ngày</value>
   </data>
   <data name="cboIncomeView.Items4" xml:space="preserve">
-    <value>1 tháng qua</value>
+    <value>1 tuần qua</value>
   </data>
   <data name="cboIncomeView.Items5" xml:space="preserve">
-    <value>Theo ngày</value>
+    <value>1 tháng qua</value>
   </data>
   <data name="cboProductView.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="cboProductView.Items" xml:space="preserve">
-    <value>Tất cả	</value>
+    <value>Tất cả</value>
   </data>
   <data name="cboProductView.Items1" xml:space="preserve">
-    <value>Theo năm</value>
+    <value>Năm</value>
   </data>
   <data name="cboProductView.Items2" xml:space="preserve">
-    <value>Theo tháng</value>
+    <value>Tháng</value>
   </data>
   <data name="cboProductView.Items3" xml:space="preserve">
     <value>1 tuần qua</value>
@@ -215,20 +215,20 @@
   <data name="lblAveIncome.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 17</value>
   </data>
-  <data name="dateTimePicker1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="datStats.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="dateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 23</value>
+  <data name="datStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 17</value>
+    <value>39, 17</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Bởi</value>
+    <value>Theo</value>
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
@@ -243,10 +243,10 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 17</value>
+    <value>45, 17</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Bởi</value>
+    <value>Trong</value>
   </data>
   <data name="lblNoDataProduct.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>

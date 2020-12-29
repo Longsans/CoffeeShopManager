@@ -122,13 +122,13 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="btnEng.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 498</value>
+    <value>327, 496</value>
   </data>
   <data name="btnEng.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 25</value>
   </data>
   <data name="btnEng.Text" xml:space="preserve">
-    <value>Tiếng anh</value>
+    <value>Tiếng Anh</value>
   </data>
   <data name="btnVie.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
@@ -138,19 +138,19 @@
     <value>NoControl</value>
   </data>
   <data name="btnVie.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 498</value>
+    <value>227, 496</value>
   </data>
   <data name="btnVie.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 25</value>
   </data>
   <data name="btnVie.Text" xml:space="preserve">
-    <value>Tiếng việt</value>
+    <value>Tiếng Việt</value>
   </data>
   <data name="lblLanguage.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 502</value>
+    <value>141, 502</value>
   </data>
   <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 17</value>
@@ -167,8 +167,11 @@
   <data name="lblPassword.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
+  <data name="lblPassword.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 243</value>
+    <value>18, 243</value>
   </data>
   <data name="lblPassword.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 17</value>
@@ -180,7 +183,7 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 190</value>
+    <value>18, 190</value>
   </data>
   <data name="lblUsername.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 17</value>

@@ -37,8 +37,8 @@ namespace GUI
         {
             checkIcon = new Icon(GUI.Properties.Resources.check1, err.Icon.Size);
             errorIcon = new Icon(GUI.Properties.Resources.cancel, err.Icon.Size);
-            err.SetIconPadding(txtId, 5);
-            errtwo.SetIconPadding(txtEmail, 5);
+            err.SetIconPadding(txtId, 3);
+            errtwo.SetIconPadding(txtEmail, 3);
             tiktoker.Interval = 200;
             tiktoker.Tick += Tiktoker_Tick;
             tiktoker.Start();
@@ -63,21 +63,35 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var sup = new DTO_Supplier
+            if (!long.TryParse(txtPhone.Text, out long phone))
             {
-                Id = txtId.Text,
-                Name = txtName.Text,
-                Email = txtEmail.Text,
-                Phone = txtPhone.Text,
-                Shop = this.Shop
-            };
+                if (btnAdd.Text == "Add")
+                {
+                    MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                var sup = new DTO_Supplier
+                {
+                    Id = txtId.Text,
+                    Name = txtName.Text,
+                    Email = txtEmail.Text,
+                    Phone = txtPhone.Text,
+                    Shop = this.Shop
+                };
 
-            busSup.Insert(sup);
-            ucSup.ReloadGridView();
-            if (btnAdd.Text == "Thêm")
-            MessageBox.Show("Thêm thành công", "Thêm hàng hóa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else MessageBox.Show("Insert successful.", "Add supplier", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ResetTextboxes();
+                busSup.Insert(sup);
+                ucSup.ReloadGridView();
+                if (btnAdd.Text == "Thêm")
+                    MessageBox.Show("Thêm thành công", "Thêm hàng hóa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Insert successful.", "Add supplier", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ResetTextboxes();
+            }
         }
 
         private void ResetTextboxes()

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
-            DTO.DTO_Manager dtO_Manager3 = new DTO.DTO_Manager();
+            DTO.DTO_Manager dtO_Manager1 = new DTO.DTO_Manager();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlChangeTab = new System.Windows.Forms.Panel();
             this.btnTable = new System.Windows.Forms.Button();
@@ -319,7 +319,7 @@
             // 
             // ucHome
             // 
-            this.ucHome.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucHome.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.ucHome, "ucHome");
             this.ucHome.dtoMan = null;
             this.ucHome.Name = "ucHome";
@@ -333,7 +333,7 @@
             // 
             // ucShopInfoTab
             // 
-            this.ucShopInfoTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucShopInfoTab.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.ucShopInfoTab, "ucShopInfoTab");
             this.ucShopInfoTab.Name = "ucShopInfoTab";
             this.ucShopInfoTab.Load += new System.EventHandler(this.ucShopInfoTab_Load);
@@ -356,27 +356,28 @@
             // 
             this.ucEmployeeTab.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.ucEmployeeTab, "ucEmployeeTab");
-            dtO_Manager3.Birthdate = new System.DateTime(((long)(0)));
-            dtO_Manager3.Email = null;
-            dtO_Manager3.Firstname = null;
-            dtO_Manager3.Gender = null;
-            dtO_Manager3.Id = null;
-            dtO_Manager3.Image = null;
-            dtO_Manager3.Lastname = null;
-            dtO_Manager3.Phone = null;
-            dtO_Manager3.Position = null;
-            this.ucEmployeeTab.dtoMan = dtO_Manager3;
+            dtO_Manager1.Birthdate = new System.DateTime(((long)(0)));
+            dtO_Manager1.Email = null;
+            dtO_Manager1.Firstname = null;
+            dtO_Manager1.Gender = null;
+            dtO_Manager1.Id = null;
+            dtO_Manager1.Image = null;
+            dtO_Manager1.Lastname = null;
+            dtO_Manager1.Phone = null;
+            dtO_Manager1.Position = null;
+            this.ucEmployeeTab.dtoMan = dtO_Manager1;
             this.ucEmployeeTab.Name = "ucEmployeeTab";
             // 
             // ucProductTab
             // 
             this.ucProductTab.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.ucProductTab.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.ucProductTab, "ucProductTab");
             this.ucProductTab.Name = "ucProductTab";
             // 
             // ucUserTab
             // 
-            this.ucUserTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ucUserTab.BackColor = System.Drawing.Color.White;
             this.ucUserTab.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.ucUserTab, "ucUserTab");
             this.ucUserTab.Name = "ucUserTab";
@@ -400,6 +401,7 @@
             resources.ApplyResources(this.ucStockTab, "ucStockTab");
             this.ucStockTab.frmMan = null;
             this.ucStockTab.Name = "ucStockTab";
+            this.ucStockTab.ucSup = null;
             // 
             // ucSuppliersTab
             // 

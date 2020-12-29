@@ -105,6 +105,19 @@ namespace GUI
                     }
                 }
 
+                if (!long.TryParse(txtPhone.Text, out long phone))
+                {
+                    if (btnBrowse.Text == "Browse")
+                    {
+                        MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    return;
+                }
+
                 dtoMan.Firstname = txtFirstName.Text;
                 dtoMan.Lastname = txtLastName.Text;
                 if (picManagerInfo.Image != null)
@@ -132,7 +145,7 @@ namespace GUI
                     MessageBox.Show(comboBox1.Items[2].ToString(), comboBox1.Items[3].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if ((DateTime.Now.Year- datBirthdate.Value.Year)>=18)
+                if ((DateTime.Now.Year - datBirthdate.Value.Year) >= 18)
                 dtoMan.Birthdate = datBirthdate.Value;
                 else
                 {

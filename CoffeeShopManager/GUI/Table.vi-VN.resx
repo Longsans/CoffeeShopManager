@@ -171,15 +171,15 @@
     <value>Xóa bàn</value>
   </data>
   <data name="contextMenuStrip2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 104</value>
+    <value>222, 76</value>
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 125</value>
+    <value>151, 125</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 165</value>
+    <value>151, 163</value>
   </data>
 </root>

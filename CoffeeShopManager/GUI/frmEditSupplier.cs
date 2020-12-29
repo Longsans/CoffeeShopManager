@@ -33,7 +33,7 @@ namespace GUI
 
         private void frmEditSupplier_Load(object sender, EventArgs e)
         {
-            tiktoker.Interval = 500;
+            tiktoker.Interval = 200;
             tiktoker.Tick += Tiktoker_Tick;
             AcceptButton = btnSave;
             txtId.Text = sup.Id;
@@ -115,21 +115,35 @@ namespace GUI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var updatedSup = new DTO_Supplier
+            if (!long.TryParse(txtPhone.Text, out long phone))
             {
-                Id = sup.Id,
-                Name = txtName.Text,
-                Email = txtEmail.Text,
-                Phone = txtPhone.Text,
-                Shop = sup.Shop
-            };
+                if (btnSave.Text == "Save")
+                {
+                    MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                var updatedSup = new DTO_Supplier
+                {
+                    Id = sup.Id,
+                    Name = txtName.Text,
+                    Email = txtEmail.Text,
+                    Phone = txtPhone.Text,
+                    Shop = sup.Shop
+                };
 
-            busSup.Update(updatedSup);
-            if (btnSave.Text == "Lưu")
-                MessageBox.Show("Update successful.", "Update supplier", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else MessageBox.Show("Cập nhật thành công", "Cập nhật nhà cung cấp", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-            ucSup.ReloadGridView();
+                busSup.Update(updatedSup);
+                if (btnSave.Text == "Save")
+                    MessageBox.Show("Update successful.", "Update supplier", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Cập nhật thành công", "Cập nhật nhà cung cấp", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                ucSup.ReloadGridView();
+            }
         }
 
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)

@@ -57,57 +57,57 @@
             // 
             // contextMenuStrip1
             // 
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewToolStripMenuItem,
             this.orderToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
             // viewToolStripMenuItem
             // 
-            resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
             // orderToolStripMenuItem
             // 
-            resources.ApplyResources(this.orderToolStripMenuItem, "orderToolStripMenuItem");
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            resources.ApplyResources(this.orderToolStripMenuItem, "orderToolStripMenuItem");
             this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // contextMenuStrip2
             // 
-            resources.ApplyResources(this.contextMenuStrip2, "contextMenuStrip2");
             this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setStatusToolStripMenuItem,
             this.setRepairingToolStripMenuItem,
             this.removeTableToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
+            resources.ApplyResources(this.contextMenuStrip2, "contextMenuStrip2");
             // 
             // setStatusToolStripMenuItem
             // 
-            resources.ApplyResources(this.setStatusToolStripMenuItem, "setStatusToolStripMenuItem");
             this.setStatusToolStripMenuItem.Name = "setStatusToolStripMenuItem";
+            resources.ApplyResources(this.setStatusToolStripMenuItem, "setStatusToolStripMenuItem");
             this.setStatusToolStripMenuItem.Click += new System.EventHandler(this.setStatusToolStripMenuItem_Click);
             // 
             // setRepairingToolStripMenuItem
             // 
-            resources.ApplyResources(this.setRepairingToolStripMenuItem, "setRepairingToolStripMenuItem");
             this.setRepairingToolStripMenuItem.Name = "setRepairingToolStripMenuItem";
+            resources.ApplyResources(this.setRepairingToolStripMenuItem, "setRepairingToolStripMenuItem");
             this.setRepairingToolStripMenuItem.Click += new System.EventHandler(this.setRepairingToolStripMenuItem_Click);
             // 
             // removeTableToolStripMenuItem
             // 
-            resources.ApplyResources(this.removeTableToolStripMenuItem, "removeTableToolStripMenuItem");
             this.removeTableToolStripMenuItem.Name = "removeTableToolStripMenuItem";
+            resources.ApplyResources(this.removeTableToolStripMenuItem, "removeTableToolStripMenuItem");
             this.removeTableToolStripMenuItem.Click += new System.EventHandler(this.removeTableToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.dinner_table;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 

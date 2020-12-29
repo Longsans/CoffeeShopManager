@@ -94,16 +94,6 @@ namespace GUI
             this.Close();
         }
 
-        private void txtYearJoin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtYearBD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
@@ -130,9 +120,19 @@ namespace GUI
 
         private void btnSaveChange_Click(object sender, EventArgs e)
         {
-            DateTime bdate = new DateTime();
-            DateTime doj = new DateTime();
-            string[] formats = { "dd/MM/yyyy", "d/M/yyyy" };
+            if (string.IsNullOrWhiteSpace(txtFirstName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text) 
+                || string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtAddress.Text))
+            {
+                if (btnCancel.Text == "Cancel")
+                {
+                    MessageBox.Show("Please fill all info fields.", "More information is required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đủ thông tin.", "Nhập đủ thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return;
+            }
             dtoEmp.Firstname = txtFirstName.Text;
             dtoEmp.Lastname = txtLastName.Text;
             dtoEmp.Address = txtAddress.Text;
@@ -152,12 +152,32 @@ namespace GUI
             else
                 cboPosition.Text = "Others";
             dtoEmp.Position = cboPosition.Text;
+
+            if (!long.TryParse(txtPhone.Text, out long phone))
+            {
+                if (btnCancel.Text == "Cancel")
+                {
+                    MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return;
+            }
             dtoEmp.Phone = txtPhone.Text;
             if(checkemail==1)
             dtoEmp.Email = txtEmail.Text;
             else
             {
-                MessageBox.Show("Email trung hoac sai", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (btnCancel.Text == "Cancel")
+                {
+                    MessageBox.Show("Email is already taken or is in invalid format", "Invalid email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Email trùng hoặc sai", "Email không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 return;
             }
             txtSalary.Text = txtSalary.Text.Replace(',', '.');
@@ -171,8 +191,8 @@ namespace GUI
                     MessageBox.Show("Sai tiền lương", "tiền lương", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            dtoEmp.Salary = decimal.Parse(txtSalary.Text);
-            dtoEmp.Manager = busMan.GetById(txtManagerID.Text, dtoEmp.Shop.ID);
+            if (double.TryParse(txtSalary.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out sala))
+                dtoEmp.Salary = (decimal)sala; dtoEmp.Manager = busMan.GetById(txtManagerID.Text, dtoEmp.Shop.ID);
             dtoEmp.Phone = txtPhone.Text;
             if (radMale.Checked == true)
             {
@@ -212,11 +232,11 @@ namespace GUI
                 if (EmailHelper.ValidateEmail(txtEmail.Text))
                 {
                     errEmail.SetError(txtEmail, "");
-                    errorProvider1.SetError(txtEmail, "Correct");
+                    errorProvider1.SetError(txtEmail, "Valid");
                     if (busEmp.GetByEmail(txtEmail.Text, frmManager.dtoMan.Shop.ID) == null||txtEmail.Text==dtoEmp.Email)
                     {
                         errEmail.SetError(txtEmail, "");
-                        errorProvider1.SetError(txtEmail, "correct");
+                        errorProvider1.SetError(txtEmail, "Valid");
                         checkemail = 1;
 
                     }
@@ -305,7 +325,7 @@ namespace GUI
         {
             datBirth.CustomFormat = "dd/MM/yyyy";
             DateTime now = DateTime.Now;
-            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datBirth.Value.Year <= 2078 && datJoin.Value.Year <= 2078 && datBirth.Value.Year >= 1910 && datJoin.Value.Year >= 1910)
+            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datJoin.Value <= now && datBirth.Value.Year >= 1910)
             {
                 checkbirth = 1;
                 checkjoin = 1;
@@ -350,7 +370,7 @@ namespace GUI
         {
             datJoin.CustomFormat = "dd/MM/yyyy";
             DateTime now = DateTime.Now;
-            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datBirth.Value.Year <= 2078 && datJoin.Value.Year <= 2078 && datBirth.Value.Year >= 1910 && datJoin.Value.Year >= 1910)
+            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datJoin.Value <= now && datBirth.Value.Year >= 1910)
             {
                 checkjoin = 1;
                 checkbirth = 1;

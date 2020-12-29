@@ -52,7 +52,6 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnSave);
@@ -64,36 +63,27 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.errEmail.SetError(this.panel1, resources.GetString("panel1.Error"));
-            this.errEmail.SetIconAlignment(this.panel1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("panel1.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.panel1, ((int)(resources.GetObject("panel1.IconPadding"))));
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnCancel
             // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errEmail.SetError(this.btnCancel, resources.GetString("btnCancel.Error"));
             this.btnCancel.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            this.errEmail.SetIconAlignment(this.btnCancel, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnCancel.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.btnCancel, ((int)(resources.GetObject("btnCancel.IconPadding"))));
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errEmail.SetError(this.btnSave, resources.GetString("btnSave.Error"));
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            this.errEmail.SetIconAlignment(this.btnSave, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnSave.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.btnSave, ((int)(resources.GetObject("btnSave.IconPadding"))));
             this.btnSave.Name = "btnSave";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -101,87 +91,61 @@
             // txtPhone
             // 
             resources.ApplyResources(this.txtPhone, "txtPhone");
-            this.errEmail.SetError(this.txtPhone, resources.GetString("txtPhone.Error"));
-            this.errEmail.SetIconAlignment(this.txtPhone, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtPhone.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.txtPhone, ((int)(resources.GetObject("txtPhone.IconPadding"))));
             this.txtPhone.Name = "txtPhone";
             // 
             // txtEmail
             // 
             resources.ApplyResources(this.txtEmail, "txtEmail");
-            this.errEmail.SetError(this.txtEmail, resources.GetString("txtEmail.Error"));
-            this.errEmail.SetIconAlignment(this.txtEmail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtEmail.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.txtEmail, ((int)(resources.GetObject("txtEmail.IconPadding"))));
             this.txtEmail.Name = "txtEmail";
             // 
             // txtName
             // 
-            resources.ApplyResources(this.txtName, "txtName");
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.errEmail.SetError(this.txtName, resources.GetString("txtName.Error"));
-            this.errEmail.SetIconAlignment(this.txtName, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtName.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.txtName, ((int)(resources.GetObject("txtName.IconPadding"))));
+            resources.ApplyResources(this.txtName, "txtName");
             this.txtName.Name = "txtName";
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
-            this.errEmail.SetError(this.label4, resources.GetString("label4.Error"));
-            this.errEmail.SetIconAlignment(this.label4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label4.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.label4, ((int)(resources.GetObject("label4.IconPadding"))));
             this.label4.Name = "label4";
             // 
             // txtId
             // 
-            resources.ApplyResources(this.txtId, "txtId");
             this.txtId.Cursor = System.Windows.Forms.Cursors.No;
-            this.errEmail.SetError(this.txtId, resources.GetString("txtId.Error"));
-            this.errEmail.SetIconAlignment(this.txtId, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtId.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.txtId, ((int)(resources.GetObject("txtId.IconPadding"))));
+            resources.ApplyResources(this.txtId, "txtId");
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
-            this.errEmail.SetError(this.label5, resources.GetString("label5.Error"));
-            this.errEmail.SetIconAlignment(this.label5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label5.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.label5, ((int)(resources.GetObject("label5.IconPadding"))));
             this.label5.Name = "label5";
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
-            this.errEmail.SetError(this.label3, resources.GetString("label3.Error"));
-            this.errEmail.SetIconAlignment(this.label3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label3.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.label3, ((int)(resources.GetObject("label3.IconPadding"))));
             this.label3.Name = "label3";
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
-            this.errEmail.SetError(this.label2, resources.GetString("label2.Error"));
-            this.errEmail.SetIconAlignment(this.label2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label2.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.label2, ((int)(resources.GetObject("label2.IconPadding"))));
             this.label2.Name = "label2";
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
-            this.errEmail.SetError(this.label1, resources.GetString("label1.Error"));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
-            this.errEmail.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding"))));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Name = "label1";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
+            this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
             // 
             // pnlTitleBar
             // 
-            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.pnlTitleBar.Controls.Add(this.btnExit);
-            this.errEmail.SetError(this.pnlTitleBar, resources.GetString("pnlTitleBar.Error"));
-            this.errEmail.SetIconAlignment(this.pnlTitleBar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pnlTitleBar.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.pnlTitleBar, ((int)(resources.GetObject("pnlTitleBar.IconPadding"))));
+            this.pnlTitleBar.Controls.Add(this.label1);
+            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
@@ -190,10 +154,7 @@
             // btnExit
             // 
             resources.ApplyResources(this.btnExit, "btnExit");
-            this.errEmail.SetError(this.btnExit, resources.GetString("btnExit.Error"));
             this.btnExit.FlatAppearance.BorderSize = 0;
-            this.errEmail.SetIconAlignment(this.btnExit, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnExit.IconAlignment"))));
-            this.errEmail.SetIconPadding(this.btnExit, ((int)(resources.GetObject("btnExit.IconPadding"))));
             this.btnExit.Image = global::GUI.Properties.Resources.close_window_24px1;
             this.btnExit.Name = "btnExit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -202,7 +163,6 @@
             // errEmail
             // 
             this.errEmail.ContainerControl = this;
-            resources.ApplyResources(this.errEmail, "errEmail");
             // 
             // frmEditSupplier
             // 
@@ -217,6 +177,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlTitleBar.ResumeLayout(false);
+            this.pnlTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errEmail)).EndInit();
             this.ResumeLayout(false);
 

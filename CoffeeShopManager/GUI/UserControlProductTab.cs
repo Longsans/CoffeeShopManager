@@ -34,24 +34,11 @@ namespace GUI
             pictureBox1.BackColor = Color.FromArgb(62,62,66);
             dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            lblSumTotal.Left = lblTotal.Right + 5;
             txtSearch.GotFocus += TxtSearch_GotFocus;
             txtSearch.LostFocus += TxtSearch_LostFocus;
         }
-        public void Reload2()
-        {
-            this.cboSearch.Text = "";
-            this.dataGridView1.DataSource = busPro.GetAllProductsWithImages(dtoShop.ID);
-            for (int i = 0; i < dataGridView1.Columns.Count; i++)
-            {
-                if (dataGridView1.Columns[i] is DataGridViewImageColumn)
-                {
-                    ((DataGridViewImageColumn)dataGridView1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
-                }
-                dataGridView1.Columns[i].Width = 50;
-            }
-            //  dataGridView1.Columns["Image"].Visible = false;
-            lblLabel.Text = "Total All:";
-        }
+
         public void Reload()
         {
             this.cboSearch.Text = "";
@@ -64,7 +51,11 @@ namespace GUI
                 dataGridView1.Columns["Type"].HeaderText = "Loại";
                 dataGridView1.Columns["Price"].HeaderText = "Giá";
                 dataGridView1.Columns["Image"].HeaderText = "Ảnh";
-
+                lblTotal.Text = "Tất cả:";
+            }
+            else
+            {
+                lblTotal.Text = "Total All:";
             }
             for (int i = 0; i < dataGridView1.Columns.Count; i++)
             {
@@ -75,7 +66,7 @@ namespace GUI
                 dataGridView1.Columns[i].Width = 50;
             }
             //  dataGridView1.Columns["Image"].Visible = false;
-            lblLabel.Text = "Total All:";
+            
         }
 
         private void TxtSearch_LostFocus(object sender, EventArgs e)
@@ -83,7 +74,14 @@ namespace GUI
             if (txtSearch.TextLength == 0)
             {
                 txtSearch.ForeColor = Color.DimGray;
-                txtSearch.Text = "Search...";
+                if (lblProducts.Text == "Products")
+                {
+                    txtSearch.Text = "Search...";
+                }
+                else
+                {
+                    txtSearch.Text = "Tìm kiếm...";
+                }
             }
         }
 
@@ -109,7 +107,14 @@ namespace GUI
             flowLayoutPanel1.Controls.Clear();
             GetCong();
             GetData();
-            lblLabel.Text = "Total Drink:";
+            if (lblProducts.Text == "Products")
+            {
+                lblTotal.Text = "Total Drink:";
+            }
+            else
+            {
+                lblTotal.Text = "Tất cả thức uống:";
+            }
         }
 
         private void btnFood_Click(object sender, EventArgs e)
@@ -118,7 +123,14 @@ namespace GUI
             flowLayoutPanel1.Controls.Clear();
             GetCong();
             GetData();
-            lblLabel.Text = "Total Food:";
+            if (lblProducts.Text == "Products")
+            {
+                lblTotal.Text = "Total Food:";
+            }
+            else
+            {
+                lblTotal.Text = "Tất cả đồ ăn:";
+            }
         }
 
         private void btnOther_Click(object sender, EventArgs e)
@@ -127,7 +139,14 @@ namespace GUI
             flowLayoutPanel1.Controls.Clear();
             GetCong();
             GetData();
-            lblLabel.Text = "Total Others:";
+            if (lblProducts.Text == "Products")
+            {
+                lblTotal.Text = "Total Others:";
+            }
+            else
+            {
+                lblTotal.Text = "Tất cả SP khác:";
+            }
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -140,7 +159,16 @@ namespace GUI
         {
             if (dataGridView1.SelectedRows != null)
             {
-                DialogResult ret = MessageBox.Show("Do you want to delete this product?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult ret;
+                if (btnDelete.Text == "Delete")
+                {
+                    ret = MessageBox.Show("Do you want to delete this product?", "Delete product", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    ret = MessageBox.Show("Bạn có muốn xóa sản phẩm này?", "Xóa sản phẩm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+
                 if (ret == DialogResult.Yes)
                 {
                    // MessageBox.Show(dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
@@ -337,8 +365,8 @@ namespace GUI
                 bt.ContextMenuStrip = menu;
                 flowLayoutPanel1.ContextMenuStrip = menuflw;
                 flowLayoutPanel1.Controls.Add(bt);
-                lblSumTotal.Text = ""+dem;
             }
+            lblSumTotal.Text = dem.ToString();
         }
         //public void ClickCong(object sender,EventArgs e)
         //{
@@ -380,10 +408,6 @@ namespace GUI
         {
             frmInsertProDuct frmInsert = new frmInsertProDuct(this);
             frmInsert.ShowDialog();
-        }
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -540,6 +564,11 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message, "An error occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void lblTotal_SizeChanged(object sender, EventArgs e)
+        {
+            lblSumTotal.Left = lblTotal.Right + 5;
         }
     }
 }

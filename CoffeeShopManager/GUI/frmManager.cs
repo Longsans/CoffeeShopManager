@@ -193,6 +193,7 @@ namespace GUI
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnStock.Location;
             ucStockTab.Shop = dtoMan.Shop;
+            ucStockTab.ucSup = ucSuppliersTab;
             ucStockTab.frmMan = this;
             ucStockTab.Show();
             ucStockTab.BringToFront();
@@ -245,6 +246,7 @@ namespace GUI
 
         private void ucHome_Load(object sender, EventArgs e)
         {
+            ucHome.dtoMan = dtoMan;
             ucHome.SetEmpTab(ucEmployeeTab);
             ucHome.SetButtonEmp(btnEmployee);
             ucHome.SetPanel(pnlChangeTab);
@@ -253,6 +255,7 @@ namespace GUI
             ucHome.SetStatisticsTab(ucStatisticsTab);
             ucHome.SetButtonStat(btnStatistic);
             ucHome.SetFrmMan(this);
+
         }
 
         private void ucShopInfoTab_Load(object sender, EventArgs e)
@@ -285,7 +288,7 @@ namespace GUI
                 this.Controls.Clear();
                 this.InitializeComponent();
             }
-            else if (comboBox1.Text == "Vietnamese")
+            else if (comboBox1.Text == "Tiếng Việt")
             {
                 var changeLanguage = new ChangeLanguage();
                 changeLanguage.UpdateConfig("language", "vi-VN");

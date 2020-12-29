@@ -117,13 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>899, 574</value>
+  </data>
   <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
     <value>btnAdd</value>
   </data>
   <data name="&gt;&gt;grdSup.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblResetFilters.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt, style=Underline</value>
   </data>
@@ -133,11 +136,11 @@
   <data name="lblSuppliers.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 22pt</value>
   </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="lblSuppliers.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 44</value>
-  </data>
-  <data name="cboSearch.Items" xml:space="preserve">
-    <value>ID</value>
   </data>
   <data name="lblSuppliers.Location" type="System.Drawing.Point, System.Drawing">
     <value>65, 56</value>
@@ -164,14 +167,11 @@
   <data name="&gt;&gt;txtSearch.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
-  </data>
-  <data name="cboSearch.Items1" xml:space="preserve">
-    <value>Name</value>
   </data>
   <data name="&gt;&gt;lblSuppliers.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -179,8 +179,8 @@
   <data name="grdSup.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 154</value>
   </data>
-  <data name="btnDelete.Text" xml:space="preserve">
-    <value>Delete</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
   </data>
   <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -191,11 +191,12 @@
   <data name="&gt;&gt;lblResetFilters.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
   <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSearch.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
   </data>
   <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -206,8 +207,8 @@
   <data name="btnDelete.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;btnEdit.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblResetFilters.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -224,33 +225,32 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="txtSearch.Text" xml:space="preserve">
-    <value>Search...</value>
-  </data>
   <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
   </data>
   <data name="lblSuppliers.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;cboSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblResetFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 19</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnEdit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
     <value>btnDelete</value>
   </data>
+  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
+    <value>btnSearch</value>
+  </data>
   <data name="grdSup.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
   <data name="&gt;&gt;grdSup.Name" xml:space="preserve">
     <value>grdSup</value>
+  </data>
+  <data name="btnDelete.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -616,11 +616,11 @@
   <data name="cboSearch.Items3" xml:space="preserve">
     <value>Phone Number</value>
   </data>
-  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 28</value>
-  </data>
   <data name="cboSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>475, 75</value>
+  </data>
+  <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>623, 77</value>
   </data>
   <data name="&gt;&gt;grdSup.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -631,11 +631,11 @@
   <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 34</value>
-  </data>
   <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblSuppliers.Name" xml:space="preserve">
+    <value>lblSuppliers</value>
   </data>
   <data name="grdSup.Size" type="System.Drawing.Size, System.Drawing">
     <value>741, 297</value>
@@ -652,11 +652,14 @@
   <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>899, 574</value>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="&gt;&gt;cboSearch.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="lblResetFilters.Text" xml:space="preserve">
+    <value>Reset Filters</value>
   </data>
   <data name="lblResetFilters.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -673,29 +676,29 @@
   <data name="&gt;&gt;lblResetFilters.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;lblResetFilters.Name" xml:space="preserve">
+    <value>lblResetFilters</value>
+  </data>
   <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;cboSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblSuppliers.Name" xml:space="preserve">
-    <value>lblSuppliers</value>
+  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 34</value>
   </data>
-  <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>623, 77</value>
+  <data name="cboSearch.Items1" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
     <value>txtSearch</value>
   </data>
-  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
-    <value>btnSearch</value>
+  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 28</value>
   </data>
-  <data name="&gt;&gt;lblResetFilters.Name" xml:space="preserve">
-    <value>lblResetFilters</value>
-  </data>
-  <data name="lblResetFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 19</value>
+  <data name="txtSearch.Text" xml:space="preserve">
+    <value>Search...</value>
   </data>
   <data name="btnSearch.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -703,26 +706,23 @@
   <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 23</value>
   </data>
-  <data name="lblResetFilters.Text" xml:space="preserve">
-    <value>Reset Filters</value>
+  <data name="cboSearch.Items" xml:space="preserve">
+    <value>ID</value>
   </data>
-  <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="grdSup.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
-  <data name="txtSearch.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
-  </data>
-  <data name="btnSearch.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
+  <data name="&gt;&gt;btnEdit.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
     <value>btnEdit</value>
   </data>
-  <data name="btnDelete.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="txtSearch.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
