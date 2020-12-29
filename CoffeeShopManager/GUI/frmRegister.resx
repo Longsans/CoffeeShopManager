@@ -149,9 +149,6 @@
   <data name="pictureBox2.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Password</value>
-  </data>
   <data name="txtLastName.Error1" xml:space="preserve">
     <value />
   </data>
@@ -163,6 +160,9 @@
   </data>
   <data name="label15.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="TitleBar.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;txtShopId.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -179,13 +179,17 @@
   <data name="label11.Text" xml:space="preserve">
     <value>Manager ID</value>
   </data>
-  <data name="txtShopName.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
   </data>
   <data name="txtPhone.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="label2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="label1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label4.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="label4.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -193,6 +197,9 @@
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Last name</value>
+  </data>
+  <data name="label4.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="pictureBox1.Error1" xml:space="preserve">
     <value />
@@ -209,22 +216,23 @@
   <data name="&gt;&gt;TitleBar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label6.IconPadding1" type="System.Int32, mscorlib">
+  <data name="txtID.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnBrowseImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 30</value>
+  </data>
+  <data name="lblBirthdate.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;picboxManImg.Name" xml:space="preserve">
     <value>picboxManImg</value>
   </data>
+  <data name="&gt;&gt;errShop.Name" xml:space="preserve">
+    <value>errShop</value>
+  </data>
   <data name="lblAuthCode.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="lblAuthCode.Text" xml:space="preserve">
-    <value>Authentication
-Code</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Gender</value>
@@ -253,8 +261,8 @@ Code</value>
   <data name="txtShopId.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 23</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnBrowseImg.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -280,11 +288,11 @@ Code</value>
   <data name="cboErrMsg.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="btnExit.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="label11.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="btnSignUp.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnExit.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;TitleBar.Name" xml:space="preserve">
     <value>TitleBar</value>
@@ -292,11 +300,11 @@ Code</value>
   <data name="txtAuthCode.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label11.Error" xml:space="preserve">
-    <value />
+  <data name="btnBrowseImg.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="fpnlCreateNew.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
+  <data name="txtShopId.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
     <value>pictureBox2</value>
@@ -319,9 +327,6 @@ Code</value>
   <data name="fpnlCreateNew.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
-  </data>
   <data name="btnExit2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -333,9 +338,6 @@ Code</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Email</value>
-  </data>
-  <data name="txtConfirm.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="lblAuthCode.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -352,11 +354,8 @@ Code</value>
   <data name="btnBack.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;cboErrMsg.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtShopName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Constantia, 7.8pt</value>
+  <data name="lblAuthCode.Error3" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
     <value>pictureBox1</value>
@@ -370,41 +369,32 @@ Code</value>
   <data name="fpnlCreateNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 50</value>
   </data>
-  <data name="txtShopName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Password</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>28</value>
   </data>
+  <data name="txtEmail.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;lblShopName.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtShopName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtFirstName.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="btnExit2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>355, 512</value>
-  </data>
-  <data name="cboErrMsg.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label5.Error3" xml:space="preserve">
-    <value />
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 399</value>
   </data>
   <data name="txtID.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="btnBrowseImg.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 19</value>
   </data>
-  <data name="radMale.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 181</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>25</value>
@@ -412,8 +402,11 @@ Code</value>
   <data name="&gt;&gt;picboxManImg.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 399</value>
+  <data name="radFemale.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUsername.Error3" xml:space="preserve">
+    <value />
   </data>
   <data name="txtPass.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 132</value>
@@ -421,16 +414,13 @@ Code</value>
   <data name="datBirthdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 22</value>
   </data>
-  <data name="txtPass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
-  </data>
   <data name="&gt;&gt;btnBrowseImg.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="picboxManImg.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label5.Error" xml:space="preserve">
+  <data name="label11.Error" xml:space="preserve">
     <value />
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
@@ -445,8 +435,8 @@ Code</value>
   <data name="cboErrMsg.Items3" xml:space="preserve">
     <value>Shop ID must be a natural number</value>
   </data>
-  <data name="radFemale.Error" xml:space="preserve">
-    <value />
+  <data name="pictureBox2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="radMale.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -457,8 +447,8 @@ Code</value>
   <data name="radFemale.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;radMale.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="radMale.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -472,20 +462,17 @@ Code</value>
   <data name="label1.Text" xml:space="preserve">
     <value>Username</value>
   </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="lblNoImg.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;errShop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 30</value>
-  </data>
   <data name="label2.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="lblShopId.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmRegister</value>
@@ -499,8 +486,8 @@ Code</value>
   <data name="txtPass.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="pictureBox1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="picboxManImg.Error2" xml:space="preserve">
     <value />
@@ -535,7 +522,7 @@ Code</value>
   <data name="label2.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="label2.Error2" xml:space="preserve">
+  <data name="pictureBox1.Error3" xml:space="preserve">
     <value />
   </data>
   <data name="label2.Error1" xml:space="preserve">
@@ -550,14 +537,14 @@ Code</value>
   <data name="&gt;&gt;label15.Name" xml:space="preserve">
     <value>label15</value>
   </data>
-  <data name="label5.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="label8.Error" xml:space="preserve">
     <value />
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label1.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="pictureBox2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -571,17 +558,17 @@ Code</value>
   <data name="picboxManImg.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="btnExit2.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="label11.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="txtLastName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
+  <data name="txtConfirm.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="txtConfirm.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 177</value>
-  </data>
-  <data name="btnBack.Error3" xml:space="preserve">
-    <value />
   </data>
   <data name="lblShopId.Error2" xml:space="preserve">
     <value />
@@ -595,17 +582,14 @@ Code</value>
   <data name="btnBack.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtPass.Error1" xml:space="preserve">
-    <value />
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="pictureBox1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;datBirthdate.Name" xml:space="preserve">
-    <value>datBirthdate</value>
-  </data>
-  <data name="label1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnExit2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="lblBirthdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 19</value>
@@ -619,8 +603,11 @@ Code</value>
   <data name="btnBack.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label1.Error" xml:space="preserve">
+  <data name="txtFirstName.Error3" xml:space="preserve">
     <value />
+  </data>
+  <data name="label11.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>23</value>
@@ -637,14 +624,17 @@ Code</value>
   <data name="&gt;&gt;txtAuthCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="txtConfirm.Error3" xml:space="preserve">
+    <value />
+  </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="label3.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label5.Error3" xml:space="preserve">
+    <value />
   </data>
-  <data name="label3.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label5.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="label8.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -667,14 +657,11 @@ Code</value>
   <data name="txtConfirm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="lblNoImg.Error3" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;btnExit2.Name" xml:space="preserve">
     <value>btnExit2</value>
   </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 181</value>
+  <data name="label1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label10.Name" xml:space="preserve">
     <value>label10</value>
@@ -688,8 +675,8 @@ Code</value>
   <data name="lblShopId.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="txtUsername.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnBack.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="btnSignUp.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 30</value>
@@ -715,23 +702,20 @@ Code</value>
   <data name="lblBirthdate.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="txtShopId.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label10.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>27</value>
   </data>
-  <data name="lblNoImg.IconPadding1" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="txtShopName.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="lblBirthdate.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label7.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="pictureBox2.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -745,11 +729,20 @@ Code</value>
   <data name="&gt;&gt;txtConfirm.ZOrder" xml:space="preserve">
     <value>31</value>
   </data>
+  <data name="cboErrMsg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 24</value>
+  </data>
   <data name="lblNoImg.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.Error3" xml:space="preserve">
     <value />
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
+  </data>
+  <data name="btnExit.Error3" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -760,8 +753,8 @@ Code</value>
   <data name="label7.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="label7.Error1" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;btnSignUp.Name" xml:space="preserve">
+    <value>btnSignUp</value>
   </data>
   <data name="btnExit.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -802,8 +795,14 @@ Code</value>
   <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
     <value>btnExit</value>
   </data>
+  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
   <data name="cboErrMsg.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -820,20 +819,23 @@ Code</value>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="txtAuthCode.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="lblShopName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="btnExit2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="txtLastName.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 265</value>
+  </data>
+  <data name="pictureBox1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="btnExit.Error1" xml:space="preserve">
     <value />
@@ -853,8 +855,8 @@ Code</value>
   <data name="txtShopId.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="btnBrowseImg.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="picboxManImg.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="lblAuthCode.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -871,8 +873,8 @@ Code</value>
   <data name="label7.Text" xml:space="preserve">
     <value>First name</value>
   </data>
-  <data name="txtEmail.Error2" xml:space="preserve">
-    <value />
+  <data name="txtConfirm.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="btnExit2.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -886,11 +888,11 @@ Code</value>
   <data name="pictureBox2.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="lblShopName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label6.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="panel1.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
@@ -898,14 +900,8 @@ Code</value>
   <data name="lblNoImg.Location" type="System.Drawing.Point, System.Drawing">
     <value>416, 162</value>
   </data>
-  <data name="radFemale.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;TitleBar.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="panel1.Error2" xml:space="preserve">
-    <value />
   </data>
   <data name="lblAuthCode.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
@@ -916,29 +912,29 @@ Code</value>
   <data name="$this.Text" xml:space="preserve">
     <value>frmRegister</value>
   </data>
-  <data name="txtPhone.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="lblShopName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
+  <data name="&gt;&gt;txtID.Name" xml:space="preserve">
+    <value>txtID</value>
   </data>
   <data name="&gt;&gt;datBirthdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
+  <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Create a new shop</value>
   </data>
-  <data name="txtAuthCode.IconPadding3" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="label15.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="TitleBar.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtPass.Error3" xml:space="preserve">
+    <value />
   </data>
   <data name="pictureBox1.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -952,6 +948,9 @@ Code</value>
   <data name="btnExit2.Error" xml:space="preserve">
     <value />
   </data>
+  <data name="txtConfirm.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="&gt;&gt;btnSignUp.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -963,6 +962,9 @@ Code</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
+  </data>
+  <data name="label7.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="radFemale.Error1" xml:space="preserve">
     <value />
@@ -1015,9 +1017,6 @@ Code</value>
   <data name="fpnlCreateNew.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;txtShopName.Name" xml:space="preserve">
-    <value>txtShopName</value>
-  </data>
   <data name="label5.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -1034,6 +1033,9 @@ Code</value>
     <value>panel1</value>
   </data>
   <data name="fpnlCreateNew.Error3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.Error1" xml:space="preserve">
     <value />
   </data>
   <data name="lblShopId.IconPadding" type="System.Int32, mscorlib">
@@ -1054,8 +1056,8 @@ Code</value>
   <data name="txtEmail.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="txtEmail.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblNoImg.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;picboxManImg.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1075,8 +1077,8 @@ Code</value>
   <data name="txtPhone.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="btnExit2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtLastName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="picboxManImg.Location" type="System.Drawing.Point, System.Drawing">
     <value>369, 87</value>
@@ -1093,8 +1095,8 @@ Code</value>
   <data name="txtShopName.Location" type="System.Drawing.Point, System.Drawing">
     <value>442, 399</value>
   </data>
-  <data name="label5.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="panel1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1129,29 +1131,20 @@ Code</value>
   <data name="label10.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
   <data name="btnExit2.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="btnExit2.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="btnExit2.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;txtShopName.Name" xml:space="preserve">
+    <value>txtShopName</value>
   </data>
   <data name="btnExit2.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtFirstName.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="cboErrMsg.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="lblShopName.Error1" xml:space="preserve">
-    <value />
   </data>
   <data name="cboErrMsg.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1177,32 +1170,26 @@ Code</value>
   <data name="picboxManImg.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="label15.Error" xml:space="preserve">
-    <value />
-  </data>
   <data name="btnSignUp.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="radMale.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.Error3" xml:space="preserve">
+  <data name="label15.Error" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="label1.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="label1.Error1" xml:space="preserve">
+  <data name="radMale.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtShopId.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="label7.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnExit.Error3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblNoImg.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="lblShopName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 400</value>
   </data>
   <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
@@ -1216,6 +1203,9 @@ Code</value>
   <data name="txtPhone.Error2" xml:space="preserve">
     <value />
   </data>
+  <data name="fpnlCreateNew.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="lblShopName.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -1228,14 +1218,14 @@ Code</value>
   <data name="btnExit.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="pictureBox2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="txtPass.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="txtShopId.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="txtShopId.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Constantia, 7.8pt</value>
   </data>
   <data name="lblShopId.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 19</value>
@@ -1246,11 +1236,11 @@ Code</value>
   <data name="btnSignUp.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label2.IconPadding3" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtAuthCode.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="txtUsername.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="txtShopId.Location" type="System.Drawing.Point, System.Drawing">
     <value>442, 357</value>
@@ -1258,8 +1248,8 @@ Code</value>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>646, 608</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblAuthCode.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
@@ -1269,6 +1259,9 @@ Code</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 19</value>
+  </data>
+  <data name="label6.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>646, 578</value>
@@ -1321,13 +1314,13 @@ Code</value>
   <data name="label3.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="label3.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label10.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="txtShopId.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtUsername.Error2" xml:space="preserve">
+  <data name="lblBirthdate.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnExit2.Error3" xml:space="preserve">
     <value />
   </data>
   <data name="TitleBar.IconPadding1" type="System.Int32, mscorlib">
@@ -1336,11 +1329,23 @@ Code</value>
   <data name="TitleBar.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="TitleBar.IconPadding3" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;lblBirthdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblBirthdate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label3.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="txtID.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="label5.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label6.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="label11.Error3" xml:space="preserve">
     <value />
@@ -1351,14 +1356,8 @@ Code</value>
   <data name="txtID.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblShopName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="txtUsername.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblShopId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 27</value>
@@ -1366,8 +1365,8 @@ Code</value>
   <data name="txtConfirm.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
+  <data name="fpnlCreateNew.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
   </data>
   <data name="txtLastName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1378,11 +1377,14 @@ Code</value>
   <data name="cboErrMsg.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="label2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblShopId.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="lblBirthdate.Text" xml:space="preserve">
     <value>Birthdate</value>
-  </data>
-  <data name="fpnlCreateNew.IconPadding3" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 19</value>
@@ -1417,11 +1419,11 @@ Code</value>
   <data name="txtAuthCode.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="label3.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="radFemale.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 21</value>
-  </data>
-  <data name="txtID.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="lblNoImg.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1453,8 +1455,11 @@ Code</value>
   <data name="datBirthdate.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 23</value>
+  <data name="&gt;&gt;lblAuthCode.Name" xml:space="preserve">
+    <value>lblAuthCode</value>
+  </data>
+  <data name="label3.Error3" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;radFemale.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1468,14 +1473,14 @@ Code</value>
   <data name="txtFirstName.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 23</value>
   </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;datBirthdate.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="btnExit.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="txtUsername.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="lblShopName.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 19</value>
@@ -1486,20 +1491,20 @@ Code</value>
   <data name="txtAuthCode.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="lblBirthdate.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="label3.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
+  <data name="fpnlCreateNew.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="picboxManImg.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtConfirm.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtConfirm.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="txtUsername.Error3" xml:space="preserve">
-    <value />
+  <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="radMale.Error3" xml:space="preserve">
     <value />
@@ -1510,14 +1515,17 @@ Code</value>
   <data name="panel1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="TitleBar.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;lblBirthdate.ZOrder" xml:space="preserve">
     <value>22</value>
   </data>
   <data name="panel1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="radMale.IconPadding3" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnBack.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1534,9 +1542,6 @@ Code</value>
   <data name="&gt;&gt;btnExit2.ZOrder" xml:space="preserve">
     <value>29</value>
   </data>
-  <data name="label11.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="label11.Error2" xml:space="preserve">
     <value />
   </data>
@@ -1549,10 +1554,13 @@ Code</value>
   <data name="radMale.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label6.IconPadding" type="System.Int32, mscorlib">
+  <data name="lblShopName.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="picboxManImg.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblNoImg.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="btnSignUp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -1570,14 +1578,14 @@ Code</value>
   <data name="label7.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;errShop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>26</value>
   </data>
   <data name="txtConfirm.Error1" xml:space="preserve">
     <value />
+  </data>
+  <data name="label5.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
     <value>btnBack</value>
@@ -1585,26 +1593,35 @@ Code</value>
   <data name="&gt;&gt;radFemale.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <data name="btnExit.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="lblShopId.Error" xml:space="preserve">
+    <value />
+  </data>
   <data name="txtShopId.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 315</value>
+  <data name="radMale.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtPhone.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
   <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 30</value>
   </data>
+  <data name="label5.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="txtAuthCode.Font" type="System.Drawing.Font, System.Drawing">
     <value>Constantia, 7.8pt</value>
+  </data>
+  <data name="fpnlCreateNew.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="txtShopName.Error2" xml:space="preserve">
     <value />
@@ -1624,6 +1641,9 @@ Code</value>
   <data name="label6.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="label15.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="btnSignUp.Text" xml:space="preserve">
     <value>Sign Up</value>
   </data>
@@ -1636,7 +1656,13 @@ Code</value>
   <data name="txtAuthCode.Error1" xml:space="preserve">
     <value />
   </data>
+  <data name="lblShopName.Error2" xml:space="preserve">
+    <value />
+  </data>
   <data name="pictureBox1.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label6.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;lblNoImg.Parent" xml:space="preserve">
@@ -1648,20 +1674,23 @@ Code</value>
   <data name="datBirthdate.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="lblBirthdate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtLastName.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="radMale.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="btnBack.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="label2.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="label10.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtPass.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;txtShopName.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1675,8 +1704,12 @@ Code</value>
   <data name="btnSignUp.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label6.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="label1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="lblAuthCode.Text" xml:space="preserve">
+    <value>Authentication
+Code</value>
   </data>
   <data name="label11.Error1" xml:space="preserve">
     <value />
@@ -1690,14 +1723,14 @@ Code</value>
   <data name="txtEmail.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="fpnlCreateNew.IconPadding" type="System.Int32, mscorlib">
+  <data name="txtAuthCode.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblNoImg.ZOrder" xml:space="preserve">
     <value>14</value>
+  </data>
+  <data name="label5.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="txtShopId.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1714,8 +1747,8 @@ Code</value>
   <data name="txtID.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="label4.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;cboErrMsg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label4.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1723,26 +1756,23 @@ Code</value>
   <data name="lblNoImg.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
-  <data name="&gt;&gt;fpnlCreateNew.Name" xml:space="preserve">
-    <value>fpnlCreateNew</value>
-  </data>
   <data name="label7.Error" xml:space="preserve">
     <value />
   </data>
   <data name="label4.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="txtShopId.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Constantia, 7.8pt</value>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="radFemale.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="txtAuthCode.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="radMale.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="txtShopName.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1756,8 +1786,8 @@ Code</value>
   <data name="lblAuthCode.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
   </data>
-  <data name="label5.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="btnBrowseImg.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="label7.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1783,14 +1813,11 @@ Code</value>
   <data name="lblNoImg.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label4.IconPadding3" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 19</value>
+  </data>
+  <data name="txtPass.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1804,11 +1831,17 @@ Code</value>
   <data name="cboErrMsg.Items5" xml:space="preserve">
     <value>A worker with such email already exists in the specified shop</value>
   </data>
-  <data name="btnExit.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtPhone.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="txtUsername.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="btnSignUp.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="label7.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="picboxManImg.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1824,6 +1857,9 @@ Code</value>
   </data>
   <data name="&gt;&gt;cboErrMsg.Parent" xml:space="preserve">
     <value>panel1</value>
+  </data>
+  <data name="label7.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="label8.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1849,23 +1885,29 @@ Code</value>
   <data name="label2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtID.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="cboErrMsg.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
   </data>
   <data name="label15.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtID.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtConfirm.Error3" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
   </data>
   <data name="&gt;&gt;txtLastName.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="label7.IconPadding3" type="System.Int32, mscorlib">
+  <data name="btnBrowseImg.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="label2.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="label3.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label10.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="btnBrowseImg.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1873,8 +1915,8 @@ Code</value>
   <data name="btnBrowseImg.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnBrowseImg.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtConfirm.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1904,6 +1946,9 @@ Code</value>
   <data name="txtLastName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;txtShopId.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1911,9 +1956,6 @@ Code</value>
     <value>MiddleRight</value>
   </data>
   <data name="label3.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnExit2.Error3" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;lblAuthCode.Type" xml:space="preserve">
@@ -1958,14 +2000,17 @@ Code</value>
   <data name="&gt;&gt;txtPhone.Name" xml:space="preserve">
     <value>txtPhone</value>
   </data>
-  <data name="cboErrMsg.TabIndex" type="System.Int32, mscorlib">
-    <value>48</value>
+  <data name="btnSignUp.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtShopId.Name" xml:space="preserve">
     <value>txtShopId</value>
   </data>
-  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtUsername.Error2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtShopName.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;txtPhone.ZOrder" xml:space="preserve">
     <value>19</value>
@@ -1982,9 +2027,6 @@ Code</value>
   <data name="&gt;&gt;lblBirthdate.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="txtAuthCode.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
   <data name="TitleBar.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -1994,11 +2036,11 @@ Code</value>
   <data name="txtAuthCode.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="btnBrowseImg.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblShopName.Error" xml:space="preserve">
     <value />
+  </data>
+  <data name="label5.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="txtID.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 23</value>
@@ -2009,35 +2051,47 @@ Code</value>
   <data name="txtShopName.Error" xml:space="preserve">
     <value />
   </data>
+  <data name="btnBack.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="cboErrMsg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 24</value>
+  <data name="TitleBar.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="label4.Error2" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;datBirthdate.Name" xml:space="preserve">
+    <value>datBirthdate</value>
+  </data>
+  <data name="fpnlCreateNew.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label4.Error1" xml:space="preserve">
     <value />
   </data>
+  <data name="lblBirthdate.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="txtShopId.Error" xml:space="preserve">
     <value />
+  </data>
+  <data name="label7.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="TitleBar.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="btnBrowseImg.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="txtID.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="datBirthdate.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblAuthCode.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="btnBrowseImg.Text" xml:space="preserve">
-    <value>Browse</value>
+  <data name="label15.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtEmail.Error1" xml:space="preserve">
     <value />
@@ -2045,14 +2099,14 @@ Code</value>
   <data name="btnExit2.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="lblShopId.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="btnBrowseImg.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="radMale.Error" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;cboErrMsg.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;btnBrowseImg.ZOrder" xml:space="preserve">
     <value>13</value>
@@ -2062,9 +2116,6 @@ Code</value>
   </data>
   <data name="txtShopName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;cboErrMsg.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="lblShopId.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2081,14 +2132,11 @@ Code</value>
   <data name="&gt;&gt;lblShopId.Name" xml:space="preserve">
     <value>lblShopId</value>
   </data>
-  <data name="btnBack.IconPadding3" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="txtPass.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="txtPass.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtPass.Name" xml:space="preserve">
     <value>txtPass</value>
@@ -2135,16 +2183,22 @@ Code</value>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
     <value>316, 318</value>
   </data>
+  <data name="TitleBar.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label3.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="txtID.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="label4.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 23</value>
+  <data name="txtUsername.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="label5.IconPadding3" type="System.Int32, mscorlib">
+  <data name="txtShopName.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="btnExit.IconPadding3" type="System.Int32, mscorlib">
@@ -2155,9 +2209,6 @@ Code</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>24</value>
@@ -2171,8 +2222,8 @@ Code</value>
   <data name="&gt;&gt;txtID.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="label15.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="btnSignUp.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="label10.Error3" xml:space="preserve">
     <value />
@@ -2180,53 +2231,41 @@ Code</value>
   <data name="txtFirstName.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
+  <data name="txtPass.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="label15.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="datBirthdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 439</value>
   </data>
-  <data name="lblShopId.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
-  </data>
   <data name="txtLastName.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;radFemale.Parent" xml:space="preserve">
-    <value>panel1</value>
   </data>
   <data name="label7.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
-  </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 0</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="txtPhone.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnBrowseImg.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+  <data name="btnExit.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 41</value>
   </data>
+  <data name="txtPhone.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnBack.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="txtPhone.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="txtShopId.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtAuthCode.Text" xml:space="preserve">
+    <value>Enter password</value>
   </data>
-  <data name="lblShopName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 400</value>
-  </data>
-  <data name="&gt;&gt;errShop.Name" xml:space="preserve">
-    <value>errShop</value>
+  <data name="txtShopId.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2240,17 +2279,14 @@ Code</value>
   <data name="&gt;&gt;txtPass.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="label1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="label1.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtShopId.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
   </data>
   <data name="btnSignUp.Error" xml:space="preserve">
     <value />
@@ -2262,15 +2298,6 @@ Code</value>
     <value>panel1</value>
   </data>
   <data name="panel1.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblNoImg.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnSignUp.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
-  </data>
-  <data name="txtPass.Error3" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;txtAuthCode.Name" xml:space="preserve">
@@ -2300,11 +2327,14 @@ Code</value>
   <data name="txtShopName.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 23</value>
   </data>
-  <data name="picboxManImg.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="&gt;&gt;datBirthdate.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="label3.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblShopName.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 91</value>
@@ -2312,7 +2342,7 @@ Code</value>
   <data name="radFemale.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="txtLastName.IconPadding" type="System.Int32, mscorlib">
+  <data name="txtEmail.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="pictureBox2.IconPadding1" type="System.Int32, mscorlib">
@@ -2327,26 +2357,32 @@ Code</value>
   <data name="btnExit.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label15.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>310, 37</value>
   </data>
   <data name="&gt;&gt;txtConfirm.Name" xml:space="preserve">
     <value>txtConfirm</value>
   </data>
-  <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 315</value>
   </data>
   <data name="TitleBar.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="btnExit.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;txtUsername.Name" xml:space="preserve">
+    <value>txtUsername</value>
   </data>
-  <data name="&gt;&gt;btnSignUp.Name" xml:space="preserve">
-    <value>btnSignUp</value>
+  <data name="txtFirstName.Error2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmail.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="txtShopId.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="txtUsername.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtFirstName.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2354,8 +2390,8 @@ Code</value>
   <data name="label6.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="fpnlCreateNew.Error1" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;lblShopId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtConfirm.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -2372,8 +2408,8 @@ Code</value>
   <data name="lblShopName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="label3.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblShopId.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="&gt;&gt;txtAuthCode.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -2390,8 +2426,8 @@ Code</value>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="lblShopId.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="btnBack.Error3" xml:space="preserve">
+    <value />
   </data>
   <data name="txtPass.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2399,11 +2435,11 @@ Code</value>
   <data name="lblBirthdate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="label3.Error3" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>35</value>
   </data>
-  <data name="txtConfirm.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
   <data name="lblAuthCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 52</value>
@@ -2420,26 +2456,17 @@ Code</value>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="btnBack.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="datBirthdate.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>panel1</value>
-  </data>
-  <data name="radMale.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 21</value>
   </data>
   <data name="lblBirthdate.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
-  </data>
-  <data name="lblShopName.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
-  </data>
-  <data name="txtUsername.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2465,14 +2492,11 @@ Code</value>
   <data name="label10.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblShopName.Error2" xml:space="preserve">
-    <value />
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="label1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="pictureBox1.Error3" xml:space="preserve">
-    <value />
   </data>
   <data name="btnSignUp.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -2480,8 +2504,8 @@ Code</value>
   <data name="cboErrMsg.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="label3.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblNoImg.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2501,8 +2525,8 @@ Code</value>
   <data name="TitleBar.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="TitleBar.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="btnExit2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 512</value>
   </data>
   <data name="btnSignUp.Error3" xml:space="preserve">
     <value />
@@ -2513,25 +2537,19 @@ Code</value>
   <data name="lblBirthdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 440</value>
   </data>
-  <data name="cboErrMsg.Error3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtShopId.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label5.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="cboErrMsg.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtAuthCode.Text" xml:space="preserve">
-    <value>Enter password</value>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 0</value>
   </data>
-  <data name="txtConfirm.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="label5.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label5.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>439, 39</value>
   </data>
-  <data name="TitleBar.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="txtConfirm.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="radFemale.AutoSize" type="System.Boolean, mscorlib">
@@ -2543,8 +2561,8 @@ Code</value>
   <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
     <value>fpnlCreateNew</value>
   </data>
-  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>439, 39</value>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;label15.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2552,17 +2570,17 @@ Code</value>
   <data name="&gt;&gt;TitleBar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtID.Name" xml:space="preserve">
-    <value>txtID</value>
+  <data name="lblShopName.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
   </data>
-  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="pictureBox2.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="txtShopId.Error3" xml:space="preserve">
-    <value />
+  <data name="radFemale.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblAuthCode.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2570,17 +2588,14 @@ Code</value>
   <data name="btnBack.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="label8.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="txtPass.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;txtUsername.Name" xml:space="preserve">
-    <value>txtUsername</value>
+  <data name="pictureBox1.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="txtPass.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="txtConfirm.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="lblShopId.Location" type="System.Drawing.Point, System.Drawing">
     <value>316, 359</value>
@@ -2594,11 +2609,11 @@ Code</value>
   <data name="label6.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblAuthCode.Error3" xml:space="preserve">
-    <value />
+  <data name="txtAuthCode.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
-  <data name="panel1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="panel1.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="panel1.Error1" xml:space="preserve">
     <value />
@@ -2618,20 +2633,20 @@ Code</value>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 37</value>
-  </data>
   <data name="pictureBox2.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="radFemale.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblNoImg.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="txtPass.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="fpnlCreateNew.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="txtID.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="lblShopName.Error3" xml:space="preserve">
     <value />
@@ -2639,17 +2654,17 @@ Code</value>
   <data name="txtLastName.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="txtEmail.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="txtUsername.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="datBirthdate.Error2" xml:space="preserve">
+  <data name="&gt;&gt;radFemale.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="txtEmail.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="label11.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnBack.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="txtShopId.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;errManId.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2666,17 +2681,11 @@ Code</value>
   <data name="&gt;&gt;btnExit2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtShopName.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="btnBrowseImg.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="radMale.Text" xml:space="preserve">
     <value>Male</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lblBirthdate.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;txtUsername.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2687,23 +2696,20 @@ Code</value>
   <data name="pictureBox2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="txtUsername.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtPass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 23</value>
   </data>
   <data name="&gt;&gt;txtPhone.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="label3.IconPadding3" type="System.Int32, mscorlib">
+  <data name="label4.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="label8.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtLastName.Error2" xml:space="preserve">
-    <value />
+  <data name="label8.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="label8.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2711,19 +2717,16 @@ Code</value>
   <data name="TitleBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="txtEmail.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnExit2.Error2" xml:space="preserve">
+  <data name="cboErrMsg.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="pictureBox1.Error" xml:space="preserve">
+  <data name="btnExit2.Error2" xml:space="preserve">
     <value />
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 32</value>
   </data>
-  <data name="label10.Error" xml:space="preserve">
+  <data name="lblNoImg.Error3" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;txtFirstName.Type" xml:space="preserve">
@@ -2735,8 +2738,8 @@ Code</value>
   <data name="pictureBox2.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;lblBirthdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="radMale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 21</value>
   </data>
   <data name="btnBack.Error1" xml:space="preserve">
     <value />
@@ -2744,14 +2747,14 @@ Code</value>
   <data name="pictureBox1.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="fpnlCreateNew.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;radMale.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="txtPass.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="label7.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="btnBrowseImg.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label6.Error3" xml:space="preserve">
     <value />
@@ -2759,26 +2762,26 @@ Code</value>
   <data name="label6.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="label6.Error1" xml:space="preserve">
-    <value />
+  <data name="lblNoImg.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="lblNoImg.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 19</value>
   </data>
-  <data name="txtUsername.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;txtShopName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtUsername.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="txtShopName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Constantia, 7.8pt</value>
   </data>
   <data name="lblShopId.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="lblShopId.Error" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;fpnlCreateNew.Name" xml:space="preserve">
+    <value>fpnlCreateNew</value>
   </data>
-  <data name="txtFirstName.Error3" xml:space="preserve">
-    <value />
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 30</value>
   </data>
   <data name="label15.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2786,11 +2789,8 @@ Code</value>
   <data name="&gt;&gt;txtShopId.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="label6.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>35</value>
+  <data name="txtAuthCode.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="datBirthdate.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2810,8 +2810,8 @@ Code</value>
   <data name="lblNoImg.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblAuthCode.Name" xml:space="preserve">
-    <value>lblAuthCode</value>
+  <data name="lblNoImg.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtLastName.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2822,10 +2822,10 @@ Code</value>
   <data name="lblShopId.Text" xml:space="preserve">
     <value>Shop ID</value>
   </data>
-  <data name="txtConfirm.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label6.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="txtConfirm.IconPadding" type="System.Int32, mscorlib">
+  <data name="fpnlCreateNew.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
@@ -2837,8 +2837,8 @@ Code</value>
   <data name="txtUsername.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label7.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtLastName.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <metadata name="errEmail.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>172, 17</value>

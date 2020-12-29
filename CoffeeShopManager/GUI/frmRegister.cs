@@ -19,6 +19,7 @@ namespace GUI
         BUS_UserInfo busUser = new BUS_UserInfo(ConnectionStringHelper.GetConnectionString());
         BUS_Manager busMan = new BUS_Manager(ConnectionStringHelper.GetConnectionString());
         BUS_Shop busShop = new BUS_Shop(ConnectionStringHelper.GetConnectionString());
+        BUS_Workers busWr = new BUS_Workers(ConnectionStringHelper.GetConnectionString());
         frmLogin _frmLogin = new frmLogin();
         private bool dragging = false;
         private Point startPoint = new Point(0, 0);
@@ -63,7 +64,7 @@ namespace GUI
                 {
                     if (int.TryParse(txtShopId.Text, out int id))
                     {
-                        if (busMan.GetById(txtID.Text, id) != null)
+                        if (busWr.GetById(txtID.Text, id) != null)
                         {
                             checkId = false;
                             errManId.SetError(txtID, cboErrMsg.Items[1].ToString());
@@ -80,6 +81,11 @@ namespace GUI
                     checkId = true;
                     errManId.SetError(txtID, "");
                 }
+            }
+            else
+            {
+                checkId = false;
+                errManId.SetError(txtID, "");
             }
         }
 
@@ -137,7 +143,7 @@ namespace GUI
                 {
                     if (int.TryParse(txtShopId.Text, out int id))
                     {
-                        if (busMan.GetByEmail(txtEmail.Text, id) != null)
+                        if (busWr.GetByEmail(txtEmail.Text, id) != null)
                         {
                             checkEmail = false;
                             errEmail.SetError(txtEmail, cboErrMsg.Items[5].ToString());
@@ -245,12 +251,25 @@ namespace GUI
                         }
                         dtoMan.Account = busUser.EncodePass(dtoMan);
 
+                        if (!long.TryParse(txtPhone.Text, out long phone))
+                        {
+                            if (btnBrowseImg.Text == "Browse")
+                            {
+                                MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            return;
+                        }
+
                         if (this.picboxManImg.Image == null)
                         {
                             if (btnBrowseImg.Text == "Tìm ảnh")
                                 MessageBox.Show("Vui lòng chọn hình ảnh.", "Chọn hình ảnh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             else MessageBox.Show("Please choose image", "Choose image", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            throw new Exception();
+                            return;
                         }
                         else
                         {
@@ -274,26 +293,31 @@ namespace GUI
                                 {
                                     errorProvider1.SetError(txtShopId, "ID shop hoặc mã xác thực không chính xác.");
                                     errorProvider1.SetError(txtAuthCode, "ID shop hoặc mã xác thực không chính xác.");
+                                    MessageBox.Show("ID shop hoặc mã xác thực không chính xác.", "Xác thực không chính xác", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                                 else
                                 {
                                     errorProvider1.SetError(txtShopId, "Incorrect shop ID or authentication code.");
                                     errorProvider1.SetError(txtAuthCode, "Incorrect shop ID or authentication code.");
+                                    MessageBox.Show("Incorrect shop ID or authentication code.", "Incorrect authentication", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
-                                throw new Exception();
+                                
+                                return;
                             }
                         }
                         Reload();
                         busMan.Insert(dtoMan);
                         if (btnBrowseImg.Text == "Tìm ảnh")
-                            MessageBox.Show("Bạn đã đăng ký thành công");
-                        else MessageBox.Show("You have registered successfully.");
+                            MessageBox.Show("Bạn đã đăng ký thành công", "Đăng ký thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else MessageBox.Show("You have registered successfully.", "Registration successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        picboxManImg.Image = null;
+                        lblNoImg.Visible = true;
                     }
                     else
                     {
                         if (btnBrowseImg.Text == "Tìm ảnh")
-                            MessageBox.Show("Tên đăng nhập đã tồn tại");
-                        else MessageBox.Show("Username has already existed");
+                            MessageBox.Show("Tên đăng nhập đã tồn tại", "Nhập tên đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else MessageBox.Show("Username has already existed", "Username taken", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -378,6 +402,7 @@ namespace GUI
             timerId.Stop();
             checkEmail = false;
             checkShop = false;
+            txtShopId.Focus();
         }
 
         private void txtShop_Click(object sender, EventArgs e)
