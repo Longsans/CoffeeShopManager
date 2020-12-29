@@ -422,9 +422,12 @@ namespace GUI
                     dtoReceipt.Employee = dtoEmp;
                     dtoReceipt.DateOfPayMent = now;
                     int mon = lblGrandTotal.Text.IndexOf("$");
-                    if (int.TryParse(txtDiscount.Text, out int discount))
+                    if (decimal.TryParse(txtDiscount.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out decimal discount))
                     {
-                        dtoReceipt.Discount = discount / 100;
+                        if(discount>=0 && discount<=100)
+                            dtoReceipt.Discount = discount / 100;
+                        else
+                            dtoReceipt.Discount = 0;
                     }
                     dtoReceipt.Total = decimal.Parse(lblGrandTotal.Text.Substring(0, mon));
                     dtoReceipt.Details = "";
@@ -567,12 +570,15 @@ namespace GUI
                     sum += double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 }
             lblTotalSum.Text = sum.ToString() + "$";
-            if (int.TryParse(txtDiscount.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out int d))
+            if (double.TryParse(txtDiscount.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out double d))
             {
+                if (d <= 100 && d >= 0)
                 {
                     sum = sum - sum * (d) / 100;
                     lblGrandTotal.Text = sum.ToString() + "$";
                 }
+                else
+                    txtDiscount.Text = "0";
             } 
             
             lblGrandTotal.Text = sum.ToString() + "$";

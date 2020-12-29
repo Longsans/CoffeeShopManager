@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="comboBox1.Error" xml:space="preserve">
-    <value />
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="errorProvider1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -215,185 +212,6 @@
         AB/8AAA//gAAf/4AAH//AAD//wAA//+AAf//gAH//8AD///gB///4Af///AP///wD///+B////gf///8
         P////n////5/////////////////////////////
 </value>
-  </data>
-  <data name="comboBox1.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBox1.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="comboBox1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="comboBox1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="comboBox1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="comboBox1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="comboBox1.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="comboBox1.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="comboBox1.Items" xml:space="preserve">
-    <value>Tất cả</value>
-  </data>
-  <data name="comboBox1.Items1" xml:space="preserve">
-    <value>Thức ăn</value>
-  </data>
-  <data name="comboBox1.Items2" xml:space="preserve">
-    <value>Nước uống</value>
-  </data>
-  <data name="comboBox1.Items3" xml:space="preserve">
-    <value>Khác</value>
-  </data>
-  <data name="comboBox1.Text" xml:space="preserve">
-    <value>Chọn loại sản phẩm</value>
-  </data>
-  <data name="btnSearch.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnSearch.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnSearch.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnSearch.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnSearch.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnSearch.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnSearch.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnSearch.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnSearch.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtSearchName.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtSearchName.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtSearchName.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtSearchName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtSearchName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtSearchName.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtSearchName.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtSearchName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtSearchName.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblOr.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblOr.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblOr.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblOr.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblOr.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblOr.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblOr.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblOr.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblOr.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="flowLayoutPanel1.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flowLayoutPanel1.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flowLayoutPanel1.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="flowLayoutPanel1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="flowLayoutPanel1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="flowLayoutPanel1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="flowLayoutPanel1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="flowLayoutPanel1.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="flowLayoutPanel1.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="$this.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="$this.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="$this.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="$this.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="$this.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="$this.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="$this.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="$this.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="$this.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="errorProvider2.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -933,35 +751,26 @@
         /////////////////////////////////////////////////////////////////////////////w==
 </value>
   </data>
-  <data name="lblHead.Error" xml:space="preserve">
-    <value />
+  <data name="comboBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="lblHead.Error1" xml:space="preserve">
-    <value />
+  <data name="comboBox1.Items" xml:space="preserve">
+    <value>Tất cả</value>
   </data>
-  <data name="lblHead.Error2" xml:space="preserve">
-    <value />
+  <data name="comboBox1.Items1" xml:space="preserve">
+    <value>Thức ăn</value>
+  </data>
+  <data name="comboBox1.Items2" xml:space="preserve">
+    <value>Nước uống</value>
+  </data>
+  <data name="comboBox1.Items3" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="comboBox1.Text" xml:space="preserve">
+    <value>Chọn loại sản phẩm</value>
   </data>
   <data name="lblHead.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 18pt, style=Bold</value>
-  </data>
-  <data name="lblHead.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblHead.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblHead.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblHead.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblHead.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblHead.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblHead.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 36</value>
@@ -969,35 +778,8 @@
   <data name="lblHead.Text" xml:space="preserve">
     <value>Đặt món</value>
   </data>
-  <data name="lblNoneName.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblNoneName.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblNoneName.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblNoneName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10.2pt</value>
-  </data>
-  <data name="lblNoneName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblNoneName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblNoneName.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblNoneName.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblNoneName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblNoneName.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblNoneName.Location" type="System.Drawing.Point, System.Drawing">
     <value>27, 96</value>
@@ -1008,33 +790,6 @@
   <data name="lblNoneName.Text" xml:space="preserve">
     <value>Không cần điền</value>
   </data>
-  <data name="cboCustomerType.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cboCustomerType.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cboCustomerType.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cboCustomerType.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cboCustomerType.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cboCustomerType.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cboCustomerType.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cboCustomerType.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="cboCustomerType.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="cboCustomerType.Items" xml:space="preserve">
     <value>Vẵng lai</value>
   </data>
@@ -1044,146 +799,11 @@
   <data name="cboCustomerType.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 3</value>
   </data>
-  <data name="datBirthdate.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="datBirthdate.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="datBirthdate.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="datBirthdate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="datBirthdate.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="datBirthdate.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="datBirthdate.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="datBirthdate.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="datBirthdate.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtID.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtID.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtID.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtID.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtID.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtID.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtID.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtID.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtID.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblID.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblID.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblID.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblID.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblID.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblID.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblID.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblID.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblID.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="lblID.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 79</value>
   </data>
-  <data name="txtLastName.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtLastName.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtLastName.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtLastName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtLastName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtLastName.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtLastName.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtLastName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtLastName.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblLastName.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblLastName.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblLastName.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblLastName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
-  </data>
-  <data name="lblLastName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblLastName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblLastName.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblLastName.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblLastName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblLastName.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblLastName.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 128</value>
@@ -1194,170 +814,8 @@
   <data name="lblLastName.Text" xml:space="preserve">
     <value>Họ:</value>
   </data>
-  <data name="comboBox2.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBox2.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBox2.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBox2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="comboBox2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="comboBox2.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="comboBox2.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="comboBox2.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="comboBox2.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtEmail.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtEmail.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtEmail.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtEmail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtEmail.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtEmail.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtEmail.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtEmail.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtEmail.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtFirstName.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtFirstName.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtFirstName.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtFirstName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtFirstName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtFirstName.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtFirstName.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtFirstName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtFirstName.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtGiveCus.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtGiveCus.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtGiveCus.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtGiveCus.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtGiveCus.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtGiveCus.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtGiveCus.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtGiveCus.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtGiveCus.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtMoneyCus.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtMoneyCus.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtMoneyCus.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtMoneyCus.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtMoneyCus.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtMoneyCus.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtMoneyCus.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtMoneyCus.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtMoneyCus.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblExcessMon.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblExcessMon.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblExcessMon.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblExcessMon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblExcessMon.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblExcessMon.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblExcessMon.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblExcessMon.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblExcessMon.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblExcessMon.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblExcessMon.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 17</value>
@@ -1365,35 +823,8 @@
   <data name="lblExcessMon.Text" xml:space="preserve">
     <value>Thối khách:</value>
   </data>
-  <data name="lblMoneyCus.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblMoneyCus.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblMoneyCus.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblMoneyCus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblMoneyCus.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblMoneyCus.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblMoneyCus.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblMoneyCus.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblMoneyCus.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblMoneyCus.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblMoneyCus.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 17</value>
@@ -1401,170 +832,8 @@
   <data name="lblMoneyCus.Text" xml:space="preserve">
     <value>Tiền khách:</value>
   </data>
-  <data name="label1.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label1.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label1.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panel4.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel4.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel4.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel4.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel4.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel4.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel4.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panel4.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panel4.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtDiscount.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtDiscount.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtDiscount.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtDiscount.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtDiscount.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtDiscount.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtDiscount.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtDiscount.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtDiscount.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblGrandTotal.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblGrandTotal.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblGrandTotal.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblGrandTotal.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblGrandTotal.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblGrandTotal.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblGrandTotal.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblGrandTotal.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblGrandTotal.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblTotalSum.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblTotalSum.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblTotalSum.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblTotalSum.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTotalSum.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTotalSum.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTotalSum.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblTotalSum.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblTotalSum.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblGrand.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblGrand.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblGrand.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblGrand.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10.2pt, style=Bold</value>
-  </data>
-  <data name="lblGrand.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblGrand.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblGrand.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblGrand.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblGrand.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblGrand.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblGrand.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 21</value>
@@ -1572,68 +841,14 @@
   <data name="lblGrand.Text" xml:space="preserve">
     <value>Tổng tất cả</value>
   </data>
-  <data name="lblDiscount.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblDiscount.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblDiscount.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblDiscount.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10.2pt, style=Bold</value>
-  </data>
-  <data name="lblDiscount.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblDiscount.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblDiscount.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblDiscount.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblDiscount.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblDiscount.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblDiscount.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 21</value>
   </data>
-  <data name="lblTotal.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblTotal.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblTotal.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblTotal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10.2pt, style=Bold</value>
-  </data>
-  <data name="lblTotal.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTotal.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTotal.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTotal.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblTotal.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblTotal.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 21</value>
@@ -1641,68 +856,14 @@
   <data name="lblTotal.Text" xml:space="preserve">
     <value>Tổng:</value>
   </data>
-  <data name="panel3.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel3.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel3.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel3.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel3.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panel3.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panel3.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 47</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 189</value>
   </data>
-  <data name="lblTableNumber.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblTableNumber.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblTableNumber.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblTableNumber.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="lblTableNumber.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTableNumber.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTableNumber.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTableNumber.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblTableNumber.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblTableNumber.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblTableNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 17</value>
@@ -1710,35 +871,8 @@
   <data name="lblTableNumber.Text" xml:space="preserve">
     <value>Bàn trống:</value>
   </data>
-  <data name="lblTable.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblTable.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblTable.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblTable.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
-  </data>
-  <data name="lblTable.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTable.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTable.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblTable.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblTable.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblTable.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblTable.Location" type="System.Drawing.Point, System.Drawing">
     <value>213, 0</value>
@@ -1749,35 +883,8 @@
   <data name="lblTable.Text" xml:space="preserve">
     <value>Bàn</value>
   </data>
-  <data name="lblBirthday.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblBirthday.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblBirthday.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblBirthday.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
-  </data>
-  <data name="lblBirthday.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblBirthday.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblBirthday.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblBirthday.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblBirthday.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblBirthday.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblBirthday.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 157</value>
@@ -1788,35 +895,8 @@
   <data name="lblBirthday.Text" xml:space="preserve">
     <value>Ngày sinh:</value>
   </data>
-  <data name="lblEmail.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblEmail.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblEmail.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblEmail.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
-  </data>
-  <data name="lblEmail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblEmail.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblEmail.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblEmail.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblEmail.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblEmail.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblEmail.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 47</value>
@@ -1824,35 +904,8 @@
   <data name="lblEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 18</value>
   </data>
-  <data name="lblFirstName.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblFirstName.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblFirstName.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblFirstName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
-  </data>
-  <data name="lblFirstName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblFirstName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblFirstName.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblFirstName.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblFirstName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblFirstName.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblFirstName.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 103</value>
@@ -1863,35 +916,8 @@
   <data name="lblFirstName.Text" xml:space="preserve">
     <value>Tên:</value>
   </data>
-  <data name="lblCustomer.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblCustomer.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblCustomer.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblCustomer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 12pt, style=Bold</value>
-  </data>
-  <data name="lblCustomer.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblCustomer.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblCustomer.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="lblCustomer.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblCustomer.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblCustomer.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblCustomer.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 24</value>
@@ -1899,95 +925,14 @@
   <data name="lblCustomer.Text" xml:space="preserve">
     <value>Loại khách</value>
   </data>
-  <data name="panel2.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel2.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel2.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel2.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel2.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panel2.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panel2.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnCancel.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnCancel.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnCancel.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="btnCancel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10.2pt, style=Bold</value>
-  </data>
-  <data name="btnCancel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnCancel.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnCancel.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnCancel.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnCancel.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnCancel.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Hủy</value>
   </data>
-  <data name="btnSave.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnSave.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnSave.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10.2pt, style=Bold</value>
-  </data>
-  <data name="btnSave.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnSave.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnSave.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnSave.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnSave.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnSave.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
     <value>Lưu</value>
@@ -2000,59 +945,5 @@
   </data>
   <data name="clmTotal.HeaderText" xml:space="preserve">
     <value>Tổng giá</value>
-  </data>
-  <data name="dataGridView1.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="dataGridView1.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="dataGridView1.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="dataGridView1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="dataGridView1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="dataGridView1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="dataGridView1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="dataGridView1.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="dataGridView1.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panel1.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel1.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel1.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="panel1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panel1.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panel1.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
 </root>
