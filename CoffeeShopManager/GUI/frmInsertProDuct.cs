@@ -122,7 +122,7 @@ namespace GUI
 
                 if (resultIndex == 0)
                     cbxType.Text = "Food";
-                if (resultIndex == 1)
+                else if (resultIndex == 1)
                     cbxType.Text = "Drink";
                 else
                     cbxType.Text = "Others";

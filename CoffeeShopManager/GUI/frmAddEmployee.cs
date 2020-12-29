@@ -99,15 +99,15 @@ namespace GUI
                     int resultIndex = cbboxPosition.FindStringExact(cbboxPosition.Text);
                     if (resultIndex == 0)
                         cbboxPosition.Text = "Waiter";
-                    if (resultIndex == 1)
+                    else if (resultIndex == 1)
                         cbboxPosition.Text = "Barista";
-                    if (resultIndex == 2)
+                    else if (resultIndex == 2)
                         cbboxPosition.Text = "Cook";
-                    if (resultIndex == 3)
+                    else if (resultIndex == 3)
                         cbboxPosition.Text = "Utility";
-                    if (resultIndex == 4)
+                    else if (resultIndex == 4)
                         cbboxPosition.Text = "Janitor";
-                    if (resultIndex == 5)
+                    else if (resultIndex == 5)
                         cbboxPosition.Text = "Security";
                     else
                         cbboxPosition.Text = "Others";

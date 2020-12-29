@@ -149,15 +149,15 @@ namespace GUI
             var resultIndex = cboPosition.FindStringExact(cboPosition.Text);
             if (resultIndex == 0)
                 cboPosition.Text = "Waiter";
-            if (resultIndex == 1)
+            else if (resultIndex == 1)
                 cboPosition.Text = "Barista";
-            if (resultIndex == 2)
+            else if (resultIndex == 2)
                 cboPosition.Text = "Cook";
-            if (resultIndex == 3)
+            else if (resultIndex == 3)
                 cboPosition.Text = "Utility";
-            if (resultIndex == 4)
+            else if (resultIndex == 4)
                 cboPosition.Text = "Janitor";
-            if (resultIndex == 5)
+            else if (resultIndex == 5)
                 cboPosition.Text = "Security";
             else
                 cboPosition.Text = "Others";
