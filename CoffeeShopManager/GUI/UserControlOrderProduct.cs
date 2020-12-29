@@ -422,7 +422,7 @@ namespace GUI
                     dtoReceipt.Employee = dtoEmp;
                     dtoReceipt.DateOfPayMent = now;
                     int mon = lblGrandTotal.Text.IndexOf("$");
-                    if (decimal.TryParse(txtDiscount.Text, out decimal discount))
+                    if (decimal.TryParse(txtDiscount.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture, out decimal discount))
                     {
                         if(discount>=0 && discount<=100)
                             dtoReceipt.Discount = discount / 100;
