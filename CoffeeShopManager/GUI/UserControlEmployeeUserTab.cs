@@ -78,65 +78,76 @@ namespace GUI
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtFirstName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text) ||
-                    string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                    string.IsNullOrWhiteSpace(txtUsername.Text))
-                {
-                    if (btnBrowse.Text == "Tìm ảnh")
-                    throw new Exception("Vui lòng nhập đầy đủ thông tin");
-                    else throw new Exception("Please fill all info fields.");
-                }
-                else if (txtUsername.Text != dtoEmp.Account.Username)
-                {
-                    if (!busUser.CheckUsername(txtUsername.Text))
-                    {
-                        if (btnBrowse.Text == "Tìm ảnh")
-                            throw new InvalidOperationException("Tên tài khoản đã tồn tại, hãy chọn tên tài khoản khác.");
-                        else throw new InvalidOperationException("Username already exists, please choose a different username.");
-                    }
-                }
-
-                dtoEmp.Firstname = txtFirstName.Text;
-                dtoEmp.Lastname = txtLastName.Text;
-                dtoEmp.Address = txtAddress.Text;
-                if ((datDateOfJoin.Value.Year - datBirthdate.Value.Year) >= 18 && datBirthdate.Value.Year <= 2078 && datDateOfJoin.Value.Year <= 2078 && datBirthdate.Value.Year >= 1910 && datDateOfJoin.Value.Year >= 1910)
-                {
-                    dtoEmp.DateOfJoin = datDateOfJoin.Value;         
-                    dtoEmp.Birthdate = datBirthdate.Value;
-                }
-                else
-                {
-                    if (btnBrowse.Text == "Tìm ảnh")
-                        MessageBox.Show("Sai định dạng ngày", "Ngày vào làm, ngày sinh nhật", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    else MessageBox.Show("Wrong format date", "Date of join, birthdate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (picEmpInfo.Image != null)
-                    dtoEmp.Image = ImageHelper.ImageToByteArray(picEmpInfo.Image);
-                dtoEmp.Phone = txtPhone.Text;
-                if (radMale.Checked == true)
-                {
-                    if (radMale.Text != "Nam")
-                        dtoEmp.Gender = radMale.Text;
-                    else
-                        dtoEmp.Gender = "Male";
-
-                }
-                else
-                {
-                    if (radFemale.Text != "Nữ")
-                        dtoEmp.Gender = radMale.Text;
-                    else
-                        dtoEmp.Gender = "Female";
-                }
-                dtoEmp.Email = txtEmail.Text;
-                dtoEmp.Account.Username = txtUsername.Text;
                 DialogResult ret;
                 if (btnBrowse.Text == "Tìm ảnh")
                     ret = MessageBox.Show("Bạn có muốn lưu thay đổi không?", "Lưu thay đổi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 else ret = MessageBox.Show("Are you sure you want to save changes?", "Save changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (ret == DialogResult.Yes)
                 {
+                    if (string.IsNullOrWhiteSpace(txtFirstName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text) ||
+                        string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                        string.IsNullOrWhiteSpace(txtUsername.Text))
+                    {
+                        if (btnBrowse.Text == "Tìm ảnh")
+                            throw new Exception("Vui lòng nhập đầy đủ thông tin");
+                        else throw new Exception("Please fill all info fields.");
+                    }
+                    else if (txtUsername.Text != dtoEmp.Account.Username)
+                    {
+                        if (!busUser.CheckUsername(txtUsername.Text))
+                        {
+                            if (btnBrowse.Text == "Tìm ảnh")
+                                throw new InvalidOperationException("Tên tài khoản đã tồn tại, hãy chọn tên tài khoản khác.");
+                            else throw new InvalidOperationException("Username already exists, please choose a different username.");
+                        }
+                    }
+
+                    dtoEmp.Firstname = txtFirstName.Text;
+                    dtoEmp.Lastname = txtLastName.Text;
+                    dtoEmp.Address = txtAddress.Text;
+                    if ((datDateOfJoin.Value.Year - datBirthdate.Value.Year) >= 18 && datBirthdate.Value.Year <= 2078 && datDateOfJoin.Value.Year <= 2078 && datBirthdate.Value.Year >= 1910 && datDateOfJoin.Value.Year >= 1910)
+                    {
+                        dtoEmp.DateOfJoin = datDateOfJoin.Value;
+                        dtoEmp.Birthdate = datBirthdate.Value;
+                    }
+                    else
+                    {
+                        if (btnBrowse.Text == "Tìm ảnh")
+                            MessageBox.Show("Sai định dạng ngày", "Ngày vào làm, ngày sinh nhật", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        else MessageBox.Show("Wrong format date", "Date of join, birthdate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (picEmpInfo.Image != null)
+                        dtoEmp.Image = ImageHelper.ImageToByteArray(picEmpInfo.Image);
+                    if (!long.TryParse(txtPhone.Text, out long phone))
+                    {
+                        if (btnBrowse.Text == "Browse")
+                        {
+                            MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        return;
+                    }
+                    if (radMale.Checked == true)
+                    {
+                        if (radMale.Text != "Nam")
+                            dtoEmp.Gender = radMale.Text;
+                        else
+                            dtoEmp.Gender = "Male";
+
+                    }
+                    else
+                    {
+                        if (radFemale.Text != "Nữ")
+                            dtoEmp.Gender = radMale.Text;
+                        else
+                            dtoEmp.Gender = "Female";
+                    }
+                    dtoEmp.Email = txtEmail.Text;
+                    dtoEmp.Account.Username = txtUsername.Text;
                     busEmp.EditEmployeeAndAccount(dtoEmp);
                     frmEmployee.dtoEmp = dtoEmp;
                     DisableTextBox();
@@ -144,8 +155,7 @@ namespace GUI
                 }
                 else if (ret == DialogResult.No)
                 {
-                    DisableTextBox();
-                    btnSaveChange.Enabled = false;
+                    Reload();
                 }
             }
             catch (FormatException ex)
