@@ -1332,11 +1332,23 @@
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>973, 580</value>
   </data>
+  <data name="&gt;&gt;clmProduct.Name" xml:space="preserve">
+    <value>clmProduct</value>
+  </data>
+  <data name="&gt;&gt;clmProduct.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;clmDown.Name" xml:space="preserve">
     <value>clmDown</value>
   </data>
   <data name="&gt;&gt;clmDown.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmQuantity.Name" xml:space="preserve">
+    <value>clmQuantity</value>
+  </data>
+  <data name="&gt;&gt;clmQuantity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;clmUp.Name" xml:space="preserve">
     <value>clmUp</value>
@@ -1344,11 +1356,23 @@
   <data name="&gt;&gt;clmUp.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;clmTotal.Name" xml:space="preserve">
+    <value>clmTotal</value>
+  </data>
+  <data name="&gt;&gt;clmTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;clmDelete.Name" xml:space="preserve">
     <value>clmDelete</value>
   </data>
   <data name="&gt;&gt;clmDelete.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmID.Name" xml:space="preserve">
+    <value>clmID</value>
+  </data>
+  <data name="&gt;&gt;clmID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
     <value>errorProvider1</value>
@@ -1390,30 +1414,6 @@
     <value>dataGridViewTextBoxColumn4</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmProduct.Name" xml:space="preserve">
-    <value>clmProduct</value>
-  </data>
-  <data name="&gt;&gt;clmProduct.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmQuantity.Name" xml:space="preserve">
-    <value>clmQuantity</value>
-  </data>
-  <data name="&gt;&gt;clmQuantity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmTotal.Name" xml:space="preserve">
-    <value>clmTotal</value>
-  </data>
-  <data name="&gt;&gt;clmTotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmID.Name" xml:space="preserve">
-    <value>clmID</value>
-  </data>
-  <data name="&gt;&gt;clmID.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
