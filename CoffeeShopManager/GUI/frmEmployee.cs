@@ -220,7 +220,7 @@ namespace GUI
                 ResetDCM();
                 
             }
-            else if (comboBox1.Text == "Vietnamese")
+            else if (comboBox1.Text == "Tiếng Việt")
             {
                 var changeLanguage = new ChangeLanguage();
                 changeLanguage.UpdateConfig("language", "vi-VN");

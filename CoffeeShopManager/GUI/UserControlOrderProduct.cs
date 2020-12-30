@@ -262,6 +262,8 @@ namespace GUI
                         MessageBox.Show("Haven't order yet", "Order", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+
                 if (cboCustomerType.SelectedIndex == 0)
                 {
                     if (busCus.GetNullCustomer(shopID) == null)
@@ -285,6 +287,7 @@ namespace GUI
                         {
                             checkemail = 1;
                         }
+
                         if (string.IsNullOrEmpty(txtLastName.Text) || string.IsNullOrEmpty(txtFirstName.Text) || string.IsNullOrEmpty(txtEmail.Text))
                         {
                             if(lblTable.Text=="Bàn")
@@ -293,16 +296,20 @@ namespace GUI
                                 MessageBox.Show("Write profile for Customer", "Customer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+
                         if (!CheckBirthdate()) return;
                     }
+
                     if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
                     {
                         check = 0;
                     }
+
                     if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
                     {
                         check = 1;
                     }
+
                     if (dataGridView1.Rows.Count <= 1)
                     {
                         if (lblTable.Text == "Bàn")
@@ -311,7 +318,8 @@ namespace GUI
                             MessageBox.Show("Haven't order yet", "Order", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    if (check == 0 && cboCustomerType.SelectedIndex == 1  && checkemail == 1 && CheckBirthdate())
+
+                    if (check == 0 && cboCustomerType.SelectedIndex == 1  && checkemail == 1 && CheckBirthdate() && checkmonecus == 1)
                     {
                         DateTime bdate = new DateTime();
                         dtoCus.Email = txtEmail.Text;
@@ -323,6 +331,8 @@ namespace GUI
                         dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
                     }
                 }
+
+
                 if (checkmonecus == 1)
                 {
                     txtMoneyCus.Text = txtMoneyCus.Text.Replace(',', '.');
@@ -354,24 +364,24 @@ namespace GUI
                     dtoDetail.Quantity = Int32.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
                     dtoDetail.TotalPrice = decimal.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                     dtoReceipt.Items.Add(dtoDetail);
+                    }
                 }
-            }
-            else
-            {
+                else
+                {
                     if (lblTable.Text == "Bàn")
                         MessageBox.Show("Khách đưa thiếu tiền", "Tiền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     else
                         MessageBox.Show("Don't enough money to pay", "Money", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-            }
-            DTO_Table dtoTab = new DTO_Table();
-            if (!string.IsNullOrWhiteSpace(comboBox2.Text) && comboBox2.SelectedIndex != 0)
-            {
-                dtoTab.Id = Int32.Parse(comboBox2.Text);
-                dtoTab.Shop.ID = shopID;
-                busReceipt.InsertSittingReceipt(dtoReceipt, dtoTab);
-                dtoTab.Status = "Occupied";
-                busTable.Update(dtoTab);
+                }
+                DTO_Table dtoTab = new DTO_Table();
+                if (!string.IsNullOrWhiteSpace(comboBox2.Text) && comboBox2.SelectedIndex != 0)
+                {
+                    dtoTab.Id = Int32.Parse(comboBox2.Text);
+                    dtoTab.Shop.ID = shopID;
+                    busReceipt.InsertSittingReceipt(dtoReceipt, dtoTab);
+                    dtoTab.Status = "Occupied";
+                    busTable.Update(dtoTab);
 
                 }
                 else
@@ -422,6 +432,7 @@ namespace GUI
             ResetCus();
             txtGiveCus.Text = "";
             txtMoneyCus.Text = "";
+            txtDiscount.Text = string.Empty;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

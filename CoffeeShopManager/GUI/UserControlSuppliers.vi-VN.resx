@@ -143,6 +143,9 @@
   <data name="cboSearch.Items3" xml:space="preserve">
     <value>SĐT</value>
   </data>
+  <data name="cboSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>475, 77</value>
+  </data>
   <data name="cboSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 24</value>
   </data>

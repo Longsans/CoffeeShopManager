@@ -173,9 +173,6 @@
   <data name="datSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 23</value>
   </data>
-  <data name="ctxRightClick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 52</value>
-  </data>
   <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 24</value>
   </data>
@@ -184,6 +181,9 @@
   </data>
   <data name="printToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 24</value>
+  </data>
+  <data name="ctxRightClick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 52</value>
   </data>
   <data name="lblResetFilters.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt, style=Underline</value>
@@ -536,8 +536,5 @@
   </data>
   <data name="btnSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>808, 74</value>
   </data>
 </root>

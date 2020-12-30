@@ -125,9 +125,6 @@
   <data name="grdReceipts.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 154</value>
   </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>899, 574</value>
-  </data>
   <data name="&gt;&gt;lblReceipts.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -175,97 +172,6 @@
   </data>
   <data name="&gt;&gt;lblResetFilters.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="datSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
-  </data>
-  <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="&gt;&gt;printToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnPrint.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnView.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="btnSearch.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="&gt;&gt;btnPrint.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;viewToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;datSearch.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnPrint.Name" xml:space="preserve">
-    <value>btnPrint</value>
-  </data>
-  <data name="&gt;&gt;btnPrint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblReceipts.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 22.2pt</value>
-  </data>
-  <data name="&gt;&gt;ctxRightClick.Name" xml:space="preserve">
-    <value>ctxRightClick</value>
-  </data>
-  <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;printToolStripMenuItem.Name" xml:space="preserve">
-    <value>printToolStripMenuItem</value>
-  </data>
-  <data name="lblResetFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 19</value>
-  </data>
-  <data name="&gt;&gt;cboSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ctxRightClick.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblReceipts.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;btnView.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>801, 74</value>
-  </data>
-  <data name="lblReceipts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 45</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
-    <value>btnSearch</value>
-  </data>
-  <data name="btnView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 34</value>
-  </data>
-  <data name="btnPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 34</value>
-  </data>
-  <data name="&gt;&gt;lblResetFilters.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>View</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="btnSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -589,6 +495,91 @@
         13D/fZHZIAAAKDcbBAAAZbbTwP8Ph1uqgxUIdmAAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;printToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnPrint.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnView.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;grdReceipts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrint.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cboSearch.Items" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;viewToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;datSearch.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnPrint.Name" xml:space="preserve">
+    <value>btnPrint</value>
+  </data>
+  <data name="printToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 24</value>
+  </data>
+  <data name="lblReceipts.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 22.2pt</value>
+  </data>
+  <data name="&gt;&gt;ctxRightClick.Name" xml:space="preserve">
+    <value>ctxRightClick</value>
+  </data>
+  <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 23</value>
+  </data>
+  <data name="&gt;&gt;ctxRightClick.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblReceipts.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;btnView.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>801, 74</value>
+  </data>
+  <data name="lblReceipts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 45</value>
+  </data>
+  <data name="btnView.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 34</value>
+  </data>
+  <data name="btnPrint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 34</value>
+  </data>
+  <data name="&gt;&gt;lblResetFilters.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="&gt;&gt;datSearch.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="cboSearch.Items1" xml:space="preserve">
     <value>Customer ID</value>
   </data>
@@ -616,17 +607,17 @@
   <data name="cboSearch.Items3" xml:space="preserve">
     <value>Date of Payment</value>
   </data>
-  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 28</value>
-  </data>
   <data name="datSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>623, 77</value>
   </data>
+  <data name="datSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 22</value>
+  </data>
+  <data name="btnPrint.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
   <data name="&gt;&gt;btnPrint.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="printToolStripMenuItem.Text" xml:space="preserve">
-    <value>Print</value>
   </data>
   <data name="lblReceipts.Location" type="System.Drawing.Point, System.Drawing">
     <value>65, 56</value>
@@ -634,11 +625,14 @@
   <data name="&gt;&gt;datSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;datSearch.Parent" xml:space="preserve">
+  <data name="&gt;&gt;grdReceipts.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnPrint.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+  <data name="printToolStripMenuItem.Text" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="grdReceipts.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
@@ -655,17 +649,14 @@
   <data name="lblReceipts.Text" xml:space="preserve">
     <value>Receipts</value>
   </data>
-  <data name="&gt;&gt;grdReceipts.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>899, 574</value>
   </data>
   <data name="&gt;&gt;cboSearch.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="cboSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>465, 75</value>
-  </data>
-  <data name="lblResetFilters.Text" xml:space="preserve">
-    <value>Reset Filters</value>
   </data>
   <data name="lblResetFilters.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -679,6 +670,12 @@
   <data name="&gt;&gt;lblResetFilters.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
+    <value>txtSearch</value>
+  </data>
+  <data name="&gt;&gt;lblResetFilters.Name" xml:space="preserve">
+    <value>lblResetFilters</value>
+  </data>
   <data name="lblResetFilters.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
   </data>
@@ -688,11 +685,14 @@
   <data name="lblReceipts.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 23</value>
+  <data name="&gt;&gt;cboSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblReceipts.Name" xml:space="preserve">
     <value>lblReceipts</value>
+  </data>
+  <data name="txtSearch.Text" xml:space="preserve">
+    <value>Search...</value>
   </data>
   <data name="&gt;&gt;lblReceipts.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -700,17 +700,17 @@
   <data name="cboSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 25</value>
   </data>
-  <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
-    <value>txtSearch</value>
+  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
+    <value>btnSearch</value>
   </data>
-  <data name="&gt;&gt;lblResetFilters.Name" xml:space="preserve">
-    <value>lblResetFilters</value>
+  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 28</value>
   </data>
-  <data name="txtSearch.Text" xml:space="preserve">
-    <value>Search...</value>
+  <data name="lblResetFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 19</value>
   </data>
-  <data name="btnView.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;printToolStripMenuItem.Name" xml:space="preserve">
+    <value>printToolStripMenuItem</value>
   </data>
   <data name="btnSearch.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -721,11 +721,11 @@
   <data name="&gt;&gt;grdReceipts.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;grdReceipts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnPrint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cboSearch.Items" xml:space="preserve">
-    <value>ID</value>
+  <data name="lblResetFilters.Text" xml:space="preserve">
+    <value>Reset Filters</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -739,8 +739,8 @@
   <data name="ctxRightClick.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 52</value>
   </data>
-  <data name="printToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 24</value>
+  <data name="btnSearch.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
   </data>
   <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 24</value>

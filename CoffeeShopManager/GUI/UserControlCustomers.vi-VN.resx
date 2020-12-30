@@ -152,6 +152,9 @@
   <data name="cboSearch.Items1" xml:space="preserve">
     <value>Tên</value>
   </data>
+  <data name="cboSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>529, 77</value>
+  </data>
   <data name="cboSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 24</value>
   </data>

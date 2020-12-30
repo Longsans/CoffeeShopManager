@@ -228,9 +228,6 @@
   <data name="comboBox1.Items3" xml:space="preserve">
     <value>Khác</value>
   </data>
-  <data name="comboBox1.Text" xml:space="preserve">
-    <value>Chọn loại sản phẩm</value>
-  </data>
   <data name="txtSearchName.Location" type="System.Drawing.Point, System.Drawing">
     <value>758, 15</value>
   </data>
@@ -812,13 +809,13 @@
     <value>120, 3</value>
   </data>
   <data name="lblID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 79</value>
+    <value>5, 72</value>
   </data>
   <data name="lblLastName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
   </data>
   <data name="lblLastName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 128</value>
+    <value>5, 127</value>
   </data>
   <data name="lblLastName.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 18</value>
@@ -828,6 +825,9 @@
   </data>
   <data name="comboBox2.Items" xml:space="preserve">
     <value>Không</value>
+  </data>
+  <data name="comboBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 24</value>
   </data>
   <data name="lblExcessMon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
@@ -840,10 +840,6 @@
   </data>
   <data name="lblMoneyCus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblMoneyCus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="lblMoneyCus.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 17</value>
@@ -921,7 +917,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="lblEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
+    <value>5, 44</value>
   </data>
   <data name="lblEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 18</value>
@@ -930,7 +926,7 @@
     <value>Tahoma, 9pt</value>
   </data>
   <data name="lblFirstName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 103</value>
+    <value>5, 100</value>
   </data>
   <data name="lblFirstName.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 18</value>
