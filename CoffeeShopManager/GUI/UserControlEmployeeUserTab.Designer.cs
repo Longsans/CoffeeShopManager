@@ -72,6 +72,7 @@
             // datBirthdate
             // 
             resources.ApplyResources(this.datBirthdate, "datBirthdate");
+            this.datBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datBirthdate.Name = "datBirthdate";
             // 
             // txtUsername
@@ -86,9 +87,9 @@
             // 
             // btnBrowse
             // 
-            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.FlatAppearance.BorderSize = 0;
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.UseVisualStyleBackColor = false;
@@ -110,9 +111,9 @@
             // 
             // btnSaveChange
             // 
-            resources.ApplyResources(this.btnSaveChange, "btnSaveChange");
             this.btnSaveChange.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnSaveChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnSaveChange, "btnSaveChange");
             this.btnSaveChange.FlatAppearance.BorderSize = 0;
             this.btnSaveChange.Name = "btnSaveChange";
             this.btnSaveChange.UseVisualStyleBackColor = false;
@@ -120,10 +121,10 @@
             // 
             // btnChangePassword
             // 
-            resources.ApplyResources(this.btnChangePassword, "btnChangePassword");
             this.btnChangePassword.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangePassword.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnChangePassword, "btnChangePassword");
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
@@ -146,8 +147,8 @@
             // 
             // txtPosition
             // 
-            resources.ApplyResources(this.txtPosition, "txtPosition");
             this.txtPosition.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtPosition, "txtPosition");
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.ReadOnly = true;
             // 
@@ -163,8 +164,8 @@
             // 
             // txtID
             // 
-            resources.ApplyResources(this.txtID, "txtID");
             this.txtID.Cursor = System.Windows.Forms.Cursors.No;
+            resources.ApplyResources(this.txtID, "txtID");
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             // 
@@ -216,7 +217,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // label9
             // 
@@ -246,6 +246,7 @@
             // datDateOfJoin
             // 
             resources.ApplyResources(this.datDateOfJoin, "datDateOfJoin");
+            this.datDateOfJoin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datDateOfJoin.Name = "datDateOfJoin";
             // 
             // txtAddress
@@ -260,10 +261,10 @@
             // 
             // btnEdit
             // 
-            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.ForeColor = System.Drawing.Color.DarkRed;
             this.btnEdit.Image = global::GUI.Properties.Resources.edit_30px;
             this.btnEdit.Name = "btnEdit";
@@ -272,14 +273,13 @@
             // 
             // picEmpInfo
             // 
-            resources.ApplyResources(this.picEmpInfo, "picEmpInfo");
             this.picEmpInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.picEmpInfo, "picEmpInfo");
             this.picEmpInfo.Name = "picEmpInfo";
             this.picEmpInfo.TabStop = false;
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lblEmpInfo);
             this.panel1.Controls.Add(this.txtAddress);
@@ -312,6 +312,7 @@
             this.panel1.Controls.Add(this.txtPhone);
             this.panel1.Controls.Add(this.txtManagerID);
             this.panel1.Controls.Add(this.txtEmail);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // UserControlEmployeeUserTab

@@ -61,6 +61,7 @@
             // 
             // pnlTitleBar
             // 
+            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(138)))), ((int)(((byte)(93)))));
             this.pnlTitleBar.Controls.Add(this.comboBox1);
             this.pnlTitleBar.Controls.Add(this.btnHome);
@@ -68,7 +69,6 @@
             this.pnlTitleBar.Controls.Add(this.btnMinimize);
             this.pnlTitleBar.Controls.Add(this.btnMaximize);
             this.pnlTitleBar.Controls.Add(this.btnCancel);
-            resources.ApplyResources(this.pnlTitleBar, "pnlTitleBar");
             this.pnlTitleBar.Name = "pnlTitleBar";
             this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.pnlTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
@@ -76,25 +76,25 @@
             // 
             // comboBox1
             // 
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             resources.GetString("comboBox1.Items")});
-            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnHome
             // 
-            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.btnHome, "btnHome");
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.Name = "btnHome";
             this.btnHome.UseVisualStyleBackColor = true;
             // 
             // btnMenu
             // 
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.btnMenu, "btnMenu");
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.ImageList = this.imgListMenuButton;
             this.btnMenu.Name = "btnMenu";
@@ -151,26 +151,26 @@
             // 
             // pnlMenu
             // 
+            resources.ApplyResources(this.pnlMenu, "pnlMenu");
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(239)))), ((int)(((byte)(212)))));
             this.pnlMenu.Controls.Add(this.pnlChangeTab);
             this.pnlMenu.Controls.Add(this.btnUser);
             this.pnlMenu.Controls.Add(this.btnManager);
             this.pnlMenu.Controls.Add(this.btnTables);
             this.pnlMenu.Controls.Add(this.btnReceipts);
-            resources.ApplyResources(this.pnlMenu, "pnlMenu");
             this.pnlMenu.Name = "pnlMenu";
             // 
             // pnlChangeTab
             // 
-            this.pnlChangeTab.BackColor = System.Drawing.Color.DarkSlateGray;
             resources.ApplyResources(this.pnlChangeTab, "pnlChangeTab");
+            this.pnlChangeTab.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pnlChangeTab.Name = "pnlChangeTab";
             // 
             // btnUser
             // 
+            resources.ApplyResources(this.btnUser, "btnUser");
             this.btnUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUser.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnUser, "btnUser");
             this.btnUser.ImageList = this.imgListMenuButton;
             this.btnUser.Name = "btnUser";
             this.btnUser.UseVisualStyleBackColor = true;
@@ -178,9 +178,9 @@
             // 
             // btnManager
             // 
+            resources.ApplyResources(this.btnManager, "btnManager");
             this.btnManager.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManager.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnManager, "btnManager");
             this.btnManager.ImageList = this.imgListMenuButton;
             this.btnManager.Name = "btnManager";
             this.btnManager.UseVisualStyleBackColor = true;
@@ -188,9 +188,9 @@
             // 
             // btnTables
             // 
+            resources.ApplyResources(this.btnTables, "btnTables");
             this.btnTables.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTables.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnTables, "btnTables");
             this.btnTables.ImageList = this.imgListMenuButton;
             this.btnTables.Name = "btnTables";
             this.btnTables.UseVisualStyleBackColor = true;
@@ -198,9 +198,9 @@
             // 
             // btnReceipts
             // 
+            resources.ApplyResources(this.btnReceipts, "btnReceipts");
             this.btnReceipts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReceipts.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnReceipts, "btnReceipts");
             this.btnReceipts.ImageList = this.imgListMenuButton;
             this.btnReceipts.Name = "btnReceipts";
             this.btnReceipts.UseVisualStyleBackColor = true;
@@ -208,10 +208,10 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.lblWelcome);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnLogout
@@ -230,23 +230,23 @@
             // 
             // pnlShow
             // 
+            resources.ApplyResources(this.pnlShow, "pnlShow");
             this.pnlShow.Controls.Add(this.userControlOrderProduct2);
             this.pnlShow.Controls.Add(this.ucTable);
             this.pnlShow.Controls.Add(this.ucManagerInfo);
             this.pnlShow.Controls.Add(this.ucUserInfo);
-            resources.ApplyResources(this.pnlShow, "pnlShow");
             this.pnlShow.Name = "pnlShow";
             // 
             // userControlOrderProduct2
             // 
-            this.userControlOrderProduct2.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.userControlOrderProduct2, "userControlOrderProduct2");
+            this.userControlOrderProduct2.BackColor = System.Drawing.Color.White;
             this.userControlOrderProduct2.Name = "userControlOrderProduct2";
             // 
             // ucTable
             // 
-            this.ucTable.BackColor = System.Drawing.Color.WhiteSmoke;
             resources.ApplyResources(this.ucTable, "ucTable");
+            this.ucTable.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ucTable.Name = "ucTable";
             // 
             // ucManagerInfo
