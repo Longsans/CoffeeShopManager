@@ -25,6 +25,7 @@ namespace GUI
         private bool dragging = false;
         Point startPoint = new Point(0, 0);
         System.Windows.Forms.Timer t1 = new System.Windows.Forms.Timer();
+        System.Windows.Forms.Timer tReload = new System.Windows.Forms.Timer();
         public frmEmployee()
         {
             InitializeComponent();
@@ -33,6 +34,17 @@ namespace GUI
         {
             _frmLogin = fLogin;
             InitializeComponent();
+            tReload.Tick += TReload_Tick;
+            tReload.Interval = 1000;
+            tReload.Start();
+            t1.Interval = 1000;
+            t1.Start();
+            t1.Tick += Timer_Click;
+        }
+
+        private void TReload_Tick(object sender, EventArgs e)
+        {
+            LoadWelcomeLabel();
         }
 
         private void btnReceipts_Click(object sender, EventArgs e)
@@ -134,14 +146,18 @@ namespace GUI
             ucManagerInfo.BringToFront();
             ucManagerInfo.Show();
         }
-
+        private void LoadWelcomeLabel()
+        {
+            if (btnLogout.Text == "Đăng xuất") lblWelcome.Text = "Xin chào, " + dtoEmp.Firstname;
+            else lblWelcome.Text = "Welcome, " + dtoEmp.Firstname;
+        }
         private void frmEmployee_Load(object sender, EventArgs e)
         {
            
             dtoEmp = busEmp.GetEmployeeInfoByUsername(_frmLogin.GetUsername());
             dtoEmp.Account = busEmp.GetUserInfoByUsername(_frmLogin.GetUsername());
             dtoShop = dtoEmp.Shop;
-            lblWelcome.Text = "Welcome, " + dtoEmp.Firstname;
+            LoadWelcomeLabel();
             ucTable.SetShopID(dtoShop.ID);
             ucManagerInfo.SetManager(busMan.GetById(dtoEmp.Manager.Id, dtoShop.ID));
             ucManagerInfo.SetShop(busShop.GetShopById(dtoShop.ID));
@@ -150,9 +166,6 @@ namespace GUI
             userControlOrderProduct2.SetShopID(dtoShop.ID);
             userControlOrderProduct2.dtoShop = busShop.GetShopById(dtoEmp.Shop.ID);
             ucTable.SetEmployee(dtoEmp);
-            t1.Interval = 1000;
-            t1.Start();
-            t1.Tick += Timer_Click;
         }
         public void Timer_Click(object sender, EventArgs e)
         {
