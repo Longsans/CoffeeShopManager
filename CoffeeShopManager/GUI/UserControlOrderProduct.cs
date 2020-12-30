@@ -41,7 +41,7 @@ namespace GUI
         public DTO_Shop dtoShop = new DTO_Shop();
         public DTO_Employee dtoEmp = new DTO_Employee();
         int shopID;
-        int checkname, checkemail, checkbirth, checkmonecus;
+        int checkemail, checkbirth, checkmonecus;
         public bool isOrderAtTable = false;
         public bool closeFormOrderAtTable = false;
         public UserControlOrderProduct()
@@ -56,16 +56,8 @@ namespace GUI
             a = busPro.GetAllFood(shopID);
             b = busPro.GetAllDrinks(shopID);
             c = busPro.GetAllOtherProducts(shopID);
-            lsTable = busTable.GetAvailableTables(shopID);
-            for (int i = 0; i < lsTable.Count; i++)
-            {
-                comboBox2.Items.Add(lsTable[i].Id.ToString());
-            }
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            ReloadTable();
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //  GetData(busPro.GetAllProducts(dtoShop.ID));
-            //  dataGridView1.Columns["Image"].Visible = false;
         }
         public int cur = 0;
         public bool IsNumber(string pValue)
@@ -88,23 +80,17 @@ namespace GUI
                 namelb = new Label();
                 Label prlabel = new Label();
                 dto_pro = busPro.GetByIdNotDeleted((int)row["Id"], shopID);
-
                 pricelb.Text = row["Price"].ToString() + "$";
                 pricelb.BackColor = Color.FromArgb(255, 121, 121);
                 pricelb.Width = 20;
                 pricelb.TextAlign = ContentAlignment.MiddleRight;
                 pricelb.Dock = DockStyle.Bottom;
                 pic.BorderStyle = BorderStyle.FixedSingle;
-
-
                 namelb.Text = row["Name"].ToString();
                 namelb.BackColor = Color.FromArgb(46, 134, 222);
                 namelb.TextAlign = ContentAlignment.MiddleLeft;
                 namelb.Dock = DockStyle.Top;
-
                 namelb.Tag = row["Name"].ToString();
-
-
                 bt = new Button();
                 bt.Tag = row["Name"].ToString() + "/" + row["Price"].ToString() + ""; ;
                 bt.Name = row["Id"].ToString();
@@ -128,13 +114,10 @@ namespace GUI
             string s = ((Button)sender).Tag.ToString();
             string[] arrListStr = s.Split('/');
             Image image = ((Button)sender).Image;
-
-
             foreach (var a in strSave)
             {
                 if (arrListStr[0] == a)
                 {
-                    // bt.Image = DenTrang(bt.Image);
                     ((Button)sender).Text = "X";
                     if(lblTable.Text=="Bàn")
                         MessageBox.Show("Bạn đã click vào sản phẩm từ trước","Bàn",MessageBoxButtons.OK,MessageBoxIcon.Warning);
@@ -144,58 +127,19 @@ namespace GUI
                     return;
                 }
             }
-
-
             r1 = (DataGridViewRow)dataGridView1.Rows[0].Clone();
-            //  MessageBox.Show(arrListStr[0] + "-0-" + arrListStr[1]);
             r1.Cells[0].Value = arrListStr[0].ToString();
             r1.Cells[2].Value = "1";
             r1.Cells[4].Value = arrListStr[1].ToString();
             r1.Cells[6].Value = ((Button)sender).Name.ToString();
             dataGridView1.Rows.Add(r1);
             strSave.Add(arrListStr[0]);
-
-
         }
-
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void UserControlOrderProduct_Load(object sender, EventArgs e)
         {
-            //  Reload();
+            cboCustomerType.SelectedIndex = 0;
             datBirthdate.Format = DateTimePickerFormat.Custom;
             datBirthdate.CustomFormat = "dd/MM/yyyy";
-            if (dtoCus.Birthdate >= datBirthdate.MinDate && dtoCus.Birthdate <= datBirthdate.MaxDate)
-            {
-                datBirthdate.Value = dtoCus.Birthdate;
-            }
-            else
-            {
-                datBirthdate.CustomFormat = " ";
-            }
             if (lblHead.Text == "Đặt món")
             {
                 comboBox1.Text = "Chọn loại sản phẩm";
@@ -225,35 +169,6 @@ namespace GUI
             txtEmail.Text = "";
             txtID.Text = "";
             datBirthdate.Value = DateTime.Now;
-            // datBirthdate.CustomFormat = " ";
-
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*int resultIndex = -1;
-            resultIndex = comboBox1.FindStringExact(comboBox1.Text);
-            if (resultIndex == 1)
-            {
-                flowLayoutPanel1.Controls.Clear();
-                GetData(a);
-            }
-            else if (resultIndex == 2)
-            {
-                flowLayoutPanel1.Controls.Clear();
-                GetData(b);
-            }
-            else if (resultIndex == 3)
-            {
-                flowLayoutPanel1.Controls.Clear();
-                GetData(c);
-            }
-            else if (resultIndex == 0)
-            {
-                flowLayoutPanel1.Controls.Clear();
-                GetData(T);
-            }*/
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -333,10 +248,6 @@ namespace GUI
                 e.Handled = true;
             }
         }
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-
-        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -351,7 +262,7 @@ namespace GUI
                         MessageBox.Show("Haven't order yet", "Order", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == string.Empty || cboCustomerType.Text == "Vẵng lai")
+                if (cboCustomerType.SelectedIndex == 0)
                 {
                     if (busCus.GetNullCustomer(shopID) == null)
                     {
@@ -368,20 +279,21 @@ namespace GUI
                 }
                 else
                 {
-                    if (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký")
+                    if (cboCustomerType.SelectedIndex == 1)
                     {
                         if (EmailHelper.ValidateEmail(txtEmail.Text))
                         {
                             checkemail = 1;
                         }
-                        if (checkemail == 0 || checkname == 0 || checkbirth == 0)
+                        if (string.IsNullOrEmpty(txtLastName.Text) || string.IsNullOrEmpty(txtFirstName.Text) || string.IsNullOrEmpty(txtEmail.Text))
                         {
                             if(lblTable.Text=="Bàn")
-                                MessageBox.Show("Chưa nhập hồ sơ khách hàng", "Khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Vui lòng nhập đủ thông tin khách hàng", "Khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             else
                                 MessageBox.Show("Write profile for Customer", "Customer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        if (!CheckBirthdate()) return;
                     }
                     if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null)
                     {
@@ -399,7 +311,7 @@ namespace GUI
                             MessageBox.Show("Haven't order yet", "Order", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    if (check == 0 && (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký") && checkname == 1 && checkemail == 1 && checkbirth == 1)
+                    if (check == 0 && cboCustomerType.SelectedIndex == 1  && checkemail == 1 && CheckBirthdate())
                     {
                         DateTime bdate = new DateTime();
                         dtoCus.Email = txtEmail.Text;
@@ -453,7 +365,7 @@ namespace GUI
                     return;
             }
             DTO_Table dtoTab = new DTO_Table();
-            if (!string.IsNullOrWhiteSpace(comboBox2.Text))
+            if (!string.IsNullOrWhiteSpace(comboBox2.Text) && comboBox2.SelectedIndex != 0)
             {
                 dtoTab.Id = Int32.Parse(comboBox2.Text);
                 dtoTab.Shop.ID = shopID;
@@ -464,13 +376,7 @@ namespace GUI
                 }
                 else
                     busReceipt.InsertTakeAwayReceipt(dtoReceipt);
-                comboBox2.Items.Clear();
-                lsTable.Clear();
-                lsTable = busTable.GetAvailableTables(shopID);
-                for (int i = 0; i < lsTable.Count; i++)
-                {
-                    comboBox2.Items.Add(lsTable[i].Id.ToString());
-                }
+                ReloadTable();
                 DialogResult resp;
                 if (lblTable.Text == "Bàn")
                 {
@@ -592,38 +498,31 @@ namespace GUI
                 datBirthdate.Enabled = true;
                 txtID.Visible = false;
                 //   btnSave.Enabled = false;
-                if (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký")
+                if (cboCustomerType.SelectedIndex == 1)
                 {
-                    if (string.IsNullOrWhiteSpace(txtEmail.Text))
-                    {
-                        if(lblTable.Text=="Bàn")
-                            errorProvider1.SetError(txtEmail, "Email tồn tại");
-                        else
-                        errorProvider1.SetError(txtEmail, "Email is required");
-                        errorProvider2.SetError(txtEmail, "");
-                        checkemail = 0;
-
-                    }
-                    else
+                    if (!string.IsNullOrEmpty(txtEmail.Text))
                     {
                         if (EmailHelper.ValidateEmail(txtEmail.Text))
                         {
                             errorProvider1.SetError(txtEmail, "");
-                            errorProvider2.SetError(txtEmail, "Valid");
+                            if (lblTable.Text == "Bàn")
+                                errorProvider2.SetError(txtEmail, "Hợp lệ");
+                            else errorProvider2.SetError(txtEmail, "Valid");
                             checkemail = 1;
-                            // btnSave.Enabled = true;
                         }
                         else
                         {
-                            if(lblTable.Text=="Bàn")
+                            if (lblTable.Text == "Bàn")
                                 errorProvider1.SetError(txtEmail, "Email phải theo format 'example@example.example' và không có khoảng hở");
                             else
-                            errorProvider1.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
+                                errorProvider1.SetError(txtEmail, "Email must be in the format 'example@example.example' and must not contain any whitespaces");
                             checkemail = 0;
                         }
                     }
+                    else errorProvider1.SetError(txtEmail, "");
+
                 }
-                else if (cboCustomerType.Text == "Guest" || cboCustomerType.Text == "Vẵng lai" || cboCustomerType.Text == string.Empty)
+                else if (cboCustomerType.SelectedIndex == 0)
                 {
                     btnSave.Enabled = true;
                 }
@@ -631,7 +530,9 @@ namespace GUI
             else if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null)
             {
                 errorProvider1.SetError(txtEmail, "");
-                errorProvider2.SetError(txtEmail, "Valid");
+                if (lblTable.Text == "Bàn")
+                    errorProvider2.SetError(txtEmail, "Hợp lệ");
+                else errorProvider2.SetError(txtEmail, "Valid");
                 txtID.Enabled = false;
                 txtFirstName.Enabled = false;
                 txtLastName.Enabled = false;
@@ -651,11 +552,6 @@ namespace GUI
             shopID = id;
             Reload();
         }
-        private void panel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtSearchName_Click(object sender, EventArgs e)
         {
             txtSearchName.Text = null;
@@ -690,6 +586,9 @@ namespace GUI
         public void ReloadTable()
         {
             comboBox2.Items.Clear();
+            if (btnSave.Text == "Lưu") comboBox2.Items.Add("Không");
+            else comboBox2.Items.Add("None");
+            comboBox2.SelectedIndex = 0;
             lsTable = busTable.GetAvailableTables(shopID);
             for (int i = 0; i < lsTable.Count; i++)
             {
@@ -697,21 +596,22 @@ namespace GUI
             }
         }
 
-        private void datBirthdate_ValueChanged(object sender, EventArgs e)
+        private bool CheckBirthdate()
         {
             datBirthdate.CustomFormat = "dd/MM/yyyy";
             DateTime now = DateTime.Now;
-            if ((DateTime.Now.Year-datBirthdate.Value.Year)>=1 && datBirthdate.Value.Year <= 2078  && datBirthdate.Value.Year >= 1910 )
+            if ((DateTime.Now.Year-datBirthdate.Value.Year)>=1 )
             {
                 errorProvider1.SetError(datBirthdate, "");
-                errorProvider2.SetError(datBirthdate, "Accept date");
-                checkbirth = 1;
+                return true;
             }
             else
             {
-                errorProvider1.SetError(datBirthdate, "Wrong date ?");
+                if (lblTable.Text == "Bàn")
+                    errorProvider1.SetError(datBirthdate, "Ngày không hợp lệ (Khách hàng phải lớn hơn 1 tuổi)");
+                else errorProvider1.SetError(datBirthdate, "Wrong date ?");
                 errorProvider2.SetError(datBirthdate, "");
-                checkbirth = 0;
+                return false;
             }
         }
         public void HideCus()
@@ -757,75 +657,8 @@ namespace GUI
                 ShowCus();
             }
         }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtEmail.Text) && (cboCustomerType.Text == "Registered" || cboCustomerType.Text == "Đăng ký"))
-            {
-                if(lblTable.Text=="Bàn")
-                    errorProvider1.SetError(txtEmail, "Nhập Email");
-                else
-                errorProvider1.SetError(txtEmail, "Please write Email");
-                errorProvider2.SetError(txtEmail, "");
-                btnSave.Enabled = false;
-            }
-            if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) == null && (cboCustomerType.Text != "Guest" || cboCustomerType.Text != "Vẵng lai") && cboCustomerType.Text != string.Empty && string.IsNullOrWhiteSpace(txtEmail.Text) == false)
-            {
-                if(lblTable.Text=="Bàn")
-                    errorProvider1.SetError(txtEmail, "Không có khách hàng này, sẽ được lưu mới khi bạn click lưu");
-                else
-                errorProvider1.SetError(txtEmail, "Doesn't have customer, Will be registered when you click Save");
-                errorProvider2.SetError(txtEmail, "");
-                txtFirstName.Enabled = true;
-                txtLastName.Enabled = true;
-                datBirthdate.Enabled = true;
-                txtID.Visible = false;
-                check = 0;
-                btnSave.Enabled = true;
-            }
-            else if (busCus.GetCustomerByEmail(txtEmail.Text, shopID) != null && cboCustomerType.Text != "Guest" && cboCustomerType.Text != "")
-            {
-                errorProvider1.SetError(txtEmail, "");
-                errorProvider2.SetError(txtEmail, "Correct");
-                txtID.Enabled = false;
-                txtFirstName.Enabled = false;
-                txtLastName.Enabled = false;
-                dtoCus = busCus.GetCustomerByEmail(txtEmail.Text, shopID);
-                txtID.Text = dtoCus.Id.ToString();
-                txtFirstName.Text = dtoCus.FirstName;
-                txtLastName.Text = dtoCus.LastName;
-                datBirthdate.Value = dtoCus.Birthdate;
-                datBirthdate.Enabled = false;
-                txtID.Visible = true;
-                check = 1;
-                btnSave.Enabled = true;
-            }
-        }
-
-        private void txtLastName_TextChanged(object sender, EventArgs e)
-        {
-            if (txtFirstName.Text == string.Empty)
-            {
-                if(lblTable.Text=="Bàn")
-                    errorProvider1.SetError(txtLastName, "Nhập tên");
-                else
-                errorProvider1.SetError(txtLastName, "Please Enter Name");
-                errorProvider2.SetError(txtLastName, "");
-                checkname = 0;
-            }
-            else
-            {
-                errorProvider1.SetError(txtLastName, "");
-                errorProvider2.SetError(txtLastName, "Correct");
-                checkname = 1;
-            }
-        }
-
-        private void txtEmail_Click(object sender, EventArgs e)
-        {
-            txtEmail.Text = "";
-        }
         public int checkprice = 0;
+
         private void txtMoneycus_TextChanged(object sender, EventArgs e)
         {
             int countdoc = 0;
@@ -834,9 +667,9 @@ namespace GUI
             if (txtMoneyCus.Text == string.Empty||txtMoneyCus.Text=="")
             {
                 if(lblTable.Text=="Bàn")
-                    errorProvider1.SetError(txtMoneyCus, "Cung cấp tiền");
+                    errorProvider1.SetError(txtMoneyCus, "Vui lòng nhập giá");
                 else
-                errorProvider1.SetError(txtMoneyCus, "Please provide Price");
+                errorProvider1.SetError(txtMoneyCus, "Please provide price");
                 errorProvider2.SetError(txtMoneyCus, "");
                 checkprice = 0;
             }
@@ -846,13 +679,17 @@ namespace GUI
                // txtCopyPrice.Text = sums;
                 if (double.TryParse(txtMoneyCus.Text.Replace(',', '.'), NumberStyles.Number, CultureInfo.InvariantCulture,out sum11))
                 {
-                    errorProvider2.SetError(txtMoneyCus, "Correct");
+                    if (lblTable.Text == "Bàn")
+                        errorProvider2.SetError(txtMoneyCus, "Hợp lệ");
+                    else errorProvider2.SetError(txtMoneyCus, "Correct");
                     errorProvider1.SetError(txtMoneyCus, "");
                     checkmonecus = 1;
                 }
                 else
                 {
-                    errorProvider1.SetError(txtMoneyCus, "Wrong format");
+                    if (lblTable.Text == "Bàn")
+                        errorProvider1.SetError(txtMoneyCus, "Sai định dạng");
+                    else errorProvider1.SetError(txtMoneyCus, "Wrong format");
                     errorProvider2.SetError(txtMoneyCus, "");
                     txtGiveCus.Text = "";
 
@@ -864,11 +701,6 @@ namespace GUI
                 if (copysum <= d)
                 {
                     errorProvider1.SetError(txtMoneyCus, "");
-                    if (lblTable.Text == "Bàn")
-                        errorProvider2.SetError(txtMoneyCus, "Có thể so sánh");
-                    else
-                    errorProvider2.SetError(txtMoneyCus, "Can compare");
-
                     txtGiveCus.Text = "";
                     checkmonecus = 1;
                     txtGiveCus.Text = (d-copysum).ToString();
@@ -893,7 +725,9 @@ namespace GUI
             {
                 if (double.Parse(sum.ToString()) > double.Parse(txtMoneyCus.Text))
                 {
-                    errorProvider1.SetError(txtMoneyCus, "Wrong");
+                    if (lblTable.Text == "Bàn")
+                        errorProvider1.SetError(txtMoneyCus, "Không hợp lệ");
+                    else errorProvider1.SetError(txtMoneyCus, "Wrong");
                     errorProvider2.SetError(txtMoneyCus, "");
                     checkmonecus = 0;
                     txtGiveCus.Text = "";
@@ -901,10 +735,6 @@ namespace GUI
                 else if(double.Parse(sum.ToString()) == double.Parse(txtMoneyCus.Text))
                 {
                     errorProvider1.SetError(txtMoneyCus, "");
-                    if (lblTable.Text == "Bàn")
-                        errorProvider2.SetError(txtMoneyCus, "Có thể so sánh");
-                    else
-                        errorProvider2.SetError(txtMoneyCus, "Can compare");
                     checkmonecus = 1;
                     txtGiveCus.Text = "0";
                 }
@@ -920,28 +750,6 @@ namespace GUI
                 }
             }
 
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFirstName_TextChanged(object sender, EventArgs e)
-        {
-            if (txtFirstName.Text == string.Empty)
-            {
-                if(lblTable.Text=="Bàn")
-                    errorProvider1.SetError(txtFirstName, "Nhập tên");
-                else
-                errorProvider1.SetError(txtFirstName, "Please Enter Name");
-                errorProvider2.SetError(txtFirstName, "");
-            }
-            else
-            {
-                errorProvider1.SetError(txtFirstName, "");
-                errorProvider2.SetError(txtFirstName, "Correct");
-            }
         }
         public void SetTable(int id)
         {

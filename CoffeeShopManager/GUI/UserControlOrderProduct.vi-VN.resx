@@ -213,6 +213,36 @@
         P////n////5/////////////////////////////
 </value>
   </data>
+  <data name="comboBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="comboBox1.Items" xml:space="preserve">
+    <value>Tất cả</value>
+  </data>
+  <data name="comboBox1.Items1" xml:space="preserve">
+    <value>Thức ăn</value>
+  </data>
+  <data name="comboBox1.Items2" xml:space="preserve">
+    <value>Nước uống</value>
+  </data>
+  <data name="comboBox1.Items3" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="comboBox1.Text" xml:space="preserve">
+    <value>Chọn loại sản phẩm</value>
+  </data>
+  <data name="txtSearchName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>758, 15</value>
+  </data>
+  <data name="lblOr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>713, 15</value>
+  </data>
+  <data name="lblOr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 20</value>
+  </data>
+  <data name="lblOr.Text" xml:space="preserve">
+    <value>hoặc</value>
+  </data>
   <data name="errorProvider2.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAQAEBAAAAEAIABoBAAARgAAACAgAAABACAAqBAAAK4EAAAwMAAAAQAgAKglAABWFQAAQEAAAAEA
@@ -751,24 +781,6 @@
         /////////////////////////////////////////////////////////////////////////////w==
 </value>
   </data>
-  <data name="comboBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="comboBox1.Items" xml:space="preserve">
-    <value>Tất cả</value>
-  </data>
-  <data name="comboBox1.Items1" xml:space="preserve">
-    <value>Thức ăn</value>
-  </data>
-  <data name="comboBox1.Items2" xml:space="preserve">
-    <value>Nước uống</value>
-  </data>
-  <data name="comboBox1.Items3" xml:space="preserve">
-    <value>Khác</value>
-  </data>
-  <data name="comboBox1.Text" xml:space="preserve">
-    <value>Chọn loại sản phẩm</value>
-  </data>
   <data name="lblHead.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 18pt, style=Bold</value>
   </data>
@@ -791,7 +803,7 @@
     <value>Không cần điền</value>
   </data>
   <data name="cboCustomerType.Items" xml:space="preserve">
-    <value>Vẵng lai</value>
+    <value>Vãng lai</value>
   </data>
   <data name="cboCustomerType.Items1" xml:space="preserve">
     <value>Đăng ký</value>
@@ -814,6 +826,9 @@
   <data name="lblLastName.Text" xml:space="preserve">
     <value>Họ:</value>
   </data>
+  <data name="comboBox2.Items" xml:space="preserve">
+    <value>Không</value>
+  </data>
   <data name="lblExcessMon.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
@@ -825,6 +840,10 @@
   </data>
   <data name="lblMoneyCus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblMoneyCus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblMoneyCus.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 17</value>
@@ -845,7 +864,10 @@
     <value>Tahoma, 10.2pt, style=Bold</value>
   </data>
   <data name="lblDiscount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 21</value>
+    <value>91, 21</value>
+  </data>
+  <data name="lblDiscount.Text" xml:space="preserve">
+    <value>Giảm giá:</value>
   </data>
   <data name="lblTotal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10.2pt, style=Bold</value>
