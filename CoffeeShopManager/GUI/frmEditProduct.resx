@@ -186,9 +186,6 @@
   <data name="&gt;&gt;lblType.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>610, 72</value>
-  </data>
   <data name="txtName1.Error1" xml:space="preserve">
     <value />
   </data>
@@ -1124,8 +1121,8 @@
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 211</value>
   </data>
-  <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>610, 72</value>
   </data>
   <data name="lblType.Error" xml:space="preserve">
     <value />
@@ -1204,6 +1201,9 @@
   </data>
   <data name="lblName.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="txtCopyPrice.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>

@@ -221,7 +221,7 @@
     <value>Tahoma, 12pt</value>
   </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 8</value>
+    <value>328, 7</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 24</value>
@@ -246,6 +246,15 @@
   </data>
   <data name="cbxType.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="cbxType.Items" xml:space="preserve">
+    <value>Đồ ăn</value>
+  </data>
+  <data name="cbxType.Items1" xml:space="preserve">
+    <value>Đồ uống</value>
+  </data>
+  <data name="cbxType.Items2" xml:space="preserve">
+    <value>Khác</value>
   </data>
   <data name="txtName1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
@@ -293,10 +302,10 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblListCaption.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 17</value>
+    <value>271, 17</value>
   </data>
   <data name="lblListCaption.Text" xml:space="preserve">
-    <value>Danh sách hàng trong kho được dùng</value>
+    <value>Danh sách hàng trong kho được dùng bởi </value>
   </data>
   <data name="lblRemove.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>

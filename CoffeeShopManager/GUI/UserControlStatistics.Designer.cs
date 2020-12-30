@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlStatistics));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chartProduct = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cboIncomeView = new System.Windows.Forms.ComboBox();
             this.cboProductView = new System.Windows.Forms.ComboBox();
@@ -68,21 +68,20 @@
             // 
             // chartProduct
             // 
+            chartArea1.Name = "ChartArea1";
+            this.chartProduct.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartProduct.Legends.Add(legend1);
             resources.ApplyResources(this.chartProduct, "chartProduct");
-            chartArea3.Name = "ChartArea1";
-            this.chartProduct.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartProduct.Legends.Add(legend3);
             this.chartProduct.Name = "chartProduct";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartProduct.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartProduct.Series.Add(series1);
             // 
             // cboIncomeView
             // 
-            resources.ApplyResources(this.cboIncomeView, "cboIncomeView");
             this.cboIncomeView.FormattingEnabled = true;
             this.cboIncomeView.Items.AddRange(new object[] {
             resources.GetString("cboIncomeView.Items"),
@@ -91,12 +90,12 @@
             resources.GetString("cboIncomeView.Items3"),
             resources.GetString("cboIncomeView.Items4"),
             resources.GetString("cboIncomeView.Items5")});
+            resources.ApplyResources(this.cboIncomeView, "cboIncomeView");
             this.cboIncomeView.Name = "cboIncomeView";
             this.cboIncomeView.SelectedIndexChanged += new System.EventHandler(this.cboIncomeView_SelectedIndexChanged);
             // 
             // cboProductView
             // 
-            resources.ApplyResources(this.cboProductView, "cboProductView");
             this.cboProductView.FormattingEnabled = true;
             this.cboProductView.Items.AddRange(new object[] {
             resources.GetString("cboProductView.Items"),
@@ -104,6 +103,7 @@
             resources.GetString("cboProductView.Items2"),
             resources.GetString("cboProductView.Items3"),
             resources.GetString("cboProductView.Items4")});
+            resources.ApplyResources(this.cboProductView, "cboProductView");
             this.cboProductView.Name = "cboProductView";
             this.cboProductView.SelectedIndexChanged += new System.EventHandler(this.cboProductView_SelectedIndexChanged);
             // 
@@ -119,61 +119,61 @@
             // 
             // pnlShowInfoProductSales
             // 
-            resources.ApplyResources(this.pnlShowInfoProductSales, "pnlShowInfoProductSales");
             this.pnlShowInfoProductSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.pnlShowInfoProductSales.Controls.Add(this.label1);
             this.pnlShowInfoProductSales.Controls.Add(this.lblTotalSales);
+            resources.ApplyResources(this.pnlShowInfoProductSales, "pnlShowInfoProductSales");
             this.pnlShowInfoProductSales.Name = "pnlShowInfoProductSales";
             // 
             // lblTitle
             // 
-            resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.ForeColor = System.Drawing.Color.Firebrick;
+            resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.Name = "lblTitle";
             // 
             // chartIncome
             // 
+            chartArea2.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartIncome.Legends.Add(legend2);
             resources.ApplyResources(this.chartIncome, "chartIncome");
-            chartArea4.Name = "ChartArea1";
-            this.chartIncome.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartIncome.Legends.Add(legend4);
             this.chartIncome.Name = "chartIncome";
             this.chartIncome.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             this.chartIncome.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192))))),
         System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))))};
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            series4.YValuesPerPoint = 2;
-            this.chartIncome.Series.Add(series4);
-            title2.Name = "Income";
-            this.chartIncome.Titles.Add(title2);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.YValuesPerPoint = 2;
+            this.chartIncome.Series.Add(series2);
+            title1.Name = "Income";
+            this.chartIncome.Titles.Add(title1);
             // 
             // dataGridView2
             // 
-            resources.ApplyResources(this.dataGridView2, "dataGridView2");
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dataGridView2, "dataGridView2");
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             // 
             // dataGridView1
             // 
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             // 
             // pnlShowInfoIncome
             // 
-            resources.ApplyResources(this.pnlShowInfoIncome, "pnlShowInfoIncome");
             this.pnlShowInfoIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.pnlShowInfoIncome.Controls.Add(this.label3);
             this.pnlShowInfoIncome.Controls.Add(this.label2);
             this.pnlShowInfoIncome.Controls.Add(this.lblTotalIncome);
             this.pnlShowInfoIncome.Controls.Add(this.lblAveIncome);
+            resources.ApplyResources(this.pnlShowInfoIncome, "pnlShowInfoIncome");
             this.pnlShowInfoIncome.Name = "pnlShowInfoIncome";
             // 
             // label3
@@ -229,7 +229,6 @@
             // 
             // cboString
             // 
-            resources.ApplyResources(this.cboString, "cboString");
             this.cboString.FormattingEnabled = true;
             this.cboString.Items.AddRange(new object[] {
             resources.GetString("cboString.Items"),
@@ -243,6 +242,7 @@
             resources.GetString("cboString.Items8"),
             resources.GetString("cboString.Items9"),
             resources.GetString("cboString.Items10")});
+            resources.ApplyResources(this.cboString, "cboString");
             this.cboString.Name = "cboString";
             // 
             // UserControlStatistics

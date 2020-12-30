@@ -167,7 +167,7 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(cboSearch.Text))
+            if (!string.IsNullOrWhiteSpace(cboSearch.Text) && (txtSearch.ForeColor != Color.DimGray || datSearch.Visible))
             {
                 lblResetFilters.Visible = true;
                 filProp.CurrentFilter = cboSearch.Text;

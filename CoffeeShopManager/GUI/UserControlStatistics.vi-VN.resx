@@ -305,4 +305,7 @@
   <data name="cboString.Items10" xml:space="preserve">
     <value>Số lượng sản phẩm bán 30 ngày qua</value>
   </data>
+  <data name="cboString.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
 </root>

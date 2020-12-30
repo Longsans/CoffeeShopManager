@@ -84,30 +84,30 @@
             // 
             // btnSaveChange
             // 
+            resources.ApplyResources(this.btnSaveChange, "btnSaveChange");
             this.btnSaveChange.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnSaveChange.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveChange.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnSaveChange, "btnSaveChange");
             this.btnSaveChange.Name = "btnSaveChange";
             this.btnSaveChange.UseVisualStyleBackColor = false;
             this.btnSaveChange.Click += new System.EventHandler(this.btnSaveChange_Click);
             // 
             // btnChangeAuthCode
             // 
+            resources.ApplyResources(this.btnChangeAuthCode, "btnChangeAuthCode");
             this.btnChangeAuthCode.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnChangeAuthCode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangeAuthCode.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnChangeAuthCode, "btnChangeAuthCode");
             this.btnChangeAuthCode.Name = "btnChangeAuthCode";
             this.btnChangeAuthCode.UseVisualStyleBackColor = false;
             this.btnChangeAuthCode.Click += new System.EventHandler(this.btnChangeAuthCode_Click);
             // 
             // btnEdit
             // 
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.BackColor = System.Drawing.Color.White;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.ForeColor = System.Drawing.Color.DarkRed;
             this.btnEdit.Image = global::GUI.Properties.Resources.edit_30px;
             this.btnEdit.Name = "btnEdit";

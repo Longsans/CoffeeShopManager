@@ -149,6 +149,9 @@
   <data name="cboSearch.Items3" xml:space="preserve">
     <value>Ngày thanh toán</value>
   </data>
+  <data name="cboSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>465, 77</value>
+  </data>
   <data name="cboSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 24</value>
   </data>
@@ -535,6 +538,6 @@
     <value>NoControl</value>
   </data>
   <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>811, 76</value>
+    <value>808, 74</value>
   </data>
 </root>
