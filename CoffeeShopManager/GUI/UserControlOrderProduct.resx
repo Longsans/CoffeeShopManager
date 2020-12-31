@@ -132,9 +132,6 @@
   <data name="dataGridView1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtGiveCus.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="lblOr.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -174,14 +171,14 @@
   <data name="cboCustomerType.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;txtDiscount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="lblDiscount.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="btnCancel.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
@@ -231,9 +228,6 @@
   <data name="panel3.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtMoneyCus.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
     <value>141, 543</value>
   </data>
@@ -246,13 +240,10 @@
   <data name="lblNoneName.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;errorProvider2.Name" xml:space="preserve">
+    <value>errorProvider2</value>
   </data>
   <data name="txtSearchName.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblID.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
@@ -270,6 +261,9 @@
   <data name="txtFirstName.Error1" xml:space="preserve">
     <value />
   </data>
+  <data name="panel1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="lblBirthday.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -278,6 +272,9 @@
   </data>
   <data name="txtLastName.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
+  </data>
+  <data name="panel1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="clmDown.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
@@ -291,14 +288,14 @@
   <data name="dataGridView1.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
+  <data name="lblEmail.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblGrandTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 20</value>
   </data>
   <data name="panel2.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="clmProduct.HeaderText" xml:space="preserve">
-    <value>Product</value>
   </data>
   <data name="lblTotalSum.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -306,8 +303,14 @@
   <data name="flowLayoutPanel1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="txtGiveCus.Error" xml:space="preserve">
+    <value />
+  </data>
   <data name="&gt;&gt;lblCustomer.Name" xml:space="preserve">
     <value>lblCustomer</value>
+  </data>
+  <data name="btnSearch.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblCustomer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -318,7 +321,7 @@
   <data name="panel2.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="$this.IconPadding2" type="System.Int32, mscorlib">
+  <data name="lblBirthday.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;lblCustomer.Parent" xml:space="preserve">
@@ -384,14 +387,8 @@
   <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cboCustomerType.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="txtMoneyCus.Location" type="System.Drawing.Point, System.Drawing">
     <value>116, 103</value>
@@ -411,11 +408,17 @@
   <data name="datBirthdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
   </data>
+  <data name="btnSearch.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
   <data name="&gt;&gt;txtID.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnSearch.Error" xml:space="preserve">
-    <value />
+  <data name="lblTableNumber.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 7.8pt</value>
+  </data>
+  <data name="cboCustomerType.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;lblHead.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -429,6 +432,9 @@
   <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
     <value>panel2</value>
   </data>
+  <data name="txtGiveCus.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -437,9 +443,6 @@
   </data>
   <data name="btnSearch.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
   </data>
   <data name="lblMoneyCus.Error" xml:space="preserve">
     <value />
@@ -458,6 +461,9 @@
   </data>
   <data name="dataGridView1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="dataGridView1.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblOr.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -504,8 +510,11 @@
   <data name="comboBox1.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="lblTableNumber.Error1" xml:space="preserve">
-    <value />
+  <data name="lblBirthday.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 157</value>
+  </data>
+  <data name="&gt;&gt;lblID.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="lblID.Error2" xml:space="preserve">
     <value />
@@ -524,9 +533,6 @@
   </data>
   <data name="lblDiscount.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblTotal.Name" xml:space="preserve">
-    <value>lblTotal</value>
   </data>
   <data name="lblTableNumber.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -561,6 +567,9 @@
   <data name="lblDiscount.Error" xml:space="preserve">
     <value />
   </data>
+  <data name="lblMoneyCus.Error2" xml:space="preserve">
+    <value />
+  </data>
   <data name="lblExcessMon.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -587,9 +596,6 @@
   </data>
   <data name="lblFirstName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="lblNoneName.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;lblTable.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -621,8 +627,17 @@
   <data name="lblCustomer.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="lblGrandTotal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="clmProduct.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="lblTotal.Text" xml:space="preserve">
     <value>Total:</value>
+  </data>
+  <data name="btnCancel.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="panel4.Error2" xml:space="preserve">
     <value />
@@ -645,9 +660,6 @@
   <data name="txtSearchName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtSearchName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 22</value>
-  </data>
   <data name="&gt;&gt;cboCustomerType.Name" xml:space="preserve">
     <value>cboCustomerType</value>
   </data>
@@ -665,9 +677,6 @@
   </data>
   <data name="lblHead.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtGiveCus.Parent" xml:space="preserve">
-    <value>panel3</value>
   </data>
   <data name="lblNoneName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -696,6 +705,9 @@
   <data name="cboCustomerType.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="cboCustomerType.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="txtDiscount.Error" xml:space="preserve">
     <value />
   </data>
@@ -705,8 +717,8 @@
   <data name="lblBirthday.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="lblOr.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="lblNoneName.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;clmDelete.Name" xml:space="preserve">
     <value>clmDelete</value>
@@ -738,12 +750,6 @@
   <data name="lblExcessMon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblGrand.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="comboBox2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="lblHead.Error2" xml:space="preserve">
     <value />
   </data>
@@ -758,9 +764,6 @@
   </data>
   <data name="&gt;&gt;txtDiscount.Parent" xml:space="preserve">
     <value>panel3</value>
-  </data>
-  <data name="lblID.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="lblTotal.Error1" xml:space="preserve">
     <value />
@@ -795,9 +798,6 @@
   <data name="lblGrandTotal.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;cboCustomerType.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
   <data name="&gt;&gt;comboBox2.Name" xml:space="preserve">
     <value>comboBox2</value>
   </data>
@@ -828,14 +828,14 @@
   <data name="txtSearchName.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="panel1.Error2" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblHead.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 18pt, style=Bold</value>
   </data>
   <data name="lblTotalSum.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblGrand.Text" xml:space="preserve">
+    <value>Grand Total</value>
   </data>
   <data name="lblGrandTotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -858,8 +858,14 @@
   <data name="btnSave.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="lblTotalSum.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <data name="lblHead.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="cboCustomerType.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblFirstName.Text" xml:space="preserve">
     <value>First Name:</value>
@@ -897,9 +903,6 @@
   <data name="lblOr.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblGrandTotal.Error1" xml:space="preserve">
-    <value />
-  </data>
   <data name="txtLastName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -936,9 +939,6 @@
   <data name="dataGridViewTextBoxColumn4.HeaderText" xml:space="preserve">
     <value />
   </data>
-  <data name="dataGridView1.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="lblTotal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt, style=Bold</value>
   </data>
@@ -950,9 +950,6 @@
   </data>
   <data name="lblNoneName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblTotalSum.Error" xml:space="preserve">
-    <value />
   </data>
   <data name="txtEmail.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1064,8 +1061,8 @@
   <data name="btnSave.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="btnSearch.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
+  <data name="&gt;&gt;lblGrandTotal.Parent" xml:space="preserve">
+    <value>panel3</value>
   </data>
   <data name="&gt;&gt;lblHead.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1075,9 +1072,6 @@
   </data>
   <data name="lblTotal.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="btnSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="txtFirstName.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
@@ -1106,11 +1100,17 @@
   <data name="lblGrand.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt, style=Bold</value>
   </data>
+  <data name="lblOr.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="&gt;&gt;clmTotal.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblTotalSum.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="lblFirstName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1160,7 +1160,7 @@
   <data name="lblGrandTotal.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="txtGiveCus.Error" xml:space="preserve">
+  <data name="flowLayoutPanel1.Error1" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
@@ -1199,8 +1199,11 @@
   <data name="comboBox1.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="txtEmail.Error" xml:space="preserve">
+  <data name="lblTable.Error1" xml:space="preserve">
     <value />
+  </data>
+  <data name="&gt;&gt;comboBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="panel1.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1223,19 +1226,16 @@
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 10</value>
   </data>
-  <data name="panel3.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="lblGrandTotal.Error" xml:space="preserve">
     <value />
+  </data>
+  <data name="lblLastName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="txtID.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="txtGiveCus.Error2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblBirthday.Error1" xml:space="preserve">
     <value />
   </data>
   <data name="lblCustomer.Font" type="System.Drawing.Font, System.Drawing">
@@ -1286,8 +1286,8 @@
   <data name="lblCustomer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;lblGrandTotal.Parent" xml:space="preserve">
-    <value>panel3</value>
+  <data name="lblBirthday.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="btnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1300,9 +1300,6 @@
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 21</value>
-  </data>
-  <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
   </data>
   <data name="lblCustomer.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1346,9 +1343,6 @@
   <data name="cboCustomerType.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="&gt;&gt;txtSearchName.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="lblEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1391,6 +1385,9 @@
   <data name="lblBirthday.Text" xml:space="preserve">
     <value>Birthday:</value>
   </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblGrandTotal.Error2" xml:space="preserve">
     <value />
   </data>
@@ -1415,8 +1412,8 @@
   <data name="&gt;&gt;lblNoneName.Name" xml:space="preserve">
     <value>lblNoneName</value>
   </data>
-  <data name="panel1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;lblEmail.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="txtDiscount.Error2" xml:space="preserve">
     <value />
@@ -1442,8 +1439,8 @@
   <data name="txtEmail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;cboCustomerType.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="lblTotalSum.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="lblOr.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1475,9 +1472,6 @@
   <data name="lblTable.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;comboBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="lblFirstName.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -1487,23 +1481,14 @@
   <data name="&gt;&gt;lblDiscount.Name" xml:space="preserve">
     <value>lblDiscount</value>
   </data>
-  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="panel3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="panel2.Error" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;lblMoneyCus.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="panel3.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblCustomer.Error2" xml:space="preserve">
-    <value />
+  <data name="lblGrand.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lblGrandTotal.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -1535,8 +1520,8 @@
   <data name="comboBox1.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>486, 15</value>
+  <data name="&gt;&gt;txtSearchName.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="lblTotalSum.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1571,9 +1556,6 @@
   <data name="comboBox1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="lblID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="lblCustomer.Text" xml:space="preserve">
     <value>Customer</value>
   </data>
@@ -1595,8 +1577,14 @@
   <data name="txtMoneyCus.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="lblDiscount.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblDiscount.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="comboBox2.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="lblGrand.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1616,6 +1604,9 @@
   <data name="lblLastName.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="lblID.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="lblExcessMon.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -1624,6 +1615,9 @@
   </data>
   <data name="lblTotal.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
   </data>
   <data name="lblGrand.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 76</value>
@@ -1649,8 +1643,8 @@
   <data name="lblMoneyCus.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="flowLayoutPanel1.Error1" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;txtDiscount.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="lblTableNumber.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1697,8 +1691,8 @@
   <data name="lblGrandTotal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
-  <data name="clmProduct.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="$this.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblID.Text" xml:space="preserve">
     <value>ID:</value>
@@ -1708,6 +1702,9 @@
   </data>
   <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
     <value>panel1</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>490, 504</value>
   </data>
   <data name="txtMoneyCus.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1723,6 +1720,9 @@
   </data>
   <data name="lblGrand.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="lblNoneName.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;lblTotalSum.Parent" xml:space="preserve">
     <value>panel3</value>
@@ -1769,14 +1769,11 @@
   <data name="lblLastName.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 131</value>
   </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="lblEmail.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;errorProvider2.Name" xml:space="preserve">
-    <value>errorProvider2</value>
   </data>
   <data name="lblGrand.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1787,14 +1784,17 @@
   <data name="flowLayoutPanel1.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>486, 15</value>
+  </data>
   <data name="clmID.HeaderText" xml:space="preserve">
     <value />
   </data>
   <data name="lblGrandTotal.Location" type="System.Drawing.Point, System.Drawing">
     <value>124, 77</value>
   </data>
-  <data name="lblBirthday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 157</value>
+  <data name="txtSearchName.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="txtID.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
@@ -1868,8 +1868,8 @@
   <data name="&gt;&gt;errorProvider2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 0</value>
+  <data name="txtEmail.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="lblLastName.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 18</value>
@@ -1885,6 +1885,9 @@
   </data>
   <data name="label1.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="lblTableNumber.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="lblHead.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1910,8 +1913,8 @@
   <data name="lblCustomer.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
+  <data name="lblGrandTotal.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1933,9 +1936,6 @@
   </data>
   <data name="&gt;&gt;lblOr.Name" xml:space="preserve">
     <value>lblOr</value>
-  </data>
-  <data name="&gt;&gt;lblEmail.ZOrder" xml:space="preserve">
-    <value>14</value>
   </data>
   <data name="lblDiscount.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2499,6 +2499,9 @@
   <data name="txtLastName.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
   <data name="lblHead.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -2544,9 +2547,6 @@
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="lblFirstName.Error" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblTable.Text" xml:space="preserve">
     <value>Table</value>
   </data>
@@ -2561,9 +2561,6 @@
   </data>
   <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
     <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtLastName.Parent" xml:space="preserve">
     <value>panel2</value>
@@ -2580,8 +2577,8 @@
   <data name="lblGrand.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="cboCustomerType.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;lblTotal.Name" xml:space="preserve">
+    <value>lblTotal</value>
   </data>
   <data name="lblEmail.Error" xml:space="preserve">
     <value />
@@ -2628,9 +2625,6 @@
   <data name="lblHead.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;txtFirstName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>149, 34</value>
   </data>
@@ -2646,14 +2640,8 @@
   <data name="lblTable.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 25</value>
   </data>
-  <data name="datBirthdate.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="&gt;&gt;txtEmail.Name" xml:space="preserve">
     <value>txtEmail</value>
-  </data>
-  <data name="lblDiscount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="lblLastName.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2667,8 +2655,8 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="lblTableNumber.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+  <data name="&gt;&gt;cboCustomerType.Parent" xml:space="preserve">
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;txtMoneyCus.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2684,6 +2672,9 @@
   </data>
   <data name="lblTotalSum.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 20</value>
+  </data>
+  <data name="&gt;&gt;lblEmail.Parent" xml:space="preserve">
+    <value>panel2</value>
   </data>
   <data name="txtFirstName.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2715,6 +2706,9 @@
   <data name="lblBirthday.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
   </data>
+  <data name="lblTable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>199, 0</value>
+  </data>
   <data name="panel4.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -2732,6 +2726,9 @@
   </data>
   <data name="lblTotalSum.Text" xml:space="preserve">
     <value>0$</value>
+  </data>
+  <data name="lblCustomer.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="lblMoneyCus.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2751,17 +2748,20 @@
   <data name="dataGridView1.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="cboCustomerType.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="lblNoneName.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;txtDiscount.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="lblFirstName.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTotalSum.Error" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;lblBirthday.Name" xml:space="preserve">
     <value>lblBirthday</value>
   </data>
-  <data name="lblGrand.Text" xml:space="preserve">
-    <value>Grand Total</value>
+  <data name="btnSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblGrandTotal.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2769,8 +2769,8 @@
   <data name="lblMoneyCus.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;txtDiscount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
   </data>
   <data name="lblNoneName.Text" xml:space="preserve">
     <value>Needn't write Cus</value>
@@ -2778,11 +2778,11 @@
   <data name="txtSearchName.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="txtSearchName.Error2" xml:space="preserve">
-    <value />
+  <data name="txtSearchName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 22</value>
   </data>
-  <data name="lblID.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -2802,14 +2802,14 @@
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 184</value>
   </data>
-  <data name="txtDiscount.Error1" xml:space="preserve">
+  <data name="panel2.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="lblTotalSum.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="clmProduct.HeaderText" xml:space="preserve">
+    <value>Product</value>
   </data>
-  <data name="txtGiveCus.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="lblDiscount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -2847,8 +2847,8 @@
   <data name="comboBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 24</value>
   </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
+  <data name="comboBox2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="lblTable.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2895,9 +2895,6 @@
   <data name="lblExcessMon.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblFirstName.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
   <data name="lblTotalSum.Error2" xml:space="preserve">
     <value />
   </data>
@@ -2913,8 +2910,8 @@
   <data name="lblOr.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="panel1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="panel1.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="panel1.Error1" xml:space="preserve">
     <value />
@@ -2928,16 +2925,19 @@
   <data name="lblBirthday.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="btnSearch.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="lblID.Error" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblNoneName.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="lblID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;txtFirstName.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="lblEmail.IconPadding" type="System.Int32, mscorlib">
+  <data name="lblHead.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblID.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
@@ -2946,8 +2946,8 @@
   <data name="panel1.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblLastName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="clmUp.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2967,8 +2967,8 @@
   <data name="lblHead.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;lblEmail.Parent" xml:space="preserve">
-    <value>panel2</value>
+  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="txtEmail.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3006,8 +3006,8 @@
   <data name="&gt;&gt;clmProduct.Name" xml:space="preserve">
     <value>clmProduct</value>
   </data>
-  <data name="lblGrandTotal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="&gt;&gt;txtGiveCus.Parent" xml:space="preserve">
+    <value>panel3</value>
   </data>
   <data name="lblBirthday.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3015,7 +3015,7 @@
   <data name="txtLastName.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="lblMoneyCus.Error2" xml:space="preserve">
+  <data name="txtDiscount.Error1" xml:space="preserve">
     <value />
   </data>
   <data name="panel3.Error2" xml:space="preserve">
@@ -3036,11 +3036,14 @@
   <data name="&gt;&gt;lblDiscount.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblID.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;cboCustomerType.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="comboBox2.Error" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;txtFirstName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblTotal.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="txtGiveCus.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3051,14 +3054,14 @@
   <data name="lblTable.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>490, 504</value>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="lblBirthday.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 18</value>
   </data>
-  <data name="lblDiscount.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;txtMoneyCus.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lblCustomer.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3072,38 +3075,35 @@
   <data name="lblTableNumber.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="lblTable.Error1" xml:space="preserve">
-    <value />
+  <data name="panel3.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="dataGridView1.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="panel3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblBirthday.IconPadding1" type="System.Int32, mscorlib">
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="dataGridView1.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblTotalSum.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="cboCustomerType.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="lblNoneName.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblHead.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="lblMoneyCus.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 17</value>
   </data>
-  <data name="cboCustomerType.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="datBirthdate.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="txtMoneyCus.Error1" xml:space="preserve">
     <value />
   </data>
-  <data name="lblTotal.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;lblFirstName.Parent" xml:space="preserve">
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;clmProduct.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3144,13 +3144,13 @@
   <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
     <value>flowLayoutPanel1</value>
   </data>
-  <data name="lblFirstName.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="txtGiveCus.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtGiveCus.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="btnCancel.Error" xml:space="preserve">
+  <data name="btnSearch.Error" xml:space="preserve">
     <value />
   </data>
   <data name="txtLastName.IconPadding" type="System.Int32, mscorlib">

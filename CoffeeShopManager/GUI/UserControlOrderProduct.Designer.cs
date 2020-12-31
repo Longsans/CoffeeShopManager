@@ -68,9 +68,13 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clmProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDown = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmUp = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblOr = new System.Windows.Forms.Label();
             this.txtSearchName = new System.Windows.Forms.TextBox();
@@ -83,10 +87,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -682,6 +682,14 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             // 
+            // clmProduct
+            // 
+            this.clmProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmProduct.FillWeight = 200F;
+            resources.ApplyResources(this.clmProduct, "clmProduct");
+            this.clmProduct.Name = "clmProduct";
+            this.clmProduct.ReadOnly = true;
+            // 
             // clmDown
             // 
             this.clmDown.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -691,6 +699,13 @@
             this.clmDown.ReadOnly = true;
             this.clmDown.Text = " -";
             this.clmDown.UseColumnTextForButtonValue = true;
+            // 
+            // clmQuantity
+            // 
+            this.clmQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmQuantity.FillWeight = 50F;
+            resources.ApplyResources(this.clmQuantity, "clmQuantity");
+            this.clmQuantity.Name = "clmQuantity";
             // 
             // clmUp
             // 
@@ -702,6 +717,14 @@
             this.clmUp.Text = " +";
             this.clmUp.UseColumnTextForButtonValue = true;
             // 
+            // clmTotal
+            // 
+            this.clmTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmTotal.FillWeight = 150F;
+            resources.ApplyResources(this.clmTotal, "clmTotal");
+            this.clmTotal.Name = "clmTotal";
+            this.clmTotal.ReadOnly = true;
+            // 
             // clmDelete
             // 
             this.clmDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -709,6 +732,14 @@
             resources.ApplyResources(this.clmDelete, "clmDelete");
             this.clmDelete.Name = "clmDelete";
             this.clmDelete.ReadOnly = true;
+            // 
+            // clmID
+            // 
+            this.clmID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmID.FillWeight = 0.1F;
+            resources.ApplyResources(this.clmID, "clmID");
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
             // 
             // flowLayoutPanel1
             // 
@@ -759,7 +790,6 @@
             // comboBox1
             // 
             resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.errorProvider2.SetError(this.comboBox1, resources.GetString("comboBox1.Error"));
             this.errorProvider1.SetError(this.comboBox1, resources.GetString("comboBox1.Error1"));
             this.errEmail.SetError(this.comboBox1, resources.GetString("comboBox1.Error2"));
@@ -842,37 +872,6 @@
             resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // clmProduct
-            // 
-            this.clmProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmProduct.FillWeight = 200F;
-            resources.ApplyResources(this.clmProduct, "clmProduct");
-            this.clmProduct.Name = "clmProduct";
-            this.clmProduct.ReadOnly = true;
-            // 
-            // clmQuantity
-            // 
-            this.clmQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmQuantity.FillWeight = 50F;
-            resources.ApplyResources(this.clmQuantity, "clmQuantity");
-            this.clmQuantity.Name = "clmQuantity";
-            // 
-            // clmTotal
-            // 
-            this.clmTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmTotal.FillWeight = 150F;
-            resources.ApplyResources(this.clmTotal, "clmTotal");
-            this.clmTotal.Name = "clmTotal";
-            this.clmTotal.ReadOnly = true;
-            // 
-            // clmID
-            // 
-            this.clmID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmID.FillWeight = 0.1F;
-            resources.ApplyResources(this.clmID, "clmID");
-            this.clmID.Name = "clmID";
-            this.clmID.ReadOnly = true;
             // 
             // UserControlOrderProduct
             // 

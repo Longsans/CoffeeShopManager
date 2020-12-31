@@ -13,7 +13,7 @@ namespace GUI
         {
             //return ConfigurationManager.ConnectionStrings["GUI.Properties.Settings.ConnectionString"].ConnectionString;
             //return "Server = localhost; Database = NewDB; User ID = sa; Password = onetwothree; MultipleActiveResultSets = True;";
-            return "Server = 10.0.131.2, 1433; Database = NewDB; User ID = sa; Password = 123456; MultipleActiveResultSets = True;";
+            return "Server = 192.168.43.195, 1433; Database = NewDB; User ID = sa; Password = 123456; MultipleActiveResultSets = True;";
         }
     }
 }
