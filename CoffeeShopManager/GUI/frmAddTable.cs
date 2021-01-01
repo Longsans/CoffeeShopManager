@@ -149,7 +149,7 @@ namespace GUI
             {
                 if (txtTableId.TextLength > 0)
                 {
-                    if (int.TryParse(txtTableId.Text, out int id))
+                    if (int.TryParse(txtTableId.Text, out int id) && id > 0)
                     {
                         var dbtab = busTable.GetTableByIdDeletedAndNotDeleted(id, shopId);
                         if (dbtab == null)
