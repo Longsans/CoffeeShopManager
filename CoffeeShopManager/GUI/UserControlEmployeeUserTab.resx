@@ -161,8 +161,8 @@
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>78</value>
   </data>
-  <data name="&gt;&gt;lblUserInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;picEmpInfo.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -176,6 +176,12 @@
   <data name="&gt;&gt;txtUsername.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
+  <data name="lblUserInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 22pt</value>
+  </data>
+  <data name="txtLastName.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Last Name</value>
   </data>
@@ -184,6 +190,9 @@
   </data>
   <data name="&gt;&gt;btnSaveChange.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
   </data>
   <data name="&gt;&gt;radMale.Name" xml:space="preserve">
     <value>radMale</value>
@@ -206,9 +215,6 @@
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="txtEmail.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 203</value>
   </data>
@@ -230,11 +236,11 @@
   <data name="&gt;&gt;datDateOfJoin.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="txtAddress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>809, 406</value>
   </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;lblUserInfo.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="txtUsername.TabIndex" type="System.Int32, mscorlib">
     <value>75</value>
@@ -251,6 +257,9 @@
   <data name="&gt;&gt;btnEdit.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
+  <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;radFemale.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -263,14 +272,14 @@
   <data name="&gt;&gt;btnChangePassword.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;radFemale.Name" xml:space="preserve">
+    <value>radFemale</value>
+  </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtPhone.Location" type="System.Drawing.Point, System.Drawing">
     <value>332, 241</value>
-  </data>
-  <data name="datBirthdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 162</value>
   </data>
   <data name="&gt;&gt;label7.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -283,9 +292,6 @@
   </data>
   <data name="&gt;&gt;datDateOfJoin.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;picEmpInfo.Parent" xml:space="preserve">
-    <value>panel1</value>
   </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
@@ -308,8 +314,14 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
   </data>
   <data name="&gt;&gt;label11.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -323,9 +335,6 @@
   <data name="&gt;&gt;txtFirstName.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="txtManagerID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 309</value>
-  </data>
   <data name="&gt;&gt;lblEmpInfo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -334,6 +343,9 @@
   </data>
   <data name="btnSaveChange.Text" xml:space="preserve">
     <value>Save change</value>
+  </data>
+  <data name="lblEmpInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 15</value>
   </data>
   <data name="txtFirstName.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
@@ -386,17 +398,14 @@
   <data name="radFemale.Text" xml:space="preserve">
     <value>Female</value>
   </data>
-  <data name="&gt;&gt;txtManagerID.Name" xml:space="preserve">
-    <value>txtManagerID</value>
-  </data>
   <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
     <value>btnBrowse</value>
   </data>
   <data name="&gt;&gt;label11.Name" xml:space="preserve">
     <value>label11</value>
   </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 7.8pt</value>
+  <data name="&gt;&gt;picEmpInfo.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtID.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -503,8 +512,8 @@
   <data name="&gt;&gt;lblUserInfo.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>53</value>
+  <data name="txtUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>618, 203</value>
   </data>
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
@@ -545,8 +554,8 @@
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="lblEmpInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 15</value>
+  <data name="&gt;&gt;txtLastName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label12.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -596,9 +605,6 @@
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>11</value>
   </data>
   <data name="radFemale.Location" type="System.Drawing.Point, System.Drawing">
     <value>394, 201</value>
@@ -669,6 +675,12 @@
   <data name="&gt;&gt;picEmpInfo.Name" xml:space="preserve">
     <value>picEmpInfo</value>
   </data>
+  <data name="txtPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
   <data name="label14.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
@@ -696,8 +708,8 @@
   <data name="txtID.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
   </data>
-  <data name="txtUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>618, 203</value>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;txtSalary.ZOrder" xml:space="preserve">
     <value>15</value>
@@ -732,9 +744,6 @@
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
   </data>
-  <data name="&gt;&gt;picEmpInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;label12.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -747,8 +756,8 @@
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Username</value>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UserControlEmployeeUserTab</value>
@@ -756,14 +765,11 @@
   <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtLastName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtManagerID.Name" xml:space="preserve">
+    <value>txtManagerID</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 19</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>809, 406</value>
   </data>
   <data name="&gt;&gt;lblUserInfo.Name" xml:space="preserve">
     <value>lblUserInfo</value>
@@ -773,9 +779,6 @@
   </data>
   <data name="&gt;&gt;txtAddress.Name" xml:space="preserve">
     <value>txtAddress</value>
-  </data>
-  <data name="datDateOfJoin.TabIndex" type="System.Int32, mscorlib">
-    <value>80</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -803,9 +806,6 @@
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;datBirthdate.ZOrder" xml:space="preserve">
-    <value>13</value>
   </data>
   <data name="txtPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
@@ -840,11 +840,11 @@
   <data name="&gt;&gt;datBirthdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="btnChangePassword.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 10.2pt</value>
-  </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>Edit</value>
   </data>
   <data name="radMale.TabIndex" type="System.Int32, mscorlib">
     <value>70</value>
@@ -858,14 +858,14 @@
   <data name="radFemale.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;radFemale.Name" xml:space="preserve">
-    <value>radFemale</value>
+  <data name="txtAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Position</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Username</value>
   </data>
   <data name="txtPosition.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
@@ -873,14 +873,17 @@
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="btnSaveChange.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="btnSaveChange.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 516</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Manager ID</value>
@@ -894,8 +897,8 @@
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 19</value>
   </data>
-  <data name="&gt;&gt;btnSaveChange.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="datBirthdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>618, 162</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -914,6 +917,9 @@
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>897, 583</value>
+  </data>
+  <data name="&gt;&gt;btnSaveChange.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtAddress.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -939,8 +945,8 @@
   <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>58</value>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 312</value>
@@ -957,17 +963,11 @@
   <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
     <value>30</value>
   </data>
-  <data name="txtAddress.TabIndex" type="System.Int32, mscorlib">
-    <value>82</value>
-  </data>
   <data name="lblEmpInfo.Text" xml:space="preserve">
     <value>Employee Info</value>
   </data>
   <data name="datBirthdate.TabIndex" type="System.Int32, mscorlib">
     <value>76</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Date of join</value>
   </data>
   <data name="&gt;&gt;radMale.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -975,8 +975,8 @@
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
   </data>
-  <data name="btnSaveChange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 516</value>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Date of join</value>
   </data>
   <data name="txtLastName.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
@@ -996,8 +996,8 @@
   <data name="btnBrowse.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="btnChangePassword.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="datDateOfJoin.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -1014,8 +1014,8 @@
   <data name="&gt;&gt;label9.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="lblUserInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 22pt</value>
+  <data name="&gt;&gt;datBirthdate.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>77</value>
@@ -1053,8 +1053,8 @@
   <data name="txtFirstName.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="txtLastName.TabIndex" type="System.Int32, mscorlib">
-    <value>61</value>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Position</value>
   </data>
   <data name="lblUserInfo.Text" xml:space="preserve">
     <value>User's Info</value>
@@ -1071,11 +1071,11 @@
   <data name="txtManagerID.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
   </data>
-  <data name="txtPhone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
+  <data name="txtEmail.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
+  <data name="txtManagerID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 309</value>
   </data>
   <data name="&gt;&gt;datBirthdate.Parent" xml:space="preserve">
     <value>panel1</value>
