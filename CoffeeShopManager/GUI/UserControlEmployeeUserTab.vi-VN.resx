@@ -321,7 +321,10 @@
     <value>438, 122</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 17</value>
+    <value>39, 17</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Email</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
