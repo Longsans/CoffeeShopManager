@@ -53,6 +53,10 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlShow = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.ucHome = new GUI.UserControlHome();
             this.ucTable = new GUI.UserControlTableOfManager();
             this.ucShopInfoTab = new GUI.UserControlManagerShopInfo();
@@ -65,10 +69,6 @@
             this.ucStatisticsTab = new GUI.UserControlStatistics();
             this.ucStockTab = new GUI.UserControlStock();
             this.ucSuppliersTab = new GUI.UserControlSuppliers();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlMenu.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             this.pnlShow.SuspendLayout();
@@ -131,6 +131,7 @@
             this.btnShop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShop.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btnShop, "btnShop");
+            this.err.SetIconPadding(this.btnShop, ((int)(resources.GetObject("btnShop.IconPadding"))));
             this.btnShop.ImageList = this.imgListMenuButton;
             this.btnShop.Name = "btnShop";
             this.btnShop.UseVisualStyleBackColor = true;
@@ -317,6 +318,33 @@
             resources.ApplyResources(this.pnlShow, "pnlShow");
             this.pnlShow.Name = "pnlShow";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Controls.Add(this.lblWelcome);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // btnLogout
+            // 
+            resources.ApplyResources(this.btnLogout, "btnLogout");
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // lblWelcome
+            // 
+            resources.ApplyResources(this.lblWelcome, "lblWelcome");
+            this.lblWelcome.Name = "lblWelcome";
+            // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            resources.ApplyResources(this.err, "err");
+            // 
             // ucHome
             // 
             this.ucHome.BackColor = System.Drawing.Color.White;
@@ -410,33 +438,6 @@
             this.ucSuppliersTab.frmMan = null;
             this.ucSuppliersTab.Name = "ucSuppliersTab";
             this.ucSuppliersTab.UcStock = null;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Controls.Add(this.lblWelcome);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
-            // btnLogout
-            // 
-            resources.ApplyResources(this.btnLogout, "btnLogout");
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // lblWelcome
-            // 
-            resources.ApplyResources(this.lblWelcome, "lblWelcome");
-            this.lblWelcome.Name = "lblWelcome";
-            // 
-            // err
-            // 
-            this.err.ContainerControl = this;
-            resources.ApplyResources(this.err, "err");
             // 
             // frmManager
             // 
