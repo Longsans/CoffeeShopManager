@@ -98,30 +98,34 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var resultIndex = cboBy.FindStringExact(cboBy.Text);
-
-            if (resultIndex==1)
+            if (int.TryParse(txtSearch.Text, out int id))
             {
-                listTable = new List<DTO_Table>();
-                if (table.GetTableByIdNotDeleted(int.Parse(txtSearch.Text), shopID) != null)
-                    listTable.Add(table.GetTableByIdNotDeleted(int.Parse(txtSearch.Text), shopID));
-                ReloadTable();
-            }
-            else if (resultIndex==0)
-            {
-                listTable = new List<DTO_Table>();
-                List<DTO_Table> list = new List<DTO_Table>();
-                list = table.GetTablesByShopId(shopID);
-                DTO_Receipt dtoReceipt = new DTO_Receipt();
-                for (int i = 0; i < list.Count; i++)
+                if (cboBy.SelectedIndex == 1)
                 {
-                    dtoReceipt = table.GetCurrentReceiptOfTable(list[i].Id, shopID);
-                    if ((dtoReceipt != null) && dtoReceipt.Customer.Id == int.Parse(txtSearch.Text))
+                    listTable = new List<DTO_Table>();
+                    var tab = table.GetTableByIdNotDeleted(id, shopID);
+                    if (tab != null)
                     {
-                        listTable.Add(list[i]);
+                        listTable.Add(tab);
                     }
+                    ReloadTable();
                 }
-                ReloadTable();
+                else if (cboBy.SelectedIndex == 0)
+                {
+                    listTable = new List<DTO_Table>();
+                    List<DTO_Table> list = new List<DTO_Table>();
+                    list = table.GetTablesByShopId(shopID);
+                    DTO_Receipt dtoReceipt = new DTO_Receipt();
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        dtoReceipt = table.GetCurrentReceiptOfTable(list[i].Id, shopID);
+                        if ((dtoReceipt != null) && dtoReceipt.Customer.Id == id)
+                        {
+                            listTable.Add(list[i]);
+                        }
+                    }
+                    ReloadTable();
+                }
             }
         }
 

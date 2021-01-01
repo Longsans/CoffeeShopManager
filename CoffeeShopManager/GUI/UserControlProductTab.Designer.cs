@@ -47,7 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblProducts = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblLabel = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.lblSumTotal = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -209,6 +209,7 @@
             // lblProducts
             // 
             resources.ApplyResources(this.lblProducts, "lblProducts");
+            this.lblProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.lblProducts.Name = "lblProducts";
             // 
             // flowLayoutPanel1
@@ -218,14 +219,15 @@
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Click += new System.EventHandler(this.flowLayoutPanel1_Click);
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             this.flowLayoutPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseClick);
             // 
-            // lblLabel
+            // lblTotal
             // 
-            resources.ApplyResources(this.lblLabel, "lblLabel");
-            this.lblLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblLabel.Name = "lblLabel";
+            resources.ApplyResources(this.lblTotal, "lblTotal");
+            this.lblTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.SizeChanged += new System.EventHandler(this.lblTotal_SizeChanged);
             // 
             // lblSumTotal
             // 
@@ -317,9 +319,10 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnImageadd);
             this.Controls.Add(this.lblSumTotal);
-            this.Controls.Add(this.lblLabel);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -371,7 +374,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblLabel;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblSumTotal;
         private System.Windows.Forms.Button btnImageadd;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

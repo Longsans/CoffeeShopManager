@@ -15,6 +15,7 @@ namespace GUI
     public partial class UserControlStock : UserControl
     {
         BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
+        public UserControlSuppliers ucSup { get; set; }
         FilterProperties filProp = new FilterProperties();
         ErrorProvider err = new ErrorProvider();
         public DTO_Shop Shop = new DTO_Shop();
@@ -38,7 +39,14 @@ namespace GUI
             if (txtSearch.TextLength == 0)
             {
                 txtSearch.ForeColor = Color.DimGray;
-                txtSearch.Text = "Search...";
+                if (btnDelete.Text == "Delete")
+                {
+                    txtSearch.Text = "Search...";
+                }
+                else
+                {
+                    txtSearch.Text = "Tìm kiếm...";
+                }
             }
         }
 
@@ -82,6 +90,7 @@ namespace GUI
                         {
                             grdStock.DataSource = busStock.GetDataTableById(id, Shop.ID);
                         }
+                        else grdStock.DataSource = busStock.GetDataTableById(-1, Shop.ID);
                     }
                     break;
                 case "Name":
@@ -129,45 +138,12 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(cboSearch.Text))
+            if (!string.IsNullOrWhiteSpace(cboSearch.Text) && txtSearch.ForeColor != Color.DimGray)
             {
-                err.SetError(txtSearch, "");
-                var resultIndex = cboSearch.FindStringExact(cboSearch.Text);
-                switch (resultIndex)
-                {
-                    case 0:
-                        {
-                            if (int.TryParse(txtSearch.Text, out int id))
-                            {
-                                grdStock.DataSource = busStock.GetDataTableById(id, Shop.ID);
-                            }
-                            else
-                            {
-                                if (btnEdit.Text == "Sửa")
-                                err.SetError(txtSearch, "ID hàng hóa phải là số tự nhiên");
-                                else err.SetError(txtSearch, "Stock item ID must be a natural number");
-                            }
-                        }
-                        break;
-                    case 1:
-                        {
-                            grdStock.DataSource = busStock.GetDataTableByName(txtSearch.Text, Shop.ID);
-                        }
-                        break;
-                    case 2:
-                        {
-                            grdStock.DataSource = busStock.GetDataTableBySupplierId(txtSearch.Text, Shop.ID);
-                        }
-                        break;
-                    case 3:
-                        {
-                            grdStock.DataSource = busStock.GetDataTableBySupplierName(txtSearch.Text, Shop.ID);
-                        }
-                        break;
-                }
                 lblResetFilters.Visible = true;
                 filProp.CurrentFilter = cboSearch.Text;
                 filProp.CurrentFilterText = txtSearch.Text;
+                ReloadGridView();
             }
         }
 
@@ -176,7 +152,8 @@ namespace GUI
             frmAddStockItem frmAdd = new frmAddStockItem
             {
                 Shop = this.Shop,
-                ucStock = this
+                ucStock = this,
+                ucSup = this.ucSup
             };
 
             frmAdd.Location = new Point(frmMan.Location.X + frmMan.Width / 2 - frmAdd.Width / 2,
@@ -186,41 +163,41 @@ namespace GUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in grdStock.SelectedRows)
+            if (grdStock.SelectedRows.Count > 0)
             {
-                if (lblStock.Text == "Stock")
+                DialogResult ret;
+
+                if (btnDelete.Text == "Delete")
                 {
-
-                    var item = new DTO_StockItem
-                    {
-                        Id = (int)row.Cells["ID"].Value,
-                        Name = row.Cells["Item Name"].Value.ToString(),
-                        Shop = this.Shop,
-                        Supplier = new DTO_Supplier
-                        {
-                            Id = row.Cells["Supplier ID"].Value.ToString()
-                        }
-                    };
-
-                    busStock.Delete(item);
+                    ret = MessageBox.Show("Deleting this stock item will also remove it from the item list of any product using it, do you want to continue?",
+                        "Delete stock item", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    var item = new DTO_StockItem
-                    {
-                        Id = (int)row.Cells["ID"].Value,
-                        Name = row.Cells["Tên sản phẩm"].Value.ToString(),
-                        Shop = this.Shop,
-                        Supplier = new DTO_Supplier
-                        {
-                            Id = row.Cells["ID Nhà cung"].Value.ToString()
-                        }
-                    };
+                    ret = MessageBox.Show("Xóa hàng hóa này cũng sẽ xóa nó khỏi danh sách thành phần của bất kỳ sản phẩm nào đang dùng nó, bạn có muốn tiếp tục?",
+                        "Xóa hàng hóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
 
-                    busStock.Delete(item);
+                if (ret == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in grdStock.SelectedRows)
+                    {
+                        var item = new DTO_StockItem
+                        {
+                            Id = (int)row.Cells[0].Value,
+                            Name = row.Cells[1].Value.ToString(),
+                            Shop = this.Shop,
+                            Supplier = new DTO_Supplier
+                            {
+                                Id = row.Cells[2].Value.ToString()
+                            }
+                        };
+
+                        busStock.Delete(item);
+                    }
+                    ReloadGridView();
                 }
             }
-            ReloadGridView();
         }
 
         private void lblResetFilters_MouseDown(object sender, MouseEventArgs e)

@@ -38,7 +38,19 @@ namespace GUI
             savename = dtoPro.Name;
             txtName1.Text = dtoPro.Name;
             txtPrice.Text = dtoPro.Price.ToString();
-            cbxType.Text = dtoPro.Type;
+            
+            if (dtoPro.Type == "Food")
+            {
+                cbxType.SelectedIndex = 0;
+            }
+            else if (dtoPro.Type == "Drink")
+            {
+                cbxType.SelectedIndex = 1;
+            }
+            else
+            {
+                cbxType.SelectedIndex = 2;
+            }
             rtxDetail.Text = dtoPro.Details;
             lblListCaption.Text += $"{dtoPro.Name}:";
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -111,7 +123,7 @@ namespace GUI
 
                 if (resultIndex==0)
                     cbxType.Text = "Food";
-                if (resultIndex == 1)
+                else if (resultIndex == 1)
                     cbxType.Text = "Drink";
                 else
                     cbxType.Text = "Others";
@@ -162,6 +174,11 @@ namespace GUI
         public void ReloadGridView()
         {
             grdItems.DataSource = busPro.GetDataTableItemsOfProduct(dtoPro.Id, dtoPro.Shop.ID);
+            if (btnCancel.Text != "Cancel")
+            {
+                grdItems.Columns[0].HeaderText = "ID hàng";
+                grdItems.Columns[1].HeaderText = "Tên hàng";
+            }
         }
 
         private void lblAdd_MouseUp(object sender, MouseEventArgs e)

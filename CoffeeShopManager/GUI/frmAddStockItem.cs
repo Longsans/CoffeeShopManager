@@ -17,6 +17,7 @@ namespace GUI
     {
         public DTO_Shop Shop = new DTO_Shop();
         public UserControlStock ucStock { get; set; }
+        public UserControlSuppliers ucSup { get; set; }
         BUS_StockItems busStock = new BUS_StockItems(ConnectionStringHelper.GetConnectionString());
         BUS_Suppliers busSup = new BUS_Suppliers(ConnectionStringHelper.GetConnectionString());
         string addSup = "Enter new supplier",
@@ -42,7 +43,7 @@ namespace GUI
             if (btnAdd.Text == "Thêm")
             {
                 addSup = "Nhập nhà cung cấp mới";
-                existingSup = "Nhập nhà cung cấp hiện có";
+                existingSup = "Nhập nhà cung cấp";
             }
             else
             {
@@ -56,8 +57,8 @@ namespace GUI
             }
 
             this.FormClosing += FrmAddStockItem_FormClosing;
-            errs[0].SetIconPadding(txtSupId, 5);
-            errs[1].SetIconPadding(txtEmail, 5);
+            errs[0].SetIconPadding(txtSupId, 3);
+            errs[1].SetIconPadding(txtEmail, 3);
             lblEnterSup.Location = lblAddSup.Location;
             checkIcon = new Icon(GUI.Properties.Resources.check1, errs[0].Icon.Size);
             errorIcon = new Icon(GUI.Properties.Resources.cancel, errs[0].Icon.Size);
@@ -288,10 +289,26 @@ namespace GUI
 
             if (lblEnterSup.Visible)
             {
-                item.Supplier.Name = txtSupName.Text;
-                item.Supplier.Email = txtEmail.Text;
-                item.Supplier.Phone = txtPhone.Text;
-                busSup.Insert(item.Supplier);
+                if (!long.TryParse(txtPhone.Text, out long phone))
+                {
+                    if (btnAdd.Text == "Add")
+                    {
+                        MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    return;
+                }
+                else
+                {
+                    item.Supplier.Name = txtSupName.Text;
+                    item.Supplier.Email = txtEmail.Text;
+                    item.Supplier.Phone = txtPhone.Text;
+                    busSup.Insert(item.Supplier);
+                    ucSup.ReloadGridView();
+                }
             }
 
             busStock.Insert(item);

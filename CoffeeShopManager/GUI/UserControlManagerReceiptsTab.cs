@@ -93,7 +93,7 @@ namespace GUI
                             grdReceipts.DataSource = busRec.GetReceiptSearchDateOfPaymentFiltered(datSearch.Value, dtoShop.ID);
                         }
                         break;
-                    case "Ngày trả":
+                    case "Ngày thanh toán":
                         {
                             grdReceipts.DataSource = busRec.GetReceiptSearchDateOfPaymentFiltered(datSearch.Value, dtoShop.ID);
                         }
@@ -103,6 +103,16 @@ namespace GUI
             else
             {
                 grdReceipts.DataSource = busRec.GetAllReceipts(dtoShop.ID);
+            }
+
+            if (btnPrint.Text != "Print")
+            {
+                grdReceipts.Columns[1].HeaderText = "ID khách hàng";
+                grdReceipts.Columns[2].HeaderText = "Tên khách hàng";
+                grdReceipts.Columns[3].HeaderText = "Họ khách hàng";
+                grdReceipts.Columns[4].HeaderText = "Ngày thanh toán";
+                grdReceipts.Columns[5].HeaderText = "ID nhân viên";
+                grdReceipts.Columns[6].HeaderText = "Tổng tiền";
             }
         }
 
@@ -157,7 +167,7 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(cboSearch.Text))
+            if (!string.IsNullOrWhiteSpace(cboSearch.Text) && (txtSearch.ForeColor != Color.DimGray || datSearch.Visible))
             {
                 lblResetFilters.Visible = true;
                 filProp.CurrentFilter = cboSearch.Text;
@@ -168,7 +178,7 @@ namespace GUI
 
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboSearch.Text == "Date of Payment" || cboSearch.Text == "Ngày trả")
+            if (cboSearch.SelectedIndex == 3)
             {
                 datSearch.Format = DateTimePickerFormat.Custom;
                 datSearch.CustomFormat = "dd/MM/yyyy";

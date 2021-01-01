@@ -96,8 +96,8 @@ namespace GUI
             }
             if (lblCustomer.Text != "Customers")
             {
-                grdCustomers.Columns["First Name"].HeaderText = "Họ";
-                grdCustomers.Columns["Last Name"].HeaderText = "Tên";
+                grdCustomers.Columns["Last Name"].HeaderText = "Họ";
+                grdCustomers.Columns["First Name"].HeaderText = "Tên";
                 grdCustomers.Columns["Birthdate"].HeaderText = "Ngày sinh";
             }
         }

@@ -20,19 +20,6 @@ namespace BUS
             dalManager = new DAL_Manager(connectionString);
         }
 
-        public DataTable GetAllManagers(int shopId)
-        {
-            try
-            {
-                DataTable dtb = new DataTable();
-                dtb = dalManager.GetAllManagers(shopId);
-                return dtb;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         public DTO_Manager GetById(string id, int shopId)
         {
             try

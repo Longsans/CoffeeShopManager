@@ -140,6 +140,8 @@ namespace GUI
                 grdProds.Columns[2].HeaderText = "Loại";
                 grdProds.Columns[3].HeaderText = "Giá bán";
             }
+
+            grdProds.Columns[0].HeaderText = "ID";
         }
 
         private void ResetInput()

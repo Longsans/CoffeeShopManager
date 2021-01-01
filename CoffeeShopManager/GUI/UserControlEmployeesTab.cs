@@ -65,8 +65,8 @@ namespace GUI
             dataGridView1.DataSource = busEmp.GetAllEmployee(dtoMan.Shop.ID);
             if (btnShowAll.Text != "Show All")
             {
-                dataGridView1.Columns["First Name"].HeaderText = "Họ";
-                dataGridView1.Columns["Last Name"].HeaderText = "Tên";
+                dataGridView1.Columns["Last Name"].HeaderText = "Họ";
+                dataGridView1.Columns["First Name"].HeaderText = "Tên";
                 dataGridView1.Columns["Position"].HeaderText = "Chức vụ";
                 dataGridView1.Columns["Phone"].HeaderText = "SĐT";
                 dataGridView1.Columns["Gender"].HeaderText = "Giới tính";
@@ -92,8 +92,8 @@ namespace GUI
             {
                 DialogResult ret;
                 if (btnEdit.Text == "Sửa")
-                    ret = MessageBox.Show("Bạn có muốn xóa nhân viên này không?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                else ret = MessageBox.Show("Do you want to delete this employee?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    ret = MessageBox.Show("Bạn có muốn xóa nhân viên này không?", "Xóa nhân viên", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                else ret = MessageBox.Show("Do you want to delete this employee?", "Delete employee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (ret == DialogResult.Yes)
                 {
                     dtoEmp = busEmp.GetInfoByIdNotDeleted(dataGridView1.SelectedRows[0].Cells[0].Value.ToString(), dtoMan.Shop.ID);

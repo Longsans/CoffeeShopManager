@@ -94,16 +94,6 @@ namespace GUI
             this.Close();
         }
 
-        private void txtYearJoin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtYearBD_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
@@ -149,15 +139,15 @@ namespace GUI
             var resultIndex = cboPosition.FindStringExact(cboPosition.Text);
             if (resultIndex == 0)
                 cboPosition.Text = "Waiter";
-            if (resultIndex == 1)
+            else if (resultIndex == 1)
                 cboPosition.Text = "Barista";
-            if (resultIndex == 2)
+            else if (resultIndex == 2)
                 cboPosition.Text = "Cook";
-            if (resultIndex == 3)
+            else if (resultIndex == 3)
                 cboPosition.Text = "Utility";
-            if (resultIndex == 4)
+            else if (resultIndex == 4)
                 cboPosition.Text = "Janitor";
-            if (resultIndex == 5)
+            else if (resultIndex == 5)
                 cboPosition.Text = "Security";
             else
                 cboPosition.Text = "Others";
@@ -335,7 +325,7 @@ namespace GUI
         {
             datBirth.CustomFormat = "dd/MM/yyyy";
             DateTime now = DateTime.Now;
-            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datBirth.Value.Year <= 2078 && datJoin.Value.Year <= 2078 && datBirth.Value.Year >= 1910 && datJoin.Value.Year >= 1910)
+            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datJoin.Value <= now && datBirth.Value.Year >= 1910)
             {
                 checkbirth = 1;
                 checkjoin = 1;
@@ -380,7 +370,7 @@ namespace GUI
         {
             datJoin.CustomFormat = "dd/MM/yyyy";
             DateTime now = DateTime.Now;
-            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datBirth.Value.Year <= 2078 && datJoin.Value.Year <= 2078 && datBirth.Value.Year >= 1910 && datJoin.Value.Year >= 1910)
+            if ((datJoin.Value.Year - datBirth.Value.Year) >= 18 && datJoin.Value <= now && datBirth.Value.Year >= 1910)
             {
                 checkjoin = 1;
                 checkbirth = 1;

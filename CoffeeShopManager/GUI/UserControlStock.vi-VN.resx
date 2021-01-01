@@ -136,6 +136,9 @@
   <data name="cboSearch.Items3" xml:space="preserve">
     <value>Tên nhà cung cấp</value>
   </data>
+  <data name="cboSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>477, 77</value>
+  </data>
   <data name="cboSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 24</value>
   </data>
@@ -169,11 +172,14 @@
   <data name="lblResetFilters.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt, style=Underline</value>
   </data>
+  <data name="lblResetFilters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>692, 107</value>
+  </data>
   <data name="lblResetFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 17</value>
+    <value>110, 17</value>
   </data>
   <data name="lblResetFilters.Text" xml:space="preserve">
-    <value>Khởi tạo bộ lọc</value>
+    <value>Khôi phục bộ lọc</value>
   </data>
   <data name="btnSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -109,7 +109,7 @@ namespace GUI
                                 Item = this.Item,
                                 Product = new DTO_Product
                                 {
-                                    Id = (int)row.Cells["Product ID"].Value,
+                                    Id = (int)row.Cells[0].Value,
                                     Shop = this.Item.Shop
                                 },
                                 Shop = this.Item.Shop
@@ -131,7 +131,7 @@ namespace GUI
                                 Item = this.Item,
                                 Product = new DTO_Product
                                 {
-                                    Id = (int)row.Cells["Product ID"].Value,
+                                    Id = (int)row.Cells[0].Value,
                                     Shop = this.Item.Shop
                                 },
                                 Shop = this.Item.Shop
@@ -160,6 +160,12 @@ namespace GUI
         public void ReloadGridView()
         {
             grdProds.DataSource = busStock.GetDataTableProductsUsingItem(Item.Id, Item.Shop.ID);
+
+            if (btnCancel.Text != "Cancel")
+            {
+                grdProds.Columns[0].HeaderText = "ID sản phẩm";
+                grdProds.Columns[1].HeaderText = "Tên sản phẩm";
+            }
         }
 
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)

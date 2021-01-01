@@ -68,6 +68,13 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clmProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDown = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmUp = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblOr = new System.Windows.Forms.Label();
             this.txtSearchName = new System.Windows.Forms.TextBox();
@@ -80,13 +87,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDown = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.clmQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmUp = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -116,7 +116,6 @@
             this.errorProvider1.SetIconPadding(this.panel1, ((int)(resources.GetObject("panel1.IconPadding1"))));
             this.errorProvider2.SetIconPadding(this.panel1, ((int)(resources.GetObject("panel1.IconPadding2"))));
             this.panel1.Name = "panel1";
-            this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // lblHead
             // 
@@ -205,14 +204,16 @@
             this.errEmail.SetError(this.datBirthdate, resources.GetString("datBirthdate.Error"));
             this.errorProvider2.SetError(this.datBirthdate, resources.GetString("datBirthdate.Error1"));
             this.errorProvider1.SetError(this.datBirthdate, resources.GetString("datBirthdate.Error2"));
+            this.datBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.errEmail.SetIconAlignment(this.datBirthdate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("datBirthdate.IconAlignment"))));
             this.errorProvider1.SetIconAlignment(this.datBirthdate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("datBirthdate.IconAlignment1"))));
             this.errorProvider2.SetIconAlignment(this.datBirthdate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("datBirthdate.IconAlignment2"))));
             this.errorProvider2.SetIconPadding(this.datBirthdate, ((int)(resources.GetObject("datBirthdate.IconPadding"))));
             this.errorProvider1.SetIconPadding(this.datBirthdate, ((int)(resources.GetObject("datBirthdate.IconPadding1"))));
             this.errEmail.SetIconPadding(this.datBirthdate, ((int)(resources.GetObject("datBirthdate.IconPadding2"))));
+            this.datBirthdate.MaxDate = new System.DateTime(2078, 12, 31, 0, 0, 0, 0);
+            this.datBirthdate.MinDate = new System.DateTime(1901, 1, 1, 0, 0, 0, 0);
             this.datBirthdate.Name = "datBirthdate";
-            this.datBirthdate.ValueChanged += new System.EventHandler(this.datBirthdate_ValueChanged);
             // 
             // txtID
             // 
@@ -255,7 +256,6 @@
             this.errorProvider1.SetIconPadding(this.txtLastName, ((int)(resources.GetObject("txtLastName.IconPadding1"))));
             this.errorProvider2.SetIconPadding(this.txtLastName, ((int)(resources.GetObject("txtLastName.IconPadding2"))));
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // lblLastName
             // 
@@ -274,6 +274,7 @@
             // comboBox2
             // 
             resources.ApplyResources(this.comboBox2, "comboBox2");
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.errorProvider2.SetError(this.comboBox2, resources.GetString("comboBox2.Error"));
             this.errorProvider1.SetError(this.comboBox2, resources.GetString("comboBox2.Error1"));
             this.errEmail.SetError(this.comboBox2, resources.GetString("comboBox2.Error2"));
@@ -284,6 +285,8 @@
             this.errEmail.SetIconPadding(this.comboBox2, ((int)(resources.GetObject("comboBox2.IconPadding"))));
             this.errorProvider1.SetIconPadding(this.comboBox2, ((int)(resources.GetObject("comboBox2.IconPadding1"))));
             this.errorProvider2.SetIconPadding(this.comboBox2, ((int)(resources.GetObject("comboBox2.IconPadding2"))));
+            this.comboBox2.Items.AddRange(new object[] {
+            resources.GetString("comboBox2.Items")});
             this.comboBox2.Name = "comboBox2";
             // 
             // txtEmail
@@ -313,7 +316,6 @@
             this.errorProvider1.SetIconPadding(this.txtFirstName, ((int)(resources.GetObject("txtFirstName.IconPadding1"))));
             this.errorProvider2.SetIconPadding(this.txtFirstName, ((int)(resources.GetObject("txtFirstName.IconPadding2"))));
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // panel3
             // 
@@ -680,6 +682,65 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             // 
+            // clmProduct
+            // 
+            this.clmProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmProduct.FillWeight = 200F;
+            resources.ApplyResources(this.clmProduct, "clmProduct");
+            this.clmProduct.Name = "clmProduct";
+            this.clmProduct.ReadOnly = true;
+            // 
+            // clmDown
+            // 
+            this.clmDown.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmDown.FillWeight = 30F;
+            resources.ApplyResources(this.clmDown, "clmDown");
+            this.clmDown.Name = "clmDown";
+            this.clmDown.ReadOnly = true;
+            this.clmDown.Text = " -";
+            this.clmDown.UseColumnTextForButtonValue = true;
+            // 
+            // clmQuantity
+            // 
+            this.clmQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmQuantity.FillWeight = 50F;
+            resources.ApplyResources(this.clmQuantity, "clmQuantity");
+            this.clmQuantity.Name = "clmQuantity";
+            // 
+            // clmUp
+            // 
+            this.clmUp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmUp.FillWeight = 30F;
+            resources.ApplyResources(this.clmUp, "clmUp");
+            this.clmUp.Name = "clmUp";
+            this.clmUp.ReadOnly = true;
+            this.clmUp.Text = " +";
+            this.clmUp.UseColumnTextForButtonValue = true;
+            // 
+            // clmTotal
+            // 
+            this.clmTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmTotal.FillWeight = 150F;
+            resources.ApplyResources(this.clmTotal, "clmTotal");
+            this.clmTotal.Name = "clmTotal";
+            this.clmTotal.ReadOnly = true;
+            // 
+            // clmDelete
+            // 
+            this.clmDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmDelete.FillWeight = 44F;
+            resources.ApplyResources(this.clmDelete, "clmDelete");
+            this.clmDelete.Name = "clmDelete";
+            this.clmDelete.ReadOnly = true;
+            // 
+            // clmID
+            // 
+            this.clmID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmID.FillWeight = 0.1F;
+            resources.ApplyResources(this.clmID, "clmID");
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
+            // 
             // flowLayoutPanel1
             // 
             resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
@@ -811,65 +872,6 @@
             resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // clmProduct
-            // 
-            this.clmProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmProduct.FillWeight = 200F;
-            resources.ApplyResources(this.clmProduct, "clmProduct");
-            this.clmProduct.Name = "clmProduct";
-            this.clmProduct.ReadOnly = true;
-            // 
-            // clmDown
-            // 
-            this.clmDown.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmDown.FillWeight = 30F;
-            resources.ApplyResources(this.clmDown, "clmDown");
-            this.clmDown.Name = "clmDown";
-            this.clmDown.ReadOnly = true;
-            this.clmDown.Text = " -";
-            this.clmDown.UseColumnTextForButtonValue = true;
-            // 
-            // clmQuantity
-            // 
-            this.clmQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmQuantity.FillWeight = 50F;
-            resources.ApplyResources(this.clmQuantity, "clmQuantity");
-            this.clmQuantity.Name = "clmQuantity";
-            // 
-            // clmUp
-            // 
-            this.clmUp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmUp.FillWeight = 30F;
-            resources.ApplyResources(this.clmUp, "clmUp");
-            this.clmUp.Name = "clmUp";
-            this.clmUp.ReadOnly = true;
-            this.clmUp.Text = " +";
-            this.clmUp.UseColumnTextForButtonValue = true;
-            // 
-            // clmTotal
-            // 
-            this.clmTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmTotal.FillWeight = 150F;
-            resources.ApplyResources(this.clmTotal, "clmTotal");
-            this.clmTotal.Name = "clmTotal";
-            this.clmTotal.ReadOnly = true;
-            // 
-            // clmDelete
-            // 
-            this.clmDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmDelete.FillWeight = 44F;
-            resources.ApplyResources(this.clmDelete, "clmDelete");
-            this.clmDelete.Name = "clmDelete";
-            this.clmDelete.ReadOnly = true;
-            // 
-            // clmID
-            // 
-            this.clmID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmID.FillWeight = 0.1F;
-            resources.ApplyResources(this.clmID, "clmID");
-            this.clmID.Name = "clmID";
-            this.clmID.ReadOnly = true;
             // 
             // UserControlOrderProduct
             // 

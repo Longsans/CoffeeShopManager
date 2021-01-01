@@ -72,6 +72,7 @@
             // datBirthdate
             // 
             resources.ApplyResources(this.datBirthdate, "datBirthdate");
+            this.datBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datBirthdate.Name = "datBirthdate";
             // 
             // txtUsername
@@ -246,6 +247,7 @@
             // datDateOfJoin
             // 
             resources.ApplyResources(this.datDateOfJoin, "datDateOfJoin");
+            this.datDateOfJoin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datDateOfJoin.Name = "datDateOfJoin";
             // 
             // txtAddress

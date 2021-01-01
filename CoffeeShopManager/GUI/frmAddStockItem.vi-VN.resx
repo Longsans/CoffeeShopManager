@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblEnterSup.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
+    <value>Tahoma, 9pt</value>
   </data>
   <data name="lblEnterSup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -132,14 +132,17 @@
         wswI4CmYn/NLjvMEAqQ2UOOyfVQAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="lblEnterSup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 112</value>
+  </data>
   <data name="lblEnterSup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 17</value>
+    <value>209, 18</value>
   </data>
   <data name="lblEnterSup.Text" xml:space="preserve">
     <value>       Nhập ID nhà cung tồn tại</value>
   </data>
   <data name="lblAddSup.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 7.8pt</value>
+    <value>Tahoma, 9pt</value>
   </data>
   <data name="lblAddSup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -152,8 +155,11 @@
         YT35NZaEJjFeJoRNjDNu/vdxXPSEDaPD7Ahg07B7zX8KghuZAT0EwRvKJwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="lblAddSup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 112</value>
+  </data>
   <data name="lblAddSup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 17</value>
+    <value>147, 18</value>
   </data>
   <data name="lblAddSup.Text" xml:space="preserve">
     <value>       Thêm nhà cung</value>
@@ -174,7 +180,7 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="txtPhone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 191</value>
+    <value>435, 191</value>
   </data>
   <data name="txtPhone.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 23</value>
@@ -183,7 +189,7 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 145</value>
+    <value>435, 145</value>
   </data>
   <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 23</value>
@@ -191,20 +197,30 @@
   <data name="txtSupName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
+  <data name="txtSupName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 191</value>
+  </data>
   <data name="txtSupName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 23</value>
+    <value>142, 23</value>
   </data>
   <data name="txtSupId.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
+  <data name="txtSupId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 145</value>
+  </data>
   <data name="txtSupId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 23</value>
+    <value>142, 23</value>
   </data>
   <data name="txtSupId.Text" xml:space="preserve">
-    <value>Nhập nhà cung cấp hiện có</value>
+    <value>Nhập nhà cung cấp
+</value>
   </data>
   <data name="txtItemName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
+  </data>
+  <data name="txtItemName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 56</value>
   </data>
   <data name="txtItemName.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 23</value>
@@ -213,7 +229,7 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblPhone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 194</value>
+    <value>340, 194</value>
   </data>
   <data name="lblPhone.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 17</value>
@@ -225,7 +241,7 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblSupName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 194</value>
+    <value>40, 194</value>
   </data>
   <data name="lblSupName.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 17</value>
@@ -237,19 +253,19 @@
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 148</value>
+    <value>40, 148</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 17</value>
+    <value>84, 17</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>ID nhà cung cấp</value>
+    <value>ID nhà cung</value>
   </data>
   <data name="lblEmail.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
   <data name="lblEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 148</value>
+    <value>340, 148</value>
   </data>
   <data name="lblEmail.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 17</value>
@@ -257,20 +273,38 @@
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 59</value>
+  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 17</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Tên hàng</value>
   </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>618, 322</value>
+  </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10.2pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>247, 7</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 21</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Thêm hàng hóa</value>
+  </data>
+  <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>587, 0</value>
+  </data>
+  <data name="pnlTitleBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>618, 35</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>618, 357</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">

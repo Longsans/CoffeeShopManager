@@ -50,6 +50,7 @@
             // 
             // grdCustomers
             // 
+            resources.ApplyResources(this.grdCustomers, "grdCustomers");
             this.grdCustomers.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.grdCustomers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -66,7 +67,6 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grdCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.grdCustomers, "grdCustomers");
             this.grdCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -86,10 +86,10 @@
             // 
             // btnEdit
             // 
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(179)))), ((int)(((byte)(134)))));
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(56)))), ((int)(((byte)(46)))));
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -103,9 +103,9 @@
             // 
             // cboSearch
             // 
+            resources.ApplyResources(this.cboSearch, "cboSearch");
             this.cboSearch.BackColor = System.Drawing.Color.White;
             this.cboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cboSearch, "cboSearch");
             this.cboSearch.FormattingEnabled = true;
             this.cboSearch.Items.AddRange(new object[] {
             resources.GetString("cboSearch.Items"),

@@ -1944,6 +1944,24 @@
   <data name="btnExit.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 10.8pt</value>
+  </data>
+  <data name="label3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 6</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 23</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Thêm nhân viên</value>
+  </data>
   <data name="TitleBar.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -1957,10 +1975,10 @@
     <value>Sai id</value>
   </data>
   <data name="cboString.Items1" xml:space="preserve">
-    <value>Có dữ liệu liên quan đến nhân viên này. Bạn có muốn xem trước và khôi phục chúng không?</value>
+    <value>Có dữ liệu liên quan đến nhân viên này. Bạn có muốn xem và khôi phục nhân viên không?</value>
   </data>
   <data name="cboString.Items2" xml:space="preserve">
-    <value>Không thể nhân đôi ID nhân viên</value>
+    <value>Không thể thêm ID nhân viên đã có</value>
   </data>
   <data name="cboString.Items3" xml:space="preserve">
     <value>Vui lòng điền đầy đủ thông tin.</value>
@@ -2002,13 +2020,13 @@
     <value>Hợp lệ</value>
   </data>
   <data name="cboString.Items17" xml:space="preserve">
-    <value>Email đã có trong shop</value>
+    <value>Email đã tồn tại</value>
   </data>
   <data name="cboString.Items18" xml:space="preserve">
     <value>Email phải theo định dạng 'example@example.example' và không được có bất kỳ khoảng trắng nào</value>
   </data>
   <data name="cboString.Items19" xml:space="preserve">
-    <value>ID nhân viên đã tồn tại</value>
+    <value>ID đã tồn tại</value>
   </data>
   <data name="cboString.Items20" xml:space="preserve">
     <value>Có dữ liệu liên quan đến nhân viên này</value>
@@ -2017,7 +2035,7 @@
     <value>Hợp lệ</value>
   </data>
   <data name="cboString.Items22" xml:space="preserve">
-    <value>Tên tài khoản đã có trong shop</value>
+    <value>Tên tài khoản đã tồn tại</value>
   </data>
   <data name="cboString.Items23" xml:space="preserve">
     <value>Sai định dạng</value>
@@ -2032,35 +2050,17 @@
   <data name="datJoin.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="datJoin.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="datJoin.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="datJoin.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 23</value>
   </data>
   <data name="datBirth.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="datBirth.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="datBirth.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="datBirth.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 23</value>
   </data>
   <data name="txtUsername.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="txtUsername.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtUsername.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="label18.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
@@ -2179,32 +2179,14 @@
   <data name="txtPhone.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="txtPhone.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtPhone.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="txtPhone.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 265</value>
   </data>
   <data name="txtAddress.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="txtAddress.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtAddress.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="txtLastName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="txtLastName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtLastName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="txtLastName.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 137</value>
@@ -2212,50 +2194,20 @@
   <data name="txtFirstName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="txtFirstName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtFirstName.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="txtFirstName.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 91</value>
   </data>
   <data name="txtPassword.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="txtPassword.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtPassword.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="txtSalary.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="txtSalary.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtSalary.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="txtEmail.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
   </data>
-  <data name="txtEmail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtEmail.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="txtID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
-  </data>
-  <data name="txtID.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="txtID.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="txtID.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 52</value>
@@ -2381,7 +2333,7 @@
     <value>MiddleRight</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 144</value>
+    <value>33, 140</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 17</value>
@@ -2435,7 +2387,7 @@
     <value>MiddleRight</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 58</value>
+    <value>33, 55</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 17</value>
@@ -2454,24 +2406,6 @@
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Địa chỉ email</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 13.8pt</value>
-  </data>
-  <data name="label3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 6</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 29</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Thêm nhân viên</value>
   </data>
   <data name="panel2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>

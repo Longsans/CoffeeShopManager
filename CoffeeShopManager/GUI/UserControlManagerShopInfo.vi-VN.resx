@@ -134,9 +134,6 @@
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 201</value>
-  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 17</value>
   </data>
@@ -160,9 +157,6 @@
   </data>
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 297</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 17</value>
@@ -210,7 +204,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnChangeAuthCode.Text" xml:space="preserve">
-    <value>Thay đổi mã code</value>
+    <value>Đổi mã xác thực</value>
   </data>
   <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 10.2pt</value>

@@ -91,59 +91,72 @@ namespace GUI
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtFirstName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text) ||
-                    string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                    string.IsNullOrWhiteSpace(txtUsername.Text))
-                {
-                    throw new Exception(comboBox1.Items[0].ToString());
-                }
-                else if (txtUsername.Text != dtoMan.Account.Username)
-                {
-                    if (!busUser.CheckUsername(txtUsername.Text))
-                    {
-                        throw new InvalidOperationException(comboBox1.Items[1].ToString());
-                    }
-                }
-
-                dtoMan.Firstname = txtFirstName.Text;
-                dtoMan.Lastname = txtLastName.Text;
-                if (picManagerInfo.Image != null)
-                    dtoMan.Image = ImageHelper.ImageToByteArray(picManagerInfo.Image);
-                dtoMan.Phone = txtPhone.Text;
-                if (radMale.Checked == true)
-                {
-                    if (radMale.Text != "Nam")
-                        dtoMan.Gender = radMale.Text;
-                    else
-                        dtoMan.Gender = "Male";
-
-                }
-                else
-                {
-                    if (radFemale.Text != "Nữ")
-                        dtoMan.Gender = radMale.Text;
-                    else
-                        dtoMan.Gender = "Female";
-                }
-                if(checkemail==1)
-                dtoMan.Email = txtEmail.Text;
-                else
-                {
-                    MessageBox.Show(comboBox1.Items[2].ToString(), comboBox1.Items[3].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if ((DateTime.Now.Year- datBirthdate.Value.Year)>=18)
-                dtoMan.Birthdate = datBirthdate.Value;
-                else
-                {
-                    MessageBox.Show(comboBox1.Items[4].ToString(), comboBox1.Items[5].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-
-                }
-                dtoMan.Account.Username = txtUsername.Text;
                 DialogResult ret = MessageBox.Show(comboBox1.Items[6].ToString(), comboBox1.Items[7].ToString(), MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (ret == DialogResult.Yes)
                 {
+                    if (string.IsNullOrWhiteSpace(txtFirstName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text) ||
+                    string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                    string.IsNullOrWhiteSpace(txtUsername.Text))
+                    {
+                        throw new Exception(comboBox1.Items[0].ToString());
+                    }
+                    else if (txtUsername.Text != dtoMan.Account.Username)
+                    {
+                        if (!busUser.CheckUsername(txtUsername.Text))
+                        {
+                            throw new InvalidOperationException(comboBox1.Items[1].ToString());
+                        }
+                    }
+
+                    if (!long.TryParse(txtPhone.Text, out long phone))
+                    {
+                        if (btnBrowse.Text == "Browse")
+                        {
+                            MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        return;
+                    }
+
+                    dtoMan.Firstname = txtFirstName.Text;
+                    dtoMan.Lastname = txtLastName.Text;
+                    if (picManagerInfo.Image != null)
+                        dtoMan.Image = ImageHelper.ImageToByteArray(picManagerInfo.Image);
+                    dtoMan.Phone = txtPhone.Text;
+                    if (radMale.Checked == true)
+                    {
+                        if (radMale.Text != "Nam")
+                            dtoMan.Gender = radMale.Text;
+                        else
+                            dtoMan.Gender = "Male";
+
+                    }
+                    else
+                    {
+                        if (radFemale.Text != "Nữ")
+                            dtoMan.Gender = radMale.Text;
+                        else
+                            dtoMan.Gender = "Female";
+                    }
+                    if (checkemail == 1)
+                        dtoMan.Email = txtEmail.Text;
+                    else
+                    {
+                        MessageBox.Show(comboBox1.Items[2].ToString(), comboBox1.Items[3].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if ((DateTime.Now.Year - datBirthdate.Value.Year) >= 18)
+                        dtoMan.Birthdate = datBirthdate.Value;
+                    else
+                    {
+                        MessageBox.Show(comboBox1.Items[4].ToString(), comboBox1.Items[5].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+
+                    }
+                    dtoMan.Account.Username = txtUsername.Text;
                     busMan.UpdateInfoAndAccount(dtoMan);
                     frmManager.dtoMan = dtoMan;
                     DisableTextBox();
@@ -151,8 +164,7 @@ namespace GUI
                 }
                 else if (ret == DialogResult.No)
                 {
-                    DisableTextBox();
-                    btnSaveChange.Enabled = false;
+                    Reload();
                 }
             }
             catch (FormatException ex)

@@ -193,6 +193,7 @@ namespace GUI
             pnlChangeTab.Show();
             pnlChangeTab.Location = btnStock.Location;
             ucStockTab.Shop = dtoMan.Shop;
+            ucStockTab.ucSup = ucSuppliersTab;
             ucStockTab.frmMan = this;
             ucStockTab.Show();
             ucStockTab.BringToFront();
@@ -287,7 +288,7 @@ namespace GUI
                 this.Controls.Clear();
                 this.InitializeComponent();
             }
-            else if (comboBox1.Text == "Vietnamese")
+            else if (comboBox1.Text == "Tiếng Việt")
             {
                 var changeLanguage = new ChangeLanguage();
                 changeLanguage.UpdateConfig("language", "vi-VN");

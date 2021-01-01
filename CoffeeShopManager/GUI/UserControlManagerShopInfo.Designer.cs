@@ -105,7 +105,7 @@
             // btnEdit
             // 
             resources.ApplyResources(this.btnEdit, "btnEdit");
-            this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.BackColor = System.Drawing.Color.White;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.ForeColor = System.Drawing.Color.DarkRed;

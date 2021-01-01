@@ -64,8 +64,7 @@ namespace BUS
                 return false;
             try
             {
-                DTO_User accountnew1 = dalUserInfo.GetByUsername(username);
-                if (accountnew1 == null) return true;
+                if (dalUserInfo.GetByUsername(username) == null) return true;
                 return false;
             }
             catch (Exception ex)

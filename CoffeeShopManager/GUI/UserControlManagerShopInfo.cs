@@ -65,6 +65,17 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
                 else MessageBox.Show("Please fill all info fields.");
             }
+            else if (!long.TryParse(txtPhoneNumber.Text, out long phone))
+            {
+                if (btnEdit.Text == "Edit")
+                {
+                    MessageBox.Show("Phone number can only contain numeric characters.", "Invalid phone number format", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại chỉ được chứa ký tự số.", "Định dạng số điện thoại không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
             else
             {
                 dtoShop.ShopName = txtShopName.Text;
@@ -73,8 +84,8 @@ namespace GUI
                 busShop.Update(dtoShop);
                 DisableTextBox();
                 if (btnEdit.Text == "Sửa")
-                    MessageBox.Show("Cập nhật thông tin cửa hàng thành công!");
-                else MessageBox.Show("You have updated shop info successfully");
+                    MessageBox.Show("Cập nhật thông tin cửa hàng thành công.", "Cập nhật thông tin cửa hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Shop info has been updated", "Update shop info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         public void SetManager(DTO_Manager man)

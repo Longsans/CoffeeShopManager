@@ -227,6 +227,7 @@
             this.errorProvider1.SetIconPadding(this.datBirthdate, ((int)(resources.GetObject("datBirthdate.IconPadding1"))));
             this.errManId.SetIconPadding(this.datBirthdate, ((int)(resources.GetObject("datBirthdate.IconPadding2"))));
             this.errShop.SetIconPadding(this.datBirthdate, ((int)(resources.GetObject("datBirthdate.IconPadding3"))));
+            this.datBirthdate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.datBirthdate.Name = "datBirthdate";
             // 
             // btnBack

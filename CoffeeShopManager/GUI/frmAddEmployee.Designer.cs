@@ -114,7 +114,6 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label3);
             this.errorProvider1.SetError(this.panel2, resources.GetString("panel2.Error"));
             this.errEmail.SetError(this.panel2, resources.GetString("panel2.Error1"));
             this.errIdDeleted.SetError(this.panel2, resources.GetString("panel2.Error2"));
@@ -180,7 +179,6 @@
             this.errorProvider1.SetIconPadding(this.datJoin, ((int)(resources.GetObject("datJoin.IconPadding1"))));
             this.errIdDeleted.SetIconPadding(this.datJoin, ((int)(resources.GetObject("datJoin.IconPadding2"))));
             this.datJoin.Name = "datJoin";
-            this.datJoin.ValueChanged += new System.EventHandler(this.datJoin_ValueChanged);
             // 
             // datBirth
             // 
@@ -195,7 +193,6 @@
             this.errorProvider1.SetIconPadding(this.datBirth, ((int)(resources.GetObject("datBirth.IconPadding1"))));
             this.errIdDeleted.SetIconPadding(this.datBirth, ((int)(resources.GetObject("datBirth.IconPadding2"))));
             this.datBirth.Name = "datBirth";
-            this.datBirth.ValueChanged += new System.EventHandler(this.datBirth_ValueChanged);
             // 
             // txtUsername
             // 
@@ -458,6 +455,7 @@
             this.errorProvider1.SetIconPadding(this.txtEmail, ((int)(resources.GetObject("txtEmail.IconPadding1"))));
             this.errEmail.SetIconPadding(this.txtEmail, ((int)(resources.GetObject("txtEmail.IconPadding2"))));
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtID
             // 
@@ -648,6 +646,7 @@
             this.errEmail.SetError(this.label3, resources.GetString("label3.Error"));
             this.errorProvider1.SetError(this.label3, resources.GetString("label3.Error1"));
             this.errIdDeleted.SetError(this.label3, resources.GetString("label3.Error2"));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.errorProvider1.SetIconAlignment(this.label3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label3.IconAlignment"))));
             this.errEmail.SetIconAlignment(this.label3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label3.IconAlignment1"))));
             this.errIdDeleted.SetIconAlignment(this.label3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label3.IconAlignment2"))));
@@ -655,6 +654,9 @@
             this.errEmail.SetIconPadding(this.label3, ((int)(resources.GetObject("label3.IconPadding1"))));
             this.errIdDeleted.SetIconPadding(this.label3, ((int)(resources.GetObject("label3.IconPadding2"))));
             this.label3.Name = "label3";
+            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
+            this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseMove);
+            this.label3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseUp);
             // 
             // errorProvider1
             // 
@@ -666,6 +668,7 @@
             resources.ApplyResources(this.TitleBar, "TitleBar");
             this.TitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(67)))), ((int)(((byte)(58)))));
             this.TitleBar.Controls.Add(this.btnExit);
+            this.TitleBar.Controls.Add(this.label3);
             this.errorProvider1.SetError(this.TitleBar, resources.GetString("TitleBar.Error"));
             this.errEmail.SetError(this.TitleBar, resources.GetString("TitleBar.Error1"));
             this.errIdDeleted.SetError(this.TitleBar, resources.GetString("TitleBar.Error2"));
@@ -728,6 +731,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picboxEmpImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.TitleBar.ResumeLayout(false);
+            this.TitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errIdDeleted)).EndInit();
             this.ResumeLayout(false);

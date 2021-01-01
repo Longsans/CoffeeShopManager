@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlStatistics));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlStatistics));
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
@@ -51,7 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalIncome = new System.Windows.Forms.Label();
             this.lblAveIncome = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datStats = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -68,11 +68,11 @@
             // 
             // chartProduct
             // 
-            resources.ApplyResources(this.chartProduct, "chartProduct");
             chartArea1.Name = "ChartArea1";
             this.chartProduct.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartProduct.Legends.Add(legend1);
+            resources.ApplyResources(this.chartProduct, "chartProduct");
             this.chartProduct.Name = "chartProduct";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -82,7 +82,6 @@
             // 
             // cboIncomeView
             // 
-            resources.ApplyResources(this.cboIncomeView, "cboIncomeView");
             this.cboIncomeView.FormattingEnabled = true;
             this.cboIncomeView.Items.AddRange(new object[] {
             resources.GetString("cboIncomeView.Items"),
@@ -91,12 +90,12 @@
             resources.GetString("cboIncomeView.Items3"),
             resources.GetString("cboIncomeView.Items4"),
             resources.GetString("cboIncomeView.Items5")});
+            resources.ApplyResources(this.cboIncomeView, "cboIncomeView");
             this.cboIncomeView.Name = "cboIncomeView";
             this.cboIncomeView.SelectedIndexChanged += new System.EventHandler(this.cboIncomeView_SelectedIndexChanged);
             // 
             // cboProductView
             // 
-            resources.ApplyResources(this.cboProductView, "cboProductView");
             this.cboProductView.FormattingEnabled = true;
             this.cboProductView.Items.AddRange(new object[] {
             resources.GetString("cboProductView.Items"),
@@ -104,6 +103,7 @@
             resources.GetString("cboProductView.Items2"),
             resources.GetString("cboProductView.Items3"),
             resources.GetString("cboProductView.Items4")});
+            resources.ApplyResources(this.cboProductView, "cboProductView");
             this.cboProductView.Name = "cboProductView";
             this.cboProductView.SelectedIndexChanged += new System.EventHandler(this.cboProductView_SelectedIndexChanged);
             // 
@@ -119,25 +119,25 @@
             // 
             // pnlShowInfoProductSales
             // 
-            resources.ApplyResources(this.pnlShowInfoProductSales, "pnlShowInfoProductSales");
             this.pnlShowInfoProductSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.pnlShowInfoProductSales.Controls.Add(this.label1);
             this.pnlShowInfoProductSales.Controls.Add(this.lblTotalSales);
+            resources.ApplyResources(this.pnlShowInfoProductSales, "pnlShowInfoProductSales");
             this.pnlShowInfoProductSales.Name = "pnlShowInfoProductSales";
             // 
             // lblTitle
             // 
-            resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.ForeColor = System.Drawing.Color.Firebrick;
+            resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.Name = "lblTitle";
             // 
             // chartIncome
             // 
-            resources.ApplyResources(this.chartIncome, "chartIncome");
             chartArea2.Name = "ChartArea1";
             this.chartIncome.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartIncome.Legends.Add(legend2);
+            resources.ApplyResources(this.chartIncome, "chartIncome");
             this.chartIncome.Name = "chartIncome";
             this.chartIncome.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             this.chartIncome.PaletteCustomColors = new System.Drawing.Color[] {
@@ -154,26 +154,26 @@
             // 
             // dataGridView2
             // 
-            resources.ApplyResources(this.dataGridView2, "dataGridView2");
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dataGridView2, "dataGridView2");
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             // 
             // dataGridView1
             // 
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             // 
             // pnlShowInfoIncome
             // 
-            resources.ApplyResources(this.pnlShowInfoIncome, "pnlShowInfoIncome");
             this.pnlShowInfoIncome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.pnlShowInfoIncome.Controls.Add(this.label3);
             this.pnlShowInfoIncome.Controls.Add(this.label2);
             this.pnlShowInfoIncome.Controls.Add(this.lblTotalIncome);
             this.pnlShowInfoIncome.Controls.Add(this.lblAveIncome);
+            resources.ApplyResources(this.pnlShowInfoIncome, "pnlShowInfoIncome");
             this.pnlShowInfoIncome.Name = "pnlShowInfoIncome";
             // 
             // label3
@@ -196,11 +196,11 @@
             resources.ApplyResources(this.lblAveIncome, "lblAveIncome");
             this.lblAveIncome.Name = "lblAveIncome";
             // 
-            // dateTimePicker1
+            // datStats
             // 
-            resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            resources.ApplyResources(this.datStats, "datStats");
+            this.datStats.Name = "datStats";
+            this.datStats.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label5
             // 
@@ -229,7 +229,6 @@
             // 
             // cboString
             // 
-            resources.ApplyResources(this.cboString, "cboString");
             this.cboString.FormattingEnabled = true;
             this.cboString.Items.AddRange(new object[] {
             resources.GetString("cboString.Items"),
@@ -243,6 +242,7 @@
             resources.GetString("cboString.Items8"),
             resources.GetString("cboString.Items9"),
             resources.GetString("cboString.Items10")});
+            resources.ApplyResources(this.cboString, "cboString");
             this.cboString.Name = "cboString";
             // 
             // UserControlStatistics
@@ -256,7 +256,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.datStats);
             this.Controls.Add(this.chartProduct);
             this.Controls.Add(this.cboProductView);
             this.Controls.Add(this.pnlShowInfoProductSales);
@@ -297,7 +297,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTotalIncome;
         private System.Windows.Forms.Label lblAveIncome;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datStats;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

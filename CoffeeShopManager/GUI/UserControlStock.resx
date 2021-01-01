@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cboSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
   <data name="&gt;&gt;lblStock.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
@@ -161,7 +165,6 @@
   <data name="&gt;&gt;txtSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblResetFilters.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
@@ -180,8 +183,8 @@
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
   </data>
-  <data name="&gt;&gt;lblStock.Name" xml:space="preserve">
-    <value>lblStock</value>
+  <data name="lblStock.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btnSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -541,6 +544,9 @@
   <data name="btnDelete.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="&gt;&gt;btnEdit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
     <value>btnEdit</value>
   </data>
@@ -598,14 +604,14 @@
   <data name="&gt;&gt;grdStock.Name" xml:space="preserve">
     <value>grdStock</value>
   </data>
-  <data name="&gt;&gt;btnEdit.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;lblStock.Name" xml:space="preserve">
+    <value>lblStock</value>
   </data>
   <data name="cboSearch.Items1" xml:space="preserve">
     <value>Name</value>
   </data>
-  <data name="cboSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+  <data name="lblStock.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
   <data name="cboSearch.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -640,9 +646,6 @@
   <data name="cboSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>477, 75</value>
   </data>
-  <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
   <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
     <value>742, 485</value>
   </data>
@@ -658,8 +661,8 @@
   <data name="lblStock.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 22pt</value>
   </data>
-  <data name="lblStock.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>899, 574</value>
@@ -678,9 +681,6 @@
   </data>
   <data name="&gt;&gt;txtSearch.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="lblStock.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;lblStock.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -744,5 +744,8 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>vi-VN</value>
   </metadata>
 </root>

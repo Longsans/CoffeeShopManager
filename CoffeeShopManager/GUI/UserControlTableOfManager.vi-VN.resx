@@ -140,10 +140,10 @@
     <value>505, 53</value>
   </data>
   <data name="lblBy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 17</value>
+    <value>44, 17</value>
   </data>
   <data name="lblBy.Text" xml:space="preserve">
-    <value>Bởi:</value>
+    <value>Theo:</value>
   </data>
   <data name="lblSearch.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 7.8pt</value>
